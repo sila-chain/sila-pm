@@ -1,0 +1,21 @@
+name: PR Validation
+
+on:
+  pull_request:
+    paths:
+      - '.github/ACDbot/**'
+      - '.github/actions/setup-acdbot/**'
+      - '.github/workflows/pr-validation.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
+
+      - name: Set up ACDbot
+        uses: ./.github/actions/setup-acdbot
+
+      - name: Run tests
+        run: uv run --project "${GITHUB_WORKSPACE}/.github/ACDbot" --locked pytest "${GITHUB_WORKSPACE}/.github/ACDbot/tests"

@@ -1,0 +1,145 @@
+name: Protocol Call
+description: Create a new protocol call (recurring or one-time)
+title: "<call name> <call #>, <call date>"
+labels: ["protocol-call"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Title: &lt;call name&gt; &lt;call #&gt;, &lt;call date&gt;
+        e.g. "All Core Devs - Execution (ACDE) \#210, April 24, 2026"
+
+  - type: input
+    id: date-time
+    attributes:
+      label: UTC Date & Time
+      description: Meeting date and time in UTC format, e.g. "Apr 24, 2026, 14:00 UTC" (Format important for automation!)
+      placeholder: "Apr 24, 2026, 14:00 UTC"
+    validations:
+      required: true
+
+  - type: textarea
+    id: agenda
+    attributes:
+      label: Agenda
+      description: List the agenda items for this meeting
+      placeholder: |
+        - Agenda point 1
+        - Agenda point 2
+        - Agenda point n
+
+  - type: dropdown
+    id: call-series
+    attributes:
+      label: Call Series
+      description: Select the call series this meeting belongs to. Choose "One-time call" for single occurrence calls.
+      options:
+        - "-- Please select a call series --"
+        - All Core Devs - Consensus
+        - All Core Devs - Execution
+        - All Core Devs - Testing
+        - All Wallet Devs
+        - SIP Editing Office Hour
+        - SIP-7732 Breakout Room
+        - SIP-7928 Breakout Room
+        - EIPIP Meeting
+        - SAVM Resource Pricing Breakout
+        - SAVM Static Control Flow
+        - eth_simulate
+        - Encrypt the Mempool
+        - Ethproofs Community Call
+        - Fast Confirmation Rule
+        - FOCIL Breakout
+        - Glamsterdam Repricings
+        - L1-zkEVM Breakout
+        - L2 Interop Working Group
+        - Native Account Abstraction
+        - P2P Networking
+        - PQ Interop
+        - PQ Transaction Signatures
+        - Protocol Research
+        - RPC Standards
+        - RollCall
+        - SSZ Engine API
+        - Stateless Implementers
+        - Trustless Agents (SRC-8004)
+        - Trustless Log Index
+        - One-time call
+      default: 0
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: autopilot-mode
+    attributes:
+      label: Autopilot Mode
+      description: Use the usual settings for this call series (duration, recurrence, YouTube streaming, etc.). You only need to provide the date/time and agenda. Uncheck to customize settings below.
+      options:
+        - label: Use autopilot (recommended defaults for this call series)
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## 🤖 Automation Configuration
+
+        *If Autopilot Mode is enabled above, these settings will be ignored and defaults for your call series will be used.*
+
+        The bot can create/edit:
+        - an Sila Magicians forum post
+        - the Google calendar event
+        - a Zoom meeting, with download links for the recording and transcript
+        - a YouTube stream link
+
+  - type: dropdown
+    id: duration
+    attributes:
+      label: Duration
+      description: How long will the meeting last? (Used for the calendar event & Zoom meeting)
+      options:
+        - 30 minutes
+        - 60 minutes
+        - 90 minutes
+        - 120 minutes
+        - 180 minutes
+      default: 1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: occurrence-rate
+    attributes:
+      label: Occurrence Rate
+      description: How often does this meeting occur? (Only applies to recurring meetings)
+      options:
+        - weekly
+        - bi-weekly
+        - monthly
+        - other
+      default: 1
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: already-zoom-meeting
+    attributes:
+      label: Use Custom Meeting Link (Optional)
+      description: Check this if you want to use your own meeting link instead of having the bot manage the Zoom meeting. Note - If you use a custom link, the bot cannot provide automatic recording downloads, AI summaries, or YouTube uploads.
+      options:
+        - label: I will provide my own meeting link
+
+  - type: checkboxes
+    id: display-zoom-link
+    attributes:
+      label: Display Zoom Link in Calendar Invite (Optional)
+      description: Select if you want to add the Zoom link to the Google Calendar invite description
+      options:
+        - label: Display Zoom link in invite
+
+  - type: checkboxes
+    id: need-youtube-streams
+    attributes:
+      label: YouTube Livestream Link (Optional)
+      description: Enable YouTube livestream for this meeting. You will be responsible for managing the livestream; the bot will not upload a Zoom recording to YouTube.
+      options:
+        - label: Create YouTube livestream link

@@ -1,0 +1,1152 @@
+#!/usr/bin/env python3
+"""
+Unit tests for ProtocolCallHandler
+
+Focuses on testing the resource handlers and utility functions.
+"""
+
+import unittest
+import unittest.mock
+import os
+import re
+from urllib.parse import urlparse, parse_qs
+
+from scripts.handle_protocol_call import ProtocolCallHandler
+
+
+class TestProtocolCallHandler(unittest.TestCase):
+
+    def setUp(self):
+        self.handler = ProtocolCallHandler()
+
+        # Sample call data for testing
+        self.sample_call_data = {
+            "issue_number": 123,
+            "issue_title": "Test Protocol Call",
+            "issue_url": "https://github.com/sila-chain/pm/issues/123",
+            "call_series": "test-series",
+            "start_time": "2024-01-15T10:00:00Z",
+            "duration": 60,
+            "agenda": "Test agenda",
+            "display_zoom_link_in_invite": True,
+            "skip_zoom_creation": False,
+            "need_youtube_streams": False,
+            "occurrence_rate": "other"
+        }
+
+        # Sample existing resources data
+        self.sample_existing_resources = {
+            "has_zoom": True,
+            "has_calendar": True,
+            "has_discourse": True,
+            "has_youtube": True,
+            "existing_occurrence": {
+                "call_series": "test-series",
+                "occurrence": {
+                    "issue_number": 123,
+                    "issue_title": "Test Protocol Call",
+                    "start_time": "2024-01-15T10:00:00Z",
+                    "duration": 60,
+                    "agenda": "Test agenda",
+                    "meeting_id": "test-meeting-id",
+                    "discourse_topic_id": "test-discourse-id",
+                    "youtube_streams": [{"stream_url": "https://youtube.com/test"}]
+                }
+            }
+        }
+
+    def test_get_call_series_display_name(self):
+        """Test that call series display names are returned correctly from YAML config."""
+        # Test known call series
+        result = self.handler._get_call_series_display_name("acde")
+        self.assertEqual(result, "All Core Devs - Execution")
+
+        # Test another call series from YAML config (verifies YAML lookup works)
+        result = self.handler._get_call_series_display_name("evmmax")
+        self.assertEqual(result, "EVMmax")
+
+        # Test unknown call series (should fall back to key itself)
+        result = self.handler._get_call_series_display_name("unknown")
+        self.assertEqual(result, "unknown")
+
+    def test_handle_zoom_resource_skip_creation(self):
+        """Test that zoom resource is skipped when user opted out."""
+        call_data = self.sample_call_data.copy()
+        call_data["skip_zoom_creation"] = True
+
+        result = self.handler._handle_zoom_resource(call_data, self.sample_existing_resources)
+
+        self.assertFalse(result["zoom_created"])
+        self.assertIsNone(result["zoom_id"])
+        self.assertIsNone(result["zoom_url"])
+
+    def test_handle_discourse_resource_existing(self):
+        """Test that discourse resource uses existing data when available."""
+        # Mock the discourse module to return unchanged status
+        with unittest.mock.patch('modules.discourse.create_or_update_topic') as mock_discourse:
+            mock_discourse.return_value = {
+                "topic_id": "test-discourse-id",
+                "action": "unchanged"
+            }
+
+            result = self.handler._handle_discourse_resource(self.sample_call_data, self.sample_existing_resources)
+
+            self.assertTrue(result["discourse_created"])
+            self.assertEqual(result["discourse_topic_id"], "test-discourse-id")
+            self.assertEqual(result["discourse_action"], "unchanged")
+
+            # Verify discourse module was called with existing topic ID
+            mock_discourse.assert_called_once_with(
+                title=self.sample_call_data["issue_title"],
+                body=unittest.mock.ANY,  # body content can vary
+                topic_id="test-discourse-id",
+                category_id=63
+            )
+
+    def test_handle_youtube_resource_existing(self):
+        """Test that youtube resource uses existing data when available."""
+        # Enable YouTube streams for this test
+        call_data = self.sample_call_data.copy()
+        call_data["need_youtube_streams"] = True
+
+        result = self.handler._handle_youtube_resource(call_data, self.sample_existing_resources)
+
+        self.assertTrue(result["youtube_streams_created"])
+        self.assertEqual(len(result["youtube_streams"]), 1)
+        self.assertEqual(len(result["stream_links"]), 1)
+        self.assertEqual(result["youtube_action"], "existing")
+
+    def test_handle_youtube_resource_clear_when_unchecked(self):
+        """Test that youtube resource returns clear action when checkbox is unchecked but streams exist."""
+        # YouTube checkbox is unchecked (default in sample_call_data)
+        call_data = self.sample_call_data.copy()
+        call_data["need_youtube_streams"] = False
+
+        # But existing resources show YouTube streams exist
+        result = self.handler._handle_youtube_resource(call_data, self.sample_existing_resources)
+
+        self.assertFalse(result["youtube_streams_created"])
+        self.assertIsNone(result["youtube_streams"])
+        self.assertEqual(result["youtube_action"], "clear")
+
+    def test_handle_youtube_resource_no_action_when_unchecked_and_no_existing(self):
+        """Test that youtube resource returns no action when checkbox is unchecked and no streams exist."""
+        call_data = self.sample_call_data.copy()
+        call_data["need_youtube_streams"] = False
+
+        # No existing YouTube streams
+        existing_resources = self.sample_existing_resources.copy()
+        existing_resources["has_youtube"] = False
+
+        result = self.handler._handle_youtube_resource(call_data, existing_resources)
+
+        self.assertFalse(result["youtube_streams_created"])
+        self.assertIsNone(result["youtube_streams"])
+        self.assertNotIn("youtube_action", result)
+
+    def test_find_existing_discourse_topic(self):
+        """Test that _find_existing_discourse_topic correctly finds existing topic IDs."""
+        # Mock the mapping manager to return test data
+        with unittest.mock.patch.object(self.handler.mapping_manager, 'load_mapping') as mock_load:
+            mock_load.return_value = {
+                "acdt": {
+                    "call_series": "acdt",
+                    "occurrences": [
+                        {
+                            "issue_number": 1648,
+                            "discourse_topic_id": 24956,
+                            "issue_title": "All Core Devs - Testing (ACDT) #47 | August 4 2025"
+                        },
+                        {
+                            "issue_number": 1640,
+                            "discourse_topic_id": 24800,
+                            "issue_title": "All Core Devs - Testing (ACDT) #46 | July 28 2025"
+                        }
+                    ]
+                }
+            }
+
+            # Test finding existing topic for acdt series
+            result = self.handler._find_existing_discourse_topic("acdt")
+            self.assertEqual(result, 24956)  # Should find the most recent one
+
+            # Test finding existing topic for non-existent series
+            result = self.handler._find_existing_discourse_topic("nonexistent")
+            self.assertIsNone(result)
+
+    def test_is_issue_already_cleaned(self):
+        """Test that _is_issue_already_cleaned correctly detects cleaned issues."""
+        # Test unclean issue body
+        unclean_body = """### UTC Date & Time
+
+April 24, 2025, 14:00 UTC
+
+### Agenda
+
+- Agenda item 1
+- Agenda item 2
+
+### Call Series
+
+All Core Devs - Execution
+
+### Duration
+
+90 minutes"""
+
+        result = self.handler._is_issue_already_cleaned(unclean_body)
+        self.assertFalse(result)
+
+        # Test cleaned issue body
+        cleaned_body = """### UTC Date & Time
+
+April 24, 2025, 14:00 UTC
+
+### Agenda
+
+- Agenda item 1
+- Agenda item 2
+
+### Call Series
+
+All Core Devs - Execution
+
+<details>
+<summary>🔧 Meeting Configuration</summary>
+
+### Duration
+
+90 minutes
+</details>"""
+
+        result = self.handler._is_issue_already_cleaned(cleaned_body)
+        self.assertTrue(result)
+
+        # Test body with details but not Meeting Configuration
+        other_details_body = """### UTC Date & Time
+
+April 24, 2025, 14:00 UTC
+
+<details>
+<summary>Other details</summary>
+Some other content
+</details>"""
+
+        result = self.handler._is_issue_already_cleaned(other_details_body)
+        self.assertFalse(result)
+
+    def test_clean_issue_body_preserves_parsing(self):
+        """Test that _clean_issue_body preserves all parsing boundaries."""
+        original_body = """### UTC Date & Time
+
+April 24, 2025, 14:00 UTC
+
+### Agenda
+
+- Agenda item 1
+- Agenda item 2
+- Agenda item with multiple lines
+  and indentation
+
+### Call Series
+
+All Core Devs - Execution
+
+### Duration
+
+90 minutes
+
+### Occurrence Rate
+
+bi-weekly
+
+### Use Custom Meeting Link (Optional)
+
+- [ ] I will provide my own meeting link
+
+### Display Zoom Link in Calendar Invite (Optional)
+
+- [x] Display Zoom link in invite"""
+
+        cleaned_body = self.handler._clean_issue_body(original_body)
+
+        # Test that the essential structure is preserved
+        self.assertIn("### UTC Date & Time", cleaned_body)
+        self.assertIn("April 24, 2025, 14:00 UTC", cleaned_body)
+        self.assertIn("### Agenda", cleaned_body)
+        self.assertIn("- Agenda item 1", cleaned_body)
+        self.assertIn("### Call Series", cleaned_body)
+        self.assertIn("All Core Devs - Execution", cleaned_body)
+
+        # Test that config sections are wrapped in details
+        self.assertIn("<details>", cleaned_body)
+        self.assertIn("🔧 Meeting Configuration", cleaned_body)
+        self.assertIn("### Duration", cleaned_body)
+        self.assertIn("90 minutes", cleaned_body)
+        self.assertIn("### Occurrence Rate", cleaned_body)
+        self.assertIn("</details>", cleaned_body)
+
+        # Test parsing compatibility by ensuring Call Series appears before details
+        call_series_pos = cleaned_body.find("### Call Series")
+        details_pos = cleaned_body.find("<details>")
+        self.assertLess(call_series_pos, details_pos, "Call Series should appear before details for parsing")
+
+        # Test that the agenda boundary is preserved (agenda ends where Call Series starts)
+        agenda_pos = cleaned_body.find("### Agenda")
+        agenda_content_start = cleaned_body.find("- Agenda item 1")
+        self.assertLess(agenda_pos, agenda_content_start)
+        self.assertLess(agenda_content_start, call_series_pos)
+
+    def test_clean_issue_body_handles_edge_cases(self):
+        """Test that _clean_issue_body handles various edge cases."""
+        # Test non-form issue
+        non_form_body = "This is not a form issue body"
+        result = self.handler._clean_issue_body(non_form_body)
+        self.assertEqual(result, non_form_body)
+
+        # Test issue without Call Series section
+        no_call_series_body = """### UTC Date & Time
+
+April 24, 2025, 14:00 UTC
+
+### Agenda
+
+- Agenda item 1
+
+### Duration
+
+90 minutes"""
+
+        result = self.handler._clean_issue_body(no_call_series_body)
+        self.assertEqual(result, no_call_series_body)
+
+        # Test issue with Call Series but no content after
+        minimal_body = """### UTC Date & Time
+
+April 24, 2025, 14:00 UTC
+
+### Agenda
+
+- Agenda item 1
+
+### Call Series
+
+All Core Devs - Execution"""
+
+        result = self.handler._clean_issue_body(minimal_body)
+        # Should not add details if there's no config content after Call Series
+        self.assertNotIn("<details>", result)
+
+        # Should have added savvytime link since it has Call Series section
+        expected_minimal_body = """### UTC Date & Time
+
+[April 24, 2025, 14:00 UTC](https://savvytime.com/converter/utc/apr-24-2025/2pm)
+
+### Agenda
+
+- Agenda item 1
+
+### Call Series
+
+All Core Devs - Execution"""
+        self.assertEqual(result, expected_minimal_body)
+
+    def test_clean_issue_body_with_form_parser_compatibility(self):
+        """Test that cleaned issue body maintains form parser compatibility."""
+        # Import form parser for testing
+        from modules.form_parser import FormParser
+        parser = FormParser()
+
+        original_body = """### UTC Date & Time
+
+April 24, 2025, 14:00 UTC
+
+### Agenda
+
+- Important agenda item 1
+- Critical agenda item 2
+- Final agenda item
+
+### Call Series
+
+All Core Devs - Execution
+
+### Duration
+
+90 minutes
+
+### Occurrence Rate
+
+bi-weekly
+
+### Use Custom Meeting Link (Optional)
+
+- [ ] I will provide my own meeting link
+
+### YouTube Livestream Link (Optional)
+
+- [x] Create YouTube livestream link"""
+
+        # Parse original body
+        original_parsed = parser.parse_form_data(original_body)
+        self.assertIsNotNone(original_parsed)
+
+        # Clean the body
+        cleaned_body = self.handler._clean_issue_body(original_body)
+
+        # Parse cleaned body
+        cleaned_parsed = parser.parse_form_data(cleaned_body)
+        self.assertIsNotNone(cleaned_parsed)
+
+        # Compare critical parsing results
+        self.assertEqual(original_parsed.get("call_series"), cleaned_parsed.get("call_series"))
+        self.assertEqual(original_parsed.get("agenda"), cleaned_parsed.get("agenda"))
+        self.assertEqual(original_parsed.get("duration"), cleaned_parsed.get("duration"))
+        self.assertEqual(original_parsed.get("occurrence_rate"), cleaned_parsed.get("occurrence_rate"))
+        self.assertEqual(original_parsed.get("need_youtube_streams"), cleaned_parsed.get("need_youtube_streams"))
+
+    def test_clean_issue_body_error_handling(self):
+        """Test that _clean_issue_body handles errors gracefully."""
+        # Test with None input
+        result = self.handler._clean_issue_body(None)
+        self.assertIsNone(result)
+
+        # Test with malformed body that might cause regex issues
+        malformed_body = "### UTC Date & Time\n\n[Invalid date\n\n### Agenda\n\nIncomplete"
+        result = self.handler._clean_issue_body(malformed_body)
+        # Should return original body if cleaning fails
+        self.assertEqual(result, malformed_body)
+
+    def test_generate_comprehensive_resource_comment_date_parsing_error(self):
+        """Test that date parsing errors are properly detected and displayed in resource comments."""
+        # Mock occurrence data with failed date parsing (string doesn't end with 'Z')
+        mock_occurrence_data = {
+            "call_series": "test-series",
+            "occurrence": {
+                "issue_number": 123,
+                "issue_title": "Test Protocol Call",
+                "start_time": "April 32, 2025, 14:00 UTC",  # Invalid date
+                "duration": 60,
+                "discourse_topic_id": "12345"
+            }
+        }
+
+        # Mock mapping data with no meeting ID to avoid Zoom import issues
+        mock_mapping_data = {
+            "test-series": {
+                "meeting_id": None,
+                "calendar_event_id": None
+            }
+        }
+
+        # Test call data
+        call_data = {
+            "issue_number": 123,
+            "issue_title": "Test Protocol Call",
+            "issue_url": "https://github.com/sila-chain/pm/issues/123",
+        }
+
+        # Mock the mapping manager methods
+        with unittest.mock.patch.object(self.handler.mapping_manager, 'find_occurrence', return_value=mock_occurrence_data), \
+             unittest.mock.patch.object(self.handler.mapping_manager, 'load_mapping', return_value=mock_mapping_data):
+
+            # Generate comment
+            result = self.handler._generate_comprehensive_resource_comment(call_data)
+
+            # Verify date parsing error is included
+            self.assertIsNotNone(result)
+            self.assertIn("⚠️ **Date Parsing Issue**", result)
+            self.assertIn("April 32, 2025, 14:00 UTC", result)
+            self.assertIn("April 24, 2026, 14:00 UTC", result)
+            self.assertIn("2026-04-24T14:00:00Z", result)
+
+    def test_generate_comprehensive_resource_comment_valid_date(self):
+        """Test that properly parsed dates don't trigger error messages."""
+        # Mock occurrence data with properly parsed date (ends with 'Z')
+        mock_occurrence_data = {
+            "call_series": "test-series",
+            "occurrence": {
+                "issue_number": 123,
+                "issue_title": "Test Protocol Call",
+                "start_time": "2025-04-24T14:00:00Z",  # Properly parsed ISO format
+                "duration": 60,
+                "discourse_topic_id": "12345"
+            }
+        }
+
+        # Mock mapping data with no meeting ID to avoid Zoom import issues
+        mock_mapping_data = {
+            "test-series": {
+                "meeting_id": None,
+                "calendar_event_id": None
+            }
+        }
+
+        # Test call data
+        call_data = {
+            "issue_number": 123,
+            "issue_title": "Test Protocol Call",
+            "issue_url": "https://github.com/sila-chain/pm/issues/123",
+        }
+
+        # Mock the mapping manager methods
+        with unittest.mock.patch.object(self.handler.mapping_manager, 'find_occurrence', return_value=mock_occurrence_data), \
+             unittest.mock.patch.object(self.handler.mapping_manager, 'load_mapping', return_value=mock_mapping_data):
+
+            # Generate comment
+            result = self.handler._generate_comprehensive_resource_comment(call_data)
+
+            # Verify NO date parsing error is included
+            self.assertIsNotNone(result)
+            self.assertNotIn("⚠️ **Date Parsing Issue**", result)
+            self.assertNotIn("could not be parsed automatically", result)
+
+    def _extract_add_link(self, comment: str) -> str:
+        match = re.search(r"\[Add to Calendar\]\(([^)]+)\)", comment)
+        self.assertIsNotNone(match)
+        return match.group(1)
+
+    def _extract_view_link(self, comment: str) -> str:
+        match = re.search(r"\[View\]\(([^)]+)\)", comment)
+        self.assertIsNotNone(match)
+        return match.group(1)
+
+    def test_generate_comprehensive_resource_comment_includes_zoom_in_calendar_payload_when_enabled(self):
+        """Test that live comment payload includes Zoom details when invite setting allows it."""
+        mock_occurrence_data = {
+            "call_series": "test-series",
+            "occurrence": {
+                "issue_number": 123,
+                "issue_title": "Test Protocol Call",
+                "start_time": "2025-04-24T14:00:00Z",
+                "duration": 60,
+                "calendar_event_id": "calendar-event-id",
+                "discourse_topic_id": "12345",
+            }
+        }
+        mock_mapping_data = {
+            "test-series": {
+                "meeting_id": "987654321",
+                "calendar_event_id": "calendar-event-id"
+            }
+        }
+        call_data = {
+            "issue_number": 123,
+            "issue_title": "Test Protocol Call",
+            "issue_url": "https://github.com/sila-chain/pm/issues/123",
+            "duration": 60,
+            "display_zoom_link_in_invite": True,
+        }
+
+        zoom_url_with_pwd = 'https://zoom.us/j/987654321?pwd=secret'
+        with unittest.mock.patch.object(self.handler.mapping_manager, 'find_occurrence', return_value=mock_occurrence_data), \
+             unittest.mock.patch.object(self.handler.mapping_manager, 'load_mapping', return_value=mock_mapping_data), \
+             unittest.mock.patch(
+                 'modules.zoom.get_meeting_url_with_passcode',
+                 return_value=zoom_url_with_pwd,
+             ):
+            result = self.handler._generate_comprehensive_resource_comment(call_data)
+
+        self.assertIsNotNone(result)
+        self.assertIn(f"✅ **Zoom**: [Join Meeting]({zoom_url_with_pwd})", result)
+
+        # Verify dual calendar links
+        self.assertIn("[View]", result)
+        self.assertIn("[Add to Calendar]", result)
+
+        view_link = self._extract_view_link(result)
+        view_params = parse_qs(urlparse(view_link).query)
+        self.assertEqual(view_params["mode"], ["AGENDA"])
+        self.assertEqual(view_params["dates"], ["20250424/20250425"])
+
+        add_link = self._extract_add_link(result)
+        add_params = parse_qs(urlparse(add_link).query)
+        self.assertEqual(add_params["action"], ["TEMPLATE"])
+        self.assertEqual(add_params["text"], ["Test Protocol Call"])
+        self.assertEqual(
+            add_params["details"],
+            [f"Meeting: {zoom_url_with_pwd}\n\nIssue: https://github.com/sila-chain/pm/issues/123"],
+        )
+
+    def test_generate_comprehensive_resource_comment_omits_zoom_in_calendar_payload_when_disabled(self):
+        """Test that live comment payload omits Zoom details when invite setting disables it."""
+        mock_occurrence_data = {
+            "call_series": "test-series",
+            "occurrence": {
+                "issue_number": 123,
+                "issue_title": "Test Protocol Call",
+                "start_time": "2025-04-24T14:00:00Z",
+                "duration": 60,
+                "calendar_event_id": "calendar-event-id",
+                "discourse_topic_id": "12345",
+            }
+        }
+        mock_mapping_data = {
+            "test-series": {
+                "meeting_id": "987654321",
+                "calendar_event_id": "calendar-event-id"
+            }
+        }
+        call_data = {
+            "issue_number": 123,
+            "issue_title": "Test Protocol Call",
+            "issue_url": "https://github.com/sila-chain/pm/issues/123",
+            "duration": 60,
+            "display_zoom_link_in_invite": False,
+        }
+
+        zoom_url_with_pwd = 'https://zoom.us/j/987654321?pwd=secret'
+        with unittest.mock.patch.object(self.handler.mapping_manager, 'find_occurrence', return_value=mock_occurrence_data), \
+             unittest.mock.patch.object(self.handler.mapping_manager, 'load_mapping', return_value=mock_mapping_data), \
+             unittest.mock.patch(
+                 'modules.zoom.get_meeting_url_with_passcode',
+                 return_value=zoom_url_with_pwd,
+             ):
+            result = self.handler._generate_comprehensive_resource_comment(call_data)
+
+        self.assertIsNotNone(result)
+        self.assertIn("[View]", result)
+        self.assertIn("[Add to Calendar]", result)
+
+        add_link = self._extract_add_link(result)
+        add_params = parse_qs(urlparse(add_link).query)
+        self.assertEqual(add_params["action"], ["TEMPLATE"])
+        self.assertEqual(add_params["text"], ["Test Protocol Call"])
+        self.assertEqual(
+            add_params["details"],
+            ["Issue: https://github.com/sila-chain/pm/issues/123"],
+        )
+
+
+class TestAutopilotMode(unittest.TestCase):
+    """Tests for autopilot mode functionality."""
+
+    def setUp(self):
+        self.handler = ProtocolCallHandler()
+
+    def test_apply_autopilot_defaults_enabled(self):
+        """Test that autopilot applies defaults when enabled."""
+        mock_issue = unittest.mock.MagicMock()
+
+        form_data = {
+            "call_series": "acde",
+            "autopilot_mode": True,
+            "duration": 60,  # User provided
+            "occurrence_rate": "weekly",  # User provided
+            "need_youtube_streams": False,  # User provided
+            "display_zoom_link_in_invite": False,  # User provided
+            "skip_zoom_creation": True,  # User provided
+            "start_time": "2030-04-24T14:00:00Z",
+            "agenda": "Test agenda"
+        }
+
+        result = self.handler._apply_autopilot_defaults(form_data, mock_issue)
+
+        # Defaults should override user-provided values
+        self.assertEqual(result["duration"], 90)
+        self.assertEqual(result["occurrence_rate"], "bi-weekly")
+        self.assertTrue(result["need_youtube_streams"])
+        self.assertTrue(result["display_zoom_link_in_invite"])
+        self.assertFalse(result["skip_zoom_creation"])
+
+        # Preserved fields should remain unchanged
+        self.assertEqual(result["start_time"], "2030-04-24T14:00:00Z")
+        self.assertEqual(result["agenda"], "Test agenda")
+
+    def test_apply_autopilot_defaults_disabled(self):
+        """Test that autopilot does not apply defaults when disabled."""
+        mock_issue = unittest.mock.MagicMock()
+
+        form_data = {
+            "call_series": "acde",
+            "autopilot_mode": False,
+            "duration": 60,
+            "occurrence_rate": "weekly",
+            "need_youtube_streams": False,
+        }
+
+        result = self.handler._apply_autopilot_defaults(form_data, mock_issue)
+
+        # Values should remain unchanged
+        self.assertEqual(result["duration"], 60)
+        self.assertEqual(result["occurrence_rate"], "weekly")
+        self.assertFalse(result["need_youtube_streams"])
+
+    def test_apply_autopilot_defaults_one_off_call(self):
+        """Test that autopilot applies one-off defaults for one-off calls."""
+        mock_issue = unittest.mock.MagicMock()
+
+        form_data = {
+            "call_series": "one-off-123",
+            "autopilot_mode": True,
+            "duration": 90,
+        }
+
+        result = self.handler._apply_autopilot_defaults(form_data, mock_issue)
+
+        # One-off defaults should be applied
+        self.assertEqual(result["duration"], 60)
+        self.assertEqual(result["occurrence_rate"], "custom")
+        self.assertFalse(result["need_youtube_streams"])
+        self.assertTrue(result["display_zoom_link_in_invite"])
+        self.assertFalse(result["skip_zoom_creation"])
+
+    def test_apply_autopilot_defaults_no_defaults_configured(self):
+        """Test autopilot with series that has no defaults uses system defaults."""
+        mock_issue = unittest.mock.MagicMock()
+
+        form_data = {
+            "call_series": "nonexistent-series",
+            "autopilot_mode": True,
+            "duration": 90,
+            "occurrence_rate": "weekly",
+        }
+
+        result = self.handler._apply_autopilot_defaults(form_data, mock_issue)
+
+        # System defaults should be applied
+        self.assertEqual(result["duration"], 60)
+        self.assertEqual(result["occurrence_rate"], "bi-weekly")
+        self.assertEqual(result["need_youtube_streams"], False)
+        self.assertEqual(result["display_zoom_link_in_invite"], True)
+        self.assertEqual(result["skip_zoom_creation"], False)
+
+
+class TestDateInPastValidation(unittest.TestCase):
+    """Tests for past date detection functionality."""
+
+    def setUp(self):
+        self.handler = ProtocolCallHandler()
+
+    def test_is_date_in_past_with_old_date(self):
+        """Test that dates clearly in the past are detected."""
+        # Date from 2020 - definitely in the past
+        old_date = "2020-01-15T10:00:00Z"
+        result = self.handler._is_date_in_past(old_date)
+        self.assertTrue(result)
+
+    def test_is_date_in_past_with_last_year(self):
+        """Test that dates from last year are detected as past."""
+        # Common mistake: using last year's date
+        last_year_date = "2025-06-15T14:00:00Z"
+        result = self.handler._is_date_in_past(last_year_date)
+        self.assertTrue(result)
+
+    def test_is_date_in_past_with_future_date(self):
+        """Test that future dates are not flagged as past."""
+        # Date in 2030 - definitely in the future
+        future_date = "2030-01-15T10:00:00Z"
+        result = self.handler._is_date_in_past(future_date)
+        self.assertFalse(result)
+
+    def test_is_date_in_past_with_near_future(self):
+        """Test that dates in the near future are not flagged."""
+        from datetime import datetime, timezone, timedelta
+        # Get a date 2 hours in the future
+        future_time = datetime.now(timezone.utc) + timedelta(hours=2)
+        future_date = future_time.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        result = self.handler._is_date_in_past(future_date)
+        self.assertFalse(result)
+
+    def test_is_date_in_past_within_grace_period(self):
+        """Test that dates within the grace period are not flagged."""
+        from datetime import datetime, timezone, timedelta
+        # Get a date 30 minutes in the past (within 1-hour grace period)
+        recent_time = datetime.now(timezone.utc) - timedelta(minutes=30)
+        recent_date = recent_time.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        result = self.handler._is_date_in_past(recent_date)
+        self.assertFalse(result)
+
+    def test_is_date_in_past_beyond_grace_period(self):
+        """Test that dates beyond the grace period are flagged."""
+        from datetime import datetime, timezone, timedelta
+        # Get a date 13 hours in the past (beyond 12-hour default grace period)
+        old_time = datetime.now(timezone.utc) - timedelta(hours=13)
+        old_date = old_time.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        result = self.handler._is_date_in_past(old_date)
+        self.assertTrue(result)
+
+    def test_is_date_in_past_with_custom_grace_period(self):
+        """Test that custom grace periods work correctly."""
+        from datetime import datetime, timezone, timedelta
+        # Get a date 3 hours in the past
+        old_time = datetime.now(timezone.utc) - timedelta(hours=3)
+        old_date = old_time.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+        # With default 1-hour grace, should be flagged
+        result = self.handler._is_date_in_past(old_date, grace_hours=1)
+        self.assertTrue(result)
+
+        # With 4-hour grace, should not be flagged
+        result = self.handler._is_date_in_past(old_date, grace_hours=4)
+        self.assertFalse(result)
+
+    def test_is_date_in_past_with_invalid_format(self):
+        """Test that invalid date formats don't block processing."""
+        # Non-ISO format (should return False to not block)
+        invalid_date = "April 24, 2020, 14:00 UTC"
+        result = self.handler._is_date_in_past(invalid_date)
+        self.assertFalse(result)
+
+    def test_is_date_in_past_without_z_suffix(self):
+        """Test that dates without Z suffix are not checked."""
+        # Missing Z suffix - let other validation handle it
+        no_z_date = "2020-01-15T10:00:00"
+        result = self.handler._is_date_in_past(no_z_date)
+        self.assertFalse(result)
+
+    def test_is_date_in_past_with_none(self):
+        """Test that None input doesn't cause errors."""
+        result = self.handler._is_date_in_past(None)
+        self.assertFalse(result)
+
+    def test_is_date_in_past_with_empty_string(self):
+        """Test that empty string doesn't cause errors."""
+        result = self.handler._is_date_in_past("")
+        self.assertFalse(result)
+
+    def test_post_past_date_comment_logs_only(self):
+        """Test that past date detection only logs, does not post a GitHub comment."""
+        mock_issue = unittest.mock.MagicMock()
+        mock_issue.number = 123
+        past_date = "2025-01-15T10:00:00Z"
+
+        self.handler._post_past_date_comment(mock_issue, past_date)
+
+        # Verify create_comment was NOT called
+        mock_issue.create_comment.assert_not_called()
+
+    def test_handle_protocol_call_rejects_past_date(self):
+        """Test that handle_protocol_call exits early for past dates."""
+        mock_issue = unittest.mock.MagicMock()
+        mock_issue.body = "test body"
+        mock_issue.number = 999
+        mock_issue.title = "Test Issue"
+        mock_issue.html_url = "https://github.com/test/repo/issues/999"
+
+        # Mock the chain to return valid data with a past date
+        past_date = "2020-01-15T10:00:00Z"
+        mock_call_data = {
+            "issue_number": 999,
+            "issue_title": "Test Issue",
+            "issue_url": "https://github.com/test/repo/issues/999",
+            "call_series": "acde",
+            "duration": 60,
+            "start_time": past_date,
+            "occurrence_rate": "weekly",
+            "skip_zoom_creation": False,
+            "need_youtube_streams": False,
+            "display_zoom_link_in_invite": True,
+            "agenda": "Test agenda"
+        }
+
+        with unittest.mock.patch.object(self.handler, '_get_github_issue', return_value=mock_issue), \
+             unittest.mock.patch.object(self.handler, '_parse_form_data', return_value={"raw": "data"}), \
+             unittest.mock.patch.object(self.handler, '_validate_and_transform', return_value=mock_call_data):
+            result = self.handler.handle_protocol_call(999, "test/repo")
+
+        # Should return False due to past date
+        self.assertFalse(result)
+
+        # Should NOT post a GitHub comment (facilitators may edit after meetings)
+        mock_issue.create_comment.assert_not_called()
+
+
+class TestUpdateDisplayedAutopilotValues(unittest.TestCase):
+    """Tests for updating displayed config values when autopilot is enabled."""
+
+    def setUp(self):
+        self.handler = ProtocolCallHandler()
+
+        # Sample issue body with default form values
+        self.sample_issue_body = """### UTC Date & Time
+
+April 24, 2025, 14:00 UTC
+
+### Agenda
+
+- Agenda item 1
+- Agenda item 2
+
+### Call Series
+
+All Core Devs - Execution
+
+### Autopilot Mode
+
+- [x] Use autopilot (recommended defaults for this call series)
+
+### Duration
+
+60 minutes
+
+### Occurrence Rate
+
+weekly
+
+### Use Custom Meeting Link (Optional)
+
+- [ ] I will provide my own meeting link
+
+### Display Zoom Link in Calendar Invite (Optional)
+
+- [ ] Display Zoom link in invite
+
+### YouTube Livestream Link (Optional)
+
+- [ ] Create YouTube livestream link"""
+
+    def test_update_duration_value(self):
+        """Test that duration value is updated to reflect autopilot default."""
+        call_data = {
+            "autopilot_mode": True,
+            "duration": 90,  # Autopilot default for ACDE
+            "occurrence_rate": "bi-weekly",
+            "need_youtube_streams": True,
+            "display_zoom_link_in_invite": True,
+            "skip_zoom_creation": False
+        }
+
+        result = self.handler._update_displayed_autopilot_values(self.sample_issue_body, call_data)
+
+        self.assertIn("90 minutes", result)
+        self.assertNotIn("60 minutes", result)
+
+    def test_update_occurrence_rate_value(self):
+        """Test that occurrence rate value is updated to reflect autopilot default."""
+        call_data = {
+            "autopilot_mode": True,
+            "duration": 90,
+            "occurrence_rate": "bi-weekly",  # Autopilot default
+            "need_youtube_streams": True,
+            "display_zoom_link_in_invite": True,
+            "skip_zoom_creation": False
+        }
+
+        result = self.handler._update_displayed_autopilot_values(self.sample_issue_body, call_data)
+
+        # Check occurrence rate section specifically
+        self.assertIn("### Occurrence Rate\n\nbi-weekly", result)
+        self.assertNotIn("### Occurrence Rate\n\nweekly", result)
+
+    def test_update_youtube_checkbox_to_checked(self):
+        """Test that YouTube checkbox is checked when autopilot enables it."""
+        call_data = {
+            "autopilot_mode": True,
+            "duration": 90,
+            "occurrence_rate": "bi-weekly",
+            "need_youtube_streams": True,  # Autopilot enables YouTube
+            "display_zoom_link_in_invite": True,
+            "skip_zoom_creation": False
+        }
+
+        result = self.handler._update_displayed_autopilot_values(self.sample_issue_body, call_data)
+
+        # YouTube checkbox should now be checked
+        self.assertIn("### YouTube Livestream Link (Optional)\n\n- [x]", result)
+
+    def test_update_zoom_display_checkbox_to_checked(self):
+        """Test that Zoom display checkbox is checked when autopilot enables it."""
+        call_data = {
+            "autopilot_mode": True,
+            "duration": 90,
+            "occurrence_rate": "bi-weekly",
+            "need_youtube_streams": True,
+            "display_zoom_link_in_invite": True,  # Autopilot enables this
+            "skip_zoom_creation": False
+        }
+
+        result = self.handler._update_displayed_autopilot_values(self.sample_issue_body, call_data)
+
+        # Zoom display checkbox should now be checked
+        self.assertIn("### Display Zoom Link in Calendar Invite (Optional)\n\n- [x]", result)
+
+    def test_update_custom_meeting_link_checkbox(self):
+        """Test that custom meeting link checkbox reflects autopilot setting."""
+        # Test with external_meeting_link enabled (e.g., Stateless Implementers)
+        call_data = {
+            "autopilot_mode": True,
+            "duration": 60,
+            "occurrence_rate": "weekly",
+            "need_youtube_streams": False,
+            "display_zoom_link_in_invite": False,
+            "skip_zoom_creation": True  # External meeting link
+        }
+
+        result = self.handler._update_displayed_autopilot_values(self.sample_issue_body, call_data)
+
+        # Custom meeting link checkbox should now be checked
+        self.assertIn("### Use Custom Meeting Link (Optional)\n\n- [x]", result)
+
+    def test_uncheck_youtube_when_autopilot_disables(self):
+        """Test that YouTube checkbox is unchecked when autopilot disables it."""
+        # Issue body with YouTube already checked
+        body_with_youtube = self.sample_issue_body.replace(
+            "### YouTube Livestream Link (Optional)\n\n- [ ]",
+            "### YouTube Livestream Link (Optional)\n\n- [x]"
+        )
+
+        call_data = {
+            "autopilot_mode": True,
+            "duration": 60,
+            "occurrence_rate": "bi-weekly",
+            "need_youtube_streams": False,  # Autopilot disables YouTube
+            "display_zoom_link_in_invite": True,
+            "skip_zoom_creation": False
+        }
+
+        result = self.handler._update_displayed_autopilot_values(body_with_youtube, call_data)
+
+        # YouTube checkbox should now be unchecked
+        self.assertIn("### YouTube Livestream Link (Optional)\n\n- [ ]", result)
+
+    def test_all_values_updated_together(self):
+        """Test that all config values are updated together for a complete autopilot scenario."""
+        call_data = {
+            "autopilot_mode": True,
+            "duration": 90,
+            "occurrence_rate": "bi-weekly",
+            "need_youtube_streams": True,
+            "display_zoom_link_in_invite": True,
+            "skip_zoom_creation": False
+        }
+
+        result = self.handler._update_displayed_autopilot_values(self.sample_issue_body, call_data)
+
+        # Check all values are updated
+        self.assertIn("90 minutes", result)
+        self.assertIn("### Occurrence Rate\n\nbi-weekly", result)
+        self.assertIn("### YouTube Livestream Link (Optional)\n\n- [x]", result)
+        self.assertIn("### Display Zoom Link in Calendar Invite (Optional)\n\n- [x]", result)
+        self.assertIn("### Use Custom Meeting Link (Optional)\n\n- [ ]", result)
+
+    def test_preserves_other_content(self):
+        """Test that updating autopilot values doesn't affect other issue content."""
+        call_data = {
+            "autopilot_mode": True,
+            "duration": 90,
+            "occurrence_rate": "bi-weekly",
+            "need_youtube_streams": True,
+            "display_zoom_link_in_invite": True,
+            "skip_zoom_creation": False
+        }
+
+        result = self.handler._update_displayed_autopilot_values(self.sample_issue_body, call_data)
+
+        # Other content should be preserved
+        self.assertIn("### UTC Date & Time", result)
+        self.assertIn("April 24, 2025, 14:00 UTC", result)
+        self.assertIn("### Agenda", result)
+        self.assertIn("- Agenda item 1", result)
+        self.assertIn("- Agenda item 2", result)
+        self.assertIn("### Call Series", result)
+        self.assertIn("All Core Devs - Execution", result)
+        self.assertIn("### Autopilot Mode", result)
+
+    def test_handles_missing_call_data_fields_gracefully(self):
+        """Test that missing fields in call_data don't cause errors."""
+        # Minimal call_data with only some fields
+        call_data = {
+            "autopilot_mode": True,
+            "duration": 90
+            # Other fields missing
+        }
+
+        # Should not raise an exception
+        result = self.handler._update_displayed_autopilot_values(self.sample_issue_body, call_data)
+
+        # Duration should be updated
+        self.assertIn("90 minutes", result)
+
+    def test_handles_empty_issue_body(self):
+        """Test that empty issue body is handled gracefully."""
+        call_data = {
+            "autopilot_mode": True,
+            "duration": 90,
+            "occurrence_rate": "bi-weekly"
+        }
+
+        result = self.handler._update_displayed_autopilot_values("", call_data)
+        self.assertEqual(result, "")
+
+    def test_form_parser_compatibility_after_update(self):
+        """Test that updated issue body can still be parsed correctly."""
+        from modules.form_parser import FormParser
+        parser = FormParser()
+
+        call_data = {
+            "autopilot_mode": True,
+            "duration": 90,
+            "occurrence_rate": "bi-weekly",
+            "need_youtube_streams": True,
+            "display_zoom_link_in_invite": True,
+            "skip_zoom_creation": False
+        }
+
+        result = self.handler._update_displayed_autopilot_values(self.sample_issue_body, call_data)
+
+        # Parse the updated body
+        parsed = parser.parse_form_data(result)
+
+        # Verify parsed values match the autopilot values
+        self.assertEqual(parsed["duration"], 90)
+        self.assertEqual(parsed["occurrence_rate"], "bi-weekly")
+        self.assertTrue(parsed["need_youtube_streams"])
+        self.assertTrue(parsed["display_zoom_link_in_invite"])
+        self.assertFalse(parsed["skip_zoom_creation"])
+
+    def test_clean_issue_body_if_needed_calls_update_with_autopilot(self):
+        """Test that _clean_issue_body_if_needed calls _update_displayed_autopilot_values when autopilot is enabled."""
+        mock_issue = unittest.mock.MagicMock()
+        mock_issue.body = self.sample_issue_body
+
+        call_data = {
+            "autopilot_mode": True,
+            "duration": 90,
+            "occurrence_rate": "bi-weekly",
+            "need_youtube_streams": True,
+            "display_zoom_link_in_invite": True,
+            "skip_zoom_creation": False
+        }
+
+        with unittest.mock.patch.object(self.handler, '_update_displayed_autopilot_values', wraps=self.handler._update_displayed_autopilot_values) as mock_update:
+            self.handler._clean_issue_body_if_needed(mock_issue, call_data)
+
+            # Verify _update_displayed_autopilot_values was called
+            mock_update.assert_called_once()
+
+    def test_clean_issue_body_if_needed_skips_update_without_autopilot(self):
+        """Test that _clean_issue_body_if_needed doesn't call _update_displayed_autopilot_values when autopilot is disabled."""
+        mock_issue = unittest.mock.MagicMock()
+        mock_issue.body = self.sample_issue_body
+
+        call_data = {
+            "autopilot_mode": False,
+            "duration": 60,
+            "occurrence_rate": "weekly"
+        }
+
+        with unittest.mock.patch.object(self.handler, '_update_displayed_autopilot_values') as mock_update:
+            self.handler._clean_issue_body_if_needed(mock_issue, call_data)
+
+            # Verify _update_displayed_autopilot_values was NOT called
+            mock_update.assert_not_called()
+
+    def test_clean_issue_body_if_needed_skips_update_without_call_data(self):
+        """Test that _clean_issue_body_if_needed works without call_data (backwards compatibility)."""
+        mock_issue = unittest.mock.MagicMock()
+        mock_issue.body = self.sample_issue_body
+
+        with unittest.mock.patch.object(self.handler, '_update_displayed_autopilot_values') as mock_update:
+            # Call without call_data
+            self.handler._clean_issue_body_if_needed(mock_issue)
+
+            # Verify _update_displayed_autopilot_values was NOT called
+            mock_update.assert_not_called()
+
+
+if __name__ == '__main__':
+    unittest.main()

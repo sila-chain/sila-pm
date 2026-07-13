@@ -1,0 +1,929 @@
+import os
+import json
+import re
+from google.oauth2 import service_account
+from googleapiclient.discovery import build
+from datetime import datetime, timedelta
+from urllib.parse import urlencode, urlparse
+import base64
+import pytz
+import sys
+import calendar
+
+from .datetime_utils import parse_iso_datetime
+
+PROTOCOL_CALENDAR_ID = "c_upaofong8mgrmrkegn7ic7hk5s@group.calendar.google.com"
+
+
+def _is_valid_url(url):
+    """Basic URL validation - checks for http/https scheme and netloc."""
+    if not url or not isinstance(url, str):
+        return False
+    try:
+        result = urlparse(url)
+        return all([result.scheme in ('http', 'https'), result.netloc])
+    except Exception:
+        return False
+
+
+def build_calendar_view_link(start_time, calendar_id=None):
+    """Build a link to view the public protocol calendar around a specific date.
+
+    Args:
+        start_time: ISO-formatted datetime string
+        calendar_id: Optional calendar ID (defaults to GCAL_ID env var, then PROTOCOL_CALENDAR_ID)
+    """
+    if not start_time:
+        return None
+    if calendar_id is None:
+        # GCAL_ID env var allows overriding the default calendar for testing/alternate calendars
+        calendar_id = os.getenv("GCAL_ID", PROTOCOL_CALENDAR_ID)
+    dt = parse_iso_datetime(start_time)
+    if dt is None:
+        print(f"[WARN] build_calendar_view_link: Failed to parse start_time: {start_time}")
+        return None
+    # Show 1-day range (event day + next day) to display event in calendar context
+    date_str = dt.strftime('%Y%m%d')
+    next_day = (dt + timedelta(days=1)).strftime('%Y%m%d')
+    params = {
+        'src': calendar_id,
+        'ctz': 'UTC',
+        'mode': 'AGENDA',
+        'dates': f'{date_str}/{next_day}',
+        'showTitle': '1',
+        'showCalendars': '0',
+        'showTabs': '0',
+        'showPrint': '0',
+        'showNav': '0',
+    }
+    return f"https://calendar.google.com/calendar/embed?{urlencode(params)}"
+
+
+def build_calendar_add_link(summary, start_time, duration_minutes, description=""):
+    """Build a Google Calendar add-event link for a specific occurrence.
+
+    Args:
+        summary: Event title
+        start_time: ISO-formatted datetime string
+        duration_minutes: Event duration in minutes
+        description: Optional event description
+    """
+    if not start_time:
+        return None
+    start_dt = parse_iso_datetime(start_time)
+    if start_dt is None:
+        print(f"[WARN] build_calendar_add_link: Failed to parse start_time: {start_time}")
+        return None
+    end_dt = start_dt + timedelta(minutes=duration_minutes)
+    params = {
+        "action": "TEMPLATE",
+        "text": summary,
+        "dates": f"{start_dt.strftime('%Y%m%dT%H%M%SZ')}/{end_dt.strftime('%Y%m%dT%H%M%SZ')}",
+    }
+    if description:
+        params["details"] = description
+    return f"https://www.google.com/calendar/render?{urlencode(params)}"
+
+
+def render_calendar_comment_line(start_time, summary, duration, issue_url, zoom_url=None):
+    """Build the calendar comment line with View and Add to Calendar links.
+
+    Args:
+        start_time: ISO-formatted datetime string
+        summary: Event title
+        duration: Event duration in minutes
+        issue_url: GitHub issue URL (validated)
+        zoom_url: Optional Zoom meeting URL (validated if provided)
+    """
+    # Basic URL validation
+    if not _is_valid_url(issue_url):
+        print(f"[ERROR] render_calendar_comment_line: Invalid issue_url: {issue_url}")
+        return "❌ **Calendar**: Invalid issue URL"
+
+    if zoom_url and not _is_valid_url(zoom_url):
+        print(f"[WARN] render_calendar_comment_line: Invalid zoom_url, omitting from calendar: {zoom_url}")
+        zoom_url = None  # Omit invalid Zoom URLs but continue
+
+    view_link = build_calendar_view_link(start_time)
+
+    details_parts = [f"Issue: {issue_url}"]
+    if zoom_url:
+        details_parts.insert(0, f"Meeting: {zoom_url}")
+    add_link = build_calendar_add_link(summary, start_time, duration, "\n\n".join(details_parts))
+
+    if view_link and add_link:
+        return f"✅ **Calendar**: [View]({view_link}) | [Add to Calendar]({add_link})"
+    if add_link:
+        return f"✅ **Calendar**: [Add to Calendar]({add_link})"
+    if view_link:
+        return f"✅ **Calendar**: [View]({view_link})"
+
+    print(f"[ERROR] render_calendar_comment_line: Failed to build calendar links for start_time: {start_time}")
+    return "❌ **Calendar**: No calendar event found"
+
+
+def _parse_event_datetime(event_time):
+    """Parse a Google Calendar event time value."""
+    if not event_time:
+        return None
+    date_time = event_time.get('dateTime')
+    if not date_time:
+        return None
+    return datetime.fromisoformat(date_time.replace('Z', '+00:00'))
+
+
+def _instance_original_datetime(instance):
+    """Return the scheduled datetime for a recurring instance, including cancelled instances."""
+    if instance.get('status') == 'cancelled':
+        return (
+            _parse_event_datetime(instance.get('originalStartTime', {}))
+            or _parse_event_datetime(instance.get('start', {}))
+        )
+    return (
+        _parse_event_datetime(instance.get('start', {}))
+        or _parse_event_datetime(instance.get('originalStartTime', {}))
+    )
+
+
+def _find_instance_on_date(instances, target_date):
+    for instance in instances.get('items', []):
+        instance_dt = _instance_original_datetime(instance)
+        if instance_dt and instance_dt.date() == target_date:
+            return instance
+    return None
+
+
+def encode_calendar_eid(event_id, calendar_id):
+    """Encode Google Calendar event ID and calendar ID into proper eid parameter."""
+    try:
+        # Format calendar ID by replacing @group.calendar.google.com with @g
+        if "@group.calendar.google.com" in calendar_id:
+            formatted_calendar_id = calendar_id.replace("@group.calendar.google.com", "@g")
+        else:
+            formatted_calendar_id = calendar_id
+
+        # Combine event ID and calendar ID with a space
+        combined = f"{event_id} {formatted_calendar_id}"
+
+        # Base64 encode
+        encoded = base64.b64encode(combined.encode('utf-8')).decode('utf-8')
+
+        # Remove trailing = characters
+        eid = encoded.rstrip('=')
+
+        return eid
+    except Exception as e:
+        print(f"⚠️  Could not encode calendar eid: {e}")
+        return None
+
+SCOPES = ['https://www.googleapis.com/auth/calendar']
+
+def get_calendar_service():
+    """
+    Creates and returns an authenticated Google Calendar service
+    with proper error handling for credentials
+    """
+    try:
+        # Check if GCAL_SERVICE_ACCOUNT_KEY exists in environment
+        if 'GCAL_SERVICE_ACCOUNT_KEY' not in os.environ:
+            error_msg = "Error: GCAL_SERVICE_ACCOUNT_KEY environment variable not found"
+            print(f"::error::{error_msg}")
+            raise ValueError(error_msg)
+
+        # Load service account info from environment variable
+        service_account_info = json.loads(os.environ['GCAL_SERVICE_ACCOUNT_KEY'])
+        credentials = service_account.Credentials.from_service_account_info(
+            service_account_info, scopes=SCOPES)
+
+        return build('calendar', 'v3', credentials=credentials)
+    except json.JSONDecodeError as e:
+        error_msg = f"Error: Failed to parse GCAL_SERVICE_ACCOUNT_KEY as JSON: {str(e)}"
+        print(f"::error::{error_msg}")
+        print(f"Context access might be invalid: GOOGLE_APPLICATION_CREDENTIALS")
+        raise ValueError(error_msg)
+    except Exception as e:
+        error_msg = f"Error: Failed to authenticate with Google Calendar API: {str(e)}"
+        print(f"::error::{error_msg}")
+        print(f"Context access might be invalid: GOOGLE_APPLICATION_CREDENTIALS")
+        raise
+
+def create_event(summary: str, start_dt, duration_minutes: int, calendar_id: str, description=""):
+    """
+    Creates a Google Calendar event using the Google Calendar API.
+    Handles both datetime objects and ISO format strings for start_dt.
+    """
+    print(f"[DEBUG] Creating calendar event: {summary}")
+
+    # Convert start_dt to datetime object if it's a string
+    if isinstance(start_dt, str):
+        start_dt = datetime.fromisoformat(start_dt.replace('Z', '+00:00'))
+    elif not isinstance(start_dt, datetime):
+        raise TypeError("start_dt must be a datetime object or ISO format string")
+
+    # Ensure timezone awareness
+    if not start_dt.tzinfo:
+        start_dt = start_dt.replace(tzinfo=pytz.utc)
+
+    # Calculate end time using datetime math
+    end_dt = start_dt + timedelta(minutes=duration_minutes)
+
+    # Format for Google Calendar API
+    event_body = {
+        'summary': summary,
+        'description': description,
+        'start': {
+            'dateTime': start_dt.isoformat(),
+            'timeZone': 'UTC'
+        },
+        'end': {
+            'dateTime': end_dt.isoformat(),
+            'timeZone': 'UTC'
+        },
+    }
+
+    try:
+        service = get_calendar_service()
+        event = service.events().insert(calendarId=calendar_id, body=event_body).execute()
+        event_id = event.get('id')
+        html_link = event.get('htmlLink')
+        print(f"[DEBUG] Created calendar event with ID: {event_id}")
+        return {
+            'htmlLink': html_link,
+            'id': event_id
+        }
+    except Exception as e:
+        error_msg = f"Error creating calendar event: {str(e)}"
+        print(f"::error::{error_msg}")
+        raise
+
+def update_event(event_id: str, summary: str, start_dt, duration_minutes: int, calendar_id: str, description=""):
+    """Update an existing Google Calendar event"""
+    print(f"[DEBUG] Attempting to update calendar event {event_id} with summary: {summary}")
+
+    if not event_id:
+        raise ValueError("No event_id provided for update")
+
+    # Same datetime handling as create_event
+    if isinstance(start_dt, str):
+        start_dt = datetime.fromisoformat(start_dt.replace('Z', '+00:00'))
+    elif not isinstance(start_dt, datetime):
+        raise TypeError("start_dt must be a datetime object or ISO format string")
+    end_dt = start_dt + timedelta(minutes=duration_minutes)
+
+    # Ensure timezone awareness
+    if not start_dt.tzinfo:
+        start_dt = start_dt.replace(tzinfo=pytz.utc)
+
+    event_body = {
+        'summary': summary,
+        'description': description,
+        'start': {
+            'dateTime': start_dt.isoformat(),
+            'timeZone': 'UTC'
+        },
+        'end': {
+            'dateTime': end_dt.isoformat(),
+            'timeZone': 'UTC'
+        },
+    }
+
+    try:
+        service = get_calendar_service()
+
+        try:
+            # First try to get the event to verify it exists
+            existing_event = service.events().get(
+                calendarId=calendar_id,
+                eventId=event_id
+            ).execute()
+            print(f"[DEBUG] Found existing event with ID: {existing_event.get('id')}")
+        except Exception as e:
+            error_msg = f"Failed to find existing event: {str(e)}"
+            print(f"[DEBUG] {error_msg}")
+
+            # Instead of raising an error, let the caller know that this event doesn't exist
+            # so they can create a new one
+            print(f"[DEBUG] Event not found, suggest creating a new one")
+            raise ValueError(error_msg)
+
+        # If we're here, the event exists, so update it
+        event = service.events().update(
+            calendarId=calendar_id,
+            eventId=event_id,
+            body=event_body
+        ).execute()
+        event_id = event.get('id')
+        html_link = event.get('htmlLink')
+        print(f"[DEBUG] Successfully updated event with ID: {event_id}")
+        return {
+            'htmlLink': html_link,
+            'id': event_id
+        }
+    except ValueError:
+        # Re-raise ValueError to let caller know this needs a new event
+        raise
+    except Exception as e:
+        error_msg = f"Error updating calendar event: {str(e)}"
+        print(f"::error::{error_msg}")
+        raise
+
+def update_recurring_event(event_id: str, summary: str, start_dt, duration_minutes: int, calendar_id: str, occurrence_rate: str, description=""):
+    """
+    Update an existing recurring Google Calendar event, preserving recurrence settings
+
+    Strategy for handling missing instances:
+    - First check whether the target instance exists but is cancelled. Google Calendar hides
+      cancelled recurring instances unless showDeleted=True, but those exceptions still block
+      the normal recurring occurrence from appearing.
+    - Restore the cancelled instance directly when found, preserving the recurring series.
+    - Fall back to the existing one-time/series update behavior only when there is no cancelled
+      instance for the requested date.
+
+    Args:
+        event_id: ID of the existing recurring event to update
+        summary: Event title
+        start_dt: Start datetime (string or datetime)
+        duration_minutes: Duration in minutes
+        calendar_id: Google Calendar ID
+        occurrence_rate: weekly, bi-weekly, or monthly
+        description: Optional event description
+    Returns:
+        Dict with htmlLink and id (series ID, not one-time event ID if created)
+    """
+    print(f"[DEBUG] Attempting to update recurring calendar event {event_id} with summary: {summary}")
+
+    if not event_id:
+        raise ValueError("No event_id provided for update")
+
+    # Same datetime handling as create_event
+    if isinstance(start_dt, str):
+        start_dt = datetime.fromisoformat(start_dt.replace('Z', '+00:00'))
+    elif not isinstance(start_dt, datetime):
+        raise TypeError("start_dt must be a datetime object or ISO format string")
+
+    # Ensure timezone awareness
+    if not start_dt.tzinfo:
+        start_dt = start_dt.replace(tzinfo=pytz.utc)
+
+    # Calculate end time
+    end_dt = start_dt + timedelta(minutes=duration_minutes)
+
+    try:
+        service = get_calendar_service()
+
+        try:
+            # First try to get the event to verify it exists
+            existing_event = service.events().get(
+                calendarId=calendar_id,
+                eventId=event_id
+            ).execute()
+            print(f"[DEBUG] Found existing event with ID: {existing_event.get('id')}")
+
+            # Check if this is actually a recurring event
+            is_recurring = 'recurrence' in existing_event and existing_event['recurrence']
+            print(f"[DEBUG] Existing event is recurring: {is_recurring}")
+
+            if not is_recurring:
+                print(f"[DEBUG] Existing event is one-time, but we need recurring behavior")
+                print(f"[DEBUG] Creating new recurring event instead of trying to convert one-time event")
+
+                # Create a new recurring event instead of trying to convert a one-time event
+                new_recurring_event = create_recurring_event(
+                    summary=summary,
+                    start_dt=start_dt,
+                    duration_minutes=duration_minutes,
+                    calendar_id=calendar_id,
+                    occurrence_rate=occurrence_rate,
+                    description=description
+                )
+
+                print(f"[DEBUG] Created new recurring event to replace one-time event: {new_recurring_event.get('id')}")
+                return new_recurring_event
+
+        except Exception as e:
+            error_msg = f"Failed to find existing event: {str(e)}"
+            print(f"[DEBUG] {error_msg}")
+            raise ValueError(error_msg)
+
+        # Get instances of the recurring event around the target date
+        # Must use explicit timeMin/timeMax - without them, the API may exclude
+        # the instance matching the master event's start date
+        # Use ±14 days to catch instances even if there's a week offset
+        time_min = (start_dt - timedelta(days=14)).isoformat()
+        time_max = (start_dt + timedelta(days=14)).isoformat()
+
+        print(f"[DEBUG] Searching for instances between {time_min} and {time_max}")
+
+        instances = service.events().instances(
+            calendarId=calendar_id,
+            eventId=event_id,
+            timeMin=time_min,
+            timeMax=time_max
+        ).execute()
+
+        print(f"[DEBUG] Found {len(instances.get('items', []))} instances in date range")
+
+        # Find the specific instance for our target date
+        target_instance = _find_instance_on_date(instances, start_dt.date())
+
+        if target_instance:
+            print(f"[DEBUG] Found target instance with ID: {target_instance.get('id')}")
+            print(f"[DEBUG] Target instance date: {target_instance.get('start', {}).get('dateTime')}")
+            print(f"[DEBUG] Target instance current summary: {target_instance.get('summary')}")
+            print(f"[DEBUG] Target instance current description: {target_instance.get('description', 'No description')[:100]}...")
+
+            # Update the specific instance
+            target_instance['summary'] = summary
+            target_instance['description'] = description
+            target_instance['start'] = {
+                'dateTime': start_dt.isoformat(),
+                'timeZone': 'UTC'
+            }
+            target_instance['end'] = {
+                'dateTime': end_dt.isoformat(),
+                'timeZone': 'UTC'
+            }
+
+            print(f"[DEBUG] Updating instance with new summary: {summary}")
+            print(f"[DEBUG] Updating instance with new description: {description[:100]}...")
+
+            # Update the instance
+            updated_instance = service.events().update(
+                calendarId=calendar_id,
+                eventId=target_instance['id'],
+                body=target_instance
+            ).execute()
+
+            event_id = updated_instance.get('id')
+            html_link = updated_instance.get('htmlLink')
+            print(f"[DEBUG] Successfully updated instance with ID: {event_id}")
+            print(f"[DEBUG] Updated instance summary: {updated_instance.get('summary')}")
+            print(f"[DEBUG] Updated instance description: {updated_instance.get('description', 'No description')[:100]}...")
+            print(f"[DEBUG] Updated instance start: {updated_instance.get('start', {}).get('dateTime')}")
+            print(f"[DEBUG] Updated instance end: {updated_instance.get('end', {}).get('dateTime')}")
+            print(f"[DEBUG] Updated instance is recurring: {'recurringEventId' in updated_instance}")
+            if 'recurringEventId' in updated_instance:
+                print(f"[DEBUG] Updated instance belongs to recurring event: {updated_instance['recurringEventId']}")
+
+            # Return the original series ID, not the instance ID
+            original_series_id = updated_instance.get('recurringEventId', event_id)
+            print(f"[DEBUG] Returning original series ID: {original_series_id} (not instance ID: {event_id})")
+
+            return {
+                'htmlLink': html_link,
+                'id': original_series_id,
+                'action_detail': 'instance_updated'
+            }
+        else:
+            print(f"[DEBUG] No matching instance found for date {start_dt.date()}")
+
+            deleted_instances = service.events().instances(
+                calendarId=calendar_id,
+                eventId=event_id,
+                timeMin=time_min,
+                timeMax=time_max,
+                showDeleted=True
+            ).execute()
+            cancelled_instance = _find_instance_on_date(deleted_instances, start_dt.date())
+            if cancelled_instance and cancelled_instance.get('status') == 'cancelled':
+                print(f"[DEBUG] Found cancelled target instance with ID: {cancelled_instance.get('id')}")
+                print(f"[DEBUG] Restoring cancelled instance for date {start_dt.date()}")
+
+                restored_instance = {
+                    **cancelled_instance,
+                    'status': 'confirmed',
+                    'summary': summary,
+                    'description': description,
+                    'start': {
+                        'dateTime': start_dt.isoformat(),
+                        'timeZone': 'UTC'
+                    },
+                    'end': {
+                        'dateTime': end_dt.isoformat(),
+                        'timeZone': 'UTC'
+                    },
+                }
+
+                updated_instance = service.events().update(
+                    calendarId=calendar_id,
+                    eventId=cancelled_instance['id'],
+                    body=restored_instance
+                ).execute()
+
+                instance_id = updated_instance.get('id')
+                html_link = updated_instance.get('htmlLink')
+                original_series_id = updated_instance.get('recurringEventId', event_id)
+                print(f"[DEBUG] Restored cancelled instance with ID: {instance_id}")
+                print(f"[DEBUG] Returning original series ID: {original_series_id} (not instance ID: {instance_id})")
+
+                return {
+                    'htmlLink': html_link,
+                    'id': original_series_id,
+                    'action_detail': 'cancelled_instance_restored'
+                }
+
+            print(f"[DEBUG] Checking next 2 instances for alignment:")
+            future_instances = []
+            for i, instance in enumerate(instances.get('items', [])):
+                instance_dt = _instance_original_datetime(instance)
+                if instance_dt and instance_dt.date() > start_dt.date():
+                    future_instances.append((instance_dt.date(), instance_dt))
+                    # Only need to check the next 2 future instances
+                    if len(future_instances) >= 2:
+                        break
+
+            # Log what we found
+            for i, (future_date, _) in enumerate(future_instances):
+                print(f"[DEBUG]   {i+1}. {future_date}")
+
+            # Check if the recurrence has ended before our target date
+            recurrence_rules = existing_event.get('recurrence', [])
+            recurrence_ended = False
+            needs_pattern_update = False
+
+            # Check if the occurrence rate has changed (e.g., bi-weekly to weekly)
+            for rule in recurrence_rules:
+                if 'FREQ=WEEKLY' in rule:
+                    if 'INTERVAL=2' in rule:
+                        if occurrence_rate == "weekly":
+                            needs_pattern_update = True
+                            print(f"[DEBUG] Need to update recurrence from bi-weekly to weekly")
+                    elif occurrence_rate == "bi-weekly":
+                        needs_pattern_update = True
+                        print(f"[DEBUG] Need to update recurrence from weekly to bi-weekly")
+
+                if 'UNTIL=' in rule:
+                    # Extract the UNTIL date
+                    until_match = re.search(r'UNTIL=(\d{8}T\d{6}Z?)', rule)
+                    if until_match:
+                        until_str = until_match.group(1)
+                        # Parse the until date
+                        if 'T' in until_str:
+                            until_dt = datetime.strptime(until_str.replace('Z', ''), '%Y%m%dT%H%M%S')
+                        else:
+                            until_dt = datetime.strptime(until_str, '%Y%m%d')
+                        until_dt = until_dt.replace(tzinfo=pytz.utc)
+
+                        if until_dt < start_dt:
+                            recurrence_ended = True
+                            print(f"[DEBUG] Recurrence ended on {until_dt.date()}, before target date {start_dt.date()}")
+                            break
+
+            # If recurrence pattern needs updating
+            if needs_pattern_update or recurrence_ended:
+                print(f"[DEBUG] Updating recurrence pattern to match {occurrence_rate} schedule")
+
+                # Generate new recurrence rules based on occurrence_rate
+                if occurrence_rate == "weekly":
+                    new_recurrence = ['RRULE:FREQ=WEEKLY']
+                elif occurrence_rate == "bi-weekly":
+                    new_recurrence = ['RRULE:FREQ=WEEKLY;INTERVAL=2']
+                elif occurrence_rate == "monthly":
+                    # For monthly recurrence, we want to maintain the same day of the week
+                    day_of_week = start_dt.isoweekday()
+                    day_of_month = start_dt.day
+                    week_of_month = (day_of_month - 1) // 7 + 1
+
+                    # Check if this is the last occurrence of this weekday in the month
+                    days_in_month = calendar.monthrange(start_dt.year, start_dt.month)[1]
+                    if day_of_month + 7 > days_in_month:
+                        week_of_month = -1
+
+                    day_map = {1: "MO", 2: "TU", 3: "WE", 4: "TH", 5: "FR", 6: "SA", 7: "SU"}
+                    day_shortname = day_map[day_of_week]
+                    byday = f"{week_of_month}{day_shortname}"
+                    new_recurrence = [f'RRULE:FREQ=MONTHLY;BYDAY={byday}']
+                else:
+                    # Keep existing recurrence if unsupported
+                    new_recurrence = recurrence_rules
+                    print(f"[WARN] Unsupported occurrence_rate: {occurrence_rate}, keeping existing recurrence")
+
+                # If recurrence ended, extend the UNTIL date
+                if recurrence_ended:
+                    new_until = start_dt + timedelta(days=180)
+                    new_until_str = new_until.strftime('%Y%m%dT%H%M%SZ')
+
+                    # Add UNTIL to the new recurrence
+                    updated_recurrence = []
+                    for rule in new_recurrence:
+                        if 'RRULE:' in rule:
+                            rule = rule + f';UNTIL={new_until_str}'
+                        updated_recurrence.append(rule)
+                    new_recurrence = updated_recurrence
+                    print(f"[DEBUG] Extended recurrence until {new_until.date()}")
+
+                print(f"[DEBUG] New recurrence rules: {new_recurrence}")
+
+                # Update the event with new recurrence, rebasing start to target date
+                event_body = {
+                    'summary': summary,
+                    'description': description,
+                    'start': {
+                        'dateTime': start_dt.isoformat(),
+                        'timeZone': 'UTC'
+                    },
+                    'end': {
+                        'dateTime': end_dt.isoformat(),
+                        'timeZone': 'UTC'
+                    },
+                    'recurrence': new_recurrence,
+                }
+
+                event = service.events().update(
+                    calendarId=calendar_id,
+                    eventId=event_id,
+                    body=event_body
+                ).execute()
+
+                print(f"[DEBUG] Updated recurring event with new pattern: {event.get('recurrence')}")
+
+                return {
+                    'htmlLink': event.get('htmlLink'),
+                    'id': event_id,
+                    'action_detail': 'pattern_updated' if needs_pattern_update else 'recurrence_extended'
+                }
+            else:
+                # No matching instance found - check if we should create a one-time event instead of shifting
+                print(f"[DEBUG] No specific instance found for target date {start_dt.date()}")
+
+                # Check if there's a future instance that aligns with the occurrence rate
+                if future_instances:
+                    closest_future_date, closest_future_dt = min(future_instances, key=lambda x: x[0])
+                    days_diff = (closest_future_date - start_dt.date()).days
+
+                    print(f"[DEBUG] Found future instance on {closest_future_date}, {days_diff} days from target")
+
+                    # Check if the future instance aligns with the occurrence rate
+                    is_aligned = False
+                    if occurrence_rate == "weekly":
+                        is_aligned = days_diff == 7
+                    elif occurrence_rate == "bi-weekly":
+                        is_aligned = days_diff == 14
+                    elif occurrence_rate == "monthly":
+                        # For monthly, check if it's approximately 4 weeks (allow 27-31 days)
+                        is_aligned = 27 <= days_diff <= 31
+                        if not is_aligned:
+                            print(f"[WARN] Monthly occurrence but days_diff is {days_diff} (expected 27-31 days)")
+
+                    if is_aligned:
+                        print(f"[INFO] Future instance aligns with {occurrence_rate} schedule ({days_diff} days)")
+                        print(f"[INFO] Creating one-time event for {start_dt.date()} and preserving series starting {closest_future_date}")
+
+                        # Create a one-time event for the target date
+                        one_time_event = create_event(
+                            summary=summary,
+                            start_dt=start_dt,
+                            duration_minutes=duration_minutes,
+                            calendar_id=calendar_id,
+                            description=description
+                        )
+
+                        print(f"[DEBUG] Created one-time event for {start_dt.date()}: {one_time_event.get('id')}")
+                        print(f"[DEBUG] Series continues on {closest_future_date} (event ID: {event_id})")
+
+                        return {
+                            'htmlLink': one_time_event.get('htmlLink'),
+                            'id': event_id,  # Return the series ID, not the one-time event ID
+                            'action_detail': 'one_time_created_series_preserved',
+                            'one_time_event_id': one_time_event.get('id')  # For future reference if needed
+                        }
+                    else:
+                        print(f"[WARN] Future instance on {closest_future_date} does NOT align with {occurrence_rate} schedule ({days_diff} days)")
+                        print(f"[WARN] This may indicate a schedule conflict - proceeding with series shift")
+
+                # No aligned future instance - shift the recurrence pattern to start from the new date
+                print(f"[DEBUG] Shifting recurrence pattern to start from the new date")
+
+                # Build new start/end times matching the target date
+                new_start = {
+                    'dateTime': start_dt.isoformat(),
+                    'timeZone': 'UTC'
+                }
+                new_end = {
+                    'dateTime': end_dt.isoformat(),
+                    'timeZone': 'UTC'
+                }
+
+                # Update the recurrence UNTIL date if it exists to ensure it extends far enough
+                updated_recurrence = []
+                for rule in recurrence_rules:
+                    if 'UNTIL=' in rule:
+                        # Parse existing UNTIL and ensure it's at least 6 months from new start
+                        until_match = re.search(r'UNTIL=(\d{8}T\d{6}Z?)', rule)
+                        if until_match:
+                            until_str = until_match.group(1)
+                            if 'T' in until_str:
+                                until_dt = datetime.strptime(until_str.replace('Z', ''), '%Y%m%dT%H%M%S')
+                            else:
+                                until_dt = datetime.strptime(until_str, '%Y%m%d')
+                            until_dt = until_dt.replace(tzinfo=pytz.utc)
+
+                            # Extend UNTIL if it's less than 6 months from new start
+                            min_until = start_dt + timedelta(days=180)
+                            if until_dt < min_until:
+                                new_until_str = min_until.strftime('%Y%m%dT%H%M%SZ')
+                                rule = re.sub(r'UNTIL=\d{8}T\d{6}Z?', f'UNTIL={new_until_str}', rule)
+                                print(f"[DEBUG] Extended UNTIL date to {min_until.date()}")
+                    updated_recurrence.append(rule)
+
+                # Use updated recurrence if we modified it, otherwise keep original
+                final_recurrence = updated_recurrence if updated_recurrence else recurrence_rules
+
+                event_body = {
+                    'summary': summary,
+                    'description': description,
+                    'start': new_start,
+                    'end': new_end,
+                    'recurrence': final_recurrence,
+                }
+
+                print(f"[DEBUG] Updating master event with new start date: {start_dt.date()}")
+                print(f"[DEBUG] Event body: start={new_start['dateTime']}, recurrence={final_recurrence}")
+
+                event = service.events().update(
+                    calendarId=calendar_id,
+                    eventId=event_id,
+                    body=event_body
+                ).execute()
+
+                print(f"[DEBUG] Shifted recurrence pattern to start from {start_dt.date()}")
+                print(f"[DEBUG] Returned event: start={event.get('start')}, recurrence={event.get('recurrence')}")
+
+                return {
+                    'htmlLink': event.get('htmlLink'),
+                    'id': event_id,
+                    'action_detail': 'pattern_shifted'
+                }
+
+    except ValueError:
+        # Re-raise ValueError to let caller know this needs a new event
+        raise
+    except Exception as e:
+        error_msg = f"Error updating recurring calendar event: {str(e)}"
+        print(f"::error::{error_msg}")
+        raise
+
+def delete_calendar_instance(event_id, target_date, calendar_id):
+    """Delete a single instance of a recurring Google Calendar event.
+
+    Args:
+        event_id: ID of the recurring calendar event series
+        target_date: date object for the instance to delete
+        calendar_id: Google Calendar ID
+
+    Returns:
+        True if deleted, False if instance not found
+    """
+    print(f"[DEBUG] Attempting to delete calendar instance for event {event_id} on {target_date}")
+
+    try:
+        service = get_calendar_service()
+
+        # Build a ±7 day window around the target date
+        target_dt = datetime.combine(target_date, datetime.min.time()).replace(tzinfo=pytz.utc)
+        time_min = (target_dt - timedelta(days=7)).isoformat()
+        time_max = (target_dt + timedelta(days=7)).isoformat()
+
+        print(f"[DEBUG] Searching for instances between {time_min} and {time_max}")
+
+        instances = service.events().instances(
+            calendarId=calendar_id,
+            eventId=event_id,
+            timeMin=time_min,
+            timeMax=time_max
+        ).execute()
+
+        print(f"[DEBUG] Found {len(instances.get('items', []))} instances in date range")
+
+        # Find the specific instance for the target date
+        target_instance = None
+        for instance in instances.get('items', []):
+            instance_start = instance.get('start', {}).get('dateTime')
+            if instance_start:
+                instance_dt = datetime.fromisoformat(instance_start.replace('Z', '+00:00'))
+                if instance_dt.date() == target_date:
+                    target_instance = instance
+                    break
+
+        if not target_instance:
+            print(f"[DEBUG] No matching instance found for date {target_date}")
+            return False
+
+        instance_id = target_instance['id']
+        print(f"[DEBUG] Deleting instance {instance_id}")
+
+        service.events().delete(
+            calendarId=calendar_id,
+            eventId=instance_id
+        ).execute()
+
+        print(f"[DEBUG] Successfully deleted calendar instance for {target_date}")
+        return True
+
+    except Exception as e:
+        error_code = getattr(getattr(e, 'resp', None), 'status', None)
+        if error_code in (404, 410):
+            print(f"[DEBUG] Instance already deleted (HTTP {error_code})")
+            return True
+        error_msg = f"Error deleting calendar instance: {str(e)}"
+        print(f"::error::{error_msg}")
+        raise
+
+
+def create_recurring_event(summary: str, start_dt, duration_minutes: int, calendar_id: str, occurrence_rate: str, description=""):
+    """
+    Creates a recurring Google Calendar event
+    Args:
+        summary: Event title
+        start_dt: Start datetime (string or datetime)
+        duration_minutes: Duration in minutes
+        calendar_id: Google Calendar ID
+        occurrence_rate: weekly, bi-weekly, or monthly
+        description: Optional event description
+    Returns:
+        Dict with htmlLink and id
+    """
+    print(f"[DEBUG] Creating recurring calendar event: {summary}")
+
+    # Convert start_dt to datetime object if it's a string
+    if isinstance(start_dt, str):
+        start_dt = datetime.fromisoformat(start_dt.replace('Z', '+00:00'))
+    elif not isinstance(start_dt, datetime):
+        raise TypeError("start_dt must be a datetime object or ISO format string")
+
+    # Ensure timezone awareness
+    if not start_dt.tzinfo:
+        start_dt = start_dt.replace(tzinfo=pytz.utc)
+
+    # Calculate end time
+    end_dt = start_dt + timedelta(minutes=duration_minutes)
+
+    # Set up recurrence rule
+    if occurrence_rate == "weekly":
+        recurrence = ['RRULE:FREQ=WEEKLY']
+    elif occurrence_rate == "bi-weekly":
+        recurrence = ['RRULE:FREQ=WEEKLY;INTERVAL=2']
+    elif occurrence_rate == "monthly":
+        # For monthly recurrence, we want to maintain the same day of the week
+        # (e.g., the second Wednesday of each month)
+
+        # Get the day of the week (1=Monday, 7=Sunday in iCalendar format)
+        day_of_week = start_dt.isoweekday()
+
+        # Calculate which week of the month this day falls on (1-based)
+        day_of_month = start_dt.day
+        week_of_month = (day_of_month - 1) // 7 + 1
+
+        # Check if this is the last occurrence of this weekday in the month
+        days_in_month = calendar.monthrange(start_dt.year, start_dt.month)[1]
+        if day_of_month + 7 > days_in_month:
+            # This is the last occurrence of this weekday in the month
+            # Use -1 to indicate the last occurrence
+            week_of_month = -1
+
+        # Format for iCalendar:
+        # FREQ=MONTHLY;BYDAY={week_of_month}{day_of_week_shortname}
+        # Week of month is numeric (1, 2, 3, 4 or -1 for last)
+        # Day of week shortname is MO, TU, WE, TH, FR, SA, SU
+
+        # Map day of week to shortname
+        day_map = {1: "MO", 2: "TU", 3: "WE", 4: "TH", 5: "FR", 6: "SA", 7: "SU"}
+        day_shortname = day_map[day_of_week]
+
+        # Create the BYDAY value
+        byday = f"{week_of_month}{day_shortname}"
+
+        recurrence = [f'RRULE:FREQ=MONTHLY;BYDAY={byday}']
+
+        print(f"[DEBUG] Setting up monthly calendar recurrence on the {week_of_month if week_of_month != -1 else 'last'} {day_shortname} of each month")
+    else:
+        raise ValueError(f"Unsupported occurrence rate: {occurrence_rate}")
+
+    event_body = {
+        'summary': summary,
+        'description': description,
+        'start': {
+            'dateTime': start_dt.isoformat(),
+            'timeZone': 'UTC'
+        },
+        'end': {
+            'dateTime': end_dt.isoformat(),
+            'timeZone': 'UTC'
+        },
+        'recurrence': recurrence,
+    }
+
+    try:
+        service = get_calendar_service()
+        event = service.events().insert(calendarId=calendar_id, body=event_body).execute()
+        event_id = event.get('id')
+        html_link = event.get('htmlLink')
+        print(f"[DEBUG] Created recurring calendar event with ID: {event_id}")
+        return {
+            'htmlLink': html_link,
+            'id': event_id
+        }
+    except Exception as e:
+        error_msg = f"Error creating recurring calendar event: {str(e)}"
+        print(f"::error::{error_msg}")
+        raise

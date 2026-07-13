@@ -1,0 +1,1067 @@
+import os
+import time
+import tempfile
+import requests
+import argparse
+import google.oauth2.credentials
+import google_auth_oauthlib.flow
+import googleapiclient.discovery
+import googleapiclient.errors
+from pathlib import Path
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+from modules import zoom, transcript, discourse, tg, mattermost_notify
+from modules.youtube_utils import add_video_to_appropriate_playlist
+from modules.breakout_utils import derive_breakout_youtube_title, select_breakout_recording
+from modules.mapping_utils import (
+    load_mapping as load_meeting_topic_mapping,
+    save_mapping as save_meeting_topic_mapping,
+    find_meeting_by_id,
+    find_meeting_by_issue_number,
+    find_call_series_by_meeting_id,
+    find_occurrence_with_index,
+    ensure_breakout_youtube_state,
+    get_breakout_youtube_state,
+    iter_breakout_meetings,
+)
+from google.auth.transport.requests import Request
+import json
+from modules.zoom import (
+    get_meeting_recording,
+    get_access_token,
+    get_meeting_summary
+)
+from google.oauth2 import service_account
+from datetime import datetime, timezone, timedelta
+
+# Import RSS utils
+try:
+    from modules import rss_utils
+except ImportError:
+    rss_utils = None
+
+# Reuse existing zoom module functions
+SCOPES = [
+    "https://www.googleapis.com/auth/youtube.upload",
+    "https://www.googleapis.com/auth/youtube.force-ssl",
+    "https://www.googleapis.com/auth/youtube"
+]
+CLIENT_SECRETS_FILE = "client_secrets.json"
+
+# Thumbnail for uploaded recordings (distinct from livestream thumbnail)
+UPLOAD_THUMBNAIL_PATH = str(Path(__file__).resolve().parent.parent / "thumbnails" / "recording_thumbnail.png")
+BREAKOUT_UPLOAD_LOOKBACK_DAYS = 14
+
+def get_authenticated_service():
+    # Initialize credentials from environment variables
+    creds = Credentials(
+        token=None,
+        refresh_token=os.environ["YOUTUBE_REFRESH_TOKEN"],
+        client_id=os.environ["GOOGLE_CLIENT_ID"],
+        client_secret=os.environ["GOOGLE_CLIENT_SECRET"],
+        token_uri="https://oauth2.googleapis.com/token",
+        scopes=SCOPES
+    )
+
+    # Token already refreshed at workflow start
+    return build("youtube", "v3", credentials=creds)
+
+def video_exists(youtube, meeting_id):
+    """Check if video for this meeting ID already exists in mapping"""
+    mapping = load_meeting_topic_mapping()
+    # Use the new helper function to find the meeting entry
+    entry = find_meeting_by_id(str(meeting_id), mapping)
+    if not entry:
+        return False
+    video_id = entry.get("youtube_video_id")
+    if video_id is None or str(video_id).lower() in ("none", "null", ""):
+        return False
+    return True
+
+def parse_zoom_time(value):
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(value.replace('Z', '+00:00'))
+    except Exception:
+        return None
+
+
+def recording_type_matches(recording_type, preferred_type):
+    return (
+        recording_type == preferred_type
+        or recording_type.startswith(f"{preferred_type}(")
+    )
+
+
+def find_best_youtube_recording(meeting_id, min_duration_minutes=15, target_start_time=None, tolerance_minutes=120):
+    """Find the best recording for YouTube upload, checking all instances if needed.
+
+    Args:
+        meeting_id: Zoom meeting ID
+        min_duration_minutes: Minimum recording duration in minutes
+        target_start_time: Expected start time (ISO 8601 string) to match recordings against
+        tolerance_minutes: Time window for matching in minutes (default 120 = 2 hours)
+
+    Returns:
+        Recording data dictionary or None if no suitable recording found
+    """
+
+    # Parse target time if provided
+    target_time = None
+    tolerance = None
+    if target_start_time:
+        try:
+            target_time = parse_zoom_time(target_start_time)
+            if target_time is None:
+                raise ValueError("invalid datetime")
+            tolerance = timedelta(minutes=tolerance_minutes)
+            print(f"[INFO] Filtering recordings for target time: {target_start_time} (±{tolerance_minutes} min)")
+        except Exception as e:
+            print(f"[WARN] Could not parse target_start_time '{target_start_time}': {e}")
+            target_time = None
+
+    # Direct lookup on recurring meeting IDs can return another occurrence.
+    # For mapped occurrences, past instances carry the specific UUID we need.
+    if target_time is None:
+        try:
+            recording_info = get_meeting_recording(meeting_id)
+            if recording_info and recording_info.get('recording_files'):
+                duration = recording_info.get('duration', 0)
+                if duration < min_duration_minutes:
+                    print(f"[WARN] Direct lookup recording too short: {duration} minutes")
+                else:
+                    print(f"[INFO] Found recording via direct lookup: {duration} minutes")
+                    return recording_info
+        except Exception as e:
+            print(f"[WARN] Direct lookup failed: {e}")
+
+    # If direct lookup fails or returns short recording, check all instances
+    print(f"[INFO] Checking all meeting instances for meeting {meeting_id}...")
+    try:
+        instances = zoom.get_past_meeting_instances(meeting_id)
+        if not instances:
+            print(f"[ERROR] No past meeting instances found for meeting {meeting_id}")
+            return None
+
+        print(f"[INFO] Found {len(instances)} past meeting instances")
+
+        valid_recordings = []
+
+        for i, instance in enumerate(instances):
+            uuid = instance.get('uuid')
+            start_time = instance.get('start_time', 'N/A')
+
+            if not uuid:
+                continue
+
+            # Filter by time if target_time is specified
+            if target_time and start_time != 'N/A':
+                try:
+                    instance_time = parse_zoom_time(start_time)
+                    if instance_time is None:
+                        raise ValueError("invalid datetime")
+                    time_diff = abs(target_time - instance_time)
+                    if time_diff > tolerance:
+                        print(f"[INFO] Skipping instance {i+1}: {start_time} (outside {tolerance_minutes} min window, diff: {time_diff})")
+                        continue
+                except Exception as e:
+                    print(f"[WARN] Could not parse instance start time '{start_time}': {e}")
+
+            print(f"[INFO] Checking instance {i+1}: {start_time} (UUID: {uuid})")
+
+            try:
+                recording_data = get_meeting_recording(uuid)
+                if recording_data and recording_data.get('recording_files'):
+                    duration = recording_data.get('duration', 0)
+                    recording_files = recording_data.get('recording_files', [])
+                    mp4_files = [f for f in recording_files if f.get('file_type') == 'MP4']
+
+                    print(f"[INFO]   Duration: {duration} minutes, MP4 files: {len(mp4_files)}")
+
+                    if duration >= min_duration_minutes and mp4_files:
+                        valid_recordings.append({
+                            'data': recording_data,
+                            'duration': duration,
+                            'uuid': uuid,
+                            'start_time': start_time
+                        })
+                        print(f"[INFO]   ✅ Valid recording candidate: {duration} minutes")
+                    else:
+                        print(f"[INFO]   ⚠️  Skipped: {duration} minutes, {len(mp4_files)} MP4 files")
+                else:
+                    print(f"[INFO]   ❌ No recording data found")
+            except Exception as e:
+                print(f"[WARN]   Error checking instance {uuid}: {e}")
+
+        if not valid_recordings:
+            print(f"[ERROR] No valid recordings found with duration >= {min_duration_minutes} minutes")
+            return None
+
+        # Sort by duration (longest first) and return the best
+        valid_recordings.sort(key=lambda x: x['duration'], reverse=True)
+        best_recording = valid_recordings[0]
+
+        print(f"[INFO] Selected best recording: {best_recording['duration']} minutes from {best_recording['start_time']}")
+        return best_recording['data']
+
+    except Exception as e:
+        print(f"[ERROR] Failed to check meeting instances: {e}")
+        return None
+
+def download_zoom_recording(meeting_id, min_duration_minutes=15, target_start_time=None, tolerance_minutes=120, recording_info=None):
+    """Download Zoom recording MP4 file to temp location"""
+    if recording_info is None:
+        recording_info = find_best_youtube_recording(meeting_id, min_duration_minutes, target_start_time, tolerance_minutes)
+
+    if not recording_info or 'recording_files' not in recording_info:
+        return None
+
+    # Define video quality priority
+    video_recording_types_priority = [
+        "shared_screen_with_speaker_view",
+        "shared_screen_with_gallery_view",
+        "speaker_view",
+        "gallery_view",
+        "shared_screen"
+    ]
+
+    best_video_file = None
+
+    # Try each priority level until we find a video
+    for preferred_type in video_recording_types_priority:
+        for file in recording_info['recording_files']:
+            if (file.get('file_type') == 'MP4' and
+                file.get('download_url') and
+                recording_type_matches(file.get('recording_type', ''), preferred_type)):
+                best_video_file = file
+                print(f"[DEBUG] Selected priority video: {file.get('recording_type', preferred_type)}")
+                break
+        if best_video_file:
+            break
+
+    # Fallback: If no prioritized video found, use any MP4
+    if best_video_file is None:
+        for file in recording_info['recording_files']:
+            if file.get('file_type') == 'MP4' and file.get('download_url'):
+                best_video_file = file
+                print(f"[DEBUG] Using fallback video type: {file.get('recording_type', 'unknown')}")
+                break
+
+    if best_video_file is None:
+        print(f"[ERROR] No MP4 video files with download URLs found for meeting {meeting_id}")
+        return None
+
+    download_url = best_video_file['download_url']
+    recording_type = best_video_file.get('recording_type', 'unknown')
+    file_size = best_video_file.get('file_size', 'unknown')
+
+    print(f"[INFO] Downloading video: type={recording_type}, size={file_size}")
+
+    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".mp4")
+    headers = {
+        "Authorization": f"Bearer {get_access_token()}",
+        "Content-Type": "application/json"
+    }
+
+    response = requests.get(download_url, headers=headers, stream=True)
+    if response.status_code == 200:
+        for chunk in response.iter_content(chunk_size=1024*1024):
+            if chunk:
+                temp_file.write(chunk)
+        temp_file.close()
+        print(f"[SUCCESS] Downloaded video to: {temp_file.name}")
+        return temp_file.name
+    else:
+        print(f"[ERROR] Failed to download video: HTTP {response.status_code}")
+        temp_file.close()
+        os.unlink(temp_file.name)  # Clean up failed download
+        return None
+
+
+def assign_breakout_playlists(video_id, call_series_key):
+    """Assign a breakout video to all playlists configured for its parent series."""
+    results = add_video_to_appropriate_playlist(video_id, call_series_key)
+    return bool(results) and all(result is not None for result in results)
+
+
+def upload_breakout_recording(
+    call_series_key,
+    occurrence_issue_number,
+    breakout_label,
+    breakout_meeting_id,
+    error_collector=None,
+    min_duration=15,
+):
+    """Upload one breakout recording as a separate raw YouTube video."""
+    mapping = load_meeting_topic_mapping()
+    matched_occurrence, occurrence_index = find_occurrence_with_index(
+        call_series_key,
+        occurrence_issue_number,
+        mapping,
+    )
+    if matched_occurrence is None:
+        print(
+            f"[ERROR] Occurrence #{occurrence_issue_number} not found "
+            f"for breakout '{breakout_label}'"
+        )
+        return False
+
+    if matched_occurrence.get("skip_youtube_upload", False):
+        print(
+            f"  -> Skipping '{breakout_label}' breakout: occurrence marked "
+            "skip_youtube_upload"
+        )
+        return None
+
+    state = get_breakout_youtube_state(matched_occurrence, breakout_label)
+    existing_video_id = state.get("youtube_video_id")
+    if (
+        existing_video_id
+        and state.get("playlist_assignment_processed") is False
+    ):
+        if assign_breakout_playlists(existing_video_id, call_series_key):
+            state["playlist_assignment_processed"] = True
+            save_meeting_topic_mapping(mapping)
+            return True
+        error_message = (
+            f"❌ Playlist assignment failed for '{breakout_label}' breakout "
+            f"video {existing_video_id}."
+        )
+        if error_collector is not None:
+            error_collector.append(error_message)
+        return False
+
+    if state.get("youtube_upload_processed") or existing_video_id:
+        print(f"  -> Skipping '{breakout_label}' breakout: already uploaded")
+        return None
+
+    attempt_count = state.get("upload_attempt_count", 0)
+    if attempt_count >= 10:
+        print(f"  -> Skipping '{breakout_label}' breakout: max upload attempts reached")
+        return None
+
+    recording_info = select_breakout_recording(
+        zoom,
+        matched_occurrence,
+        str(breakout_meeting_id),
+        min_duration,
+        required_file_types={"MP4"},
+    )
+    if not recording_info:
+        print(
+            f"[SKIP] No unambiguous '{breakout_label}' breakout MP4 "
+            f"with minimum {min_duration} minutes"
+        )
+        return None
+
+    video_path = download_zoom_recording(
+        str(breakout_meeting_id),
+        min_duration_minutes=min_duration,
+        recording_info=recording_info,
+    )
+    if not video_path:
+        print(f"[SKIP] No MP4 available for '{breakout_label}' breakout")
+        return None
+
+    occurrence_state = mapping[call_series_key]["occurrences"][occurrence_index]
+    state = ensure_breakout_youtube_state(occurrence_state, breakout_label)
+    state["upload_attempt_count"] = attempt_count + 1
+    state["playlist_assignment_processed"] = False
+    save_meeting_topic_mapping(mapping)
+
+    parent_title = matched_occurrence.get(
+        "issue_title",
+        f"Meeting issue {occurrence_issue_number}",
+    )
+    video_title = derive_breakout_youtube_title(
+        call_series_key, parent_title, breakout_label
+    )
+
+    try:
+        youtube = get_authenticated_service()
+        media = googleapiclient.http.MediaFileUpload(
+            video_path,
+            chunksize=-1,
+            resumable=True,
+        )
+        response = youtube.videos().insert(
+            part="snippet,status",
+            body={
+                "snippet": {
+                    "title": video_title,
+                    "categoryId": "28",
+                },
+                "status": {"privacyStatus": "public"},
+            },
+            media_body=media,
+        ).execute()
+
+        video_id = response["id"]
+        state["youtube_video_id"] = video_id
+        state["youtube_upload_processed"] = True
+        save_meeting_topic_mapping(mapping)
+
+        youtube_link = f"https://youtu.be/{video_id}"
+        print(f"Uploaded '{breakout_label}' breakout to YouTube: {youtube_link}")
+
+        if os.path.exists(UPLOAD_THUMBNAIL_PATH):
+            try:
+                youtube.thumbnails().set(
+                    videoId=video_id,
+                    media_body=googleapiclient.http.MediaFileUpload(
+                        UPLOAD_THUMBNAIL_PATH
+                    ),
+                ).execute()
+            except Exception as thumbnail_error:
+                print(f"[WARN] Failed to set breakout thumbnail: {thumbnail_error}")
+
+        if assign_breakout_playlists(video_id, call_series_key):
+            state["playlist_assignment_processed"] = True
+            save_meeting_topic_mapping(mapping)
+        else:
+            print(
+                f"[WARN] Failed to add '{breakout_label}' breakout video "
+                f"to playlists for {call_series_key}"
+            )
+
+        discourse_topic_id = matched_occurrence.get("discourse_topic_id")
+        if discourse_topic_id:
+            discourse.create_post(
+                topic_id=discourse_topic_id,
+                body=(
+                    f"{breakout_label.upper()} breakout YouTube recording "
+                    f"available: {youtube_link}"
+                ),
+            )
+
+        if rss_utils:
+            try:
+                # rss_utils currently resolves the series by its mapping key.
+                rss_utils.add_notification_to_meeting(
+                    call_series_key,
+                    occurrence_issue_number,
+                    "youtube_upload",
+                    f"{breakout_label.upper()} breakout recording uploaded: {video_title}",
+                    youtube_link,
+                )
+            except Exception as rss_error:
+                print(f"Failed to update RSS feed for breakout: {rss_error}")
+
+        notification = (
+            f"✅ YouTube Upload Successful!\n\n"
+            f"Title: {video_title}\n"
+            f"URL: {youtube_link}"
+        )
+        try:
+            telegram_message_id = matched_occurrence.get("telegram_message_id")
+            if telegram_message_id:
+                tg.send_message(notification, reply_to_message_id=telegram_message_id)
+            else:
+                tg.send_message(notification)
+        except Exception as telegram_error:
+            print(f"Error sending Telegram breakout notification: {telegram_error}")
+
+        try:
+            mattermost_notify.send_mattermost_notification(notification)
+        except Exception as mattermost_error:
+            print(f"Error sending Mattermost breakout notification: {mattermost_error}")
+
+        return True
+    except HttpError as error:
+        error_text = getattr(error, "content", None) or str(error)
+        error_message = (
+            f"❌ YouTube upload failed for '{breakout_label}' breakout meeting "
+            f"{breakout_meeting_id} (issue #{occurrence_issue_number}).\n"
+            f"Error: {error_text}"
+        )
+        if error_collector is not None:
+            error_collector.append(error_message)
+        else:
+            tg.send_message(error_message)
+        return False
+    finally:
+        try:
+            os.unlink(video_path)
+        except FileNotFoundError:
+            pass
+
+
+def upload_breakouts_for_occurrence(
+    call_series_key,
+    occurrence_issue_number,
+    error_collector=None,
+    min_duration=15,
+):
+    """Attempt every configured breakout upload for one parent occurrence."""
+    mapping = load_meeting_topic_mapping()
+    series_entry = mapping.get(call_series_key) or {}
+    results = []
+    for breakout_label, breakout_meeting_id in iter_breakout_meetings(series_entry):
+        result = upload_breakout_recording(
+            call_series_key,
+            occurrence_issue_number,
+            breakout_label,
+            breakout_meeting_id,
+            error_collector=error_collector,
+            min_duration=min_duration,
+        )
+        results.append(result)
+    return results
+
+
+def get_latest_past_occurrence(occurrences, now=None):
+    """Return the latest occurrence whose scheduled start is not in the future."""
+    now = now or datetime.now(timezone.utc)
+    past_occurrences = []
+    for occurrence in occurrences:
+        start_time = parse_zoom_time(occurrence.get("start_time"))
+        if start_time is not None and start_time <= now:
+            past_occurrences.append((start_time, occurrence))
+    if not past_occurrences:
+        return None
+    return max(past_occurrences, key=lambda item: item[0])[1]
+
+
+def is_recent_past_occurrence(
+    occurrence,
+    now=None,
+    lookback_days=BREAKOUT_UPLOAD_LOOKBACK_DAYS,
+):
+    """Return whether an occurrence is eligible for automatic breakout retries."""
+    now = now or datetime.now(timezone.utc)
+    start_time = parse_zoom_time(occurrence.get("start_time"))
+    if start_time is None or start_time > now:
+        return False
+    return start_time >= now - timedelta(days=lookback_days)
+
+
+def upload_recording(meeting_id, occurrence_issue_number=None, error_collector=None, min_duration=15):
+    """Uploads Zoom recording to YouTube for a specific occurrence.
+
+    Returns:
+        True: Successfully uploaded
+        False: Failed with error (should be reported)
+        None: Expected skip (should not be reported)
+    """
+
+    # Ensure meeting_id is a string
+    meeting_id = str(meeting_id)
+
+    youtube = get_authenticated_service()
+    mapping = load_meeting_topic_mapping()
+
+    series_entry = find_meeting_by_id(meeting_id, mapping)
+
+    if not series_entry:
+        print(f"[ERROR] Meeting ID {meeting_id} not found in mapping.")
+        error_msg = f"❌ YouTube upload aborted: Unknown meeting_id {meeting_id} in mapping."
+        if error_collector is not None:
+            error_collector.append(error_msg)
+        else:
+            tg.send_message(error_msg)
+        return False # Indicate failure
+
+    # Find the specific occurrence
+    if occurrence_issue_number is None:
+        # Try to find the most recent occurrence if not specified (best effort)
+        if series_entry.get("occurrences"):
+            matched_occurrence = series_entry["occurrences"][-1] # Assume last is latest
+            occurrence_index = len(series_entry["occurrences"]) - 1
+            occurrence_issue_number = matched_occurrence.get("issue_number", "[Unknown]")
+            print(f"[WARN] occurrence_issue_number not provided, attempting upload for latest occurrence: Issue #{occurrence_issue_number}")
+        else:
+            print(f"[ERROR] No occurrences found for meeting {meeting_id} and occurrence_issue_number not specified.")
+            return False
+    else:
+        # Resolve call series key from meeting_id, then locate the occurrence within mapping
+        call_series_key = find_call_series_by_meeting_id(meeting_id, occurrence_issue_number, mapping)
+        if not call_series_key:
+            print(f"[ERROR] Could not find call series for meeting {meeting_id}")
+            return False
+        matched_occurrence, occurrence_index = find_occurrence_with_index(call_series_key, occurrence_issue_number, mapping)
+
+    if matched_occurrence is None:
+        print(f"[ERROR] Occurrence with issue number {occurrence_issue_number} not found for meeting ID {meeting_id}.")
+        error_msg = f"❌ YouTube upload aborted: Occurrence #{occurrence_issue_number} not found for meeting {meeting_id}."
+        if error_collector is not None:
+            error_collector.append(error_msg)
+        else:
+            tg.send_message(error_msg)
+        return False # Indicate failure
+
+    # --- Use occurrence-specific data ---
+    print(f"Processing YouTube upload for Meeting ID {meeting_id}, Occurrence Issue #{occurrence_issue_number}")
+
+    # Check if this occurrence should skip YouTube upload
+    if matched_occurrence.get("skip_youtube_upload", False):
+        print(f"  -> Skipping: Occurrence marked as skip_youtube_upload.")
+        # Mark as processed anyway so we don't retry?
+        # mapping[meeting_id]["occurrences"][occurrence_index]["youtube_upload_processed"] = True # Or leave as is?
+        # save_meeting_topic_mapping(mapping) # No commit here, let poll script handle batch commit
+        return None # Expected skip, don't report
+
+    # Check attempt counter within the occurrence
+    attempt_count = matched_occurrence.get("upload_attempt_count", 0)
+    if attempt_count >= 10:
+        print(f"  -> Skipping: Max upload attempts reached for occurrence.")
+        return None # Expected skip after max retries, don't report
+
+    # Find the series key for this meeting ID
+    call_series_key = find_call_series_by_meeting_id(meeting_id, occurrence_issue_number, mapping)
+    if not call_series_key:
+        print(f"[ERROR] Could not find call series for meeting {meeting_id}")
+        return False
+
+    # Increment attempt count immediately
+    mapping[call_series_key]["occurrences"][occurrence_index]["upload_attempt_count"] = attempt_count + 1
+    save_meeting_topic_mapping(mapping) # Save attempt count increment
+
+    # Only proceed if not already processed
+    if matched_occurrence.get("youtube_upload_processed"):
+        print(f"  -> Skipping: YouTube upload already processed for occurrence.")
+        return None # Expected skip, already processed
+
+    video_title = matched_occurrence.get("issue_title", f"Meeting {meeting_id} - Issue {occurrence_issue_number}")
+    video_description = (
+        f"Recording of {video_title}\n\n"
+        f"Original Zoom Meeting ID: {meeting_id}"
+        f"\nGitHub Issue: https://github.com/{os.environ.get('GITHUB_REPOSITORY', '')}/issues/{occurrence_issue_number}" # Add link to specific issue
+    )
+
+    # Get the occurrence's expected start time for filtering recordings
+    occurrence_start_time = matched_occurrence.get("start_time")
+
+    # Check recording duration before downloading
+    recording_info = None
+    try:
+        recording_info = find_best_youtube_recording(
+            meeting_id,
+            min_duration_minutes=min_duration,
+            target_start_time=occurrence_start_time,
+            tolerance_minutes=120,
+        )
+        if not recording_info:
+            print(f"[SKIP] No recording found with minimum {min_duration} minutes duration")
+            print(f"  -> Expected skip: Recording may not be ready yet or meeting was cancelled")
+            # This is an expected case - don't report to Telegram
+            return None # Expected skip, don't report
+        else:
+            recording_duration = recording_info.get('duration', 0)
+            print(f"[INFO] Found suitable recording: {recording_duration} minutes")
+    except Exception as e:
+        print(f"[WARN] Could not check recording duration for meeting {meeting_id}: {e}")
+        # Continue with download attempt if we can't check duration
+
+    video_path = download_zoom_recording(
+        meeting_id,
+        min_duration_minutes=min_duration,
+        target_start_time=occurrence_start_time,
+        tolerance_minutes=120,
+        recording_info=recording_info,
+    )
+    if not video_path:
+        print(f"[SKIP] No MP4 recording available for meeting {meeting_id}")
+        print(f"  -> Expected skip: Recording may not be ready yet or meeting was cancelled")
+        # This is an expected case - don't report to Telegram
+        return None # Expected skip, don't report
+
+    try:
+        title = video_title
+        description = video_description
+
+        request_body = {
+            'snippet': {
+                'title': title,
+                'description': description,
+                'categoryId': '28'
+            },
+            'status': {
+                'privacyStatus': 'public',
+            }
+        }
+
+        media = googleapiclient.http.MediaFileUpload(video_path, chunksize=-1, resumable=True)
+        response = youtube.videos().insert(
+            part="snippet,status",
+            body=request_body,
+            media_body=media
+        ).execute()
+
+        # --- Update occurrence flags in mapping ---
+        mapping[call_series_key]["occurrences"][occurrence_index]["youtube_video_id"] = response['id']
+        mapping[call_series_key]["occurrences"][occurrence_index]["youtube_upload_processed"] = True
+        # Reset attempt count on success
+        # mapping[call_series_key]["occurrences"][occurrence_index]["upload_attempt_count"] = 0 # Optional reset
+
+        save_meeting_topic_mapping(mapping)
+
+        youtube_link = f"https://youtu.be/{response['id']}"
+        print(f"Uploaded YouTube video: {youtube_link}")
+
+        # Set custom thumbnail for uploaded recording
+        if os.path.exists(UPLOAD_THUMBNAIL_PATH):
+            try:
+                print(f"[DEBUG] Setting custom thumbnail for video {response['id']} from {UPLOAD_THUMBNAIL_PATH}")
+                thumbnail_response = youtube.thumbnails().set(
+                    videoId=response['id'],
+                    media_body=googleapiclient.http.MediaFileUpload(UPLOAD_THUMBNAIL_PATH)
+                ).execute()
+                print(f"[INFO] Successfully set custom thumbnail: {thumbnail_response['items'][0]['default']['url']}")
+            except Exception as thumb_error:
+                print(f"[WARN] Failed to set custom thumbnail: {thumb_error}")
+        else:
+            print(f"[DEBUG] No thumbnail file at {UPLOAD_THUMBNAIL_PATH}, using YouTube auto-generated thumbnail")
+
+        # Add video to appropriate playlist; must be done after upload is successful
+        call_series = series_entry.get("call_series")
+        if call_series:
+            print(f"[DEBUG] Adding video {response['id']} to playlist(s) for call_series: {call_series}")
+            playlist_results = add_video_to_appropriate_playlist(response['id'], call_series)
+            if playlist_results:
+                print(f"[INFO] Successfully added video to {len(playlist_results)} playlist(s) for {call_series}")
+            else:
+                print(f"[WARN] Failed to add video to any playlist for {call_series}")
+        else:
+            print(f"[WARN] No call_series found for meeting {meeting_id}, skipping playlist assignment")
+
+        # Post to Discourse (if applicable)
+        discourse_topic_id = matched_occurrence.get("discourse_topic_id")
+        if discourse_topic_id:
+            post_body = f"YouTube recording available: {youtube_link}"
+
+            discourse.create_post(
+                topic_id=discourse_topic_id,
+                body=post_body # Use the simplified body
+            )
+
+        # --- Update RSS feed for this occurrence ---
+        if rss_utils:
+            try:
+                rss_utils.add_notification_to_meeting(
+                    meeting_id,
+                    occurrence_issue_number, # Pass issue number to identify occurrence
+                    "youtube_upload",
+                    f"Meeting recording uploaded: {video_title}",
+                    youtube_link
+                )
+                print(f"Updated RSS feed with YouTube video for occurrence #{occurrence_issue_number}")
+            except Exception as e:
+                print(f"Failed to update RSS feed: {e}")
+
+        # Send Telegram notification similar to handle_issue
+        try:
+            # Find the specific occurrence to get the telegram message ID
+            occurrence_telegram_message_id = matched_occurrence.get("telegram_message_id")
+
+            telegram_message = (
+                f"✅ YouTube Upload Successful!\n\n"
+                f"Title: {video_title}\n"
+                f"URL: {youtube_link}"
+            )
+            # Reply to the original occurrence announcement if possible
+            if occurrence_telegram_message_id:
+                tg.send_message(telegram_message, reply_to_message_id=occurrence_telegram_message_id)
+            else:
+                tg.send_message(telegram_message)
+            print("Telegram notification sent for YouTube upload.")
+        except Exception as e:
+            print(f"Error sending Telegram message for YouTube upload: {e}")
+
+        try:
+            mattermost_notify.send_mattermost_notification(telegram_message)
+        except Exception as e:
+            print(f"Error sending Mattermost message for YouTube upload: {e}")
+
+        return True # Indicate success
+    except HttpError as e:
+        print(f"YouTube API error: {e}")
+        err_text = getattr(e, 'content', None) or str(e)
+        error_msg = f"❌ YouTube upload failed for meeting {meeting_id} (issue #{occurrence_issue_number}).\nError: {err_text}"
+        if error_collector is not None:
+            error_collector.append(error_msg)
+        else:
+            tg.send_message(error_msg)
+        return False # Indicate failure
+    finally:
+        os.unlink(video_path)  # Clean up temp file
+
+def main():
+    parser = argparse.ArgumentParser(description="Upload Zoom recording to YouTube")
+    parser.add_argument("--meeting_id", required=False, help="Zoom meeting ID to process")
+    parser.add_argument("--occurrence_issue_number", required=False, type=int, help="Issue number of the specific occurrence to upload (requires --meeting_id)")
+    parser.add_argument("--min-duration", type=int, default=15, help="Minimum meeting duration in minutes to process (default: 15, set to 0 to process all)")
+    args = parser.parse_args()
+
+    # Handle case where specific occurrence is provided
+    if args.meeting_id and args.occurrence_issue_number:
+        print(f"Attempting upload for specific occurrence: Meeting ID {args.meeting_id}, Issue #{args.occurrence_issue_number}")
+        try:
+            upload_recording(args.meeting_id, args.occurrence_issue_number, min_duration=args.min_duration)
+        except Exception as e:
+            print(f"Failed to process specific occurrence {args.meeting_id} / {args.occurrence_issue_number}: {e}")
+        try:
+            mapping = load_meeting_topic_mapping()
+            call_series_key = find_call_series_by_meeting_id(
+                str(args.meeting_id),
+                args.occurrence_issue_number,
+                mapping,
+            )
+            if call_series_key:
+                upload_breakouts_for_occurrence(
+                    call_series_key,
+                    args.occurrence_issue_number,
+                    min_duration=args.min_duration,
+                )
+        except Exception as e:
+            print(
+                f"Failed to process breakouts for {args.meeting_id} / "
+                f"{args.occurrence_issue_number}: {e}"
+            )
+        return # Exit after processing specific occurrence
+
+    # Handle case where only meeting_id is provided (legacy or manual run?)
+    if args.meeting_id and not args.occurrence_issue_number:
+        print(f"[WARN] Only --meeting_id provided. Attempting upload for the LATEST occurrence of {args.meeting_id}.")
+        try:
+            upload_recording(args.meeting_id, min_duration=args.min_duration) # Will try latest occurrence by default
+        except Exception as e:
+            print(f"Failed to process latest occurrence for {args.meeting_id}: {e}")
+        try:
+            mapping = load_meeting_topic_mapping()
+            call_series_key = find_call_series_by_meeting_id(
+                str(args.meeting_id),
+                0,
+                mapping,
+            )
+            series_entry = mapping.get(call_series_key, {}) if call_series_key else {}
+            occurrences = series_entry.get("occurrences", [])
+            if call_series_key and occurrences:
+                latest_occurrence = get_latest_past_occurrence(occurrences)
+                latest_issue_number = (
+                    latest_occurrence.get("issue_number")
+                    if latest_occurrence else None
+                )
+                if latest_issue_number:
+                    upload_breakouts_for_occurrence(
+                        call_series_key,
+                        latest_issue_number,
+                        min_duration=args.min_duration,
+                    )
+        except Exception as e:
+            print(f"Failed to process latest breakouts for {args.meeting_id}: {e}")
+        return
+
+    # Handle case where NO arguments are provided (check mapping)
+    if not args.meeting_id and not args.occurrence_issue_number:
+        print("No meeting ID provided - checking mapping for unprocessed meetings")
+        mapping = load_meeting_topic_mapping()
+
+        # Collect all errors to send as a single aggregated message
+        error_messages = []
+        success_count = 0
+        processed_count = 0
+
+        for call_series_key, series_data in mapping.items():
+            if "occurrences" in series_data:
+                has_breakouts = any(iter_breakout_meetings(series_data))
+                for occurrence in series_data["occurrences"]:
+                    occ_issue_num = occurrence.get("issue_number")
+                    yt_processed = occurrence.get("youtube_upload_processed", False)
+                    yt_skipped = occurrence.get("skip_youtube_upload", False)
+
+                    # Get the effective meeting ID for this occurrence (series-level)
+                    effective_meeting_id = str(series_data.get("meeting_id", "")).strip()
+
+                    # Skip if meeting_id isn't a real Zoom ID yet
+                    if not effective_meeting_id or effective_meeting_id.lower() in ("pending", "custom") or effective_meeting_id.startswith("placeholder"):
+                        continue
+
+                    # Date validation to prevent uploading videos for future meetings
+                    meeting_start_time_str = occurrence.get("start_time")
+                    if meeting_start_time_str:
+                        try:
+                            # Parse the meeting start time
+                            meeting_start_time = datetime.fromisoformat(meeting_start_time_str.replace('Z', '+00:00'))
+                            current_time = datetime.now(timezone.utc)
+
+                            # Only process meetings that ended at least 15 minutes ago to ensure recording is available
+                            meeting_duration = occurrence.get("duration", 60)  # Default 60 minutes if not specified
+                            meeting_end_time = meeting_start_time + timedelta(minutes=meeting_duration)
+                            time_since_meeting_end = current_time - meeting_end_time
+
+                            if current_time < meeting_start_time:
+                                print(f"[SKIP] Future meeting: Issue #{occ_issue_num}, starts {meeting_start_time} (in {meeting_start_time - current_time})")
+                                continue
+                            elif time_since_meeting_end < timedelta(minutes=15):
+                                print(f"[SKIP] Recent meeting: Issue #{occ_issue_num}, ended {time_since_meeting_end} ago (waiting for recording to be ready)")
+                                continue
+                            else:
+                                print(f"[INFO] Meeting eligible for upload: Issue #{occ_issue_num}, ended {time_since_meeting_end} ago")
+                        except (ValueError, TypeError) as e:
+                            print(f"[WARN] Could not parse start_time '{meeting_start_time_str}' for issue #{occ_issue_num}, skipping upload: {e}")
+                            continue
+                    else:
+                        print(f"[WARN] No start_time found for issue #{occ_issue_num}, proceeding without date validation")
+
+                    if not yt_skipped and not yt_processed and occ_issue_num and effective_meeting_id:
+                        print(f"\nProcessing occurrence from mapping: Meeting ID {effective_meeting_id}, Issue #{occ_issue_num}")
+                        try:
+                            result = upload_recording(effective_meeting_id, occ_issue_num, error_collector=error_messages, min_duration=args.min_duration)
+                            if result is True:
+                                # Successful upload
+                                success_count += 1
+                                processed_count += 1
+                            elif result is False:
+                                # Failed upload (real error)
+                                processed_count += 1
+                            # else: result is None - expected skip, don't count as processed
+                        except Exception as e:
+                            print(f"Failed to process {effective_meeting_id} / {occ_issue_num}: {e}")
+                            error_messages.append(f"❌ YouTube upload failed for meeting {effective_meeting_id} (issue #{occ_issue_num}): {str(e)}")
+                            processed_count += 1
+
+                    # Breakout uploads are independent of parent upload state.
+                    # Keep retrying recent occurrences so a Zoom processing
+                    # delay or brief outage does not strand the prior week's
+                    # breakout when a newer parent occurrence starts.
+                    if (
+                        not yt_skipped
+                        and has_breakouts
+                        and is_recent_past_occurrence(occurrence)
+                        and occ_issue_num
+                    ):
+                        try:
+                            breakout_results = upload_breakouts_for_occurrence(
+                                call_series_key,
+                                occ_issue_num,
+                                error_collector=error_messages,
+                                min_duration=args.min_duration,
+                            )
+                            success_count += sum(
+                                result is True for result in breakout_results
+                            )
+                            processed_count += sum(
+                                result is not None for result in breakout_results
+                            )
+                        except Exception as e:
+                            print(
+                                f"Failed to process breakouts for "
+                                f"{call_series_key} / {occ_issue_num}: {e}"
+                            )
+                            error_messages.append(
+                                f"❌ YouTube breakout upload failed for "
+                                f"{call_series_key} (issue #{occ_issue_num}): {e}"
+                            )
+                            processed_count += 1
+
+        # Send aggregated message only if there were successes or real errors
+        if success_count > 0 or error_messages:
+            send_aggregated_telegram_message(error_messages, success_count, processed_count)
+
+def send_aggregated_telegram_message(error_messages, success_count, processed_count):
+    """Send a single aggregated Telegram message for batch YouTube upload operations."""
+    if not error_messages and success_count == 0:
+        return  # Nothing to report
+
+    # Group similar error messages
+    error_groups = {}
+    for error in error_messages:
+        if "Unknown meeting_id" in error and "in mapping" in error:
+            key = "unknown_meeting_ids"
+            if key not in error_groups:
+                error_groups[key] = []
+            # Extract meeting ID from the error message
+            meeting_id = error.split("meeting_id ")[1].split(" in mapping")[0] if "meeting_id " in error else "Unknown"
+            # Skip reporting "None" or empty meeting IDs - these are expected for pending/placeholder entries
+            if meeting_id and meeting_id.lower() not in ("none", "unknown", "null", ""):
+                error_groups[key].append(meeting_id)
+        elif "No MP4 recording available" in error:
+            key = "no_mp4_recordings"
+            if key not in error_groups:
+                error_groups[key] = []
+            # Extract meeting ID and issue number
+            if "meeting " in error and "(issue #" in error:
+                meeting_part = error.split("meeting ")[1].split(" (issue #")[0]
+                issue_part = error.split("(issue #")[1].split(")")[0]
+                error_groups[key].append(f"{meeting_part} (issue #{issue_part})")
+        elif "YouTube upload failed" in error:
+            key = "upload_failures"
+            if key not in error_groups:
+                error_groups[key] = []
+            # Extract meeting ID and issue number
+            if "meeting " in error and "(issue #" in error:
+                meeting_part = error.split("meeting ")[1].split(" (issue #")[0]
+                issue_part = error.split("(issue #")[1].split(")")[0]
+                error_groups[key].append(f"{meeting_part} (issue #{issue_part})")
+        else:
+            # Other errors - keep individual
+            key = "other_errors"
+            if key not in error_groups:
+                error_groups[key] = []
+            error_groups[key].append(error)
+
+    # Build the aggregated message
+    message_parts = []
+
+    if error_groups:
+        if "unknown_meeting_ids" in error_groups and error_groups["unknown_meeting_ids"]:
+            count = len(error_groups["unknown_meeting_ids"])
+            message_parts.append(f"❌ **Unknown meeting IDs ({count}):**")
+            # Show first few, then summarize if many
+            if count <= 5:
+                for meeting_id in error_groups["unknown_meeting_ids"]:
+                    message_parts.append(f"  • {meeting_id}")
+            else:
+                for meeting_id in error_groups["unknown_meeting_ids"][:3]:
+                    message_parts.append(f"  • {meeting_id}")
+                message_parts.append(f"  • ... and {count - 3} more")
+            message_parts.append("")
+
+        if "no_mp4_recordings" in error_groups:
+            count = len(error_groups["no_mp4_recordings"])
+            message_parts.append(f"❌ **No MP4 recordings available ({count}):**")
+            if count <= 5:
+                for meeting_info in error_groups["no_mp4_recordings"]:
+                    message_parts.append(f"  • {meeting_info}")
+            else:
+                for meeting_info in error_groups["no_mp4_recordings"][:3]:
+                    message_parts.append(f"  • {meeting_info}")
+                message_parts.append(f"  • ... and {count - 3} more")
+            message_parts.append("")
+
+        if "upload_failures" in error_groups:
+            count = len(error_groups["upload_failures"])
+            message_parts.append(f"❌ **Upload failures ({count}):**")
+            if count <= 5:
+                for meeting_info in error_groups["upload_failures"]:
+                    message_parts.append(f"  • {meeting_info}")
+            else:
+                for meeting_info in error_groups["upload_failures"][:3]:
+                    message_parts.append(f"  • {meeting_info}")
+                message_parts.append(f"  • ... and {count - 3} more")
+            message_parts.append("")
+
+        if "other_errors" in error_groups:
+            message_parts.append(f"❌ **Other errors ({len(error_groups['other_errors'])}):**")
+            for error in error_groups["other_errors"][:3]:  # Limit to first 3
+                message_parts.append(f"  • {error}")
+            if len(error_groups["other_errors"]) > 3:
+                message_parts.append(f"  • ... and {len(error_groups['other_errors']) - 3} more")
+
+    elif success_count > 0:
+        message_parts.append(f"✅ **All {success_count} YouTube uploads completed successfully!**")
+
+    # Send the message if there's content
+    if message_parts:
+        final_message = "\n".join(message_parts)
+        try:
+            tg.send_message(final_message)
+            print(f"Sent aggregated Telegram message for {processed_count} operations")
+        except Exception as e:
+            print(f"Failed to send aggregated Telegram message: {e}")
+
+if __name__ == "__main__":
+    main()

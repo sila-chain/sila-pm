@@ -1,0 +1,578 @@
+"""
+Unit tests for mapping_manager.py module.
+"""
+
+import pytest
+import json
+import os
+import tempfile
+from unittest.mock import patch, mock_open
+from modules.mapping_manager import MappingManager
+
+
+class TestMappingManager:
+    """Test cases for MappingManager class."""
+
+    def test_default_mapping_loads_project_mapping_from_any_cwd(self, tmp_path, monkeypatch):
+        """MappingManager should load the canonical mapping regardless of process cwd."""
+        monkeypatch.chdir(tmp_path)
+
+        manager = MappingManager()
+
+        assert manager.mapping
+
+    def test_init_with_custom_path(self, temp_mapping_file):
+        """Test initialization with custom mapping file path."""
+        manager = MappingManager(temp_mapping_file)
+        assert manager.mapping_file_path == temp_mapping_file
+
+    def test_load_mapping_existing_file(self, temp_mapping_file):
+        """Test loading existing mapping file."""
+        # Create a test mapping file
+        test_mapping = {"test": "data", "acde": {"call_series": "acde"}}
+        with open(temp_mapping_file, 'w') as f:
+            json.dump(test_mapping, f)
+
+        manager = MappingManager(temp_mapping_file)
+        assert manager.mapping == test_mapping
+
+    def test_load_mapping_nonexistent_file(self):
+        """Test loading nonexistent mapping file."""
+        manager = MappingManager("/nonexistent/path/mapping.json")
+        assert manager.mapping == {}
+
+    def test_load_mapping_invalid_json(self, temp_mapping_file):
+        """Test loading mapping file with invalid JSON."""
+        # Create file with invalid JSON
+        with open(temp_mapping_file, 'w') as f:
+            f.write('{"invalid": json}')
+
+        manager = MappingManager(temp_mapping_file)
+        # Should handle gracefully and return empty dict
+        assert manager.mapping == {}
+
+    def test_save_mapping_success(self, temp_mapping_file):
+        """Test successful mapping save."""
+        manager = MappingManager(temp_mapping_file)
+        test_mapping = {"acde": {"call_series": "acde", "meeting_id": "123"}}
+        manager.mapping = test_mapping
+
+        success = manager.save_mapping()
+        assert success is True
+
+        # Verify file was written
+        with open(temp_mapping_file, 'r') as f:
+            saved_mapping = json.load(f)
+        assert saved_mapping == test_mapping
+
+    def test_save_mapping_directory_not_exists(self):
+        """Test save_mapping fails when directory doesn't exist."""
+        manager = MappingManager("/nonexistent/dir/mapping.json")
+        success = manager.save_mapping()
+        assert success is False
+
+    def test_save_mapping_permission_error(self, temp_mapping_file):
+        """Test save_mapping with permission error."""
+        manager = MappingManager(temp_mapping_file)
+
+        # Make file read-only
+        os.chmod(temp_mapping_file, 0o444)
+
+        success = manager.save_mapping()
+        assert success is False
+
+    def test_add_occurrence_recurring_series_new(self, temp_mapping_file):
+        """Test adding occurrence to new recurring series."""
+        manager = MappingManager(temp_mapping_file)
+        occurrence_data = {
+            "issue_number": 1462,
+            "issue_title": "Test Meeting",
+            "start_time": "2025-04-24T14:00:00Z",
+            "duration": 90
+        }
+
+        success = manager.add_occurrence("acde", occurrence_data)
+        assert success is True
+        assert "acde" in manager.mapping
+        assert manager.mapping["acde"]["call_series"] == "acde"
+        assert len(manager.mapping["acde"]["occurrences"]) == 1
+        assert manager.mapping["acde"]["occurrences"][0]["issue_number"] == 1462
+
+    def test_add_occurrence_recurring_series_existing(self, temp_mapping_file):
+        """Test adding occurrence to existing recurring series."""
+        manager = MappingManager(temp_mapping_file)
+
+        # Add first occurrence
+        occurrence_data1 = {
+            "issue_number": 1462,
+            "issue_title": "Test Meeting 1",
+            "start_time": "2025-04-24T14:00:00Z",
+            "duration": 90
+        }
+        success = manager.add_occurrence("acde", occurrence_data1)
+        assert success is True
+
+        # Add second occurrence
+        occurrence_data2 = {
+            "issue_number": 1463,
+            "issue_title": "Test Meeting 2",
+            "start_time": "2025-05-08T14:00:00Z",
+            "duration": 90
+        }
+        success = manager.add_occurrence("acde", occurrence_data2)
+        assert success is True
+
+        # Verify both occurrences exist
+        assert len(manager.mapping["acde"]["occurrences"]) == 2
+        assert manager.mapping["acde"]["occurrences"][0]["issue_number"] == 1462
+        assert manager.mapping["acde"]["occurrences"][1]["issue_number"] == 1463
+
+    def test_add_occurrence_one_off(self, temp_mapping_file):
+        """Test adding one-off occurrence."""
+        manager = MappingManager(temp_mapping_file)
+        occurrence_data = {
+            "issue_number": 1465,
+            "issue_title": "One-off Meeting",
+            "start_time": "2025-04-24T14:00:00Z",
+            "duration": 90
+        }
+
+        success = manager.add_occurrence("one-off-1465", occurrence_data)
+        assert success is True
+        assert "one-off-1465" in manager.mapping
+        assert manager.mapping["one-off-1465"]["meeting_id"] == "pending"
+        assert manager.mapping["one-off-1465"]["occurrences"][0]["issue_number"] == 1465
+
+    def test_add_occurrence_invalid_data(self, temp_mapping_file):
+        """Test adding occurrence with invalid data."""
+        manager = MappingManager(temp_mapping_file)
+
+        # Missing required fields - the current implementation doesn't validate
+        # so this will actually succeed, which is the current behavior
+        invalid_data = {"issue_title": "Test"}
+
+        success = manager.add_occurrence("acde", invalid_data)
+        # The current implementation doesn't validate, so it succeeds
+        assert success is True
+
+    def test_update_occurrence_recurring_series(self, temp_mapping_file):
+        """Test updating occurrence in recurring series."""
+        manager = MappingManager(temp_mapping_file)
+        # This should parse successfully but return None for missing required fields
+
+        # Add occurrence first
+        occurrence_data = {
+            "issue_number": 1462,
+            "issue_title": "Test Meeting",
+            "start_time": "2025-04-24T14:00:00Z",
+            "duration": 90
+        }
+        manager.add_occurrence("acde", occurrence_data)
+
+        # Update occurrence
+        update_data = {"discourse_topic_id": 23502}
+        success = manager.update_occurrence("acde", 1462, update_data)
+        assert success is True
+
+        # Verify update
+        occurrence = manager.find_occurrence(1462)
+        assert occurrence["occurrence"]["discourse_topic_id"] == 23502
+
+    def test_update_occurrence_one_off(self, temp_mapping_file):
+        """Test updating one-off occurrence."""
+        manager = MappingManager(temp_mapping_file)
+
+        # Add one-off occurrence
+        occurrence_data = {
+            "issue_number": 1465,
+            "issue_title": "One-off Meeting",
+            "start_time": "2025-04-24T14:00:00Z",
+            "duration": 90,
+            "meeting_id": "123456789"
+        }
+        manager.add_occurrence("one-off-1465", occurrence_data)
+
+        # Update occurrence
+        update_data = {"discourse_topic_id": 23502}
+        success = manager.update_occurrence("one-off-1465", 1465, update_data)
+        assert success is True
+
+        # Verify update
+        occurrence = manager.find_occurrence(1465)
+        assert occurrence["occurrence"]["discourse_topic_id"] == 23502
+
+    def test_update_occurrence_not_found(self, temp_mapping_file):
+        """Test updating occurrence that doesn't exist."""
+        manager = MappingManager(temp_mapping_file)
+
+        update_data = {"discourse_topic_id": 23502}
+        success = manager.update_occurrence("acde", 9999, update_data)
+        assert success is False
+
+    def test_find_occurrence_recurring_series(self, temp_mapping_file):
+        """Test finding occurrence in recurring series."""
+        manager = MappingManager(temp_mapping_file)
+
+        # Add occurrence
+        occurrence_data = {
+            "issue_number": 1462,
+            "issue_title": "Test Meeting",
+            "start_time": "2025-04-24T14:00:00Z",
+            "duration": 90
+        }
+        manager.add_occurrence("acde", occurrence_data)
+
+        result = manager.find_occurrence(1462)
+        assert result is not None
+        assert result["call_series"] == "acde"
+        assert result["occurrence"]["issue_number"] == 1462
+
+    def test_find_occurrence_one_off(self, temp_mapping_file):
+        """Test finding one-off occurrence."""
+        manager = MappingManager(temp_mapping_file)
+
+        # Add one-off occurrence
+        occurrence_data = {
+            "issue_number": 1465,
+            "issue_title": "One-off Meeting",
+            "start_time": "2025-04-24T14:00:00Z",
+            "duration": 90,
+            "meeting_id": "123456789"
+        }
+        manager.add_occurrence("one-off-1465", occurrence_data)
+
+        result = manager.find_occurrence(1465)
+        assert result is not None
+        assert result["call_series"] == "one-off-1465"
+        assert result["occurrence"]["issue_number"] == 1465
+
+    def test_find_occurrence_not_found(self, temp_mapping_file):
+        """Test finding occurrence that doesn't exist."""
+        manager = MappingManager(temp_mapping_file)
+
+        result = manager.find_occurrence(9999)
+        assert result is None
+
+    def test_create_occurrence_data(self, temp_mapping_file):
+        """Test creating occurrence data."""
+        manager = MappingManager(temp_mapping_file)
+
+        occurrence_data = manager.create_occurrence_data(
+            issue_number=1462,
+            issue_title="Test Meeting",
+            discourse_topic_id=23502,
+            start_time="2025-04-24T14:00:00Z",
+            duration=90
+        )
+
+        assert occurrence_data["issue_number"] == 1462
+        assert occurrence_data["issue_title"] == "Test Meeting"
+        assert occurrence_data["discourse_topic_id"] == 23502
+        assert occurrence_data["start_time"] == "2025-04-24T14:00:00Z"
+        assert occurrence_data["duration"] == 90
+        assert occurrence_data["skip_youtube_upload"] is False
+        assert occurrence_data["skip_transcript_processing"] is False
+
+    def test_create_occurrence_data_with_optional_fields(self, temp_mapping_file):
+        """Test creating occurrence data with optional fields."""
+        manager = MappingManager(temp_mapping_file)
+
+        occurrence_data = manager.create_occurrence_data(
+            issue_number=1462,
+            issue_title="Test Meeting",
+            discourse_topic_id=23502,
+            start_time="2025-04-24T14:00:00Z",
+            duration=90,
+            skip_youtube_upload=True,
+            skip_transcript_processing=True
+        )
+
+        assert occurrence_data["skip_youtube_upload"] is True
+        assert occurrence_data["skip_transcript_processing"] is True
+
+    @pytest.mark.mapping
+    def test_mapping_persistence(self, temp_mapping_file):
+        """Test that mapping changes persist across manager instances."""
+        # Create first manager and add data
+        manager1 = MappingManager(temp_mapping_file)
+        occurrence_data = {
+            "issue_number": 1462,
+            "issue_title": "Test Meeting",
+            "start_time": "2025-04-24T14:00:00Z",
+            "duration": 90
+        }
+        success = manager1.add_occurrence("acde", occurrence_data)
+        assert success is True
+        manager1.save_mapping()
+
+        # Create second manager and verify data persists
+        manager2 = MappingManager(temp_mapping_file)
+        assert "acde" in manager2.mapping
+        assert len(manager2.mapping["acde"]["occurrences"]) == 1
+        assert manager2.mapping["acde"]["occurrences"][0]["issue_number"] == 1462
+
+    def test_new_call_series_creation(self, temp_mapping_file):
+        """Test that a new call series gets properly added to the mapping when no series previously existed."""
+        manager = MappingManager(temp_mapping_file)
+
+        # Verify epbs doesn't exist initially
+        assert "epbs" not in manager.mapping
+
+        # Create occurrence data for new epbs call series using create_occurrence_data
+        occurrence_data = manager.create_occurrence_data(
+            issue_number=2000,
+            issue_title="SIP-7732 Breakout Room #1",
+            discourse_topic_id=None,
+            start_time="2025-09-01T14:00:00Z",
+            duration=60,
+            skip_youtube_upload=False,
+            skip_transcript_processing=False
+        )
+
+        # Add occurrence to new call series
+        success = manager.add_occurrence("epbs", occurrence_data)
+        assert success is True
+
+        # Verify the call series was created with correct structure
+        assert "epbs" in manager.mapping
+        call_series_entry = manager.mapping["epbs"]
+
+        # Verify call series level fields
+        assert call_series_entry["call_series"] == "epbs"
+        assert call_series_entry["meeting_id"] == "pending"  # Initially pending
+        assert call_series_entry["occurrence_rate"] == "other"  # Default from create_occurrence_data
+        assert call_series_entry["duration"] == 60
+        assert "occurrences" in call_series_entry
+        assert len(call_series_entry["occurrences"]) == 1
+
+        # Verify occurrence level fields
+        occurrence = call_series_entry["occurrences"][0]
+        assert occurrence["occurrence_number"] == 1
+        assert occurrence["issue_number"] == 2000
+        assert occurrence["issue_title"] == "SIP-7732 Breakout Room #1"
+        assert occurrence["start_time"] == "2025-09-01T14:00:00Z"
+        assert occurrence["duration"] == 60
+        assert occurrence["skip_youtube_upload"] is False
+        assert occurrence["skip_transcript_processing"] is False
+        assert occurrence["youtube_upload_processed"] is False
+        assert occurrence["transcript_processed"] is False
+        assert occurrence["upload_attempt_count"] == 0
+        assert occurrence["transcript_attempt_count"] == 0
+        assert occurrence["telegram_message_id"] is None
+        assert occurrence["youtube_streams_posted_to_discourse"] is False
+        assert occurrence["youtube_streams"] is None
+
+        # Verify no meeting_id at occurrence level (should be at series level only)
+        assert "meeting_id" not in occurrence
+
+    def test_set_series_meeting_id_for_new_call_series(self, temp_mapping_file):
+        """Test that set_series_meeting_id correctly updates the meeting_id for a new call series."""
+        manager = MappingManager(temp_mapping_file)
+
+        # Create new call series first using create_occurrence_data
+        occurrence_data = manager.create_occurrence_data(
+            issue_number=2000,
+            issue_title="SIP-7732 Breakout Room #1",
+            discourse_topic_id=None,
+            start_time="2025-09-01T14:00:00Z",
+            duration=60,
+            skip_youtube_upload=False,
+            skip_transcript_processing=False
+        )
+
+        success = manager.add_occurrence("epbs", occurrence_data)
+        assert success is True
+
+        # Verify initial state has pending
+        assert manager.mapping["epbs"]["meeting_id"] == "pending"
+
+        # Set real meeting ID
+        real_meeting_id = "12345678901234567890"
+        success = manager.set_series_meeting_id("epbs", real_meeting_id)
+        assert success is True
+
+        # Verify meeting_id was updated at series level
+        assert manager.mapping["epbs"]["meeting_id"] == real_meeting_id
+
+        # Verify occurrence still doesn't have meeting_id
+        occurrence = manager.mapping["epbs"]["occurrences"][0]
+        assert "meeting_id" not in occurrence
+
+    def test_new_call_series_with_zoom_meeting_flow(self, temp_mapping_file):
+        """Test the complete flow of creating a new call series with Zoom meeting creation."""
+        manager = MappingManager(temp_mapping_file)
+
+        # Simulate the flow from handle_protocol_call.py
+        # 1. Create occurrence data
+        occurrence_data = manager.create_occurrence_data(
+            issue_number=2000,
+            issue_title="SIP-7732 Breakout Room #1",
+            discourse_topic_id=None,
+            start_time="2025-09-01T14:00:00Z",
+            duration=60,
+            skip_youtube_upload=False,
+            skip_transcript_processing=False
+        )
+
+        # 2. Add occurrence to new call series
+        success = manager.add_occurrence("epbs", occurrence_data)
+        assert success is True
+
+        # 3. Verify initial structure (pending meeting_id)
+        assert manager.mapping["epbs"]["meeting_id"] == "pending"
+
+        # 4. Simulate Zoom meeting creation and set real meeting ID
+        real_meeting_id = "98765432109876543210"
+        success = manager.set_series_meeting_id("epbs", real_meeting_id)
+        assert success is True
+
+        # 5. Verify final structure
+        call_series_entry = manager.mapping["epbs"]
+        assert call_series_entry["call_series"] == "epbs"
+        assert call_series_entry["meeting_id"] == real_meeting_id
+        assert call_series_entry["occurrence_rate"] == "other"  # Default from create_occurrence_data
+        assert call_series_entry["duration"] == 60
+
+        # 6. Verify occurrence structure
+        occurrence = call_series_entry["occurrences"][0]
+        assert occurrence["occurrence_number"] == 1
+        assert occurrence["issue_number"] == 2000
+        assert occurrence["issue_title"] == "SIP-7732 Breakout Room #1"
+        assert "meeting_id" not in occurrence  # Should not be at occurrence level
+
+    def test_new_call_series_with_custom_meeting_flow(self, temp_mapping_file):
+        """Test the complete flow of creating a new call series when user opts out of Zoom."""
+        manager = MappingManager(temp_mapping_file)
+
+        # Simulate the flow from handle_protocol_call.py when user opts out
+        # 1. Create occurrence data
+        occurrence_data = manager.create_occurrence_data(
+            issue_number=2000,
+            issue_title="SIP-7732 Breakout Room #1",
+            discourse_topic_id=None,
+            start_time="2025-09-01T14:00:00Z",
+            duration=60,
+            skip_youtube_upload=True,  # User opted out
+            skip_transcript_processing=True
+        )
+
+        # 2. Add occurrence to new call series
+        success = manager.add_occurrence("epbs", occurrence_data)
+        assert success is True
+
+        # 3. Verify initial structure (pending meeting_id)
+        assert manager.mapping["epbs"]["meeting_id"] == "pending"
+
+        # 4. Simulate user opting out - set to "custom"
+        success = manager.set_series_custom_meeting("epbs")
+        assert success is True
+
+        # 5. Verify final structure
+        call_series_entry = manager.mapping["epbs"]
+        assert call_series_entry["call_series"] == "epbs"
+        assert call_series_entry["meeting_id"] == "custom"  # User opted out
+        assert call_series_entry["occurrence_rate"] == "other"
+        assert call_series_entry["duration"] == 60
+
+        # 6. Verify occurrence structure
+        occurrence = call_series_entry["occurrences"][0]
+        assert occurrence["occurrence_number"] == 1
+        assert occurrence["issue_number"] == 2000
+        assert occurrence["issue_title"] == "SIP-7732 Breakout Room #1"
+        assert "meeting_id" not in occurrence  # Should not be at occurrence level
+
+    def test_existing_series_without_meeting_id_defaults_to_pending(self, temp_mapping_file):
+        """When a pre-existing series lacks meeting_id, adding an occurrence should set it to 'pending'."""
+        # Pre-populate mapping file without meeting_id for the series
+        preexisting_mapping = {
+            "epbs": {
+                "call_series": "epbs",
+                "occurrence_rate": "other",
+                "occurrences": []
+            }
+        }
+        with open(temp_mapping_file, 'w') as f:
+            json.dump(preexisting_mapping, f)
+
+        manager = MappingManager(temp_mapping_file)
+
+        # Sanity check: mapping loaded and no meeting_id present initially
+        assert "epbs" in manager.mapping
+        assert "meeting_id" not in manager.mapping["epbs"]
+
+        # Add an occurrence; this should initialize meeting_id to 'pending'
+        occurrence_data = manager.create_occurrence_data(
+            issue_number=3000,
+            issue_title="SIP-7732 Breakout Room #2",
+            discourse_topic_id=None,
+            start_time="2025-09-08T14:00:00Z",
+            duration=60
+        )
+        success = manager.add_occurrence("epbs", occurrence_data)
+        assert success is True
+
+        # Verify meeting_id defaulted and occurrence added
+        call_series_entry = manager.mapping["epbs"]
+        assert call_series_entry["meeting_id"] == "pending"
+        assert len(call_series_entry["occurrences"]) == 1
+        assert call_series_entry["occurrences"][0]["issue_number"] == 3000
+
+    def test_add_occurrence_with_explicit_occurrence_rate(self, temp_mapping_file):
+        """Test that occurrence_rate parameter is used when creating a new call series."""
+        manager = MappingManager(temp_mapping_file)
+
+        # Verify newcall doesn't exist initially
+        assert "newcall" not in manager.mapping
+
+        # Create occurrence data
+        occurrence_data = manager.create_occurrence_data(
+            issue_number=5000,
+            issue_title="New Call Series #1",
+            discourse_topic_id=None,
+            start_time="2025-10-01T14:00:00Z",
+            duration=90
+        )
+
+        # Add occurrence with explicit occurrence_rate
+        success = manager.add_occurrence("newcall", occurrence_data, occurrence_rate="bi-weekly")
+        assert success is True
+
+        # Verify the call series was created with the correct occurrence_rate
+        call_series_entry = manager.mapping["newcall"]
+        assert call_series_entry["occurrence_rate"] == "bi-weekly"  # Should NOT be "other"
+
+        # Verify occurrence_rate is NOT stored in the occurrence itself
+        occurrence = call_series_entry["occurrences"][0]
+        assert "occurrence_rate" not in occurrence
+
+    def test_add_occurrence_rate_only_used_for_new_series(self, temp_mapping_file):
+        """Test that occurrence_rate parameter is only used when creating a new call series."""
+        manager = MappingManager(temp_mapping_file)
+
+        # Create first occurrence with bi-weekly
+        occurrence_data1 = manager.create_occurrence_data(
+            issue_number=5001,
+            issue_title="Test Call #1",
+            discourse_topic_id=None,
+            start_time="2025-10-01T14:00:00Z",
+            duration=60
+        )
+        manager.add_occurrence("testcall", occurrence_data1, occurrence_rate="bi-weekly")
+
+        # Verify initial occurrence_rate
+        assert manager.mapping["testcall"]["occurrence_rate"] == "bi-weekly"
+
+        # Add second occurrence with different occurrence_rate parameter
+        occurrence_data2 = manager.create_occurrence_data(
+            issue_number=5002,
+            issue_title="Test Call #2",
+            discourse_topic_id=None,
+            start_time="2025-10-15T14:00:00Z",
+            duration=60
+        )
+        # Even though we pass "weekly", the series already exists so it should be ignored
+        manager.add_occurrence("testcall", occurrence_data2, occurrence_rate="weekly")
+
+        # Verify occurrence_rate was NOT changed (series already existed)
+        assert manager.mapping["testcall"]["occurrence_rate"] == "bi-weekly"
+        assert len(manager.mapping["testcall"]["occurrences"]) == 2

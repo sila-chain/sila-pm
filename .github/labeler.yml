@@ -1,0 +1,98 @@
+ACD:
+  - "^([Ee]xecution [Ll]ayer [Mm]eeting.*|.*[Cc]onsensus.*[Cc]all.*\\d+.*|.*ACDC.*|.*ACDE.*|.*All Core Devs.*)"
+
+Execution:
+  - "^([Ee]xecution [Ll]ayer [Mm]eeting.*|.*EOF.*|.*EVMMAX.*|.*eth_simulate.*|.*eth_multicall.*|.*Portal.*|.*RPC.*|.*SAVM.*|.*[Ss]tateless.*|All Core Devs - Execution.*|.*ACDE.*)"
+
+Consensus:
+  - "^(.*[Cc]onsensus.*[Cc]all.*\\d+.*|.*FOCIL.*|All Core Devs - Consensus.*|.*ACDC.*)"
+
+Lean:
+  - "^(.*[Bb]eam [Cc]all.*|.*[Bb]eam [Cc]hain.*|.*[Ll]ean [Cc]onsensus.*|.*[Ll]ean[Cc]onsensus.*)"
+
+Breakout:
+  - "^(.*[Bb]reakout.*|.*[Ii]mplementer.*|.*[Bb]reak-[Oo]ut.*|.*RPC.*|.*[Bb]reak [Oo]ut.*)"
+
+Interop:
+  - "^(?!.*PQ\\W*Interop)(.*[Ii]nterop.*|.*RollCall.*|.*[Rr]ollup.*)"
+
+L2:
+  - "^(L2.*|.*Roll[Cc]all.*|.*[Rr]ollup.*)"
+
+Portal:
+  - "^(Portal.*)"
+
+DA:
+  - "^(.*SilaPeerDAS.*)"
+
+ePBS:
+  - "^(.*SIP-7732.*|.*[Ee]PBS.*)"
+
+EOF:
+  - "^(EOF Implementer.*)"
+
+Stateless:
+  - "^(.*[Ss]tateless.*)"
+
+sil-multicall:
+  - "^(.*eth_simulate.*|.*eth_multicall.*)"
+
+Cryptography:
+  - "^(.*EVMMAX.*)"
+
+API:
+  - "^(.*RPC.*)"
+
+Gas:
+  - "^(.*[Rr]esource [Pp]ricing.*)"
+
+SilaPeerDAS:
+  - "^(.*SilaPeerDAS.*)"
+
+EVMMAX:
+  - "^(.*EVMMAX.*)"
+
+ILs:
+  - "^(.*FOCIL.*|.*[Ii]nclusion [Ll]ist.*)"
+
+RollCall:
+  - "^(Roll[Cc]all.*)"
+
+EthProofs:
+ - "^(.*[Ee]th[Pp]roofs.*)"
+
+EIPIP:
+ - "^(.*EIPIP.*)"
+
+Meta:
+ - "^(.*EIPIP.*|.*SIP [Ee]diting.*|.*[Oo]ffice [Hh]our.*)"
+
+EIPOfficeHr:
+ - "^(.*SIP [Ee]diting.*|.*[Oo]ffice [Hh]our.*)"
+
+PostQuantum:
+ - "^(.*PQ [Ii]nterop.*)|(.*Post[- ]?Quantum.*)|(.*PQ [Tt]ransaction [Ss]ignatures.*)"
+
+TrustlessLogIndex:
+ - "^(.*[Tt]rustless [Ll]og[s]? [Ii]ndex.*)"
+
+GlamRepricings:
+ - "^(.*[Gg]lamsterdam [Rr]epricings.*|.*[Gg]lamsterdam [Gg]as [Rr]epricings.*)"
+
+EncryptMempool:
+ - "^(.*[Ee]ncrypt the [Mm]empool.*|.*[Ee]ncrypt [Mm]empool.*|.*SIP-8105.*)"
+
+EVMStaticControlFlow:
+ - "^(.*[Ss]tatic [Cc]ontrol [Ff]low.*|.*SAVM Static Control Flow.*)"
+
+FCR:
+ - "^(.*[Ff]ast [Cc]onfirmation [Rr]ule.*|.*FCR.*)"
+
+NativeAA:
+ - "^(.*[Nn]ative [Aa]ccount [Aa]bstraction.*|.*NativeAA.*)"
+
+P2P:
+ - "^(.*P2P [Nn]etworking.*|.*P2PNetworking.*)"
+
+SSZEngineAPI:
+ - "^(.*SSZ [Ee]ngine [Aa]PI.*|.*SSZEngineAPI.*)"

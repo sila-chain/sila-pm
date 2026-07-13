@@ -1,0 +1,1963 @@
+{
+  "version": 1,
+  "series": {
+    "acdc": {
+      "name": "All Core Devs - Consensus",
+      "youtubePlaylist": "PLJqWcTqh_zKFtf6yUxjwjE5P1gsDSIPjV",
+      "calls": [
+        {
+          "date": "2026-07-09",
+          "path": "acdc/2026-07-09_182",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 182,
+          "issue": 2152,
+          "videoUrl": "https://youtube.com/watch?v=4ozETcRpVkY"
+        },
+        {
+          "date": "2026-06-25",
+          "path": "acdc/2026-06-25_181",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 181,
+          "issue": 2138,
+          "videoUrl": "https://youtube.com/watch?v=D_uiQpt1jog"
+        },
+        {
+          "date": "2026-06-11",
+          "path": "acdc/2026-06-11_180",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 180,
+          "issue": 2113,
+          "videoUrl": "https://youtube.com/watch?v=dAC7lgFLivY"
+        },
+        {
+          "date": "2026-05-28",
+          "path": "acdc/2026-05-28_179",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 179,
+          "issue": 2061,
+          "videoUrl": "https://youtube.com/watch?v=6rx9Vo7QcJg"
+        },
+        {
+          "date": "2026-05-14",
+          "path": "acdc/2026-05-14_178",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 178,
+          "issue": 2028,
+          "videoUrl": "https://youtube.com/watch?v=tZIY3IybQh4"
+        },
+        {
+          "date": "2026-04-16",
+          "path": "acdc/2026-04-16_177",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 177,
+          "issue": 1990,
+          "videoUrl": "https://youtube.com/watch?v=KTRviKfUEf4"
+        },
+        {
+          "date": "2026-03-19",
+          "path": "acdc/2026-03-19_176",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 176,
+          "issue": 1941,
+          "videoUrl": "https://youtube.com/watch?v=UGyK9VOxFgU"
+        },
+        {
+          "date": "2026-02-19",
+          "path": "acdc/2026-02-19_175",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 175,
+          "issue": 1930,
+          "videoUrl": "https://youtube.com/watch?v=o4fNYC3FTE4"
+        },
+        {
+          "date": "2026-02-05",
+          "path": "acdc/2026-02-05_174",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 174,
+          "issue": 1907,
+          "videoUrl": "https://youtube.com/watch?v=K0E15WZYufc"
+        }
+      ]
+    },
+    "acde": {
+      "name": "All Core Devs - Execution",
+      "youtubePlaylist": "PLJqWcTqh_zKFFK2Q3eK2hgbGijW_jf-Q5",
+      "calls": [
+        {
+          "date": "2026-07-02",
+          "path": "acde/2026-07-02_240",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 240,
+          "issue": 2140,
+          "videoUrl": "https://youtube.com/watch?v=HT96XUWOVMs"
+        },
+        {
+          "date": "2026-06-18",
+          "path": "acde/2026-06-18_239",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 239,
+          "issue": 2115,
+          "videoUrl": "https://youtube.com/watch?v=Y1r-O9Vdl7I"
+        },
+        {
+          "date": "2026-06-04",
+          "path": "acde/2026-06-04_238",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 238,
+          "issue": 2076,
+          "videoUrl": "https://youtube.com/watch?v=FIiT1ZRsiDE"
+        },
+        {
+          "date": "2026-05-21",
+          "path": "acde/2026-05-21_237",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 237,
+          "issue": 2044,
+          "videoUrl": "https://www.youtube.com/watch?v=skOsf5159ZI"
+        },
+        {
+          "date": "2026-05-07",
+          "path": "acde/2026-05-07_236",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 236,
+          "issue": 2033,
+          "videoUrl": "https://youtube.com/watch?v=19Hi3SbT6tc"
+        },
+        {
+          "date": "2026-04-23",
+          "path": "acde/2026-04-23_235",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 235,
+          "issue": 2015,
+          "videoUrl": "https://youtube.com/watch?v=eSN27EDNdp8"
+        },
+        {
+          "date": "2026-04-09",
+          "path": "acde/2026-04-09_234",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 234,
+          "issue": 2004,
+          "videoUrl": "https://youtube.com/watch?v=Gb07G2uckdg"
+        },
+        {
+          "date": "2026-03-26",
+          "path": "acde/2026-03-26_233",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 233,
+          "issue": 1970,
+          "videoUrl": "https://youtube.com/watch?v=PP1mBd4FUtQ"
+        },
+        {
+          "date": "2026-03-12",
+          "path": "acde/2026-03-12_232",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 232,
+          "issue": 1955,
+          "videoUrl": "https://youtube.com/watch?v=3owz0r4Fv68"
+        },
+        {
+          "date": "2026-02-26",
+          "path": "acde/2026-02-26_231",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 231,
+          "issue": 1931,
+          "videoUrl": "https://youtube.com/watch?v=cAP3_gwT6-E"
+        },
+        {
+          "date": "2026-02-12",
+          "path": "acde/2026-02-12_230",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 230,
+          "issue": 1921,
+          "videoUrl": "https://youtube.com/watch?v=WzaE1fXWLPE"
+        }
+      ]
+    },
+    "acdt": {
+      "name": "All Core Devs - Testing",
+      "youtubePlaylist": "PLJqWcTqh_zKFE51VgNZmgT5SGYTKnyY6Y",
+      "calls": [
+        {
+          "date": "2026-07-06",
+          "path": "acdt/2026-07-06_086",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 86,
+          "issue": 2144,
+          "videoUrl": "https://www.youtube.com/watch?v=V0xn95C-Rbk"
+        },
+        {
+          "date": "2026-06-29",
+          "path": "acdt/2026-06-29_085",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 85,
+          "issue": 2133,
+          "videoUrl": "https://www.youtube.com/watch?v=f8E2cUgAssg"
+        },
+        {
+          "date": "2026-06-22",
+          "path": "acdt/2026-06-22_084",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 84,
+          "issue": 2126,
+          "videoUrl": "https://www.youtube.com/watch?v=AFJAFr6ibM4"
+        },
+        {
+          "date": "2026-06-15",
+          "path": "acdt/2026-06-15_083",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 83,
+          "issue": 2116,
+          "videoUrl": "https://www.youtube.com/watch?v=3OjZPPkrFq0"
+        },
+        {
+          "date": "2026-06-08",
+          "path": "acdt/2026-06-08_082",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 82,
+          "issue": 2103,
+          "videoUrl": "https://www.youtube.com/watch?v=yts35kcMdXw"
+        },
+        {
+          "date": "2026-06-01",
+          "path": "acdt/2026-06-01_081",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 81,
+          "issue": 2085,
+          "videoUrl": "https://youtube.com/watch?v=MldFzAj_yx8"
+        },
+        {
+          "date": "2026-05-18",
+          "path": "acdt/2026-05-18_080",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 80,
+          "issue": 2049,
+          "videoUrl": "https://youtube.com/watch?v=AHm0HzNRjUQ"
+        },
+        {
+          "date": "2026-05-11",
+          "path": "acdt/2026-05-11_079",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 79,
+          "issue": 2038,
+          "videoUrl": "https://youtube.com/watch?v=2MouT9NiGS8"
+        },
+        {
+          "date": "2026-04-20",
+          "path": "acdt/2026-04-20_078",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 78,
+          "issue": 2019,
+          "videoUrl": "https://youtube.com/watch?v=ZvG3OkEt8_o"
+        },
+        {
+          "date": "2026-04-13",
+          "path": "acdt/2026-04-13_077",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 77,
+          "issue": 2008,
+          "videoUrl": "https://youtube.com/watch?v=JcoG0oqmDNg"
+        },
+        {
+          "date": "2026-03-30",
+          "path": "acdt/2026-03-30_076",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 76,
+          "issue": 1988,
+          "videoUrl": "https://youtube.com/watch?v=uT6pdBlqByI"
+        },
+        {
+          "date": "2026-03-23",
+          "path": "acdt/2026-03-23_075",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 75,
+          "issue": 1976,
+          "videoUrl": "https://youtube.com/watch?v=Eq5S2q_fUGI"
+        },
+        {
+          "date": "2026-03-16",
+          "path": "acdt/2026-03-16_074",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 74,
+          "issue": 1966,
+          "videoUrl": "https://youtube.com/watch?v=Sr4osj2u4-U"
+        },
+        {
+          "date": "2026-03-09",
+          "path": "acdt/2026-03-09_073",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 73,
+          "issue": 1956,
+          "videoUrl": "https://youtube.com/watch?v=9MxhnFm3CFM"
+        },
+        {
+          "date": "2026-03-02",
+          "path": "acdt/2026-03-02_072",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 72,
+          "issue": 1948,
+          "videoUrl": "https://youtube.com/watch?v=J0RwITMn2UM"
+        },
+        {
+          "date": "2026-02-23",
+          "path": "acdt/2026-02-23_071",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 71,
+          "issue": 1932,
+          "videoUrl": "https://youtube.com/watch?v=w97pUWO0ABA"
+        },
+        {
+          "date": "2026-02-16",
+          "path": "acdt/2026-02-16_070",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 70,
+          "issue": 1920,
+          "videoUrl": "https://youtube.com/watch?v=d9wp8vct3_g"
+        },
+        {
+          "date": "2026-02-09",
+          "path": "acdt/2026-02-09_069",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 69,
+          "issue": 1913,
+          "videoUrl": "https://youtube.com/watch?v=0FXImoK7XBA"
+        },
+        {
+          "date": "2026-02-02",
+          "path": "acdt/2026-02-02_068",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 68,
+          "issue": 1901,
+          "videoUrl": "https://youtube.com/watch?v=ay6kY5oOIeE"
+        }
+      ]
+    },
+    "allwalletdevs": {
+      "name": "All Wallet Devs",
+      "youtubePlaylist": "PLJqWcTqh_zKGe6SCg5Z2UCqoR0JE5yzsZ",
+      "calls": [
+        {
+          "date": "2026-05-20",
+          "path": "allwalletdevs/2026-05-20_039",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 39,
+          "issue": 1997,
+          "videoUrl": "https://www.youtube.com/watch?v=kjhHvfgPODk"
+        },
+        {
+          "date": "2026-02-18",
+          "path": "allwalletdevs/2026-02-18_038",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 38,
+          "issue": 1909,
+          "videoUrl": "https://www.youtube.com/watch?v=Z7VpPvyCujE"
+        }
+      ]
+    },
+    "bal": {
+      "name": "SIP-7928 Breakout Room",
+      "youtubePlaylist": "PLJqWcTqh_zKHCi0b6xb6QB1KE1DiJm5Fj",
+      "calls": [
+        {
+          "date": "2026-02-25",
+          "path": "bal/2026-02-25_013",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 13,
+          "issue": 1944,
+          "videoUrl": "https://youtube.com/watch?v=6X2jl7992bg"
+        },
+        {
+          "date": "2026-02-11",
+          "path": "bal/2026-02-11_012",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 12,
+          "issue": 1917,
+          "videoUrl": "https://youtube.com/watch?v=Wwt511zWmcs"
+        }
+      ]
+    },
+    "encryptthemempool": {
+      "name": "Encrypt the Mempool",
+      "youtubePlaylist": "PLJqWcTqh_zKH6BWQNJBTsIispobvV7pa4",
+      "calls": [
+        {
+          "date": "2026-06-24",
+          "path": "encryptthemempool/2026-06-24_006",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 6,
+          "issue": 2118,
+          "videoUrl": "https://www.youtube.com/watch?v=RMB_3dXCsww"
+        },
+        {
+          "date": "2026-06-10",
+          "path": "encryptthemempool/2026-06-10_005",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 5,
+          "issue": 2105,
+          "videoUrl": "https://www.youtube.com/watch?v=d-VobQ3lKKU"
+        },
+        {
+          "date": "2026-04-29",
+          "path": "encryptthemempool/2026-04-29_003",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 3,
+          "issue": 2034,
+          "videoUrl": "https://www.youtube.com/watch?v=0dr8gf-yMl0"
+        },
+        {
+          "date": "2026-03-18",
+          "path": "encryptthemempool/2026-03-18_002",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 2,
+          "issue": 1969,
+          "videoUrl": "https://www.youtube.com/watch?v=109IE6-yDfg"
+        },
+        {
+          "date": "2026-03-04",
+          "path": "encryptthemempool/2026-03-04_001",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 1,
+          "issue": 1945,
+          "videoUrl": "https://www.youtube.com/watch?v=vJqyJ6XTGa0"
+        },
+        {
+          "date": "2026-02-18",
+          "path": "encryptthemempool/2026-02-18_000",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 0,
+          "issue": 1929,
+          "videoUrl": "https://www.youtube.com/watch?v=cR62-XnrM3o"
+        }
+      ]
+    },
+    "fcr": {
+      "name": "Fast Confirmation Rule",
+      "youtubePlaylist": "PLJqWcTqh_zKH4c_vgCCPZ33Ilb9SdEIcq",
+      "calls": [
+        {
+          "date": "2026-07-07",
+          "path": "fcr/2026-07-07_010",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 10,
+          "issue": 2136,
+          "videoUrl": "https://www.youtube.com/watch?v=lbX6toJ-rCc"
+        },
+        {
+          "date": "2026-06-23",
+          "path": "fcr/2026-06-23_009",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 9,
+          "issue": 2079,
+          "videoUrl": "https://www.youtube.com/watch?v=GxroFGw6cck"
+        },
+        {
+          "date": "2026-05-26",
+          "path": "fcr/2026-05-26_008",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 8,
+          "issue": 2053,
+          "videoUrl": "https://www.youtube.com/watch?v=uKk5UMlvzIw"
+        },
+        {
+          "date": "2026-05-12",
+          "path": "fcr/2026-05-12_007",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 7,
+          "issue": 2037,
+          "videoUrl": "https://www.youtube.com/watch?v=-tIIV-Wqhvc"
+        },
+        {
+          "date": "2026-04-14",
+          "path": "fcr/2026-04-14_006",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 6,
+          "issue": 1982,
+          "videoUrl": "https://www.youtube.com/watch?v=3U_Vm78QKLM"
+        },
+        {
+          "date": "2026-03-17",
+          "path": "fcr/2026-03-17_005",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 5,
+          "issue": 1967,
+          "videoUrl": "https://www.youtube.com/watch?v=ZumsAbw9bfo"
+        },
+        {
+          "date": "2026-03-03",
+          "path": "fcr/2026-03-03_004",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 4,
+          "issue": 1939,
+          "videoUrl": "https://www.youtube.com/watch?v=-k4hboX9vIQ"
+        }
+      ]
+    },
+    "focil": {
+      "name": "FOCIL Breakout",
+      "youtubePlaylist": "PLJqWcTqh_zKFIaCmjgKO4HJLn4y-Rg3He",
+      "calls": [
+        {
+          "date": "2026-06-30",
+          "path": "focil/2026-06-30_037",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 37,
+          "issue": 2142,
+          "videoUrl": "https://www.youtube.com/watch?v=csskBokKLkc"
+        },
+        {
+          "date": "2026-06-16",
+          "path": "focil/2026-06-16_036",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 36,
+          "issue": 2121,
+          "videoUrl": "https://www.youtube.com/watch?v=zCM0jEBK2QA"
+        },
+        {
+          "date": "2026-06-02",
+          "path": "focil/2026-06-02_035",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 35,
+          "issue": 2098,
+          "videoUrl": "https://www.youtube.com/watch?v=bZ3L7E7a5Gw"
+        },
+        {
+          "date": "2026-05-19",
+          "path": "focil/2026-05-19_034",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 34,
+          "issue": 2060,
+          "videoUrl": "https://www.youtube.com/watch?v=D_PJR0IFQKI"
+        },
+        {
+          "date": "2026-04-21",
+          "path": "focil/2026-04-21_033",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 33,
+          "issue": 2031,
+          "videoUrl": "https://www.youtube.com/watch?v=Uj18ob_u-so"
+        },
+        {
+          "date": "2026-04-07",
+          "path": "focil/2026-04-07_032",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 32,
+          "issue": 2006,
+          "videoUrl": "https://www.youtube.com/watch?v=yGu6ZyirKng"
+        },
+        {
+          "date": "2026-03-24",
+          "path": "focil/2026-03-24_031",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 31,
+          "issue": 1978,
+          "videoUrl": "https://www.youtube.com/watch?v=eM1LKIUJbEc"
+        },
+        {
+          "date": "2026-03-10",
+          "path": "focil/2026-03-10_030",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 30,
+          "issue": 1964,
+          "videoUrl": "https://www.youtube.com/watch?v=MJpnyjAsBWQ"
+        },
+        {
+          "date": "2026-02-24",
+          "path": "focil/2026-02-24_029",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 29,
+          "issue": 1946,
+          "videoUrl": "https://www.youtube.com/watch?v=7eHb1g1B1OU"
+        },
+        {
+          "date": "2026-02-10",
+          "path": "focil/2026-02-10_028",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 28,
+          "issue": 1918,
+          "videoUrl": "https://www.youtube.com/watch?v=7Ru64pmLwxs"
+        }
+      ]
+    },
+    "glamsterdamrepricings": {
+      "name": "Glamsterdam Repricings",
+      "youtubePlaylist": "PLJqWcTqh_zKE8xsbR8cPEDQr01e2L0Qb_",
+      "calls": [
+        {
+          "date": "2026-05-27",
+          "path": "glamsterdamrepricings/2026-05-27_008",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 8,
+          "issue": 2082,
+          "videoUrl": "https://www.youtube.com/watch?v=lp8R-UNSCag"
+        },
+        {
+          "date": "2026-05-13",
+          "path": "glamsterdamrepricings/2026-05-13_007",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 7,
+          "issue": 2048,
+          "videoUrl": "https://www.youtube.com/watch?v=wLNQ6SmiBTM"
+        },
+        {
+          "date": "2026-04-15",
+          "path": "glamsterdamrepricings/2026-04-15_006",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 6,
+          "issue": 2016,
+          "videoUrl": "https://www.youtube.com/watch?v=U8RvbLPX188"
+        },
+        {
+          "date": "2026-04-01",
+          "path": "glamsterdamrepricings/2026-04-01_005",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 5,
+          "issue": 2000,
+          "videoUrl": "https://www.youtube.com/watch?v=40w2GkOLTfI"
+        },
+        {
+          "date": "2026-03-18",
+          "path": "glamsterdamrepricings/2026-03-18_004",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 4,
+          "issue": 1973,
+          "videoUrl": "https://www.youtube.com/watch?v=UmEkzVXxsMc"
+        },
+        {
+          "date": "2026-03-04",
+          "path": "glamsterdamrepricings/2026-03-04_003",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 3,
+          "issue": 1959,
+          "videoUrl": "https://www.youtube.com/watch?v=YZVMejueYmk"
+        },
+        {
+          "date": "2026-02-18",
+          "path": "glamsterdamrepricings/2026-02-18_002",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 2,
+          "issue": 1935,
+          "videoUrl": "https://www.youtube.com/watch?v=ia9u4wDn6CM"
+        },
+        {
+          "date": "2026-02-04",
+          "path": "glamsterdamrepricings/2026-02-04_001",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 1,
+          "issue": 1910,
+          "videoUrl": "https://www.youtube.com/watch?v=U2R-AI_F9t0"
+        }
+      ]
+    },
+    "nativeaa": {
+      "name": "Native Account Abstraction",
+      "youtubePlaylist": null,
+      "calls": [
+        {
+          "date": "2026-04-22",
+          "path": "nativeaa/2026-04-22_001",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 1,
+          "issue": 2018,
+          "videoUrl": "https://www.youtube.com/watch?v=pxWZyZ-exLA"
+        }
+      ]
+    },
+    "one-off-1954": {
+      "name": "one-off-1954",
+      "youtubePlaylist": null,
+      "calls": [
+        {
+          "date": "2026-03-05",
+          "path": "one-off-1954/2026-03-05_001",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 1,
+          "issue": 1954,
+          "videoUrl": "https://www.youtube.com/watch?v=JWXwDn50oXM"
+        }
+      ]
+    },
+    "one-off-1971": {
+      "name": "one-off-1971",
+      "youtubePlaylist": null,
+      "calls": [
+        {
+          "date": "2026-03-17",
+          "path": "one-off-1971/2026-03-17_001",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 1,
+          "issue": 1971,
+          "videoUrl": "https://www.youtube.com/watch?v=hB_SNF9sII8"
+        }
+      ]
+    },
+    "one-off-1985": {
+      "name": "one-off-1985",
+      "youtubePlaylist": null,
+      "calls": [
+        {
+          "date": "2026-03-25",
+          "path": "one-off-1985/2026-03-25_002",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 2,
+          "issue": 1985,
+          "videoUrl": "https://www.youtube.com/watch?v=IJrBJpbnkpg"
+        }
+      ]
+    },
+    "one-off-2135": {
+      "name": "one-off-2135",
+      "youtubePlaylist": null,
+      "calls": [
+        {
+          "date": "2026-06-30",
+          "path": "one-off-2135/2026-06-30_001",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 1,
+          "issue": 2135,
+          "videoUrl": "https://www.youtube.com/watch?v=bVr0mVZLC4o"
+        }
+      ]
+    },
+    "p2pnetworking": {
+      "name": "P2P Networking",
+      "youtubePlaylist": "PLJqWcTqh_zKHrBqj0fnITKvW5x7LYn2qG",
+      "calls": [
+        {
+          "date": "2026-07-01",
+          "path": "p2pnetworking/2026-07-01_003",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 3,
+          "issue": 2129,
+          "videoUrl": "https://www.youtube.com/watch?v=-3S0tNAsXnw"
+        },
+        {
+          "date": "2026-06-03",
+          "path": "p2pnetworking/2026-06-03_002",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 2,
+          "issue": 2099,
+          "videoUrl": "https://www.youtube.com/watch?v=kWLsvi2egJ8"
+        },
+        {
+          "date": "2026-05-20",
+          "path": "p2pnetworking/2026-05-20_001",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 1,
+          "issue": 2051,
+          "videoUrl": "https://www.youtube.com/watch?v=sxhosPIdzWM"
+        }
+      ]
+    },
+    "pqinterop": {
+      "name": "PQ Interop",
+      "youtubePlaylist": "PLJqWcTqh_zKF_Q9HNXBLW_AtktsjToTIu",
+      "calls": [
+        {
+          "date": "2026-07-08",
+          "path": "pqinterop/2026-07-08_047",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 47,
+          "issue": 2153,
+          "videoUrl": "https://www.youtube.com/watch?v=uBOrCVnzuwY"
+        },
+        {
+          "date": "2026-07-01",
+          "path": "pqinterop/2026-07-01_046",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 46,
+          "issue": 2147,
+          "videoUrl": "https://www.youtube.com/watch?v=x5Z6gtkxnAc"
+        },
+        {
+          "date": "2026-06-24",
+          "path": "pqinterop/2026-06-24_045",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 45,
+          "issue": 2137,
+          "videoUrl": "https://www.youtube.com/watch?v=aLL96jApx6A"
+        },
+        {
+          "date": "2026-06-17",
+          "path": "pqinterop/2026-06-17_044",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 44,
+          "issue": 2128,
+          "videoUrl": "https://www.youtube.com/watch?v=TvxI5kJfx4Y"
+        },
+        {
+          "date": "2026-06-10",
+          "path": "pqinterop/2026-06-10_043",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 43,
+          "issue": 2117,
+          "videoUrl": "https://www.youtube.com/watch?v=fGbUwP7jQ04"
+        },
+        {
+          "date": "2026-06-03",
+          "path": "pqinterop/2026-06-03_042",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 42,
+          "issue": 2104,
+          "videoUrl": "https://www.youtube.com/watch?v=VTVDgZRJ3ao"
+        },
+        {
+          "date": "2026-05-27",
+          "path": "pqinterop/2026-05-27_041",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 41,
+          "issue": 2081,
+          "videoUrl": "https://www.youtube.com/watch?v=bIKIeq-l_HU"
+        },
+        {
+          "date": "2026-05-20",
+          "path": "pqinterop/2026-05-20_040",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 40,
+          "issue": 2065,
+          "videoUrl": "https://www.youtube.com/watch?v=IogrdpVyLzQ"
+        },
+        {
+          "date": "2026-05-13",
+          "path": "pqinterop/2026-05-13_039",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 39,
+          "issue": 2055,
+          "videoUrl": "https://www.youtube.com/watch?v=qoQGBWRP9rQ"
+        },
+        {
+          "date": "2026-05-06",
+          "path": "pqinterop/2026-05-06_038",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 38,
+          "issue": 2040,
+          "videoUrl": "https://www.youtube.com/watch?v=RWmlIA4Gu4I"
+        },
+        {
+          "date": "2026-04-29",
+          "path": "pqinterop/2026-04-29_037",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 37,
+          "issue": 2035,
+          "videoUrl": "https://www.youtube.com/watch?v=9LdIXqck0DQ"
+        },
+        {
+          "date": "2026-04-22",
+          "path": "pqinterop/2026-04-22_036",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 36,
+          "issue": 2023,
+          "videoUrl": "https://www.youtube.com/watch?v=zw2H-EEYpPw"
+        },
+        {
+          "date": "2026-04-15",
+          "path": "pqinterop/2026-04-15_035",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 35,
+          "issue": 2013,
+          "videoUrl": "https://www.youtube.com/watch?v=ul6VepXd98o"
+        },
+        {
+          "date": "2026-04-08",
+          "path": "pqinterop/2026-04-08_034",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 34,
+          "issue": 2009,
+          "videoUrl": "https://www.youtube.com/watch?v=4HrKcODOWZc"
+        },
+        {
+          "date": "2026-03-25",
+          "path": "pqinterop/2026-03-25_033",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 33,
+          "issue": 1983,
+          "videoUrl": "https://www.youtube.com/watch?v=DVoenb4w7sI"
+        },
+        {
+          "date": "2026-03-11",
+          "path": "pqinterop/2026-03-11_030",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 30,
+          "issue": 1962,
+          "videoUrl": "https://www.youtube.com/watch?v=vr8nx9FkajQ"
+        },
+        {
+          "date": "2026-03-04",
+          "path": "pqinterop/2026-03-04_029",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 29,
+          "issue": 1953,
+          "videoUrl": "https://www.youtube.com/watch?v=bHHQFglWSSw"
+        },
+        {
+          "date": "2026-02-25",
+          "path": "pqinterop/2026-02-25_028",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 28,
+          "issue": 1938,
+          "videoUrl": "https://www.youtube.com/watch?v=Csg2NSpPm6o"
+        }
+      ]
+    },
+    "pqtransactionsignatures": {
+      "name": "PQ Transaction Signatures",
+      "youtubePlaylist": "PLJqWcTqh_zKEOum3uR0odkH59fmGUYuZB",
+      "calls": [
+        {
+          "date": "2026-06-24",
+          "path": "pqtransactionsignatures/2026-06-24_011",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 11,
+          "issue": 2124,
+          "videoUrl": "https://www.youtube.com/watch?v=2NpQMjtVFuo"
+        },
+        {
+          "date": "2026-06-10",
+          "path": "pqtransactionsignatures/2026-06-10_010",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 10,
+          "issue": 2114,
+          "videoUrl": "https://www.youtube.com/watch?v=yhOv9bpbqL8"
+        },
+        {
+          "date": "2026-05-27",
+          "path": "pqtransactionsignatures/2026-05-27_009",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 9,
+          "issue": 2078,
+          "videoUrl": "https://www.youtube.com/watch?v=Dziegq_gsZo"
+        },
+        {
+          "date": "2026-05-13",
+          "path": "pqtransactionsignatures/2026-05-13_008",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 8,
+          "issue": 2052,
+          "videoUrl": "https://www.youtube.com/watch?v=y2JQO17LgHk"
+        },
+        {
+          "date": "2026-04-29",
+          "path": "pqtransactionsignatures/2026-04-29_007",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 7,
+          "issue": 2032,
+          "videoUrl": "https://www.youtube.com/watch?v=rnbBxopGMOI"
+        },
+        {
+          "date": "2026-04-15",
+          "path": "pqtransactionsignatures/2026-04-15_006",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 6,
+          "issue": 2011,
+          "videoUrl": "https://www.youtube.com/watch?v=yAmLfnlnKtw"
+        },
+        {
+          "date": "2026-04-01",
+          "path": "pqtransactionsignatures/2026-04-01_005",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 5,
+          "issue": 1981,
+          "videoUrl": "https://www.youtube.com/watch?v=V59OkKfATng"
+        },
+        {
+          "date": "2026-03-18",
+          "path": "pqtransactionsignatures/2026-03-18_004",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 4,
+          "issue": 1968,
+          "videoUrl": "https://www.youtube.com/watch?v=0PJUhBAiUXo"
+        },
+        {
+          "date": "2026-03-04",
+          "path": "pqtransactionsignatures/2026-03-04_003",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 3,
+          "issue": 1949,
+          "videoUrl": "https://www.youtube.com/watch?v=awucKGkiZZI"
+        },
+        {
+          "date": "2026-02-18",
+          "path": "pqtransactionsignatures/2026-02-18_002",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt"
+          },
+          "number": 2,
+          "issue": 1916,
+          "videoUrl": "https://www.youtube.com/watch?v=QCkLjyTVCT0"
+        },
+        {
+          "date": "2026-02-04",
+          "path": "pqtransactionsignatures/2026-02-04_001",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 1,
+          "issue": 1889,
+          "videoUrl": "https://www.youtube.com/watch?v=kD2XZcwYUgQ"
+        }
+      ]
+    },
+    "rpcstandards": {
+      "name": "RPC Standards",
+      "youtubePlaylist": "PLJqWcTqh_zKEl8EKKTBHWRFZ4-muNiWDX",
+      "calls": [
+        {
+          "date": "2026-06-29",
+          "path": "rpcstandards/2026-06-29_029",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 29,
+          "issue": 2141,
+          "videoUrl": "https://www.youtube.com/watch?v=bc5GtJ6tbBc"
+        },
+        {
+          "date": "2026-06-15",
+          "path": "rpcstandards/2026-06-15_028",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 28,
+          "issue": 2120,
+          "videoUrl": "https://www.youtube.com/watch?v=c7ARopGl95s"
+        },
+        {
+          "date": "2026-06-01",
+          "path": "rpcstandards/2026-06-01_027",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 27,
+          "issue": 2075,
+          "videoUrl": "https://www.youtube.com/watch?v=iwiTvdoZfn8"
+        },
+        {
+          "date": "2026-05-18",
+          "path": "rpcstandards/2026-05-18_026",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 26,
+          "issue": 2056,
+          "videoUrl": "https://www.youtube.com/watch?v=GyAuXsk1ds0"
+        },
+        {
+          "date": "2026-04-20",
+          "path": "rpcstandards/2026-04-20_025",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 25,
+          "issue": 2029,
+          "videoUrl": "https://www.youtube.com/watch?v=aO-V4MSGiFM"
+        },
+        {
+          "date": "2026-04-06",
+          "path": "rpcstandards/2026-04-06_024",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "tldr": "tldr.json"
+          },
+          "number": 24,
+          "issue": 2001,
+          "videoUrl": "https://www.youtube.com/watch?v=ziNvSCQtEN4"
+        },
+        {
+          "date": "2026-03-23",
+          "path": "rpcstandards/2026-03-23_023",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 23,
+          "issue": 1974,
+          "videoUrl": "https://www.youtube.com/watch?v=0UxYDNA80aY"
+        },
+        {
+          "date": "2026-03-09",
+          "path": "rpcstandards/2026-03-09_022",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 22,
+          "issue": 1958,
+          "videoUrl": "https://www.youtube.com/watch?v=ZzTipLOhI28"
+        },
+        {
+          "date": "2026-02-23",
+          "path": "rpcstandards/2026-02-23_021",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 21,
+          "issue": 1943,
+          "videoUrl": "https://www.youtube.com/watch?v=B3IVBmYW_b0"
+        },
+        {
+          "date": "2026-02-09",
+          "path": "rpcstandards/2026-02-09_020",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 20,
+          "issue": 1914,
+          "videoUrl": "https://www.youtube.com/watch?v=B04J86qMezw"
+        }
+      ]
+    },
+    "sszengineapi": {
+      "name": "SSZ Engine API",
+      "youtubePlaylist": "PLJqWcTqh_zKGEfFwKGmm9BydCuiIe40xF",
+      "calls": [
+        {
+          "date": "2026-07-10",
+          "path": "sszengineapi/2026-07-10_002",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 2,
+          "issue": 2145,
+          "videoUrl": "https://www.youtube.com/watch?v=_i6gjV6kd80"
+        },
+        {
+          "date": "2026-06-26",
+          "path": "sszengineapi/2026-06-26_001",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 1,
+          "issue": 2132,
+          "videoUrl": "https://www.youtube.com/watch?v=Uev3fnCiKtw"
+        }
+      ]
+    },
+    "trustlesslogindex": {
+      "name": "Trustless Log Index",
+      "youtubePlaylist": "PLJqWcTqh_zKFeek2HYhQhInZjnN4rlU52",
+      "calls": [
+        {
+          "date": "2026-02-17",
+          "path": "trustlesslogindex/2026-02-17_003",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 3,
+          "issue": 1927,
+          "videoUrl": "https://www.youtube.com/watch?v=710mZYDRtPE"
+        },
+        {
+          "date": "2026-02-03",
+          "path": "trustlesslogindex/2026-02-03_002",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 2,
+          "issue": 1911,
+          "videoUrl": "https://www.youtube.com/watch?v=kXJfWaFsrfU"
+        }
+      ]
+    },
+    "zkevm": {
+      "name": "L1-zkEVM Breakout",
+      "youtubePlaylist": "PLJqWcTqh_zKH-673NddaSqiQFIWMMopf_",
+      "calls": [
+        {
+          "date": "2026-07-08",
+          "path": "zkevm/2026-07-08_006",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 6,
+          "issue": 2148,
+          "videoUrl": "https://www.youtube.com/watch?v=omWy4vNM6Pg"
+        },
+        {
+          "date": "2026-06-10",
+          "path": "zkevm/2026-06-10_005",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 5,
+          "issue": 2107,
+          "videoUrl": "https://www.youtube.com/watch?v=5X5TsjIgFgU"
+        },
+        {
+          "date": "2026-05-13",
+          "path": "zkevm/2026-05-13_004",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 4,
+          "issue": 2047,
+          "videoUrl": "https://www.youtube.com/watch?v=whI_KURDylw"
+        },
+        {
+          "date": "2026-04-08",
+          "path": "zkevm/2026-04-08_003",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 3,
+          "issue": 2005,
+          "videoUrl": "https://www.youtube.com/watch?v=lohcW-sGzjU"
+        },
+        {
+          "date": "2026-03-11",
+          "path": "zkevm/2026-03-11_002",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 2,
+          "issue": 1960,
+          "videoUrl": "https://www.youtube.com/watch?v=DXHX36dA7d0"
+        },
+        {
+          "date": "2026-02-11",
+          "path": "zkevm/2026-02-11_001",
+          "resources": {
+            "transcript": "transcript.vtt",
+            "transcript_corrected": "transcript_corrected.vtt",
+            "changelog": "transcript_changelog.tsv",
+            "chat": "chat.txt",
+            "tldr": "tldr.json"
+          },
+          "number": 1,
+          "issue": 1900,
+          "videoUrl": "https://www.youtube.com/watch?v=swyhgkNGtdw"
+        }
+      ]
+    }
+  }
+}

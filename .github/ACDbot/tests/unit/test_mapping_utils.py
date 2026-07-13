@@ -1,0 +1,247 @@
+"""
+Unit tests for mapping_utils.py module.
+"""
+
+import pytest
+from modules.mapping_utils import (
+    load_mapping,
+    find_meeting_by_id,
+    get_effective_meeting_id,
+    find_meeting_by_issue_number,
+    find_call_series_by_meeting_id,
+    find_occurrence_with_index,
+    ensure_breakout_youtube_state,
+    get_breakout_youtube_state,
+)
+
+
+class TestMappingUtils:
+    """Test cases for mapping utility functions."""
+
+    def test_default_mapping_loads_project_mapping_from_any_cwd(self, tmp_path, monkeypatch):
+        """ACDbot should load its canonical mapping regardless of process cwd."""
+        monkeypatch.chdir(tmp_path)
+
+        mapping = load_mapping()
+
+        assert mapping
+
+    def test_find_meeting_by_id_recurring_series_root(self, sample_mapping):
+        """Test finding meeting in recurring series at root level."""
+        result = find_meeting_by_id("88269836469", sample_mapping)
+        assert result is not None
+        assert result["call_series"] == "acde"
+        assert result["meeting_id"] == "88269836469"
+
+    def test_find_meeting_by_id_recurring_series_occurrence_override(self, sample_mapping):
+        """Test finding meeting in recurring series with occurrence override."""
+        result = find_meeting_by_id("86109593250", sample_mapping)
+        assert result is None  # Should not find it since it's no longer at series level
+
+    def test_find_meeting_by_id_one_off(self, sample_mapping):
+        """Test finding one-off meeting."""
+        result = find_meeting_by_id("89880194464", sample_mapping)
+        assert result is not None
+        assert result["meeting_id"] == "89880194464"
+        assert result["call_series"] == "one-off-1465"
+        assert result["occurrences"][0]["issue_number"] == 1465
+
+    def test_find_meeting_by_id_one_off_second(self, sample_mapping):
+        """Test finding second one-off meeting."""
+        result = find_meeting_by_id("99999999999", sample_mapping)
+        assert result is not None
+        assert result["meeting_id"] == "99999999999"
+        assert result["call_series"] == "one-off-1466"
+        assert result["occurrences"][0]["issue_number"] == 1466
+
+    def test_find_meeting_by_id_not_found(self, sample_mapping):
+        """Test finding non-existent meeting."""
+        result = find_meeting_by_id("nonexistent", sample_mapping)
+        assert result is None
+
+    def test_find_meeting_by_id_empty_mapping(self):
+        """Test finding meeting in empty mapping."""
+        result = find_meeting_by_id("any_id", {})
+        assert result is None
+
+    def test_get_effective_meeting_id_root_level(self, sample_mapping):
+        """Test getting effective meeting ID from root level."""
+        result = get_effective_meeting_id("acde", 1462, sample_mapping)
+        assert result == "88269836469"
+
+    def test_get_effective_meeting_id_occurrence_override(self, sample_mapping):
+        """Test getting effective meeting ID with occurrence override."""
+        result = get_effective_meeting_id("acde", 1463, sample_mapping)
+        assert result == "88269836469"
+
+    def test_get_effective_meeting_id_one_off(self, sample_mapping):
+        """Test getting effective meeting ID for one-off meeting."""
+        result = get_effective_meeting_id("one-off-1465", 1465, sample_mapping)
+        assert result == "89880194464"
+
+    def test_get_effective_meeting_id_series_not_found(self, sample_mapping):
+        """Test getting effective meeting ID for non-existent series."""
+        result = get_effective_meeting_id("nonexistent", 1462, sample_mapping)
+        assert result is None
+
+    def test_get_effective_meeting_id_occurrence_not_found(self, sample_mapping):
+        """Test getting effective meeting ID for non-existent occurrence."""
+        result = get_effective_meeting_id("acde", 9999, sample_mapping)
+        assert result == "88269836469"
+
+    def test_get_effective_meeting_id_no_root_meeting_id(self, sample_mapping):
+        """Test getting effective meeting ID when no root meeting_id exists."""
+        # Create a modified mapping without root meeting_id
+        modified_mapping = sample_mapping.copy()
+        del modified_mapping["acde"]["meeting_id"]
+
+        result = get_effective_meeting_id("acde", 1462, modified_mapping)
+        assert result is None
+
+    def test_find_meeting_by_issue_number_recurring_series(self, sample_mapping):
+        """Test finding meeting by issue number in recurring series."""
+        result = find_meeting_by_issue_number(1462, sample_mapping)
+        assert result is not None
+        # Should return the occurrence data
+        assert result["issue_number"] == 1462
+        assert result["occurrence_number"] == 1
+
+    def test_find_meeting_by_issue_number_recurring_series_second(self, sample_mapping):
+        """Test finding second occurrence in recurring series."""
+        result = find_meeting_by_issue_number(1463, sample_mapping)
+        assert result is not None
+        # Should return the occurrence data
+        assert result["issue_number"] == 1463
+        assert result["occurrence_number"] == 2
+        assert "meeting_id" not in result
+
+    def test_find_meeting_by_issue_number_one_off(self, sample_mapping):
+        """Test finding one-off meeting by issue number."""
+        result = find_meeting_by_issue_number(1465, sample_mapping)
+        assert result is not None
+        assert result["issue_number"] == 1465
+        assert "meeting_id" not in result
+
+    def test_find_meeting_by_issue_number_not_found(self, sample_mapping):
+        """Test finding non-existent issue number."""
+        result = find_meeting_by_issue_number(9999, sample_mapping)
+        assert result is None
+
+    def test_find_meeting_by_issue_number_empty_mapping(self):
+        """Test finding issue number in empty mapping."""
+        result = find_meeting_by_issue_number(1462, {})
+        assert result is None
+
+    def test_hybrid_meeting_id_logic_complex(self, sample_mapping):
+        """Test simplified meeting ID logic scenarios."""
+        # Test that we can find meetings at series level only
+        root_result = find_meeting_by_id("88269836469", sample_mapping)
+        occurrence_result = find_meeting_by_id("86109593250", sample_mapping)
+
+        assert root_result is not None
+        assert occurrence_result is None  # Should not find occurrence-level meeting IDs
+
+        # Root result should be the series data
+        assert root_result["call_series"] == "acde"
+
+    def test_edge_cases_malformed_mapping(self):
+        """Test edge cases with malformed mapping data."""
+        # Test with missing occurrences list
+        malformed_mapping = {
+            "acde": {
+                "call_series": "acde",
+                "meeting_id": "123456789"
+                # Missing occurrences list
+            }
+        }
+
+        result = find_meeting_by_id("123456789", malformed_mapping)
+        assert result is not None
+        assert result["call_series"] == "acde"
+
+    @pytest.mark.mapping
+    def test_mapping_structure_validation(self, sample_mapping):
+        """Test that mapping structure is properly validated."""
+        # Test valid mapping
+        assert find_meeting_by_id("88269836469", sample_mapping) is not None
+
+        # Test invalid mapping
+        invalid_mapping = {"invalid": "structure"}
+        assert find_meeting_by_id("any_id", invalid_mapping) is None
+
+    def test_find_call_series_by_meeting_id_recurring_series_root(self, sample_mapping):
+        """Test finding call series for recurring series root meeting ID."""
+        result = find_call_series_by_meeting_id("88269836469", 1462, sample_mapping)
+        assert result == "acde"
+
+    def test_find_call_series_by_meeting_id_recurring_series_occurrence_override(self, sample_mapping):
+        """Test finding call series for recurring series with occurrence override."""
+        result = find_call_series_by_meeting_id("86109593250", 1463, sample_mapping)
+        assert result is None
+
+    def test_find_call_series_by_meeting_id_one_off(self, sample_mapping):
+        """Test finding call series for one-off meeting."""
+        result = find_call_series_by_meeting_id("89880194464", 1465, sample_mapping)
+        assert result == "one-off-1465"
+
+    def test_find_call_series_by_meeting_id_one_off_second(self, sample_mapping):
+        """Test finding call series for second one-off meeting."""
+        result = find_call_series_by_meeting_id("99999999999", 1466, sample_mapping)
+        assert result == "one-off-1466"
+
+    def test_find_call_series_by_meeting_id_not_found(self, sample_mapping):
+        """Test finding call series for non-existent meeting."""
+        result = find_call_series_by_meeting_id("nonexistent", 9999, sample_mapping)
+        assert result is None
+
+    def test_find_call_series_by_meeting_id_wrong_issue_number(self, sample_mapping):
+        """Test finding call series with wrong issue number."""
+        result = find_call_series_by_meeting_id("88269836469", 9999, sample_mapping)
+        assert result == "acde"
+
+    def test_find_call_series_by_meeting_id_empty_mapping(self):
+        """Test finding call series in empty mapping."""
+        result = find_call_series_by_meeting_id("any_id", 1462, {})
+        assert result is None
+
+    def test_find_occurrence_with_index_found_first(self, sample_mapping):
+        """Test locating an occurrence and its index within a series (first occurrence)."""
+        occ, idx = find_occurrence_with_index("acde", 1462, sample_mapping)
+        assert occ is not None
+        assert occ.get("issue_number") == 1462
+        assert idx == 0
+
+    def test_find_occurrence_with_index_found_second(self, sample_mapping):
+        """Test locating an occurrence and its index within a series (second occurrence)."""
+        occ, idx = find_occurrence_with_index("acde", 1463, sample_mapping)
+        assert occ is not None
+        assert occ.get("issue_number") == 1463
+        assert idx == 1
+
+    def test_find_occurrence_with_index_not_found(self, sample_mapping):
+        """Test not found behavior returns (None, -1)."""
+        occ, idx = find_occurrence_with_index("acde", 9999, sample_mapping)
+        assert occ is None
+        assert idx == -1
+
+    def test_find_occurrence_with_index_series_missing(self):
+        """Test series missing returns (None, -1)."""
+        occ, idx = find_occurrence_with_index("nonexistent-series", 1462, {})
+        assert occ is None
+        assert idx == -1
+
+    def test_breakout_youtube_state_is_created_lazily(self):
+        occurrence = {"issue_number": 1}
+
+        assert get_breakout_youtube_state(occurrence, "cl") == {}
+        state = ensure_breakout_youtube_state(occurrence, "cl")
+        state["upload_attempt_count"] = 1
+
+        assert occurrence["breakout_youtube"]["cl"] == {"upload_attempt_count": 1}
+        assert get_breakout_youtube_state(occurrence, "cl") is state
+
+    def test_breakout_youtube_state_rejects_invalid_shape(self):
+        occurrence = {"breakout_youtube": []}
+
+        with pytest.raises(ValueError, match="must be an object"):
+            ensure_breakout_youtube_state(occurrence, "cl")
