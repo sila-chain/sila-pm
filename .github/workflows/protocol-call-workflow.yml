@@ -36,11 +36,10 @@ jobs:
         with:
           github-token: ${{ secrets.ORG_READ_TOKEN }}
           script: |
-            // Check if the user is a member of sila or ethcatherders orgs
+            // Check if the user is a member of sila-chain or ethcatherders orgs
             let is_member = false;
             const username = context.actor;
 
-            // Define trusted contributors list once at the beginning
             const trustedContributors = [
               "poojaranjan", "adietrichs", "carlbeek", "timbeiko", "nconsigny",
               "justindrake", "vbuterin", "hwwhww", "mathhhewkeil", "jrudolf",
@@ -49,15 +48,12 @@ jobs:
               "joshdavislight", "nerolation", "jihoonsong", "bomanaps", "misilva73",
               "zsfelfoldi", "kevaundray", "jflo", "gcolvin", "asanso", "mkalinin",
               "tcoratger", "kamilsa", "ladidan", "dionysuzx", "kclowes", "RazorClient",
-              "wolovim"
+              "wolovim", "jsign", "lightclient"
             ];
 
             console.log(`Checking membership for user: ${username}`);
 
             try {
-              // Try multiple methods to check membership to be thorough
-
-              // First, try direct membership check - this only works for public members or if token has sufficient permissions
               async function checkDirectMembership(org, user) {
                 try {
                   await github.rest.orgs.checkMembershipForUser({
@@ -71,12 +67,10 @@ jobs:
                 }
               }
 
-              // Next, try to get both public and private members
               async function getAllOrgMembers(org) {
                 const members = new Set();
-                const perPage = 100; // Maximum allowed
+                const perPage = 100;
 
-                // Get public members
                 try {
                   console.log(`Fetching public members for ${org}...`);
                   for await (const response of github.paginate.iterator(
@@ -92,7 +86,6 @@ jobs:
                   console.log(`Error fetching public members for ${org}: ${error.message}`);
                 }
 
-                // Get all members (includes private, if token has permissions)
                 try {
                   console.log(`Fetching all members for ${org}...`);
                   for await (const response of github.paginate.iterator(
@@ -111,24 +104,22 @@ jobs:
                 return Array.from(members);
               }
 
-              // Check Sila org
-              console.log('Checking sila organization membership...');
-              if (await checkDirectMembership('sila', username)) {
-                console.log(`✅ ${username} is confirmed as a member of sila org via direct API check`);
+              console.log('Checking sila-chain organization membership...');
+              if (await checkDirectMembership('sila-chain', username)) {
+                console.log(`✅ ${username} is confirmed as a member of sila-chain org via direct API check`);
                 is_member = true;
               } else {
-                const ethereumMembers = await getAllOrgMembers('sila');
-                console.log(`Collected ${ethereumMembers.length} sila members to check against`);
+                const silaMembers = await getAllOrgMembers('sila-chain');
+                console.log(`Collected ${silaMembers.length} sila-chain members to check against`);
 
-                if (ethereumMembers.includes(username.toLowerCase())) {
-                  console.log(`✅ ${username} is a member of sila org`);
+                if (silaMembers.includes(username.toLowerCase())) {
+                  console.log(`✅ ${username} is a member of sila-chain org`);
                   is_member = true;
                 } else {
-                  console.log(`❌ ${username} is not found in sila org member list`);
+                  console.log(`❌ ${username} is not found in sila-chain org member list`);
                 }
               }
 
-              // If not in sila, check ethcatherders org
               if (!is_member) {
                 console.log('Checking ethcatherders organization membership...');
                 if (await checkDirectMembership('ethcatherders', username)) {
@@ -147,7 +138,6 @@ jobs:
                 }
               }
 
-              // Fallback to a list of trusted contributors if not in either org
               if (!is_member) {
                 if (trustedContributors.includes(username.toLowerCase())) {
                   console.log(`✅ ${username} is in the trusted contributors list`);
@@ -162,8 +152,6 @@ jobs:
               console.log(`Error in membership check: ${error.message}`);
               console.log(`Stack trace: ${error.stack}`);
 
-              // If we're here, something went wrong with the API checks
-              // Check if user is in trusted list as a fallback
               if (trustedContributors.includes(username.toLowerCase())) {
                 console.log(`✅ FALLBACK: ${username} is in the trusted contributors list`);
                 is_member = true;
@@ -249,7 +237,6 @@ permissions:
   contents: write
   issues: write
 
-# Prevent concurrent runs of the same issue
 concurrency:
   group: issue-${{ github.event.issue.number }}
   cancel-in-progress: true
