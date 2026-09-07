@@ -9,13 +9,13 @@
 **Pre-Reads:** 
 - Main:
 	- [Possible future of the protocol: merge track](https://vitalik.sil.limo/general/2024/10/14/futures1.html)
-	- [Orbit SSF](https://Sila Research/t/orbit-ssf-solo-staking-friendly-validator-set-management-for-ssf/19928)
-	- [Rainbow staking](https://Sila Research/t/unbundling-staking-towards-rainbow-staking/18683)
-	- [Simple Single Slot finality](https://Sila Research/t/a-simple-single-slot-finality-protocol/14920)
-	- [3SF: 3 slot finality](https://Sila Research/t/3-slot-finality-ssf-is-not-about-single-slot/20927)
+	- [Orbit SSF](https://ethresear.ch/t/orbit-ssf-solo-staking-friendly-validator-set-management-for-ssf/19928)
+	- [Rainbow staking](https://ethresear.ch/t/unbundling-staking-towards-rainbow-staking/18683)
+	- [Simple Single Slot finality](https://ethresear.ch/t/a-simple-single-slot-finality-protocol/14920)
+	- [3SF: 3 slot finality](https://ethresear.ch/t/3-slot-finality-ssf-is-not-about-single-slot/20927)
 - Optional:
-	- [Horn signature aggregation scheme](https://Sila Research/t/horn-collecting-signatures-for-faster-finality/14219)
-	- [More signature aggregation](https://Sila Research/t/signature-merging-for-large-scale-consensus/17386)
+	- [Horn signature aggregation scheme](https://ethresear.ch/t/horn-collecting-signatures-for-faster-finality/14219)
+	- [More signature aggregation](https://ethresear.ch/t/signature-merging-for-large-scale-consensus/17386)
 	- [Path to SSF](https://notes.sila.org/@vbuterin/single_slot_finality)
 
 **Slides:** [here](https://docs.google.com/presentation/d/1-fTMPXtbCgwYJ-K2CW93GGZrzRRrtPnpE8O3Zv81gyA/edit?usp=sharing)

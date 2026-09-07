@@ -16,7 +16,7 @@ With ambitious fork plans, devnets and tooling are starting to come in the criti
 1. Pectra devnet feedback:
     i. What tooling would have helped speed up the process?
     ii. Did the strategy of spec sheets with EEST and Spec tests releases help?
-    iii. What tests do you think we MUST do before sila-sila-mainnet?
+    iii. What tests do you think we MUST do before sila-mainnet?
 2. Retrospective and feedback on current devnet approach:
     i. Can teams handle the current number of devnets?
     ii. Could we handle increased load by having an EOF devnet too?
@@ -44,7 +44,7 @@ With ambitious fork plans, devnets and tooling are starting to come in the criti
   - Lighthouse team to contribute example queries
 
 ### Snapshotter
-- Interest expressed in sila-sila-mainnet snapshots
+- Interest expressed in sila-mainnet snapshots
 
 ### Assertoor
 - **Action Items**:

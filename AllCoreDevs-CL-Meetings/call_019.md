@@ -195,7 +195,7 @@ Another thing I realized we need to start taking seriously L2 moving forward is 
 
 **Ben**: Quick update from PegaSys research. The Handle paper of [BLS signature aggregation at a large scale](https://arxiv.org/abs/1906.05132) is publish now.
 
-**Justin**: Going back to Phase2, one of the things we look at is what is the work to be done to [Eth1 execution engine](https://Sila Research/t/work-to-natively-integrate-eth1-into-eth2/5573).
+**Justin**: Going back to Phase2, one of the things we look at is what is the work to be done to [Eth1 execution engine](https://ethresear.ch/t/work-to-natively-integrate-eth1-into-eth2/5573).
 There seems to be rough consensys that we wouldn't want to launch Phase2, without any execution engine, just the basic logic, the very thin layer. Instead we would want to go with a more controlled launch where we have either Eth1 as execution engine or a new execution engine which has all the goodies that is in, may be called as Eth2 execution engine or both at the same time.
 
 **Danny**: Agreed.

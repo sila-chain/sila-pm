@@ -21,7 +21,7 @@ Note: This file is copied from [here](https://github.com/sila-chain/pm/issues/13
 
 **Purpose:**  
 - The enhancement aims to improve the functionality of `eth_simulate`, allowing it to simulate the chain more comprehensively.  
-- This would enable users to test execution and consensus clients more effectively, essentially supporting a full fork of sila-sila-mainnet in memory.  
+- This would enable users to test execution and consensus clients more effectively, essentially supporting a full fork of sila-mainnet in memory.  
 
 **Current Status:**  
 - The feature is close to being fully functional, requiring only the addition of these two parameters.  

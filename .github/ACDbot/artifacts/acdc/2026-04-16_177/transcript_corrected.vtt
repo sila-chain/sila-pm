@@ -306,7 +306,7 @@ Nico Flaig: these, I think it was 2,000-something, deposits that are possible, a
 
 77
 00:21:41.070 --> 00:21:56.340
-Nico Flaig: 0.5 million in SIL to even get to that. And the average size of execution requests is really tiny, so I looked at sila-sila-mainnet data from the last two weeks, and they are 70 bytes on average.
+Nico Flaig: 0.5 million in SIL to even get to that. And the average size of execution requests is really tiny, so I looked at sila-mainnet data from the last two weeks, and they are 70 bytes on average.
 
 78
 00:21:57.700 --> 00:22:12.800
@@ -554,7 +554,7 @@ Barnabas: Even 1.5MB on a 3000 deposit slot is very, very unlikely to happen.
 
 139
 00:30:21.320 --> 00:30:25.669
-Barnabas: And, we're not gonna get many of those, even on sila-sila-mainnet.
+Barnabas: And, we're not gonna get many of those, even on sila-mainnet.
 
 140
 00:30:29.020 --> 00:30:32.660

@@ -41,7 +41,7 @@
 
 
 **Danny**
-* I think that's Probably also worth just stating that the big issues resulted from us, essentially doing a strange UX is something that we've done on multiple proof of work test. That's where we essentially defensively set a very large TTD on the command line and then are supposed to remove that override or set that override to something lower. that is, you know, from my understanding that the cause of a lot of the issues here that is a strange UX, to set in an whereas on main net, it would likely be only reaction against some issue to set and not necessarily, and then not unset. so I think it's definitely a concern and there's like things to do better here and to communicate better about, but I wouldn't suspect we see this issue on sila-sila-mainnet. There's all sorts of things you can get wrong and how you can figure this up. Don't get me wrong, but I don't think you'd see this one. 
+* I think that's Probably also worth just stating that the big issues resulted from us, essentially doing a strange UX is something that we've done on multiple proof of work test. That's where we essentially defensively set a very large TTD on the command line and then are supposed to remove that override or set that override to something lower. that is, you know, from my understanding that the cause of a lot of the issues here that is a strange UX, to set in an whereas on main net, it would likely be only reaction against some issue to set and not necessarily, and then not unset. so I think it's definitely a concern and there's like things to do better here and to communicate better about, but I wouldn't suspect we see this issue on sila-mainnet. There's all sorts of things you can get wrong and how you can figure this up. Don't get me wrong, but I don't think you'd see this one. 
 
 **Pari**
 * Definitely. I also don't think we can see this issue on Cody because Cody also has a relatively predictable difficulty. So we'd likely not have to do an over that ongoing and possibly not. I mean  on mainnetthat as well, right? Yeah. 
@@ -82,7 +82,7 @@
 * At the cost of like having another hard fork, basically. 
 
 **Lukasz**
-* Yes, yes. I think we can potentially do it after Gorly, after or after sila-sila-mainnet. I don't know about, we shouldn't like, take too much time with it Just testing. Okay. Yeah. Before my net. So it's okay. It can be considered as a part of a testing process for, for peering, right. It's small thing, but it's going to be considered as part of this. 
+* Yes, yes. I think we can potentially do it after Gorly, after or after sila-mainnet. I don't know about, we shouldn't like, take too much time with it Just testing. Okay. Yeah. Before my net. So it's okay. It can be considered as a part of a testing process for, for peering, right. It's small thing, but it's going to be considered as part of this. 
 
 **Tim**
 * And I guess the good thing is now that these, these networks run on proof of stake, when we plan a fork weekend and have like high certainty and when it happens, so what we could do is you could imagine having the release for the Gorly can pay, then you also, the merge of Ropsten & SilaSepolia fork blocks, and we can just like scatter them. So they, they have at each like a day apart or something like that. and because it's proof of stake, we, we have really high assurance that this happens, on that day. one thing I assume this, this would be an ELL only for, right. So it's like you still trigger it on a block number. 
@@ -227,7 +227,7 @@ I'm not sure that was the question to me. So the problem is that we might get an
 * The network will reject them and they'll be sequestered in their own little zone and they can turn them off. 
 
 **Tim** 
-* Okay. That was my, my rough assumption, but I wanted to make sure that there wasn't a weird edge case. We, we weren't thinking about. I guess, so the second note around Gordy is, on the last couple of calls, we've talked about wanting to transition Gordy. When we have code, that's pretty much feature complete for sila-sila-mainnet so that it can be like a good, basically dress rehearsal for all the validators on main net and everybody else running a node. the people like, obviously there's like this change to, to the engine API we need to get in. aside from that, I'm curious from client teams, like, is that like the last day people feel that, they, they want to have in before moving to Gordy or are there other things that, are still missing that we'd like to finish before we, we started looking at merging Gordy and I'll just pick on random pine teams, I'll start with Aragon because I saw you all past the hive tests earlier this week. 
+* Okay. That was my, my rough assumption, but I wanted to make sure that there wasn't a weird edge case. We, we weren't thinking about. I guess, so the second note around Gordy is, on the last couple of calls, we've talked about wanting to transition Gordy. When we have code, that's pretty much feature complete for sila-mainnet so that it can be like a good, basically dress rehearsal for all the validators on main net and everybody else running a node. the people like, obviously there's like this change to, to the engine API we need to get in. aside from that, I'm curious from client teams, like, is that like the last day people feel that, they, they want to have in before moving to Gordy or are there other things that, are still missing that we'd like to finish before we, we started looking at merging Gordy and I'll just pick on random pine teams, I'll start with Aragon because I saw you all past the hive tests earlier this week. 
 
 **Andrew** 
 * Yeah. Thanks to Judah. We managed to fix them. 
@@ -296,10 +296,10 @@ I'm not sure that was the question to me. So the problem is that we might get an
 * Yep. Cool. and yeah, I'll add, like, I know I've been doing this for a while already, but yeah, just making sure that all the ELL teams have someone on the cl call next week as well. So if we make a decision for Gordy or if there's any issue with your clients, you can let us know. And worst case, if, if no one from like a CL can make the, or from an ELL team, sorry, can make the call, just leave a comment on the agenda. You have like a strong opinion or blocked or, cool. I guess, add next up, on the agenda. We have more on that. If I could just follow up on that,
 
 **Pari** 
-* Of course. in order to make communication a bit easier and give people more time to update notes, whenever we decide that Callie TTD should be also decided sila-sila-mainnet at the same time. And we can rather use Gordy as an abort as in, if we find something Gordy about them in that TTD and we change that or, otherwise we go ahead and we get the benefit of easier communication.
+* Of course. in order to make communication a bit easier and give people more time to update notes, whenever we decide that Callie TTD should be also decided sila-mainnet at the same time. And we can rather use Gordy as an abort as in, if we find something Gordy about them in that TTD and we change that or, otherwise we go ahead and we get the benefit of easier communication.
 
 **Tim** 
-* I think from a communication standpoint, it's actually more complicated. and I say this as the person who writes the blog posts for all these upgrades, that they're all, they're pretty complex. I think, I think one would simplify communication the most is if for Gordy that TTD is chosen, like the Realty EDS chosen, basically from the get-go and that's clients have a binary, which contains like everything, right? Like where there's no TTD override that has to be done. And there's no, like, you need to download the first version with the high TTD and a second version with the low TTV. I feel like if we can run through this process, and then also like do some stuff around like, the, the staking launch pad and like making sure that that's all up to date. so that it's like smooth for users. I think that's probably the best thing, like communities slash communication wise. and then shortly after that, you know, if it goes, well, we can pick the TTD for sila-sila-mainnet. and similarly, like, and I think for my net, we also want to pick it pretty close to when it actually happens. so if we weren't to pick them both at the same time and say, there's like, you know, two weeks before Gordy, and then two weeks before main net, you're like picking you up, you know, at least four weeks in the future. I feel like for main net, if we could pick it on the order of like three weeks or so in the future, that means that there's just a lesser chance that the hash rate changes a lot in that period. yeah. I feel like keeping them separate is better for like a community communications point of view, but maybe other people disagree. 
+* I think from a communication standpoint, it's actually more complicated. and I say this as the person who writes the blog posts for all these upgrades, that they're all, they're pretty complex. I think, I think one would simplify communication the most is if for Gordy that TTD is chosen, like the Realty EDS chosen, basically from the get-go and that's clients have a binary, which contains like everything, right? Like where there's no TTD override that has to be done. And there's no, like, you need to download the first version with the high TTD and a second version with the low TTV. I feel like if we can run through this process, and then also like do some stuff around like, the, the staking launch pad and like making sure that that's all up to date. so that it's like smooth for users. I think that's probably the best thing, like communities slash communication wise. and then shortly after that, you know, if it goes, well, we can pick the TTD for sila-mainnet. and similarly, like, and I think for my net, we also want to pick it pretty close to when it actually happens. so if we weren't to pick them both at the same time and say, there's like, you know, two weeks before Gordy, and then two weeks before main net, you're like picking you up, you know, at least four weeks in the future. I feel like for main net, if we could pick it on the order of like three weeks or so in the future, that means that there's just a lesser chance that the hash rate changes a lot in that period. yeah. I feel like keeping them separate is better for like a community communications point of view, but maybe other people disagree. 
 
 **Mikhail Kalinin**
 * But what about glass bricks for the main net? we like, we could probably pick it, at the same time as like early, you know, 
@@ -318,7 +318,7 @@ I'm not sure that was the question to me. So the problem is that we might get an
 * That's my current preference. I think it would have fewer end-user errors. Yeah. 
 
 **Pari**
-* Yeah. Also makes MBO try the exact same thing on girly because the hash slash difficulties early as well, we can just have a ballot shakes happen maybe one week before TTD supposed to get off few days before. and then we can change just adjust that tolerance sila-sila-mainnet that yeah. Yeah. And I think on Gordy, it can be much closer, right. Like you could imagine doing like teeth, uh Bellatrix on like a Tuesday and then like Gordy on like an MTD on like a Thursday or something like an order of days. and then sila-sila-mainnet that you probably want like order of a couple of weeks.
+* Yeah. Also makes MBO try the exact same thing on girly because the hash slash difficulties early as well, we can just have a ballot shakes happen maybe one week before TTD supposed to get off few days before. and then we can change just adjust that tolerance sila-mainnet that yeah. Yeah. And I think on Gordy, it can be much closer, right. Like you could imagine doing like teeth, uh Bellatrix on like a Tuesday and then like Gordy on like an MTD on like a Thursday or something like an order of days. and then sila-mainnet that you probably want like order of a couple of weeks.
 
 **Pari**
 * Yeah. I think we just have to be a bit aware, in communicating that, because that would also imply people don't have three weeks to update their note or they don't have up until TTD, but yeah. Which is actually easier to communicate because we know when Bellatrix is there's like a timestamp for Bellatrix. Yeah, definitely. Yeah. 
@@ -366,7 +366,7 @@ I'm not sure that was the question to me. So the problem is that we might get an
 * Yeah. I want to think through the, where the UX can fail to decide that how bad it's worth one way or the other,
 
 **Tim**
-* And then similarity. yeah, what's like the failure, like what's the attack scenario and you know how different it is than our current life. It'd be current things we're willing to tolerate basically. and I feel also that like whatever we end up using for sila-sila-mainnet, we should probably be used for Gordy. So that's takers have the opportunity to run through the entire process, once on, as it will be on sila-sila-mainnet. yup. Anything else on this? Okay. then we have, Leo from, the flash spots team to give an update on MEV boosts. 
+* And then similarity. yeah, what's like the failure, like what's the attack scenario and you know how different it is than our current life. It'd be current things we're willing to tolerate basically. and I feel also that like whatever we end up using for sila-mainnet, we should probably be used for Gordy. So that's takers have the opportunity to run through the entire process, once on, as it will be on sila-mainnet. yup. Anything else on this? Okay. then we have, Leo from, the flash spots team to give an update on MEV boosts. 
 
 ## mev-boost updates [1.04.49](https://youtu.be/K_Cjn74lMSY?t=3889)
 
@@ -561,8 +561,8 @@ July 21, 2022, 14:00 UTC https://github.com/sila-chain/pm/issues/572
 00:16:50	Tomasz Stańczak:	you will be overtaken by shadowforks number anyway  
 00:19:14	Zuerlein:	^  
 00:20:16	Mikhail Kalinin:	an invalid one, was it a block signature?  
-00:20:58	Tim Beiko:	Can confirm ExaPool is now mining on sila-sila-mainnet  
-00:21:03	Tim Beiko:	https://silascan.io/block/15093120  
+00:20:58	Tim Beiko:	Can confirm ExaPool is now mining on sila-mainnet  
+00:21:03	Tim Beiko:	https://etherscan.io/block/15093120  
 00:21:10	Tim Beiko:	more recent than their last block on the old chain  
 00:22:42	Gary Schulte:	my mic is not working: but regarding the besu sepolia worldstate issue, there will be a release in a few hours which has the fix.  22.4.4  
 00:27:40	Micah Zoltu:	Timestamp!  
@@ -576,7 +576,7 @@ July 21, 2022, 14:00 UTC https://github.com/sila-chain/pm/issues/572
 00:28:48	danny:	for EL  
 00:29:16	Micah Zoltu:	That argument is way too nuanced for you to be considered a maxi.  
 00:29:29	Micah Zoltu:	You are hereby cast out of the timestamp-maxi cult.  
-00:29:30	danny:	post-sila-sila-mainnet-merge timestamp maxi  
+00:29:30	danny:	post-sila-mainnet-merge timestamp maxi  
 00:30:00	Micah Zoltu:	You'll have to create your own new Discord server.  Won't be having none of that in Timestamp Based Hard Fork Maxis.  
 00:30:19	danny:	we can merge after the merge  
 00:30:25	Tim Beiko:	https://github.com/sila-chain/execution-apis/pull/254  

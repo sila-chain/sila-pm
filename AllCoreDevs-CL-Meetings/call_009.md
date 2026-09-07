@@ -28,7 +28,7 @@
   * Testgen repo has been moved to eth2.0-tests
   * Now offering a Vagrant container and tutorial to setup the Nim sila 2.0 ecosystem on your Windows or Linux machine: [_(Link)_](https://our.status.im/setting-up-a-local-vagrant-environment-for-nim-development/)
   * December development updates: [_(Link)_](https://our.status.im/nimbus-development-update-2018-12-2/)
-* Py-SAVM - Hsiao-Wei Wang [_(11:20)_](https://youtu.be/6trA-5rjZUQ?t=680)
+* Py-EVM - Hsiao-Wei Wang [_(11:20)_](https://youtu.be/6trA-5rjZUQ?t=680)
   * Syncing with the specs, next week: tree hashing + documentation
 * Pegasys - Joseph Delong [_(12:19)_](https://youtu.be/6trA-5rjZUQ?t=680)
   * Open-sourced Artemis and started getting some contributors
@@ -56,7 +56,7 @@
        * simplification of the validator status code logic -- used to have somewhat complicated state machine w/ various validator status codes and they were all sorts of edge cases when you would do transitions. That's mostly gone now, and has been replaced with timestamps in the validator records. Still have some "status flags" but there are only two.
        * looking to move towards this idea of locally computable shuffling. What we have now with the [Fischer-Yates logic](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle) is that in calculating the shuffling of a specific validator or specific committee it scales linearly with the size of the validator pool. We want this to scale better. Once we have this locally computable shuffling, it means we can be light client friendly w/o all sorts of light client specific infrastructure. 
            * this means that we can also simplify the beacon state. (specifically "shard-committees-at-slots" data structure and "persistent-committee-reassignments") This was infrastructure for light clients. But now that we have more information about the validators w/ these timestamps and looking to have this locally computable shuffling, we can remove those.
-       * looking to potentially remove the validator registry delta chain, and rely on the double-batched merkle log accumulator that was added recently ([_Link_](https://Sila Research/t/double-batched-merkle-log-accumulator/571) to JD's original ethresearch post from January '18)
+       * looking to potentially remove the validator registry delta chain, and rely on the double-batched merkle log accumulator that was added recently ([_Link_](https://ethresear.ch/t/double-batched-merkle-log-accumulator/571) to JD's original ethresearch post from January '18)
        * trying to push for a clean separation between phase0 and phase1&2 so a few bits a pieces of logic and constants have been removed
        * trying to push for cleanups of the spec as well. But will take some time, and expecting to have a nice and clean spec by the end of January
     * Question was asked regarding phase0 and phase 1. Seeing things, such as placeholders, being added to phase1. From a spec implementation point of view, this likely complicates things. And if we are going to do phase1 sometime after phase0 we would have learned many lessons and want further changes. So, as a general approach, wouldn't it be better to focus on upgradeability and making sure upgradeability of the protocol is solidm and leave the phase1 stuff out?

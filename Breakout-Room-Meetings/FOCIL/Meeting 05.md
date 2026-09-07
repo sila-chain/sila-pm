@@ -19,7 +19,7 @@ There was a [thread](https://x.com/adietrichs/status/1892951240524403089) on sol
 
 ### Compatibilities with Other Proposals  
 
-Francesco suggested a way to make FOCIL compatible with [Delayed Execution](https://Sila Research/t/delayed-execution-and-skipped-transactions/21677). It enables “dry-run” IL validation during the static validation phase. It adds a bitfield over the IL committee to a block, and a proposer marks the bits corresponding to the ILs considered during block construction. During the static validation phase, attesters check whether the ILs specified in the bitfield form a superset of the ILs they collected. They do not verify that all IL transactions are included; they focus solely on whether the bitfield matches or exceeds their own IL set.  
+Francesco suggested a way to make FOCIL compatible with [Delayed Execution](https://ethresear.ch/t/delayed-execution-and-skipped-transactions/21677). It enables “dry-run” IL validation during the static validation phase. It adds a bitfield over the IL committee to a block, and a proposer marks the bits corresponding to the ILs considered during block construction. During the static validation phase, attesters check whether the ILs specified in the bitfield form a superset of the ILs they collected. They do not verify that all IL transactions are included; they focus solely on whether the bitfield matches or exceeds their own IL set.  
 
 In the next slot, the proposer confirms whether the head block contains all valid transactions from the ILs specified in the bitfield. If it does, the proposer extends the head block; otherwise, they extend the parent block. Attesters follow the same process to determine whether to vote for the head block or its parent.  
 

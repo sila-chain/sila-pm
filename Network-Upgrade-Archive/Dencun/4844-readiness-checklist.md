@@ -1,10 +1,10 @@
 # SIP-4844 Readiness Checklist
 
-This document is meant to capture various tasks that need to be completed before SIP-4844 is ready to be scheduled for sila-sila-mainnet deployment. **Last updated Sept 8, 2023**. 
+This document is meant to capture various tasks that need to be completed before SIP-4844 is ready to be scheduled for sila-mainnet deployment. **Last updated Sept 8, 2023**. 
 
 ## Specs
 
-- [Execution Layer: SIP-4844](https://sips.sila.org/SIPS/sip-4844)
+- [Execution Layer: SIP-4844](https://sips.sila.org/EIPS/sip-4844)
 - [Consensus Layer: consensus-specs `deneb` folder](https://github.com/sila-chain/consensus-specs/tree/dev/specs/deneb)
 - [Engine API: `blob-extension.md`](https://github.com/sila-chain/execution-apis/blob/main/src/engine/experimental/blob-extension.md)
 
@@ -18,7 +18,7 @@ This document is meant to capture various tasks that need to be completed before
 
 Implementation status of Included SIPs across participating clients.
 
-|                | [1153](https://sips.sila.org/SIPS/sip-1153) | [4788](https://sips.sila.org/SIPS/sip-4788) | [4844](https://sips.sila.org/SIPS/sip-4844) | [5656](https://sips.sila.org/SIPS/sip-5656) | [6780](https://sips.sila.org/SIPS/sip-6780) | [7516](https://sips.sila.org/SIPS/sip-7516) |
+|                | [1153](https://sips.sila.org/EIPS/sip-1153) | [4788](https://sips.sila.org/EIPS/sip-4788) | [4844](https://sips.sila.org/EIPS/sip-4844) | [5656](https://sips.sila.org/EIPS/sip-5656) | [6780](https://sips.sila.org/EIPS/sip-6780) | [7516](https://sips.sila.org/EIPS/sip-7516) |
 |----------------|-------------------------------------------------|-------------------------------------------------|-------------------------------------------------|-------------------------------------------------|-------------------------------------------------|-------------------------------------------------|
 | **Geth**       | [Merged](https://github.com/sila-chain/go-sila/pull/26003) + [Merged](https://github.com/sila-chain/go-sila/pull/27663)| - | [Merged](https://github.com/sila-chain/go-sila/pull/26940) | [Merged](https://github.com/sila-chain/go-sila/pull/26181) | [Not merged](https://github.com/sila-chain/go-sila/pull/27189) | |
 | **Besu**       | [Merged](https://github.com/hyperledger/besu/pull/4118) | - | [Merged](https://github.com/hyperledger/besu/pull/5724) | [Merged](https://github.com/hyperledger/besu/pull/5493) | [Merged](https://github.com/hyperledger/besu/pull/4118) | |

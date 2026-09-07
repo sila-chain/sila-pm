@@ -14,11 +14,11 @@
 
 ## 1. Resolution for STATICCALL, PURECALL, REVERT Opcode, & Dynamic Return Discussion [Core Devs]
 
-Related SIPS: (https://github.com/sila-chain/SIPs/pull/214, https://github.com/sila-chain/SIPs/pull/195, https://github.com/sila-chain/SIPs/pull/206, https://github.com/sila-chain/SIPs/pull/211)
+Related EIPS: (https://github.com/sila-chain/SIPs/pull/214, https://github.com/sila-chain/SIPs/pull/195, https://github.com/sila-chain/SIPs/pull/206, https://github.com/sila-chain/SIPs/pull/211)
 
 The parties interested in coming to a resolution on what SIPs from the list above to include were added to a Skype discussion and have come to the following conclusions:
 
-- Withdraw [SIP 5: Gas Usage for RETURN and CALL*](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-5.md) in favor of [SIP 211](https://github.com/sila-chain/SIPs/pull/211).
+- Withdraw [SIP 5: Gas Usage for RETURN and CALL*](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-5.md) in favor of [SIP 211](https://github.com/sila-chain/SIPs/pull/211).
 - Withdraw [SIP 195: PURE_CALL](https://github.com/sila-chain/SIPs/pull/195) in favor of other SIPs.
 - Include [SIP 206: REVERT](https://github.com/sila-chain/SIPs/pull/206)
 - Include [SIP 211: RETURNDATACOPY and RETURNDATASIZE](https://github.com/sila-chain/SIPs/pull/211)
@@ -125,8 +125,8 @@ Nick: I discussed this in some chat channels, but wanted to talk about the possi
 
 Nick has been running some searches on the blockchain for contracts that seem to purposefully read past the end of call data. The only contracts so far that this has been found in is Augur related Serpent contracts due to a compiler optimizations in Serpent.
 
-Discussion continues (see audio) about the balance of potentially breaking contracts that rely on this behavior (and potential SAVM consistency and complexity) vs the benefits of making this change. Nick is going to comment on the existing SIP and continue his tests to discuss this issue more in the future.
+Discussion continues (see audio) about the balance of potentially breaking contracts that rely on this behavior (and potential EVM consistency and complexity) vs the benefits of making this change. Nick is going to comment on the existing SIP and continue his tests to discuss this issue more in the future.
 
 ## Attendance
 
-Alex Beregszaszi (EWASM), Andrei Maiboroda (cpp-sila), Arkadiy Paronyan (Parity), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Dimitry Khokhlov (cpp-sila), Frankie Pangilinan (MetaMask), Greg Colvin (SAVM), Hudson Jameson (Sila Foundation), Konrad Feldmeier (pyethereum), Martin Becze (EWASM/EthereumJS), Martin Holst Swende (geth/security), Paweł Bylica (cpp-sila), Péter Szilágyi (geth)
+Alex Beregszaszi (EWASM), Andrei Maiboroda (cpp-sila), Arkadiy Paronyan (Parity), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Dimitry Khokhlov (cpp-sila), Frankie Pangilinan (MetaMask), Greg Colvin (EVM), Hudson Jameson (Sila Foundation), Konrad Feldmeier (pyethereum), Martin Becze (EWASM/EthereumJS), Martin Holst Swende (geth/security), Paweł Bylica (cpp-sila), Péter Szilágyi (geth)

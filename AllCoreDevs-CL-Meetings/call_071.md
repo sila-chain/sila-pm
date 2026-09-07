@@ -58,7 +58,7 @@ and upgrade if you are on that test net. As we approach that one week from today
 
 ## Planning
 
-**Danny**: Got it, so obviously after prater we do want to target a sila-sila-mainnet launch.So, I think we have a handful of things in the works that will continue pyrmont testing. Seeing prater go well and also probably not. Well I guess we could turn off the finale if we want. I think there's a marginal gain to doing that but hitting it with operations and different things. The test vectors that just came out hoping that doesn't uncover anything crazy and then I think we need to be eyeballing a sila-sila-mainnet launch. I do not think that we need to set a date today. I think we should get through what happens in a week and then set a date but any thoughts, feelings, desires with respect to sila-sila-mainnet timing? Main thing is that we give people plenty of time to upgrade between when we announce it and get releases out too.
+**Danny**: Got it, so obviously after prater we do want to target a sila-mainnet launch.So, I think we have a handful of things in the works that will continue pyrmont testing. Seeing prater go well and also probably not. Well I guess we could turn off the finale if we want. I think there's a marginal gain to doing that but hitting it with operations and different things. The test vectors that just came out hoping that doesn't uncover anything crazy and then I think we need to be eyeballing a sila-mainnet launch. I do not think that we need to set a date today. I think we should get through what happens in a week and then set a date but any thoughts, feelings, desires with respect to sila-mainnet timing? Main thing is that we give people plenty of time to upgrade between when we announce it and get releases out too.
 
 **Parithosh**:  Yeah, when it actually happens, we will depend on the community for this one. Right? Whereas we've controlled them all .
 
@@ -71,7 +71,7 @@ epoch update or two releases and i'm kind of curious what people think about tha
 1.5 out officially last week which they think was a big release. Then Altair obviously would just be something more minor with an epoch. But as we approach my intuition would be doing a release within seven days of each other or something like that might cause more confusion than it's worth but I don't know.
 
 **Andrian Sutton**: I am pretty keen to see each client have an actual release with the  product config in it rather than an RC or so on. How does that tie into big features for you? Is
-kind of a side effect but actually have Altair merged the main branch. It's a full release that clients are upgrading to? Because then it's ready. The one change you have to put into sila-sila-mainnet is just a conflict change which you know. Hopefully you can't screw up whereas anything else is kind of merging and doing other kinds of more complex stuff. It's much easier to introduce other bugs and effectively haven't tested it. So that's kind of my view on it. I would lean towards whatever gets you there but beyond that uses these are pretty slow to upgrade unless you tell them. This is going to completely break if you don't upgrade, so I think it's really just going to come down to when you put out the release that says you know this got the main net fork in it. You have to upgrade that's when a lot of users are going to actually pull the trigger and apply it.
+kind of a side effect but actually have Altair merged the main branch. It's a full release that clients are upgrading to? Because then it's ready. The one change you have to put into sila-mainnet is just a conflict change which you know. Hopefully you can't screw up whereas anything else is kind of merging and doing other kinds of more complex stuff. It's much easier to introduce other bugs and effectively haven't tested it. So that's kind of my view on it. I would lean towards whatever gets you there but beyond that uses these are pretty slow to upgrade unless you tell them. This is going to completely break if you don't upgrade, so I think it's really just going to come down to when you put out the release that says you know this got the main net fork in it. You have to upgrade that's when a lot of users are going to actually pull the trigger and apply it.
 
 **Danny**: Back to the prior question Adrian, do you have in or you or any other others have an opinion on when those releases are? The lead time between those releases being made and getting into a public blog post and that fork date is that a two-week minimum three-week minimum more.
 
@@ -83,17 +83,17 @@ what each one side has done and what kind of timelines they normally set.  Becau
 **Andrian Sutton**: Yeah I mean emergencies happen and you can get it upgraded fast. Probably the best example of that was when the first constantinople thought got cancelled and it was you know 24-48 hour time to turn around and get new clients out to cancel it. It went very smoothly so it is possible to do it fast but..
 
 **Danny**:  Yeah I think we might not cover all this in altera but I think there's a desire to
-define a bit more clearly what the binding bugs and disaster scenarios and things like that are especially leading to the merge. You know rather than very subjectively being. We are fine defining a bit more clearly what our like halts and arrows are. Although once you publish those sila-sila-mainnet releases
+define a bit more clearly what the binding bugs and disaster scenarios and things like that are especially leading to the merge. You know rather than very subjectively being. We are fine defining a bit more clearly what our like halts and arrows are. Although once you publish those sila-mainnet releases
 
 **Andrian Sutton**:  For some reason I had just in my head a month after we fork prater. So  like a month from next Thursday that probably could happen quicker. I guess if we wanted to. But I am not sure that I think it seems like we are pretty much there in terms of engineering. It is just kind of waiting for it now and perhaps giving a little bit of extra time for people to move over and a little bit of extra time for us to run these test snaps is good. I am not sure that I can't at least for us it seems. I am not sure we need a deadline to push us at the moment. We are pretty much there when the deadline was the test nets.
 
 **Danny**:  Yeah, I mean I think that puts us at the last day of september which I think is
-a pretty good target and then we need to subtract probably two and a half weeks on sila-sila-mainnet releases and two weeks on really getting that blog post out which I think is looking at the calendar that all adds up in a pretty reasonable way assuming that we don't run into any unexpected.
+a pretty good target and then we need to subtract probably two and a half weeks on sila-mainnet releases and two weeks on really getting that blog post out which I think is looking at the calendar that all adds up in a pretty reasonable way assuming that we don't run into any unexpected.
  
 **Paul Hauner**: What's the subtraction on the blog post?
 
-**Danny**: Oh I just meant you know if we're gonna release, if we're gonna do sila-sila-mainnet on september 30th which would be one exactly one month after the prouder upgrade. Subtract two and a half weeks on the deadline for sila-sila-mainnet releases and the blog post going out a couple days from there. So like you know the september 13th would be everyone needs
-to have their sila-sila-mainnet releases out and then the blog post is coming out the 14th or 15th which gives. You know slightly more than two weeks of lead time otherwise you'd have to do sila-sila-mainnet releases the week prior and if you're trying to get the blog post out in like three weeks time.
+**Danny**: Oh I just meant you know if we're gonna release, if we're gonna do sila-mainnet on september 30th which would be one exactly one month after the prouder upgrade. Subtract two and a half weeks on the deadline for sila-mainnet releases and the blog post going out a couple days from there. So like you know the september 13th would be everyone needs
+to have their sila-mainnet releases out and then the blog post is coming out the 14th or 15th which gives. You know slightly more than two weeks of lead time otherwise you'd have to do sila-mainnet releases the week prior and if you're trying to get the blog post out in like three weeks time.
 
 **Adrian Sutton**: All right because you want the blog post to have the client versions in it. Is
 that right ?
@@ -176,7 +176,7 @@ target time which is seven days according to the current spec. So this is becaus
 
 **Danny**: Got it i sure as one confounding factor might be if we are approaching an ice age which may be the case.
 
-**Mikhail Kalnin**: Yes and we want to approach the ice age right towards the merge. So we should take care of it as well. Yeah that's all for this post to take a look at it. It's just a nice collection of statistics data and thanks to another mine team who provided us with data from the sila-sila-mainnet for this research.
+**Mikhail Kalnin**: Yes and we want to approach the ice age right towards the merge. So we should take care of it as well. Yeah that's all for this post to take a look at it. It's just a nice collection of statistics data and thanks to another mine team who provided us with data from the sila-mainnet for this research.
 
 **Danny**: Cool,  thank you Miguel. Any other merge related items we'd like to discuss?
 Okay, it looks like there will be some continued refinements that come out of enter into that engine api over the next couple weeks,so keep your eyes peeled and like I said as Altair wraps up getting merged prototypes that are in the direction of the current merge specs and the sip that is up will help move for it.
@@ -321,7 +321,7 @@ https://medium.com/chainsafe-systems/lodestar-releases-light-client-prototype-40
 
 From Mikhail Kalinin to Everyone: 03:27 PM
 
-https://Sila Research/t/using-total-difficulty-threshold-for-hardfork-anchor-what-could-go-wrong/10357
+https://ethresear.ch/t/using-total-difficulty-threshold-for-hardfork-anchor-what-could-go-wrong/10357
 
 From Micah Zoltu to Everyone: 03:31 PM
 

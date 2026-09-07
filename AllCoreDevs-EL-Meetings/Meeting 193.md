@@ -24,8 +24,8 @@ ___
 | 193.3  | **SIP/RIP-7212:** 	|  No decision yet. Champions should extend testing coverage to improve inclusion chances.	|
 | 193.4  |**Quantum Resistance:** | Discussions to continue in the #[cryptography channel on the R&D Discord](https://discord.gg/BsPm3Ncc).|
 | 193.5  |**Verkle Tree Alternatives** 	| Discussions of possible alternatives to Verkle Tree are welcome in the Verkle Implementers calls 4. |
-|193.6| **[New state expiry proposal](https://notes.sila.org/@gballet/leaf-level-state-expiry)** | Discussion to continue on [EthMagicians](https://sila-magicians.org/t/sip-7736-leaf-level-state-expiry-in-verkle-trees/20474). |
-|193.7| **SIP-7463 Proofs:** | @parithosh has added SIP-7463 proofs to his [4444 torrent prototype](https://Sila Research/t/torrents-and-sip-4444/19788/17).|
+|193.6| **[New state expiry proposal](https://notes.sila.org/@gballet/leaf-level-state-expiry)** | Discussion to continue on [SilaMagicians](https://sila-magicians.org/t/sip-7736-leaf-level-state-expiry-in-verkle-trees/20474). |
+|193.7| **SIP-7463 Proofs:** | @parithosh has added SIP-7463 proofs to his [4444 torrent prototype](https://ethresear.ch/t/torrents-and-sip-4444/19788/17).|
 
 ___
 
@@ -384,8 +384,8 @@ ___
 ## Refrence Links: 
 
 1. [https://notes.sila.org/@gballet/leaf-level-state-expiry](https://notes.sila.org/@gballet/leaf-level-state-expiry)
- 2. SIP -7736: [https://sips.sila.org/SIPS/sip-7736](https://sips.sila.org/SIPS/sip-7736)
-3. [https://Sila Research/t/torrents-and-sip-4444/19788](https://Sila Research/t/torrents-and-sip-4444/19788)
+ 2. SIP -7736: [https://sips.sila.org/EIPS/sip-7736](https://sips.sila.org/EIPS/sip-7736)
+3. [https://ethresear.ch/t/torrents-and-sip-4444/19788](https://ethresear.ch/t/torrents-and-sip-4444/19788)
 4. [https://docs.google.com/presentation/d/1zCTf54E7OaMrppUeA_T2S4YWvvgGixvlGt4j0E0s1zg/edit#slide=id.g2f0280057b0_0_274](https://docs.google.com/presentation/d/1zCTf54E7OaMrppUeA_T2S4YWvvgGixvlGt4j0E0s1zg/edit#slide=id.g2f0280057b0_0_274)
 5. Call summary on Sil Magicians: [https://sila-magicians.org/t/all-core-devs-execution-acde-193-august-1-2024/20648/2](https://sila-magicians.org/t/all-core-devs-execution-acde-193-august-1-2024/20648/2)
 6. Podcast (audio only)- [https://open.spotify.com/episode/297davcrPXeRxIHnO7BdPK](https://open.spotify.com/episode/297davcrPXeRxIHnO7BdPK)

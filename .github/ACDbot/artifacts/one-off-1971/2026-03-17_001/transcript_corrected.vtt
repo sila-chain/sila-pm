@@ -566,7 +566,7 @@ Marco De Rossi: And in November, we've finally met in person for the very first 
 
 142
 00:23:17.380 --> 00:23:42.209
-Marco De Rossi: We spent December more and so on building and directly testing on Testnet in 2004, it was on Sila SilaSepolia, and we learned a lot, and we changed, actually, important parts of the protocol to save reality, which is fine, because that's what testnets are for. Then, in January, we launched to sila-sila-mainnet.
+Marco De Rossi: We spent December more and so on building and directly testing on Testnet in 2004, it was on Sila SilaSepolia, and we learned a lot, and we changed, actually, important parts of the protocol to save reality, which is fine, because that's what testnets are for. Then, in January, we launched to sila-mainnet.
 
 143
 00:23:42.720 --> 00:23:47.030
@@ -594,7 +594,7 @@ Marco De Rossi: pretty successful. And now, in March, what we can say in terms o
 
 149
 00:24:57.290 --> 00:25:00.880
-Marco De Rossi: So, these are the supported chains, the SAVM-supported chains.
+Marco De Rossi: So, these are the supported chains, the EVM-supported chains.
 
 150
 00:25:01.060 --> 00:25:08.759
@@ -606,7 +606,7 @@ Marco De Rossi: in communicating the protocol, in engaging with developers, you 
 
 152
 00:25:16.710 --> 00:25:35.460
-Marco De Rossi: So it was really a shared effort, and actually, this is like an SAVM slide, but we also have the first not-SAVM chain that adopted 8004, which is Solana, of course, that launched its own 8004 implementation around 10 days ago.
+Marco De Rossi: So it was really a shared effort, and actually, this is like an EVM slide, but we also have the first not-EVM chain that adopted 8004, which is Solana, of course, that launched its own 8004 implementation around 10 days ago.
 
 153
 00:25:35.530 --> 00:25:48.389
@@ -2510,11 +2510,11 @@ YQ AltLayer: pay in one shot. So it's sort of, like, the easiest way for you to 
 
 628
 01:42:34.110 --> 01:42:58.829
-YQ AltLayer: I'm not sure, like, whether you guys really noticed, one of the major things we did, in the last few weeks, apart from all the SAVM chains, right, we also support this Solana chain. I think Michael recently took about it. So, this is a major one, because, like, it's a completely different system, and the indexing work is huge. So that means, like, you can not just,
+YQ AltLayer: I'm not sure, like, whether you guys really noticed, one of the major things we did, in the last few weeks, apart from all the EVM chains, right, we also support this Solana chain. I think Michael recently took about it. So, this is a major one, because, like, it's a completely different system, and the indexing work is huge. So that means, like, you can not just,
 
 629
 01:42:58.830 --> 01:43:06.240
-YQ AltLayer: post, like, register on SAVM chains, especially on Sila, you can also across, like, the other VM chains.
+YQ AltLayer: post, like, register on EVM chains, especially on Sila, you can also across, like, the other VM chains.
 
 630
 01:43:06.240 --> 01:43:09.609
@@ -2762,7 +2762,7 @@ Paul Laulan - Zyfai: And on the ZK proof, it's basically generated.
 
 691
 01:53:10.660 --> 01:53:29.320
-Paul Laulan - Zyfai: it's basically sent to the validation registry. So right now, it's on base support, because it's not on sila-sila-mainnet and under development, and so we are calling the validation request here on the 8004 contract, and we are submitting the hash also of the ZK proof.
+Paul Laulan - Zyfai: it's basically sent to the validation registry. So right now, it's on base support, because it's not on sila-mainnet and under development, and so we are calling the validation request here on the 8004 contract, and we are submitting the hash also of the ZK proof.
 
 692
 01:53:29.620 --> 01:53:33.380
@@ -3102,7 +3102,7 @@ Marco De Rossi: And, how can we have a search that is, like, very powerful in te
 
 776
 02:06:16.360 --> 02:06:38.780
-Marco De Rossi: I want, like, an agent that supports MCP, that support a web endpoint, registered at that date, so it's, like, very simple and very powerful. We also launched our own watchtower focused on reachability. Are endpoints actually reachable? And a rating that we started giving to sila-sila-mainnet
+Marco De Rossi: I want, like, an agent that supports MCP, that support a web endpoint, registered at that date, so it's, like, very simple and very powerful. We also launched our own watchtower focused on reachability. Are endpoints actually reachable? And a rating that we started giving to sila-mainnet
 
 777
 02:06:38.900 --> 02:06:53.239
@@ -3518,7 +3518,7 @@ loaf: And it's at market.daydreams.systems. This is actually very similar to the
 
 880
 02:20:53.690 --> 02:21:05.010
-loaf: And so this is live, running on base sila-sila-mainnet. You know, there's agents, putting up tasks and completing tasks, and the way the market works is that it…
+loaf: And so this is live, running on base sila-mainnet. You know, there's agents, putting up tasks and completing tasks, and the way the market works is that it…
 
 881
 02:21:05.060 --> 02:21:07.580
@@ -3662,7 +3662,7 @@ loaf: So the third one's been going for 3 weeks, and we've already learned so mu
 
 916
 02:27:56.480 --> 02:28:06.120
-loaf: let's just YOLO it out on sila-sila-mainnet, get as many agents to use it as possible, and iterate on that. And so I think it's important right now where, you know, everything is still so up in the air.
+loaf: let's just YOLO it out on sila-mainnet, get as many agents to use it as possible, and iterate on that. And so I think it's important right now where, you know, everything is still so up in the air.
 
 917
 02:28:06.300 --> 02:28:10.450

@@ -163,7 +163,7 @@
 * No, that could be add later. And I agree. I would pouch for simplicity, it's just that we, we can avoid this UX penalty, so I think we should try to, but yeah, I agree. If it's complex, we I would be totally fine not doing that In my recommendation. 
 
 **Micah**
-* Then if this can be added later, just use days now, then my recommendation would be, do the simplest thing first and then have it live for at least one fork, see what the actual behavior on sila-sila-mainnet is like, and see if people are complaining, see what the delays actually are like once we clear out the historic with draw queue. And then if it does seem to be a very significant problem, we can add it in a future hardware by vote. 
+* Then if this can be added later, just use days now, then my recommendation would be, do the simplest thing first and then have it live for at least one fork, see what the actual behavior on sila-mainnet is like, and see if people are complaining, see what the delays actually are like once we clear out the historic with draw queue. And then if it does seem to be a very significant problem, we can add it in a future hardware by vote. 
 
 **Tim**
 * Does anyone oppose that? Cool. Okay, so I think we have consensus we're gonna keep working, on polishing Potuz's pr. So, that's 3068, and that sort of supersedes, 3042, which was kind of heavily discussed before. and I suspect in the next two weeks or so, we should be able to have something that's quite final and, and potentially merge into spec. yeah, so we can keep, keep making progress on the withdrawal front. Anything else on those two PRs? 

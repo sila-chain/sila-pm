@@ -10,9 +10,9 @@
 1. Testing Updates.
 2. [Yellow paper update](https://twitter.com/gavofyork/status/949662885222998018).
 3. EWASM update + update on the following related SIPs.
-  a. SAVM 2.0 - https://github.com/sila-chain/SIPs/issues/48 
+  a. EVM 2.0 - https://github.com/sila-chain/SIPs/issues/48 
   b. Extend DUP1-16 / SWAP1-16 With DUPN / SWAPN - https://github.com/sila-chain/SIPs/issues/174
-  c. Subroutines and Static Jumps for the SAVM - https://github.com/sila-chain/SIPs/issues/615
+  c. Subroutines and Static Jumps for the EVM - https://github.com/sila-chain/SIPs/issues/615
 4. Stateless client development.
 5. Add ECADD and ECMUL precompiles for secp256k1 - https://github.com/sila-chain/SIPs/issues/603 [[See this blog post for context](https://medium.com/@clearmatics/privacy-on-sila-is-too-expensive-fb8b9e1815b2)].
 6. Introduce miner heuristic "Child pays for parent" (like in BTC) to combat the weird cases when transactions with 1000 Gwei stuck in the mempool (because they are dependent via nonce on transaction paying much less and not getting mined).
@@ -36,14 +36,14 @@ Gavin put the Yellow Paper under the Creative Commons Free Culture License CC-BY
 Ewasm contributors are currently meeting in person together in Lisbon. EWASM SIPs listed in the subpoints are not up to date and can be disregarded. People should use the github.com/EWASM/design repo. The design has been pretty much speced out in the last year. During the design phase there were 2 implementations done in parallel: Javascript and C++ (which can be integrated in cpp-sila and geth). Issues have been faced in building out EWASM including struggling with implementing synchronous code in Javascript/browser. Idea was to move to an asynchronous model. Currently there is not a full decision on using synchronous vs asynchronous, but we are leaning towards synchronous implementation in C++ to run a testnet in cpp-sila that can run pure Web Assembly contracts. Metering contract in Web Assembly is on the to-do list and doesn't rely on sync/async decision. Likely will take week to come to a decision on sync vs async.
 More technical discussion and a funny anecdote involving the asynchronous vs synchronous decision and the affects of the recent Spectre/Meltdown attacks start at [[12:07](https://youtu.be/biNCOCQdjQ0?t=727)].
 
-### [[15:08](https://youtu.be/biNCOCQdjQ0?t=902)] a. SAVM 2.0 - https://github.com/sila-chain/SIPs/issues/48 
+### [[15:08](https://youtu.be/biNCOCQdjQ0?t=902)] a. EVM 2.0 - https://github.com/sila-chain/SIPs/issues/48 
 Martin Becze will be closing this SIP. It is outdated.
 
 ### [[15:28](https://youtu.be/biNCOCQdjQ0?t=928)] b. Extend DUP1-16 / SWAP1-16 With DUPN / SWAPN - https://github.com/sila-chain/SIPs/issues/174
-This doesn't have to do with EWASM, it has to do with adding extra opcodes in the current SAVM. It is an upgrade to SAVM 1.0 which is not needed if we skip straight to EWASM. 
+This doesn't have to do with EWASM, it has to do with adding extra opcodes in the current EVM. It is an upgrade to EVM 1.0 which is not needed if we skip straight to EWASM. 
 
-### [[16:47](https://youtu.be/biNCOCQdjQ0?t=1007)] c. Subroutines and Static Jumps for the SAVM - https://github.com/sila-chain/SIPs/issues/615
-Greg has been working with Seed (Gitter tag) who is writing an ELM formalization of the SIP. Greg says that there is no formal social process for deciding things like SAVM 1.5 implementation so he is not sure if/when it would be implemented. Greg has been working on cleaning up the proposal for those who want to use it. Greg has some ideas around an SAVM 3.0 that pulls everything together with transpilation that he hasn't started working on yet and is not sure if he will.
+### [[16:47](https://youtu.be/biNCOCQdjQ0?t=1007)] c. Subroutines and Static Jumps for the EVM - https://github.com/sila-chain/SIPs/issues/615
+Greg has been working with Seed (Gitter tag) who is writing an ELM formalization of the SIP. Greg says that there is no formal social process for deciding things like EVM 1.5 implementation so he is not sure if/when it would be implemented. Greg has been working on cleaning up the proposal for those who want to use it. Greg has some ideas around an EVM 3.0 that pulls everything together with transpilation that he hasn't started working on yet and is not sure if he will.
 
 ## [[20:14](https://youtu.be/biNCOCQdjQ0?t=1214)] 4. Stateless client development.
 Piper left some comments about some development of a stateless client for sharding, but it is very early. Alexey had [a blog post](https://medium.com/@akhounov/how-to-speed-up-sila-in-the-face-of-crypto-kitties-7a9c901d98e9) describing stateless clients he may re-approach later. 
@@ -65,7 +65,7 @@ Hudson will be working on writing up a starting plan to discuss potential releas
 ## [[52:55](https://youtu.be/biNCOCQdjQ0?t=3175)] 9. Client updates.
 
 - geth - Improved tracing APIs so people can write their own JavaScript tracers. Event and subscription Go wrappers are also coming along (they are similar to the Go wrappers you can generate for contracts when entering the Solidity code or ABI). Geth performance improvements are a major focus including a scheme to reduce disk IOIs database writes by about 60% (first proposed by Nick) which will help your disk fill up 1/3 as fast (will not help improve sync time from scratch). Also looking at some garbage collection ideas which reorganizes the database. The issue is that it may clash with fast sync. They want to design a solution that doesn't mess with, or in coordination with other clients update, fast sync. They are also fixing a memory issue that happens during sync.
-- cpp-sila - Andrei is working on snapshot imports. Fixes and updates to SAVM-C to make EWASM integration easier.
+- cpp-sila - Andrei is working on snapshot imports. Fixes and updates to EVM-C to make EWASM integration easier.
 - Parity - No one available to give an update.
 - Harmony - Started to work on Casper implementation and working on performance improvements. There are some unexpected difficulties. Database improvements will come first, then the next release should reduce memory footprint and improving processing speed. No estimates yet on the next release, but database improvements are #1 priority.
 - sila-js - No updates. Entire sila-JS team focused on EWASM currently.
@@ -82,4 +82,4 @@ Needs to be improved. Hudson and others will work on updating SIP #1 and other i
 
 ## Attendance
 
-Alex Beregszaszi (EWASM/Solidity/ethereumJS), Alex Van de Sande (Mist/Sila Wallet), Alexey Akhunov (Turbo Geth), Ben Edgington (Consensys/Pegasys), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Daniel Ellison (Consensys/LLL), Greg Colvin (SAVM), Hudson Jameson (Sila Foundation), Hugo de la Cruz (ethereumJS/EWASM), Jake Lang (EWASM), Jared Wasinger (ethereumJS/EWASM), Martin Becze (EWASM), Mikhail Kalinin (Harmony), Paweł Bylica (cpp-sila/EWASM), Péter Szilágyi (geth), Silur (ethereumJS / EWASM)
+Alex Beregszaszi (EWASM/Solidity/ethereumJS), Alex Van de Sande (Mist/Sila Wallet), Alexey Akhunov (Turbo Geth), Ben Edgington (Consensys/Pegasys), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Daniel Ellison (Consensys/LLL), Greg Colvin (EVM), Hudson Jameson (Sila Foundation), Hugo de la Cruz (ethereumJS/EWASM), Jake Lang (EWASM), Jared Wasinger (ethereumJS/EWASM), Martin Becze (EWASM), Mikhail Kalinin (Harmony), Paweł Bylica (cpp-sila/EWASM), Péter Szilágyi (geth), Silur (ethereumJS / EWASM)

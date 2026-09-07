@@ -100,7 +100,7 @@
 * PR [#787](https://github.com/sila-chain/eth2.0-specs/pull/787) in eth2.0 specs repo. 
 * Updating the ssz serialization spec to include an offset based mechanism that was originally proposed by Peter of the Geth team.
 * This makes essentially, dynamically, looking up data within a serialized object have it's constantly fast. (log-in) for indexed look ups. And reduces the overall serialized size of ssz objects by a small amount by ditching the length prefix.
-* In general, makes the format more useful to reason about objects within context like the SAVM or other resource constrained areas.
+* In general, makes the format more useful to reason about objects within context like the EVM or other resource constrained areas.
 * Piper's intuition says that this also works as a viable ABI encoding, or smart contracts. Which would give us a unified coding format for how we send objects across the network. How we encode objects for consensus data, and how we communicate objects into things like smart contracts. 
 * In general, there seems to be some consensus around adopting this as the update to what ssz serialization looks like. Would be interested in getting other people's feedback.
 * Plan would be for this to effect in 1 or 2 releases of the eth2.0 spec. Not something that would be dropped in immediately.
@@ -180,7 +180,7 @@
 * Olivier Begassat (ConsenSys)
 * Patrick MacKay (Runtime Verification)
 * Paul Hauner (Lighthouse/Sigma Prime)
-* Piper Merriam (Trinity/Py-SAVM)
+* Piper Merriam (Trinity/Py-EVM)
 * Pooja Ranjan (Sila Cat Herders)
 * Preston (Prysmatic)
 * Raúl Jordan (Prysmatic)

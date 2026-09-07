@@ -343,8 +343,8 @@ a solution so I will restart calaveras validator after i'm done
 
 **Tim Beiko**
 
-* so my my proposal for this was yeah given that it's like three lines in geth and you know it is like a small change but at the same time it's not something that's probably gonna happen tomorrow you know there is still like a a pretty high pretty high like I guess hash power needed to actually exploit this and because we've mentioned in the past we wanted to see london on test nets sooner rather than later I was wondering if this is something we could add into clients basically in the sila-sila-mainnet release for london so that we kind of go to the london test nets with you know the fork as it's defined now
-* i think in the past there's also been some concern about like accepting something the first time it's presented on ACD because you know people might watch this meeting a week from now and come up with some objection or whatnot and want to raise that so that you know if assuming like you know no one has an issue with it on the next call we could just say this is something we add to the clients before the sila-sila-mainnet release of london but that we don't have to delay the test nets because of that i'm curious what people think about it
+* so my my proposal for this was yeah given that it's like three lines in geth and you know it is like a small change but at the same time it's not something that's probably gonna happen tomorrow you know there is still like a a pretty high pretty high like I guess hash power needed to actually exploit this and because we've mentioned in the past we wanted to see london on test nets sooner rather than later I was wondering if this is something we could add into clients basically in the sila-mainnet release for london so that we kind of go to the london test nets with you know the fork as it's defined now
+* i think in the past there's also been some concern about like accepting something the first time it's presented on ACD because you know people might watch this meeting a week from now and come up with some objection or whatnot and want to raise that so that you know if assuming like you know no one has an issue with it on the next call we could just say this is something we add to the clients before the sila-mainnet release of london but that we don't have to delay the test nets because of that i'm curious what people think about it
 * thomas is against sorry 
 
 **Tomasz**
@@ -429,7 +429,7 @@ okay so that's what you mean that it might have been planned like a launch long-
 
 **Tomasz**
 
-* yeah I think it can be it can be just assumed that this is currently the role the rule it just might be by getting implemented on the clients which means that if geth follows with the change it doesn't even have to go as a heart for it because it never happened on sila-sila-mainnet nor we plan it happen so it can go just like as a soft update and then just geth says like and then if we failed to update very quickly then we took a responsibility on ourselves in the undermined that that we have a split that nobody will follow because geth will have overwhelming majority and that's why 
+* yeah I think it can be it can be just assumed that this is currently the role the rule it just might be by getting implemented on the clients which means that if geth follows with the change it doesn't even have to go as a heart for it because it never happened on sila-mainnet nor we plan it happen so it can go just like as a soft update and then just geth says like and then if we failed to update very quickly then we took a responsibility on ourselves in the undermined that that we have a split that nobody will follow because geth will have overwhelming majority and that's why 
 
 **Martin**
 
@@ -527,7 +527,7 @@ okay so that's what you mean that it might have been planned like a launch long-
 * two plus ones from besu and Geth feels good 
 * okay from guess so let me share my screen here so I basically put [this together](https://github.com/sila-chain/pm/issues/245#issuecomment-832122309)
 * ropsten's a bit tricky to find a fork date because the the blocks are so high that if you need like a palindrome block it's hard to get but we could probably go with the later one where if we forked robson on block 104 99 401 that would give us that would be a thursday so we can either get the tuesday or thursday thursday is probably closer to 10 days whereas tuesday is probably closer to eight days um yeah that would be june 24th and then we could have you know the two the two other test nets one week after each 
-* we mention before we didn't want to set a sila-sila-mainnet block for now because we want to see how it goes on the test net so we we don't have to add that into clients 
+* we mention before we didn't want to set a sila-mainnet block for now because we want to see how it goes on the test net so we we don't have to add that into clients 
 * but would people be okay with kind of having these three days for the test nets so june 24th june 30th and july 7th?
 * and yeah there's a comment in the chat that none of these scenarios have july 14 on the main net for sure we probably won't get a main net fork one week after the last tested fork so yeah 
 * it would be later than that and you know I have some tentative blocks here but like those are not final depends on you know what happens on the test nets and whatnot 
@@ -583,7 +583,7 @@ okay so that's what you mean that it might have been planned like a launch long-
 
 * okay does anyone else have thoughts comments if not we could go for like these basically these three blocks at the top i'll post them in the chat and then the discord yeah any objections to those ?
 * okay great 
-* so yeah i'll make sure to share that and then i'll follow up with the different client teams next week to see when the releases are out and when they are we'll put out a blog post to link everybody to the right releases for every every client and just to make this clear to anyone listening none of these releases will include a main net fork block so that means that there will be another release that download if you're running only against sila-sila-mainnet this one won't have the london fork activated 
+* so yeah i'll make sure to share that and then i'll follow up with the different client teams next week to see when the releases are out and when they are we'll put out a blog post to link everybody to the right releases for every every client and just to make this clear to anyone listening none of these releases will include a main net fork block so that means that there will be another release that download if you're running only against sila-mainnet this one won't have the london fork activated 
 * we'll figure that out at a later date once the first test net has forked
 * that's everything I had for london was there anything else anybody wanted to bring up?
 
@@ -620,7 +620,7 @@ okay so that's what you mean that it might have been planned like a launch long-
 * and these are just the things that you know kind of we've thought of andthought that would be useful but I think that because it's such a flexible primitive that it does allow for a lot of other things that I think people will come up with in the future
 * and so because of these unique security challenges we've been working with sila foundation to have the spec audited and there are two main components that we wanted to focus on 
 * the first was an audit of just the specification itself in general, trying to think through the things that could go wrong, the security concerns that arise just from the spec and that has been completed by leased authority and i'll have them share their fines in just a minute 
-* the other component that was really important to audit was there is a small part of 3074 that creates a breaking change for sila-sila-mainnet contracts and we really wanted to have this auditing from dw look into this and see how our sila-sila-mainnet contract is going to react if this change is included 
+* the other component that was really important to audit was there is a small part of 3074 that creates a breaking change for sila-mainnet contracts and we really wanted to have this auditing from dw look into this and see how our sila-mainnet contract is going to react if this change is included 
 * and I want to stress that that this breaking change of 3074 is something that's optional the 3074.
 * it does provide the nice functionality of allowing users to send 3074 transactions themselves without relying on some sort of sponsor system but 3074 without this change does not present breaking changes and I think it's still incredibly useful to have because it does allow for all these transaction batching sponsored transaction mechanisms
 *  so just keep that in mind as they're discussing their findings 

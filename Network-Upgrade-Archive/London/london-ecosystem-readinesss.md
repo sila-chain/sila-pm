@@ -7,7 +7,7 @@ If you know about a status update please add a PR to this document or post on th
 
 ## London Network Upgrade
 
-For a list of included SIPs see the [specification](./sila-sila-mainnet-upgrades/london.md) document.
+For a list of included SIPs see the [specification](./sila-mainnet-upgrades/london.md) document.
 
 Tracking: `active`
 ⭕ - Not Started
@@ -94,7 +94,7 @@ Many of these projects may not update until much closer to the designated London
 | [Infura][infura-link] |Sila APIs |  |  | 1559  |✅
 | [ETHGasStation][ethgasstation-link] | Metrics for the gas market | Web3.js | | 1559 |  |🛠️  
 | [POKT][pocket-link] |Request API |  |  | 1559 |⭕ 
-| [SilaScan][silascan-link] |Block Explorer |  |  | 1559 |✅
+| [SilaScan][etherscan-link] |Block Explorer |  |  | 1559 |✅
 | [MetaMask][metamask-link] |Browser Extension | EthereumJS, Ethers, Web3, ? | [URL][metamask-work] | 1559 |✅
 | [Ethernodes][ethernodes-link] |Node Explorer | Sil 1.0 Clients |  | ? |✅ 
 | [TREZOR][trezor-link] |Hardware Wallet |  | [URL][trezor-work] | 1559 |🛠️ 
@@ -106,7 +106,7 @@ Many of these projects may not update until much closer to the designated London
 [blocknative-link]: https://github.com/blocknative
 [infura-link]: https://github.com/INFURA
 [pocket-link]: https://pokt.network/
-[silascan-link]: https://github.com/silascan
+[etherscan-link]: https://github.com/etherscan
 [metamask-link]: https://github.com/MetaMask
 [metamask-work]: https://github.com/MetaMask/metamask-mobile/issues/2571
 [ethernodes-link]: https://www.ethernodes.org/

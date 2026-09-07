@@ -23,7 +23,7 @@ Video starts at [2:52](https://youtu.be/5Q67tmkZ5So?t=172).
 * Hudson
     * We had trouble monitoring the fork, knowing which was the canonical chain
     * No fork monitor, only basic ethstats page
-* Lane: Can we work backwards and discuss what testing needs to happen before a sila-sila-mainnet hard fork?
+* Lane: Can we work backwards and discuss what testing needs to happen before a sila-mainnet hard fork?
 * Hudson: Alexey had an idea to fire up many small testnets
 * Martin: Yes, this is theoretically possible
     * Lots of small things went wrong
@@ -87,7 +87,7 @@ Video starts at [2:52](https://youtu.be/5Q67tmkZ5So?t=172).
 * Afri: What's the status of Const. tests?
     * H: We need to write more manual tests
     * Fuzz testing is running 24 hrs a day, 9 tests/sec.
-* Hudson: Let's talk about what needs to happen between now and a sila-sila-mainnet HF
+* Hudson: Let's talk about what needs to happen between now and a sila-mainnet HF
     * Coordinate with miners
     * Add time between release and fork
     * Fix fork monitor
@@ -131,7 +131,7 @@ Video starts at [2:52](https://youtu.be/5Q67tmkZ5So?t=172).
         * M: Dimitry says tests are complete, all client devs pass tests, no issues found
 * Hudson: "Greg Colvin approach": Does anyone feel like, "over my dead body" we postpone this?
     * Pawel
-        * I propose one month after clients are deployed, before sila-sila-mainnet hard fork
+        * I propose one month after clients are deployed, before sila-mainnet hard fork
         * Many people say two weeks but I prefer one month
         * When releases are ready, confident clients are ready
         * Confident tests are all written

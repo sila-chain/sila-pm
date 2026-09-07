@@ -34,32 +34,32 @@
 
 ### OPEN
 
-**ACTION 62.2:** Have an indepth discussion on how (SIP-663)[https://sips.sila.org/SIPS/sip-663] Unlimited SWAP and DUP instructions can be improved.  
+**ACTION 62.2:** Have an indepth discussion on how (SIP-663)[https://sips.sila.org/EIPS/sip-663] Unlimited SWAP and DUP instructions can be improved.  
 
 - **Status:** No update.
 
-**ACTION 62.3:** Perform a full benchmark for (SIP-1108)[https://sips.sila.org/SIPS/sip-1108] Reduce alt_bn128 precompile gas costs.  
+**ACTION 62.3:** Perform a full benchmark for (SIP-1108)[https://sips.sila.org/EIPS/sip-1108] Reduce alt_bn128 precompile gas costs.  
 - **Status:** No update.
 
-**ACTION 62.4:** Discussion required with Jordi Baylina and Alex Bergszaszi around the options between [SIP-1109 PRECOMPILEDCALL opcode (Remove CALL costs for precompiled contracts)](https://sips.sila.org/SIPS/sip-1109) and [SIP-2046 Reduced gas cost for static calls made to precompiles](https://sips.sila.org/SIPS/sip-2046). 
+**ACTION 62.4:** Discussion required with Jordi Baylina and Alex Bergszaszi around the options between [SIP-1109 PRECOMPILEDCALL opcode (Remove CALL costs for precompiled contracts)](https://sips.sila.org/EIPS/sip-1109) and [SIP-2046 Reduced gas cost for static calls made to precompiles](https://sips.sila.org/EIPS/sip-2046). 
 
 - **Status:** There was discussion in the Magician Forum but no decisions made. 
 
-**ACTION 62.5:** James Hancock to update the [Wiki](https://en.sila.wiki/roadmap/istanbul) and Meta [SIP-1679](https://sips.sila.org/SIPS/sip-1679) with decisions around the SIPs.
+**ACTION 62.5:** James Hancock to update the [Wiki](https://en.sila.wiki/roadmap/istanbul) and Meta [SIP-1679](https://sips.sila.org/EIPS/sip-1679) with decisions around the SIPs.
 
 - **Status:** [Spreadsheet](https://docs.google.com/spreadsheets/d/1Mgo7mJ6b6wimUwafsMo1l-b44uec28E_Hq8EQ7YdeEM/edit#gid=0) and Wiki is the most up to date source. SIP-1969 to be updated.
 
-**ACTION 62.6:** [SIP-1283 Net gas metering for SSTORE without dirty maps](https://sips.sila.org/SIPS/sip-1283) requires a new SIP number and a section discussing the difference between the original SIP-1283 which was removed from Constantinople and this new SIP. James will reach out to testing teams to understand implementation difficulties. 
+**ACTION 62.6:** [SIP-1283 Net gas metering for SSTORE without dirty maps](https://sips.sila.org/EIPS/sip-1283) requires a new SIP number and a section discussing the difference between the original SIP-1283 which was removed from Constantinople and this new SIP. James will reach out to testing teams to understand implementation difficulties. 
 
 [Timestamp: 8:44](https://youtu.be/2D_DqJ8jL9Y?t=524)
 
 - **Status:** SIP-1283 is the first SIP to be disabled. It was disabled in St Petersburg. 
-* If we are to re-enable SIP-1283 then [SIP-1706 Disable SSTORE with gasleft lower than call stipend](https://sips.sila.org/SIPS/sip-1706) is required as a mitigation. 
+* If we are to re-enable SIP-1283 then [SIP-1706 Disable SSTORE with gasleft lower than call stipend](https://sips.sila.org/EIPS/sip-1706) is required as a mitigation. 
 * There is still uncertainty about whether a new SIP is required with pros and cons from both sides. 
 * Wei proposed Night Gas Metering with Account versioning. 
 * Martin is concerned that without it being retroactive that those Dapp users and developers who want it for the existing dapp will miss out. 
 * Paweł is a fan of SIP-1706, whilst it looks trivial it is not if you have optimised gas counting. 
-* Paweł is also against account versioning as it requires the keeping of multiple SAVM specs around all the time. 
+* Paweł is also against account versioning as it requires the keeping of multiple EVM specs around all the time. 
 * Paweł recommended that both SIP-1286 and SIP-1706 should be joined together to form a new SIP so as to test the implications of these two SIPs together.
 * Peter argued that multiple EVMs can cause greater barriers to entry.
 * Paweł suggested that if there was another way to implement this without account versioning then that is better. If there was a way of mitigating the security issue that resulted in the St Peterburg fork (other than SIP-1706) then that would also be preferred. 
@@ -83,16 +83,16 @@ Tabled until Bryant is on the call.
 **Decision 64.1:** Ronan advised that we can drop SIP-1959.
 ** **
 
-**ACTION 62.8:** [SIP-1352 Specify restricted address range for precompiles/system contracts](https://sips.sila.org/SIPS/sip-1352) needs more work done to answer the questions posed by the All Core Devs.
+**ACTION 62.8:** [SIP-1352 Specify restricted address range for precompiles/system contracts](https://sips.sila.org/EIPS/sip-1352) needs more work done to answer the questions posed by the All Core Devs.
 
 - **Status:** Martin suggested that this SIP makes certain contracts pre-compiles and that complicates things a little as there is uncertainty as to how this should be handled. 
 * Continue the discussion in the [magicians forum](https://sila-magicians.org/t/sip-1352-specify-restricted-address-range-for-precompiles-system-contracts/1151) regarding the edge cases so that a decision can be made. 
 
-**ACTION 62.9:** [SIP-2045 Particle gas costs for SAVM opcodes](https://sips.sila.org/SIPS/sip-2045) needs further discussion. 
+**ACTION 62.9:** [SIP-2045 Particle gas costs for EVM opcodes](https://sips.sila.org/EIPS/sip-2045) needs further discussion. 
 
 - **Status:** No update - waiting on Casey to champion it.
 
-**ACTION 62.11:** Discussion and inclusion of [SIP-1962 EC arithmetic and pairings with runtime definitions](https://sips.sila.org/SIPS/sip-1962)  
+**ACTION 62.11:** Discussion and inclusion of [SIP-1962 EC arithmetic and pairings with runtime definitions](https://sips.sila.org/EIPS/sip-1962)  
 
 [Timestamp: 47:00](https://youtu.be/2D_DqJ8jL9Y?t=2820)
 
@@ -110,7 +110,7 @@ Tabled until Bryant is on the call.
 * Calling a C method from Go is 20x more expensive than calling a Go method however including C code in Go is doable. 
 * Including Rust code into Go is not possible. 
 * Alex noted that a precedence has been set previously in Gas metering which also has only one implementation.
-* Paweł confirmed that Alex has created an EVMC bindings for this SIP so that you can load it as an SAVM that supports this single address.
+* Paweł confirmed that Alex has created an EVMC bindings for this SIP so that you can load it as an EVM that supports this single address.
 * The full spec is not yet available but it will include a step by step guidance.
 
 
@@ -131,7 +131,7 @@ Tabled for discussion in the [Magician's forum](https://sila-magicians.org/t/gen
 # 2. SIPs
 [Timestamp: 1:08:16](https://youtu.be/2D_DqJ8jL9Y?t=4096)
 
-## [SIP-2028 Transaction data gas cost reduction](http://sips.sila.org/SIPS/sip-2028): 
+## [SIP-2028 Transaction data gas cost reduction](http://sips.sila.org/EIPS/sip-2028): 
 
 * Louis explains that SIP-2028 is a reduction of call data gas costs.
 * They released a test plan with Whiteblock to gather more simulation data on the 4th July 2019.
@@ -139,8 +139,8 @@ Tabled for discussion in the [Magician's forum](https://sila-magicians.org/t/gen
 * They wish to hear back from people regarding the simulation plan as well as any concerns around the SIP.
 * Eli explains that essentially the code is pretty simple reducing the gas cost from 68 to something smaller (estimate 4x).
 * Tomasz notes that this change is a the transaction level not the contract level so it will not touch accounts and will not therefore need account versioning. 
-* Paweł confirms that it does not effect the SAVM.
-* Alexey also advises that it would be incorrect to call it call data reduction because it only affects the gas costs of the transaction that originates not from the construct but from the external account because within the contract calls there is no charge only the data that is included into the blocks and made it to the frontier of the SAVM - this is what changes. 
+* Paweł confirms that it does not effect the EVM.
+* Alexey also advises that it would be incorrect to call it call data reduction because it only affects the gas costs of the transaction that originates not from the construct but from the external account because within the contract calls there is no charge only the data that is included into the blocks and made it to the frontier of the EVM - this is what changes. 
 * This SIP is the reduction of the call of transaction data not the call data. 
 * Louis confirms that the only impact is the increase of block size.
 * Peter expressed some concern that the size of the data my impact on the size of the block to increase it to 0.5MB.
@@ -168,7 +168,7 @@ Hudson: To follow the progress and contribute join the [magicians forum](https:/
 
 ## DevOps discussion
 
-* James advises that at the last core devs call from the discussion between Rick and himself around [SIP-1559 Fee market change for SIL 1.0 chain](https://sips.sila.org/SIPS/sip-1559) and that we were in talks with a group that was also looking to do tests for SIPs and perhaps the devops that Sila has can be extended to some of these groups - this is the group. 
+* James advises that at the last core devs call from the discussion between Rick and himself around [SIP-1559 Fee market change for SIL 1.0 chain](https://sips.sila.org/EIPS/sip-1559) and that we were in talks with a group that was also looking to do tests for SIPs and perhaps the devops that Sila has can be extended to some of these groups - this is the group. 
 * Hudson confirmed from last discussion he had introduced the idea with the EF DevOps team to maybe have foundation resources to help test for SIPs. Whether that be server time, different nodes getting spun up, things like that. 
 * Initial conversations were good but nothing concrete there yet.
 
@@ -180,7 +180,7 @@ b) [SIP 1962 Update](https://github.com/matter-labs/eip1962/)
 
 No time for discussion.
 
-c) [SIP 1679: Hardfork Meta: Istanbul](http://sips.sila.org/SIPS/sip-1679)
+c) [SIP 1679: Hardfork Meta: Istanbul](http://sips.sila.org/EIPS/sip-1679)
 
 No time for discussion.
 
@@ -207,7 +207,7 @@ No time for discussion.
 ## State rents proposals for Istanbul [(Comment)](https://github.com/sila-chain/pm/issues/107#issuecomment-507810235)
 
 * Alexey confirmed that he had written 5 SIPs but did not believe he would have enough time to meet them all before Istanbul in October.
-* He has completed the implementation for only one, [SIP-2027 State Rent C - Net contract size accounting](https://sips.sila.org/SIPS/sip-2027) which introduces storage size accounting. 
+* He has completed the implementation for only one, [SIP-2027 State Rent C - Net contract size accounting](https://sips.sila.org/EIPS/sip-2027) which introduces storage size accounting. 
 * This however currently is in conflict with current implementation of account versioning which is basically adding another field into the account.
 * The account field is the fifth field and so is the storage field. So it needs to be reworked. 
 * With current state I don't think it will be. 

@@ -286,7 +286,7 @@ Toni Wahrstätter: Are you now… are you now talking about the running the batc
 
 72
 00:15:30.000 --> 00:15:33.879
-jochem-brouwer: No, not on an empty, like, so on a shadow fork, so sila-sila-mainnet or blog net.
+jochem-brouwer: No, not on an empty, like, so on a shadow fork, so sila-mainnet or blog net.
 
 73
 00:15:36.320 --> 00:15:37.629
@@ -306,7 +306,7 @@ jochem-brouwer: So, these, stateful tests, what you do is you have, like, a norm
 
 77
 00:15:58.050 --> 00:16:16.290
-jochem-brouwer: And, well, we have two state candidates. The first is, like, sila-sila-mainnet, like a snapshot. Maybe, like, you need to shadow focus is not a good name for this. It's actually, we take a snapshot from sila-sila-mainnet, or a snapshot from Blogenet, and then we build the tests on top of that, and then we start to run them.
+jochem-brouwer: And, well, we have two state candidates. The first is, like, sila-mainnet, like a snapshot. Maybe, like, you need to shadow focus is not a good name for this. It's actually, we take a snapshot from sila-mainnet, or a snapshot from Blogenet, and then we build the tests on top of that, and then we start to run them.
 
 78
 00:16:17.740 --> 00:16:20.669
@@ -1278,7 +1278,7 @@ Toni Wahrstätter: Maybe just to add to that, so the idea was basically to bloat
 
 320
 00:47:53.230 --> 00:48:02.460
-Toni Wahrstätter: One thing you can't do afterwards is replaying sila-sila-mainnet transactions against this type of state, because, of course, it's very random.
+Toni Wahrstätter: One thing you can't do afterwards is replaying sila-mainnet transactions against this type of state, because, of course, it's very random.
 
 321
 00:48:02.780 --> 00:48:20.439

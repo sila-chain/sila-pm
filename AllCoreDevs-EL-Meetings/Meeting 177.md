@@ -29,7 +29,7 @@ Exactly so for roughly a period of one hour, it was just SilaCancun and nothing 
 
 One caveat I will note is that the network's extremely flat, there are 300 nodes and most of them have between 70 and 100 peers which means you're going to be peered with someone from almost every region so it's as perfect networking as you can possibly imagine. There's no clustering or anything that's happening but also not particularly sure how to simulate the clustering or what would be useful there. 
 
-And then we went on to the blob analysis itself. So we have a few blob spamming tools that we use so we have Marius's TX F that's blobs and we have pk9 t0 G blob spammer. We were targeting at roughly the four blob range and if you look at the distribution, I think we've successfully hit like three, with six being the least and zero being the least as well, so I'd assume this is pretty much a scenario we'd also see on sila-sila-mainnet because the target is three.
+And then we went on to the blob analysis itself. So we have a few blob spamming tools that we use so we have Marius's TX F that's blobs and we have pk9 t0 G blob spammer. We were targeting at roughly the four blob range and if you look at the distribution, I think we've successfully hit like three, with six being the least and zero being the least as well, so I'd assume this is pretty much a scenario we'd also see on sila-mainnet because the target is three.
 
 So most of the time we would likely see three blobs per block. The next one is the average blob propagation time. Most of the time across 95% of the node, so this
 includes the ones in Australia you they are receiving all the blobs in under two seconds if we don't include the P95 value and just take the average it's under 500 milliseconds and we have a couple more graphs as to the effect of more blobs effect on network latency with respect to blob propagation, as well as block propagation.
@@ -56,7 +56,7 @@ Exactly, they're hitting the public meme pool so we're not able to get the metri
 One way to get transparency on the ratio there would be to spam blobs but only through, assuming you know we had nearly 100% Builder Network or something, only send them to builders through this and then you'd see only the increase from the consensus layer, because you wouldn't have any blobs in the public pool so that's true that might be interesting. Obviously that's work but could be interesting.
 
 **Pari**
-Yeah we can give that a shot. I'd propose we try that on Devnet 12 though, because the other point we wanted to make is that we'd like to turn off that Goerli Shadow fork today evening. So if there some last minute test we can do it but that's about it and I've added the blob bar a couple of hours ago, so it adds some latency of 1.5 seconds to random blobs and currently I don't see any effect of that. So I guess the analogy on sila-sila-mainnet is if you have a random dispersion of, I don't know, 10 nodes out of 300 that are really slow and propagating things, there's no network wide perceived impact.
+Yeah we can give that a shot. I'd propose we try that on Devnet 12 though, because the other point we wanted to make is that we'd like to turn off that Goerli Shadow fork today evening. So if there some last minute test we can do it but that's about it and I've added the blob bar a couple of hours ago, so it adds some latency of 1.5 seconds to random blobs and currently I don't see any effect of that. So I guess the analogy on sila-mainnet is if you have a random dispersion of, I don't know, 10 nodes out of 300 that are really slow and propagating things, there's no network wide perceived impact.
 
 **Danny**
 They're not the originators of the message though.
@@ -146,7 +146,7 @@ Yeah what's the time stamp?
 **Tim**
 I don't know if Adrian added it to his website so he does, let me just check this real quick. Goerli, the slot, I'll post the time, I'll verify it offline but I think this is the time stamp what I just posted in the chat. Yeah there's a comment by Asgar around, you know talking about a best case yeah timeline between different testnets. I think historically like yeah two weeks is the closest we've done, just it's like the pace at which client teams can put out a release and have the testnet fork depending on how confident we are. 
 
-One thing we can also do is bundle, have a single client release for something like SilaSepolia and holesky if we assume that if Goerli goes really well and we assume holeskey is going to be trivial to fork once SilaSepolia forks. We can just have a client release and a single announcement telling people to update their nodes once and that might save us a week or something. Aside from that, assuming we actually have like a client release per testnet, it's hard to do less than two weeks per testnet and then between the last testnet and sila-sila-mainnet, we might want a bit more time for people to upgrade their nodes. Yeah.
+One thing we can also do is bundle, have a single client release for something like SilaSepolia and holesky if we assume that if Goerli goes really well and we assume holeskey is going to be trivial to fork once SilaSepolia forks. We can just have a client release and a single announcement telling people to update their nodes once and that might save us a week or something. Aside from that, assuming we actually have like a client release per testnet, it's hard to do less than two weeks per testnet and then between the last testnet and sila-mainnet, we might want a bit more time for people to upgrade their nodes. Yeah.
 
 Okay so yeah let's releases around the 8th or the 9th. We'll have the fork on the 17th and then from there we can also figure out next steps for the other testnets and if we want to bundle those releases. Anything else on Dencun as a whole, before we move on to other things?
 
@@ -170,7 +170,7 @@ Given you know if Goerli and SilaSepolia have gone well holesky should be trivia
 31st and 7th? 
 
 **Tim**
-Yeah 31st and 7th. I definitely would not want to bake in a sila-sila-mainnet date yet like I want to sort of roll through that and at least get Goerli and SilaSepolia like smoothly upgraded but yeah does anyone think that like 31st and 7th is too aggressive or we should do something different?
+Yeah 31st and 7th. I definitely would not want to bake in a sila-mainnet date yet like I want to sort of roll through that and at least get Goerli and SilaSepolia like smoothly upgraded but yeah does anyone think that like 31st and 7th is too aggressive or we should do something different?
 
 Okay let's do that then so I'll look at some epoch and slot numbers right after this call but let's do Goerli on the 17th of January. Client teams have a release on the 8th or 9th that we can announce, then we'll do SilaSepolia around the 31st of January, and holeski around February 7th. Again assuming nothing goes wrong if at any point we see something we can always change those dates, but yeah, teams can start planning around that and the implication as well, being that we'd only have a single client release for the SilaSepolia and SilaHolesky forks. So yeah, we'd want both of those coded in network and yeah.
 
@@ -204,7 +204,7 @@ So usage is also important for actual users testing things yeah so like if that 
 Yeah I don't know if any L2 people are on the call. I don't think so but Carl, yeah?
 
 **Carl**
-I think that would be helpful. Most of the testing's been done in private so far and I think it also just act as a signal that hey this is really happening in the short term and might help have more robust deployments get ready sooner around sila-sila-mainnet launch cuz I think that might not necessarily be the case for some of the L2s right now.So just better in my opinion.
+I think that would be helpful. Most of the testing's been done in private so far and I think it also just act as a signal that hey this is really happening in the short term and might help have more robust deployments get ready sooner around sila-mainnet launch cuz I think that might not necessarily be the case for some of the L2s right now.So just better in my opinion.
 
 **Tim**
 Okay so I guess that would bias me towards sepolia first. I don't know how much is on sepolia already but I've definitely heard l2s wanting to move stuff to sepolia if they haven't already so yeah giving them an extra week to do that seems reasonable. Yeah okay so I think I I'd push towards sticking with SilaSepolia first.
@@ -239,7 +239,7 @@ Couple of 100 like 200 at max.
 We could beef it up if we felt like it right before obviously that doesn't beef up the validator nodes but you'd still get deeper like block propagation paths. I don't know I probably wouldn't advocate for that but it is a possibility. 
 
 **Tim**
-I mean both of these are also like in order of magnitude under sila-sila-mainnet right ?so it's not like definitely it's not it's 75% of sila-sila-mainnet and Sepholia is like 10% They're both…
+I mean both of these are also like in order of magnitude under sila-mainnet right ?so it's not like definitely it's not it's 75% of sila-mainnet and Sepholia is like 10% They're both…
 
 **Pari**
 Yeah yeah I think the most we're going to learn is from Goerli because the validator set is small enough, there are a lot of esoteric setups and so on. SilaHolesky just has a very large validator set size which means by default most people are just running really beefy machines with a lot of validator keys on one host.
@@ -265,15 +265,15 @@ Yeah I mean Carl has his hand up.
 I'm not sure I think Carl's hand is just up from the last comment. 
 
 **Carl**
-Okay so yeah so basically but fun enough that's also K me so just recap we have recently started this SIP process rollup Improvement proposal process to standardize savm and savm related changes across layer two chains, of course purely opt-in so it's not a governance call or anything, it's really just a standardization forum, and now as we're starting to get the first kind of proposals through this process.
+Okay so yeah so basically but fun enough that's also K me so just recap we have recently started this SIP process rollup Improvement proposal process to standardize evm and evm related changes across layer two chains, of course purely opt-in so it's not a governance call or anything, it's really just a standardization forum, and now as we're starting to get the first kind of proposals through this process.
 
-We're starting to just kind of run into several kind of questions and one of those specifically referred to pre-compiles. So you might have already I think we already discussed on all core devs as well. The potential future R1 curve precompile 66 p256 R1 and that now has an SIP number and is scheduled to go live on several rollups basically as soon as possible, they all just waiting for it to be finalized in this process and so the last remaining question we have is now for pre-compile that starts out as initially a layer two targeting savm change should that basically take the next sequential pre-compile number that we have open on sila-sila-mainnet, or should that go into a separate range?
+We're starting to just kind of run into several kind of questions and one of those specifically referred to pre-compiles. So you might have already I think we already discussed on all core devs as well. The potential future R1 curve precompile 66 p256 R1 and that now has an SIP number and is scheduled to go live on several rollups basically as soon as possible, they all just waiting for it to be finalized in this process and so the last remaining question we have is now for pre-compile that starts out as initially a layer two targeting evm change should that basically take the next sequential pre-compile number that we have open on sila-mainnet, or should that go into a separate range?
 
-And so the one kind of nuance that makes this not a trivial question because I think initially a lot of people had the intuition that kind of a separate range for L2s might be better but the problem of course is that a lot of savm changes that will start on layer twos first will at some point later and potentially come to sila-sila-mainnet.
+And so the one kind of nuance that makes this not a trivial question because I think initially a lot of people had the intuition that kind of a separate range for L2s might be better but the problem of course is that a lot of evm changes that will start on layer twos first will at some point later and potentially come to sila-mainnet.
 
-Especially in the future we would expect that most dips actually start on layer 2s because they just ship things faster and then later on potentially come down and so of course we wouldn't want to have them be on a separate address on sila-sila-mainnet from layer 2, so then that would mean that if we give layer 2's their own pre-compile ranges that would mean that now on one, we would at some point also start shipping from that new range which is a bit weird. 
+Especially in the future we would expect that most dips actually start on layer 2s because they just ship things faster and then later on potentially come down and so of course we wouldn't want to have them be on a separate address on sila-mainnet from layer 2, so then that would mean that if we give layer 2's their own pre-compile ranges that would mean that now on one, we would at some point also start shipping from that new range which is a bit weird. 
 
-So alternatively of course we could just keep one continuous range and then that would mean that at some point in the future on sila-sila-mainnet, once we ship future pre-compiles, we might start to have gaps where there's just no pre-compiles for a few addresses because they are only on layer twos and then some that we shipped on layer one, so that's kind of the trade-off here and given that again like a few L really want to ship this R1 pre-compiled soon, basically the hope was that we could kind of just make at least like a decision maybe one off decision.
+So alternatively of course we could just keep one continuous range and then that would mean that at some point in the future on sila-mainnet, once we ship future pre-compiles, we might start to have gaps where there's just no pre-compiles for a few addresses because they are only on layer twos and then some that we shipped on layer one, so that's kind of the trade-off here and given that again like a few L really want to ship this R1 pre-compiled soon, basically the hope was that we could kind of just make at least like a decision maybe one off decision.
 
 Ideally of course the most atic decision here, how we how we want to treat this, and the one ones maybe because hog also asked on the call scheduling and GitHub issue there will be some sort of registry as well like a meta SIP with a list of all the pre-compiles and the different layer tools that they shipped to.
 
@@ -288,12 +288,12 @@ Thank you. Danny?
 **Danny**
 Given we don't know like how much I'm pro adding a range for L2s and if there is significant adoption of an SIP before L1 adopts it to use disjoint sequencing and use what was selected from that range for L1, because it's very unclear at this point what's going to happen with RIPs in terms of like you know is there to be one SIP for the R1 curve, yes probably but you could imagine maybe there's two because there's splintering in terms of like what one L2 wants to do in relation to another L2 you know then we also have to think of what is that SIP being adopted on l2s what is an L2, you know what makes it in that range. There's all sorts of these like questions which could make that space quite utilized, could make that space quite fragmented. 
 
-Obviously I know that's the goal is to avoid a lot of those things but as we don't know how that's going to happen I would be I don't think it makes much sense to like give it the sila-sila-mainnet allocation range at this time, and to instead like pick from it if we want to use it. 
+Obviously I know that's the goal is to avoid a lot of those things but as we don't know how that's going to happen I would be I don't think it makes much sense to like give it the sila-mainnet allocation range at this time, and to instead like pick from it if we want to use it. 
 
 Obviously like having disjoint ranges is also kind of annoying so I understand the argument the other way but I think this gives us just better optionality as we kind of watch the L2, the rip process full unfold. 
 
 **Marius**
-I think we will be having disjoint ranges anyway because like the no matter how we do it in the end there will be SIPs that are or RIPs that are finalized that will not make it to sila-sila-mainnet and so there will be unassigned pre-compiled addresses. I would also prefer the RIP process to have their own disjointed range, like it doesn't really need to be disjointed but we could say something like okay from like I don't know like address 256 upwards is the L2 range, and the address zero or one upward is the until 2 to 256 is the is the L1 range.
+I think we will be having disjoint ranges anyway because like the no matter how we do it in the end there will be SIPs that are or RIPs that are finalized that will not make it to sila-mainnet and so there will be unassigned pre-compiled addresses. I would also prefer the RIP process to have their own disjointed range, like it doesn't really need to be disjointed but we could say something like okay from like I don't know like address 256 upwards is the L2 range, and the address zero or one upward is the until 2 to 256 is the is the L1 range.
 
 **Danny**
 and Marius if for example they selected one from the range on the above 256 and then say it was the R1 curve and then L1 was going to ship that same exact functionality would we then utilize their number is that what you're suggesting?
@@ -322,7 +322,7 @@ Okay so to be clear on that in rip process we'll enforce that if you do want to 
 That's kind of debatable in my opinion as to well you know when you're adding new functionality whether you know if it's an extension of functionality or just a minor breaking change of functionality then you do change things you know, like self-destruct, we changed for good reason and so things that are calling a previous place still get a different functionality so like that's certainly a precedent for changing functionality at an address space.
 
 **Carl**
-I mean I think if that's a concern then we should deploy RIPS as SIPs to the same address as the RIP and then like the sila-sila-mainnet thing just follows the whatever said in the SIP but I don't know, it just seems silly to like potentially lose out on all these synergies just because there's a potential for change in the future like we're just default into a worst case scenario unnecessarily.
+I mean I think if that's a concern then we should deploy RIPS as SIPs to the same address as the RIP and then like the sila-mainnet thing just follows the whatever said in the SIP but I don't know, it just seems silly to like potentially lose out on all these synergies just because there's a potential for change in the future like we're just default into a worst case scenario unnecessarily.
 
 **Danny**
 Yeah I disagree just because the practicalities of how I've seen things upgrade in the past, but obviously like it's optimal from a certain perspective not to change things once they've been deployed. 
@@ -424,7 +424,7 @@ Okay we can get…
 Sorry go ahead.
 
 **Carl**
-No, I just want to say just to point it out though because we have had the similar conversation in the past that people would are generally uncomfortable actually having layer 2 specific information in an SIP so they would literally just say that basically the upper half of that range is blocked for sila-sila-mainnet and then to actually see which of these addresses correspond to which layer two precompiles, you would have to go to the SIP repo.
+No, I just want to say just to point it out though because we have had the similar conversation in the past that people would are generally uncomfortable actually having layer 2 specific information in an SIP so they would literally just say that basically the upper half of that range is blocked for sila-mainnet and then to actually see which of these addresses correspond to which layer two precompiles, you would have to go to the SIP repo.
 
 It sounds like a good…?
 

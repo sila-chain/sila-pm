@@ -278,7 +278,7 @@ danceratopz: The only other topic we had there was… there was some,
 
 70
 00:10:42.710 --> 00:10:57.469
-danceratopz: issues on E69, but I think it was just some sila-sila-mainnet peers sneaking in. I don't think… I don't know if anyone wants to say anything to that. I think the problem's solved. Would there be any other topics for Blob DevNet Zero that anyone wants to talk about today?
+danceratopz: issues on E69, but I think it was just some sila-mainnet peers sneaking in. I don't think… I don't know if anyone wants to say anything to that. I think the problem's solved. Would there be any other topics for Blob DevNet Zero that anyone wants to talk about today?
 
 71
 00:11:04.970 --> 00:11:06.170
@@ -310,7 +310,7 @@ Stefan Starflinger: how good the optimizations are, and I think DevNet2 also has
 
 78
 00:12:14.350 --> 00:12:22.510
-Stefan Starflinger: decent state by now. I mean, it's not sila-sila-mainnet, but it's something since we've been spamming continuously on the network.
+Stefan Starflinger: decent state by now. I mean, it's not sila-mainnet, but it's something since we've been spamming continuously on the network.
 
 79
 00:12:22.810 --> 00:12:24.750
@@ -442,7 +442,7 @@ Stefan Starflinger: Yes, we're making some…
 
 111
 00:16:49.360 --> 00:17:06.130
-Stefan Starflinger: some small progress, but I've also been testing with all the clients with a basic payload of creating a large contract and SAVM fuzzing, and those networks don't seem very healthy yet, so there are still a lot of things to uncover.
+Stefan Starflinger: some small progress, but I've also been testing with all the clients with a basic payload of creating a large contract and EVM fuzzing, and those networks don't seem very healthy yet, so there are still a lot of things to uncover.
 
 112
 00:17:06.359 --> 00:17:11.239
@@ -870,7 +870,7 @@ stokes: I bet.
 
 218
 00:28:41.490 --> 00:28:54.639
-Potuz: The thing that is triggering this… I mean, this shouldn't happen on production, on sila-sila-mainnet, regularly, right? So we want to continue building on full, but the problem is that Lighthouse and Lodestar are voting for empty everywhere.
+Potuz: The thing that is triggering this… I mean, this shouldn't happen on production, on sila-mainnet, regularly, right? So we want to continue building on full, but the problem is that Lighthouse and Lodestar are voting for empty everywhere.
 
 219
 00:28:54.950 --> 00:29:08.569
@@ -978,7 +978,7 @@ Marius van der Wijden: but older payload parameters that we are building, these 
 
 245
 00:32:12.800 --> 00:32:15.689
-Łukasz Rozmej: But it's not in the sila-sila-mainnet implementation.
+Łukasz Rozmej: But it's not in the sila-mainnet implementation.
 
 246
 00:32:29.410 --> 00:32:35.499
@@ -1026,7 +1026,7 @@ Marius van der Wijden: And it seems that with.
 
 257
 00:33:35.850 --> 00:33:39.840
-Potuz: Yeah, reorgs will never happen on sila-sila-mainnet either, but we need to deal with them.
+Potuz: Yeah, reorgs will never happen on sila-mainnet either, but we need to deal with them.
 
 258
 00:33:40.350 --> 00:33:46.670
@@ -1074,11 +1074,11 @@ Ben Adams: Is it… is it purely a testing thing, or would it need to… We expe
 
 269
 00:35:07.250 --> 00:35:14.260
-Potuz: It happens that we reorder blocks on sila-sila-mainnet. It will happen that we will reorder payloads on sila-sila-mainnet, which is done…
+Potuz: It happens that we reorder blocks on sila-mainnet. It will happen that we will reorder payloads on sila-mainnet, which is done…
 
 270
 00:35:14.500 --> 00:35:22.110
-Potuz: We don't want to see it regularly, as they just don't happen today regularly. But it does happen that we have reorgs on sila-sila-mainnet.
+Potuz: We don't want to see it regularly, as they just don't happen today regularly. But it does happen that we have reorgs on sila-mainnet.
 
 271
 00:35:31.090 --> 00:35:35.910
@@ -1834,7 +1834,7 @@ jochem-brouwer: But it's, I think, still nice to see… to find these kind of bu
 
 459
 00:57:20.170 --> 00:57:24.519
-jochem-brouwer: But I'm not saying we should move to 5G, I guess, on sila-sila-mainnet, of course, yeah.
+jochem-brouwer: But I'm not saying we should move to 5G, I guess, on sila-mainnet, of course, yeah.
 
 460
 00:57:26.920 --> 00:57:30.429

@@ -22,9 +22,9 @@ I guess to start off the SilaSepolia post-merge. Upgrade was supposed to happen 
 
 ### SilaMainnet Shadow Fork
 
-**Micah Zoltu** [6:45](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=405s): Okay, So next up we had a sila-sila-mainnet shadow fork today. Kerry or Marius, do you either, if you want to give it a quick update.
+**Micah Zoltu** [6:45](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=405s): Okay, So next up we had a sila-mainnet shadow fork today. Kerry or Marius, do you either, if you want to give it a quick update.
 
-**EF Berlin Office** [6:58](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=418s): Yeah, I can give an update. So we had sila-sila-mainnet  Shadow Fork Eleven happen  about an hour ago.  out of, I think 99.8% participation before we like 96.5% 97%, so that means out of like 35 nodes 34 maybe through. The one node that didn't make you through. Just hadn't finished sinking. So in terms of making it through the transition. I think this is the nicest shadow of what we've seen so far.  We did notice some invalid blocks being produced by Erigon. We think it's going to be the same issue that we noticed on Gary. So potentially also the same picks. We'll look into it and check that out and I think the Nethermid team noticed something with Nimbus. But that was already an old issue, and had been, I think It's already in that plan to be fixed. That's about it. Congrats everyone.
+**EF Berlin Office** [6:58](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=418s): Yeah, I can give an update. So we had sila-mainnet  Shadow Fork Eleven happen  about an hour ago.  out of, I think 99.8% participation before we like 96.5% 97%, so that means out of like 35 nodes 34 maybe through. The one node that didn't make you through. Just hadn't finished sinking. So in terms of making it through the transition. I think this is the nicest shadow of what we've seen so far.  We did notice some invalid blocks being produced by Erigon. We think it's going to be the same issue that we noticed on Gary. So potentially also the same picks. We'll look into it and check that out and I think the Nethermid team noticed something with Nimbus. But that was already an old issue, and had been, I think It's already in that plan to be fixed. That's about it. Congrats everyone.
 
 **Tim Beiko**[8:01](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=481s): Yeah, that's very good. I don't know if anyone from Nethermind or Aragon wants to chime in more.
 
@@ -44,9 +44,9 @@ go ahead.Marek
 **Andrew Ashikhmin** [9:36](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=576s): 
 Thank you.
 
-**Tim Beiko** [9:45](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=585s):  Anything else on the sila-sila-mainnet shadow fork?
+**Tim Beiko** [9:45](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=585s):  Anything else on the sila-mainnet shadow fork?
 
-### [SilaMainnet 5GB DAG size](https://minerstat.com/dag-size-calculator) & [hashrate](https://silascan.io/chart/hashrate)
+### [SilaMainnet 5GB DAG size](https://minerstat.com/dag-size-calculator) & [hashrate](https://etherscan.io/chart/hashrate)
 
 **Tim Beiko** [10:00](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=600s):  Okay, next up. So basically we set the Ttd on the Cl call last week, optimistically assuming the hash rate trends would stay stable, and the 5GB dag increase would not  massively change hash rate. So we are basically right below 5GB. Now, I believe we're at 5GB dag, if you include the hash of the ah, the block you're mining. We saw a tiny drop in hashrate, but there's a lot of noise in those numbers, so it's quite hard to tell um, And previously we had seen a rise over the past week, so it seems like we're still trending nicely. I am curious to hear from client teams like. If anyone feels like we should change the Ttd value, but from like a high level like it seems like it's. It's probably good to just keep that one. Anyone 
 
@@ -63,15 +63,15 @@ Thank you.
 
 **Tim Beiko** [11:36](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=696s):  Yeah. And like you can see, like you know, I just shared my screen with like there's a bunch of variations that we went this high and like above one,  950 and as low as 107. So like There will continue to be noise. Yeah, I think we're trending nicely, and I also saw that  a bunch of clients have started to like to merge prs with this. So given, there's no  massive deviation. It's probably easiest to keep that time.
 
-### [Tentative sila-sila-mainnet TTD execution-specs#585](https://github.com/sila-chain/execution-specs/pull/585)
+### [Tentative sila-mainnet TTD execution-specs#585](https://github.com/sila-chain/execution-specs/pull/585)
 
 **Tim Beiko** [12:23](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=743s): 
-Okay, so no disagreement.. So I guess, in that case we can go ahead with this Ttd: I think client teams can put out releases with this ideally today or tomorrow, so we can announce them very early next week. And yeah, those will be the releases for sila-sila-mainnet, and, like we discussed on the last call. If el teams want to, then upgrade those as we approach Bella tricks or write after Bella tricks, we can advertise newer releases because it is kind of along a long stretch before we have. But yeah, this is the number, and there's a couple. There's a couple of questions in the chat about  What if there was like a huge hash rate drop?
+Okay, so no disagreement.. So I guess, in that case we can go ahead with this Ttd: I think client teams can put out releases with this ideally today or tomorrow, so we can announce them very early next week. And yeah, those will be the releases for sila-mainnet, and, like we discussed on the last call. If el teams want to, then upgrade those as we approach Bella tricks or write after Bella tricks, we can advertise newer releases because it is kind of along a long stretch before we have. But yeah, this is the number, and there's a couple. There's a couple of questions in the chat about  What if there was like a huge hash rate drop?
 Ah! Because of minor scaling and what not. I think, you know, if we see some massive deviation after Bella tricks has happened, we'd always do A. T. V. Override if we did. Ideally not. But yeah, I think we can. We can go forward with this, Have high confidence. We're not going to hit it before Bellatrix, and pretty good confidence that's like we'll hit it around the 15th. Any other thoughts, comments
 
 **Micah Zoltu** [13:39](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=819s):  Blog Post is going out on Tuesday. Is that correct?
 
-**Tim Beiko** [13:42](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=822s):  Yes, So Tuesday, August 23rd  morning Pacific. You can expect the blog post, and a couple of clients said that they're going to put out produces on Monday 22nd, so you can. If you want to see your, If you follow your specific clients, you'll probably get their release before, but on Tuesday we'll have all the releases combining a single blog post. Any other comment starts on this. Okay? Well, yeah, we got it sila-sila-mainnet  releases. That's pretty exciting. Okay, there are two other things on the agenda
+**Tim Beiko** [13:42](https://www.youtube.com/watch?v=jJaCaS0WbIw&t=822s):  Yes, So Tuesday, August 23rd  morning Pacific. You can expect the blog post, and a couple of clients said that they're going to put out produces on Monday 22nd, so you can. If you want to see your, If you follow your specific clients, you'll probably get their release before, but on Tuesday we'll have all the releases combining a single blog post. Any other comment starts on this. Okay? Well, yeah, we got it sila-mainnet  releases. That's pretty exciting. Okay, there are two other things on the agenda
 
 ### Kiln deprecation
 

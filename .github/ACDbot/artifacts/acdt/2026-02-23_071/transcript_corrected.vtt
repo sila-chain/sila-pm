@@ -834,7 +834,7 @@ Kamil Chodoła: proceed with any generation on top of existing states, and this 
 
 209
 00:38:28.590 --> 00:38:42.610
-Kamil Chodoła: by a few times the test generation on top of existing state of sila-sila-mainnet or blotnet. So, these are quite nice ideas to include and implement, and it will allow
+Kamil Chodoła: by a few times the test generation on top of existing state of sila-mainnet or blotnet. So, these are quite nice ideas to include and implement, and it will allow
 
 210
 00:38:42.690 --> 00:38:58.459
@@ -1014,7 +1014,7 @@ Kamil Chodoła: With all the tests which are required, likely generated already,
 
 254
 00:44:13.200 --> 00:44:29.529
-Kamil Chodoła: for that purpose. The only stuff is that new tests which are running on top of state of sila-sila-mainnet or bloatnet are pretty long to execute, and single loop of gathering all of the data points for all of the scenarios in all required,
+Kamil Chodoła: for that purpose. The only stuff is that new tests which are running on top of state of sila-mainnet or bloatnet are pretty long to execute, and single loop of gathering all of the data points for all of the scenarios in all required,
 
 255
 00:44:29.740 --> 00:44:34.180
@@ -1138,7 +1138,7 @@ Kamil Chodoła: Let me maybe clarify the recent weeks, what was happening. So, b
 
 285
 00:49:33.770 --> 00:49:48.949
-Kamil Chodoła: And a few issues which we spotted was, like, GEF was running some invalid flags at all, which were not properly applied from sila-sila-mainnet into BloatNet, so, like, we are facing some issues which are… actually might not be the real issue.
+Kamil Chodoła: And a few issues which we spotted was, like, GEF was running some invalid flags at all, which were not properly applied from sila-mainnet into BloatNet, so, like, we are facing some issues which are… actually might not be the real issue.
 
 286
 00:49:49.020 --> 00:49:57.779

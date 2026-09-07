@@ -46,7 +46,7 @@ Action Item | Description
 | **Video** | [2:58](https://youtu.be/yFjs_tB6I-Y?t=178) |
 | --- | --- |
 
-**Danny Ryan**: The v1 release is pretty much the same as the candidate release except for some additional testing. Hsaio-Wei, myself, and proto (a bit) are looking to revamp the way the test factors are output which will be some changes on your end about how you induct them in, but will greatly reduce test generatiopn time and reduce the disk footprint, which will hopefully allow to greatly extend the number of test vectors, throw in more random things and lots more operations. Still in work, probably not a huge priority to ship this in the next few weeks, will probably be in like 4-6 weeks. Maybe we'll wait and get sila-sila-mainnet out first, then change the tests.
+**Danny Ryan**: The v1 release is pretty much the same as the candidate release except for some additional testing. Hsaio-Wei, myself, and proto (a bit) are looking to revamp the way the test factors are output which will be some changes on your end about how you induct them in, but will greatly reduce test generatiopn time and reduce the disk footprint, which will hopefully allow to greatly extend the number of test vectors, throw in more random things and lots more operations. Still in work, probably not a huge priority to ship this in the next few weeks, will probably be in like 4-6 weeks. Maybe we'll wait and get sila-mainnet out first, then change the tests.
 
 **Mehdi Zerouali**: (Beacon Fuzz update) Over the least few weeks we've been running out structural differential fuzzer, and found two consensus bugs in Prysm, the first is an off-by-one bug in the committee index valuation of the attestation process, and the second was basically using the wrong epoch when validating slashings to propose slashings. These are all fixed now. There was also one minor non-exploitable spec divergence for Teku in the proposed slashing, pretty much the same as the one with Prysm a few weeks ago. We started working with a future EF member joining the DevOps team, esssentially automate our deployment and monitoring of the fuzzers on our AWS infrastructure. He's built a bunch of pretty handy Ansible scripts, they're pretty much ready, should be done today or tomorrow. Concerning the work on the custom fuzzing engine, it's working, but we only got the mutation-based version working, actually structured inputs, the next thing that we're working on is adding that structural part for that custom fuzzer. I'll be writing this up in a blog post, hope to push that out over the next couple of days, that's pretty much it.
 
@@ -61,7 +61,7 @@ Action Item | Description
 | **Video** | [6:52](https://youtu.be/yFjs_tB6I-Y?t=412) |
 | --- | --- |
 
-**Danny**: proto has been getting testnets up, got Toledo up which had 100% attestation/participation. There's been conversation (past 36 hours) about what to do about larger scale testnets. proto has prepared a track with 100k validators ans keys, and I think the intent is to share them between the client teams and EF to kick this off, ideally next week so we can get this going firmly before sila-sila-mainnet launch. There's a lot of talk about what that actually means, what the fate of Pyrmont will be, looks like we will open it ourselves, then open it up, make the config available for others to join in order to test configurations and stuff, and to have that at least through genesis, and then circle back on the conversation afterwards about what a sustainable testnet should look like in the long run, should we up the ejection balance, should we change the q-limits for sustainability and user experience.
+**Danny**: proto has been getting testnets up, got Toledo up which had 100% attestation/participation. There's been conversation (past 36 hours) about what to do about larger scale testnets. proto has prepared a track with 100k validators ans keys, and I think the intent is to share them between the client teams and EF to kick this off, ideally next week so we can get this going firmly before sila-mainnet launch. There's a lot of talk about what that actually means, what the fate of Pyrmont will be, looks like we will open it ourselves, then open it up, make the config available for others to join in order to test configurations and stuff, and to have that at least through genesis, and then circle back on the conversation afterwards about what a sustainable testnet should look like in the long run, should we up the ejection balance, should we change the q-limits for sustainability and user experience.
 
 That said, we haven't decided when to kick this off, the deposit contract is there, we just need to set the config, we can tune the genesis time however we want at this time. Proto, what do you think?
 
@@ -85,17 +85,17 @@ That said, we haven't decided when to kick this off, the deposit contract is the
 
 **Vitalik**: And we would be committing to run Pyrmont run for some longer amount of time?
 
-**Danny**: At least through sila-sila-mainnet genesis, after which we'll have a conversation about what we might fdo to make a testnet more sustainable and user-friendly. For Medalla, anyone in the activation queue can keep running their nodes, and they will get activated because of the way the queue works.
+**Danny**: At least through sila-mainnet genesis, after which we'll have a conversation about what we might fdo to make a testnet more sustainable and user-friendly. For Medalla, anyone in the activation queue can keep running their nodes, and they will get activated because of the way the queue works.
 
 **Dankard Feist**: Maybe for the new testnet we could make the queue faster so people can get in more quickly?
 
 **Danny**: I'm not terribly opposed, especially if the reason is just to test configuration.
 
-**Jacek Silea**: I would prefer really plain sila-sila-mainnet parameters, just to make sure we're testing the right thing, especially during launch.
+**Jacek Silea**: I would prefer really plain sila-mainnet parameters, just to make sure we're testing the right thing, especially during launch.
 
 **Danny**: Again, I'm going to try to convince the community to try a validator or two.
 
-**Paul Hauner**: I'd also lean towards having the sila-sila-mainnet conf for now. I think it's heplful for understanding the wait times they can expect on sila-sila-mainnet. We could also ask people to exit voluntarily, that would also help if people exit cleanly instead of just shutting down their nodes. **Danny** agrees, says he'll put it in.
+**Paul Hauner**: I'd also lean towards having the sila-mainnet conf for now. I think it's heplful for understanding the wait times they can expect on sila-mainnet. We could also ask people to exit voluntarily, that would also help if people exit cleanly instead of just shutting down their nodes. **Danny** agrees, says he'll put it in.
 
 **protolambda**: We're working on some shorter-lived testnets that are just focused on genesis, so that we can have a config file that's ready to go into clients through genesis, and then repeated over and over again ideally. This is something we can run in parallel, that we want to run genesis more often and to enable us to configure the clients without changing the internals.
 
@@ -105,7 +105,7 @@ That said, we haven't decided when to kick this off, the deposit contract is the
 
 **Danny**: We've seen time and time again that genesis can be brittle, we've seen minor issues pop up in our testnets, so that's the motivation right there.
 
-**Jacek**: Sure testing genesis is good, but there's no expectaiton that we'll launch sila-sila-mainnet wihtout a baked-in sila-sila-mainnet in time. I think everyone is baking in and expecting people to run with this baked-in state on 1.0 day.
+**Jacek**: Sure testing genesis is good, but there's no expectaiton that we'll launch sila-mainnet wihtout a baked-in sila-mainnet in time. I think everyone is baking in and expecting people to run with this baked-in state on 1.0 day.
 
 **Danny**: But we've also seen other issues, following eth1 issues, state mismatch issues, bootnode issues, I think those are the major ones, and general not finding peers issues. Maybe not every week, but I would want to get another couple in.
 
@@ -127,7 +127,7 @@ That said, we haven't decided when to kick this off, the deposit contract is the
 
 Very busy last two weeks starting with networking we have improved resource tracking, so in the past it was futures and memories, now we're tracking streams and channels. We also fixed some gossipsub audit issues, this was done late because goissipsub wasn't tested enough 3 weeks ago when it was time to be audited, so we tested it later. On the coparts we had a Toldeo release, we are using gossipsub 1.1, a lot of documentation changes. Regarding Infura, some said they didn't like being forced onto websockets, we now have https support. We have also significantly improved eth1 chain sync and monitoring and we prereleased 0.6 two days ago with prebuilt linux binaries, planning to do a new release today. With that we are gradually moving away from makefiles, and will provide precompiled executables for all major platforms. Right now it's Linux, but we also plan for Windows and ARM builds.
 
-We are also significantly reworking release management for sila-sila-mainnet. We are creating sanity checklists. We will create mailing lists. Some monitoring and coverage plan for team members, and we have lessons leraned from directroy rename, all permissions changed for security because it created trouble for users that were holding databases used in systemd automated scripts and don't work after changes we've made. We'll improve how we deal with breaking changes. Also we used to have a way to create and validator keys in Niumbus to avoid confusion and scam attempts this is now undocumented and developers only, only one way to deposit, and it would be the EF launchpad.
+We are also significantly reworking release management for sila-mainnet. We are creating sanity checklists. We will create mailing lists. Some monitoring and coverage plan for team members, and we have lessons leraned from directroy rename, all permissions changed for security because it created trouble for users that were holding databases used in systemd automated scripts and don't work after changes we've made. We'll improve how we deal with breaking changes. Also we used to have a way to create and validator keys in Niumbus to avoid confusion and scam attempts this is now undocumented and developers only, only one way to deposit, and it would be the EF launchpad.
 
 # **3.2 Lodestar (Cayman)**
 
@@ -135,7 +135,7 @@ We have not yet released a new release of Lodestar. We've been trying to get to 
 
 # **3.3. Prysm (terence)**
 
-In the last two weeks we have closed all issues from our Trail of Bits audit. The audit report should be online. We've made improvements to our initial syncing process, we've made it better at exploring forks during non-finality. Currently working on conforming to the ETH2 standard APIs, and working on testing peer scoring as well, also on the slasher interchange format. The most important thing we're working on for our sila-sila-mainnet release is a set of issues that we want to close before Nov 24, you can track those in the milestones within the repo.
+In the last two weeks we have closed all issues from our Trail of Bits audit. The audit report should be online. We've made improvements to our initial syncing process, we've made it better at exploring forks during non-finality. Currently working on conforming to the ETH2 standard APIs, and working on testing peer scoring as well, also on the slasher interchange format. The most important thing we're working on for our sila-mainnet release is a set of issues that we want to close before Nov 24, you can track those in the milestones within the repo.
 
 # **3.4 Lighthouse (Paul)**
 
@@ -143,7 +143,7 @@ Last week we published our plans for a 1.0 release. We're encouraging everyone t
 
 # **3.5 Teku (Anton)**
 
-We have published a sila-sila-mainnet-ready release, and will be making default in the updates next week.  Common API is mostly completed, and are going to duplicate the legacy API in the next weeks. We have completed almost all spec release candidate updates, last one remaining is gossip messageID, now ready to be merged, will be in next release. We added a feature to support snapshot sync from a state alone, it's actually very effective, allows to get up and running in a few minutes. We have made significant improvements to memory consumption by utilizing proto array more widely. We also have some serious issues one related to out-of-memory after long periods of non-finalization, another one is related to stability of Geth on Eth1 sila-sila-mainnet, and also a workaround transaction size limitation in Infura.
+We have published a sila-mainnet-ready release, and will be making default in the updates next week.  Common API is mostly completed, and are going to duplicate the legacy API in the next weeks. We have completed almost all spec release candidate updates, last one remaining is gossip messageID, now ready to be merged, will be in next release. We added a feature to support snapshot sync from a state alone, it's actually very effective, allows to get up and running in a few minutes. We have made significant improvements to memory consumption by utilizing proto array more widely. We also have some serious issues one related to out-of-memory after long periods of non-finalization, another one is related to stability of Geth on Eth1 sila-mainnet, and also a workaround transaction size limitation in Infura.
 
 #
 # **4. Research Updates**
@@ -187,7 +187,7 @@ We also measured memory, Teku and Prysm use more memory. We had about 5GB memory
 
 **Danny**: You were working on making a modification to a client to make it evil, is that still in progress?
 
-**Adrian**: Yes, but it's currently on hold because we're focusing on sila-sila-mainnet, but I should take that up and get it back in to test the scoring.
+**Adrian**: Yes, but it's currently on hold because we're focusing on sila-mainnet, but I should take that up and get it back in to test the scoring.
 
 
 #
@@ -246,7 +246,7 @@ The EF announced a staking community grants round, anything that enhances and su
 
 **Dankard**: An ideal implementation would search mempools and block explorers.
 
-**Danny**: I suppose a block explorer could provide it as a service. I have a question related to that, Paul mentioned if you sign things far in the future and broadcast them, and that in particular is an issue, becuase you can create these surround conditions, Dankard brought it up in Sila Research, a small note from the validator guide made it into therecent release, essentially a validator should protect itself from signing things that advance time in unexpected ways in the future to prevent these inescapable message signing that create really bas surround conditions. Are clients aware of that, and is there any effort to try and protect users against this case?
+**Danny**: I suppose a block explorer could provide it as a service. I have a question related to that, Paul mentioned if you sign things far in the future and broadcast them, and that in particular is an issue, becuase you can create these surround conditions, Dankard brought it up in ethresear.ch, a small note from the validator guide made it into therecent release, essentially a validator should protect itself from signing things that advance time in unexpected ways in the future to prevent these inescapable message signing that create really bas surround conditions. Are clients aware of that, and is there any effort to try and protect users against this case?
 
 **Paul**: Not from our end, and it gets into some hairy territory, you're in to timing territory, you can't trust your system. I wasn't aware of it, and I'm not aware of any work to mitigate it.
 

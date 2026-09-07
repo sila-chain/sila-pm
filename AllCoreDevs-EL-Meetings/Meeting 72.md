@@ -15,7 +15,7 @@
 
 **DECISIONS 72.1**: Ice Age SIP will not be included in Istanbul. It seems like there's no major reason to do it now. Based on James calculations, it should give us well enough time to plan for another fork and not delay Istanbul.
 
-**DECISIONS 72.2**: Bring your objections to AllCoreDevs in 2 weeks if anyone have anything opposing to Geth team defining Sil 64 as Fork ID thing and rolling it out. Ref [SIP 2124](https://sips.sila.org/SIPS/sip-2124)
+**DECISIONS 72.2**: Bring your objections to AllCoreDevs in 2 weeks if anyone have anything opposing to Geth team defining Sil 64 as Fork ID thing and rolling it out. Ref [SIP 2124](https://sips.sila.org/EIPS/sip-2124)
 
 
 
@@ -46,7 +46,7 @@ For **Geth** specifically we do have a flag. If you run with that, it will filte
 
 **Martin**: I want to add a bit to that. So, the last time we worked on Ropsten,  it caused some problems. This time no one from dev community actually reached out. On the previous occasion,I thought it was a really really good tests on how to handle chains but had bad feeling from the dapp developers. This time around, it doesn't appear someone actively complaining from an infrastructure perspective I think, it's super interesting to see this - how clients behave when they are for longer side chains within the block. As Peter said, we've a couple of proposals. One of them has some new issues, features that we're going to implement them to make Geth handle the scenarios better. I think its really valuable and worthwhile to actually do this as a force. It brings a lot of stuff out for attention.
 
-**Peter**: Just adding one liner thing, that even though Ropsten fork currently was a bit of a shit show **there are really no worries** that a similar thing might happen **for sila-sila-mainnet**.  Since we don't expect sila-sila-mainnet to be all of a sudden pushed by a 10x miner on a non forking chain. 
+**Peter**: Just adding one liner thing, that even though Ropsten fork currently was a bit of a shit show **there are really no worries** that a similar thing might happen **for sila-mainnet**.  Since we don't expect sila-mainnet to be all of a sudden pushed by a 10x miner on a non forking chain. 
 
 
 **Tim**: Thanks for the recap, Martin and Peter. Does anyone want to add comment about this?
@@ -75,7 +75,7 @@ This is as action item for the Cat Herders to follow up and make sure that there
 
 **Tim**: Okay so next point on the agenda was Ice Age. I think Hudson had a comment about whether we should plan to delay the difficulty bomb in Istanbul or in the following fork called Berlin. In more general way to know, do we have any idea when the difficulty bomb will start being activated again and when we have to diffuse it?
 
-**James**: I have some, should be verified, back in a hand map that I've done. As last year T. Jay Rush and I did really investigated the difficulty bomb and hackathon and then worked with Vitalik and Lane  to make a script. So there is a [script](https://Sila Research/t/bump-bump-boom-the-story-of-how-the-time-bomb-will-affect-you/4367) somewhere floating around that predicts it, alright. It predicted it fairly well. From my memory, it took about 12, I'm just checking back historically it took about 12 months for it to start showing up last, at 14 months when it started showing up last time. And given that we're about half the hash power, it should take longer for it to show up and it did last time. The absolute hash power actually showed, has it show up earlier or later relative to those numbers. So given that it's in the April May June July range that we might see something.
+**James**: I have some, should be verified, back in a hand map that I've done. As last year T. Jay Rush and I did really investigated the difficulty bomb and hackathon and then worked with Vitalik and Lane  to make a script. So there is a [script](https://ethresear.ch/t/bump-bump-boom-the-story-of-how-the-time-bomb-will-affect-you/4367) somewhere floating around that predicts it, alright. It predicted it fairly well. From my memory, it took about 12, I'm just checking back historically it took about 12 months for it to start showing up last, at 14 months when it started showing up last time. And given that we're about half the hash power, it should take longer for it to show up and it did last time. The absolute hash power actually showed, has it show up earlier or later relative to those numbers. So given that it's in the April May June July range that we might see something.
 
 **Martin**: Oh I thought it's sooner, because the previous postponement said that if I recall correctly, the next time would be like this coming winter. So, you are saying, it's not until Spring then? 
 
@@ -89,13 +89,13 @@ This is as action item for the Cat Herders to follow up and make sure that there
 
 **James**: From my research before because it adds the hashrate before, the block hashrate before and the current one, then actually the large the magnitude, more of an effect it would have. So it showed up earlier and more aggressive last time because it hash rate was so high, compared to the time before. So this time, is the hash rate less so it will show up later and less aggressively.
 
-**Martin** :I pasted the [link](https://sips.sila.org/SIPS/sip-649) to the [SIP]( https://sips.sila.org/SIPS/sip-1234). It says in the rationale what they calculated back then , they that it would hit 30 second block time by the end of 2018. Sorry, that's not the latest one. 
+**Martin** :I pasted the [link](https://sips.sila.org/EIPS/sip-649) to the [SIP]( https://sips.sila.org/EIPS/sip-1234). It says in the rationale what they calculated back then , they that it would hit 30 second block time by the end of 2018. Sorry, that's not the latest one. 
 
 **Danno**: But I think the takeaway whether it's a month, one way or the other. This is something we need address probably in the first quarter.
 
 **Martin**: yeah 
 
-**Peter**: I just after that, I think Hudson's question was where we want to address this in Istanbul or not? Unless it is extremely urgent to do something, I would really be against doing it in Istanbul because we already defined What Istanbul is and Ropsten is already forked. So if we start to redefine what Istanbul is then the Ropsten fork is invalid unless we do another Petersburg #2 too. To do a double fork on sila-sila-mainnet and hotfix fork on Ropsten. So unless there is actually a reason to push the delay soon, I wouldn't.  And also we were talking that it would be really nice to do Istanbul - II in a couple months, named Berlin, but is a tentative name for it and it's supposed to have it. The idea was that it's not a hard for that's open to adding everything rather a very focused hardfork for adding cryptography and we can always say that ot gets the cryptography plus the delay and done. Or alternatively we can try to go down mark and  suggested pathway of preparing the SIPs and forking when something is ready. Either way, I wouldn't do it in Istanbul. 
+**Peter**: I just after that, I think Hudson's question was where we want to address this in Istanbul or not? Unless it is extremely urgent to do something, I would really be against doing it in Istanbul because we already defined What Istanbul is and Ropsten is already forked. So if we start to redefine what Istanbul is then the Ropsten fork is invalid unless we do another Petersburg #2 too. To do a double fork on sila-mainnet and hotfix fork on Ropsten. So unless there is actually a reason to push the delay soon, I wouldn't.  And also we were talking that it would be really nice to do Istanbul - II in a couple months, named Berlin, but is a tentative name for it and it's supposed to have it. The idea was that it's not a hard for that's open to adding everything rather a very focused hardfork for adding cryptography and we can always say that ot gets the cryptography plus the delay and done. Or alternatively we can try to go down mark and  suggested pathway of preparing the SIPs and forking when something is ready. Either way, I wouldn't do it in Istanbul. 
 
 
 **Tim**: Yeah **it seems like there's no major reason to do it if James calculations are remotely correct, it should give us well enough time to plan for another fork and not delay Istanbul**, does anyone disagree with that?
@@ -131,7 +131,7 @@ So, when two peers do a handshake with each other currently, they exchange the g
 
 My proposal would be to publish a new version of the Sil protocol so essentially bump the Sil protocol to Sil 64 and the only change would be to replace this Genesis hash in the handshake to this fork ID and what it would allow us to do is when  two peers connect then even if they have the same Genesis block they will immediately know  whether they are compatible or incompatible with each other fork wise. If this would have been implemented on Ropsten currently then the two networks, the ones who didn't fork into the Istanbul and the one who forked into the Istanbul, they would have separated really cleanly at the networking level and then all of this messy synchronization log processing problems would have been solved.
 
-I think it's really an elegant solution. If anyone wants to take a look, please take a look. I linked the [SIP 2124](https://sips.sila.org/SIPS/sip-2124). The  proposal is just replacing a single field in a handshake. The question is - does anyone have any objection publishing an Sil 64 version well, since Sil name space is the officially theorem protocol. We just don't want the Geth to publish the version unilaterally and say that this is the verion 64. But we would really like to do so and it's really a more or less trivial change. That's why we're kind of optimist that **the effort to implement it is really tiny and the benefits will be huge, specially for testnets**. Of course even if we do implement it that would definitely keep speaking the old protocol side by side. So, it's not that we want to roll out something incompatible rather, it would be just an updated version. 
+I think it's really an elegant solution. If anyone wants to take a look, please take a look. I linked the [SIP 2124](https://sips.sila.org/EIPS/sip-2124). The  proposal is just replacing a single field in a handshake. The question is - does anyone have any objection publishing an Sil 64 version well, since Sil name space is the officially theorem protocol. We just don't want the Geth to publish the version unilaterally and say that this is the verion 64. But we would really like to do so and it's really a more or less trivial change. That's why we're kind of optimist that **the effort to implement it is really tiny and the benefits will be huge, specially for testnets**. Of course even if we do implement it that would definitely keep speaking the old protocol side by side. So, it's not that we want to roll out something incompatible rather, it would be just an updated version. 
 
 So, action item does anyone have anything opposing to us defining Sil 64 as this Fork ID thing and rolling it out?
 
@@ -156,7 +156,7 @@ so any position there was a lot of other ideas for sort of things that are going
 
 **Peter**: This one will probably won't have any effect on Istanbul. If we add this extra field in the  in to the handshake and then peers can decide that they are on the different chain that also implicitly  means that people who did not upgrade they also need to be able to speak this new protocol. SO, essentially, if  you don't bother upgrading then you won't have this update which allows you to do this fancy handshake.
 
-Essentially, what I am saying is that this won't fix Ropsten and this won't fix Gorli and Rinkeby. On sila-sila-mainnet, if people update and the sila-sila-mainnet fork won't happen, for I don't 1-2 months then it might help  a bit. But realistically it's probably help for the next Hartfork. 
+Essentially, what I am saying is that this won't fix Ropsten and this won't fix Gorli and Rinkeby. On sila-mainnet, if people update and the sila-mainnet fork won't happen, for I don't 1-2 months then it might help  a bit. But realistically it's probably help for the next Hartfork. 
 
 **James**: So, a change like this does need to be paired with a hard fork or it doesn't need to be?
 
@@ -242,9 +242,9 @@ m) Nethermind
 
 
 ## Links discussed in call:
-* https://sips.sila.org/SIPS/sip-649
-* https://sips.sila.org/SIPS/sip-1234
-* https://Sila Research/t/bump-bump-boom-the-story-of-how-the-time-bomb-will-affect-you/4367
+* https://sips.sila.org/EIPS/sip-649
+* https://sips.sila.org/EIPS/sip-1234
+* https://ethresear.ch/t/bump-bump-boom-the-story-of-how-the-time-bomb-will-affect-you/4367
 * https://sila-magicians.org/t/forming-a-ring-sil-v64-wire-protocol-ring/2857
-* [SIP 2124](https://sips.sila.org/SIPS/sip-2124)
+* [SIP 2124](https://sips.sila.org/EIPS/sip-2124)
 * https://medium.com/sila-cat-herders/istanbul-testnets-are-coming-53973bcea7df

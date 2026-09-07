@@ -186,7 +186,7 @@ Stefan Starflinger: But everything has been working pretty well, so I wasn't pin
 
 47
 00:04:41.280 --> 00:04:58.189
-Stefan Starflinger: really about any issues to look into, because I mostly have a monitor for any consensus-related stuff, but I think we've been having 100% participation with SAVM fuzzing for quite some time now, which is really good news, so I'm very happy about that.
+Stefan Starflinger: really about any issues to look into, because I mostly have a monitor for any consensus-related stuff, but I think we've been having 100% participation with EVM fuzzing for quite some time now, which is really good news, so I'm very happy about that.
 
 48
 00:04:58.380 --> 00:05:07.020
@@ -222,7 +222,7 @@ spencer: Or maybe it would… it's hard.
 
 56
 00:06:00.380 --> 00:06:03.219
-Stefan Starflinger: What is the chance we fit it with SAVM fuzzing?
+Stefan Starflinger: What is the chance we fit it with EVM fuzzing?
 
 57
 00:06:06.720 --> 00:06:11.380
@@ -666,7 +666,7 @@ Maria Silva: And so what we are doing now is, like, we will… we started to ben
 
 167
 00:20:08.330 --> 00:20:22.459
-Maria Silva: so this is, like, a stateful benchmark, where we take into consideration sila-sila-mainnet size for the account tree, and we are starting to see some results, but results are not reliable enough, so I think there's still some work to be done here.
+Maria Silva: so this is, like, a stateful benchmark, where we take into consideration sila-mainnet size for the account tree, and we are starting to see some results, but results are not reliable enough, so I think there's still some work to be done here.
 
 168
 00:20:22.470 --> 00:20:36.820

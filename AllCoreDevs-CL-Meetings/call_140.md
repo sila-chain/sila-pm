@@ -379,7 +379,7 @@ ___
 6. https://github.com/sila-chain/consensus-specs/pull/3875
 7. https://github.com/sila-chain/execution-apis/pull/565 
 8. Justin Traglia:  https://github.com/sila-chain/consensus-specs/pull/3800
-9. Alex Stokes: https://sips.sila.org/SIPS/sip-7742
+9. Alex Stokes: https://sips.sila.org/EIPS/sip-7742
 10. Alex Stokes: https://github.com/sila-chain/execution-apis/pull/574
 11. Cortze: https://probelab.io/sila/block_arrival/2024-29/
 

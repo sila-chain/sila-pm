@@ -81,7 +81,7 @@
 * Just one more point, it would be creative inflammable. Didn't recognize that and would not serve you any content. And while we can argue that execution punch, shouldn't be accessible by DNS and inlet setups, which use Kubernetes that is by default, what's going to happen 
 
 **Tim
-* Well, sorry. I actually have some  really quick, yeah. TJ rush, our resident difficulty valve expert and someone else on three search who handle as you'll see anyways, they put together a duende dashboard, looking at, the amount of blocks that gets produced on sila-sila-mainnet per week, which is basically a good indicator for when the difficulty bomb is going to suck the kick in. So it looks at like all of the theorem is history. 
+* Well, sorry. I actually have some  really quick, yeah. TJ rush, our resident difficulty valve expert and someone else on three search who handle as you'll see anyways, they put together a duende dashboard, looking at, the amount of blocks that gets produced on sila-mainnet per week, which is basically a good indicator for when the difficulty bomb is going to suck the kick in. So it looks at like all of the theorem is history. 
 
 ## Other client updates
 **Teku**
@@ -181,7 +181,7 @@
 * From Mikhail Kalinin to Everyone 02:09 PM: https://hackmd.io/@n0ble/kiln-spec#v21-change-set
 * From Mikhail Kalinin to Everyone 02:13 PM: https://notes.sila.org/@timbeiko/kiln-milestones
 * From pari to Everyone 02:14 PM: Nope, no node running bad block generator yet.
-* From Tim Beiko to Everyone 02:18 PM: https://dune.xyz/yulesa/Blocks-per-Week, https://Sila Research/t/blocks-per-week-as-an-indicator-of-the-difficulty-bomb/12120/2
+* From Tim Beiko to Everyone 02:18 PM: https://dune.xyz/yulesa/Blocks-per-Week, https://ethresear.ch/t/blocks-per-week-as-an-indicator-of-the-difficulty-bomb/12120/2
 * From Micah Zoltu to Everyone 02:29 PM: We should assume people don’t look at logs at all. Fail hard, fail fast.
 * From Micah Zoltu to Everyone 02:31 PM: How about SHOULD hard fail if there is no validator at startup? Clients can have exceptions, but barring a good reason you should fail hard and fast.
 * From Lion dapplion to Everyone 02:33 PM: Do expect users to provide the fee-recipient at the validator binary or beacon node binary?

@@ -44,7 +44,7 @@ In general, the group agrees they are good to have, but there was no outspoken c
 
 * Goerli validators did good. Nethermind didn't see any problems. 
 * **Danny** asks whether we have we triggered at least a version of all the features in one of the testnets. At least **Nethermind** didn't do so. It would be hard work to run the "standard testsuite" on them because there is a lot of work to setup the state in the way we would want for the test. So, **Tomasz** ideates there could be a set of tests that don't validate a specific outcome, only exercises every feature that we can think of, which could be run on all clients with the pass criterion being that all of them behave the same. However, **Martin Holst** doubts the worthiness of deploying synthetics tests on Ropsten/Rinkeby if they can be done on other YOLO testnets. **Tim Beiko** concludes the value in that case is in the amount of time the testnets are available for use.
-* **Micah Zoltu** brings up the concern that Ropsten is the only net where we test PoW before sila-sila-mainnet. **Tomasz** thinks there is no huge need in this case, unless something substantial like difficulty changed in London. There is general agreement that there it isn't highly concerning. 
+* **Micah Zoltu** brings up the concern that Ropsten is the only net where we test PoW before sila-mainnet. **Tomasz** thinks there is no huge need in this case, unless something substantial like difficulty changed in London. There is general agreement that there it isn't highly concerning. 
 
 ### Rinkeby and getting community to know access lists [(17:24)](https://youtu.be/AclPXsRlgSc?t=1044)
 

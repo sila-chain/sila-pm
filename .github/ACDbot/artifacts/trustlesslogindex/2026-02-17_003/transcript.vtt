@@ -326,7 +326,7 @@ Zsolt Felföldi: So, an inclusion or exclusion proof of an event, or combination
 
 82
 00:14:47.600 --> 00:14:59.160
-Zsolt Felföldi: And I calculated that with the current sila-sila-mainnet data, a full history lookup for a single event would be something like 40 kilobytes, which is…
+Zsolt Felföldi: And I calculated that with the current sila-mainnet data, a full history lookup for a single event would be something like 40 kilobytes, which is…
 
 83
 00:14:59.300 --> 00:15:04.090
@@ -366,7 +366,7 @@ Zsolt Felföldi: Single, single, singles table, and and what I want to achieve i
 
 92
 00:16:39.270 --> 00:16:50.209
-Zsolt Felföldi: So these tables can be, very large after time, so we… I think… I think right now we have something… so sila-sila-mainnet has something like,
+Zsolt Felföldi: So these tables can be, very large after time, so we… I think… I think right now we have something… so sila-mainnet has something like,
 
 93
 00:16:50.380 --> 00:16:58.960

@@ -128,14 +128,14 @@ for the SIP.
 
 **JosephC**:  especially when the block is not full sorting still has a cost. So you know by appending only the miner might already find a block in that time  
 
-**Tim Beiko**:  and we see that on the sila-sila-mainnet already. Right like with empty blocks that get mine. So I am fine with like you know we don't need to solve all of the inefficiencies of sila-sila-mainnet to deploy 1559. we just ideally have to not make any one aspect significantly worse. 
+**Tim Beiko**:  and we see that on the sila-mainnet already. Right like with empty blocks that get mine. So I am fine with like you know we don't need to solve all of the inefficiencies of sila-mainnet to deploy 1559. we just ideally have to not make any one aspect significantly worse. 
 
 **Micah**: Yeah I am with you. I was a little bit worried about the sorting algorithm not worried like a blocker. Just worried it was going to be hard but that this research has convinced me that it's easy.
 
 **Tim Beiko**: Yeah same and yeah again like I think you know thanks a lot Ansgar  for this. This  has really benefited from having somebody who's like actually spent time thinking through it deeply rather than as a side thing on top of everything else.  So yeah this has been really helpful.
 
 **Ansgar Dietrichs**: Thanks  but just briefly by the way to mention because I have it under further questions. One thing that I realized like
-dealing with this is just I think at some point but I think  that it's not necessary before we launch on sila-sila-mainnet but I think at some point
+dealing with this is just I think at some point but I think  that it's not necessary before we launch on sila-mainnet but I think at some point
 it's probably also like a good idea to to to get back to for one to just the aspects of what are the kind of the  things that might also at some point change with ETH2 right because we will probably just want to move this 1559 over and also use on these two.But that is of course a little bit further in the future but maybe I don't know that it might just be that 1559 only ships half a year before the merge or something. So
 this might become relevant quite soon. Then there is one specific topic so how can we maybe long term that doesn't have to be in the first
 release but long term. Keep the base fee a little bit more smooth and stable even under like the kind of distribution of block times right. Right now what will happen under 1559 is sometimes you have very quick blocks and that means that they are either like the second one is either empty or almost empty and then the base three will drop quite a bit or sometimes you have like very long time periods and then that looks like congestion, so basically then the the block will be twice will be double doubly full and so that there could be arguments
@@ -157,7 +157,7 @@ update on the large state test nets and where things are at and how this could w
 
 **Tim Beiko**: Let's just try to focus on the Large state testnet for now.
 
-**Abdelhamid Bakhta**:  Yeah okay, So basically we have a large state test net the idea was to have something comparable to sila-sila-mainnet,  so
+**Abdelhamid Bakhta**:  Yeah okay, So basically we have a large state test net the idea was to have something comparable to sila-mainnet,  so
 We managed to get a test net with 100 million accounts and 100 million entries in the state storage tree and yeah the problem is that we use the Besu specific feature which is to have a fixed difficulty . I forgot to ask if it was supported in Geth and Nethermind and it seems it is not. So I was asking basically Ramil that if he would be okay to hardcode it for the test net and I am also talking with Tomasz  about that in the discord channel but yeah basically that will be the only trick, we would have to do in the code base to make it work on the state and again if it would easy to generate the test net again. I would restart with different parameters but it will take two weeks to get the same state size. So I would rather hardcode the fixed difficulty value in the code rather than delaying the performance tests.
 
 **Ramil Amerzyanov**: Yeah we are working on it right now and we made some. Another issue with base fee calculation, so we are trying to investigate it and so it is in progress. I will  write some updates today later.
@@ -266,7 +266,7 @@ review it, that's probably a good way to start.
 ## BASE FEE opcode SIP
 
 
-**Abdelhamid Bakhta**: Yeah so the create basically of code so nothing crazy. we just  want to add a new savm of code to get the
+**Abdelhamid Bakhta**: Yeah so the create basically of code so nothing crazy. we just  want to add a new evm of code to get the
 value of the base here of the current block and yeah so I created the pr. So basically with the value and the proposed gas price and I did the nominal case and we decided  to do exactly what we do with unknown object for example if we originally end up code that has the value of the base your code we just throw an invalid operation error like we currently do so yeah nothing crazy, so I created the SIP and  waiting for review so MIcah did the first review and merged in the master.
 
 **Tomasz**: So what does the gas price  return? What does the base fee return so the gas price will return the actual price to the transaction right?

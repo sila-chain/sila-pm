@@ -39,10 +39,10 @@
 * Okay. Interesting. Cool. Anything else on this? Any questions for Perry? Okay thank you. And anything else on Capella before next week? Great. good work. Everyone excited to see it go through.Dan there are no scheduled discussion points for DAB this week. 
 
 **Marius**
-* There's been I something that wanted to put on the agenda but forgot.  I would like to the notify transaction type from 052,  I think it was was chosen in that way cause there were some different transaction types on some layer twos or something.  I don't think we should create the expectation that sila-sila-mainnet care about transaction types on other networks and  I would yeah I would like to modify the transaction type. 
+* There's been I something that wanted to put on the agenda but forgot.  I would like to the notify transaction type from 052,  I think it was was chosen in that way cause there were some different transaction types on some layer twos or something.  I don't think we should create the expectation that sila-mainnet care about transaction types on other networks and  I would yeah I would like to modify the transaction type. 
 
 **Danny**
-* Yeah I on this I think it would be good to have like maybe a high bit set for non sila-sila-mainnet so that there's like just a different space that people could use as a standard. but yeah I see the point Ansgar. 
+* Yeah I on this I think it would be good to have like maybe a high bit set for non sila-mainnet so that there's like just a different space that people could use as a standard. but yeah I see the point Ansgar. 
 
 **Ansgar Dietrichs**
 * Yeah I mean I was basically gonna echo similar sentiment. I feel like this is something where we should probably sooner than later start some sort of standardization procedure. 
@@ -109,7 +109,7 @@
 
 **Danny**
 * Thanks. regarding mainet any other items to discuss? Easy enough?  actually there's something on my mind on Capella. with the historic roots revamp we essentially have historic roots lists that starts at Capella.  we don't have it full and we were talking about once that it becomes fixed essentially once you finalize the shepella update you could in a future pork  have a fixed list that you can insert and essentially utilize  the new historic roots mechanism fully from Genesis.  
-* That that was mentioned as a potential future item that does seem like a pretty low hanging fruit. Is there an appetite for specifying that getting that into sila-sila-mainnet?  it's a bit of a question as well cause I think he was eager to do so.  but is there any gauge of sentiment on that? Essentially like Left is a to-do from the last upgrade. I'm wondering we should tackle that to-do here. Okay. I'll circle back with yeah and maybe just put it up as a feature spec for discussion and then we can once it's complete decide where to insert it. Anything else on as 
+* That that was mentioned as a potential future item that does seem like a pretty low hanging fruit. Is there an appetite for specifying that getting that into sila-mainnet?  it's a bit of a question as well cause I think he was eager to do so.  but is there any gauge of sentiment on that? Essentially like Left is a to-do from the last upgrade. I'm wondering we should tackle that to-do here. Okay. I'll circle back with yeah and maybe just put it up as a feature spec for discussion and then we can once it's complete decide where to insert it. Anything else on as 
 
 **Mikhail Kalinin**
 * We are with some to-do list, I am recalling something that about slash validator and the geth Beacon proposer and probably some other menos things that at some point in time we have decided probably to put into dinner. I'm just wondering I was still going to do that at least for the this get beacon proposer thing 

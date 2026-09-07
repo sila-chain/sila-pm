@@ -112,8 +112,8 @@
     * After some discussion it was ultimately decided to just use v4 and not have to deal with all of these wrappers
  * Mamy's second question (23:43) - It seems like there is a need for zero (0) public keys and signatures for Phase 1, but not for Phase 2. Which scenario requires this?
   * Danny (25:07) - So there is a difference between the zero (0) public private key being valid and the empty aggregates being valid. Empty aggregates are banned in Phase 0 because of the way the attestation processing is handled. But there currenty *is* a use case for having an empty aggregate w/ the way light client signatures are handled in Phase 1. This is a **much** more simple wrapper than actually allowing for the zero (0) public key. 
- * Ben Edginton (25:55) - To confirm, there will be a spec update, and then we will agree what to hardfork to implement this on Medalla? Or we implement for sila-sila-mainnet? He goes on to say that it is technically breaking so we should have a v0.13 
-  * Danny - Right now leaving it as a PR, with the intention of getting it in the v0.01 sila-sila-mainnet release. Can further discuss how we want to treat this on Medalla. Should moonlight probably around launch of sila-sila-mainnet.
+ * Ben Edginton (25:55) - To confirm, there will be a spec update, and then we will agree what to hardfork to implement this on Medalla? Or we implement for sila-mainnet? He goes on to say that it is technically breaking so we should have a v0.13 
+  * Danny - Right now leaving it as a PR, with the intention of getting it in the v0.01 sila-mainnet release. Can further discuss how we want to treat this on Medalla. Should moonlight probably around launch of sila-mainnet.
  * Danny to write some quick notes on what upgrading Medalla would look like
  
 # 6. API status (31:39)
@@ -127,7 +127,7 @@
     * Maybe try a run and merge it into eth1 Hive at some point
 
 # 8. Spec dicussion (34:25)
-* Vitalik (34:50) - Asked if we should talk about the paramter changes to sila-sila-mainnet. Or if that was done and decided on
+* Vitalik (34:50) - Asked if we should talk about the paramter changes to sila-mainnet. Or if that was done and decided on
   * Danny - Released a Phase 0 SIP with Vitalik a couple of days prior. Discusses the following:
     * Punitiveness of the initial launch
     * Suggestion to have a reduced punitiveness on the tail risk scenarios. This is because if something does happen there in the first few months, it is likely not an attack.

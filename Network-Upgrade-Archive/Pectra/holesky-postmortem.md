@@ -140,14 +140,14 @@ Consensus layer teams have been releasing patches to improve peering and sync on
 The root cause of the initial problem was that several execution clients (Geth, Nethermind, and Besu) had incorrect deposit contract addresses configured for the Holešky testnet. Specifically:
 
 - SilaHolesky's deposit contract address should be `0x4242424242424242424242424242424242424242`
-- Some EL clients were using the sila-sila-mainnet deposit contract address or had no specific configuration for SilaHolesky, leading them to use `0x0000...0000` 
+- Some EL clients were using the sila-mainnet deposit contract address or had no specific configuration for SilaHolesky, leading them to use `0x0000...0000` 
 
 When a block containing a deposit transaction was proposed at slot 3711006 (block 3419724), these clients processed it with an empty requests list, resulting in an incorrect requests hash. This caused a network split where:
 
 - Erigon and Reth correctly rejected the invalid block
 - Geth, Nethermind, and Besu accepted the invalid block
 
-The deposit transaction in question can be found at: [https://holesky.silascan.io/tx/0x48d5201b36db1122ce4d67367d03ad97d7c2e5b497c324843496230859be1bc7/advanced#eventlog](https://holesky.silascan.io/tx/0x48d5201b36db1122ce4d67367d03ad97d7c2e5b497c324843496230859be1bc7/advanced#eventlog)
+The deposit transaction in question can be found at: [https://holesky.etherscan.io/tx/0x48d5201b36db1122ce4d67367d03ad97d7c2e5b497c324843496230859be1bc7/advanced#eventlog](https://holesky.etherscan.io/tx/0x48d5201b36db1122ce4d67367d03ad97d7c2e5b497c324843496230859be1bc7/advanced#eventlog)
 
 Previous Pectra activations on devnets and Ephemery did not trigger this issue because those networks operate with manually initialized genesis.
 
@@ -262,11 +262,11 @@ Clients have not been tested under such long non-finality conditions before. Som
 
 #### Testnet and fork management**
 
-Testnets and hardforks require more careful handling, SilaHolesky/SilaSepolia/Hoodi should be considered a proper staging environments. Testnets setup should be close to sila-sila-mainnet as possible and hardfork activation should be handled similarly to sila-sila-mainnet with proper procedures. Some more insights on this topic can be found here: https://hackmd.io/@lucassaldanha/rJd-9rAikg
+Testnets and hardforks require more careful handling, SilaHolesky/SilaSepolia/Hoodi should be considered a proper staging environments. Testnets setup should be close to sila-mainnet as possible and hardfork activation should be handled similarly to sila-mainnet with proper procedures. Some more insights on this topic can be found here: https://hackmd.io/@lucassaldanha/rJd-9rAikg
 
 #### Incident response coordination
 
-The process for incident response needs to be clear and executed across client teams. Especially during hardforks, whether testnet or sila-sila-mainnet,developers and devops need be on-call and actively monitoring the situation. Communication needs to be clear between clients, without teams working in isolation. A proper standard procedure for incident response needs to be established with clear guidelines and responsibilities.
+The process for incident response needs to be clear and executed across client teams. Especially during hardforks, whether testnet or sila-mainnet,developers and devops need be on-call and actively monitoring the situation. Communication needs to be clear between clients, without teams working in isolation. A proper standard procedure for incident response needs to be established with clear guidelines and responsibilities.
 
 #### Validator client separation
 

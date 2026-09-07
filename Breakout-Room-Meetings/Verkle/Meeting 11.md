@@ -52,7 +52,7 @@ Original notes: https://twitter.com/rudolf6_/status/1752966751254618547
 @jasoriatanishq
  for 
 @nethermindeth
-: implemented SIP-2935 (blockhash). The current implementation works for the Kaustinen testnet, but some potential issues for sila-sila-mainnet. Continuing work on performance improvements in the crypto library.
+: implemented SIP-2935 (blockhash). The current implementation works for the Kaustinen testnet, but some potential issues for sila-mainnet. Continuing work on performance improvements in the crypto library.
 
 Somnath for 
 @ErigonEth

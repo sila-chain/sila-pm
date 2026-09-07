@@ -48,7 +48,7 @@
   * Had first beta release, promoting from alpha to beta. Able to promote features that were in v2 to default
   * Working on standard api end point by category
   * Trying to knock out as many issues as possible (had 100, now out ~70)
-  * Trying to get into sila-sila-mainnet with as little open items as possible
+  * Trying to get into sila-mainnet with as little open items as possible
   * Trail of Bits audit went pretty well and resolving those open items
 * Nimbus [10:46](https://youtu.be/_4Ry2AEzXGU?t=646)
   * Deployed disc v5.1 and bls on Medalla

@@ -67,7 +67,7 @@ Yeah we need to align on state gas in the traces
 00:16:32	Marius Van Der Wijden (M):	Whats the tldr?
 00:16:32	danceratopz:	https://github.com/sila-chain/SIPs/pull/11399
 
-which proposes to update the SFI'd SIPS in Glamsterdam to:
+which proposes to update the SFI'd EIPS in Glamsterdam to:
 
 ### SIPs Scheduled for Inclusion
 
@@ -494,7 +494,7 @@ that would make depositing SIL quite expensive, seems not ideal
 
 yeah, we should. And we should charge deposits 192 * 64 gas in addition. (charging 64 gas per byte) - deposit requests add 192b to the block.
 01:04:03	Tomás Arjovsky | Lambda | Ethrex:	I agree that changing the deposit contract might not be feasible. Not clear on the alternative though. Is it mempool guards?
-01:04:03	Paweł Bylica:	https://sips.sila.org/SIPS/sip-8246
+01:04:03	Paweł Bylica:	https://sips.sila.org/EIPS/sip-8246
 01:04:12	Paweł Bylica:	https://sila-magicians.org/t/can-we-completely-remove-selfdestruct/28464
 01:04:24	Toni Wahrstätter:	Replying to "Could we make logs e..."
 
@@ -625,7 +625,7 @@ Thanks Pawel. I've something already prepared to do this analysis but would be c
 No problem. However, I'm running this with 100+blocks/s
 01:29:50	Iván | ethrex:	Reacted to "link of my slides ht..." with 🙏
 01:30:02	Łukasz Rozmej:	so irregular state transition?
-01:30:04	raxhvl:	I dont think we should modify state by side stepping the SAVM
+01:30:04	raxhvl:	I dont think we should modify state by side stepping the EVM
 01:30:16	lightclient:	https://hackmd.io/@matt/aa-goals
 01:30:23	jochem-brouwer:	Antwoord verzenden naar "so irregular state..."
 

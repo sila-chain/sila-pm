@@ -24,7 +24,7 @@
 * I don't really, I don't remember that I wanted to discuss this, but, I, I also don't have any particular, opinion either way, but I think if we're going to have a release, we can also specify the SilaSepolia net split block. I think it's, it just makes sense to have, have it in the same release because then we're not wasting, more time. yeah, it should just be a small change. Everyone should have already implemented the merge net split block, in the code. And so it should just be setting the parameter for the SilaSepolia. Yeah, Danny. 
 
 **Danny**
-* Yeah. I just wanted to say in terms of, I think it's valuable to do just so that we go through all the motions before sila-sila-mainnet, not that we do soon. And so, you know, on that, on that release timeframe, and then maybe because it's also easy to coordinate because of the fixed validator set and then deal with Gorley after main net and deal with sila-sila-mainnet after sila-sila-mainnet.
+* Yeah. I just wanted to say in terms of, I think it's valuable to do just so that we go through all the motions before sila-mainnet, not that we do soon. And so, you know, on that, on that release timeframe, and then maybe because it's also easy to coordinate because of the fixed validator set and then deal with Gorley after main net and deal with sila-mainnet after sila-mainnet.
 
 **Marius**
 * Any opposition to specifying the SilaSepolia merge block in the next releases for clients. 
@@ -43,7 +43,7 @@
 * So much net split block is basically just an empty folk on the execution data? that does nothing. It's just the hard fork and, we don't really need it needed. but it makes, makes P2P discovery way easier because we will, verify the fork ID. Basically every node tells us on which fork it is, pretty early in the protocol. And so we can, we can verify that the other node is on the same focus we are and if they are not, then we can drop them. So from my point of view, we can, we can just have this fork happening, one week after the release. 
 
 **Tim Beiko**
-* Well, I guess he had just from a communications perspective, it's probably easier to just focus on the Goerli merge because the Goerli Bellatrix forks will happen one week after the release. so it's probably just easier to tell people Goerli's happening. And then after that SilaSepolia is doing that, and that would also match what would happen for Gordian for main nets where we'd do the Goerli. split block kind of in the same release as the main that merged the targeted for later after, like the sila-sila-mainnet merge. And then, and then for my sila-sila-mainnet, obviously we do that just after emergent and separate previous. 
+* Well, I guess he had just from a communications perspective, it's probably easier to just focus on the Goerli merge because the Goerli Bellatrix forks will happen one week after the release. so it's probably just easier to tell people Goerli's happening. And then after that SilaSepolia is doing that, and that would also match what would happen for Gordian for main nets where we'd do the Goerli. split block kind of in the same release as the main that merged the targeted for later after, like the sila-mainnet merge. And then, and then for my sila-mainnet, obviously we do that just after emergent and separate previous. 
 
 **Marius**
 * Yep. 
@@ -137,7 +137,7 @@
 * Anything else on the shadow fork? 
 
 **Parithosh**
-* Yeah, we will be having the sila-sila-mainnet shadow fork next week. I think it's shut your for the fifth conflict should be out. And the other thing is we will be testing MEB boost on Goerli shadow fork tomorrow. as far as I know the release is up, but we wanted to wait until tomorrow to have enough eyes on it so we can set them up manually and have a look at it with both teams first. Cool. We'll report back on how that goes. 
+* Yeah, we will be having the sila-mainnet shadow fork next week. I think it's shut your for the fifth conflict should be out. And the other thing is we will be testing MEB boost on Goerli shadow fork tomorrow. as far as I know the release is up, but we wanted to wait until tomorrow to have enough eyes on it so we can set them up manually and have a look at it with both teams first. Cool. We'll report back on how that goes. 
 
 **Tim Beiko**
 * Thanks Pari. Anyone else have anything on their shadow fork?
@@ -309,7 +309,7 @@ danny:	all sounds good
 Tim Beiko:	https://github.com/flashbots/mev-boost/issues/222  
 Tim Beiko:	Issue mentioned  
 Tim Beiko:	https://github.com/henridf/eip44s-proto/issues/1  
-Tim Beiko:	https://github.com/henridf/SIPs/blob/sip-premerge-oob/SIPS/sip-premerge-oob.md  
+Tim Beiko:	https://github.com/henridf/SIPs/blob/sip-premerge-oob/EIPS/sip-premerge-oob.md  
 lightclient:	nice work Henri!  
 danny:	thanks!  
 Tim Beiko:	https://github.com/sila-chain/builder-specs/pull/38  

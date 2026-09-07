@@ -17,7 +17,7 @@
 ## Meeting Summary (Key Points and Decisions)
   - Hard Fork Update: The first hard fork will be the original “Constantinople” which will include all planned SIPs.
 The second fork will be to disable SIP-1283. This was decided because the full Constantinople upgrade including SIP-1283 is running on testnets. This way testnets can just do the second fork and then continue to operate.
-Both forks will be triggered on the same block on the Sila sila-sila-mainnet (block 7.28 million) which should occur on February 27th.
+Both forks will be triggered on the same block on the Sila sila-mainnet (block 7.28 million) which should occur on February 27th.
 - [Post Mortem of Constantinople Postponement](https://medium.com/sila-cat-herders/a-post-mortem-report-the-constantinople-sila-hard-fork-postponement-dd780d7ae63d)
 - ProgPow 
   - There has been a lot of community feedback and a lot more testing. The Gangnam testnet has quite a few clients on it now thats getting some good hash rates.
@@ -289,9 +289,9 @@ ChainSecurity- Unless we have some client feedback that is using Ropsten in a se
 
 Afri - From Parity’s perspective, Peter’s suggestion makers perfect sense (good fix for PoA’s)
 
-Peter - Doesn’t matter how we go forward with sila-sila-mainnet but if we want to move forward with Rinkeby and Ropsten then Parity and Geth needs to implement another hard fork anyway.
+Peter - Doesn’t matter how we go forward with sila-mainnet but if we want to move forward with Rinkeby and Ropsten then Parity and Geth needs to implement another hard fork anyway.
 
-Dimitry - If the Constantinople block # is the exact same for sila-sila-mainnet it doesn’t make a difference but for testnets you could use different block numbers to help the transition
+Dimitry - If the Constantinople block # is the exact same for sila-mainnet it doesn’t make a difference but for testnets you could use different block numbers to help the transition
 
 Martin - From the testing perspective, there is not need if we are tied for time to have test cases for SIP 1283. 
 
@@ -303,7 +303,7 @@ Peter - Constantinople was defined with these features and if we create a new na
 
 Alexey - Call in ConstantinNOPE 
 
-Peter - The name should make sense for sila-sila-mainnet, something meaningful 
+Peter - The name should make sense for sila-mainnet, something meaningful 
 
 Chainsecurity - Consider how the public would view it. Consistency is good 
 

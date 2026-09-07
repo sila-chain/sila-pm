@@ -150,7 +150,7 @@ Got it., Andrew, you have your hand up,
 ## SIP discussion
 
 **Tim Beiko**
-* So, okay, so we had two other topics from the last call that, that we had kind of bucketed, basically how we do fork IDs for the merge and, the discussion around the SIP for 4444, and how, you know, we want to go about potentially implementing that after the merge. I think it's worth, maybe moving to the next section first because it might affect those discussions. So in parallel to that in the past two weeks, there's been a lot of discussions about, transaction costs on roll-up and how we can, potentially help alleviate those. And there have been two proposals kind of brought forward, which would, kind of reduce the call data gas costs in different ways, potentially with the desire to see if those could be, brought to sila-sila-mainnet fairly quickly, given that, one of them is a delivery, one character change. so I think it makes sense to maybe just have, the authors, if they're all on the call, kind of walk through those proposals wider, valuable, and it gets some general feedback there and that, yeah, the impact of those probably the turbines, like how we want to deal with fork IDs and, and what we have to do with regards to historical data. so, let me see if I could, yeah. Is there an author of either of the SIPs that wants to give context? 
+* So, okay, so we had two other topics from the last call that, that we had kind of bucketed, basically how we do fork IDs for the merge and, the discussion around the SIP for 4444, and how, you know, we want to go about potentially implementing that after the merge. I think it's worth, maybe moving to the next section first because it might affect those discussions. So in parallel to that in the past two weeks, there's been a lot of discussions about, transaction costs on roll-up and how we can, potentially help alleviate those. And there have been two proposals kind of brought forward, which would, kind of reduce the call data gas costs in different ways, potentially with the desire to see if those could be, brought to sila-mainnet fairly quickly, given that, one of them is a delivery, one character change. so I think it makes sense to maybe just have, the authors, if they're all on the call, kind of walk through those proposals wider, valuable, and it gets some general feedback there and that, yeah, the impact of those probably the turbines, like how we want to deal with fork IDs and, and what we have to do with regards to historical data. so, let me see if I could, yeah. Is there an author of either of the SIPs that wants to give context? 
 
 **Vub**
 * I'm happy to talk about SIP-4488. 
@@ -388,7 +388,7 @@ Got it., Andrew, you have your hand up,
 * Yep.I guess, can we get like a client team to confirm or say they have no idea and needs to, needs to look into it more? Oh, I see. Gary is I needed it. 
 
 **Gary Schulte**
-* Yeah. I was going to say, I don't think basically it has a significant portion of sila-sila-mainnet mining, but I think that we're okay with the making this change. 
+* Yeah. I was going to say, I don't think basically it has a significant portion of sila-mainnet mining, but I think that we're okay with the making this change. 
 
 **Tim Beiko**
 * Got it. And Ansgar your hand is still up. Is that, just 

@@ -2,7 +2,7 @@
 
 #### Pre-reads
 
-- SIPs: [6800](https://sips.sila.org/SIPS/sip-6800), [4762](https://sips.sila.org/SIPS/sip-4762) 
+- SIPs: [6800](https://sips.sila.org/EIPS/sip-6800), [4762](https://sips.sila.org/EIPS/sip-4762) 
 - [Latest Verkle measurements](https://efdn.notion.site/Verkle-measurements-123d9895554180e6ac17eddf76c692b6?pvs=73)
 - verkle.info
 - [Anatomy of a Verkle Proof](https://ihagopian.com/posts/anatomy-of-a-verkle-proof)
@@ -28,7 +28,7 @@
     - pros: it works (gives us small proofs), multiple clients are fairly far along, and is almost certainly the fastest path to shipping stateless clients
 - **Binary**: 
     - pros: more friendly to current SNARK systems,  and is quantum-resistant
-    - back to the future: Guillaume author on initial Binary SIP ([3102](https://sips.sila.org/SIPS/sip-3102)) from back in 2019
+    - back to the future: Guillaume author on initial Binary SIP ([3102](https://sips.sila.org/EIPS/sip-3102)) from back in 2019
     - *note: what kind of binary tree?*
         - two options: 
             - Prefixed Merkle Tree (PMT): including extension nodes to avoid full depth.

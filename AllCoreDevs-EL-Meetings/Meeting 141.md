@@ -461,7 +461,7 @@ Micah Zoltu
  
 MariusVanDerWijden
 18:36
-Don't use only static peers though, otherwise we don't get the tx's from sila-sila-mainnet
+Don't use only static peers though, otherwise we don't get the tx's from sila-mainnet
  
 Tim Beiko
 18:47
@@ -553,7 +553,7 @@ Processing by EL most likely, shouldn't be too much overhead
  
 Afr Schoe
 34:29
-I strongly disagree, if we cannot deal with testnets, how shall we deal with sila-sila-mainnet?
+I strongly disagree, if we cannot deal with testnets, how shall we deal with sila-mainnet?
  
 Micah Zoltu
 34:29
@@ -565,7 +565,7 @@ Micah Zoltu
  
 Micah Zoltu
 35:12
-@Afr I think the problem is that the set of people who use testnets is vastly different from the set of people who use sila-sila-mainnet.
+@Afr I think the problem is that the set of people who use testnets is vastly different from the set of people who use sila-mainnet.
  
 pari
 35:27
@@ -585,7 +585,7 @@ They are just the beacon state
  
 Afr Schoe
 36:16
-the problem is cannot identify sila-sila-mainnet problems if we treat testnets differently
+the problem is cannot identify sila-mainnet problems if we treat testnets differently
  
 Phil Ngo
 36:21

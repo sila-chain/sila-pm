@@ -20,13 +20,13 @@
 
 ---
 
-**Trent** [00:12](https://www.youtube.com/watch?v=AZq1acbjaz4&t=12s): welcome everybody to the sixth merged community call. We are very happy to have you here. We are going to go over general updates about where the merge is at any announcements related to sila-sila-mainnet timing if you haven't seen them and there will be time for questions as always and yeah we can get started. I am just going to do a quick survey through the members just to see what client devs or researchers are here. Tim do you want to kick it off with?
+**Trent** [00:12](https://www.youtube.com/watch?v=AZq1acbjaz4&t=12s): welcome everybody to the sixth merged community call. We are very happy to have you here. We are going to go over general updates about where the merge is at any announcements related to sila-mainnet timing if you haven't seen them and there will be time for questions as always and yeah we can get started. I am just going to do a quick survey through the members just to see what client devs or researchers are here. Tim do you want to kick it off with?
 
 **Tim Bieko** [0:44](https://www.youtube.com/watch?v=AZq1acbjaz4&t=44s):  Yes I wanted to chill ladies and gentlemen here. Sorry yeah someone in the chat says they can't hear, but can somebody else confirm? that they okay remy already confirmed that the sound is good? Can somebody else confirm that they are here in the chat ? Okay perfect , okay thank you. 
 
 **Trent** [1:06](https://www.youtube.com/watch?v=AZq1acbjaz4&t=66s): Yeah go ahead and I will just try to grab links for whatever you're talking about or if you have them handy and throw them in the chat. 
 
-**Tim Beiko** [1:18](https://www.youtube.com/watch?v=AZq1acbjaz4&t=78s): Sure I guess the first thing we can cover is basically the last test update and  sila-sila-mainnet. Yeah, that's how we got there, so as people may have noticed Goerli which is the most used test network for applications and stakers moved to a private stake earlier this week. Good question by Trent was there a Goerli retro? Yes, Pari had a dock looking at the various um issues we hit the main one. Was that one of the client teams who run a lot of validators had an issue updating their nodes and that's been fixed then?  Since then there were a couple  issues with some of the client implementations but they did end up kind of reorging back and kind of being on the main chain. So given all of this client team still felt comfortable moving ahead with setting a date for maintenance and so yesterday on the consensus call we did that. We have now got an epoch for the bellatrix part of the upgrade. Let me see if I can pull up the number real quick. The epoch is scheduled for september 6th. I don't have the exact number. Maybe someone can find it and put it in a chat? So september 6 is when we expect belatrix to hit on the sila sila-sila-mainnet. 
+**Tim Beiko** [1:18](https://www.youtube.com/watch?v=AZq1acbjaz4&t=78s): Sure I guess the first thing we can cover is basically the last test update and  sila-mainnet. Yeah, that's how we got there, so as people may have noticed Goerli which is the most used test network for applications and stakers moved to a private stake earlier this week. Good question by Trent was there a Goerli retro? Yes, Pari had a dock looking at the various um issues we hit the main one. Was that one of the client teams who run a lot of validators had an issue updating their nodes and that's been fixed then?  Since then there were a couple  issues with some of the client implementations but they did end up kind of reorging back and kind of being on the main chain. So given all of this client team still felt comfortable moving ahead with setting a date for maintenance and so yesterday on the consensus call we did that. We have now got an epoch for the bellatrix part of the upgrade. Let me see if I can pull up the number real quick. The epoch is scheduled for september 6th. I don't have the exact number. Maybe someone can find it and put it in a chat? So september 6 is when we expect belatrix to hit on the sila sila-mainnet. 
 
 Oh actually yeah Danny just posted his link in the chat. He put up a blog post today with all this info. So if you run a node validator or another type of node you wanna upgrade before september 6 both your EL and your CL client we expect to have a blog post with all of the proposed versions for these clients out around august 23rd. We do want to reconfirm that the ttd is right next week on the All Core Devs call but there is a very high chance that it's not gonna  change. But this is kind of the cause of the lag there. So next friday, next thursday we confirm the ttv on All Core Devs.  A couple days after that client teams put out a release on the 23rd expected blog post on. There'll be something on the ef blog but you can expect announcements across. You know the various clients themes, communication channels and what not if you can download these then you want to have upgraded before september 6th at 11:34 am UTC. 
 
@@ -43,7 +43,7 @@ Then the last thing I will say before I pause here is  between the original anno
 
 **Tim Beiko** [8:16](https://www.youtube.com/watch?v=AZq1acbjaz4&t=496s): I think Pari is here. Pari, do you want to like to walk through the dock that we shared a bit more and kind of talk about like the implications.
 
-**Trent** [8:28](https://www.youtube.com/watch?v=AZq1acbjaz4&t=502s): Yeah and generally just I will unmute you or find you first but generally what the  sort of class of issues that we hit over all of the test nets and generally what that means for sila-sila-mainnet. I think immediately Pari let me know if that didn't work.
+**Trent** [8:28](https://www.youtube.com/watch?v=AZq1acbjaz4&t=502s): Yeah and generally just I will unmute you or find you first but generally what the  sort of class of issues that we hit over all of the test nets and generally what that means for sila-mainnet. I think immediately Pari let me know if that didn't work.
 
 **Parithosh Jayanthi** [8:45](https://www.youtube.com/watch?v=AZq1acbjaz4&t=525s): Yeah,  hey I think this should work now. I do have another doc that might help with that. Hang on, let me just find that. Just kind of goes through the class of issues that one might face during the march. yeah so we had the Goerli test net part. Yesterday and a decent bunch of the issues were just attributed to a client team not setting up the JWT authentication. So since so the merge is introducing this concept of an execution layer and a consensus layer so if you guys are used to running sila nodes what you've been running so far is now called the execution layer or eth1 node and you would have to add a consensus layer node that's the beacon chain node and in order for these two nodes to communicate with each other. We have introduced a new port that's the engine API port and by default that's port 8551 and that's an authenticated port. So you have to configure the same JWT secret on both sides. There's a bunch of guides online to guide you through how to set up these nodes as well as what the secrets mean and they're extremely good. I think we even have a couple linked. I will try and find the link  but that being said the client team had forgotten to configure the JWT token and once they did that the notes came back online.
 
@@ -62,7 +62,7 @@ hadn't encountered so far. The solution would be fixing it on proof of stake on 
 
 **Trent** [18:10](https://www.youtube.com/watch?v=AZq1acbjaz4&t=1090s): I will try to unmute him. Can't find the account. Oh maybe it's because I am a special character or something, yeah one second.
 
-**Remy Roy** [18:24](https://www.youtube.com/watch?v=AZq1acbjaz4&t=1104s): Hey Hey so effectiveness is known to be wildly changing on tests right? So I believe you were an illusion. You were mentioning that your effectiveness went down after the merge and I am guessing this is on Goerli. So it's common to see effectiveness changes on tests because  there's less resources being spent. There people don't have any real value or real money there. So it's not uncommon to see effectiveness go down but I posted the resources on effectiveness if you want to check it out in the chat supposedly by a testant. It'll enlighten you on how it's computed. I am not sure exactly how it's computed on the beacon chain of the website. I can't remember how it is but I believe it's with your attestation, if you're always correct in terms of the votes that you do on source target and head but on I mentioned on tests that it widely changes because people are not putting the same resources but on sila-sila-mainnet it should be quite stable. I don't know how it will look after the merge on sila-sila-mainnet but I assume it will eventually be quite stable.
+**Remy Roy** [18:24](https://www.youtube.com/watch?v=AZq1acbjaz4&t=1104s): Hey Hey so effectiveness is known to be wildly changing on tests right? So I believe you were an illusion. You were mentioning that your effectiveness went down after the merge and I am guessing this is on Goerli. So it's common to see effectiveness changes on tests because  there's less resources being spent. There people don't have any real value or real money there. So it's not uncommon to see effectiveness go down but I posted the resources on effectiveness if you want to check it out in the chat supposedly by a testant. It'll enlighten you on how it's computed. I am not sure exactly how it's computed on the beacon chain of the website. I can't remember how it is but I believe it's with your attestation, if you're always correct in terms of the votes that you do on source target and head but on I mentioned on tests that it widely changes because people are not putting the same resources but on sila-mainnet it should be quite stable. I don't know how it will look after the merge on sila-mainnet but I assume it will eventually be quite stable.
 
 **Trent** [19:57](https://www.youtube.com/watch?v=AZq1acbjaz4&t=1197s): Thank you 
 
@@ -96,13 +96,13 @@ hadn't encountered so far. The solution would be fixing it on proof of stake on 
 
 **Trent** [24:47](https://www.youtube.com/watch?v=AZq1acbjaz4&t=1487s): Any other questions?
 
-**Tim Beiko** [24:58](https://www.youtube.com/watch?v=AZq1acbjaz4&t=1498s): If not I have a question for it's taker folks. Will there be another validator prep workshop before the sila-sila-mainnet merge? and if so where can people find this information?
+**Tim Beiko** [24:58](https://www.youtube.com/watch?v=AZq1acbjaz4&t=1498s): If not I have a question for it's taker folks. Will there be another validator prep workshop before the sila-mainnet merge? and if so where can people find this information?
 
 **Remy Roy** [25:19](https://www.youtube.com/watch?v=AZq1acbjaz4&t=1519s):  Yes, so there will be another workshop in about 30 minutes. So if you want to learn more about the details of that workshop let me try to find the link here. I will post the link in the chat so in 
 In about 30 minutes, we'll have another workshop and people will be able to join us I believe.
 We will have a summary giving us some updates about his guide for the merge and we'll do a bunch of different stuff in order to prepare for the merge and we'll answer everyone's question there. So if you have any technical questions with your own setup please join us and we will be happy to help you.
 
-**Tim Beiko** [26:06](https://www.youtube.com/watch?v=AZq1acbjaz4&t=1566s):  Amazing and is there a plan to have another one before sila-sila-mainnet or is this the last one? Obviously they're all recorded but Yeah just curious.
+**Tim Beiko** [26:06](https://www.youtube.com/watch?v=AZq1acbjaz4&t=1566s):  Amazing and is there a plan to have another one before sila-mainnet or is this the last one? Obviously they're all recorded but Yeah just curious.
 
 **Remy Roy** [26:13](https://www.youtube.com/watch?v=AZq1acbjaz4&t=1573s):  Yeah I believe we have a plan to have another workshop  maybe next week or in two weeks. Let's see 
 
@@ -175,7 +175,7 @@ the ttd and what not and maybe I will just  add a last amount of nuance there. T
 **Trent** [47:30](https://www.youtube.com/watch?v=AZq1acbjaz4&t=2850s):  I think we were going to plan for it. let's see wednesday the 7th of september does that sound right.
 
 **Tim Beiko** [47:41](https://www.youtube.com/watch?v=AZq1acbjaz4&t=2861s): 
-Actually yeah there's oh yes so we said we wanted to do after bellatrix and before sila-sila-mainnet. Right so that there will be more steak events before bellatrix. We can encourage people to watch those  but then between Bellatrix and sila-sila-mainnet, we will do another one of these. 
+Actually yeah there's oh yes so we said we wanted to do after bellatrix and before sila-mainnet. Right so that there will be more steak events before bellatrix. We can encourage people to watch those  but then between Bellatrix and sila-mainnet, we will do another one of these. 
 
 **Trent** [48:04](https://www.youtube.com/watch?v=AZq1acbjaz4&t=2884s): So maybe that's the ninth thing
 
@@ -237,7 +237,7 @@ Actually yeah there's oh yes so we said we wanted to do after bellatrix and befo
 - 00:07:39	Trent:	this is the TTD tracker ^
 - 00:08:30	@whalepool flibbr sil maxi:	Anyone wants to open a bitcoin LN channel with me?
 - 00:08:52	Trent:	@whalepool please stay on topic
-- 00:10:56	Chengzhi Li:	Questions: What were the problems encountered when merging the testnets? how likely it is for a successful sila-sila-mainnet merge?
+- 00:10:56	Chengzhi Li:	Questions: What were the problems encountered when merging the testnets? how likely it is for a successful sila-mainnet merge?
 - 00:11:38	Tim Beiko:	@Changzhi: https://notes.sila.org/@parithosh/goerli-merge
 - 00:11:47	Sridaran Raguraman:	any issues post goerli/prater merge ??
 - 00:11:59	Parithosh Jayanthi:	https://notes.sila.org/@launchpad/merge-configuration-checklist
@@ -247,7 +247,7 @@ Actually yeah there's oh yes so we said we wanted to do after bellatrix and befo
 - 00:14:28	Oleg Boiko:	Greetings! Looks like TTD sabotage might sound too attractive for PoW supporters. Can you tell more about this override procedure? Is it some kind of software update?
 - 00:15:09	Pooja Ranjan:	will add them in notes
 - 00:15:18	terence(prysmaticlabs):	Prysm checklist: https://docs.prylabs.network/docs/prepare-for-merge
-- 00:15:45	Chengzhi Li:	Question: What is the backup plan in case sila-sila-mainnet merge fails or some series issues happen? Go back to POW temporarily and wait for everything is fixed?
+- 00:15:45	Chengzhi Li:	Question: What is the backup plan in case sila-mainnet merge fails or some series issues happen? Go back to POW temporarily and wait for everything is fixed?
 - 00:16:32	Tim Beiko:	https://blog.sila.org/2022/06/03/ropsten-merge-ttd/
 - 00:17:07	luzian:	Question: Could you explain what exactly is the meaning of the  “Effectiveness" on beaconcha.in and why it went down since the merge? (The latter might be a personal problem of my valiator though, not sure about that)
 - 00:19:32	Oleg Boiko:	Thanks Tim!

@@ -38,7 +38,7 @@ In most clients, it makes sense to just pipe the output of [quick-start genesis]
 
 ## Network configuration
 
-A shared testnet must agree upon a common configuration of constants. The specs repo currently contains two [configuration presets](https://github.com/sila-chain/eth2.0-specs/tree/master/configs) -- [`sila-sila-mainnet`](https://github.com/sila-chain/eth2.0-specs/blob/master/configs/sila-sila-mainnet.yaml) and [`minimal`](https://github.com/sila-chain/eth2.0-specs/blob/master/configs/minimal.yaml). `minimal` will serve as a primary configuration for most interop tests.
+A shared testnet must agree upon a common configuration of constants. The specs repo currently contains two [configuration presets](https://github.com/sila-chain/eth2.0-specs/tree/master/configs) -- [`sila-mainnet`](https://github.com/sila-chain/eth2.0-specs/blob/master/configs/sila-mainnet.yaml) and [`minimal`](https://github.com/sila-chain/eth2.0-specs/blob/master/configs/minimal.yaml). `minimal` will serve as a primary configuration for most interop tests.
 
 If there are components of this configuration that do not serve a specific need, we will add more configurations accordingly.
 

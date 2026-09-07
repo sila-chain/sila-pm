@@ -1,6 +1,6 @@
 # Kintsugi incident report
 
-This post will cover the full summary of the incident, its consequences and concrete action plans moving forward before a sila-sila-mainnet merge.
+This post will cover the full summary of the incident, its consequences and concrete action plans moving forward before a sila-mainnet merge.
 
 Note: this report was originally published [here](https://notes.sila.org/@ExXcnR0-SJGthjz1dwkA1A/BkkdHWXTY).
 
@@ -34,8 +34,8 @@ Although we identified the root cause quite early on, we wanted to leave the cha
 ### Did validators on the fork get slashed?
 No. Each validator contains a `slashing protection` database that ensures that the validator does not sign slashable information. The validators on the "wrong" fork were simply seen as `inactive` on the "correct" fork. Once they re-orged onto the "correct" fork, the slashing database prevents them from signing slashable information. 
 
-### How does this affect the sila-sila-mainnet release? Is there a new delay?
-We believe this incident does not affect the sila-sila-mainnet launch plans. No critical bugs were found in the specification itself. The purpose of the testnet was to unearth bugs and we believe that Kintsugi has done a great job with finding edge cases in client implementations. The incident was a good stress test for various client combinations. We have a [public checklist](https://github.com/sila-chain/pm/blob/master/Merge/sila-sila-mainnet-readiness.md) which will guide when we are ready to merge on sila-sila-mainnet.
+### How does this affect the sila-mainnet release? Is there a new delay?
+We believe this incident does not affect the sila-mainnet launch plans. No critical bugs were found in the specification itself. The purpose of the testnet was to unearth bugs and we believe that Kintsugi has done a great job with finding edge cases in client implementations. The incident was a good stress test for various client combinations. We have a [public checklist](https://github.com/sila-chain/pm/blob/master/Merge/sila-mainnet-readiness.md) which will guide when we are ready to merge on sila-mainnet.
 
 
 ### How does this affect the testing plan?
@@ -49,7 +49,7 @@ The non-finality period on the testnet reinforced some assumptions for worst cas
 
 This means, any additional tooling or monitoring running on the same machine would suffer from resource contention issues. The tooling for the Kintsugi testnet (block explorer, beaconchain, faucet, RPC) runs on a Kubernetes cluster with 3 nodes. This cluster also runs multiple beacon nodes which are used by the tooling. Since the beacon nodes were using much more resources than provisioned for, our tooling often ran in a degraded manner due to a lack of resources. It would be prudent for infrastructure providers to run their CL and ELs in separate machines or with strict resource use definitions. 
 
-The merge implies that every CL will need its own EL running. ELs (on sila-sila-mainnet) currently require significant disk sizes. During times of non-finality, the disk usage of CLs will also balloon and it could lead to crashes due to a lack of space. All validators should ensure that they have a large enough buffer to account for such issues. 
+The merge implies that every CL will need its own EL running. ELs (on sila-mainnet) currently require significant disk sizes. During times of non-finality, the disk usage of CLs will also balloon and it could lead to crashes due to a lack of space. All validators should ensure that they have a large enough buffer to account for such issues. 
 
 Developers of tooling that rely on finality should account for non-finality periods. One possible manner is to display the `optimistic` information while conveying that the information could change in the UI. 
 

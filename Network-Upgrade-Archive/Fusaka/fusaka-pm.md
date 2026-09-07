@@ -23,4 +23,4 @@
 - Hoodi: Oct 28, 2025 at 18:53:12 UTC (slot 1622016)
   - [configuration](https://github.com/sil-clients/hoodi)
 - SilaMainnet: Dec 3, 2025 at 21:49:11 UTC (slot 13164544)
-  - [configuration](https://github.com/sil-clients/sila-sila-mainnet)
+  - [configuration](https://github.com/sil-clients/sila-mainnet)

@@ -54,7 +54,7 @@ I see.
 The thing is the exits would have probably been handled fine but Nimbus would have voted on incorrect it would have just said were invalid and maybe it have for away we don't really know what would have happened if have been no non finalized state.
 
 **Pari**
-Yeah and just to clarify the issue is not like a sila-sila-mainnet related one at all it's scope to just enun testnets. And the other topic we wanted to bring up was um now that we have devnet 12 and it looks like it's forked without any fanfare, should we start planning Goerly shadow fork, and we want to know what sort of timeline we can plan for that.
+Yeah and just to clarify the issue is not like a sila-mainnet related one at all it's scope to just enun testnets. And the other topic we wanted to bring up was um now that we have devnet 12 and it looks like it's forked without any fanfare, should we start planning Goerly shadow fork, and we want to know what sort of timeline we can plan for that.
 
 **Danny**
 Yeah, does anybody have any thoughts on that? I guess what importantly what's the Prism timeline look like to getting on devnet 12? Is anyone from Prism here? We might have lost Terence because of the time change. It's now 6 a.m. Preston? Do you have any perspective on Prism's readiness for devnet12? 
@@ -312,7 +312,7 @@ Anybody have a reorg related issue from the past that they can point Pari to? If
 All right, anything else related to testing and devnets?
 
 **Tim**
-Not quite the devnets but we're going to put out the Goerli blog post today around Goerli validators being exited the later of three months after before or one month after sila-sila-mainnet, last call if anyone has thoughts comments on that, but otherwise the post should be up in the next hour.
+Not quite the devnets but we're going to put out the Goerli blog post today around Goerli validators being exited the later of three months after before or one month after sila-mainnet, last call if anyone has thoughts comments on that, but otherwise the post should be up in the next hour.
 
 #### Research, spec, etc [Add sentences about order of ByRoot responses consensus-specs#3544](https://github.com/sila-chain/consensus-specs/pull/3544) [37:26]( https://www.youtube.com/live/s3jIn3ot57g?si=t2q7AGuwUEtqhBhz&t=2246) 
 
@@ -361,7 +361,7 @@ So pretty uncontroversial I think but if anyone…
 No even standard files that go in it it's just files are relevant?
 
 **Tim**
-Yeah yeah so I'm not saying we have to create you know like a sila-sila-mainnet or anything yeah yeah but just we tend to and now they like either end up in hackmds or random places which is like a default place for people to shove stuff that's relevant to the fork that we're working on and we'll sort of get the and usually we don't struggle to find them during the fork but it's kind of nice that this way we'd have them you know in that repo forever After the fork yeah sorry sil panda op.md is not random but the and I mean even if we keep using hackmds we can just even link them from there and you know um know that this yeah…
+Yeah yeah so I'm not saying we have to create you know like a sila-mainnet or anything yeah yeah but just we tend to and now they like either end up in hackmds or random places which is like a default place for people to shove stuff that's relevant to the fork that we're working on and we'll sort of get the and usually we don't struggle to find them during the fork but it's kind of nice that this way we'd have them you know in that repo forever After the fork yeah sorry sil panda op.md is not random but the and I mean even if we keep using hackmds we can just even link them from there and you know um know that this yeah…
 
 **Danny**
 You could drop a doc that said relevant notes if you didn't want to put it in there.

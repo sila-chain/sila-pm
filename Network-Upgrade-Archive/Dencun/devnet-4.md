@@ -7,7 +7,7 @@
 - historical summaries
 - genesis fork version for bls changes
 
-## EL: build on top of [SilaShanghai](https://github.com/sila-chain/execution-specs/blob/master/network-upgrades/sila-sila-mainnet-upgrades/shanghai.md), including:
+## EL: build on top of [SilaShanghai](https://github.com/sila-chain/execution-specs/blob/master/network-upgrades/sila-mainnet-upgrades/shanghai.md), including:
 
 - [SIP-6122 : Forkid checks based on timestamps](https://github.com/sila-chain/SIPs/pull/6122)
 - [SIP-4895 update: CL-EL withdrawals harmonization: using units of Gwei](https://github.com/sila-chain/SIPs/commit/b56a299fbad4ee701e6d4cea025096effaf301fa)

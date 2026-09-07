@@ -150,7 +150,7 @@ Not present
 
 - Can now prove poly-log communication complexity of Handel aggregation protocol
 - Handel is designed for large committees, but will also work for small committees and brings advantages in privacy
-- Privacy: would be good to break the mapping between IP address of a validator and its Public - Key (which is currently easy to discover). Published a technique yesterday on [Sila Research](https://Sila Research/t/anonymity-a-zkp-to-remove-the-mapping-ip-address-wallets-public-key-of-a-validator/6049) that uses a ZKP to obscure the mapping.
+- Privacy: would be good to break the mapping between IP address of a validator and its Public - Key (which is currently easy to discover). Published a technique yesterday on [ethresear.ch](https://ethresear.ch/t/anonymity-a-zkp-to-remove-the-mapping-ip-address-wallets-public-key-of-a-validator/6049) that uses a ZKP to obscure the mapping.
 
 **Protolambda**:
 [Timestamp 32:46](https://youtu.be/sz87_i5Uy1I?t=1966)

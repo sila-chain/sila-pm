@@ -253,12 +253,12 @@ Vitalik:
 * The IETF standardisation effort is not just for the blockchain project so that will be interested in standardising all of the meaningful options. 
 * This is good news for us because it means we have some level of preparedness in this possible messy world of lots of different curves.
 
-## [SIP-2028](https://sips.sila.org/SIPS/sip-2028)
+## [SIP-2028](https://sips.sila.org/EIPS/sip-2028)
 [Timestamp 36:34](https://youtu.be/Y8rhSbtY-Pg?t=2194)
 
 **Leo BSC**: I have been contacted by the Starkware team. They have shown some interest in working with the simulator.
 * The idea would be to study how various network parameters are affected by block size.
-* This is in the context of the Sila Improvement Proposal [SIP-2028](https://sips.sila.org/SIPS/sip-2028). 
+* This is in the context of the Sila Improvement Proposal [SIP-2028](https://sips.sila.org/EIPS/sip-2028). 
 
 ## eWASM
 [Timestamp 37:13](https://youtu.be/Y8rhSbtY-Pg?t=2233)
@@ -267,7 +267,7 @@ Vitalik:
 * This is a black box prototype environment for phase 2 execution.
 * It uses WASM internally.
 * It was based on Vitalik’s Phase 2 Proposal 2. 
-* There is an EthResearch [Post](https://Sila Research/t/phase-2-execution-prototyping-engine-ewasm-scout/5509) introducing Scout and giving some background.
+* There is an EthResearch [Post](https://ethresear.ch/t/phase-2-execution-prototyping-engine-ewasm-scout/5509) introducing Scout and giving some background.
 * The code itself can be found at [scout](https://github.com/ewasm/scout).
 * For the black box is most of the Phase 0 and Phase 1 stuff accepted as required.
 * It is a tool that operates on a YAML test file. 

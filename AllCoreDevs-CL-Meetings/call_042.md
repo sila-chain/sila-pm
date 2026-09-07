@@ -156,13 +156,13 @@
 
 **Carl:** Keystores are the minimum that should be supported, more than that not required, 2335-style keystore should be the standard for storing keys (at a minimum). In terms of standards, would like to add to Eth2 specs in a similar vein to just to explain what is expected at a minimum, even if not strictly a part of the spec. There has been discussion about layout, but a description would be good, spec is a good place to put it.
 
-**Vitalik:** About using gkr to approve hashes much more quickly (has posted to Sila Research), seems to be a good direction. Short and medium term relevance is in witness compression looking at polynomial commitments and ? for quite some time, might make SNARk and STARK Merkle proof more efficient again than other methods described. In terms of data size, seems to be much more efficient, goes down from about 100B to almost no overhead.
+**Vitalik:** About using gkr to approve hashes much more quickly (has posted to ethresear.ch), seems to be a good direction. Short and medium term relevance is in witness compression looking at polynomial commitments and ? for quite some time, might make SNARk and STARK Merkle proof more efficient again than other methods described. In terms of data size, seems to be much more efficient, goes down from about 100B to almost no overhead.
 
 ( **Dankard** raises security concerns (reusing algebraic hash function), says they are the main problem, **Vitalik** agrees, **Dankard** says not sure this is a good direction, but doesn't seem to affect the overall timeline (3-5 years for witness compression), **Vitalik** says could be, but there are middle options like Petersen hashes for the Merke tree too. Some discussion about Petersen.)
 
 **LeoBSC:** Researching gossip, different kinds of attacks, posting research. Would be good if weird behavior is reported to LeoBSC regarding gossip. Danny points any good security issues to Leo.
 
-**Joseph Delong:** Worked on validator de-anonymization, posted to Jonathan Rhea has been writing a series of posts called packetology to Sila Research. Still a rough draft, and can de-anonymize to correlate pub key to IP address. Also working on a phase 1 client using Alex's transpiler research.
+**Joseph Delong:** Worked on validator de-anonymization, posted to Jonathan Rhea has been writing a series of posts called packetology to ethresear.ch. Still a rough draft, and can de-anonymize to correlate pub key to IP address. Also working on a phase 1 client using Alex's transpiler research.
 
 #
 # **5. Networking**
@@ -200,7 +200,7 @@ Action items - run sanity test compression numbers - single user attestation, re
 
 **Danny:** Is network primarily on Secio? General answer is yes, some discussion. **Jacek** says they want to disable Secio completely, but not doable now for general compatibility.
 
-**Danny:** Will take to networking channel. Need to figure out if changes to noise spec are versioned, should push for versioning. Prysmatic probably has the most up-to-date versions, really doesn't want Secio to be enabled on sila-sila-mainnet.
+**Danny:** Will take to networking channel. Need to figure out if changes to noise spec are versioned, should push for versioning. Prysmatic probably has the most up-to-date versions, really doesn't want Secio to be enabled on sila-mainnet.
 
 ## **5.4 Maximum Clock Parity Parameter**
 
@@ -250,7 +250,7 @@ No discussion.
 - [https://github.com/sila-chain/eth2.0-pm/issues/1](https://github.com/sila-chain/eth2.0-pm/issues/154)62
 - [https://etresear.ch/t/using-gkr-inside-a-snark-to-reduce-the-cost-of-hash-verification-down-to-3-constraints/7550](https://etresear.ch/t/using-gkr-inside-a-snark-to-reduce-the-cost-of-hash-verification-down-to-3-constraints/7550)
 - [https://github.com/leobago/BSC-ETH2](https://github.com/leobago/BSC-ETH2)
-- [https://Sila Research/t/packetology-validator-privacy/7547](https://Sila Research/t/packetology-validator-privacy/7547)
+- [https://ethresear.ch/t/packetology-validator-privacy/7547](https://ethresear.ch/t/packetology-validator-privacy/7547)
 - [https://github.com/sila-chain/eth2.0-specs/issues/1931]
 
 ## **Attendees**

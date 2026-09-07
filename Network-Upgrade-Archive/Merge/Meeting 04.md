@@ -319,7 +319,7 @@ No, we didn't take this out, but we did cut out the vlog gossip.
 * I was going to say if we look at one too many do we have this then the idea that you know if a consensus client requests a block from the execution client because it doesn't know the parent and goes and tries to find the block itself don't we have the problem that the execution client can't rely on blocks being valid unless it can verify them with a consensus client right and Okay, so if it gets a request for a block, it can presume that it's canonical, but that kind of breaks down when you get to infuria, where you'll only have people spraying something at it. The validity of waiting is independent of the right of consensus.
 
 **Danny**
-* So you might tell it to follow an execution chain and it would be valid in terms of execution parameters, you know the savm transformation correct, but the consensus any any consensus kind of outer layer on top of that is not going to select that chain if there isn't a valid set of transactions, I mean a valid set of transactions.
+* So you might tell it to follow an execution chain and it would be valid in terms of execution parameters, you know the evm transformation correct, but the consensus any any consensus kind of outer layer on top of that is not going to select that chain if there isn't a valid set of transactions, I mean a valid set of transactions.
 
 **Paul Hauner**
 * Wouldn't there be a trash can by then? I could only fill it up.

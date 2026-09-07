@@ -14,7 +14,7 @@
 
 | Item | Descritption |
 | ---------------- | ------------ |
-|   1          |       **Goerli Shadow Fork** went well, but was on a relatively small number of nodes. Next steps are to get a devnet running with the last spec changes, and after that we'll do a larger Goerli Shadow Fork, and then start doing sila-sila-mainnet ones to have at least one smaller and one larger one done before actually forking mainet.       |
+|   1          |       **Goerli Shadow Fork** went well, but was on a relatively small number of nodes. Next steps are to get a devnet running with the last spec changes, and after that we'll do a larger Goerli Shadow Fork, and then start doing sila-mainnet ones to have at least one smaller and one larger one done before actually forking mainet.       |
 |       2.     |We agreed to add the **Single RPC method for blob gas price** (eth_blobGasPrice) and to add the blob pricing info to eth_feeHistory as described here https://github.com/sila-chain/execution-apis/pull/486|
 |3. |   Conversations about **SIP-7545 and precompiles** in general, no action taken for now.|
 | 4.  | We agreed to **keep both next week's ACDC and ACDE** the week after, but cancel the testing call next Monday. For teams who aren't able to send anyone to the call, please post an async update on the call agenda prior to it |
@@ -41,14 +41,14 @@
 **Danny** [5:05](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=305s): Yeah so I mean as a baseline it sounds like it worked. I don't personally see.  More stuff to do right now.
 
 
-**Tim Beiko** [5:11](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=311s): So I guess for the next ones. Do we see value in having it and on Goerli again? Would we want to go straight to sila-sila-mainnet for the next Shadow Fork? Yeah the teams have an opinion about that for devops.
+**Tim Beiko** [5:11](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=311s): So I guess for the next ones. Do we see value in having it and on Goerli again? Would we want to go straight to sila-mainnet for the next Shadow Fork? Yeah the teams have an opinion about that for devops.
 
-**Paritosh** [5:36](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=336s): I think mainly we prefer continuing Goerli Shadow Fork because it's relatively most of the upgrade changes we're going to notice up here peer to peer Layer and renting more nodes that can support the goerli network is cheaper than renting more nodes for sila-sila-mainnet. We're definitely going to do a sila-sila-mainnet Shadow Fork before we do the official main net for but the question is just do we do that earlier or later.
+**Paritosh** [5:36](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=336s): I think mainly we prefer continuing Goerli Shadow Fork because it's relatively most of the upgrade changes we're going to notice up here peer to peer Layer and renting more nodes that can support the goerli network is cheaper than renting more nodes for sila-mainnet. We're definitely going to do a sila-mainnet Shadow Fork before we do the official main net for but the question is just do we do that earlier or later.
 
-**Tim Beiko** [6:01](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=361s): Okay in that case I think yeah it probably makes sense to do goerli again as the first one. And if there's no issues then move to sila-sila-mainnet.
+**Tim Beiko** [6:01](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=361s): Okay in that case I think yeah it probably makes sense to do goerli again as the first one. And if there's no issues then move to sila-mainnet.
 
 
-**Danny** [6:12](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=372s): And yeah I'd be an advocate for that doing a large Goerli after doing a small Goerli then doing a small sila-sila-mainnet, doing a large sila-sila-mainnet but again after we're pass another couple of Devnets with the fix or at least one.
+**Danny** [6:12](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=372s): And yeah I'd be an advocate for that doing a large Goerli after doing a small Goerli then doing a small sila-mainnet, doing a large sila-mainnet but again after we're pass another couple of Devnets with the fix or at least one.
 
 
 **Tim Beiko** [6:28](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=388): Yeah I agree. I would do at least one devet with the final spec changes before we do another Shadow Fork. Does anyone see the need to do another Shadow Fork before that.
@@ -127,14 +127,14 @@ One.
 **Tim Beiko** [23:50](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1430s): Got it. Danno you had your hand up yeah.
 
 
-**Danno Ferrin** [23:54](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1434s): Yeah. This might be a controversial take on this but I think one of the great things about #4788 as a pre-compile is that, there is SAVM code that says this is the pre-compile. This is the canonical answer. So this kind of goes against some of the idea that you know why wait for open Zeppelin to implement this in solidity. What if all pre-compile is going forward that the canonical form is a
+**Danno Ferrin** [23:54](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1434s): Yeah. This might be a controversial take on this but I think one of the great things about #4788 as a pre-compile is that, there is EVM code that says this is the pre-compile. This is the canonical answer. So this kind of goes against some of the idea that you know why wait for open Zeppelin to implement this in solidity. What if all pre-compile is going forward that the canonical form is a
 form of solidity or Viper or fee or whatever. And that defines it in modulo gas. You know we're going to have to change a gas schedule on that. And that the clients could do a pre-compile that would optimize that but would truly be a pre-compile at that point there would be an uncompiled version that is the Canonical this is a reference implementation. This is the correct state. It would solve a lot of problems in devs who aren't you know PHD’s in cryptography trying to. Get the small little details of these curves correct when they don't necessarily have a large set of test cases to run against.
 
 
 **Tim Beiko** [24:58](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1498s): And so the implication here is you can Implement any of them in solidity basically.
 
 
-**Danno Ferrin** [25:06](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1506s): Right and early on when you don't have when you're work doing the next hard work the client you just slide that precompile slide. The SAVM in and then when you optimize it you come check if you got some local code it'll always be correct.
+**Danno Ferrin** [25:06](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1506s): Right and early on when you don't have when you're work doing the next hard work the client you just slide that precompile slide. The EVM in and then when you optimize it you come check if you got some local code it'll always be correct.
 
 **Dankrad Feist** [25:19](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1519s): So this curve specifically will be used for verkle trees anyway, right. So all clients will need I mean we have already created libraries for that. So I mean I think like currently the general position is that client tests never touch the cryptography themselves. Well unless they are really comfortable with it. And that we have readymade libraries and that's already the case for verkle in this case. 
 
@@ -143,10 +143,10 @@ form of solidity or Viper or fee or whatever. And that defines it in modulo gas.
 **Dankrad Feist** [25:55](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1555s): The idea is good particular SIP.
 
 
-**Tim Beiko** [26:01](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1561s): This is a bit off topic but could we do that for BLS or because I remember like the whole debates around SAVM Max were to allow us to build BLS on a one but.
+**Tim Beiko** [26:01](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1561s): This is a bit off topic but could we do that for BLS or because I remember like the whole debates around EVM Max were to allow us to build BLS on a one but.
 
 
-**Danno Ferrin** [26:15](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1575s): I know the Epsilon team at one hackathon did through SAVM Max the existing precompilers. I don't know if they moved on to BLS12 and using SAVM Max. Right.
+**Danno Ferrin** [26:15](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1575s): I know the Epsilon team at one hackathon did through EVM Max the existing precompilers. I don't know if they moved on to BLS12 and using EVM Max. Right.
 
 **Tim Beiko** [26:28](https://www.youtube.com/watch?v=TQ2XEvMzvFg&t=1588s): Got it. Okay and I assume I guess back to just the original SIP. I assume there's an SIL magicians link people can raise issues there but were there any other questions about the SIP.
 

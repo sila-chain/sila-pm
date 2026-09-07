@@ -5,7 +5,7 @@ Péter Szilágyi edited this page on Sep 2, 2016
 ## Notes from prevous meeting
 https://pad.riseup.net/p/poPmdTm3ACas
 
-### SIPS
+### EIPS
 * BIGINT_ADD, BIGINT_MUL off the table for now - to be implemented as solidity library first
 * BIGINT_MODEXP
 	* Need to figure out gas prices

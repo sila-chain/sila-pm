@@ -38,7 +38,7 @@ Update SIP-7954: Raise contract code size to 64KiB
 00:12:38	Mario Vega:	There’s a small caveat on 64KB if I recall correctly: Some EXT* benchmarks require contracts with maximum contract size to be pre-deployed to the network so we can query those, so we’d need to redeploy, it’s not difficult but just so we are aware
 00:13:22	Louis:	Replying to "There’s a small cave..."
 
-But there would be no such contract on sila-sila-mainnet before we upgrade.
+But there would be no such contract on sila-mainnet before we upgrade.
 00:13:49	Mario Vega:	Replying to "There’s a small cave..."
 
 I meant devnets, bloatnet, etc

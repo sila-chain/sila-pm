@@ -64,7 +64,7 @@ This portion of getting balance is pretty good as-is.
 
 Wallet (Tokens/NFTs)
 
-- Problem: Token balance requires eth_call, different API. We have to go to the contract, call a function it it called getBalance to return the balance of that token. To execute you need to download the code and run that code in SAVM everytime it accesses a state. 
+- Problem: Token balance requires eth_call, different API. We have to go to the contract, call a function it it called getBalance to return the balance of that token. To execute you need to download the code and run that code in EVM everytime it accesses a state. 
 - Helios: Web3 Purifier. Point your wallet to this RPC. 
     - Problem: Too many round trips, inefficient especially for slower network
 - Access lists are best effort for now

@@ -31,13 +31,13 @@ Video starts at [[5:11](https://youtu.be/HHK6xhuSyUU?t=5m11s)].
     * D: I'm committing a list of these in PR #437 (linked above)
 * Peter
     * We had a long chat at Taipei meetup with Piper and Frederick
-    * py-savm team is using geth and parity nodes in background to test correctness of py-savm
+    * py-evm team is using geth and parity nodes in background to test correctness of py-evm
     * This is a huge pain for them to test since it’s hard to uniformly configure a chain for different clients
     * Ties together nicely with Dimitriy’s approach - having a unified interface for setting up and running consensus tests
     * Would be a nice addition if we can set these up so they can properly test the RPC methods as there is currently no unified test suite for RPC as it’s hard to set up common state for nodes
     * Not only could it assemble chains locally and run tx to see what happens, it could also export various types of tests
     * If we have these two-way things where we can both import and export state tests it’s very powerful because suddenly we can set up a web service with a bounty page where you can configure a chain, submit solidity code and some tx and have it tested against all client implementations — this would be a useful tool for the community
-    * If I’m implementing some quirk in SAVM and notice a sensitive thing that may or may not be broken in other clients then rather than dig through their source code I can create a test case and immediately submit it to run against all clients
+    * If I’m implementing some quirk in EVM and notice a sensitive thing that may or may not be broken in other clients then rather than dig through their source code I can create a test case and immediately submit it to run against all clients
     * No one has the capacity to develop such a tool but if we have the RPC endpoints properly spec'ed out then all we need is a nice web page
     * Dimitry: What do you mean by “export a test”?
     * Peter: Be able to export the JSON, e.g., export a go test to a test fixture and run against the others without needing to manually construct it
@@ -242,12 +242,12 @@ Video starts at [[5:11](https://youtu.be/HHK6xhuSyUU?t=5m11s)].
   * We discussed UX issues, e.g., how does having to keep contracts alive affect UX, how do we address these
   * I’m in the process of writing up a proposal based on contract resurrection
   * I feel like the research community feels that something like this is important
-  * http://Sila Research forum best place to get involved
+  * http://ethresear.ch forum best place to get involved
 * Hudson: let’s save discussion of timelines for the next meeting
 
 ## On Constantinople - timing, what to include [[1:00:10](https://youtu.be/HHK6xhuSyUU?t=1h10s)]
 * We agreed on a couple of SIPs to include in Constantinople:
-    * [EIP145: Bitwise shifting instructions in SAVM](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-145.md)
+    * [EIP145: Bitwise shifting instructions in EVM](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-145.md)
     * [EIP210: Blockhash refactoring](https://github.com/sila-chain/SIPs/pull/210) likely to go in
     * Looking at a couple of others, including something that reduces gas cost [Editor's note: I'm not sure which SIP this refers to]
 * We were initially going to finalize things over the next month or so, from community perspective everyone wants to get a hard fork out and get things done, but there aren’t many radical things going into Constantinople without Casper or Sharding so from my perspective we shouldn’t rush to pick a date
@@ -299,7 +299,7 @@ Video starts at [[5:11](https://youtu.be/HHK6xhuSyUU?t=5m11s)].
   * SilaParis update, ewasm team met with TrueBit, Dfinity, Parity
   * Discuss differences in e.g. gas metering
   * Vitalik: Definitely happening in sharding
-      * Shards will never see a single block of old-style SAVM execution
+      * Shards will never see a single block of old-style EVM execution
 * geth (Peter)
   * 1.5 months ago we did a major release, since then just polishing things, trying to choose next major feature
   * Currently most painful point is synchronization
@@ -311,7 +311,7 @@ Video starts at [[5:11](https://youtu.be/HHK6xhuSyUU?t=5m11s)].
 * cpp-sila (Pawel and Andrei)
   * Update in Github issue
   * Add support for ewasm engine
-  * VM, SAVM-C interface
+  * VM, EVM-C interface
   * Andrei mostly doing bug fixes, improvements related to database, P2P, blockchain sync
   * Andrei: continuing to work on issues around sync and DB layer
   * Peter: what sync are you working on currently?
@@ -342,7 +342,7 @@ Video starts at [[5:11](https://youtu.be/HHK6xhuSyUU?t=5m11s)].
   * Moving forward on our full sila client development
   * This is no secret, although there’s been no formal announcement
   * Will open source client when we’re ready
-  * Will be fully sila-sila-mainnet compatible and contain a sharding client
+  * Will be fully sila-mainnet compatible and contain a sharding client
 * Nick Johnson
   * Working on making SIPs more accessible and readable
   * Converted SIPs repo into a Jekkyl site so it will automatically build an indexed web page listing them

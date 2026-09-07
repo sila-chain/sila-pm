@@ -120,7 +120,7 @@
   * Vitalik added that the kind of bug he could foresee happening with relying on doing timers without going back to a system clock is that, what if your computer temporarily slows down and it takes you 19sec to verify some block. Or even just if your computer sleeps and wakes up. 
   * An interesting note is that 14,400 is a multiple of 64, which means we get really nice epoch boundaries at midnight every time. 
 * Currently should be using system time to currently determine slots. Specifically, system time that conforms to unix that would adjust for leap seconds over time
-* [Link](https://Sila Research/t/network-adjusted-timestamps/4187) to Vitalik's post on ethresearch. Urged people to implement it or for folks to come up with reasons for something else
+* [Link](https://ethresear.ch/t/network-adjusted-timestamps/4187) to Vitalik's post on ethresearch. Urged people to implement it or for folks to come up with reasons for something else
 * Leo commented at [42:30](https://youtu.be/zeceWlmxseY?t=2550) his work on the supercomputer. He implemented local timers for the nodes. But he also implemented some global synchronization every 5 seconds. With that 5 second paramater being one that could be customized. 
 # 7. [Network spec](https://github.com/sila-chain/eth2.0-specs/pull/763)
 * Zak chimed in, discussing how him and a few others have started to build out a lightweight PoC type of wire protocol (Hobbits). The idea is to create something that works right now, and have just about finished implementing it. 
@@ -135,7 +135,7 @@
 * Ran a bunch of benchmarks w/ some extensive data coming out of it:
   * gist is that ROP is actually really terrible for Eth2.0 data structures (almost doubles the size) because of all of the little link prefixes and deep nesting of things like blocks and attestations
 * Been looking at old version of ssz spec. Has his own compact serialization format he's been tinkering with. 
-* Been pushing to modify the ssz spec to include the sos style offset pattern, so that we can have a serialization format that also works as a contract abi. And those two things combined together give us reasonably compact messages that can also be used to talk directly into contracts that give us that fast indexing into data structures. Which, at the application layer, may not be useful. But inside the context of the SAVM/eWASM - being able to reach into these things and be able to grab the data you need is actually useful. 
+* Been pushing to modify the ssz spec to include the sos style offset pattern, so that we can have a serialization format that also works as a contract abi. And those two things combined together give us reasonably compact messages that can also be used to talk directly into contracts that give us that fast indexing into data structures. Which, at the application layer, may not be useful. But inside the context of the EVM/eWASM - being able to reach into these things and be able to grab the data you need is actually useful. 
 * Tree hash maps well onto any of these formats
 * Some experiments with ssz suggest that there's maybe 9-10% size gains that can be improved, but it's reasonably efficient from the get go. Not as the wire protocol, but the inner part of it. 
 * Antoine asked about cpu utilization, and if there is a big difference. In which Piper suspects that the more compact version is less cpu intensive assuming you're decoding the whole thing. 
@@ -154,7 +154,7 @@
 # Links shared during meeting
 * https://github.com/harmony-dev/beacon-chain-java/releases/tag/v0.1.0
 * https://docs.libp2p.io
-* https://Sila Research/t/network-adjusted-timestamps/4187
+* https://ethresear.ch/t/network-adjusted-timestamps/4187
 * https://github.com/sila-chain/eth2.0-specs/pull/766
 * https://github.com/sila-chain/eth2.0-specs/pull/766
 * https://github.com/sila-chain/research/tree/master/merkle_tree
@@ -203,7 +203,7 @@
 * Nicolas Gailly (PegaSys)
 * Olivier Begassat (ConsenSys)
 * Paul Hauner (Lighthouse/Sigma Prime)
-* Piper Merriam (Trinity/Py-SAVM)
+* Piper Merriam (Trinity/Py-EVM)
 * Raúl Jordan (Prysmatic)
 * Terence Tsao (Prymatic)
 * Wei Tang (Parity)

@@ -119,7 +119,7 @@ You know, the gains are on the order of 1000 X for many operations, right?
 **Cayman**                   
 Yeah. 1000 X, and then so when you when you have such a fast hash tree root, we can do something like 4000 hash tree roots of a beacon state per second. So when you when you have such a fast hash tree root, you can use that as the key of some kind of cache. You can basically cache a lot of these different state transition functions, even if they're naive. You cache them by the hash tree root of whatever piece of the state you're dealing on memo-ization is what you call it. You can memo-ize these different functions. Just that is enough to speed up the state transition by a lot.
 
-Basically, for us, it's like, where right now, we're just not fast enough for sila-sila-mainnet to being pretty competitive for sila-sila-mainnet. So we're working on actually benchmarking and getting real numbers for that. So then, instead of saying "a lot," I can tell you exactly how much faster and what exactly that looks like.
+Basically, for us, it's like, where right now, we're just not fast enough for sila-mainnet to being pretty competitive for sila-mainnet. So we're working on actually benchmarking and getting real numbers for that. So then, instead of saying "a lot," I can tell you exactly how much faster and what exactly that looks like.
 
 **Mamy**               
 Is the website simple serialized.com the with new actions?
@@ -149,7 +149,7 @@ A bug chunk of work has been updating our client to 0.9.3. We've landed most of 
 Thanks, Alex. And the next three, I think you all have some version of a public testnet. I'm curious, along with your update, about the biggest hurdle, if there is one, that you're currently facing with those testnets. Let's start with Prysmatic.
 
 **Raul Jordan Prysmatic**                
-We've been running our sila-sila-mainnet testnet for two weeks. We're not really seeing significant issues. We have 29,000 active validators, 32,000 total. At the moment, we've been just working through rapid iteration with users on a lot of improvements to the user experience, fixing up memory and CPU conception, which is currently the biggest problem. A lot of it has to do with copying state fields due to a lack of immutability and go, so that eats up memory at an alarming rate. And also, of course, the biggest bottleneck ends up being some parts of hash tree root. So there's multiple efforts working on this to resolve.
+We've been running our sila-mainnet testnet for two weeks. We're not really seeing significant issues. We have 29,000 active validators, 32,000 total. At the moment, we've been just working through rapid iteration with users on a lot of improvements to the user experience, fixing up memory and CPU conception, which is currently the biggest problem. A lot of it has to do with copying state fields due to a lack of immutability and go, so that eats up memory at an alarming rate. And also, of course, the biggest bottleneck ends up being some parts of hash tree root. So there's multiple efforts working on this to resolve.
 
 One of the biggest optimizations that we did was offloading expensive computations. That's done many, many times to background workers that cache it. So if we have 1000 validators on one node and one validator requests some piece of data, there's a worker in the background that kind of delegates and returns that to any other future validators that may request it.
 
@@ -210,7 +210,7 @@ I think we're about 40. Don't quote me on thisI'll have to check my dashboard. Y
 **Daniel Ellison**                 
 Yeah, I see 20 peers. I guess that implies it was somewhere in that range, if not more. Thanks.
 
-I ask because we're all keen to see testnets with more validators, but at this point, even more keen to see testnets with more nodes. I think the 20-to-100 range is still slightly in the toy range of the amount of nodes we expect to see on sila-sila-mainnet. You know, somewhere on the order of 1,000, 10,000 if we're in the same range as the current Sila network. And so I think there's gonna be some interesting stuff that falls out from gossip and discovering things that we're not yet seeing.
+I ask because we're all keen to see testnets with more validators, but at this point, even more keen to see testnets with more nodes. I think the 20-to-100 range is still slightly in the toy range of the amount of nodes we expect to see on sila-mainnet. You know, somewhere on the order of 1,000, 10,000 if we're in the same range as the current Sila network. And so I think there's gonna be some interesting stuff that falls out from gossip and discovering things that we're not yet seeing.
 
 **Mehdi:Sigma Prime**               
 Our testnet is still semi-public. I haven't really communicated around the relaunch testnets.

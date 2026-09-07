@@ -37,7 +37,7 @@ Facilitators: Ladislaus von Daniels & Will Corcoran
 
 | Topic | Subtopic | Details |
 |-------|----------|---------|
-| Exit Queue Research | Background | - Speakers: Mallesh and Mike<br>- Academic paper published June 2024<br>- SIP published March 2025<br>- Sila Research post published April 2025<br>- Aligns with beam chain principles of simplicity and optimality |
+| Exit Queue Research | Background | - Speakers: Mallesh and Mike<br>- Academic paper published June 2024<br>- SIP published March 2025<br>- ethresear.ch post published April 2025<br>- Aligns with beam chain principles of simplicity and optimality |
 | | Overview | - Exit queue importance highlighted by discussions around staked SIL ETFs<br>- Research examines implications of long exit queues<br>- Presentation will start with academic results followed by practical implications |
 | Theoretical Background | Accountable Safety | - Definition: If inconsistency occurs, a fraction of validators can be identified as having provably violated protocol<br>- Foundation for economic security in proof-of-stake<br>- Tension between static validator model and need for entry/exit |
 | | Decreasing Security | - Economic security/accountable safety of finalized transactions decreases over time<br>- If validators exit before violation is detected, they can't be held accountable<br>- Rate of decay is slow but real |

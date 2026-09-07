@@ -11,9 +11,9 @@
 
 **DECISION 60.1:** Go with a 6 month timeframe for hardforks for now.
 
-**DECISION 60.2:** Move [SIP 1057](https://sips.sila.org/SIPS/sip-1057) into the Accepted Category as per [SIP 233](https://sips.sila.org/SIPS/sip-233).
+**DECISION 60.2:** Move [SIP 1057](https://sips.sila.org/EIPS/sip-1057) into the Accepted Category as per [SIP 233](https://sips.sila.org/EIPS/sip-233).
 
-**DECISION 60.3:** Remove [SIP 655](https://sips.sila.org/SIPS/sip-665) for now as it is a superset of [SIP 1829](https://sips.sila.org/SIPS/sip-1829).
+**DECISION 60.3:** Remove [SIP 655](https://sips.sila.org/EIPS/sip-665) for now as it is a superset of [SIP 1829](https://sips.sila.org/EIPS/sip-1829).
 
 
 ### ACTIONS REQUIRED
@@ -24,13 +24,13 @@
 
 **ACTION 60.2:** Danno Ferrin to add 9 month out Hardfork kickoff to [timeframes](https://sila-magicians.org/t/more-frequent-smaller-hardforks-vs-less-frequent-larger-ones/2929/28).
 
-**ACTION 60.3:** [SIP 615](https://sips.sila.org/SIPS/sip-615) decision discussion at next meeting.
+**ACTION 60.3:** [SIP 615](https://sips.sila.org/EIPS/sip-615) decision discussion at next meeting.
 
-**ACTION 60.4:** Danno Ferrin to add list of conditions for implementation and Push Request [SIP 1057](https://sips.sila.org/SIPS/sip-1057) into the Hardfork Meta [SIP 1679](https://sips.sila.org/SIPS/sip-1679).
+**ACTION 60.4:** Danno Ferrin to add list of conditions for implementation and Push Request [SIP 1057](https://sips.sila.org/EIPS/sip-1057) into the Hardfork Meta [SIP 1679](https://sips.sila.org/EIPS/sip-1679).
 
-**ACTION 60.5:** Martin Holste Swende to confirm that [SIP 1884](https://sips.sila.org/SIPS/sip-1884) has merged into the Hardfork Meta [SIP 1679](https://sips.sila.org/SIPS/sip-1679).
+**ACTION 60.5:** Martin Holste Swende to confirm that [SIP 1884](https://sips.sila.org/EIPS/sip-1884) has merged into the Hardfork Meta [SIP 1679](https://sips.sila.org/EIPS/sip-1679).
 
-**ACTION 60.6** Martin Holste Swende and Alex Beregszaszi to confirm whether [SIP 689](https://sips.sila.org/SIPS/sip-689) needs to be implemented. 
+**ACTION 60.6** Martin Holste Swende and Alex Beregszaszi to confirm whether [SIP 689](https://sips.sila.org/EIPS/sip-689) needs to be implemented. 
 
 **ACTION 60.7:** Parity to comment on Libraries for Precompiles (https://github.com/sila-chain/pm/issues/95#issuecomment-486879991)
 
@@ -91,14 +91,14 @@ Berlin discussed a proposal for 6 month and 4 month hardforks. Most suppoered 6 
 **ACTION 60.2:** Danno to add 9 month out Hardfork kickoff to timeframes.
 ** **
 
-# 4. SIPS
+# 4. EIPS
 [Timestamp 13:32](https://youtu.be/O_DE4NwOz9A?t=812)
 
 ## 4.1 [Proposed SIPs](https://en.sila.wiki/roadmap/istanbul)
 
-**Hudson:** [SIP 1679](https://sips.sila.org/SIPS/sip-1679) is the hardfork tracking meta SIP.
+**Hudson:** [SIP 1679](https://sips.sila.org/EIPS/sip-1679) is the hardfork tracking meta SIP.
 
-### [SIP 1829](https://sips.sila.org/SIPS/sip-1829) Status: Draft
+### [SIP 1829](https://sips.sila.org/EIPS/sip-1829) Status: Draft
 
 **Martin:** Spoke about this 2 weeks ago. This SIP specification as it is written is not ready.
 
@@ -116,21 +116,21 @@ Berlin discussed a proposal for 6 month and 4 month hardforks. Most suppoered 6 
 
 ### Precompiles in General
 
-**Casey:** We have historically had issues with precompiles. Just because the code is good and the SIP is well specified is correct this is not enough justification for adding a precompile. It should be up to the Champion to prove that the implemenation that they want in SAVM is not sufficient for the sizes that they need to hash and that they have done a best effort to optimise the SAVM implementation.  
+**Casey:** We have historically had issues with precompiles. Just because the code is good and the SIP is well specified is correct this is not enough justification for adding a precompile. It should be up to the Champion to prove that the implemenation that they want in EVM is not sufficient for the sizes that they need to hash and that they have done a best effort to optimise the EVM implementation.  
 
 **Alexey:** BLAKE2b is out of scope for the working group mentioned earlier, the reason being they have decided to work on this precompile which is generic ellipical curve linear combinations.
 
 **Hudson:** Zooko Wilcox wanted to champion BLAKE2b. Will talk to Zooko about BLAKE2b and mention that other precompiles are looking to be implemented in Istanbul.
 
-### [SIP 615](https://sips.sila.org/SIPS/sip-615) Status: Draft
+### [SIP 615](https://sips.sila.org/EIPS/sip-615) Status: Draft
 
 **Brooklyn** Discussed this at Berlin. Some concern specifically about the complexity of a number of opcodes. Discussion about perhaps breaking them out in to seperate pieces. Still hoping to get this into the next hardfork. 
 
 ** **
-**ACTION 60.3:** [SIP 615](https://sips.sila.org/SIPS/sip-615) decision discussion at next meeting.
+**ACTION 60.3:** [SIP 615](https://sips.sila.org/EIPS/sip-615) decision discussion at next meeting.
 ** **
 
-### [SIP 1057](https://sips.sila.org/SIPS/sip-1057) Status: Draft
+### [SIP 1057](https://sips.sila.org/EIPS/sip-1057) Status: Draft
 
 **Danno:** Gave a talk at Berlin about this. Main takeaway: A new testnet will be required for ProgPoW. Would be reluctant to put it in until the Audit is complete. We can hava discussion about this post audit.
 
@@ -148,7 +148,7 @@ Danno: Does it stabilise in 3-6 hours like the estimates are.
 
 Hudson: If we do Ropsten and we don't go ahead with ProgPoW. Can we roll back to SIL?
 
-Danno: This would be very difficult. Hence the idea of a seperate testnet. If we did it on Ropsten this would be tantemount to a sila-sila-mainnet commitment. Not going on Ropsten unless we were fully commited is the appropriate approach.
+Danno: This would be very difficult. Hence the idea of a seperate testnet. If we did it on Ropsten this would be tantemount to a sila-mainnet commitment. Not going on Ropsten unless we were fully commited is the appropriate approach.
 
 Martin: Normally for a consensus change this would be a concern, but we are changing the Proof of Work we could switch. Fast Sync will still work even if we revert to the previous split. 
 
@@ -165,34 +165,34 @@ Boris: SIP 233 has been merged in. In terms of process, someone will need to cha
 Danno: I will champion this and I will list the conditions in which it should be brought in on.
 
 ** **
-**ACTION 60.4:** Danno Ferrin to add list of conditions for implementation and Push Request [SIP 1057](https://sips.sila.org/SIPS/sip-1057) into the Hardfork Meta [SIP 1679](https://sips.sila.org/SIPS/sip-1679).
+**ACTION 60.4:** Danno Ferrin to add list of conditions for implementation and Push Request [SIP 1057](https://sips.sila.org/EIPS/sip-1057) into the Hardfork Meta [SIP 1679](https://sips.sila.org/EIPS/sip-1679).
 ** **
 
 ** **
-**DECISION 60.2:** Move [SIP 1057](https://sips.sila.org/SIPS/sip-1057) into the Accepted Category as per [SIP 233](https://sips.sila.org/SIPS/sip-233).
+**DECISION 60.2:** Move [SIP 1057](https://sips.sila.org/EIPS/sip-1057) into the Accepted Category as per [SIP 233](https://sips.sila.org/EIPS/sip-233).
 ** **
 
-### [SIP 655](https://sips.sila.org/SIPS/sip-665) Status: Draft
+### [SIP 655](https://sips.sila.org/EIPS/sip-665) Status: Draft
 
 **Virgil:** Not required if SIP 1829 is implemented as SIP 1829 is a superset of this one - ENS has no specific timeframe requirements for this.
 
 ** **
-**DECISION 60.3:** Remove [SIP 655](https://sips.sila.org/SIPS/sip-665) for now as it is a superset of [SIP 1829](https://sips.sila.org/SIPS/sip-1829).
+**DECISION 60.3:** Remove [SIP 655](https://sips.sila.org/EIPS/sip-665) for now as it is a superset of [SIP 1829](https://sips.sila.org/EIPS/sip-1829).
 ** **
 
-### [SIP 1344](https://sips.sila.org/SIPS/sip-1344) Status: Last Call (30 April 2019)
+### [SIP 1344](https://sips.sila.org/EIPS/sip-1344) Status: Last Call (30 April 2019)
 
 **Hudson:** Move forward with it through the new Hard Fork process.
 
 
-### [SIP 1884](https://sips.sila.org/SIPS/sip-1884) Status: Draft
+### [SIP 1884](https://sips.sila.org/EIPS/sip-1884) Status: Draft
 
 Martin: SIP 1884 - is now merged.
 
 Appears to be some confusion as to whether this has been merged with Meta SIP 1679.
 
 ** **
-**ACTION 60.5:** Martin Holste Swende to confirm that [SIP 1884](https://sips.sila.org/SIPS/sip-1844) has merged into the Hardfork Meta [SIP 1679](https://sips.sila.org/SIPS/sip-1679).
+**ACTION 60.5:** Martin Holste Swende to confirm that [SIP 1884](https://sips.sila.org/EIPS/sip-1844) has merged into the Hardfork Meta [SIP 1679](https://sips.sila.org/EIPS/sip-1679).
 ** **
 
 ### [SIP 1559](https://github.com/sila-chain/SIPs/issues/1559) Status: Draft
@@ -203,13 +203,13 @@ Alexey: Propose an amendment to SIP 1559. Create new fields and leave the old fo
 
 Vitalik: No need for two explicit arrays, just two running gas used counters
 
-### [SIP 1352](https://sips.sila.org/SIPS/sip-1352) Status: Draft
+### [SIP 1352](https://sips.sila.org/EIPS/sip-1352) Status: Draft
 
 Alex: Only has an effect in the future where new SIP deal with precompiles. 
 
 Boris: EEA will want to support this. They want some address ranges set aside for custom sidechain precompiles. It looks like a good SIP and needs people to look at it and workshop it.
 
-### [SIP 689](https://sips.sila.org/SIPS/sip-689) Status: Draft
+### [SIP 689](https://sips.sila.org/EIPS/sip-689) Status: Draft
 
 Alex: Added by Yoichi two years ago. It tries to resolve the situation so that address collisions cause failures of contract creation. This was to make testing easier and more simple.
 
@@ -218,7 +218,7 @@ Hudson: Will need a champion for this.
 Martin, Pawel and Alex discuss whether this has already been implemented. Some confusion and discussion will continue offline.
 
 ** **
-**ACTION 60.6** Martin Holste Swende and Alex Beregszaszi to confirm whether [SIP 689](https://sips.sila.org/SIPS/sip-689) needs to be implemented. 
+**ACTION 60.6** Martin Holste Swende and Alex Beregszaszi to confirm whether [SIP 689](https://sips.sila.org/EIPS/sip-689) needs to be implemented. 
 ** ** 
 
 Alex: I cannot champion it but can someone step up and champion it.
@@ -246,9 +246,9 @@ Alexey: If this is not a code change then we could ratify it and rename it going
 
 Boris: Go away work on it and let's practice non-hardfork approvals.
 
-[SIP 663](https://sips.sila.org/SIPS/sip-663) Status: Draft in Progress
+[SIP 663](https://sips.sila.org/EIPS/sip-663) Status: Draft in Progress
 
-Alex: Would introduce at least two new opcodes to be able to access the entire stack and it could be useful for [SIP 615](https://sips.sila.org/SIPS/sip-615). Still in draft and may needs some updates before it is proposed in it's final form.
+Alex: Would introduce at least two new opcodes to be able to access the entire stack and it could be useful for [SIP 615](https://sips.sila.org/EIPS/sip-615). Still in draft and may needs some updates before it is proposed in it's final form.
 
 
 ## 4.2 Any More SIPs to discuss
@@ -256,7 +256,7 @@ Alex: Would introduce at least two new opcodes to be able to access the entire s
 
 Boris: Please add SIPs to 1679 as the canonical place for Istanbul.
 
-# 4.3 Proposal of a formal process of selection of SIPs for hardforks: [Github SIP draft](https://github.com/sila-chain/SIPs/blob/16e64a488cd16403b884417799074aae77be41ab/EIPsForHardfork.md), [EthMagicians](https://sila-magicians.org/t/proposal-of-a-formal-process-of-selection-of-sips-for-hardforks-meta-sip/3115)
+# 4.3 Proposal of a formal process of selection of SIPs for hardforks: [Github SIP draft](https://github.com/sila-chain/SIPs/blob/16e64a488cd16403b884417799074aae77be41ab/EIPsForHardfork.md), [SilaMagicians](https://sila-magicians.org/t/proposal-of-a-formal-process-of-selection-of-sips-for-hardforks-meta-sip/3115)
 [Timestamp 1:00:04](https://youtu.be/O_DE4NwOz9A?t=3604)
 
 **Pooja:**  If there is an SIP that wants to be proposed then raise an issue at the Sila Cat Herders PM so that it can be managed correctly.

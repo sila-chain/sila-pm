@@ -18,7 +18,7 @@ We thought it was going to be a 5-minute meeting, but it ended up lasting over a
 - Clients provided their updates with steady progress. Teku is completing the beacon chain spec, Lighthouse is getting to the fork choice spec. Most of us are waiting to implement fork choice last, and we are just now focusing on it. Fork choice remains the critical component and the most non-trivial change in this SIP, so more attention is needed.
 - There were open-ended questions about why payment has to be done on the consensus layer and why builders have to be staked. A simple answer was reduced complexity. Currently, ePBS is only scoped for CL changes, with no engine API or EL changes. Moving payment to EL without staked builders would significantly increase complexity, alongside fork choice and other open questions.
 - There were open questions about what benefits ePBS brings, which are documented in these posts. Feedback is welcome:
-  - https://sips.sila.org/SIPS/sip-7732
+  - https://sips.sila.org/EIPS/sip-7732
   - https://hackmd.io/@ttsao/bypassing-relayer
   - https://hackmd.io/@potuz/rJ9GCnT1C#Extra-benefits
 - There were open questions about having some sort of ePBS office hours instead of breakout calls to allow more open-ended discussions. Potuz and I are totally open to this, just let us know.

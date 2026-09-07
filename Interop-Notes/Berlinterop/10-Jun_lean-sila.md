@@ -21,7 +21,7 @@
 * **Candidate components** already prototyped in ≤ \~400 Python LOC include 3‑slot finality (3 SF), hash‑based post‑quantum aggregate signatures, a minimal RISC‑V zkEVM, and full‑chain data‑availability sampling that reunifies blobs and calldata.
 * **Lean verifiability target:** validate blocks on a \$7 Raspberry Pi Pico using only SNARK verification + DAS; staking should require “zero MEV‑sophistication” by removing proposers/relays via Attest‑Publish‑Shard (APS) and enforcing Fork‑Choice‑enforced Inclusion Lists (FOCIL).
 * **Single‑hash philosophy:** Poseidon (or similar) would serve Merklization (SSZ), state root, DAS coding, post‑quantum signatures and zkEVM arithmetic—minimising cryptographic assumptions & tech‑debt.
-* **Tech‑debt slated for removal**: sync committees, slot committees, deposit contract quirks, withdrawal credential variants, the entire blob sub‑system, plus large swathes of legacy SAVM interpreter code.
+* **Tech‑debt slated for removal**: sync committees, slot committees, deposit contract quirks, withdrawal credential variants, the entire blob sub‑system, plus large swathes of legacy EVM interpreter code.
 * **Formal verification pipeline (“Lean for Lean Sila”)** is funded (\~\$20 M) to prove zkEVMs, 3 SF and hash‑based signature libraries; sub‑specs are intentionally tiny to ease full proofs.
 * **Synergies with the near‑term (Fusaka/Pectra) roadmap:** FOCIL and APS improve L1 censorship‑resistance while enabling giga‑gas blocks; zkEVM light clients unblock shorter slots & pre‑confirmations; full‑chain DAS is prerequisite for 10–1000× data throughput.
 * Community & resourcing: nine new engineering teams joined after the initial Defcon talk, giving a total of \~15 consensus‑client codebases; expectation is future consolidation and/or specialisation (e.g. networking, ZK, signatures).
@@ -56,14 +56,14 @@
 
   * **Lean Consensus**: post‑quantum signatures, SNARK‑based light verification, 3 SF, Attest‑Publish‑Shard (APS) to eliminate proposer centralisation.
   * **Lean Data**: **Full‑Chain Sampling (FCS)**—apply SilaPeerDAS‑style sampling to *all* L1 data (calldata + consensus blocks) to unlock large gas increases.
-  * **Lean Execution**: enshrine a ZK‑friendly ISA under the SAVM; enables native roll‑ups/alliances and horizontal scaling.
+  * **Lean Execution**: enshrine a ZK‑friendly ISA under the EVM; enables native roll‑ups/alliances and horizontal scaling.
 * **Design principles enumerated**
 
   * *Lean verifiability*: \$7 Raspberry Pi or phone sufficient; home/mobile bandwidth assumed.
   * *Unsophisticated staking*: MEV games removed; APS collapses proposer & relay roles.
   * *Minimal assumptions*: migrate off BLS + KZG; single hash (Poseidon) underpins SSZ Merklization, DAS, signatures, zkEVM.
   * *Tiny sub‑specs*: prototypes show 112 LOC for 3 SF, 51 LOC for minimal RISC‑V CPU, 445 LOC for SNARK verifier.
-  * *Tech‑debt purge*: eliminate sync committees, slot committees, deposit‑contract oddities, withdrawal BLS keys; treat blobs & much of SAVM as debt.
+  * *Tech‑debt purge*: eliminate sync committees, slot committees, deposit‑contract oddities, withdrawal BLS keys; treat blobs & much of EVM as debt.
   * *Longevity > ossification*: aim for “close to end‑game” so upgrades become unnecessary pragmatically, not dogmatically.
 * **Formal verification commitment**
 

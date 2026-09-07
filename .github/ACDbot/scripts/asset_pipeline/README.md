@@ -211,12 +211,12 @@ The `manifest.json` file in the artifacts directory lists all available call res
 
 **Manifest URL:**
 ```
-https://raw.githubusercontent.com/sila-chain/pm/master/.github/ACDbot/artifacts/manifest.json
+https://raw.githubusercontent.com/sila/pm/master/.github/ACDbot/artifacts/manifest.json
 ```
 
 **Resource URL pattern:**
 ```
-https://raw.githubusercontent.com/sila-chain/pm/master/.github/ACDbot/artifacts/{path}/{filename}
+https://raw.githubusercontent.com/sila/pm/master/.github/ACDbot/artifacts/{path}/{filename}
 ```
 
 To regenerate manually:

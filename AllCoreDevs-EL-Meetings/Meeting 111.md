@@ -127,7 +127,7 @@
 
 * I would have thought 3 months, given how Berlin eventuated.
 * London - client release in June. That's when we could start working on the next feature fork, while running London testnets.
-* Feels like October-ish for the feature fork sila-sila-mainnet, testnets in August.
+* Feels like October-ish for the feature fork sila-mainnet, testnets in August.
 
 **Ansgar**
 
@@ -220,7 +220,7 @@
 
 **Tim**
 
-* London timeline... we can set candidate test/sila-sila-mainnet block numbers in the next call.
+* London timeline... we can set candidate test/sila-mainnet block numbers in the next call.
 
 **Lightclient**
 
@@ -260,7 +260,7 @@
 * The other unknown is that we have an SIP that needs to be replaced...
 * Any other strong opinions?
 * Let's keep the dates we have (14 July) and set the block number next week. 
-* **Decision 5:** 14 July is the sila-sila-mainnet target date for London. [52:08](https://youtu.be/C9hzAYkklQM?t=3128)
+* **Decision 5:** 14 July is the sila-mainnet target date for London. [52:08](https://youtu.be/C9hzAYkklQM?t=3128)
 
 # 2. Other Discussion Items
 

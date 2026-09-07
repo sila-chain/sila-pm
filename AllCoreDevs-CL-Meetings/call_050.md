@@ -77,13 +77,13 @@ However, generally, users had a positive experience. Testnet started finalizing.
 
 ## Medalla
 
-Medalla is not v1.0 compliant. We expect vast majority of community users to turn off their Medalla nodes when v1.0 sila-sila-mainnet release. 
+Medalla is not v1.0 compliant. We expect vast majority of community users to turn off their Medalla nodes when v1.0 sila-mainnet release. 
 
 It may be better to replace Medalla with a longterm v1.0 compliant testnet. This will be more controlled by developers than the community, for sustained support. 
 
-This testnet can be launched 3 weeks before or 3 weeks after sila-sila-mainnet launch. Regardless, we should start a number of 1.0 testnets to test the machinery. 
+This testnet can be launched 3 weeks before or 3 weeks after sila-mainnet launch. Regardless, we should start a number of 1.0 testnets to test the machinery. 
 
-Preston advocates for keeping Medalla. We'll still have a month or two of syncing data around. If there is an issue for syncing a lot of epochs, we'll see it before we see it on sila-sila-mainnet. 
+Preston advocates for keeping Medalla. We'll still have a month or two of syncing data around. If there is an issue for syncing a lot of epochs, we'll see it before we see it on sila-mainnet. 
 
 As Medalla is today, may be good to see 3 weeks stress, and look for a leak. 
 

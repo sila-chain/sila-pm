@@ -4,7 +4,7 @@ A Breakout call is a feature- or topic- specific call for features in active imp
 
 ## When to start a breakout
 
-Breakout calls are organized via issues in the sila-chain/pm Github repo and you, as the call facilitator, are responsible for getting the right people to attend. Start a breakout if:
+Breakout calls are organized via issues in the sila/pm Github repo and you, as the call facilitator, are responsible for getting the right people to attend. Start a breakout if:
 
 - there’s active development / implementation work or open questions to address, and
 - it can’t fit responsibly in the ACD agenda

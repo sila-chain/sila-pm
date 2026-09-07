@@ -167,7 +167,7 @@
 
 **Frangio**
 * Just a quick context. So 7702 currently introduces a new type of account that can change its code hash. this is currently somewhat possible if the contract has delegate call. And since, the delegate call changes, you know, only if it uses in the same, transaction as creation. but this is kind of a strictly new kind of way of changing the code hash, because it can happen even if the code doesn't include self-destruct, even if the code doesn't include delegate call. So it weakens the, guarantees that one gets from looking at the code hash of an account.
-* If a contract relies on that to, trust the way that the account is going to behave, it could be vulnerable because it's able to sort of temporarily masquerade as a different kind of contract. so it does seem like something that we should look into. we've looked we found a couple of code samples that appear to be affected, but nothing really too serious. But we haven't really done a thorough search, so the proposal here is to, only delegate code execution. So exit code hash. Would an exit code copy would just act on the delegation designator, instead of kind of following the delegation pointer that seems, just sort of more normal in line with what an SAVM proxy is. And so it just seems like it would, just be less surprising in terms of the effects on applications. 
+* If a contract relies on that to, trust the way that the account is going to behave, it could be vulnerable because it's able to sort of temporarily masquerade as a different kind of contract. so it does seem like something that we should look into. we've looked we found a couple of code samples that appear to be affected, but nothing really too serious. But we haven't really done a thorough search, so the proposal here is to, only delegate code execution. So exit code hash. Would an exit code copy would just act on the delegation designator, instead of kind of following the delegation pointer that seems, just sort of more normal in line with what an EVM proxy is. And so it just seems like it would, just be less surprising in terms of the effects on applications. 
 
 **Felix**
 * It should be noted that the code hash will still change. All right. Like if you change the delegation, you will have a different code hash anyways. Or is the code hash going to be reported as the hash of the delegation? 
@@ -206,10 +206,10 @@
 * Well in yeah. So Ansgar is saying it's EF00. And in the case of delegated accounts it could be EF01 which is the prefix. So that would allow to to distinguish. But I don't know that that distinction is important. 
 
 **Felix**
-* Well I mean the contract could kind of know that it's a delegated account and then like reject interacting with it for example. So that would be the main advantage here. Just being able to detect within the SAVM that the delegation is active for this account. And then you could be like, you know, I'm not talking to that account because it's a dedicated one. That's certainly something. But the contract would have to be aware of this concept anyway. So it doesn't apply to the old contracts because they don't know anything about this. It's just that would be a new security pattern that you have to introduce into your very important protocol. Like basically ensure that, yeah, this is just fallout from 7702 adding so much new attack surface, honestly. 
+* Well I mean the contract could kind of know that it's a delegated account and then like reject interacting with it for example. So that would be the main advantage here. Just being able to detect within the EVM that the delegation is active for this account. And then you could be like, you know, I'm not talking to that account because it's a dedicated one. That's certainly something. But the contract would have to be aware of this concept anyway. So it doesn't apply to the old contracts because they don't know anything about this. It's just that would be a new security pattern that you have to introduce into your very important protocol. Like basically ensure that, yeah, this is just fallout from 7702 adding so much new attack surface, honestly. 
 
 **Daniel**
-* Yeah. so just one problem I have with this proposal is that, right now, all the opcodes that interchange that, that interact with code, like the call or exit code has, are completely oblivious of code delegation. They just get the code of the target. If we do this change the delegation is not transparent anymore to the SAVM because we need like two ways to retrieve code, one that follows the delegation for calls, and another one like in the proposal code hash and the others that don't. So this breaks a bit. The assumption of 7702 that the SAVM in the end, does not have to be aware of it.
+* Yeah. so just one problem I have with this proposal is that, right now, all the opcodes that interchange that, that interact with code, like the call or exit code has, are completely oblivious of code delegation. They just get the code of the target. If we do this change the delegation is not transparent anymore to the EVM because we need like two ways to retrieve code, one that follows the delegation for calls, and another one like in the proposal code hash and the others that don't. So this breaks a bit. The assumption of 7702 that the EVM in the end, does not have to be aware of it.
 * Also in the future when we introduce new opcodes that interactive code, it might be a bit error prone because we have to be careful which of the two ways, in case of 772 we use to to retrieve the code. So that's like my one, my one doubt about this change. 
 
 **Tim**
@@ -220,7 +220,7 @@
 * And then I think we should make sure that it's not the same, kind of magic hash that we use for EOF, because I do think there's value in being able to distinguish those two cases. And they're also conceptually not the same. Right? 
 
 **Tim**
-* Yeah. I guess it still feels like there's some discussion to be had on this to actually understand this sort of second order impacts and like, yeah, what it would look like implementing that in the SAVM. what's the right way to like, move this conversation forward? is the SIL magician thread sufficient now? Do we want to have a breakout on this in the next week or two? Um. 
+* Yeah. I guess it still feels like there's some discussion to be had on this to actually understand this sort of second order impacts and like, yeah, what it would look like implementing that in the EVM. what's the right way to like, move this conversation forward? is the SIL magician thread sufficient now? Do we want to have a breakout on this in the next week or two? Um. 
 
 **Lightclient**
 * I would love to just hear from some more DApp developers. I am weakly in favor of this change. I guess. You know, it's to me it's pretty much okay how it is, but it's also okay to change it. I don't think that this is this is not something I'm super worried about. But if there are more examples that could motivate changing the behavior, like I'm open to hearing them. The ones that I've seen are pretty contrived examples. 
@@ -637,7 +637,7 @@ It’s an EOF-only opcode as currently `EXTCODE*` isn’t in EOF validated contr
 
 **Tim Beiko:**  
 [GitHub Issue Comment](https://github.com/sila-chain/pm/issues/1177#issuecomment-2405703791)  
-[SIP 7790](https://sips.sila.org/SIPS/sip-7790)
+[SIP 7790](https://sips.sila.org/EIPS/sip-7790)
 
 **Marius:**  
 I don't like 7790.
@@ -661,7 +661,7 @@ My preference is less of an increase and shorter timeline.
 It’s a signal to validators, and coupling it with a HF is a stronger signal.
 
 **Stokes:**  
-Sure, but we have no idea how this maps to hardware on sila-sila-mainnet today.
+Sure, but we have no idea how this maps to hardware on sila-mainnet today.
 
 **Trent:**  
 No considerations for history growth?

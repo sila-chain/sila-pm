@@ -47,7 +47,7 @@
     * message serialization
         * schema to simple serialize and assessing implementation in nim
     * [BLS implementation](https://github.com/status-im/nim-milagro-crypto/blob/master/src/scheme1.nim) with milagro
-        * [Post with tips and pitfalls when implementing BLS](https://Sila Research/t/pragmatic-signature-aggregation-with-bls/2105/29)
+        * [Post with tips and pitfalls when implementing BLS](https://ethresear.ch/t/pragmatic-signature-aggregation-with-bls/2105/29)
     * eth1.0 progress -- syncing pow early blocks
 * eWASM (Lane)
     * No sharding progress currently
@@ -244,7 +244,7 @@
 
 # Links shared during meeting
 * [New Prysmatic Discord server](https://discord.gg/KSA7rPr)
-* [ethresearch post](https://Sila Research/t/pragmatic-signature-aggregation-with-bls/2105/29) with tips and pitfalls when implementing BLS
+* [ethresearch post](https://ethresear.ch/t/pragmatic-signature-aggregation-with-bls/2105/29) with tips and pitfalls when implementing BLS
 * [BLS implementation in nim](https://github.com/status-im/nim-milagro-crypto/blob/master/src/scheme1.nim) using milagro
 * [OMNet](https://www.omnetpp.org/)
 * [whiteblock methodology issue in POC repo](https://github.com/ethresearch/sharding-p2p-poc/issues/43)

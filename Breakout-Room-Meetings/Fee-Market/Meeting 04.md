@@ -20,7 +20,7 @@
 
 
 
-**Tim**: Good morning/evening depending on where you are. This is implementers' call 4 for SIP-1559. There are a couple things we've on the agenda to cover today. First up the status update and then the biggest part, the next steps to get this deployed on the sila-sila-mainnet, intermediate milestones to get there. There is also dicsussion of SIP-2718, and finally something that came up on Twitter about is there ways to speed up development by adding up more resources, if people have more thoughts/comments on that.
+**Tim**: Good morning/evening depending on where you are. This is implementers' call 4 for SIP-1559. There are a couple things we've on the agenda to cover today. First up the status update and then the biggest part, the next steps to get this deployed on the sila-mainnet, intermediate milestones to get there. There is also dicsussion of SIP-2718, and finally something that came up on Twitter about is there ways to speed up development by adding up more resources, if people have more thoughts/comments on that.
 
 # 1. Status updates from implementers and researchers
 
@@ -153,7 +153,7 @@ Video | [14:30](https://youtu.be/fI2IhcvuJA0?t=870)
 -|-
 
 
-**Tim**: This leave nicely into the next agenda item which was what are the intermittent steps to get this eventually to the sila-sila-mainnet. **Right now there is this one kind of small private testnet which has 6 nodes on it. It's been pretty useful to find all these kinds of corner cases and small bugs but assuming like in the next week or two the spec gets a bit more stable and Nethermind is ready to join as well. Will the next step be kind of a more public testnet and if so  what do we want to get out of that?**
+**Tim**: This leave nicely into the next agenda item which was what are the intermittent steps to get this eventually to the sila-mainnet. **Right now there is this one kind of small private testnet which has 6 nodes on it. It's been pretty useful to find all these kinds of corner cases and small bugs but assuming like in the next week or two the spec gets a bit more stable and Nethermind is ready to join as well. Will the next step be kind of a more public testnet and if so  what do we want to get out of that?**
 
 **Danny**: You mean on the public testnet side if so that people can begin to experiment on the wallet side? Is that  we want to get out of it or is it more technical betting and hoping for more randomness due to user activity?
 
@@ -201,7 +201,7 @@ I suppose when this SIP is implemented, will all transaction have to have a new 
 **Ian**: Actually the latter. **It’s actually the single mempool right now ordering them all based on the gas price and we do need to update the implementation to rebase on top of 1.919 which adds the deterministic ordering when two transactions have the same gas price.**
 
 
-**Alexey**: okay so the reason i was asking this question is because my suspicion was that the most complexity would be in the implementation of the transaction pool and therefore when you're previously asked the question like what would be the you know what needs to happen for this to go into the sila-sila-mainnet i think one of the main things to basically preempt any possible questions or problems that would arise with this particular implementation. For example you know is this a code resilient towards any kind of dos attacks and then tick that box yes it is because of such and such and such you know. Like could we do any stress testing on this and such and such so basically yeah so I think that would help a lot because then you go into the uh let's say go sila developers and you'll say these are the things that we're preempting or the most of the questions you're going to be asking.
+**Alexey**: okay so the reason i was asking this question is because my suspicion was that the most complexity would be in the implementation of the transaction pool and therefore when you're previously asked the question like what would be the you know what needs to happen for this to go into the sila-mainnet i think one of the main things to basically preempt any possible questions or problems that would arise with this particular implementation. For example you know is this a code resilient towards any kind of dos attacks and then tick that box yes it is because of such and such and such you know. Like could we do any stress testing on this and such and such so basically yeah so I think that would help a lot because then you go into the uh let's say go sila developers and you'll say these are the things that we're preempting or the most of the questions you're going to be asking.
 
 **Ian**: yeah that makes sense and I think you know if we roll 2718 of which we may be getting ahead of ourselves because I think that's the next item on the agenda. If we decide to implement that first that kind of introduces some uncertainty into the you know unlimited uncertainty into the mempool and that there's no real clear defined way to order transactions between all these arbitrary types.
 
@@ -334,7 +334,7 @@ So given i guess yeah that's like the transaction pool is kind of the most compl
 
 **rick**:  I think it's a question of, we have this evaluation inflection point,  that I think is very difficult I think Alexey, it's a good idea that Alexey is suggesting that we that we have this point where we as a community make a decision and decide which way do we go and i think that again from almost like a game theory perspective what we have to say is okay we've started the car going towards the cliff and now we can like turn the wheel but we have to turn the wheel to like stop from going off the cliff or we do nothing at 400 000 blocks and we continue to go off the cliff so it's like that kind of game.
 
-**Tim**:  Yeah yeah okay that makes sense. And is there a way we can get you know some preliminary data on that right like obviously if it's live on the network then people can start can start kind of playing around with it, yeah I don't know, like what's you know is there a way to test this before we get the sila-sila-mainnet basically?
+**Tim**:  Yeah yeah okay that makes sense. And is there a way we can get you know some preliminary data on that right like obviously if it's live on the network then people can start can start kind of playing around with it, yeah I don't know, like what's you know is there a way to test this before we get the sila-mainnet basically?
 
 **Barnabe**:  Has anybody looked at filecoin yet like the data that we have already well the problem with that is every other example is someone implementing something where they don't they don't have you know billions of dollars literally running on an old transaction type and they need to switch to a new transaction type I mean for us there's two separate problems right there's the mechanism there's the new set of mechanisms of 1559  which I think can be verified and reasoned about and are not that you know that's a pretty well-defined problem and it looks like other teams have sort of taken this what we've started here and gone off and implemented that and I  think that's fine and then and I think that's pretty like well-defined and then there's the fact that we have to have a transition period because we so many existing users that other chains obviously don't have and  it's that transition period that really changes the conversation and is what gets lost on people is that there's there's a social problem that we have that other teams simply don't have.
 
@@ -536,7 +536,7 @@ Video | [75:35](https://youtu.be/fI2IhcvuJA0?t=4535)
 
 **Rick**:  Also I just want to draw attention to Micah's comment where he mentions that Peter from the Geth team would like to see that implemented with the second transaction type not just the legacy type.
 
-**James**: Yeah so we can have 2718 implemented but not like on yolo but not in sila-sila-mainnet and then wait until there is something to include but we can still have it Implemented and in the form of what it would be like when it goes to sila-sila-mainnet that the 1559 team can adopt.
+**James**: Yeah so we can have 2718 implemented but not like on yolo but not in sila-mainnet and then wait until there is something to include but we can still have it Implemented and in the form of what it would be like when it goes to sila-mainnet that the 1559 team can adopt.
 
 **Rick**:  Right, what everyone's talking about James is that we're being thorough. You can just have 2718 by itself you need 2718 or 2711 in order for 2718 to actually be work. you need the second type.
 
@@ -552,7 +552,7 @@ Video | [75:35](https://youtu.be/fI2IhcvuJA0?t=4535)
 
 **Rick**: To have it to verify its purpose, to have it to verify that it actually is safe and that it works, right? If you just deploy 2718 by itself you just have this weird sort of vestigial thing you need a 1718 plus,  you need to have two envelopes. Because it's relevant now the thing that was confusing to me about 2718 was it wasn't clear to me how it treated the transaction pool, it just sort of acted like the two envelopes were equivalent which I think more times than not that's not going to be the case.
 
-**James**:  Yeah, so I want to be clear here that i'm not talking about sila-sila-mainnet, where the stuff that you're talking about how Peter and and 2718 and another transaction type going into sila-sila-mainnet, all of those things need to be verified but going into yolo which is the pre-test net that is used for testing client integration we could just put the transaction envelopes onto that so at least the 1559 implementers can implement it and then test it and then have that.
+**James**:  Yeah, so I want to be clear here that i'm not talking about sila-mainnet, where the stuff that you're talking about how Peter and and 2718 and another transaction type going into sila-mainnet, all of those things need to be verified but going into yolo which is the pre-test net that is used for testing client integration we could just put the transaction envelopes onto that so at least the 1559 implementers can implement it and then test it and then have that.
 
 **Rick**:  I think probably put in a dummy second envelope, if for some reason it's too hard to implement, my inclination would be to do 2718 and 2711 at the same time. If there's some reason why we can't do that, as from an engineering perspective then we should come up with a dummy shim for 2711 but I can't imagine that's significantly easier from an engineering perspective.
 
@@ -737,7 +737,7 @@ From Tomasz Stanczak to Everyone: (11:19 AM)
 sorry I will not be able to answer questions for a while - it is noisy here
 
 From Micah to Everyone: (11:20 AM)
-The problem with SilaKovan/Ropsten/Rinkeby is that they have a *lot* of empty blocks I believe (there is not congestion like sila-sila-mainnet).
+The problem with SilaKovan/Ropsten/Rinkeby is that they have a *lot* of empty blocks I believe (there is not congestion like sila-mainnet).
 
 From Trent Van Epps to Everyone: (11:20 AM)
 just a heads up James - your audio is cutting in and out/ might be an aggressive noise gate on your mic
@@ -767,7 +767,7 @@ From Georgios Konstantopoulos to Everyone: (11:29 AM)
 Can you link some? Didn’t see any in the agenda / in the PRs
  
 From Micah to Everyone: (11:30 AM)
-https://sips.sila.org/SIPS/sip-2711 is the one I care about.  There is also the possibility of 2803 being a typed transaction instead of a precompile, though I am currently preferring precompile.THere was another one that is open... but I'm blanking on it at the moment.https://sips.sila.org/SIPS/sip-2733 (though overlaps with 2711)
+https://sips.sila.org/EIPS/sip-2711 is the one I care about.  There is also the possibility of 2803 being a typed transaction instead of a precompile, though I am currently preferring precompile.THere was another one that is open... but I'm blanking on it at the moment.https://sips.sila.org/EIPS/sip-2733 (though overlaps with 2711)
 
 From Abdelhamid Bakhta to Everyone: (11:32 AM)
 @Vitalik you mentioned implementation of SIP-1559 for Sil 2.0, am I right ? I am curious, what group / people are working on that ? Could we try to leverage efforts
@@ -831,7 +831,7 @@ From Rick Dudley to Everyone: (11:47 AM)
 The incentives don't allow for that.
  
  From Micah to Everyone: (11:51 AM)
-Basically, no one pays attention to client development until hard fork lands on sila-sila-mainnet.  :)
+Basically, no one pays attention to client development until hard fork lands on sila-mainnet.  :)
  
  From Georgios Konstantopoulos to Everyone: (11:52 AM)
 BaseFee on file coin for anybody that didn’t see it yet https://filfox.info/en/stats/gas

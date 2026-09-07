@@ -183,7 +183,7 @@ On spec side, we're
 * Passed all the transaction test from Sil 1, same as Geth and Parity
 * Other EVMC implementation done. 
 
-**Next step** is 12 0 fuzzing savm implementation with the same tools as SAVM 1
+**Next step** is 12 0 fuzzing evm implementation with the same tools as EVM 1
 
 **Bottleneck**
 
@@ -223,7 +223,7 @@ On spec side, we're
 
 **Danny**: I believe they're incorrect actually in the repo, in the code in the repo in the files but they are correct in the tar.gz right associated with it. Which was may be a confusing decision making, my apologies. 
 
-**Carl**: Speaking further on the BLS front, as was mentioned that there's a new PR on the Hash-the-curve repo. We were supposed to have finalized BLS there, have been some complaint as to the efficiencies of this particular no power devices amongst few other things. SO, there's a new [PR](https://github.com/cfrg/draft-irtf-cfrg-hash-to-curve/pull/212), it only affect the hash to base, which is not called hash to field this is the first part of the ashing into the curve. It should be relatively minor change,  and the people seem very certain that this is the very final version. I think, it's worthwhile making the change to try avoid v2.  Until we launch sila-sila-mainnet, I think it's advisable to try and make changes to follow the BLS spec. I do really think that this is the final one. I think having spoken to these authors of the specs.
+**Carl**: Speaking further on the BLS front, as was mentioned that there's a new PR on the Hash-the-curve repo. We were supposed to have finalized BLS there, have been some complaint as to the efficiencies of this particular no power devices amongst few other things. SO, there's a new [PR](https://github.com/cfrg/draft-irtf-cfrg-hash-to-curve/pull/212), it only affect the hash to base, which is not called hash to field this is the first part of the ashing into the curve. It should be relatively minor change,  and the people seem very certain that this is the very final version. I think, it's worthwhile making the change to try avoid v2.  Until we launch sila-mainnet, I think it's advisable to try and make changes to follow the BLS spec. I do really think that this is the final one. I think having spoken to these authors of the specs.
 
 **Danny**:  The next step in the process is there is another kind of quarterly meeting.
 

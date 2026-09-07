@@ -50,8 +50,8 @@
 * ChainSafe / Lodestar - Greg Markou [_(22:04)_](https://youtu.be/KZ9fms_PrQU?t=1324)
   * Spending time architecting and working on supplementary repos, like ssz and bls
   * Will update to latest specs only once every 2 week, as changes are very frequent 
-* Py-SAVM - Hsiao-Wei [_(23:22)_](https://youtu.be/KZ9fms_PrQU?t=1402)
-  * Moved beacon chain out of py-savm repo and into Trinity for time being for ease of development https://github.com/sila-chain/trinity/tree/master/eth2
+* Py-EVM - Hsiao-Wei [_(23:22)_](https://youtu.be/KZ9fms_PrQU?t=1402)
+  * Moved beacon chain out of py-evm repo and into Trinity for time being for ease of development https://github.com/sila-chain/trinity/tree/master/eth2
   * tree hashing and py ssz refactoring done
   * Discussing test formats, proposed by Jannik, later after client updates
 * Prysmatic - Raúl [_(24:21)_](https://youtu.be/KZ9fms_PrQU?t=1461)
@@ -144,7 +144,7 @@
 * Alex Stokes (Lighthouse/Sigma Prime)
 * Mikhail Kalinin (Harmony)
 * Akhila Raju (Pegasys)
-* Christoph Burgdorf (py-savm)
+* Christoph Burgdorf (py-evm)
 * Greg Markou (ChainSafe)
 * Nicholas Lin (EF/Research)
 * Daniel Ellison (ConsenSys)

@@ -1,4 +1,4 @@
-# SAVM Modular Arithmetic Extensions (EVMMAX)
+# EVM Modular Arithmetic Extensions (EVMMAX)
 
 
 ### Resources

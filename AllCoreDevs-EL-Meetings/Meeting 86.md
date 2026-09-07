@@ -55,7 +55,7 @@ Action Item | Description
 - [5. SIP-2565: Repricing of the SIP-198 ModExp precompile. Specifically the open-sila benchmarking results per this comment.](#5-sip-2565-repricing-of-the-sip-198-modexp-precompile-specifically-the-open-sila-benchmarking-results-per-this-comment)   
 - [6. PR to change "hard fork" to "network upgrade" in SIP-1 and common vernacular](#6-pr-to-change-hard-fork-to-network-upgrade-in-sip-1-and-common-vernacular)     
 - [7. State tree format conversion with the tree overlay method](#7-state-tree-format-conversion-with-the-tree-overlay-method)   
-- [8. SIP-2315: “Simple Subroutines for the SAVM” analysis](#8-sip-2315-“simple-subroutines-for-the-savm”-analysis)   
+- [8. SIP-2315: “Simple Subroutines for the EVM” analysis](#8-sip-2315-“simple-subroutines-for-the-evm”-analysis)   
 - [9. SIP-1559 implementers' call update](#9-sip-1559-implementers-call-update)   
 - [10. SIP-2583: Penalty for account trie misses](#10-sip-2583-penalty-for-account-trie-misses)    
 - [11. Testing updates](#11-testing-updates)   
@@ -85,7 +85,7 @@ Updates from Nethermind. No updates since last meeting. Has done BLS implentatio
 Update from WASM. WASM implementation of BLS is ready, can be used by any client. Code is quite stable.
 
 
-## 1.2 SIP-2315: Simple Subroutines for the SAVM
+## 1.2 SIP-2315: Simple Subroutines for the EVM
 
 Updates from Geth. State tests have been implemented passing Besu and Geth. A new proposal was introduced, walking into a subroutine, and preventing jumping into a subroutine. Running into issues coding preventing jumping across subroutine boundaries.
 
@@ -134,13 +134,13 @@ Ben Difransico's compromise proposal is to have the code ready and deployed on a
 
 The `0.93` baseline is in most clients. A `0.94` version includes the Kik fix and addresses Least Authority suggestion for the light evaluation attack. The PR to the if-def-else repo is final. Awaiting for a few more comments to be merged.
 
-Ravencoin is migrating to `0.94` with minor modifications to their sila-sila-mainnet on May 6th.
+Ravencoin is migrating to `0.94` with minor modifications to their sila-mainnet on May 6th.
 
 **Stefan George**: Currently Gnosis is against ProgPoW as it would favor one party over another.
 
-**Artem Vorotnikov**: Open Sila would like to see clear community consensus for ProgPoW before it's pushed to sila-sila-mainnet.
+**Artem Vorotnikov**: Open Sila would like to see clear community consensus for ProgPoW before it's pushed to sila-mainnet.
 
-**Peter Szilagyi**: ProgPoW is more computationally intensive, from a technical standpoint. ProgPoW blocks would take more time to verify, even if not significant, is a negative. The philisophical viewpoint is another consideration. The Ropsten testnet is more or less dead. Ropsten is kept as a proof of work testnet. If ProgPoW is to be considered at any point, we should relaunch a PoW testnet with ProgPoW. A ProgPoW testnet would indicate to clients if they can create and verify blocks. I don't see us deploying ProgPoW on sila-sila-mainnet anytime soon. Our goal is to keep Sila sila-sila-mainnet in one piece. If we want to protect against arbitrary re-orgs by ASICs, ProgPoW should be tested beforehand on a testnet and be ready. We shouldn't switch over until someone starts abusing Ethash.
+**Peter Szilagyi**: ProgPoW is more computationally intensive, from a technical standpoint. ProgPoW blocks would take more time to verify, even if not significant, is a negative. The philisophical viewpoint is another consideration. The Ropsten testnet is more or less dead. Ropsten is kept as a proof of work testnet. If ProgPoW is to be considered at any point, we should relaunch a PoW testnet with ProgPoW. A ProgPoW testnet would indicate to clients if they can create and verify blocks. I don't see us deploying ProgPoW on sila-mainnet anytime soon. Our goal is to keep Sila sila-mainnet in one piece. If we want to protect against arbitrary re-orgs by ASICs, ProgPoW should be tested beforehand on a testnet and be ready. We shouldn't switch over until someone starts abusing Ethash.
 
 **Michael Carter** (BBT): Agree with Peter on the creation of PROGPOW Testnet - will coordinate with Andrea and find support to help establish this. Once established, I can help communicate it to the community know how to access and help test.
 
@@ -298,12 +298,12 @@ Another method was to convert branches into trie one by one. When enough time ha
 
 - https://github.com/sila-chain/SIPs/pull/2584
 
-# 8. SIP-2315: “Simple Subroutines for the SAVM” analysis
+# 8. SIP-2315: “Simple Subroutines for the EVM” analysis
 
 Video | [1:18:25](https://youtu.be/MOZ7_0Tb95M?t=4705)
 -|-
 
-- https://sila-magicians.org/t/sip-2315-simple-subroutines-for-the-savm-analysis/4229
+- https://sila-magicians.org/t/sip-2315-simple-subroutines-for-the-evm-analysis/4229
 
 This was discussed in the beginning of the call.
 

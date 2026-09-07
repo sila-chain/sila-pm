@@ -58,16 +58,16 @@
   * Must agree on how `commit` (state root/output) is exposed.
   * Decision deferred to spec repo.
 * Alternative linkage idea: instead of syscalls, allow ELF static linkage to named functions that the zkEVM loader patches—could avoid Go’s dependency on timers and other OS services. Mixed reception.
-* **ISA catalogue presented**: RISC‑V, MIPS, WASM, Cairo, Valida, Petra, Thumb (ARM16), SAVM bytecode.
+* **ISA catalogue presented**: RISC‑V, MIPS, WASM, Cairo, Valida, Petra, Thumb (ARM16), EVM bytecode.
 * Discussion on Thumb: attractive 16‑bit density but ARM licensing risks; shelved unless legal clarity.
-* Powdr explains its production path: prove blocks directly from SAVM traces via Besu plugin—no separate guest ISA needed.
+* Powdr explains its production path: prove blocks directly from EVM traces via Besu plugin—no separate guest ISA needed.
 * **RISC‑V‑only proposal debated**:
 
   * *Pros*: open spec, rich tooling, reuse of existing compilers, easier code‑size analysis.
   * *Cons*: locks out future ZK‑optimised ISAs; forces translation of existing bytecode; may not improve proving speed; hardware centralisation worries.
   * No consensus reached; group leans toward keeping multiple ISA options.
 * WASM advocates highlight structured control‑flow that eases ahead‑of‑time analysis and potential static gas bounds; sceptics note 20‑40× interpreter overhead unless translated, which itself must be proved correct.
-* Observation: SAVM’s coarse 256‑bit ops make interpreter overhead modest; WASM’s fine‑grained ops magnify it.
+* Observation: EVM’s coarse 256‑bit ops make interpreter overhead modest; WASM’s fine‑grained ops magnify it.
 * Parallel drawn to ML world: LLVM’s MLIR dialect approach may be a better long‑term model—have a family of IRs tuned for ZK rather than one fixed ISA.
 * Maintenance concern: execution clients would need to verify proofs for every supported ISA; library modularity mitigates but does not eliminate cost.
 * Closing logistics:

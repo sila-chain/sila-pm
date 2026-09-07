@@ -277,7 +277,7 @@ Does Nimbus sync Witti?
 * We are now natively supporting Raspberry Pi thanks to an external contributor. Updated our docs for making it easier for people to build on the raspberry pi.
 * Massive CPU usage on Schelesi has been resolved issue.
 * Trail of Bits has completed the first round of peer review. Waiting on few more comments before we can see the report. Nothing critical so far, they’d be performing a second review on networking and stack and the changes introduced since the first review.
-* In the process of selecting an independent firm for second independent review that should most likely take place close to sila-sila-mainnet. 
+* In the process of selecting an independent firm for second independent review that should most likely take place close to sila-mainnet. 
 
 **Danny**: Great, thank you! Is the CPU fix that on Witti?
 
@@ -314,7 +314,7 @@ Does Nimbus sync Witti?
 
 **Alex**: 
 * Spec updates to 0.11.3. 
-* Work on optimizations to be able to run sila-sila-mainnet config. 
+* Work on optimizations to be able to run sila-mainnet config. 
 * Working on efficient forkchoice: looking at protoarray.
 While I have everyone here, I also want to announce that we’re working on a proxy contract for the main deposit contract basically to verify BLS signatures. If anyone wants to help with that or review the contract, just reach out to me, link in the [chat](https://github.com/ralexstokes/deposit-contract-verifying-proxy).
 **Danny**: Is this deployed to the Yolo testnet?

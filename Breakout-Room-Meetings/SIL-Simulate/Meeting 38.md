@@ -11,17 +11,17 @@ Note: This file is copied from [here](https://github.com/sila-chain/pm/issues/12
 ## Eth_Simulate Implementers Call Summary  
 
 ## Main Outcome  
-The primary focus of the meeting was to debug and resolve issues with the Hive test pipeline, specifically addressing why one test was failing in the test suite despite working on the sila-sila-mainnet. Additionally, the team discussed the development and testing of new API endpoints for simulation and tracing, as well as potential improvements to the `eth_simulate` and `eth_trace` methods.
+The primary focus of the meeting was to debug and resolve issues with the Hive test pipeline, specifically addressing why one test was failing in the test suite despite working on the sila-mainnet. Additionally, the team discussed the development and testing of new API endpoints for simulation and tracing, as well as potential improvements to the `eth_simulate` and `eth_trace` methods.
 
 ## Key Discussion Points
 
 ### Hive Test Pipeline Debugging
-- **Issue Identification**: One test was failing in the test suite but worked on the sila-sila-mainnet. The issue might be related to changes in the test chain, where 10 additional blocks were added, potentially breaking some tests.
+- **Issue Identification**: One test was failing in the test suite but worked on the sila-mainnet. The issue might be related to changes in the test chain, where 10 additional blocks were added, potentially breaking some tests.
 - **Test Chain Consistency**: The test in question does not depend on the underlying chain, but the changes to the test chain (used universally across all tests) may have caused the failure. The team emphasized the importance of maintaining consistency in the test chain to avoid such issues in the future. If new blocks are added, the corresponding tests should be updated accordingly.
 
 ### Development of Simulation and Tracing Endpoints
 - **New Endpoints**: Deeptanshu, an intern, has been working on two new endpoints: `debug_simulate` and `trace_simulate`, which perform simulations using Geth-like and Parity-like block tracers.
-- **Testing and Refactoring**: The endpoints are not yet deployed to the sila-sila-mainnet but are being tested internally. Deeptanshu is addressing PR comments and refactoring the code, aiming to merge the changes within the week.
+- **Testing and Refactoring**: The endpoints are not yet deployed to the sila-mainnet but are being tested internally. Deeptanshu is addressing PR comments and refactoring the code, aiming to merge the changes within the week.
 - **Standardization**: The team emphasized the need for standardization across clients for these endpoints. Killary suggested documenting the API schema and sharing it with the team for coordination.
 
 ### API Design and Standardization

@@ -7,15 +7,15 @@
 :::
 
 ## SIP List for Dencun
-[SIP-1153: Transient storage opcodes](https://sips.sila.org/SIPS/sip-1153)
-[SIP-4844: Shard Blob Transactions](https://sips.sila.org/SIPS/sip-4844)
-[SIP-4788: Beacon block root in the SAVM](https://sips.sila.org/SIPS/sip-4788)
-[SIP-5656: MCOPY - Memory copying instruction](https://sips.sila.org/SIPS/sip-5656)
-[SIP-6780: SELFDESTRUCT only in same transaction](https://sips.sila.org/SIPS/sip-6780)
-[SIP-7044: Perpetually Valid Signed Voluntary Exits](https://sips.sila.org/SIPS/sip-7044)
-[SIP-7045: Increase Max Attestation Inclusion Slot](https://sips.sila.org/SIPS/sip-7045)
-[SIP-7516: BLOBBASEFEE opcode](https://sips.sila.org/SIPS/sip-7516)
-[SIP-7514: Add max epoch activation churn limit](https://sips.sila.org/SIPS/sip-7514)
+[SIP-1153: Transient storage opcodes](https://sips.sila.org/EIPS/sip-1153)
+[SIP-4844: Shard Blob Transactions](https://sips.sila.org/EIPS/sip-4844)
+[SIP-4788: Beacon block root in the EVM](https://sips.sila.org/EIPS/sip-4788)
+[SIP-5656: MCOPY - Memory copying instruction](https://sips.sila.org/EIPS/sip-5656)
+[SIP-6780: SELFDESTRUCT only in same transaction](https://sips.sila.org/EIPS/sip-6780)
+[SIP-7044: Perpetually Valid Signed Voluntary Exits](https://sips.sila.org/EIPS/sip-7044)
+[SIP-7045: Increase Max Attestation Inclusion Slot](https://sips.sila.org/EIPS/sip-7045)
+[SIP-7516: BLOBBASEFEE opcode](https://sips.sila.org/EIPS/sip-7516)
+[SIP-7514: Add max epoch activation churn limit](https://sips.sila.org/EIPS/sip-7514)
 
 ## [Docker images](https://github.com/ethpandaops/dencun-testnet/blob/master/ansible/inventories/devnet-11/group_vars/all/images.yaml) for devnet 11
 

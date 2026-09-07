@@ -605,7 +605,7 @@ Ansgar Dietrichs:
 Yeah. Maybe just because it sounds like right now we are really pointing in towards pushing this to shanghai which i'm personally absolutely okay with. Maybe just there's one last attempt though. I was just wondering, Danny, you were saying that you think by now we're already so late in the process that it's probably going to be unavailable. That this would delay the merge. And i was just curious to hear a little bit more about that because I'm just wondering. I definitely can see that for these more involved proposals, there was this extension section. But with the base mechanism to me, it really seems like five six lines of code change in the execution clients each. We of course plus a few other tests and everything so i'm just curious.
 
 Danny:
-I think the intention right now is to have a kintsugi testnet up in the first week of December to stand up through the holidays to begin to make decisions in January about very concrete and realistic timelines. I believe if you don't put an savm change into that test net and then are working on testnets in January with that change that you've very likely in practice delayed the merge because of our need to have thing on testnets even though there are a couple line changes. Correct me I'm wrong, but I just the discussion and analysis that I think we'd probably want to throw behind this thing is probably still not totally done is everyone comfortable with where we're at and so shoving it into kintsugi devnet in two weeks time doesn't seem likely to me.
+I think the intention right now is to have a kintsugi testnet up in the first week of December to stand up through the holidays to begin to make decisions in January about very concrete and realistic timelines. I believe if you don't put an evm change into that test net and then are working on testnets in January with that change that you've very likely in practice delayed the merge because of our need to have thing on testnets even though there are a couple line changes. Correct me I'm wrong, but I just the discussion and analysis that I think we'd probably want to throw behind this thing is probably still not totally done is everyone comfortable with where we're at and so shoving it into kintsugi devnet in two weeks time doesn't seem likely to me.
 
 Ansgar Dietrichs:
 Okay, if that's the case, then I agree that pushing it is the better choice I would say.
@@ -639,7 +639,7 @@ Cool. Yeah let's continue this in the merge channel.
 
 ### SIP-4444: Bound Historical Data in Execution Clients
 *Summary:*
-- *In general, we want to specify how clients can treat historical data which can beneficially prune hard disk space and remove old SAVM versions in execution engines.*
+- *In general, we want to specify how clients can treat historical data which can beneficially prune hard disk space and remove old EVM versions in execution engines.*
 - *Proposes a defined time threshold and specific networking logic.*
 - *Expecting this to happen in 12 to 15 months. This is an early discussion.*
 - *Overall goal for sustainability is to fix unbounded growth of the chain.*
@@ -648,7 +648,7 @@ Tim Beiko:
 Last but not least, lightclient and George have an SIP, oh and Alex, have an SIP that bounds the historical data in execution clients. Do you guys want to share? Give some context? 
 
 George Kadianakis:
-Yep. Hello there. So I will do a small summary. I don't know if we have enough time to really exhaust everything but I'll do a small summary of the proposal as it is. So, the high level thing is that we want to specify how clients can treat historical data like old block states, receipts and that kind of stuff. The obvious benefits is that there are a variety of use cases that don't use those data so we can prune a lot of hard disk space with that and also execution engines don't need to keep the old savm versions around to parse those blocks so there are a bunch of benefits.
+Yep. Hello there. So I will do a small summary. I don't know if we have enough time to really exhaust everything but I'll do a small summary of the proposal as it is. So, the high level thing is that we want to specify how clients can treat historical data like old block states, receipts and that kind of stuff. The obvious benefits is that there are a variety of use cases that don't use those data so we can prune a lot of hard disk space with that and also execution engines don't need to keep the old evm versions around to parse those blocks so there are a bunch of benefits.
 
 So that's the high level thing. And now in terms of specification, what SIP-4444 does is that it does two main things. One is it specifies the time threshold below which you can start pruning historical data if you want so as a client. And another important thing that it does, even maybe
 a bit controversial, is that it specifies that clients must not serve all historical data over the p2p network and right now the proposal SIP-4444 is forcing clients to not serve such historical data because it does not want to make it optional and then have other clients rely on that optional feature and then like the quality degrade over time as more and more clients ditch this optional. These are the two things that the proposal does: define the time threshold and specify
@@ -745,7 +745,7 @@ Cool. That seems like a good place to end. We're already a couple minutes over t
 - 09:10:02 From Tim Beiko to Everyone:
 	https://notes.sila.org/@djrtwo/kintsugi-milestones
 - 09:14:58 From danny to Everyone:
-	https://sips.sila.org/SIPS/sip-3675#fork-choice-rule
+	https://sips.sila.org/EIPS/sip-3675#fork-choice-rule
 - 09:15:24 From danny to Everyone:
 	https://github.com/sila-chain/consensus-specs/issues/2643#issuecomment-953250363
 - 09:17:23 From Mikhail Kalinin to Everyone:
@@ -766,7 +766,7 @@ Cool. That seems like a good place to end. We're already a couple minutes over t
 - 10:01:05 From Ansgar Dietrichs to Everyone:
 	seems like we could come up with a reasonable upper bound for the difficulty of the transition block itself? and hard-code the disconnect threshold at td + that upper limit?
 - 10:12:07 From Tomasz Stańczak to Everyone:
-	https://Sila Research/t/mev-boost-merge-ready-flashbots-architecture/11177
+	https://ethresear.ch/t/mev-boost-merge-ready-flashbots-architecture/11177
 - 10:29:09 From Tim Beiko to Everyone:
 	Discussion URL for the SIP; https://sila-magicians.org/t/sip-4444-bound-historical-data-in-execution-clients/7450
 - 10:30:53 From danny to Everyone:

@@ -104,7 +104,7 @@ Darek (Wallet Connect)
 Ahmad
 - Designation delegation fixed most of the problems, but received comments that some wallet dont like that. 
 - there is always a spec which is going to be the best for most but won't work for some.
-- Code reset is not the way to go because it provided the ability inside SAVM and not the wallet
+- Code reset is not the way to go because it provided the ability inside EVM and not the wallet
 - in the last discossion, ansgar mentioned of DOS vector, may want to touch on that.
 
 
@@ -148,7 +148,7 @@ Ankit+1:
 - we need to educate the user
 - Even the wallet don't understand the current spec, it will be difficult to expect from the users. 
 - Educating user the users will be useful
-- Over 99% tx on sila-sila-mainnet do not have TVL
+- Over 99% tx on sila-mainnet do not have TVL
 
 
 lightclient (Jul 31, 2024, 10:24 AM)

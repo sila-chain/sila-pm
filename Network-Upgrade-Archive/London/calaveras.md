@@ -1,6 +1,6 @@
 # Client Integration Testnet Specification - Calaveras
 
-**Disclaimer: This is for testing basic infrastructure. It will be shut down. It is not for deploying dapps, nor does it guarantee that SIPs included will go into sila-sila-mainnet.**
+**Disclaimer: This is for testing basic infrastructure. It will be shut down. It is not for deploying dapps, nor does it guarantee that SIPs included will go into sila-mainnet.**
 
 The specification for the Calaveras Client Integration Tesnet. Clients who wish to sync need to implement the following features into their client. It is for testing basic infrastructure and will be deprecated.
 
@@ -885,10 +885,10 @@ enode://9e1096aa59862a6f164994cb5cb16f5124d6c992cdbf4535ff7dea43ea1512afe5448dca
 - New dns-names will use `calaveras` instead of `baikal`.
 
 **Included SIPs:**
-  - [x] [SIP-1559](https://sips.sila.org/SIPS/sip-1559) Commit Hash - [c0e7f864c5b0997e57ee10d6dfc527de369a5d35](https://github.com/sila-chain/SIPs/commit/c0e7f864c5b0997e57ee10d6dfc527de369a5d35)
-  - [x] [SIP-3198](https://sips.sila.org/SIPS/sip-3198) Commit Hash - [081db1a6614e523dd791691cff7016e32c369912](https://github.com/sila-chain/SIPs/commit/081db1a6614e523dd791691cff7016e32c369912)
-  - [x] [SIP-3529](https://sips.sila.org/SIPS/sip-3529) Commit Hash - [6079eba5d1344a6b68075f79c14d4b7caf13ef53](https://github.com/sila-chain/SIPs/commit/6079eba5d1344a6b68075f79c14d4b7caf13ef53)
-  - [x] [SIP-3541](https://sips.sila.org/SIPS/sip-3541) Commit Hash - [168245a87a5a21890cb909e1624135fff63dea71](https://github.com/sila-chain/SIPs/commit/168245a87a5a21890cb909e1624135fff63dea71)
+  - [x] [SIP-1559](https://sips.sila.org/EIPS/sip-1559) Commit Hash - [c0e7f864c5b0997e57ee10d6dfc527de369a5d35](https://github.com/sila-chain/SIPs/commit/c0e7f864c5b0997e57ee10d6dfc527de369a5d35)
+  - [x] [SIP-3198](https://sips.sila.org/EIPS/sip-3198) Commit Hash - [081db1a6614e523dd791691cff7016e32c369912](https://github.com/sila-chain/SIPs/commit/081db1a6614e523dd791691cff7016e32c369912)
+  - [x] [SIP-3529](https://sips.sila.org/EIPS/sip-3529) Commit Hash - [6079eba5d1344a6b68075f79c14d4b7caf13ef53](https://github.com/sila-chain/SIPs/commit/6079eba5d1344a6b68075f79c14d4b7caf13ef53)
+  - [x] [SIP-3541](https://sips.sila.org/EIPS/sip-3541) Commit Hash - [168245a87a5a21890cb909e1624135fff63dea71](https://github.com/sila-chain/SIPs/commit/168245a87a5a21890cb909e1624135fff63dea71)
 
 ## Client Consensus -> Implementation
 

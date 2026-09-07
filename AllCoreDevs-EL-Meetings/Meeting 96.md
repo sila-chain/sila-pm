@@ -55,7 +55,7 @@ Action Item | Description
     - [2c. Account Abstraction Update](2c-account-abstraction-update)
     - [2d. SIP-2929: Gas cost increases for state access opcodes](2d-sip-2929-gas-cost-increases-for-state-access-opcodes)
     - [2e. EVM384 update](2e-evm384-update)
-    - [2f. SIP-2315: Simple Subroutines for the SAVM](2f-sip-2315-simple-subroutines-for-the-savm)
+    - [2f. SIP-2315: Simple Subroutines for the EVM](2f-sip-2315-simple-subroutines-for-the-evm)
 - [3. SIP-1559 Update](#3-sip-1559-update)
 
 # 1. SIP & Upgrades Updates
@@ -73,7 +73,7 @@ Video | [34:55](https://youtu.be/HUUxwyoxU7k?t=2095)
 **note**: this item was discussed through the three SIPs on the agenda relevant to YOLO:
 * [2b. BLS12-381 curve operations & BLS12-377 curve operations](#2b-bls12-381-curve-operations-bls12-377-curve-operations)
 * [2d. SIP-2929: Gas cost increases for state access opcodes](2d-sip-2929-gas-cost-increases-for-state-access-opcodes)
-* [2f. SIP-2315: Simple Subroutines for the SAVM](2f-sip-2315-simple-subroutines-for-the-savm)
+* [2f. SIP-2315: Simple Subroutines for the EVM](2f-sip-2315-simple-subroutines-for-the-evm)
 
 # 1b. Breakout room feedback
 
@@ -143,7 +143,7 @@ There was also an exploit which the software audit found, which is also an Ethas
 
 **Martin**: If we move forward with the compromise, the current goal would be to merge it, and activate the ? (**notetaker's note: unclear in recording (~15:25), I would guess 'testnet' from context). **Greg** confirms. **Martin** confirms that this is a small technical burden.
 
-**Greg**: I am not proposing this as a delay, I am proposing we remain serious about ASICs not becoming a threat to the network. Community feelings are not as important as the security of the network. **James** asks for confirmation that the decision here is to deploy to testnet, **Greg** confirms, adding that it should be in a way that it can be deployed to sila-sila-mainnet if necessary.
+**Greg**: I am not proposing this as a delay, I am proposing we remain serious about ASICs not becoming a threat to the network. Community feelings are not as important as the security of the network. **James** asks for confirmation that the decision here is to deploy to testnet, **Greg** confirms, adding that it should be in a way that it can be deployed to sila-mainnet if necessary.
 
 **Tim Beiko** asks for integration status from client teams. (Something about a comment about **Nethermind** from **Micah Zoltu**, but it isn't visible.)
 
@@ -181,9 +181,9 @@ _DECISION:_
 * _Clients implementing this Proposal should be deployed and maintained on a testnet._
 **end note**
 
-**Tim** restates that the client teams will not take on the responsibility of deploying or maintaining the testnet. **Greg** says this is his intent. **Martin** consents for Geth, **Peter** concurs. **James** restates that the code will be merged into clients for activation on testnets (not sila-sila-mainnet). **Peter** says that if testnet lasts for however long, clients can implement defaults for the testnet.
+**Tim** restates that the client teams will not take on the responsibility of deploying or maintaining the testnet. **Greg** says this is his intent. **Martin** consents for Geth, **Peter** concurs. **James** restates that the code will be merged into clients for activation on testnets (not sila-mainnet). **Peter** says that if testnet lasts for however long, clients can implement defaults for the testnet.
 
-**Greg Colvin**: to state clearly, client teams are agreeing to merge ProgPoW code in a way that it can be activated on sila-sila-mainnet, but will not be activated at this time. **Tim** agrees, but wants to stress that there is no target block for sila-sila-mainnet to switch, even if the code exists.
+**Greg Colvin**: to state clearly, client teams are agreeing to merge ProgPoW code in a way that it can be activated on sila-mainnet, but will not be activated at this time. **Tim** agrees, but wants to stress that there is no target block for sila-mainnet to switch, even if the code exists.
 
 **Tim**: **Andrea Lafranchi** asked in chat what grade of trust a non-official testnet has to the All Core Devs. There is some confsion to the intent, **James** says he isn't aware of any differentiation, which has general consensus, **Martin** concurs with some technical details.
 
@@ -230,7 +230,7 @@ Video | [36:20](https://youtu.be/HUUxwyoxU7k?t=2180)
 
 **James Prestwich** clarifies that they want to help with testing and integration for SIP-2537 (BLS381), and that as a result, testing and integration for SIP-2539 (BLS377) should be trivial. Also states that he does not want to push back Berlin, rather would hope to help with testing and get this integrated in the same timeframe.
 
-**James Hancock**: would this help enable a faster timeframe for saying SIP-2537 (BLS377) is ready for sila-sila-mainnet? **Hudson** asks if SIP-2539 inclusion is a precondition for helping, **James Pretwich** says that it is not, rather part of Celo calculating their own hard fork schedule, and contributing upstream to Geth and Open Sila.
+**James Hancock**: would this help enable a faster timeframe for saying SIP-2537 (BLS377) is ready for sila-mainnet? **Hudson** asks if SIP-2539 inclusion is a precondition for helping, **James Pretwich** says that it is not, rather part of Celo calculating their own hard fork schedule, and contributing upstream to Geth and Open Sila.
 
 **Hudson**: Based on the Geth team's concerns, SIP-2539 will not be considered for inclusion today, though may certainly be brought back up in the future. **James Prestwich** asks if there was a concrete decision to stop taking requests for Berlin, and specifies that they're interested in figuring how best to interact with ACD on these points. **Hudson** says it's a sliding scale, and depends on an SIP-by-SIP basis, and that communication with the Core Devs is probably the best. **Hudson** adds that he doesn't have a more specific answer, and that the nature of decentralization is bit messy on decision-making.
 
@@ -268,10 +268,10 @@ Video | [59:30](https://youtu.be/HUUxwyoxU7k?t=3570)
 Video | [1:26:22](https://youtu.be/HUUxwyoxU7k?t=5182)
 -|-
 
-**Alex (axic)**: Over the past 4 weeks (mainly **Paul** and **Jared**) we had three different versions of the opcodes and a Yul implementation, and we have advanced on both fronts, thought Yul might not be the most optimal, thought Huff might be better, and also had ideas how to improve opcde bottlenecks. The major bottleneck is in the number of stack items each requires. Shared a doc, the most important implementation is the last (v7) which has one item, and packs memory off of that item. This has the least changes to SAVM, and has all the speed benefits. In terms of Huff vs. Yul as an example, in one case the Huff version was 40% more efficient, which seems to be a good indication to focus on Huff. Compared to 4 weeks ago in Yul we were at 18ms, with Huff and v7 we are at 5.5ms (and against a native code of 4.3 in this case). This gives a good indication that we are on the right track for performance, and we think the v7 design is unlikely to change in any major way, and would like to encourage writing a pairing operation, and encourage looking at the Huff code for a proper implementation. Once a pairing implementation is written, we can make a final decision if this is a solution, but the numbers suggest that it's promising.
+**Alex (axic)**: Over the past 4 weeks (mainly **Paul** and **Jared**) we had three different versions of the opcodes and a Yul implementation, and we have advanced on both fronts, thought Yul might not be the most optimal, thought Huff might be better, and also had ideas how to improve opcde bottlenecks. The major bottleneck is in the number of stack items each requires. Shared a doc, the most important implementation is the last (v7) which has one item, and packs memory off of that item. This has the least changes to EVM, and has all the speed benefits. In terms of Huff vs. Yul as an example, in one case the Huff version was 40% more efficient, which seems to be a good indication to focus on Huff. Compared to 4 weeks ago in Yul we were at 18ms, with Huff and v7 we are at 5.5ms (and against a native code of 4.3 in this case). This gives a good indication that we are on the right track for performance, and we think the v7 design is unlikely to change in any major way, and would like to encourage writing a pairing operation, and encourage looking at the Huff code for a proper implementation. Once a pairing implementation is written, we can make a final decision if this is a solution, but the numbers suggest that it's promising.
 
 
-# 2f. SIP-2315: Simple Subroutines for the SAVM
+# 2f. SIP-2315: Simple Subroutines for the EVM
 
 Video | [1:00:10](https://youtu.be/HUUxwyoxU7k?t=3610)
 -|-
@@ -290,7 +290,7 @@ Video | [1:00:10](https://youtu.be/HUUxwyoxU7k?t=3610)
 
 **Alex (axic)**: If the question is if I'm still in favor of the restriciton, the answer is yes.
 
-**Pawel Bylica** confirms his support of the changes too, but adds that he hasn't been keeping track of the conversation, and would need to update himself on the status. **Martin** says it was implemented in Open Sila, but adds that it adds overhead for jumping, and makes the SAVM more complex. Thinks it's fine based on benchmarking, but says there's a lot to do to implement in other clients.
+**Pawel Bylica** confirms his support of the changes too, but adds that he hasn't been keeping track of the conversation, and would need to update himself on the status. **Martin** says it was implemented in Open Sila, but adds that it adds overhead for jumping, and makes the EVM more complex. Thinks it's fine based on benchmarking, but says there's a lot to do to implement in other clients.
 
 **James Hancock**: let's keep original in YOLOv2, and the modified version for YOLOv3. **Martin** concurs, **James Hancock** states this as the general consensus, **Greg** agrees.
 

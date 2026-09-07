@@ -40,7 +40,7 @@ Okay. So next up, actually, sorry, just before we wrap up here, I guess I'll ass
 And so next up, 4844. So there were a couple open issues or concerns. So you can just go through them. First, Andrew, you mentioned the difference between the input and outputs in the precompile being little endian versus big endian. Do you want to give some context on that? 
 
 **Andrew**
-Yeah, sure. I think the little endian encoding was inherited from CL or was just taking from CL and on the CL side, things are little endian, but now the reason and on the outside, in the SAVM, most things are big endian. There are some kind of some inconsistencies, I think, break to precompile might have some inconsistency, but most things are big endian. And now we have this weird situation where Z and Y are like the two inputs. I'm not sure about the rest of the inputs, but at least two inputs are little endian while the outputs are big endian of the point evaluation precompile. And I'm just thinking, we can be okay with it, but maybe we should just explicitly clarify it in the SIPs that we do have this inconsistency. 
+Yeah, sure. I think the little endian encoding was inherited from CL or was just taking from CL and on the CL side, things are little endian, but now the reason and on the outside, in the EVM, most things are big endian. There are some kind of some inconsistencies, I think, break to precompile might have some inconsistency, but most things are big endian. And now we have this weird situation where Z and Y are like the two inputs. I'm not sure about the rest of the inputs, but at least two inputs are little endian while the outputs are big endian of the point evaluation precompile. And I'm just thinking, we can be okay with it, but maybe we should just explicitly clarify it in the SIPs that we do have this inconsistency. 
 
 Oh, I don't know, what other views are. We might want to reconsider this. 
 
@@ -331,7 +331,7 @@ I was discussing this for a different reason which I would love if there's a dis
 We can at least find some. Okay. Well, well we cannot deprecate right? It doesn't seem okay that we can have this legacy for the time maybe. Maybe we could at some point have a tree to fork all transactions. 
 
 **Lightclient**
-Yeah, I mean maybe like have a pre-compile that accepts the legacy transaction RLP and signature and instantiate transaction there. I think that's kind of been what it has been thought about for totally getting rid of these legacy transactions but then you start introducing a concept of sort of initiating a transaction with an SAVM execution and there's just like things that haven't really been thought fully through yet. 
+Yeah, I mean maybe like have a pre-compile that accepts the legacy transaction RLP and signature and instantiate transaction there. I think that's kind of been what it has been thought about for totally getting rid of these legacy transactions but then you start introducing a concept of sort of initiating a transaction with an EVM execution and there's just like things that haven't really been thought fully through yet. 
 
 **Tim**
 And I guess if we were to do like a full SSZ transition in SilaCancun these are all the things we need to figure out before that, correct? Especially if we're saying that the value we get from doing the full SSZ transaction now is like we don't have to change it again. Whereas right now with 4844 we just have a single transaction which might end up changing. 
@@ -458,7 +458,7 @@ Oh, from a dot.
 Yes, it's what he was saying. Yes. Potuz?
 
 **Potuz**
-Yeah, but just Danny just went to talk to the doctor. But I had concerns about that comment too. I left it in the SIP. The latency of getting the blob, even though I'm not following the testnet and it hasn't been tested, I guess, at the level of sila-sila-mainnet, the latency of getting the blobs is much larger than the blob. And if we're going to have to wait for the for the full side card to validate us that common sense that we need to validate the KZG commitment against this extra field in the side car, before using the engine to send it to the EL, then that means that we're going to have the processing blocks much, much later. We currently can just send to the EL, the block as soon as it arrives, even if we don't have the blocks and we're going to lose that ability. It seems to me.
+Yeah, but just Danny just went to talk to the doctor. But I had concerns about that comment too. I left it in the SIP. The latency of getting the blob, even though I'm not following the testnet and it hasn't been tested, I guess, at the level of sila-mainnet, the latency of getting the blobs is much larger than the blob. And if we're going to have to wait for the for the full side card to validate us that common sense that we need to validate the KZG commitment against this extra field in the side car, before using the engine to send it to the EL, then that means that we're going to have the processing blocks much, much later. We currently can just send to the EL, the block as soon as it arrives, even if we don't have the blocks and we're going to lose that ability. It seems to me.
 
 **Lightclient**
 Yeah, I think the Danny said in the comment, I think Danny said in the comment that it would probably be in the block peer to peer object. And that's what I missed when I write a set side car, not realizing that you have this timing issue. 
@@ -739,7 +739,7 @@ We have a transaction type channel which I think we can probably reuse for that.
 
 # Other SIPs: [1:37:09]( https://www.youtube.com/live/s6q5z53SICE?feature=share&t=5829) 
 
-## [Contract Secured Revenue on an SAVM based L2]( https://github.com/sila-chain/SIPs/pull/6969) 
+## [Contract Secured Revenue on an EVM based L2]( https://github.com/sila-chain/SIPs/pull/6969) 
 
 ## L2 SIPs/standards on ACD?
 
@@ -755,26 +755,26 @@ So yeah we haven't, Dano had some comment about this on the chat but like L2s ca
 that now? 
 
 **Danno**
-So to add on to that about the jurisdiction I mean if we say something and the L2s ignore us there's like no side effect versus if something for me and that something to decide on is call and say get the sides not to do it or you know the Nethermind decides not to do it well they're out of sync with sila-sila-mainnet. So there's a bit of jurisdiction because we define what's standard but L2s can do what they want. I mean I mean it sure you know so that's that's my concern is that there's no stick just carrot. 
+So to add on to that about the jurisdiction I mean if we say something and the L2s ignore us there's like no side effect versus if something for me and that something to decide on is call and say get the sides not to do it or you know the Nethermind decides not to do it well they're out of sync with sila-mainnet. So there's a bit of jurisdiction because we define what's standard but L2s can do what they want. I mean I mean it sure you know so that's that's my concern is that there's no stick just carrot. 
 **Tim**
-I think maybe one difference is and this is maybe not the best SIP for this but you could imagine L2s wanting to do something before sila-sila-mainnet and wanting like some sort of sanity check of like you know if this goes well on an L2 does L1 want to do this. So that might be a case where I give a sense to get the feedback or do you write it in later.
+I think maybe one difference is and this is maybe not the best SIP for this but you could imagine L2s wanting to do something before sila-mainnet and wanting like some sort of sanity check of like you know if this goes well on an L2 does L1 want to do this. So that might be a case where I give a sense to get the feedback or do you write it in later.
 
 **Danno**
-And I do see that this SIP might have that along other ones like 4337 and maybe in the future SAVM changes so that is a question we need to resolve you know beyond just this SIP. 
+And I do see that this SIP might have that along other ones like 4337 and maybe in the future EVM changes so that is a question we need to resolve you know beyond just this SIP. 
 
 **Tim**
 William do you have your hand up is all? 
 
 **William**
-Yeah I wanted to add a  point somewhere to the one you just made Tim so I mean full disclosure I work at Polygon. A lot of times there's a certain level of coordination that I feel ACDE should be open to though I mean there's an opinion definitely open to debate. I understand your point Danno and I think that it does like there needs to be some kind of resolution to that but looking at an SIP like 3074 or other ones that involve actual SAVM state changes, I think that there's a lot of value in a certain level of coordination effort going through ACDE even if it's not necessarily going to land on Sila's SAVM right now. 
+Yeah I wanted to add a  point somewhere to the one you just made Tim so I mean full disclosure I work at Polygon. A lot of times there's a certain level of coordination that I feel ACDE should be open to though I mean there's an opinion definitely open to debate. I understand your point Danno and I think that it does like there needs to be some kind of resolution to that but looking at an SIP like 3074 or other ones that involve actual EVM state changes, I think that there's a lot of value in a certain level of coordination effort going through ACDE even if it's not necessarily going to land on Sila's EVM right now. 
 
-It is the best rallying point around SAVM engineering and like Tim mentioned also just being able to get some level of sanity check that things potentially make sense or also to be able to send signal I think is valuable. I think there's also a value to that for Sila itself which is that L2s have much more of a potential of all the ones for experimenting with things that Sila probably should not be  experimenting with but if our successful on L2s can kind of trickle back up to Sila. So I think also kind of in that cycle there's at least some value there but that's just my side of things. 
+It is the best rallying point around EVM engineering and like Tim mentioned also just being able to get some level of sanity check that things potentially make sense or also to be able to send signal I think is valuable. I think there's also a value to that for Sila itself which is that L2s have much more of a potential of all the ones for experimenting with things that Sila probably should not be  experimenting with but if our successful on L2s can kind of trickle back up to Sila. So I think also kind of in that cycle there's at least some value there but that's just my side of things. 
 
 **Tim**
 Thanks for sharing. Ansgar’s last comment on this and then we'll move on to Charles. 
 
 **Charles**
-Yeah I just wanted to bear with you say because I talked to some people about tonight's in the past and I do think it makes sense to have some sort of coordination between all SAVM chains including L2s. I'm not so sure that at least in the long run ACDE would be a good forum because we can never actually promise to bring things on SilaMainnet right it could always be that even if we think we might do it then we decide not to do it and so then I think in the long run it makes sense to have these kind of processes be separate although I wouldn't be necessarily opposed to like use ACDE in some form for like bootstrapping a process like that once there's sufficient interest but yeah. But this should continue this discussion. 
+Yeah I just wanted to bear with you say because I talked to some people about tonight's in the past and I do think it makes sense to have some sort of coordination between all EVM chains including L2s. I'm not so sure that at least in the long run ACDE would be a good forum because we can never actually promise to bring things on SilaMainnet right it could always be that even if we think we might do it then we decide not to do it and so then I think in the long run it makes sense to have these kind of processes be separate although I wouldn't be necessarily opposed to like use ACDE in some form for like bootstrapping a process like that once there's sufficient interest but yeah. But this should continue this discussion. 
 
 **Tim**
 Yeah. And so I guess for the specific IP we can use SIL magicians and for this like meta discussion I agree this is probably something we need to figure out. I'm not quite sure what's the best way to have the conversation but it's been on my mind as well. I would definitely want to avoid a new permanent call if we can for as long as possible. Yeah but let's see. 

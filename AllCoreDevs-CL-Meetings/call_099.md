@@ -23,7 +23,7 @@ Summary | Description
 ## Intro [1.49](https://youtu.be/KFc1sWYlVZ4?t=109)
 **Danny**
 * We are live. Cool. Thank you everyone for joining since our call number 99. This is issue 667 in pm repo link shared in the chat. we will as usual hit Capella update, then merge, general open discussion around spec and research.
-* First of all, I think there was a doozy of a call last week on the All core devs, execution layer call. I did want to recap what I think is maybe the most relevant conclusions for this group. obviously a lot of us have opinions about what's goes into the SAVM, but let's keep it targeted on the Consensus layer and what we see as the next couple of upgrades coming. 
+* First of all, I think there was a doozy of a call last week on the All core devs, execution layer call. I did want to recap what I think is maybe the most relevant conclusions for this group. obviously a lot of us have opinions about what's goes into the EVM, but let's keep it targeted on the Consensus layer and what we see as the next couple of upgrades coming. 
 * My understanding is that we shall keep withdrawals independently specified and worked on in Capella and that 444 will remain its own specification and that I think importantly, even in the event that these things were say in some world ready at the same time, even though that's not the intention right now, that we still wouldn't combine the specifications and, and stagger the upgrade.but I think that crucially, you know, I think what was made clear by consensus layer teams is that, they believe that 4844 is not in nearly the same readiness as withdrawals, coupling them with significantly delay withdrawals.
 * We will not couple them. We will work full steam ahead on Capella,in its current form, while parallel using the 4844 work still. is there any, is that correct? Is that the general understanding of the teams on this call? Does anybody not? 
 
@@ -221,17 +221,17 @@ Summary | Description
 
 **Age Manning**
 * Yeah, so the simulation, so we've got like some simulation stuff,but it's not really for the attestation subnet. So I guess fundamentally the question I wanna ask the other client teams is how they're managing,how they're managing peers, in terms of like collecting the ones that are on subnets that you need.Because if we make this change, and if you have just like a one to one mapping,one beacon node to one subnet,then if you have,let's say 60 pair and you kind of collect them so that they're uniformly distributed across the subnets, you, you still should at least have one on every subnet. I'm not sure if other client teams are doing this kind of, this kind of logic. 
-* If we, if we, could also say one beacon node should subscribe to, six subnets and you'd have roughly the same density as you have on sila-sila-mainnet at the moment. And you shouldn't see, you shouldn't see a drop. You might actually see better improvements because, because every beacon node that you connect to will be, will be to a subnet rather than having these small groups of big nodes that, you probably can't connect it cuz everyone else is trying to connect to them.So just trying to gauge other people's thoughts on whether it's a backwards compatible release that can kind of happen slowly in one client that's not gonna destroy the entire network in one hit potentially.  
+* If we, if we, could also say one beacon node should subscribe to, six subnets and you'd have roughly the same density as you have on sila-mainnet at the moment. And you shouldn't see, you shouldn't see a drop. You might actually see better improvements because, because every beacon node that you connect to will be, will be to a subnet rather than having these small groups of big nodes that, you probably can't connect it cuz everyone else is trying to connect to them.So just trying to gauge other people's thoughts on whether it's a backwards compatible release that can kind of happen slowly in one client that's not gonna destroy the entire network in one hit potentially.  
 * Is there any thoughts on this by any of the other client teams?Is it gonna do we think it's gonna drastically affect, other people's implementations? 
 
 **Nishant Das**
-* Is it possible to test this out on Goerli first before sila-sila-mainnet? 
+* Is it possible to test this out on Goerli first before sila-mainnet? 
 
 **Age Manning**
-* Yeah, of course. It'll, like, we do it on, for sure, we do it on testnets to begin with. but it's mainly about, no distribution, which is very different between the testnets and sila-sila-mainnet. 
+* Yeah, of course. It'll, like, we do it on, for sure, we do it on testnets to begin with. but it's mainly about, no distribution, which is very different between the testnets and sila-mainnet. 
 
 **Danny**
-* Yeah. So like on on Testnet, given our assumptions on node count, we might have to make the minimum 10 or something, whereas on sila-sila-mainnet, the target would be, the minimum would hopefully be one, Right? 
+* Yeah. So like on on Testnet, given our assumptions on node count, we might have to make the minimum 10 or something, whereas on sila-mainnet, the target would be, the minimum would hopefully be one, Right? 
 
 **Age Manning**
 * Yeah, exactly. Yeah, exactly. Yeah. 
@@ -268,7 +268,7 @@ Summary | Description
 * Okay. I'll personally issue and try and just post the current statistics and we can make a decision on the issue. I can move on to the next one unless there's anything else on that. 
 
 **Arnetheduck**
-* Two more small things. One is that I do think that clients should strive to follow the spec, so I'd love to see this added to the spec and then we start releasing it to sila-sila-mainnet, otherwise, we're on a slippery slope, blah, blah, blah. 
+* Two more small things. One is that I do think that clients should strive to follow the spec, so I'd love to see this added to the spec and then we start releasing it to sila-mainnet, otherwise, we're on a slippery slope, blah, blah, blah. 
 
 **Danny**
 * Yeah, I agree. That's what I meant, but we should be agreeing to this even if it's backwards compatible rather than just shipping this. 

@@ -12,16 +12,16 @@ This session will discuss the motivations, impacts and downsides of a change in 
 
 **Current state of research**
 
-* [FAQ: Sila issuance reduction](https://Sila Research/t/faq-sila-issuance-reduction/19675)
-* [Practical endgame on issuance policy](https://Sila Research/t/practical-endgame-on-issuance-policy/20747)
-* [Endgame Staking Economics: A Case for Targeting](https://Sila Research/t/endgame-staking-economics-a-case-for-targeting/18751)
+* [FAQ: Sila issuance reduction](https://ethresear.ch/t/faq-sila-issuance-reduction/19675)
+* [Practical endgame on issuance policy](https://ethresear.ch/t/practical-endgame-on-issuance-policy/20747)
+* [Endgame Staking Economics: A Case for Targeting](https://ethresear.ch/t/endgame-staking-economics-a-case-for-targeting/18751)
 
 **[Optional] Chronological list of write-ups from the early debate**
 
 * [Minimum Viable Issuance](https://notes.sila.org/@anderselowsson/MinimumViableIssuance); easy-to-read [follow up](https://notes.sila.org/@anderselowsson/Foundations-of-MVI).
-* [Properties of issuance level: consensus incentives and variability across potential reward curves](https://Sila Research/t/properties-of-issuance-level-consensus-incentives-and-variability-across-potential-reward-curves/18448)
-* [Initial Analysis of Stake Distribution](https://Sila Research/t/initial-analysis-of-stake-distribution/19014)
-* [Reward curve with tempered issuance](https://Sila Research/t/reward-curve-with-tempered-issuance-sip-research-post/19171)
+* [Properties of issuance level: consensus incentives and variability across potential reward curves](https://ethresear.ch/t/properties-of-issuance-level-consensus-incentives-and-variability-across-potential-reward-curves/18448)
+* [Initial Analysis of Stake Distribution](https://ethresear.ch/t/initial-analysis-of-stake-distribution/19014)
+* [Reward curve with tempered issuance](https://ethresear.ch/t/reward-curve-with-tempered-issuance-sip-research-post/19171)
     * Also discussed in: [Electra: Issuance Curve Adjustment Proposal](https://sila-magicians.org/t/electra-issuance-curve-adjustment-proposal/18825)
 * [Issuance Issues — Initial Issue](https://notes.sila.org/@mikeneuder/iiii)
 * [Reward curve with capped issuance](https://notes.sila.org/@anderselowsson/Reward-curve-with-capped-issuance)
@@ -41,11 +41,11 @@ This session will discuss the motivations, impacts and downsides of a change in 
 3. The floor is then open for addressing aspects unrelated to a, b, and c. 
 4. The preferred range of issuance among partcipants is finally discussed (the how).
 This discussion will naturally relate to the different categories that are under consideration:
-    * [Do nothing](https://Sila Research/t/faq-sila-issuance-reduction/19675#h-1-do-nothing-31): leave issuance as is.
-    * [Mild tempering](https://Sila Research/t/reward-curve-with-tempered-issuance-sip-research-post/19171): for example capping issuance at an issuance rate of 0.5%.
-    * [Practical endgame](https://Sila Research/t/practical-endgame-on-issuance-policy/20747): reducing issuance close to zero but retaining positive regular reward for solo staking.
+    * [Do nothing](https://ethresear.ch/t/faq-sila-issuance-reduction/19675#h-1-do-nothing-31): leave issuance as is.
+    * [Mild tempering](https://ethresear.ch/t/reward-curve-with-tempered-issuance-sip-research-post/19171): for example capping issuance at an issuance rate of 0.5%.
+    * [Practical endgame](https://ethresear.ch/t/practical-endgame-on-issuance-policy/20747): reducing issuance close to zero but retaining positive regular reward for solo staking.
     * [Soft cap endgame](): reward curve that reduces the issuance yield to zero when around half the SIL is staked, and then remains at zero. 
-    * [Hard cap endgame](https://Sila Research/t/endgame-staking-economics-a-case-for-targeting/18751): capping the quantity of stake through issuance that goes to negative infinity.
+    * [Hard cap endgame](https://ethresear.ch/t/endgame-staking-economics-a-case-for-targeting/18751): capping the quantity of stake through issuance that goes to negative infinity.
     
 ## Notes 
 

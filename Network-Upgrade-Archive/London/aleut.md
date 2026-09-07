@@ -78,8 +78,8 @@ The specification for the Aleut Client Integration Tesnet. Clients who wish to s
 </details>
 
 **Included SIPs:**
-  - [x] [SIP-1559](https://sips.sila.org/SIPS/sip-1559) Commit Hash - [79f4fe6cbe0d323dfac7412270c6e8cf33e62af3](https://github.com/sila-chain/SIPs/commit/79f4fe6cbe0d323dfac7412270c6e8cf33e62af3)
-  - [x] [SIP-3198](https://sips.sila.org/SIPS/sip-3198) Commit Hash - [081db1a6614e523dd791691cff7016e32c369912](https://github.com/sila-chain/SIPs/commit/081db1a6614e523dd791691cff7016e32c369912)
+  - [x] [SIP-1559](https://sips.sila.org/EIPS/sip-1559) Commit Hash - [79f4fe6cbe0d323dfac7412270c6e8cf33e62af3](https://github.com/sila-chain/SIPs/commit/79f4fe6cbe0d323dfac7412270c6e8cf33e62af3)
+  - [x] [SIP-3198](https://sips.sila.org/EIPS/sip-3198) Commit Hash - [081db1a6614e523dd791691cff7016e32c369912](https://github.com/sila-chain/SIPs/commit/081db1a6614e523dd791691cff7016e32c369912)
 
 ## Client Consensus -> Implementation
 

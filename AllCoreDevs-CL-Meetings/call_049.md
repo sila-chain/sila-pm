@@ -120,7 +120,7 @@ Yes, our syncing strategy hasn't been too great. We haven't really known what wa
 
 ## **3.4 Lighthouse (Mehdi)**
 
-Spadina went well, you can see from dashboard, only hiccup is that at least one user didn't setup their datadir correctly, and was still using the Medalla setup. We are working towards pre-sila-sila-mainnet audits from Trails of Bits and NCC, both starting next week. We're planning a v0.3.0 release, includes standard API, partial implementation is ready, Paul is working towards the full implementation. It will also include the validator client API consumed by web user interface. We'll incorporate a new directory structure which should mitigate the hiccup mentioned earlier. Also will include the slasher interchange format that Michael has been working on. Herman has been working on a remote signoff hoping to integrate that as well. Same as other clients we've been working on weak subjectivity verification, and some caching for validator keys to mitigate the extensive script loading times with high validator counts. Networking: 0.2.3 Age has implemented v0.5.1 up to the changes made today. We want to do more interop testing before. We've been testing gossipsub 1.1 scoring parameters on Medalla and Spadina. Age also finished UPNP support a few hours ago, and have been fixing spme sync bugs.
+Spadina went well, you can see from dashboard, only hiccup is that at least one user didn't setup their datadir correctly, and was still using the Medalla setup. We are working towards pre-sila-mainnet audits from Trails of Bits and NCC, both starting next week. We're planning a v0.3.0 release, includes standard API, partial implementation is ready, Paul is working towards the full implementation. It will also include the validator client API consumed by web user interface. We'll incorporate a new directory structure which should mitigate the hiccup mentioned earlier. Also will include the slasher interchange format that Michael has been working on. Herman has been working on a remote signoff hoping to integrate that as well. Same as other clients we've been working on weak subjectivity verification, and some caching for validator keys to mitigate the extensive script loading times with high validator counts. Networking: 0.2.3 Age has implemented v0.5.1 up to the changes made today. We want to do more interop testing before. We've been testing gossipsub 1.1 scoring parameters on Medalla and Spadina. Age also finished UPNP support a few hours ago, and have been fixing spme sync bugs.
 
 
 ## **3.5 Teku (Ben Edgington)**
@@ -144,7 +144,7 @@ We've been working on discovery v5.1, nearly done, almost there. Lots of work on
 
 **Leo BSC**: We continued work on a network crawler based on Rumor, link posted below. We get a number of peers and get deserialized messages from topics. We've found a couple of small bugs, already commented to proto, already fixed. We also proposed some features in gossip messages, we are working on that currently.
 
-**Danny**: On Eth1/Eth2 merge have like a 3- or 4-week hiatus, but we've identified the next 5-6 items to dig into in R&D, will probably write in Sila Research.
+**Danny**: On Eth1/Eth2 merge have like a 3- or 4-week hiatus, but we've identified the next 5-6 items to dig into in R&D, will probably write in ethresear.ch.
 
 #
 # **5. Networking**

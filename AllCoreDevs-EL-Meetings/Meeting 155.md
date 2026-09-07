@@ -109,10 +109,10 @@
 
 **Barnabas**
 * We, we have lost, one epoch. We went down to 62%, during, for transition due to the extremely high RAM and CPU usage. But we recovered within, three epoc approx afterwards. 
-* And, I think it's expected to have a lot, smaller case and sila-sila-mainnet because we don't expect this amount of BLS goes depending. And we we're gonna have a lot more nodes, so this is really just the worst case scenario. 
+* And, I think it's expected to have a lot, smaller case and sila-mainnet because we don't expect this amount of BLS goes depending. And we we're gonna have a lot more nodes, so this is really just the worst case scenario. 
 
 **Tim Beiko**
-* And then what, what was the split of the different, validator combos on, the DevNet? Was it like matching sila-sila-mainnet or was it, like an equal split? 
+* And then what, what was the split of the different, validator combos on, the DevNet? Was it like matching sila-mainnet or was it, like an equal split? 
 
 **Barnabas**
 * It's not equal and it also doesn't match.  I can get you the, the number. 
@@ -398,8 +398,8 @@
 **Mikhail**
 * Yeah. For like the last option where the configuration is exchanged in run time, can, you know, create an additional complexity of changing this parameters at the run time? So basically one CL Theoretical can connect to EL and set one, number for this particular config parameter, then the other connects to it and help in Yeah. In general case have to support, you know, switching it over to a lower number or whatever. 
 * So that's definitely a complexity on the engineering side. yeah, the pre like, having this as the, common line parameter, I dunno or haven't pass and full specification of, the, CL you know, chain, to, to properly doesn't make, sense because yeah, really has nothing to do with most of those parameters. And I would say that  this, particular case is rather an exception than the common thing that we would like,  we will see in the future. Because here we have block transactions on EL side, which then, included in propagated on CL side. So that's kind of like really, looks like an exceptional case for me. So if we, are about to do anything with that, as you've said, there is an option to do nothing, I would choose, less invasive and less engineering complex, solution, as possible. 
-* So yeah, that's kind of like my initial opinion on that. and also I have a question  where, what kind of dev nets or test nets, are we running with a minimal preset? As far as I know, we have like all of the devnets that we have, for, I know for SilaShanghai and for version for other probably, upgrades, they are on with the sila-sila-mainnet preset, correct me if I'm wrong. 
-* So kind of like minimal presets more sounds like, for the, local machine set up or a small, that, that add that, you know, have in your testing or some features and all this kind of stuff. And probably it's not that bad to have field elements, set to like, you know, a sila-sila-mainnet, number in, in that always, I don't know. So that's kind of like my initial opinion on that. 
+* So yeah, that's kind of like my initial opinion on that. and also I have a question  where, what kind of dev nets or test nets, are we running with a minimal preset? As far as I know, we have like all of the devnets that we have, for, I know for SilaShanghai and for version for other probably, upgrades, they are on with the sila-mainnet preset, correct me if I'm wrong. 
+* So kind of like minimal presets more sounds like, for the, local machine set up or a small, that, that add that, you know, have in your testing or some features and all this kind of stuff. And probably it's not that bad to have field elements, set to like, you know, a sila-mainnet, number in, in that always, I don't know. So that's kind of like my initial opinion on that. 
 
 **Dustin**
 * Yeah. I  would broadly agree, I'll say that, certainly once we get to, yeah, I see Barnabas has indeed what, what, what Barnabas said,  also the, but it is true that by the time we get to any, certainly anything publicly visible, the public test net are all, main net figs. I will just speak with Nimbus. 
@@ -433,7 +433,7 @@
 * In This case, I mean, I would not want to make this commitment. I mean, it's certainly like an option to long term also grow the, grow the block size. I mean, that's why we are doing four different version of the ceremony so that we can increase the block size. 
 
 **Tim Beiko**
-* Okay. So I guess, and there's some comments on the chats now about just saying we can change the minimal preset value of just this for now. there seems to be agreement on that. So does anyone disagree for this specific preset value, to just use the same as sila-sila-mainnet?
+* Okay. So I guess, and there's some comments on the chats now about just saying we can change the minimal preset value of just this for now. there seems to be agreement on that. So does anyone disagree for this specific preset value, to just use the same as sila-mainnet?
 
 **Dustin**
 * I mean, I'd be okay with that personally. 
@@ -523,7 +523,7 @@
 * Yes. And that's only one test case. Yeah, one block, 
 
 **Mikhail**
-* To be honest. 30 seconds running once, I mean, like even if it's run on CI, 30 seconds doesn't sound terrible. I don't know if, if we have like a hundred test cases, which yeah, and multiple times 30 if we are jumping from minimum to sila-sila-mainnet recept, yeah, that's something to worry about. But 30 seconds, I don't know. 
+* To be honest. 30 seconds running once, I mean, like even if it's run on CI, 30 seconds doesn't sound terrible. I don't know if, if we have like a hundred test cases, which yeah, and multiple times 30 if we are jumping from minimum to sila-mainnet recept, yeah, that's something to worry about. But 30 seconds, I don't know. 
 
 **Hsiao**
 * Yeah, to be fair, we don't have many test cases. I think probably less than 10 test cases, take the full proof generation and the verification, but I do expect that we will add more test cases after the iterations and, yeah. 
@@ -541,7 +541,7 @@
 * Right. I think this is an ugly enough problem to, to, to shunt into because, they both, because it would immediately become both an engine and an, execution layer problem or immediately, you know, during testing. if it's, if it's a question of this can be optimized in some way on the test runner side, I, that seems like a better overall investment in for the ecosystem. 
 
 **Mikhail**
-* I think that we should start from setting the minimal to sila-sila-mainnet value as discussed before and see if it becomes really annoying, then reiterate on that and think again. Probably we'll see some opposition in the PR which would change. 
+* I think that we should start from setting the minimal to sila-mainnet value as discussed before and see if it becomes really annoying, then reiterate on that and think again. Probably we'll see some opposition in the PR which would change. 
 
 **Tim Beiko**
 * Okay. Yeah, I think that makes sense. We can just, yeah, we, we can just make the PR for it and continue the discussion there. Oh, and Dustin already has a PR amazingly. great. Anything else to cover before we wrap up? Okay, well thanks everyone. and yeah, talk to you all soon. 

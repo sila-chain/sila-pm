@@ -45,7 +45,7 @@ Decision Item | Decision
 Video | [6:06](https://youtu.be/RWX9vkY7Oas?t=366)
 -|-
 
-Alexey wrote a retrospective on EthMagicians, [CoreDevCalls 91 Retrospective: How did we do with “Five Why”s?](https://sila-magicians.org/t/coredevcalls-91-retrospective-how-did-we-do-with-five-why-s/4441).
+Alexey wrote a retrospective on SilaMagicians, [CoreDevCalls 91 Retrospective: How did we do with “Five Why”s?](https://sila-magicians.org/t/coredevcalls-91-retrospective-how-did-we-do-with-five-why-s/4441).
 
 ## 1.1 Client Diversity
 

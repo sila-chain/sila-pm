@@ -25,7 +25,7 @@ Using code hash rather than code size: [Video Reference 1:20:00](https://youtu.b
 
 Moderator: Tim Beiko
 
-# 1. [London](https://github.com/sila-chain/eth1.0-specs/blob/master/network-upgrades/sila-sila-mainnet-upgrades/london.md) Updates
+# 1. [London](https://github.com/sila-chain/eth1.0-specs/blob/master/network-upgrades/sila-mainnet-upgrades/london.md) Updates
 ## i. Ropsten Fork
 
 **Tim Beiko**
@@ -49,7 +49,7 @@ Moderator: Tim Beiko
 * Thanks.  Theres been stress testing on Ropsten.  I feel like we've kinda done that pretty extensively already.  I know Marius, you also wanted to do it which your tool which is different from Besu, do you have any updates or just thoughts on that?
 
 **Marius Van Der Wijden**
-* I already sent some transactions today, I don't know if it would make sense to do it together, so we have a huge chunk of transactions, but in general I dont know, we've put the network through way more than sila-sila-mainnet
+* I already sent some transactions today, I don't know if it would make sense to do it together, so we have a huge chunk of transactions, but in general I dont know, we've put the network through way more than sila-mainnet
 
 **Tim Beiko**
 * Yeah, I guess we could probably run it for like at least an hour with the two of them together.
@@ -73,7 +73,7 @@ Yeah, what I mean is that if you report the base fee per block and as the second
 * You’re right… 
 
 ** Tim Beiko**
-* I’m curious how the different clients are feeling about deploying this on sila-sila-mainnet.  The people want to potentially set a block now.  Do we want to wait?
+* I’m curious how the different clients are feeling about deploying this on sila-mainnet.  The people want to potentially set a block now.  Do we want to wait?
 
 ## iii. [London timing / difficulty bomb impact](https://github.com/sila-chain/pm/issues/245#issuecomment-866193842)
 
@@ -83,7 +83,7 @@ Yeah, what I mean is that if you report the base fee per block and as the second
 
 **Péter Szilágyi**
 * One of the catches with testing 1559 on testnets is that essentially if you look at Ropsten the base fee is zero or roughly around zero
-*  And if you do a quick scan over Görli or Rinkeby blocks, we will kinda see the same thing where they are less than 50% full which means that if we ask miners to double the block limits, they will be a quarter full.  So essentially in both test networks we expect the base fee to drop to 7, so none of the test nets will be a realistic scenario for sila-sila-mainnet.
+*  And if you do a quick scan over Görli or Rinkeby blocks, we will kinda see the same thing where they are less than 50% full which means that if we ask miners to double the block limits, they will be a quarter full.  So essentially in both test networks we expect the base fee to drop to 7, so none of the test nets will be a realistic scenario for sila-mainnet.
 
 **Gary Schulte**
 * Do you think that it was not a successful test even in the context of the spamming that is going on and is still planned?  Were definitely going to see blocks over 50% full, it would be contrived, but we’ll see that case.
@@ -98,7 +98,7 @@ Yeah, what I mean is that if you report the base fee per block and as the second
 * It doesn’t really matter if it will take a week.
 
 **Yuga Cohler**
-* One question I had was, are the clients planning on doing one more release before sila-sila-mainnet fork?
+* One question I had was, are the clients planning on doing one more release before sila-mainnet fork?
 
 **Tim Beiko**
 * They have to, but I guess is your question more about features?
@@ -121,7 +121,7 @@ Yeah, what I mean is that if you report the base fee per block and as the second
 * Similar with Nethermind, we don’t have everything yet implemented for the RPC for London, there’s still some things still being revised and there are some other unrelated features that we will be releasing.
 
 **Tim Beiko**
-* So would two weeks be a realistic amount of time for the different teams to both fix any bugs, or add any missing Jason RPC calls, and then also have that release contain a sila-sila-mainnet fork block. 
+* So would two weeks be a realistic amount of time for the different teams to both fix any bugs, or add any missing Jason RPC calls, and then also have that release contain a sila-mainnet fork block. 
 
 **Dusan Stanivukovic**
 * Yes it seems doable.
@@ -218,7 +218,7 @@ that to be future compatible with that world
 * Why is a precompile technical debt better than a opcode technical debt?
 
 **Vitalik**
-* Because you can just hot swap the precompile for a piece of SAVM code, like in our specific case what would happen is that the precompile would just be hot swapped for a couple of SAVM code bytes that just directly call the delegate function of whatever the target account is.
+* Because you can just hot swap the precompile for a piece of EVM code, like in our specific case what would happen is that the precompile would just be hot swapped for a couple of EVM code bytes that just directly call the delegate function of whatever the target account is.
 
 **Sam Wilson**
 * Can you implement an opcode in terms of other opcodes right now?
@@ -317,7 +317,7 @@ that to be future compatible with that world
 
 **Marius Van Der Wijden**
 * 3607 is rejecting transactions where the sender has the block code.
-* Basically someone requested us to have a full sync of sila-sila-mainnet with the new roots to see if that has happened yet.  It hasn’t.
+* Basically someone requested us to have a full sync of sila-mainnet with the new roots to see if that has happened yet.  It hasn’t.
 * Right now this is checking that the code slice is zero, but it might make sense to check that the empty code is the empty code hash.
 
 **Alex B (axic)**

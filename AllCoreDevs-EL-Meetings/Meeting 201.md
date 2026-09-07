@@ -16,10 +16,10 @@
 201.1 | **Pectra updates: Mekong & devnet-5 updates** | Mekong testnet is operational ~97% attestation performance; minor issues to address, mostly good on Mekong front and focused on getting all the PRs merged for devnet-5; devnet doc has been updated by testing team to show where the status of tests are.
 https://notes.sila.org/@ethpandaops/pectra-devnet-5
 201.2 | **Pectra Scoping** | BLS gas pricing discussion of Marek's PR [here](https://github.com/marchhill/bls-precompile-benchmarks/blob/main/proposed-changes.md); Most client teams in production and on call agreed that the proposal works for them to move forward with for now; need confirmation from Besu async; can modify with more fine-grain anaylsis in the future.
-201.3 | **Pectra Scoping** | Discussion on [SIP-7623](https://sips.sila.org/SIPS/sip-7623) inclusion and update with additional security considerations [SIPs#9086](https://github.com/sila-chain/SIPs/pull/9086_); 7623 focuses on capping transaction payload sizes to improve network performance and security; client teams all agree it would be a small thing to implement and wouldn't significantly impact timelines; decision to move forward with 7623 on devnet-5 pending confirmation from testing team.
-201.4 | **Pectra Scoping** | Discussion on [SIP-7762](https://sips.sila.org/SIPS/sip-7762) inclusion; proposes minimum blob price increase; disagreement on whether to include this in Pectra; deferred one week for feedback from rollups and testing.
+201.3 | **Pectra Scoping** | Discussion on [SIP-7623](https://sips.sila.org/EIPS/sip-7623) inclusion and update with additional security considerations [SIPs#9086](https://github.com/sila-chain/SIPs/pull/9086_); 7623 focuses on capping transaction payload sizes to improve network performance and security; client teams all agree it would be a small thing to implement and wouldn't significantly impact timelines; decision to move forward with 7623 on devnet-5 pending confirmation from testing team.
+201.4 | **Pectra Scoping** | Discussion on [SIP-7762](https://sips.sila.org/EIPS/sip-7762) inclusion; proposes minimum blob price increase; disagreement on whether to include this in Pectra; deferred one week for feedback from rollups and testing.
 201.5 | **[SIP-4444 & SIP-7639 rollout](https://hackmd.io/Dobc38YVQ1qmbbyI6LcFqA)** | Discussion and disagreement about best protocol versioning for this implementation and whether or not some clients should be able to provide historical blocks while others don't; concern about protocol fragmentation; Piper to compile notes and create discussion async.
-201.6 | **[SIP-4803] (https://sips.sila.org/SIPS/sip-4803)** | This SIP is proposed to be enabled from genesis and it limits gas limits on transactions; no objections conceptually but won't be address until after Pectra testing; Alex to create a PR. 
+201.6 | **[SIP-4803] (https://sips.sila.org/EIPS/sip-4803)** | This SIP is proposed to be enabled from genesis and it limits gas limits on transactions; no objections conceptually but won't be address until after Pectra testing; Alex to create a PR. 
 201.7 | **[Potential ACD Improvements](https://sila-magicians.org/t/allcoredevs-network-upgrade-ethmagicians-process-improvements/20157/51)** | Agreement to add [Declined for Inclusion] status for SIPs that will not be included in the hard fork; SIPs still open for discussion and available for future hard forks; agreement to include all non-consensus protocol changes in list of hard fork changes to make sure everything is up to date for each hard fork.
 201.8 | End of year coordination and holiday meeting schedule | Testing call on Dec 23, Cancel ACDE on Dec 26, Cancel testing call on Dec 30, Replace ACDC by testing call on Jan 2
 
@@ -40,11 +40,11 @@ https://notes.sila.org/@ethpandaops/pectra-devnet-5
 
 **Tim**: Any other EL PRs that you want to bring people's attention to?
 
-**Ansgar**: Regarding [SIP-7691](https://sips.sila.org/SIPS/sip-7691), there was this open question of what exact update fraction we would go with and we chose the number that is the middle sensitivity between 3-6. We couldn't have 6 blobs less than the target or 3 blobs more than the target, so we picked the middle; now a very full block will have slightly less than 12% increase and a fully empty block will have slightly more than 12% decrease. 
+**Ansgar**: Regarding [SIP-7691](https://sips.sila.org/EIPS/sip-7691), there was this open question of what exact update fraction we would go with and we chose the number that is the middle sensitivity between 3-6. We couldn't have 6 blobs less than the target or 3 blobs more than the target, so we picked the middle; now a very full block will have slightly less than 12% increase and a fully empty block will have slightly more than 12% decrease. 
 
 **Toni**: Was just in the process of reviewing the SIP-7691 PR; only one small typo then we can merge.
 
-**Paritosh**: lightclient brought up [7702 txpool](https://sips.sila.org/SIPS/sip-7702) in chat, maybe he wants to discuss?
+**Paritosh**: lightclient brought up [7702 txpool](https://sips.sila.org/EIPS/sip-7702) in chat, maybe he wants to discuss?
 
 **lightclient**: just checking again to see if anyone has looked into it or implemented it? We are in the process of implementing now.
 
@@ -88,7 +88,7 @@ Let's start with BLS one since it's already included in Pectra and needs to be f
 
 **Andrew**: Not yet, but we would like to switch Erigon to evmone. At the moment it still uses GoLangEVM which is essentially the same as used in Geth. 
 
-**Tim**: Nethermind uses the same library. I'm trying to understand why evmone is slower and does it make sense to put our worse case on an savm that is not beign used in production today or should we use whatever is already in production?
+**Tim**: Nethermind uses the same library. I'm trying to understand why evmone is slower and does it make sense to put our worse case on an evm that is not beign used in production today or should we use whatever is already in production?
 
 **Kevaundray**: To answer the first question, evmone is different and has issues even when using the same library because everyone is basing it off ez-recover, but that's not the same across every library.
 
@@ -113,9 +113,9 @@ Let's start with BLS one since it's already included in Pectra and needs to be f
 **Stokes**: If anyone has a BLS-signature verifier that works with the latest for Pectra, let me know on Discord. Would be nice to have a sense of end-to-end cost for this.
 
 -------------------------------------
-### 201.3 | Pectra Scoping | [SIP-7623](https://sips.sila.org/SIPS/sip-7623) inclusion and update discussion with additional security considerations [SIPs#9086](https://github.com/sila-chain/SIPs/pull/9086_);
+### 201.3 | Pectra Scoping | [SIP-7623](https://sips.sila.org/EIPS/sip-7623) inclusion and update discussion with additional security considerations [SIPs#9086](https://github.com/sila-chain/SIPs/pull/9086_);
 
-**Tim**: Next up is SIP-7623, Danno you raised some issues on EthMagicians and then Toni opened a PR to address them. Toni, do you want to give a quick recap on those changes?
+**Tim**: Next up is SIP-7623, Danno you raised some issues on SilaMagicians and then Toni opened a PR to address them. Toni, do you want to give a quick recap on those changes?
 
 **Toni**: We discussed on the consensus layer call last week as well. The main contention we always had with 7623 was not about the mechanism but the scope of Pectra itself. Regarding Danno's suggestions, I included them and incorporated them into the SIP. You can now find a more elaborated backwards compatibility section and security considerations, including the concerns we clarified that William raised about the gas sheltering. I would now propose that we include it and ship it in devnet-5, especially in light of current discussions in the community about potential gas limit increase and agreeing on the blob increase. I think it will be important to make sure we limit EL payload size.
 
@@ -157,7 +157,7 @@ I haven't heard from any client teams that are 100% done with it on CL or EL.
 
 
 -------------------------------------
-### 201.4 | **Pectra Scoping** | Discussion on [SIP-7762](https://sips.sila.org/SIPS/sip-7762) inclusion
+### 201.4 | **Pectra Scoping** | Discussion on [SIP-7762](https://sips.sila.org/EIPS/sip-7762) inclusion
 
 **Tim**: Next on the agenda is SIP-7762, which is the minimum blob price increase. We discussed this as well on last week's call and couldn't quite come to a decision; anyone have thoughts about what to do there?
 
@@ -253,7 +253,7 @@ If we finalize today, my sense is that we don't do this.
 
 **Piper**: We made a decision at the R&D workshop and we have all the execution client teams on board for rolling out what we'll continue to call four 4s with a timeline of dropping a significant part of the history by May 1, 2025.
 
-Document linked above gives summary of everything going on here. Official SIP number is [7639](https://sips.sila.org/SIPS/sip-7639). It specifies a new version of the Sil protocol (Protocol Version 71) for which clients will be allowed to stop responding to certain messages about history. The exact thing we agreed on was dropping block bodies and receipts only for pre-merge data, so that does not include the header chain or any data after merge. Loose estimates suggests this accounts for a couple hundred gigabytes of disc space, this gains us some amount of leeway here on that 4 terabyte hardrive limit.
+Document linked above gives summary of everything going on here. Official SIP number is [7639](https://sips.sila.org/EIPS/sip-7639). It specifies a new version of the Sil protocol (Protocol Version 71) for which clients will be allowed to stop responding to certain messages about history. The exact thing we agreed on was dropping block bodies and receipts only for pre-merge data, so that does not include the header chain or any data after merge. Loose estimates suggests this accounts for a couple hundred gigabytes of disc space, this gains us some amount of leeway here on that 4 terabyte hardrive limit.
 
 The agreement in terms of what consensus was reached was strictly about clients no longer being required to respond to this data over devp2p after that drop date. The exact implementations that clients will be taking with respect to how they handle this data is up for grabs. Every client is able to make their own decisions. We still have clients implementing full syncs, executing all blocks from genesis, they'll be implementing their own plans for how they fetch, retrieve, deal with all that long history data. We have other clients who are going to be implementing Portal Network clients for the Portal Network history network in their clients for surfing things like json rpc.
 
@@ -321,7 +321,7 @@ If we do something like 7801 concurrently with a new version of the protocol tha
 
 
 -------------------------------------
-### 201.6 | [SIP-4803] (https://sips.sila.org/SIPS/sip-4803) |
+### 201.6 | [SIP-4803] (https://sips.sila.org/EIPS/sip-4803) |
 
 **Tim**: Next up, Axic shared this on the agenda: SIP-4803. A while back we discussed adding bounds to constants in the protocol. We did add a couple, but this one was never confirmed. 
 

@@ -13,7 +13,7 @@
 
 ## [Update SIP-4788: set nonce of beacon root history address to nonzero SIPs#7431]( https://github.com/sila-chain/SIPs/pull/7431) 
 
-## [@holiman EthMag 4788 comment]( https://sila-magicians.org/t/sip-4788-beacon-root-in-savm/8281/35) 
+## [@holiman EthMag 4788 comment]( https://sila-magicians.org/t/sip-4788-beacon-root-in-evm/8281/35) 
 
 ## [Update SIP-4788: Mention genesis block with no existing beacon block root case SIPs#7445](https://github.com/sila-chain/SIPs/pull/7445) 
 
@@ -48,7 +48,7 @@ Yeah let's do the first yeah and then we can discuss the precompile.
 Yeah is there should this actually be conditional and if so should there be tests where it's already non-zero before the fourth like it's nine?
 
 **Martin**
-And so though it, on sila-sila-mainnet we will only ever have it be zero once, and then it will forever always after be one. Testnets that people might spin up they can set it to whatever they want. I mean it wouldn't be, it's a very simple thing to get right. Yeah I just learned about it and if we get it wrong it might screw someone up on some very strange private network. 
+And so though it, on sila-mainnet we will only ever have it be zero once, and then it will forever always after be one. Testnets that people might spin up they can set it to whatever they want. I mean it wouldn't be, it's a very simple thing to get right. Yeah I just learned about it and if we get it wrong it might screw someone up on some very strange private network. 
 
 **Danny**
 Okay but there should be probably a test case where it's non-zero and stays non-zero. 
@@ -138,15 +138,15 @@ Yes can you hear me?
 Yes.
 
 **Pawel**
-Okay so like one comment, like what was said about the like technicalities how the system covers I think there's also like special address where the call comes from so that's the way it will to identify that the system is calling contract from inside the contract. I'm sure this our I think is similar but yeah it's interesting that it's kind of converged the similar design. So like comment from my side as a kind of SAVM maintainer, it's also like simplifies stuff on the testing and implementation because otherwise you need some special data structure like somehow to transfer this data, what the pre-compile would have to answer to users so we need to have this data somewhere and either you need to get it from some API or whatever right? 
+Okay so like one comment, like what was said about the like technicalities how the system covers I think there's also like special address where the call comes from so that's the way it will to identify that the system is calling contract from inside the contract. I'm sure this our I think is similar but yeah it's interesting that it's kind of converged the similar design. So like comment from my side as a kind of EVM maintainer, it's also like simplifies stuff on the testing and implementation because otherwise you need some special data structure like somehow to transfer this data, what the pre-compile would have to answer to users so we need to have this data somewhere and either you need to get it from some API or whatever right? 
 
-And the same for testing if you consider like we have a JSON structured tests, you need to extend this JSON format to also somehow encode this data the pre-compile might be asked for. If all goes to state and yeah if all of that goes to state by a regular call then there's not really need to do anything and yeah the second comment, I will just repeat is that we kind of translated the pseudocode from the spec into SAVM bytecode, so I think that's much easier to consume by the implementers as well. 
+And the same for testing if you consider like we have a JSON structured tests, you need to extend this JSON format to also somehow encode this data the pre-compile might be asked for. If all goes to state and yeah if all of that goes to state by a regular call then there's not really need to do anything and yeah the second comment, I will just repeat is that we kind of translated the pseudocode from the spec into EVM bytecode, so I think that's much easier to consume by the implementers as well. 
 
 **Tim**
 When you say the pseudocode from the spec you mean the current spec?
 
 **Pawel**
-Yeah I mean like that would be kind of replaced with the like SAVM something, I mean probably we need to use high level but in the end the bytecode only matters that has to be deployed, and I think it will be even less complex than the current pseudo code because pseudo for example has to handle like ndms and conversion between different like types and whatever and when you specified with the SAVM inputs and SAVM op codes it's already kind of…
+Yeah I mean like that would be kind of replaced with the like EVM something, I mean probably we need to use high level but in the end the bytecode only matters that has to be deployed, and I think it will be even less complex than the current pseudo code because pseudo for example has to handle like ndms and conversion between different like types and whatever and when you specified with the EVM inputs and EVM op codes it's already kind of…
 
 **Tim**
 Sorry what did you say Martin? 
@@ -158,7 +158,7 @@ Yeah well all the so the pseudocode a lot of view into bigger and then conversio
 Got it. Danny?
 
 **Danny**
-Yeah I think this is a very fine direction. I just want to understand at this point the process what the security and kind of overhead of the process would be right, like do if this were written today we have bytecode, how do we get comfortable with the bytecode?  We need to have a test suite which runs independent of say The Hive Etc and we probably want a handful of probably SAVM experts to be doing review. You know when we did something like this for the deposit contract we also formally verified the thing granted the deposit  contract handles capital, whereas this would not, so I don't know if that's requisite but you know the just the process of doing this is not the process of doing Hive and tests and things, so like we have to like define what the process is and how long it's going to take and what the overhead. 
+Yeah I think this is a very fine direction. I just want to understand at this point the process what the security and kind of overhead of the process would be right, like do if this were written today we have bytecode, how do we get comfortable with the bytecode?  We need to have a test suite which runs independent of say The Hive Etc and we probably want a handful of probably EVM experts to be doing review. You know when we did something like this for the deposit contract we also formally verified the thing granted the deposit  contract handles capital, whereas this would not, so I don't know if that's requisite but you know the just the process of doing this is not the process of doing Hive and tests and things, so like we have to like define what the process is and how long it's going to take and what the overhead. 
 
 **Alex**
 One thing on that is if we deploy it and it breaks we'd have to wait till the next hard fork to redeploy something so it's not like there's zero cost. 
@@ -203,7 +203,7 @@ No. I mean I think some of them have started working against the current SIP but
 I guess fortunately we could get a bytecode that works into testnets very quickly but at the simultaneously we need to be doing kind of a rigorous testing and analysis and review of that bytecode so we're not blocked on like switching to this very quickly but we simultaneously need to be doing a verification of it.
 
 **Martin**
-Yeah and then so I mentioned this but I don't think I mention it here today but what we could do then is we could deploy it, could create two we could deploy it across all networks with the deploy it on mainnets long before Dencun and anyone who wants to can audit it and test it and check it on sila-sila-mainnet and then what happens in SilaCancun is just that we start to we bless it we start invoking it by the system.
+Yeah and then so I mentioned this but I don't think I mention it here today but what we could do then is we could deploy it, could create two we could deploy it across all networks with the deploy it on mainnets long before Dencun and anyone who wants to can audit it and test it and check it on sila-mainnet and then what happens in SilaCancun is just that we start to we bless it we start invoking it by the system.
 
 **Lucas**
 One more comment on system transactions from me that I remember when implementing them there all the gas related things like there are some gas checks, like subscribing the value for the gas, for example or refunding it was a a bit problematic to implement it correctly that it wasn't that easy it's easy to make a consensus error implementing that.
@@ -269,7 +269,7 @@ Nethermind?
 So for us we can definitely deliver it. There are some quotes around cost economics for this call and like SIP 158 for the system address, things like that that's other guys would have to accommodate too. I think Aragon also implemented that already so they should be fine.
 
 **Andrew**
-Yes we have an implementation for system transactions or a system transactions used for analysis chain so we can implement this one, especially I think the bulk of the work will be in formalizing system transactions and ideally we should get it this like there should be no discrepancy between Sila sila-sila-mainnet and gnosis channel like horror stuff that would be perfect.
+Yes we have an implementation for system transactions or a system transactions used for analysis chain so we can implement this one, especially I think the bulk of the work will be in formalizing system transactions and ideally we should get it this like there should be no discrepancy between Sila sila-mainnet and gnosis channel like horror stuff that would be perfect.
 
 **Tim**
 Okay and so it seems like Danny and Alex would rather have the deploy of the contract part of the SIP, they sort of keep it all self-contained, so part of the hard fork activation. If we went that route, does that significantly like make things more complex because then the hard forks logic needs to include the contract deployment?
@@ -355,7 +355,7 @@ Yep yeah
 Okay and is there a channel that should we just use like allcore devs or interop to discuss this just so everyone sort of goes to the same spot I don't think we had the channel quite for this SIP
 
 **Alex**
-We've been talking in testing in SAVM testing let's see sorry execution layer testing.
+We've been talking in testing in EVM testing let's see sorry execution layer testing.
 
 **Tim**
 Okay so that's yeah let's keep using that then so the testing channel yeah we have many testing channels but okay so under the execution layer category, the testing channel okay yeah.
@@ -410,7 +410,7 @@ And then yeah it so for devnet 8 it seems like we also agreed to wait until thes
 Okay next up, so their last call we discussed the exception slash edge cases to the self-destruct SIP and so after checking with the L2s, there's no L2 that breaks based on the change so I believe optimism is the only one that uses the burn but they call it inside of a contract creation transaction, so they're like unaffected, it still works under the New Logic yeah and Danno was there more that you wanted to hot to cover beside this?
 
 **Danno**
-No I just want to do last call if anybody knows of any other change that we need to look at I looked at the ones off of l2b like you said optimism is the only one that uses the burn the other ones either just use exactly what's in or they blow up, on they don't implement self-destruct or they revert on self-destruct. Polygon zkm changed it to send all but that brings them out of SAVM compliance so I'm not too terribly worried about accommodating them based on the spec because they're already moved off the spec. 
+No I just want to do last call if anybody knows of any other change that we need to look at I looked at the ones off of l2b like you said optimism is the only one that uses the burn the other ones either just use exactly what's in or they blow up, on they don't implement self-destruct or they revert on self-destruct. Polygon zkm changed it to send all but that brings them out of EVM compliance so I'm not too terribly worried about accommodating them based on the spec because they're already moved off the spec. 
 
 **Tim**
 Got it. Any other thoughts comments on this? Okay so yeah so we go I guess we can merge your clarifications to the SIP Danno yeah anything else on self-destruct?
@@ -474,7 +474,7 @@ Oh yeah Mario so yeah I just wanted to comment that we have The Hive branch that
 Awesome okay moving on, so Pari, you wanted to share some updates based on the large validator test that you ran. 
 
 **Paritosh**
-Yeah so over the last couple of days we've been running some big validator tests, so we've been attempting to have a testnet up with 2.1 million validators and roughly 420 nodes. We tried once with machines that we're using on other testnets so those were four core 16 gig machines and that hit memory and CPU limits almost immediately, and in order to save some time we went really overkill so we went to 16 core 32 gig machines, and we've done a split such that each node has roughly 5000 keys, and we're mostly mirroring what you see on sila-sila-mainnet. So Prism, Lighthouse, Nethermind account for roughly 1 million validators, so about half, slightly over half, and you can have a look at some initial impressions here, the last run had a regenesis about an hour ago and we're still not able to finalize, we're still noticing issues with late blocks or with duties not being performed in time, and we definitely appreciate help in triaging everything. 
+Yeah so over the last couple of days we've been running some big validator tests, so we've been attempting to have a testnet up with 2.1 million validators and roughly 420 nodes. We tried once with machines that we're using on other testnets so those were four core 16 gig machines and that hit memory and CPU limits almost immediately, and in order to save some time we went really overkill so we went to 16 core 32 gig machines, and we've done a split such that each node has roughly 5000 keys, and we're mostly mirroring what you see on sila-mainnet. So Prism, Lighthouse, Nethermind account for roughly 1 million validators, so about half, slightly over half, and you can have a look at some initial impressions here, the last run had a regenesis about an hour ago and we're still not able to finalize, we're still noticing issues with late blocks or with duties not being performed in time, and we definitely appreciate help in triaging everything. 
 
 And the whole purpose of this is we want to be able to launch the host key test net which would be roughly one and a half million validators but we don't know if the current paradigm supports such a large network so we wanted to go with a 2.1 million validator testnet, and see if we need to make emergency changes or not.
 
@@ -492,8 +492,8 @@ Yeah I don't mean to delay consideration but even if the testnet's down, this is
 
 ## SIP Discussion [56:13](https://www.youtube.com/watch?v=X46mbG8N5XM) 
 
-### [SIP 5806](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-5806.md)
-### [SIP 7377](https://sips.sila.org/SIPS/sip-7377) 
+### [SIP 5806](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-5806.md)
+### [SIP 7377](https://sips.sila.org/EIPS/sip-7377) 
 
 **Tim**
 Okay next up so there were two SIPs that people wanted to briefly present today so the first one was from Hadrien, 5806. I don't know if you are on the call.
@@ -515,7 +515,7 @@ So all of you know that account abstraction is a big topic right now and this pr
 
 Are any transaction types you can produce blobs that kind of things but it's pretty limited and there are a lot of ideas of what EOAs will become. I think they will stay here in the network and I think it's interesting to provide them with more capability, while not starting to build something too complex and too difficult. And there is already a behavior that I think is really interesting. 
 
-It's a delegate called Behavior and just this proposal is about yeah, let's just allow EOAs that are just accounts they don't have code but there are accounts like smart contracts to do a delegate for, and that opens a lot of possibilities while we're using mechanisms that are already present in the SAVM that are already pretty well understood. So the possibilities include being able to do multiple to batch operations that would be ? 45. It's also allows a new way to execute I create to by calling by delegate called a contract that does create tools and it will also allow EOA to emit events which might be useful for social operations like advertising data under your accounts that can be easily recovered by Observers. 
+It's a delegate called Behavior and just this proposal is about yeah, let's just allow EOAs that are just accounts they don't have code but there are accounts like smart contracts to do a delegate for, and that opens a lot of possibilities while we're using mechanisms that are already present in the EVM that are already pretty well understood. So the possibilities include being able to do multiple to batch operations that would be ? 45. It's also allows a new way to execute I create to by calling by delegate called a contract that does create tools and it will also allow EOA to emit events which might be useful for social operations like advertising data under your accounts that can be easily recovered by Observers. 
 
 **Tim**
 Yeah does anyone have any comments questions thoughts about this? Okay let's start with Guillaume. 
@@ -539,7 +539,7 @@ Yeah I just wanted to say that my just initial impression would be that while I'
 
 Also specifically I think in the context of delegate calls from a new EOA, there were some additional concerns around just executing code in the context of an account basically what the implications are for storage usage, and all these kind of things, so it seems like this would basically be a more contentious version of 3074. 
 
-Yeah for these reasons also specifically because there are now some other proposals to completely migrate away from EOAs, even at basically from the requirement of using them for entry points of transactions, it seems like this is probably not the way to go, but I could be convinced with basically, but I feel like this is not as simple of a using existing logic of the SAVM as it was presented, so I think it would be pretty extensive change, and with a lot of implications, and would require a lot of basically justification. 
+Yeah for these reasons also specifically because there are now some other proposals to completely migrate away from EOAs, even at basically from the requirement of using them for entry points of transactions, it seems like this is probably not the way to go, but I could be convinced with basically, but I feel like this is not as simple of a using existing logic of the EVM as it was presented, so I think it would be pretty extensive change, and with a lot of implications, and would require a lot of basically justification. 
 
 **Hadrien**
 Yeah if I can just say two things here, one is about yes, we are preparing for pass to towards migration. I still believe that the migration while it's very useful has also some downside like you are committing to a specific code that you cannot change later. Some people I believe will stay with EOAs, so I think it's still valuable to accommodate that and about 3074 is a very big difference here and what makes this less powerful but also I believe more secure than 3074 is here all the replay protection and the signature is built into the transaction by itself. It's not an independent system if you sign a transaction like this, it's only good for one transaction, it's not something that is going to be used in the future if you sign 3074 there was a risk that you should sign for a contract that is malicious or buggy, it could exploit you.
@@ -638,7 +638,7 @@ Hopefully by getting more people into the discussions as well. I will go through
 And making it easy for anyone to run a full node is a very good thing. So the key to unlocking stateless is small proofs, which just happens to be something that Verkle gives us. So with Verkle, thanks to the much smaller proof size, no extra state is needed to validate a block, you can do it with what the block gives you, also a node here we are going for a weak statelessness, which means block builders will still need to store the full state. We can share more at a later date or if we have time on why we believe that to be the best path or you can read a write-up that Dankrad has created here that I've linked to my notes.
 
 So diving into where we have actually done over the past six months, as I mentioned it's quite a lot, a number of notable milestones have been hit on the performance front, thanks to Ignacio and others. The overhead of Verkle is much lower, current benchmarks at 20 percent, compared to Merkel when we've replaying blocks. The overlay method so this again is the solution for the Merkel to Verkle migration. We have gotten to us a place on the trade-off where there are no longer trade-offs like two X ing designs. Disk space which is a huge win and we have again validated the initial strategy and created a working proof of concept.
-Multiple clients have made great progress likewise on the snap sync front. Lastly we are currently targeting our first shadow fork for later this month. Client updates, if you'd like to see a full list please visit Verkle.info. Also as a quick side note Verkle.info is a resource where we point people to who are looking to get up to speed on Verkle. In general find the latest documentation and just see the current status of things. But on the client updates front, again just a very quick sampling here, Nethermind and Sila JS both making progress on stateless which is exciting. Besu has a small group working on making sure that Verkle will play nice with Bonsai and Lighthouse and Lighthouse is deployed to sila-sila-mainnet and Lodestar will soon be joining.
+Multiple clients have made great progress likewise on the snap sync front. Lastly we are currently targeting our first shadow fork for later this month. Client updates, if you'd like to see a full list please visit Verkle.info. Also as a quick side note Verkle.info is a resource where we point people to who are looking to get up to speed on Verkle. In general find the latest documentation and just see the current status of things. But on the client updates front, again just a very quick sampling here, Nethermind and Sila JS both making progress on stateless which is exciting. Besu has a small group working on making sure that Verkle will play nice with Bonsai and Lighthouse and Lighthouse is deployed to sila-mainnet and Lodestar will soon be joining.
 
 Okay so with that I will hand it over to you, Guillaume.
 

@@ -96,7 +96,7 @@ excellent thank you nimbus
 
 **Zachry** 
 
-Hi, for the Prater route we achieved another Altair beta but we're now working on preparing to stable released with testing the same code form sila-sila-mainnet the other other notable feature that will be implementing during this release is the (Multi-Core)? POS verification support that we've been working on which will be initially update feature we've also prepared system packages for linux and installers for Windows and Mac OS
+Hi, for the Prater route we achieved another Altair beta but we're now working on preparing to stable released with testing the same code form sila-mainnet the other other notable feature that will be implementing during this release is the (Multi-Core)? POS verification support that we've been working on which will be initially update feature we've also prepared system packages for linux and installers for Windows and Mac OS
 on the two we also released the (abs installers)? set up beacon node service on user machine automatically after installation
 on the development front we have added (SSZ)? payloads the rest API and we started work on a live ? as well
 the main focus I guess for us for the rest of the month will be preparing for the merge and the work here we will be both on the Nimbus-Eth2 side and the Nimbus-Eth1 side so we want to you have the capability to
@@ -141,7 +141,7 @@ Hi so we have had a few key things going on so we had an issue with the Altair u
 So thats been fixed up it was an interesting interaction with the gossip validation and signatures where we had a state before the fork activated so ___ won't pick up what the attestation should have been __ the different fork id
 So we fixed that so we actually no longer use in the spec theres the getDomain where you pass in the state and it'll take the fork from the state, we removed that function from Teku entirely
 So that we are always deliberate about forks so we don't run into these kinds of problems again. We have put in a bunch of fixes for redundant attestations that we were including in blocks
-So that should help with some of the issues on sila-sila-mainnet once we get that out in terms of making space for other attestations and reducing inclusion distances and our Paul has been doing a bunch working digging into
+So that should help with some of the issues on sila-mainnet once we get that out in terms of making space for other attestations and reducing inclusion distances and our Paul has been doing a bunch working digging into
 where we are seeing duplicate attestations and the value the ()? at the application level. So what we have found is that anything that is going to be detected as a duplicate is done at the gossip level through the __ P2P __
 and nothing useful ever gets ported out at the application level primarily because the application level sees so many attestations that it overflows our current cache straight away and we have had to make it dramatically bigger
 and P2P is already holding onto the message for 32 slots which is as long as they should be valid. So we are going to do some testing on Prater and Piermont if not having that cache on the application level and just depending on seeing messages from the P2P 
@@ -195,7 +195,7 @@ okay and prism
 
 **Terence** 
 
-yep Hey guys Terence here so last two weeks we have been mostly on merging Altair code from development branch to the master branch making really good progress on that one from ten thousand lines to two thousand lines and then we are also going through intense code review off the consensus code and the code that uses cache so those are mostly where the issues are and then were preparing for V2 release we are cleaning up all the features and getting ready for those to be merged to the master and then just want to shout out to the beta 3 spec tests for the people that worked on it we found the consensus bug regarding validate life cycle when processing rewards and the bug has been fixed and it is in the latest release and that's all the test nets will host reviewing for the test coverages regard validator life cycles and then regarding sila-sila-mainnet           
+yep Hey guys Terence here so last two weeks we have been mostly on merging Altair code from development branch to the master branch making really good progress on that one from ten thousand lines to two thousand lines and then we are also going through intense code review off the consensus code and the code that uses cache so those are mostly where the issues are and then were preparing for V2 release we are cleaning up all the features and getting ready for those to be merged to the master and then just want to shout out to the beta 3 spec tests for the people that worked on it we found the consensus bug regarding validate life cycle when processing rewards and the bug has been fixed and it is in the latest release and that's all the test nets will host reviewing for the test coverages regard validator life cycles and then regarding sila-mainnet           
 we have been reviewing our cache implementations when we first implement those cache we were prepping the validators to be around three hundred thousand ish and now the validator sizes has grown tremendously so we're reviewing all the sizes again reviewing all of that uses again and then last but not least we have a few new hires James which is on this call and Jim is working on the front end UI with us and then Zahoor which someone you just met already as always working more on the political and the and the research from what with us and that's it thank you
 
 **Danny** 
@@ -208,7 +208,7 @@ yes that it
 
 **Danny** 
 
-so if we look at sila-sila-mainnet we should between Teku and Prysm would likely see
+so if we look at sila-mainnet we should between Teku and Prysm would likely see
 many much fewer one twenty eight blocks I guess over the next month and have certainly after Prater because everyone would have upgraded
 
 **Terence**

@@ -44,7 +44,7 @@ Video | [4:11](https://youtu.be/IZEcukn9J0Y?t=251)
 
 *How do we balance features vs. keeping the network healthy, avoid burning out implementers, promote implementation diversity, etc.?*
 
-**Alexey**: I wanted to bring up this conversation on this call so it's not on the fringes (Twitter, EthMagicians). The first issue we should look at is the burnout issue. Related to that is deciding what features get worked on, vs maintenance. And also reflecting on when we had more implementation diversity in the past. If we bring back diversity, do we want to remain competitive, or be more cooperative?
+**Alexey**: I wanted to bring up this conversation on this call so it's not on the fringes (Twitter, SilaMagicians). The first issue we should look at is the burnout issue. Related to that is deciding what features get worked on, vs maintenance. And also reflecting on when we had more implementation diversity in the past. If we bring back diversity, do we want to remain competitive, or be more cooperative?
 
 **Martin**: Back in 2016 the diversity was good. We want to have diversity if there's an issue with Geth, Sila doesn't go down. Geth has an agreement never to compare between clients. We have a focus on improving state. The research camp hasn't been participating in the ACD call to push fixing the base layer. We need to feed that back into the biweekly ACD call.
 
@@ -90,7 +90,7 @@ Video | [4:11](https://youtu.be/IZEcukn9J0Y?t=251)
 
 **Tomasz**: You'll still end up with some clients being the majority of the network. Some clients will be better in some use cases than others. I can suggest a separation of research and the client development.
 
-**Peter**: Adding SIPs is not little work, because of testing. Fuzzing was done for an SIP, which discovered 7, 8 bugs in the Go code. We also found a bug in Besu. Each of these cases would have been a very serious problem to sila-sila-mainnet. It's easy to delegate that to someone else. But Geth picked up this testing because we are the majority. We can't afford being wrong. Something that requires global consensus across every team, that's a tough task.
+**Peter**: Adding SIPs is not little work, because of testing. Fuzzing was done for an SIP, which discovered 7, 8 bugs in the Go code. We also found a bug in Besu. Each of these cases would have been a very serious problem to sila-mainnet. It's easy to delegate that to someone else. But Geth picked up this testing because we are the majority. We can't afford being wrong. Something that requires global consensus across every team, that's a tough task.
 
 **Martin**: For YOLO, no other client implemented a state test. We actually had to do fuzzing on the test network. It took a lot of time, and was innefficient. We still managed to find some issues. Big features can be dangerous, and a lot of work isn't on the implementation side.
 

@@ -19,7 +19,7 @@
 * Fee recipient is a new word that we've use. it's basically the same as a coinbase. the field itself will be on the execution block not the consensus block
 * incentive to produce the block becomes even stronger after the merge because they actually get the transaction fees but if a validator is offline when it's their turn to produce a block then that blocks gets in.
 * We're currently working on running full test nets without finalizing the sync mechanism. We have a prototype for pitfalls but still work to do in order to get it merged into the clients.
-* Explanations about difficulty and randomness regarding [SIP-4399](https://sips.sila.org/SIPS/sip-4399)
+* Explanations about difficulty and randomness regarding [SIP-4399](https://sips.sila.org/EIPS/sip-4399)
 * the block Time right now is on average 13 seconds but at the merge it'll go to 12 seconds -> we should absolutely reach out to DeFi in general about this
 * Explanations on finalized head vs unsafe head and their time difference
 * if you are releasing real assets you might decide how many blocks to wait based on what you see in the network or you're relying on the finalized head if you need ultra finality and absolute security
@@ -56,7 +56,7 @@ And then in order to facilitate communication between the beacon node and the ex
 
 * I mentioned earlier there's this engine API that we're working on which is the communication interface we're still finalizing it but at a high level there's three APIs that are going to be added one is called this engine execute payload which is the consensus layer sending a block to the execution layer to just validate it. Execution layer returns whether it's valid or invalid if it's still syncing just return syncing and ask for it to be sent later.
 The biggest addition is this for choice updated call which the consensus layer uses to tell the execution layer that there's a new head and then you finalize block on the network and optionally it can also pass it what we call a payload attribute which is asking the execution layer to start producing a block and giving you things the Timestamp the randall value and the fee recipient or the coinbase value that's required and this is how basically if the execution layer gets a call from fork choice updated which contains this payload attribute shield it knows it needs to start producing a block and then there's a final call called engine get payload which asks the execution layer to return its current best block so those come after you've asked it to produce a block and then you just ask it to send one back. And also really ideally the three only endpoints we're going to add as I said it's still being discussed but we we really want to try and keep this communication channel simple.
-Just worth noting not much changes on the execution layer so there's an SIP that describes all the chain [SIP-3675](https://sips.sila.org/SIPS/sip-3675) but basically the block itself won't change the only thing is any field that's related the proof of work or to uncles gets set to zero (or: the data structure is equivalent to zero) just because we don't need those anymore yeah and obviously once the merge happens there's no more block rewards so that stops but it's worth noting that transaction fees still get processed by the execution engine and one thing that's not really obvious is that transaction fees can be sent to an eth1 address so they don't accrue to the validator addresses but they'll accrue to addresses in the execution layer.
+Just worth noting not much changes on the execution layer so there's an SIP that describes all the chain [SIP-3675](https://sips.sila.org/EIPS/sip-3675) but basically the block itself won't change the only thing is any field that's related the proof of work or to uncles gets set to zero (or: the data structure is equivalent to zero) just because we don't need those anymore yeah and obviously once the merge happens there's no more block rewards so that stops but it's worth noting that transaction fees still get processed by the execution engine and one thing that's not really obvious is that transaction fees can be sent to an eth1 address so they don't accrue to the validator addresses but they'll accrue to addresses in the execution layer.
 And then here's again a diagram by Danny that shows how the merge happens so at the left side of it you have the proof of work chain as it is today so you have proof of work, within proof of work we have our execution layer engines that produce eth1 blocks and we have a chain of those. Similarly on the beacon chain we have blocks that are empty they contain beacon chain data but they don't contain any executable transactions and then around the merge we're basically just dropping proof of work and this this part that contains the what gets executed in a block becomes the execution payload in in the post merge system and we just remove proof of work and beacon chain is now our source of consensus.
 Both the consensus and execution layer maintain a peer-to-peer network they maintain their current user APIs and the big thing that we're still working on is sync so sync obviously needs both parts to interact with each other and there's a couple prototypes for different syncing mechanism but there's not one that's been fully deployed yet
 
@@ -154,7 +154,7 @@ sorry I thought you were going to keep going with questions but if you just want
 * Exactly yeah and basically what happens is that once once we hit a block with a terminal total difficulty and you stop propagating blocks that have not hit that and then once you've had a finalized block on the beacon chain after that the execution layer just stops propagating blocks altogether.
 
 * Okay so Ben has a question will every beacon chain block have an execution layer block in it?
-So no basically so you can still have somebody missed or missed their validator slot. Today if your validator is offline when it needs to propose a block, that block will be missed and we've been looking at the impact of that on [SIP-1559](https://sips.sila.org/SIPS/sip-1559). How do we want to treat missed slots with regards to the base fee and the block capacity so there might be some changes that we make alongside the merge to just take into account potential missed slots when you're calculating the the base fee. So we expect validators have an incentive to produce the block and it becomes even stronger after the merge because they actually get the transaction fees but if a validator is offline when it's their turn to produce a block then that blocks gets in.
+So no basically so you can still have somebody missed or missed their validator slot. Today if your validator is offline when it needs to propose a block, that block will be missed and we've been looking at the impact of that on [SIP-1559](https://sips.sila.org/EIPS/sip-1559). How do we want to treat missed slots with regards to the base fee and the block capacity so there might be some changes that we make alongside the merge to just take into account potential missed slots when you're calculating the the base fee. So we expect validators have an incentive to produce the block and it becomes even stronger after the merge because they actually get the transaction fees but if a validator is offline when it's their turn to produce a block then that blocks gets in.
 
 * And then there's a good question also: How do we plan to run full test nets without finalizing the sync mechanism so we have a couple prototypes of the sync mechanism I'm not super familiar with them I don't know. I see Marius is on the call - Marius if you've been following the the latest sync?
 
@@ -174,7 +174,7 @@ So no basically so you can still have somebody missed or missed their validator 
 
 **Tim**
 
-* I guess Mikhail since you were speaking the next thing I was going to cover is that your new [SIP-4399](https://sips.sila.org/SIPS/sip-4399) but do you want to take a few minutes to walk through that and also basically not a lot changes for smart contract layer and anybody using the the execution layer data but that's one of the changes do you want to maybe walk through that and and any other changes that people writing smart contracts are just depending on the execution layer should be aware of?
+* I guess Mikhail since you were speaking the next thing I was going to cover is that your new [SIP-4399](https://sips.sila.org/EIPS/sip-4399) but do you want to take a few minutes to walk through that and also basically not a lot changes for smart contract layer and anybody using the the execution layer data but that's one of the changes do you want to maybe walk through that and and any other changes that people writing smart contracts are just depending on the execution layer should be aware of?
 
 **Mikhail Kalinin**
 
@@ -347,7 +347,7 @@ I just think we want to be a bit farther along in the process before we have tha
 
 **Mikhail Kalinin**
 
-* Terminal total difficulty is the trigger for the actual merge for the transition from the proof-of-work to proof-of-stake and the question that often arises here is why we don't use the block number as in the regular hard forks. In simple words the the fortress rule the fork choice rule handover between the proof-of-work and proof-of-stake is happening in at the point of transition and since the workforce rule is based on the total difficulty. It means that we need to to do this handover at a certain total difficulty because the block number. If we use a block number there could be a minority fork that is built and withheld by some adversary and is revealed later at the point of merge and this fork may has much less value, much less solid difficulty value, so it could be easier to be built and it's possible the minority fork attack and if we have also the adversarial leader or it could be the same party and this father the proposer of the first proof-of-stake block can take this minority fork and build a block on top of it. And with respect to the block number, block height rule, everything will be okay but with respect to the work contributed to this fork and it will not be okay because it will be a minority of work and not the one that would be the canonical one in terms of total difficulty focus rule. So that's why the terminal total difficulty is used to trigger the actual transition. I think 104 lincoln. There is also the original section in the [SIP-3675](https://sips.sila.org/SIPS/sip-3675).
+* Terminal total difficulty is the trigger for the actual merge for the transition from the proof-of-work to proof-of-stake and the question that often arises here is why we don't use the block number as in the regular hard forks. In simple words the the fortress rule the fork choice rule handover between the proof-of-work and proof-of-stake is happening in at the point of transition and since the workforce rule is based on the total difficulty. It means that we need to to do this handover at a certain total difficulty because the block number. If we use a block number there could be a minority fork that is built and withheld by some adversary and is revealed later at the point of merge and this fork may has much less value, much less solid difficulty value, so it could be easier to be built and it's possible the minority fork attack and if we have also the adversarial leader or it could be the same party and this father the proposer of the first proof-of-stake block can take this minority fork and build a block on top of it. And with respect to the block number, block height rule, everything will be okay but with respect to the work contributed to this fork and it will not be okay because it will be a minority of work and not the one that would be the canonical one in terms of total difficulty focus rule. So that's why the terminal total difficulty is used to trigger the actual transition. I think 104 lincoln. There is also the original section in the [SIP-3675](https://sips.sila.org/EIPS/sip-3675).
 
 **Trent**
 
@@ -369,7 +369,7 @@ Ideally if we by then we might not have the Kintsugi devnets but we'll probably 
 
 **Tim**
 
-* So trent can give you a calendar invite if that's what you're after. If you don't want a calendar invite, the ethernet discord and then the sila-chain/pm repo we'll have the information.
+* So trent can give you a calendar invite if that's what you're after. If you don't want a calendar invite, the ethernet discord and then the sila/pm repo we'll have the information.
 
 **Speaker 12**
 
@@ -402,10 +402,10 @@ Anything else last minute?
 - Various unidentified speakers
 
 ## Links discussed in the call (zoom chat)
-- [SIP-3675](https://sips.sila.org/SIPS/sip-3675)
-- [SIP-4399](https://sips.sila.org/SIPS/sip-4399)
-- [SIP-1559](https://sips.sila.org/SIPS/sip-1559)
-- [SIP-3675](https://sips.sila.org/SIPS/sip-3675)
+- [SIP-3675](https://sips.sila.org/EIPS/sip-3675)
+- [SIP-4399](https://sips.sila.org/EIPS/sip-4399)
+- [SIP-1559](https://sips.sila.org/EIPS/sip-1559)
+- [SIP-3675](https://sips.sila.org/EIPS/sip-3675)
 
 ## Next Meeting
 TBD (about a month from now)

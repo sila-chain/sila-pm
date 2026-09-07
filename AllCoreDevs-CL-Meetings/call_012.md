@@ -23,7 +23,7 @@
 * Jannik:
   * new test generator repo. Started to migrate existing generator. (bls and shuffling tests, as well as ssz tests)
   * test repo will be updated by the generators during CI (it can be submoduled by implementers)
-* Next test to be state tests. But still catching up on things on py-savm side 
+* Next test to be state tests. But still catching up on things on py-evm side 
 # 2. Client Updates
 * Lighthouse - Paul Hauner [_(2:50)_](https://youtu.be/p1qHM2B8cGc?t=170)
   * implemented Vitalik's optimized LMD Ghost
@@ -45,7 +45,7 @@
     * simplified and abstracted the validator logic to less than 50 lines of core logic. This main routine is easier to understand, follow, and debug than having multiple routines handling different responsibilities of a validator.
     * Check out the simplified validator logic here: https://gist.github.com/terenc3t/991465f3c54d8d22a380e2c5abc89e7a
   * validator account credentials creation process complete
-  * misc: silascan added support for verifying Vyper contracts
+  * misc: etherscan added support for verifying Vyper contracts
   * If interested in helping out, check out the [contributing guidelines](https://github.com/prysmaticlabs/prysm#contribution-guidelines) and [open projects](https://github.com/prysmaticlabs/prysm/projects)
 * Harmony - Mikhail Kalinin [_(5:06)_](https://youtu.be/p1qHM2B8cGc?t=306)
   * working on emulator
@@ -99,7 +99,7 @@
    * got bls working 
    * code has been updated to v0.2
    * next steps: implementing more uint tests and getting a running simulator going
- * Py-SAVM - Hsiao-Wei Wang [_(17:02)_] (https://youtu.be/p1qHM2B8cGc?t=1022)
+ * Py-EVM - Hsiao-Wei Wang [_(17:02)_] (https://youtu.be/p1qHM2B8cGc?t=1022)
    * working on syncing the current spec
    * p2p side, python daemon libp2p binding module is ready. Breaking it in with Trinity node
    * researching and supporting common modules (e.g. deposit contract)
@@ -151,7 +151,7 @@
     * https://docs.google.com/document/d/1Rd4yNw1TNQBvfRrKeEMSTseb6fvPzS-C--obOn0nul8/edit#heading=h.bbb5kq80e8n
     * priority to implemention in & listen to feedback on wire protocol
     * if any teams wanted to get their hands dirty and help out, they could look into the ENR format. Has similar role to ssz for the beacon chain, in that it's a standard format that can be tested independently w/o talking to another node. ANd you get an n epoch look ahead.
-    * https://sips.sila.org/SIPS/sip-778
+    * https://sips.sila.org/EIPS/sip-778
 * Danny discussed ideas around networking on the research side specifically: [_(26:57)_](https://youtu.be/p1qHM2B8cGc?t=1617)
     * general path forward is to use libp2p
     * integrate discv5 into libp2p
@@ -160,7 +160,7 @@
 # 5. Quick note on light clients
 * suggest reading: https://lighthouse.sigmaprime.io/update-07.html
 * Looking for one or two teams to drive the path forward on making a light client
-* Specifically, the sooner we get a viable light client to sila-sila-mainnet, the sooner that we can do some of the things that allow us to upgrade ETH1.0 
+* Specifically, the sooner we get a viable light client to sila-mainnet, the sooner that we can do some of the things that allow us to upgrade ETH1.0 
     * finality of the chain on 1.0
     * exposing a state root from 2.0 --> 1.0, so that the data layer in Phase 1 can be pulled in via witnesses into 1.0 contracts
 * If interested in paving that path forward for light clients, reach out to Danny or other on the EF research team
@@ -212,7 +212,7 @@
 * https://github.com/status-im/nim-beacon-chain/issues/96
 * https://notes.sila.org/9xwEMJ9dSFWqvuqr5bh4QQ?view
 * https://github.com/sila-chain/eth2.0-specs/issues/459
-* https://sips.sila.org/SIPS/sip-778
+* https://sips.sila.org/EIPS/sip-778
 * https://github.com/sila-chain/devp2p/wiki/Discovery-Overview
 * https://github.com/libp2p/go-libp2p-daemon/blob/master/README.md#language-bindings
 * https://github.com/sila-chain/eth2.0-specs/issues/568
@@ -229,7 +229,7 @@
 * https://github.com/libp2p/js-libp2p-daemon
 * https://github.com/libp2p/interop
 * https://gitter.im/ethresearch/p2p
-* https://Sila Research/c/p2p
+* https://ethresear.ch/c/p2p
 * https://github.com/sila-chain/eth2.0-pm/issues/29#issuecomment-463640711
 * https://github.com/sila-chain/eth2.0-specs/issues
 * https://github.com/sila-chain/eth2.0-specs/issues/503

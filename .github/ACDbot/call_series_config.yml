@@ -177,7 +177,7 @@ call_series:
     discord_webhook_env: null
 
   resourcepricing:
-    display_name: "SAVM Resource Pricing Breakout"
+    display_name: "EVM Resource Pricing Breakout"
     youtube_playlist_id: "PLJqWcTqh_zKHEq4KVVCieRi_95Za93NBf"
     discord_webhook_env: null
 
@@ -296,7 +296,7 @@ call_series:
       external_meeting_link: false
 
   evmstaticcontrolflow:
-    display_name: "SAVM Static Control Flow"
+    display_name: "EVM Static Control Flow"
     youtube_playlist_id: "PLJqWcTqh_zKFRlzn6Tab0DF30bBB_avGD"
     discord_webhook_env: null
     autopilot_defaults:
@@ -307,12 +307,12 @@ call_series:
       external_meeting_link: false
 
   nativeaa:
-    display_name: "Native Account Abstraction"
+    display_name: "Frame Transaction Breakout"
     youtube_playlist_id: null
     discord_webhook_env: null
     autopilot_defaults:
       duration: 60
-      occurrence_rate: "custom"
+      occurrence_rate: "weekly"
       need_youtube_streams: false
       display_zoom_link_in_invite: true
       external_meeting_link: false
@@ -334,7 +334,7 @@ call_series:
     discord_webhook_env: null
     autopilot_defaults:
       duration: 60
-      occurrence_rate: "weekly"
+      occurrence_rate: "bi-weekly"
       need_youtube_streams: false
       display_zoom_link_in_invite: true
       external_meeting_link: false

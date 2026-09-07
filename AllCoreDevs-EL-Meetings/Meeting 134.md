@@ -305,7 +305,7 @@ So I essentially want input on this call. Does anyone have any preferences on ei
 
 **Stokes**: All right, and if you're going block by block like the withdrawal will be there and we know that it succeeds so.
 
-**Danny**: I think the one use case you don't really get is like I'm a validator. I turn on my node and I just want to have, I know my withdrawal index, and I want to ask if it happened or not, you know where it happened. If this is right, otherwise yeah you can scan I mean and there's sequential so you know you can do a binary search to find where your were received happened or actually yeah that you can actually know if what you received happened, very quickly, because you can look at the latest withdrawal. And if it's greater than your receipt index, and it has happened so there's three things that you can do without logs to probably handle these cases outside of the savm.
+**Danny**: I think the one use case you don't really get is like I'm a validator. I turn on my node and I just want to have, I know my withdrawal index, and I want to ask if it happened or not, you know where it happened. If this is right, otherwise yeah you can scan I mean and there's sequential so you know you can do a binary search to find where your were received happened or actually yeah that you can actually know if what you received happened, very quickly, because you can look at the latest withdrawal. And if it's greater than your receipt index, and it has happened so there's three things that you can do without logs to probably handle these cases outside of the evm.
 
 **Tim Beiko**: Okay and Ansgar you have your hands up..
 
@@ -405,7 +405,7 @@ So I essentially want input on this call. Does anyone have any preferences on ei
 
 **Protolambda**: The agenda was to metal spec banks, the benchmarks and these optimizations.
 
-**Ansgar Dietrichs**: Right and when I said that I think that it's worth considering as well, but there's no necessity to have a mental support for these transactions like right at the time 10 minutes. So basically, this would not necessarily have to be a binding constraint to bring into sila-sila-mainnet  we could launch without support and then of course it  will be slow wrap up for using those and it's time for me at the beginning to just only because of course notes would support having that locally fed to the medical for like you, they could just run their own taking nodes that they could operate at that great and have like a separate network for that I will be it's fine if we only get that support later, of course, not ideal, but so this is not necessarily like strange to go.
+**Ansgar Dietrichs**: Right and when I said that I think that it's worth considering as well, but there's no necessity to have a mental support for these transactions like right at the time 10 minutes. So basically, this would not necessarily have to be a binding constraint to bring into sila-mainnet  we could launch without support and then of course it  will be slow wrap up for using those and it's time for me at the beginning to just only because of course notes would support having that locally fed to the medical for like you, they could just run their own taking nodes that they could operate at that great and have like a separate network for that I will be it's fine if we only get that support later, of course, not ideal, but so this is not necessarily like strange to go.
 
 **Tim Beiko**: Right Andrew you also had your hand up, and I think, to get down the road back up to you have any comments you want to make. Okay anyone else have comments and thoughts on 4844.
 
@@ -419,7 +419,7 @@ So I essentially want input on this call. Does anyone have any preferences on ei
 
  We are starting to have proposals which clearly span across both so the two things we talked about today are good examples of that  it's quite hard to reason about like what the entire spectrum something should be and and and how the different parts all work together and in parallel, there are folks working on an executable spec for the execution layer which aims to kind of overtime compliment to replace the yellow paper as a canonical spec for them. So I had a proposal that I put together about how we could harmonise all of this, and just share it in the chat at a very high level. The idea is that We would keep code, the sips as the way to describe changes provide the motivation, the rationale. 
 
-The security considerations and also just have like a tip number that's easy to reference within the Community. I'm using these for both consensus layer and execution layer changes and but then. Over time, basically moved the implementation sections to the execution specifications, rather than having them live directly in the SIP itself. So that you know the benefits we get there is that it is like harmonising across the beacon chain and the execution layer so you can link both So if you have any SIP like we can change withdrawals. You can just say hey here's the change to the executions back to us to change the consensus specs and maybe even the API repositories and then see if there's always been something like this big concern with like that we don't have a lot of SIP editors so we want it to be easy for them to actually review the sips and one of the things that's actually quite hard for them to review is when people put links in the SIPS because there's a bunch of dead links over time it's hard to assess the quality. So, by having links out to just the different specs repo and you can have a pretty easy to enforce rule that only allows links that you know these two or three repositories and  just like in the API if it has a link elsewhere and and then, if you know the SIP author wants to add a whole bunch of links, as part of their PR to the to the specs rebuilding them, they can do that. But it's not like it's not blocked in the SIP process, and I know Greg you had some comments about this is Greg still on the call. So yeah Greg you had some comments about this i'll let you share them I also put together an East magicians link for people to discuss.
+The security considerations and also just have like a tip number that's easy to reference within the Community. I'm using these for both consensus layer and execution layer changes and but then. Over time, basically moved the implementation sections to the execution specifications, rather than having them live directly in the SIP itself. So that you know the benefits we get there is that it is like harmonising across the beacon chain and the execution layer so you can link both So if you have any SIP like we can change withdrawals. You can just say hey here's the change to the executions back to us to change the consensus specs and maybe even the API repositories and then see if there's always been something like this big concern with like that we don't have a lot of SIP editors so we want it to be easy for them to actually review the sips and one of the things that's actually quite hard for them to review is when people put links in the EIPS because there's a bunch of dead links over time it's hard to assess the quality. So, by having links out to just the different specs repo and you can have a pretty easy to enforce rule that only allows links that you know these two or three repositories and  just like in the API if it has a link elsewhere and and then, if you know the SIP author wants to add a whole bunch of links, as part of their PR to the to the specs rebuilding them, they can do that. But it's not like it's not blocked in the SIP process, and I know Greg you had some comments about this is Greg still on the call. So yeah Greg you had some comments about this i'll let you share them I also put together an East magicians link for people to discuss.
 
 **Greg Colvin**: yeah Great a lot of this will just need to discuss as editors we've only got about seven minutes left, so I don't think we can dig very deep um there's some good ideas there, but I think it's a lot more intrusion on the SIP process and we want to see, and in some ways it's making it harder.The whole point of the executable spec is, it is a another client so in the usual process the clients, often with the help of the sip author implement the sip.  The beauty of the executable spec is that once that client is running and is on the main net and in consensus that client becomes the reference. So I actually don't expect that a core SIP could be a totally complete and accurate reference when it's done the the network itself is ground truth and so having one client that we can point to and say we intend for that to be actual reference is great. But whether we try to pull that back into the p as a diff against a particular implementation doesn't doesn't really seem to help matters I don't think that's where the bottleneck is and I don't think the issue of references is really directly related that that's a different discussion we're having I disagree on that one too.
 
@@ -538,7 +538,7 @@ April 1st, 2022 @ 1400 UTC
 
 00:20:58	**Micah Zoltu**:	Even our dev testnets are dominated by geth:prysm?  😢
 
-00:21:21	**Pari**:	Starting to be, the devnets need to reflect sila-sila-mainnet 🙂
+00:21:21	**Pari**:	Starting to be, the devnets need to reflect sila-mainnet 🙂
 
 00:21:23	**Justin Florentine**:	No, kiln didn’t halt when it happened
 
@@ -570,7 +570,7 @@ April 1st, 2022 @ 1400 UTC
 
 00:33:47	**Pari**:	Definitely, its part of the plan. We’d like to have that done before we have to make a call on merging testnets.
 
-00:35:11	**Marius Van Der Wijden (M)**:	a long running sila-sila-mainnet shadow fork would also work as a great benchmark for client performance
+00:35:11	**Marius Van Der Wijden (M)**:	a long running sila-mainnet shadow fork would also work as a great benchmark for client performance
 
 00:36:46	**Tim Beiko**:	First time in a while there are more people than can fit in the zoom screen!
 
@@ -642,7 +642,7 @@ latest = unsafe
 
 00:51:43	**Greg Colvin**:	Good morning.  If a legislature tried to pass a law saying “everyone should get up an hour earlier in the summer” it would never fly.  I just discovered the one clock in my house I neglected to reset was the one I was watching.
 
-00:51:48	**Jamie Lokier**:	The sila-sila-mainnet merge TTD may not be known at the time dapp developers want to deploy a merge-ready contract, for comparisons against it.  TTD is sometimes changed at the last minute :-)
+00:51:48	**Jamie Lokier**:	The sila-mainnet merge TTD may not be known at the time dapp developers want to deploy a merge-ready contract, for comparisons against it.  TTD is sometimes changed at the last minute :-)
 
 00:56:06	**Stokes**:	awer13 i think was the handle
 
@@ -705,7 +705,7 @@ latest = unsafe
 
 01:11:49	**Stokes**:	there are schemes we can think of using the index like danny was talking about
 
-01:12:32	**Marius Van Der Wijden (M)**:	So 4 withdrawals per block -> 100.000 blocks to withdraw sila-sila-mainnet,  x5/60/24 = 347 days
+01:12:32	**Marius Van Der Wijden (M)**:	So 4 withdrawals per block -> 100.000 blocks to withdraw sila-mainnet,  x5/60/24 = 347 days
 
 01:13:00	**Marius Van Der Wijden (M)**:	probably made a mistake though
 
@@ -759,7 +759,7 @@ latest = unsafe
 
 01:35:44	**Tim Beiko**:	But the code would be in the executable spec
 
-01:35:55	**Tim Beiko**:	And hopefully the code is correct by the time it gets to sila-sila-mainnet!
+01:35:55	**Tim Beiko**:	And hopefully the code is correct by the time it gets to sila-mainnet!
 
 01:37:24	**Sam Wilson**:	https://en.wikipedia.org/wiki/Literate_programming <- this is a concept that's very similar to the execution spec.
 

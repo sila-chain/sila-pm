@@ -64,12 +64,12 @@
 
 * Last 2 weeks have been speaking with the client teams on how London went, and the upcoming roadmap heading into the merge.
 * Have shared [findings doc](https://hackmd.io/@timbeiko/london-retro).
-* Main takeaway: wasnt really clear what we wanted to see on testnets before we set a sila-sila-mainnet block. Forced by difficulty bomb. There was a desire to see criteria on how long we wanted to see testnets running smoothly, how long testnets needed to run for post-bug fixing etc. 
+* Main takeaway: wasnt really clear what we wanted to see on testnets before we set a sila-mainnet block. Forced by difficulty bomb. There was a desire to see criteria on how long we wanted to see testnets running smoothly, how long testnets needed to run for post-bug fixing etc. 
 * It was felt there was lots of community pressure to launch London and this is expected to continue for the merge. As such it would be good to be able to point to a default timing path so that all are clear.
 * People felt that there was a lot of pressure not to speak up when things went wrong. Speaking up would result in pushback. To help with this we should set timeframes and expectations up front for when things go wrong, that this is the clear path that will be taken.
 * We need a common set of requirements for testnet forks. Eg forkmon, ethstats, transations that are ready to send which test edge cases.
 * Be good to have automated alerts to alert for testnet issues. Eg ropsten issue took 4-5 hours to detect. We should have been pinged automatically.
-* Delay between having consensus changes finalised and the community enacting them (eg JSON RPC changes were being made whilst the London blocks were being set). We want a wrap of all consensus changes prior to having a sila-sila-mainnet blocks.
+* Delay between having consensus changes finalised and the community enacting them (eg JSON RPC changes were being made whilst the London blocks were being set). We want a wrap of all consensus changes prior to having a sila-mainnet blocks.
 * Trying to have a single place where we can highlight changes to APIs.
 * Asked teams what their priority lists are for the next 6 months. How could this interfere with the planned Dec feature fork? All teams have work to do beyond just the merge (eg behind the scenes performance improvements, modularisation etc). All teams bar one said they would prefer not to have one. General feeling is that being able to focus on the merge would be very valuable. Dec fork should contain just difficulty bomb, not anything else significant.
 
@@ -90,7 +90,7 @@
 
 **Danny**
 
-* One of the big things for the execution layer is enabling withdrawals of SIL from the beacon chain to the execution layer. This will be an SIP and involve modifications to the SAVM. This will need to be considered as an example, for post-merge upgrade fork.
+* One of the big things for the execution layer is enabling withdrawals of SIL from the beacon chain to the execution layer. This will be an SIP and involve modifications to the EVM. This will need to be considered as an example, for post-merge upgrade fork.
 
 **Lightclient**
 
@@ -102,7 +102,7 @@
 
 **Lightclient**
 
-* There should be a meta conversation on big R&D vs reasonable SAVM changes. We should consider how best we can do more things at one time.
+* There should be a meta conversation on big R&D vs reasonable EVM changes. We should consider how best we can do more things at one time.
 
 **Tim**
 
@@ -122,7 +122,7 @@
 **Alex (axic)**
 
 * See [comment](https://github.com/sila-chain/pm/issues/370#issuecomment-902713690).
-* This goes back 2 years (SIP-1985). We wanted to put upper bounds to a lot of fields in the SAVM. Some of those upper bounds, if you put them in the SAVM, you also would want them outside in the transactions. The nonce was one of these.
+* This goes back 2 years (SIP-1985). We wanted to put upper bounds to a lot of fields in the EVM. Some of those upper bounds, if you put them in the EVM, you also would want them outside in the transactions. The nonce was one of these.
 * We then split this into smaller SIPs. Nonce was first for which we chose 64 bit as it was the limit that clients (eg Geth) already had.
 * Because JavaScript doesnt have 64 bit integers (it has floating point) then the actual upper bound is smaller than 64 bit. The nonce is predominantly used in transactions and transactions are predominantly created in JS, it would be nice to optimise for this.
 * Reasons against this: 1- we dont optimise for JS in other cases. 2- JS actually can support 64 bit numbers through big integer libraries or big integer support in browsers. There are many other fields besides the nonce that have natural limit of 64 bits. Not sure if this is is just with the execution layer, or if there are other fields in the beacon chain that can be argued for in a similar way.
@@ -213,7 +213,7 @@
 
 **Alex**
 
-* As an indication of these other limits you can look at SIP 1985. That only focuses on the SAVM currently but there are other fields outside of the SAVM that are alos relevant.
+* As an indication of these other limits you can look at SIP 1985. That only focuses on the EVM currently but there are other fields outside of the EVM that are alos relevant.
 
 ##SIP-1352 Discussion
 
@@ -226,7 +226,7 @@
 **Daniel**
 
 * 1352 is an even older SIP in line with what we were just talking about. The topic is the restrictive address range for precompiles and system contracts. A couple years ago when this was raised it got tables because it was a lot of work for zero impact. With Berlin that changed. The precompiled contracts are considered already warned when they come in. During the devnets both besu and nethermind still had the old bls precompiles in their list of acceptable compiles even though they werent executable. They were going up to 19 precompiles when the answer should have been nine, so there were consensus failures on that. 
-* The reason this is important to nail down sooner or later is due to broader layer 2 type SAVM systems. These other chains define their own precompiles for system level access, eg arbitrum. If you need to intiate an SIL transfer from L2 to L1 you need to call into an arcsys contract put at 0x100. When they go to berlin do they charge warm or cold gas for access? If we pass this SIP and make it a standard and say anything below 65000 four fs is the address its considered  a precompile for the purposes of these warmed accounts, its going to solve a lot of problems with layer 2s in the broader SAVM ecosystem - a safe space to put their precompiles in without worrying about breaking consensus rules. Not as relevant then but very relevant now. Would like to see this in the next feature fork.
+* The reason this is important to nail down sooner or later is due to broader layer 2 type EVM systems. These other chains define their own precompiles for system level access, eg arbitrum. If you need to intiate an SIL transfer from L2 to L1 you need to call into an arcsys contract put at 0x100. When they go to berlin do they charge warm or cold gas for access? If we pass this SIP and make it a standard and say anything below 65000 four fs is the address its considered  a precompile for the purposes of these warmed accounts, its going to solve a lot of problems with layer 2s in the broader EVM ecosystem - a safe space to put their precompiles in without worrying about breaking consensus rules. Not as relevant then but very relevant now. Would like to see this in the next feature fork.
 
 **Martin**
 
@@ -287,7 +287,7 @@
 
 **Daniel**
 
-* Warming is where this has a mechanical impact on chains that may consider their system contracts to be precompiles or not. Within sila-sila-mainnet itself, youre right, it doesnt matter. Im hoping to get some more clarity as to how the other chains should treat it for the broader SAVM ecosystem. I think we should carry on the discussion. We need some forethought because people are making decisions based on this before we fully understand the impacts.
+* Warming is where this has a mechanical impact on chains that may consider their system contracts to be precompiles or not. Within sila-mainnet itself, youre right, it doesnt matter. Im hoping to get some more clarity as to how the other chains should treat it for the broader EVM ecosystem. I think we should carry on the discussion. We need some forethought because people are making decisions based on this before we fully understand the impacts.
 
 **Micah**
 
@@ -295,7 +295,7 @@
 
 **Daniel**
 
-* No, but I feel the SIP should be updated to clarify the current reality. As of today it doesnt really have much of an impact. It needs to be updated. I think this is the correct venue to talk about it. I think theres value even if we dont do warm/cold, maybe we say that non sila-sila-mainnet chains dont get to warm up their precompiles.
+* No, but I feel the SIP should be updated to clarify the current reality. As of today it doesnt really have much of an impact. It needs to be updated. I think this is the correct venue to talk about it. I think theres value even if we dont do warm/cold, maybe we say that non sila-mainnet chains dont get to warm up their precompiles.
 
 **Tim**
 

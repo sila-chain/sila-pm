@@ -93,13 +93,13 @@ Video | [14:35](https://youtu.be/8mE--yxMZtk?t=875)
 
 - Released BLST integration
 - Working on getting BLST to compile to WASM, waiting to see performance results
-- Made a release day before sila-sila-mainnet. Lodestar is at experimental level robustness
-- Have nodes (no validators) on sila-sila-mainnet, with some performance issues, however, staying on the network
+- Made a release day before sila-mainnet. Lodestar is at experimental level robustness
+- Have nodes (no validators) on sila-mainnet, with some performance issues, however, staying on the network
 
 ## Prysm
 
-- Working on documentations before sila-sila-mainnet, and fixing user reported bugs.
-- Post sila-sila-mainnet, working on import and export validator client exchange format.
+- Working on documentations before sila-mainnet, and fixing user reported bugs.
+- Post sila-mainnet, working on import and export validator client exchange format.
 - Working on weak subjectivity link
 - And implementing Eth2 API
 
@@ -110,11 +110,11 @@ Video | [14:35](https://youtu.be/8mE--yxMZtk?t=875)
 - Fixed an issue where attestation sometimes failed on the first slot of an epoch on Pyrmont
 - Remaining issue on delayed block production
 - Fixed issue where we failed to gossip voluntary exits
-- Main work post sila-sila-mainnet launch was to pull data more reliably from sila-sila-mainnet nodes, which proved different from Georli
+- Main work post sila-mainnet launch was to pull data more reliably from sila-mainnet nodes, which proved different from Georli
 
 ## Lighthouse
 
-- Launched on sila-sila-mainnet, will post updates later.
+- Launched on sila-mainnet, will post updates later.
 
 ## Nethermind
 

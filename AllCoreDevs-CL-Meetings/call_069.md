@@ -121,7 +121,7 @@ okay how about Lodestar
 **dapLion**
 
                
-Hey everyone so I'm excited to share that finally we have validators running on sila-sila-mainnet and they are doing just fine 
+Hey everyone so I'm excited to share that finally we have validators running on sila-mainnet and they are doing just fine 
                
 almost ninety five ninety six percent of the total possible reward we are getting so super excited to join the club 
                
@@ -284,7 +284,7 @@ so three is fine too
                
 okay I mean it sounds like there is rough consensus for three  the obviously if something comes up we can reevaluate 
                
-but yeah I mean the sooner we move Pyrmont  the sooner we get to sila-sila-mainnet
+but yeah I mean the sooner we move Pyrmont  the sooner we get to sila-mainnet
 
 **Paul**
                
@@ -670,7 +670,7 @@ I was gonna say we we could just say like just from a social consensus standpoin
 
 **Adrian** 
 
-it is an interesting question because sila-sila-mainnet is five million blocks or so also ahead of where the beacon will be 
+it is an interesting question because sila-mainnet is five million blocks or so also ahead of where the beacon will be 
                
 so when the merge happens the head block number drop backwards by a few million 
 
@@ -886,7 +886,7 @@ okay anything else from anyone otherwise you can go ahead and call it early toda
                
 **Terrence**
 
-this one thing I realized that when I am looking at the sila-sila-mainnet validator coms is  that it's slow the creaking of to be to be the same as the Pyrmont  number so we'll have to make a decision on but I do think that we should increase the availability of the con on the ?? side 
+this one thing I realized that when I am looking at the sila-mainnet validator coms is  that it's slow the creaking of to be to be the same as the Pyrmont  number so we'll have to make a decision on but I do think that we should increase the availability of the con on the ?? side 
 
 whether thats post Altair or before it but the we will have made a decision today but I just want to notify people that 
 

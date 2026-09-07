@@ -43,7 +43,7 @@
 * PyEVM (Hsiao-Wei Wang)  [_15:35-16:36_](https://youtu.be/Zl-yusB8oqY?t=935)
     * Helping to review the spec
     * Working on data structures and helper functions
-    * Have internal consensus on the Trinity test net [(Link)](https://github.com/sila-chain/py-savm/issues/1502) and what the components the mvp will contain 
+    * Have internal consensus on the Trinity test net [(Link)](https://github.com/sila-chain/py-evm/issues/1502) and what the components the mvp will contain 
 * Harmony (Mikhail) [_16:41-20:04_](https://youtu.be/Zl-yusB8oqY?t=1001)
     * Catching up with the spec
     * Integrated milagro and using it for bls verification implementation
@@ -157,7 +157,7 @@
 * https://github.com/sila-chain/eth2.0-pm/issues/17
 * https://github.com/sila-chain/sil-keys/blob/master/tests/backends/conftest.py#L35-L66
 * https://github.com/sila-chain/eth2.0-specs/issues/184
-* https://github.com/sila-chain/py-savm/issues/1502
+* https://github.com/sila-chain/py-evm/issues/1502
 * https://github.com/libp2p/go-libp2p-daemon/pull/28/files
 * https://github.com/chronaeon/beigepaper/blob/master/README.md
 * https://github.com/ethresearch/p2p/issues/6
@@ -172,7 +172,7 @@
 # Attendees
 * Akhila
 * Ankit
-* Christoph Burgdorf (py-savm)
+* Christoph Burgdorf (py-evm)
 * Zahary (Status/Nimbus
 * Leo (BSC)
 * Nicolas Gailly (Pegasys)

@@ -113,4 +113,4 @@ It is too early to discuss any sila recovery plans because parity team is still 
 
 ## Attendance
 
-Alex Beregszaszi (EWASM/Solidity), Afri Schoedon (Parity), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), GhaS Shee (Unknown), Greg Colvin (SAVM), Hudson Jameson (Sila Foundation), Martin Holst Swende (geth/security), Mikhail Kalinin (Harmony), Péter Szilágyi (geth), Piper Merriam (pyEVM), Vitalik Buterin (Research & pyethereum), Yoichi Hirai (SAVM)
+Alex Beregszaszi (EWASM/Solidity), Afri Schoedon (Parity), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), GhaS Shee (Unknown), Greg Colvin (EVM), Hudson Jameson (Sila Foundation), Martin Holst Swende (geth/security), Mikhail Kalinin (Harmony), Péter Szilágyi (geth), Piper Merriam (pyEVM), Vitalik Buterin (Research & pyethereum), Yoichi Hirai (EVM)

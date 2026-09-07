@@ -450,7 +450,7 @@ Francesco Risitano: guest, and ZKVM combinations, for example, I believe it was 
 
 113
 00:20:21.570 --> 00:20:34.890
-Francesco Risitano: So, yeah, where it's not necessarily using the SAVM STF guests. So, I've opened an issue for that, and I invite, the community to kind of contribute and discuss on that front.
+Francesco Risitano: So, yeah, where it's not necessarily using the EVM STF guests. So, I've opened an issue for that, and I invite, the community to kind of contribute and discuss on that front.
 
 114
 00:20:36.700 --> 00:20:51.170
@@ -618,7 +618,7 @@ ignacio: We are also including the chain config as part of the stateless input, 
 
 155
 00:26:59.540 --> 00:27:09.829
-ignacio: for a lot of execution environments, been running the tests in IST, which creates some custom forks, running the same guess we're running in sila-sila-mainnet or Debnets.
+ignacio: for a lot of execution environments, been running the tests in IST, which creates some custom forks, running the same guess we're running in sila-mainnet or Debnets.
 
 156
 00:27:10.190 --> 00:27:15.829

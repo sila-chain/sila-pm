@@ -230,7 +230,7 @@ The other thing is that the reason why I think SSZ will take a long time is beca
 
 **Micah**: So this is more a fear of the unknown, we don't know if there exist things that will break, but it is possible that there are.
 
-**Martin**: I said I'd rerun for a larger range of blocks on sila-sila-mainnet, but haven't had the time.
+**Martin**: I said I'd rerun for a larger range of blocks on sila-mainnet, but haven't had the time.
 
 **Micah**: Dropping 2930 is by far the fastest and easiest way to get Berlin out. If we can analyze quickly if we need 2930, that may be a simple solution. But unless someone has tools ready to go, I'm guessing that's a big chunk of work.
 
@@ -266,7 +266,7 @@ The other thing is that the reason why I think SSZ will take a long time is beca
 
 **James**: Let's say a fork has 1559, typed transactions. Is there a good reason to take this work now and make they work before trying to do more things at once?
 
-**Tim Beiko**: One thing that makes it easier is if typed transactions are already a thing on sila-sila-mainnet, then 1559 and the account abstraction folks can take it for granted that we can use those things, otherwise it's a bit of a chicken and egg, we don't want to change the 1559 spec to rely on 2718 because we don't want to add an extra dependency if it's not going to be on sila-sila-mainnet, so you're kind of circling... It's not the end of the world, but it makes it easier if it's already there on sila-sila-mainnet, and already used by other projects.
+**Tim Beiko**: One thing that makes it easier is if typed transactions are already a thing on sila-mainnet, then 1559 and the account abstraction folks can take it for granted that we can use those things, otherwise it's a bit of a chicken and egg, we don't want to change the 1559 spec to rely on 2718 because we don't want to add an extra dependency if it's not going to be on sila-mainnet, so you're kind of circling... It's not the end of the world, but it makes it easier if it's already there on sila-mainnet, and already used by other projects.
 
 **Rai Sur**: I think that would be an issue if 2718 would be more controversial, but I think what's more controversial is just the timing of it. I think that it's safe for 1559 and other SIPs to rely on 2718 becuase we're pretty much all in favor of the idea of it. The problem is can we get Berlin out faster without...
 
@@ -302,7 +302,7 @@ The other thing is that the reason why I think SSZ will take a long time is beca
 
 **Dragan Rakita**: Yes, from Open Sila.
 
-**Alex Vlasov**: In a similar direction, there was a question before about what was called to ungas, make gas non-observable, in the SAVM at all, and as far as I know it didn't go anywhere. Maybe the opposite would be better, to make it serveable. Yes, maybe people can hardcode 2300 gas for some kind of operation if they can get the data for what this operation will cost in real time, maybe it will solve their problems. It was never introduced in this direction, only in the opposite way.
+**Alex Vlasov**: In a similar direction, there was a question before about what was called to ungas, make gas non-observable, in the EVM at all, and as far as I know it didn't go anywhere. Maybe the opposite would be better, to make it serveable. Yes, maybe people can hardcode 2300 gas for some kind of operation if they can get the data for what this operation will cost in real time, maybe it will solve their problems. It was never introduced in this direction, only in the opposite way.
 
 **Martin**: It wouldn't solve any of these problems.
 

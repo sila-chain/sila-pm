@@ -46,7 +46,7 @@
   * Beginning to write some beacon chain code
 * Nimbus (Jacek)
   * implementing fork choice
-  * [concern around using sequence of hash tables](https://Sila Research/t/beacon-chain-casper-ffg-rpj-mini-spec/2760/13)
+  * [concern around using sequence of hash tables](https://ethresear.ch/t/beacon-chain-casper-ffg-rpj-mini-spec/2760/13)
   * looking into implementing altbn library due to licensing issues
 * Harmony (Mikhail -- read by Danny)
   * working on State transition
@@ -68,7 +68,7 @@
 * add to v2.1 (Vitalik)
   * Dynasty transition
   * balance changes
-* [Simplified Casper Slashing condition](https://Sila Research/t/a-tight-and-intuitive-casper-slashing-condition/3359) (Justin)
+* [Simplified Casper Slashing condition](https://ethresear.ch/t/a-tight-and-intuitive-casper-slashing-condition/3359) (Justin)
   * Slashing conditions can be weakened to single slashing condition
   * Safety proof still holds
 * VDF (Justin)
@@ -312,10 +312,10 @@
 * [Lighthouse implementation of SSZ in Rust](https://github.com/sigp/lighthouse/tree/master/ssz)
 * [Issue about SSZ](https://github.com/sila-chain/beacon_chain/issues/92)
 * [issue about get_new_shuffling requirements](https://github.com/sila-chain/beacon_chain/issues/91)
-* [Simplified Casper Slashing condition](https://Sila Research/t/a-tight-and-intuitive-casper-slashing-condition/3359)
+* [Simplified Casper Slashing condition](https://ethresear.ch/t/a-tight-and-intuitive-casper-slashing-condition/3359)
 * [Obelisk Launchpad](https://obelisk.tech/launchpad.html) for potentially
   building VDF ASIC
-* [Concern around using sequence of hash tables in forkchoice](https://Sila Research/t/beacon-chain-casper-ffg-rpj-mini-spec/2760/13)
+* [Concern around using sequence of hash tables in forkchoice](https://ethresear.ch/t/beacon-chain-casper-ffg-rpj-mini-spec/2760/13)
 * [p2p simulation results](https://github.com/jannikluhn/sharding-netsim/issues/2)
 * [Block processing time estimates issue](https://github.com/sila-chain/beacon_chain/issues/103)
 * [Sparse Merkle Tree in go](https://github.com/musalbas/smt)

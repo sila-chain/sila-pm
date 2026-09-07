@@ -15,7 +15,7 @@
     b. possibly be fixed to be able to return the genesis hash
     c. have a nicer abi signature)
 * Constantinople hard fork timing and what to include (continuing conversation from last call).
-    a. SIP 145: Bitwise shifting instructions in SAVM: pretty well-formed, but not 100% implemented or tested.
+    a. SIP 145: Bitwise shifting instructions in EVM: pretty well-formed, but not 100% implemented or tested.
     b. SIP 210: Blockhash refactoring.
     c. EIP859: account abstraction.
     d. SIP 1052: EXTCODEHASH Opcode.
@@ -101,22 +101,22 @@ Video starts at [[5:32](https://youtu.be/8-AZys80RrU?t=5m32s)].
     * Also Jake has been working on abstraction around Hera so we can swap out Binaryen (WASM interpreter) for WAVM (JIT engine)
     * We should be faster than parity if we can do that
     * Working on WAVM integration and benchmarking for Hera to test performance of different interpreters and JITs, and bytecode that can cause the JIT to blow up (JIT bombs) - not worried about those for the testnet launch
-* K-SAVM/K-WASM (Everett)
-    * Working on tech side of integrating SAVM/ewasm
+* K-EVM/K-WASM (Everett)
+    * Working on tech side of integrating EVM/ewasm
     * Trying to allow as much flexibility on K spec side as possible
-    * Taken all blockchain level update functions/opcodes from SAVM (CALL, CREATE, BLOCKHASH, etc.) and pulled them out into their own file called K-EEI (Sila Environment Interface) and define abstract updates that happen on blockchain side/queries that have to happen to implement this functionality
-    * K allows you to mash together two definitions, I'll take K-SAVM and remove that functionality and mash together to make sure existing functionality still passes the tests
+    * Taken all blockchain level update functions/opcodes from EVM (CALL, CREATE, BLOCKHASH, etc.) and pulled them out into their own file called K-EEI (Sila Environment Interface) and define abstract updates that happen on blockchain side/queries that have to happen to implement this functionality
+    * K allows you to mash together two definitions, I'll take K-EVM and remove that functionality and mash together to make sure existing functionality still passes the tests
     * Then it should be straightforward to use this to get a model of K-EWASM
     * We've had a lot of discussion of what is EEI?
         * State changes
         * VM should only handle execution details
-        * SAVM: stack, local memory, pretty much nothing else
+        * EVM: stack, local memory, pretty much nothing else
         * So things like ADD call into VM not EEI
         * Whereas something like SELFDESTRUCT falls on EEI side
-    * Also, there are some sticky opcodes with SAVM like CALLCODE, historically not great things, we'd like to limit their use in ewasm
+    * Also, there are some sticky opcodes with EVM like CALLCODE, historically not great things, we'd like to limit their use in ewasm
         * It would be nice to say there's a set of abstract state update fns that clients can implement
         * Each execution engine e.g. ewasm can choose a subset of that to expose to contracts
-        * Right now the "subset" is everything, it's exposed to SAVM
+        * Right now the "subset" is everything, it's exposed to EVM
         * But e.g. we'd break up SELFDESTRUCT into two ops, one that does the destruct and one that transfers funds
         * We want a "transfer funds" primitive, could be exposed to ewasm, but both that and destruct would have to be called together for SELFDESTRUCT
         * Mostly discussion, occasional updates to the EEI spec at github.com/ewasm/design
@@ -154,7 +154,7 @@ Video starts at [[5:32](https://youtu.be/8-AZys80RrU?t=5m32s)].
             * This is roughly current direction for sharding roadmap and replacement of roadmap for Casper FFG
             * Keeps FFG algorithm (voting, justification, finalization, dynasty changes, etc.) the same but it's implemented in native code rather than in Vyper
             * Beacon chain also pushes us much further along the way towards a final product sharded system
-            * Because things are written natively, optimizations around bitmasks and signature aggregation that aren't available in SAVM, can scale to theoretical maximum (10M SIL, 300k validators), can survive even in absolute practical max (4M validators, "absolutely everyone participating")
+            * Because things are written natively, optimizations around bitmasks and signature aggregation that aren't available in EVM, can scale to theoretical maximum (10M SIL, 300k validators), can survive even in absolute practical max (4M validators, "absolutely everyone participating")
             * Average and worst-case behavior is substantially more feasible than under the old roadmap
             * Two weaknesses
                 * Loses ability to deposit into Casper and withdraw without future hard forks
@@ -187,7 +187,7 @@ Video starts at [[5:32](https://youtu.be/8-AZys80RrU?t=5m32s)].
     * Justin:
         * Some other things to share
         * One advantage is more security since it's not possible to do withdrawal until there's state in the shards so deposits will be frozen for quite some time, we can launch with more confidence, experiment and move faster
-        * All native code in beacon chain, no SAVM, no worries about gas and more future-proof since endgame is to deprecate SAVM 1.0 and much closer to final design as V said
+        * All native code in beacon chain, no EVM, no worries about gas and more future-proof since endgame is to deprecate EVM 1.0 and much closer to final design as V said
         * Allows us to unlock new functionality esp. BLS signatures which radically changes performance properties of the design
         * Beacon chain will have possibly 5s blocks, faster and less variance
         * More unity between Casper and sharding, teams developing these two projects
@@ -216,7 +216,7 @@ Video starts at [[5:32](https://youtu.be/8-AZys80RrU?t=5m32s)].
 
 # Constantinople hard fork timing and what to include (continuing conversation from last call).
 * Things we might like to include (details follow)
-    1. SIP 145: Bitwise shifting instructions in SAVM: pretty well-formed, but not 100% implemented or tested.
+    1. SIP 145: Bitwise shifting instructions in EVM: pretty well-formed, but not 100% implemented or tested.
     1. SIP 210: Blockhash refactoring.
     1. SIP 859: account abstraction.
     1. SIP 1052: EXTCODEHASH Opcode.
@@ -231,7 +231,7 @@ Video starts at [[5:32](https://youtu.be/8-AZys80RrU?t=5m32s)].
     * Hudson: Still 4-5 months out, should be doable before Devcon, SIPs are fairly straightforward so bottleneck probably testing
     * Nick: Should we consider all proposals and approve them on next call?
     * Hudson: Let's go over them now and do approvals next time
-* SIP 145: Bitwise shifting instructions in SAVM: pretty well-formed, but not 100% implemented or tested.
+* SIP 145: Bitwise shifting instructions in EVM: pretty well-formed, but not 100% implemented or tested.
     * Dimitry: test coverage should be pretty easy
         * We have unit test for bitwise implemented already, could make this into a blockchain test
 * SIP 210: Blockhash refactoring
@@ -246,7 +246,7 @@ Video starts at [[5:32](https://youtu.be/8-AZys80RrU?t=5m32s)].
 * SIP 1052: EXTCODEHASH Opcode
     * Nick: We currently have a way to fetch code, though we have precomputed code hash there's no way to fix that inside the VM
     * Lots of situations where it'd be useful to do so, should not cost as much as it does
-    * Add a very simple opcode that fetches code hash without requiring SAVM code to fetch all the code and perform the hashing
+    * Add a very simple opcode that fetches code hash without requiring EVM code to fetch all the code and perform the hashing
     * E.g., I wrote a smart contact that's able to check another contract's bytecode for disallowed opcodes e.g. store, call
     * Can have multiple contracts with the same bytecode
     * Could efficiently recall which contracts you've seen in the past
@@ -276,7 +276,7 @@ Video starts at [[5:32](https://youtu.be/8-AZys80RrU?t=5m32s)].
                 * E.g. BLS signatures, aggregated signatures, ring signatures, Peterson commitments, range proofs, etc., lots of other fancy stuff you can do with EC
     * Hudson: we previously tabled BLAKE2 proposal since we were waiting for ewasm and didn't want to add a lot of precompiles
     * V
-        * the roadmap by which ewasm definitely going into new sharding land and not SAVM 1.0 main chain which realistically will delay its availability
+        * the roadmap by which ewasm definitely going into new sharding land and not EVM 1.0 main chain which realistically will delay its availability
         * most of the work is already done, in some ways it is lower complexity than a lot of the other SIPs since fairly contained
         * BLAKE is legitimately a very fast hash fn
         * Elliptic curve stuff, work already done on integrating a faster library for this into geth so this is a no-brainer
@@ -330,7 +330,7 @@ Video starts at [[5:32](https://youtu.be/8-AZys80RrU?t=5m32s)].
     * Casey: every client would need a wasm interpreter or JIT engine if gas costs low enough but then you wouldn't need implementations of all the precompiles, just the wasm interpreters
     * Alexey: semantics of opcodes simple relative to precompiles, precompiles introduce risk of consensus failures if different clients use different libraries
         * As V mentioned, part of the glue used has gas cost, we might see whether it's overpriced, in geth there's a lot of cost for memory, stack allocation, etc.
-        * Might lower cost of arbitrary EC math on SAVM
+        * Might lower cost of arbitrary EC math on EVM
     * Everett: in terms of consensus failures, precompiles implemented in WASM are way better than external code since everyone has to agree on how to execute WASM anyway
     * Nick: Agree but don't think it makes sense to introduce this now, not reasonable to ask clients to embed a WASM interpreter
     * Everett: We don't need to say clients need this, WASM can be compiled to LLVM

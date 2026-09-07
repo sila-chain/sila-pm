@@ -64,7 +64,7 @@
 ### d. Review time estimate for testing/release of Byzantium.
 
   - [24:27](https://youtu.be/_5Tp_U1jBww?t=1467) The testing team has determined that we are at a place where we can launch the testnet within two weeks, pending the resolution of the Hive consensus issues in CPP we are currently having.
-  - Projected block times for sila-sila-mainnet:
+  - Projected block times for sila-mainnet:
     - 30 second block times on September 22nd
     - 39 seconds October 22nd
   - We set a target date for the Ropsten testnet hard fork for 10 days from now - September 18th. 
@@ -72,7 +72,7 @@
     - We will pick a block time that is around September 18th. This block number will be decided at 14:00 UTC Wednesday September 13th in the core developers chat.
     - We are picking the block number 5 days from now so we can account for difficulty adjustments on testnet that may occur between now and then. This allows us to pick a more accurate block number and adjust for mining changes on testnet.
     - These dates can be changed if we determine that we need more time for testing or major issues are found.
-  - A sila-sila-mainnet fork block number will be decided around or after the testnet hard fork launches.
+  - A sila-mainnet fork block number will be decided around or after the testnet hard fork launches.
     - The testnet will run for at least 3 weeks, which would put a tentative main net hard fork date at October 9th.
     - These dates are very unofficial and can be changed if we determine that we need more time for testing or major issues are found. October 9th is a tentative date assuming that the testnet fork goes smoothly and no major issues are found.
 

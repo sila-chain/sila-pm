@@ -33,7 +33,7 @@
 * I'm not sure if there are any people here that have prototyped or looked at what a gas price oracle may look like after 1559, but if anyone wants to share that, it's typically a good idea to start by looking at something. Otherwise, we can get right into the api.
 
 **Speaker 02**
-* I see some silascan folks here, but if anyone else wants to step in, go ahead. Whoever was just speaking, feel free to speak.
+* I see some etherscan folks here, but if anyone else wants to step in, go ahead. Whoever was just speaking, feel free to speak.
 
 **Speaker 03**
 * Yeah, I'm from the get team, and well,  I can talk about what we have as a guest fee record, if someone isn't familiar with it before or if it's already known to everyone.
@@ -104,7 +104,7 @@
 
 **Speaker 05**
 * So one tangential question I have is that we're trying to solve the whole gas price suggestion problem before we actually see how the network behaves, and my personal two cents is that the current model that is being implemented is essentially just continuing the old algorithm, and I completely agree that this may be completely unsuitable.
-* for certain tasks or scenarios, but it worked until now, so wouldn't it be prudent to wait until sila-sila-mainnet actually forks over and see how the base fluctuates and how tips fluctuate before we try to solve this problem? I'm afraid we're coming up with the wrong solution because we don't know what the problem is until the fork. Yeah, but the issue may be dependent on what we offer as a default choice, so yeah.
+* for certain tasks or scenarios, but it worked until now, so wouldn't it be prudent to wait until sila-mainnet actually forks over and see how the base fluctuates and how tips fluctuate before we try to solve this problem? I'm afraid we're coming up with the wrong solution because we don't know what the problem is until the fork. Yeah, but the issue may be dependent on what we offer as a default choice, so yeah.
 
 **Speaker 06**
 * It's the I kind of agree with you but yeah we should also keep in mind that what we see in practice depends on what we offer as a default option now yeah yeah of course but essentially if we continue our current algorithm then at least we know how wrong it is whereas mica had a really nice example I think the base fee is a hundred and the tips are one two and three Then it doesn't really matter, and this is precisely the issue. We don't know how the tip will fluctuate in relation to the basic, which is why I think it's not easy to fix the problem; at least, it's not clear to me what the specific problem is or will be.
@@ -436,7 +436,7 @@
 10:02:36 From  Trenton Van Epps  to  Everyone: oh not sure about the web app  
 10:02:53 From  Richard Moore  to  Everyone: Can you re-share the link to notes?  
 10:03:11 From  Tim Beiko  to  Everyone: https://github.com/sila-chain/pm/issues/328  
-10:03:59 From  lightclient  to  Everyone: unrelated, but i notice a small issue on silascan -- the genesis block shows a 5 sil block reward to the coinbase 0x0 when actually no block reward is applied to the block  
+10:03:59 From  lightclient  to  Everyone: unrelated, but i notice a small issue on etherscan -- the genesis block shows a 5 sil block reward to the coinbase 0x0 when actually no block reward is applied to the block  
 10:06:39 From  Tim Beiko  to  Everyone: New Geth proposal: https://gist.github.com/zsfelfoldi/9ca596996f5a556c58dae3aa4f4d0049  
 10:09:52 From  Bruno Barbieri  to  Everyone: The spike scenario is a bit problematic for time sensitive operations like swaps  
 10:10:11 From  Tim Beiko  to  Everyone:@Bruno, but in those cases does the current gasPrice API work well?  

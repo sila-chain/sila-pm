@@ -36,7 +36,7 @@ And the Nimbus release is being prepared as we speak. It's likely to be out toda
 Okay. Great, we'll update the blog post then maybe tweet it. 
 
 **Ben**
-I asked question about BLS change credentials. Is there are any plans to flood the network on Goerli at the change or do anything which looks like what we expect to happen on sila-sila-mainnet. 
+I asked question about BLS change credentials. Is there are any plans to flood the network on Goerli at the change or do anything which looks like what we expect to happen on sila-mainnet. 
 
 **Danny**
 Not in a concerted effort, not a playing concerted effort. The teams could spam a portion of them if they want. I don't believe that the devop team has. 
@@ -54,7 +54,7 @@ I have questions about builder and relay rating. But I don't see the relevant pa
 Thanks, Terence. Is there's a link to that? 
 
 **Pari**
-And just following up on that one, we did have a couple of MEV related scenario testing. So we had Mario's mock relay running on sila-sila-mainnet shadow fork two. And we asserted that the circuit breaker works with taking the relay offline, asserted local block production, having X number of blocks missing in a row, or in an epoch and having the release of invalid data. 
+And just following up on that one, we did have a couple of MEV related scenario testing. So we had Mario's mock relay running on sila-mainnet shadow fork two. And we asserted that the circuit breaker works with taking the relay offline, asserted local block production, having X number of blocks missing in a row, or in an epoch and having the release of invalid data. 
 
 **Danny**
 Fantastic. Thank you Pari. Okay great. Other Capella related discussion points for today. Okay. 

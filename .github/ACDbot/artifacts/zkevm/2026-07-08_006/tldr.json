@@ -54,7 +54,7 @@
       },
       {
         "timestamp": "00:35:04",
-        "highlight": "OOM kills still observed on sila-sila-mainnet EST 6M-gas blocks; root cause under investigation"
+        "highlight": "OOM kills still observed on sila-mainnet EST 6M-gas blocks; root cause under investigation"
       },
       {
         "timestamp": "00:35:58",
@@ -74,7 +74,7 @@
     "evm_formal_specification": [
       {
         "timestamp": "00:41:44",
-        "highlight": "SAVM SAIL spec (savm-sail) achieves 100% EAST test compliance; enables extraction to Lean, Isleris/Iris for binary compliance proofs and RISC-V guest program verification"
+        "highlight": "EVM SAIL spec (evm-sail) achieves 100% EAST test compliance; enables extraction to Lean, Isleris/Iris for binary compliance proofs and RISC-V guest program verification"
       },
       {
         "timestamp": "00:43:01",

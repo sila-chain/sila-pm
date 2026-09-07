@@ -21,7 +21,7 @@ None
 
 **ACTION 62.4:** Discussion required with Jordi Baylina and Alex Bergszaszi around the options between SIP-1109 and SIP-2046.
 
-**ACTION 62.5:** James Hancock to update the [Wiki](https://en.sila.wiki/roadmap/istanbul) and Meta [SIP-1962](https://sips.sila.org/SIPS/sip-1679) with decisions around the SIPs.
+**ACTION 62.5:** James Hancock to update the [Wiki](https://en.sila.wiki/roadmap/istanbul) and Meta [SIP-1962](https://sips.sila.org/EIPS/sip-1679) with decisions around the SIPs.
 
 **ACTION 62.6:** SIP-1283 requires a new SIP number and a section discussing the difference between the original SIP-1283 which was removed from Constantinople and this new SIP.
 
@@ -53,7 +53,7 @@ None
 **ACTION 60.2**: Danno Ferrin to add 9 month out Hardfork kickoff to [timeframes](https://sila-magicians.org/t/more-frequent-smaller-hardforks-vs-less-frequent-larger-ones/2929/28).
 **Status**: Completed
 
-**ACTION 60.6**:  Martin Holste Swende and Alex Beregszaszi to confirm whether [SIP 689](https://sips.sila.org/SIPS/sip-689) needs to be implemented.
+**ACTION 60.6**:  Martin Holste Swende and Alex Beregszaszi to confirm whether [SIP 689](https://sips.sila.org/EIPS/sip-689) needs to be implemented.
 **Status**: Completed. Exists in Clients and is in tests as it has already been accepted but is not in the yellow paper. No one available to write it into the Yellow Paper.
 
 **Action 60.7**: Parity to comment on Libraries for [Precompiles](https://github.com/sila-chain/pm/issues/95#issuecomment-486879991)
@@ -62,7 +62,7 @@ None
 **ACTION 58.1**: Cat Herders to look at updating EIP1. 
 **Status**: [PR-1991](https://github.com/sila-chain/SIPs/pull/1991) has been approved by 2 or 3 SIP reviewers but has yet to be merged. Once merged it will be complete.
 
-**DECISION 61.3**: Confirmation that SIPS still in draft form but submitted before the SIP acceptance hard deadline of the 17th May 2019 have been accepted for review to be included in the implementation into Istanbul.
+**DECISION 61.3**: Confirmation that EIPS still in draft form but submitted before the SIP acceptance hard deadline of the 17th May 2019 have been accepted for review to be included in the implementation into Istanbul.
 
 # 2. [Roadmap](https://en.sila.wiki/roadmap/istanbul)
 
@@ -74,17 +74,17 @@ None
 
 **Hudson:** Rough plan is next hardfork take place in April 2020, see link in heading above.
 
-# 3. [SIPS](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-1679.md) for Istanbul:
+# 3. [EIPS](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-1679.md) for Istanbul:
 
 [Timestamp 13:23](https://youtu.be/lF_XxqxgVuA?t=803)
 
-## 3.1 [SIP-615](https://sips.sila.org/SIPS/sip-615): Subroutines and Static Jumps for the SAVM
+## 3.1 [SIP-615](https://sips.sila.org/EIPS/sip-615): Subroutines and Static Jumps for the EVM
 
 [Timestamp 13:41](https://youtu.be/lF_XxqxgVuA?t=841)
 
 ### STATUS: UNDECIDED
 
-**Martin Holst Swende:** Objection raised as per the reasons in the [Magicians discussion](https://sila-magicians.org/t/sip-615-subroutines-and-static-jumps-for-the-savm/2728). The complexity is too great for the benefits given.
+**Martin Holst Swende:** Objection raised as per the reasons in the [Magicians discussion](https://sila-magicians.org/t/sip-615-subroutines-and-static-jumps-for-the-evm/2728). The complexity is too great for the benefits given.
 
 **Hudson:** There is also an argument that this SIP should be split up into multiple SIPs.
 
@@ -94,15 +94,15 @@ None
 
 **Rick Dudley:** Don't think we should make a decision on this now but to respect process the champion should be on the call to discuss their SIP.
 
-**Zachary Williamson:** Can't speak to the complexity of the SIP as it is ambitious in scope. One the biggest issues at the moment is the difficulty in writing efficient smart contracts and write efficient SAVM code. Having some abstractions in particular with subroutine calls and particularly local variables would go enormously towards bridging the gap towards what you can do on the SAVM and what you end up doing practically. Rule of thumb writing SAVM code is 30x more efficient that writing it in solidity. This is primarily due to the complexity of the stack inspection. This could potentially having established languages complied to SAVM code. This does solve some serious problems and would be quite a win if this SIP was in the standard from the developer perspective.
+**Zachary Williamson:** Can't speak to the complexity of the SIP as it is ambitious in scope. One the biggest issues at the moment is the difficulty in writing efficient smart contracts and write efficient EVM code. Having some abstractions in particular with subroutine calls and particularly local variables would go enormously towards bridging the gap towards what you can do on the EVM and what you end up doing practically. Rule of thumb writing EVM code is 30x more efficient that writing it in solidity. This is primarily due to the complexity of the stack inspection. This could potentially having established languages complied to EVM code. This does solve some serious problems and would be quite a win if this SIP was in the standard from the developer perspective.
 
-**Paweł Bylica:** If we improve the SAVM over time that would be the right direction to go. Agree with the idea of splitting this SIP. There are proposals on how to do this on the practical level. There are two small features from the SIP that can be implemented up front. Agree with Martin versioning, I am not sure about deploying this before we can verify a deploy time. I also however have concerns about versioning implemented if it is never used in the future if this SIP will be delayed or for other reasons.
+**Paweł Bylica:** If we improve the EVM over time that would be the right direction to go. Agree with the idea of splitting this SIP. There are proposals on how to do this on the practical level. There are two small features from the SIP that can be implemented up front. Agree with Martin versioning, I am not sure about deploying this before we can verify a deploy time. I also however have concerns about versioning implemented if it is never used in the future if this SIP will be delayed or for other reasons.
 
 **Danno Ferrin:** There are SIPs with proposed opcodes so a versioning SIP would be useful.
 
 **Alex Bergszaszi:** We could also remove core code if versioning is enabled.
 
-**Martin Holst Swende:** Agree, versioning is a pretty strong construct and could stand on its own, even if SIP-615 is not implemented in the end. Note there are two types of versioning. One is a versioning where the contract says I want to play by these new cool rules cause of these new cool opcodes. The other type of versioning which is basically for Ewasm and SIP-615 is a version stamp where by the SAVM says yes this contract has gone through the scrutiny and is certified to not do illegal jobs. What ever versioning protocol we have it should have opt in versioning and seal of approval type of versioning.
+**Martin Holst Swende:** Agree, versioning is a pretty strong construct and could stand on its own, even if SIP-615 is not implemented in the end. Note there are two types of versioning. One is a versioning where the contract says I want to play by these new cool rules cause of these new cool opcodes. The other type of versioning which is basically for Ewasm and SIP-615 is a version stamp where by the EVM says yes this contract has gone through the scrutiny and is certified to not do illegal jobs. What ever versioning protocol we have it should have opt in versioning and seal of approval type of versioning.
 
 **Hudson Jameson:** Looks like this SIP will need to be split and as a result will not be implemented in Istanbul but will instead have elements of these split SIPs implemented in April's Hard Fork.
 
@@ -122,7 +122,7 @@ None
 **ACTION 62.1:** Reach out to the Authors of SIP-615 via the All Core Devs Gitter Channel and Magicians Discussion to discuss the questions around the SIP especially the option of splitting the SIP into smaller more digestable components and try make a decision.
 ** **
 
-## 3.2 [SIP-663](https://sips.sila.org/SIPS/sip-663): Unlimited SWAP and DUP instructions
+## 3.2 [SIP-663](https://sips.sila.org/EIPS/sip-663): Unlimited SWAP and DUP instructions
 
 [Timestamp 29:00](https://youtu.be/lF_XxqxgVuA?t=1740)
 
@@ -148,13 +148,13 @@ None
 
 **Martin Holst Swende:** It makes sense from the perspective that there are a limited number of pulls on the push instructions have data sections. If we do option A then it screws a bit with dump test analysis.
 
-**Alex Bergszaszi:** Option A should only be introduced with account versioning or SAVM versioning.
+**Alex Bergszaszi:** Option A should only be introduced with account versioning or EVM versioning.
 
 ** **
 **ACTION 62.2:** Have an indepth discussion on how SIP-663 can be improved.
 ** **
 
-## 3.3 [SIP-1057](https://sips.sila.org/SIPS/sip-1057): ProgPoW, a Programmatic Proof-of-Work
+## 3.3 [SIP-1057](https://sips.sila.org/EIPS/sip-1057): ProgPoW, a Programmatic Proof-of-Work
 
 [Timestamp 38:31](https://youtu.be/lF_XxqxgVuA?t=2311)
 
@@ -166,7 +166,7 @@ SIP is still pending audit, above and beyond standard security considerations, t
 
 **Danno Ferrin** As Champion for the SIP I would not recommend the current SIP go forward until there is a change and I will be recommending that the audit look at this and recommend this change before I would be comfortable with letting this SIP go forward. I will detail this in the Sila Magicians discussion.
 
-## 3.4 [SIP-1108](https://sips.sila.org/SIPS/sip-1108): Reduce alt_bn128 precompile gas costs
+## 3.4 [SIP-1108](https://sips.sila.org/EIPS/sip-1108): Reduce alt_bn128 precompile gas costs
 
 [Timestamp 44:13](https://youtu.be/lF_XxqxgVuA?t=2653)
 
@@ -192,7 +192,7 @@ SIP is still pending audit, above and beyond standard security considerations, t
 **ACTION 62.3:** Perform a full benchmark for SIP-1108.
 ** **
 
-## 3.5 [SIP-1109](https://sips.sila.org/SIPS/sip-1109): PRECOMPILEDCALL opcode (Remove CALL costs for precompiled contracts)
+## 3.5 [SIP-1109](https://sips.sila.org/EIPS/sip-1109): PRECOMPILEDCALL opcode (Remove CALL costs for precompiled contracts)
 
 requirement of SIP-1962
 
@@ -211,10 +211,10 @@ requirement of SIP-1962
 ** **
 
 ** **
-**ACTION 62.5:** James Hancock to update the [Wiki](https://en.sila.wiki/roadmap/istanbul) and Meta [SIP-1962](https://sips.sila.org/SIPS/sip-1679) with decisions around the SIPs.
+**ACTION 62.5:** James Hancock to update the [Wiki](https://en.sila.wiki/roadmap/istanbul) and Meta [SIP-1962](https://sips.sila.org/EIPS/sip-1679) with decisions around the SIPs.
 ** **
 
-## 3.6 [SIP-1283](https://sips.sila.org/SIPS/sip-1283): Net gas metering for SSTORE without dirty maps
+## 3.6 [SIP-1283](https://sips.sila.org/EIPS/sip-1283): Net gas metering for SSTORE without dirty maps
 [Timestamp 55:57](https://youtu.be/lF_XxqxgVuA?t=3357)
 
 ### STATUS: UNDECIDED
@@ -227,7 +227,7 @@ requirement of SIP-1962
 **ACTION 62.6:** SIP-1283 requires a new SIP number and a section discussing the difference between the original SIP-1283 which was removed from Constantinople and this new SIP.
 ** ** 
 
-## 3.7 [SIP-1344](https://sips.sila.org/SIPS/sip-1344): Add ChainID opcode
+## 3.7 [SIP-1344](https://sips.sila.org/EIPS/sip-1344): Add ChainID opcode
 [Timestamp 1:00:00](https://youtu.be/lF_XxqxgVuA?t=3600)
 
 ### STATUS: ACCEPT
@@ -240,14 +240,14 @@ requirement of SIP-1962
 **ACTION 62.7:** Engage with Ronan Sandford and Bryant Eisenbach to discuss which SIP; SIP-1344, SIP-1959 or SIP-1965 should be implemented.
 ** ** 
 
-## 3.8 [SIP-1352](https://sips.sila.org/SIPS/sip-1352): Specify restricted address range for precompiles/system contracts
+## 3.8 [SIP-1352](https://sips.sila.org/EIPS/sip-1352): Specify restricted address range for precompiles/system contracts
 [Timestamp 1:08:14](https://youtu.be/lF_XxqxgVuA?t=4094)
 
 ### STATUS: UNDECIDED
 
 **Alex Beregszaszi:** May not require a hardfork. Should just be accepted and made final. Tests may need to be added to the test suite?
 
-**Danno Ferrin:** How does this affect SAVM runtime?
+**Danno Ferrin:** How does this affect EVM runtime?
 
 **Alex Beregszaszi:** It should not.
 
@@ -257,7 +257,7 @@ requirement of SIP-1962
 
 **Alex Beregszaszi:** It is a prerequisite to several SIPs which don't want to list every single precompile when making precompiles cheaper.
 
-**Martin Holst Swende:** If there is an existing network that has SAVM code on these services what will happen to those future SIPs which lower the cost of the precompile calls, how should they handle that? 
+**Martin Holst Swende:** If there is an existing network that has EVM code on these services what will happen to those future SIPs which lower the cost of the precompile calls, how should they handle that? 
 
 **Péter Szilágyi:** Geth has a list of precompiles and the hardcoded addresses. In my opinion if you want to make precompiles "free" when calling them then they should not rely on the address but should rely on how the chain is configured. If the chain lists 8 free precompiles then those 8 get the free waver and the rest of the precompiles have to pay. In my opinion that would be the logical behaviour.
 
@@ -267,11 +267,11 @@ requirement of SIP-1962
 **ACTION 62.8:** SIP-1352 needs further discussion to answer the questions posed by the All Core Devs.
 ** ** 
 
-## 3.9 [SIP-1380](https://sips.sila.org/SIPS/sip-1380): Reduced gas cost for call to self
+## 3.9 [SIP-1380](https://sips.sila.org/EIPS/sip-1380): Reduced gas cost for call to self
 
 ### STATUS: DID NOT REVIEW
 
-## 3.10 [SIP-1559](https://sips.sila.org/SIPS/sip-1559): Fee market change for SIL 1.0 chain
+## 3.10 [SIP-1559](https://sips.sila.org/EIPS/sip-1559): Fee market change for SIL 1.0 chain
 [Timestamp 1:13:19](https://youtu.be/lF_XxqxgVuA?t=4399)
 
 ### STATUS: UNDECIDED
@@ -282,7 +282,7 @@ requirement of SIP-1962
 
 **Rick Dudley:** Please raise this as an issue and we will look to address this in the SIP.
 
-## 3.11 [SIP-1965](https://sips.sila.org/SIPS/sip-1965): Method to check if a chainID is valid at a specific block number
+## 3.11 [SIP-1965](https://sips.sila.org/EIPS/sip-1965): Method to check if a chainID is valid at a specific block number
 
 [Timestamp 1:00:00](https://youtu.be/lF_XxqxgVuA?t=3600)
 
@@ -292,35 +292,35 @@ requirement of SIP-1962
 
 See SIP-1344 notes above.
 
-## 3.12 [SIP-1702](https://sips.sila.org/SIPS/sip-1702): Generalized account versioning scheme
+## 3.12 [SIP-1702](https://sips.sila.org/EIPS/sip-1702): Generalized account versioning scheme
 
 ### STATUS: DID NOT REVIEW
 
-## 3.13 [SIP-1706](https://sips.sila.org/SIPS/sip-1706): Disable SSTORE with gasleft lower than call stipend
+## 3.13 [SIP-1706](https://sips.sila.org/EIPS/sip-1706): Disable SSTORE with gasleft lower than call stipend
 
 ### STATUS: DID NOT REVIEW
 
-## 3.14 [SIP-1803](https://sips.sila.org/SIPS/sip-1803): Rename opcodes for clarity
+## 3.14 [SIP-1803](https://sips.sila.org/EIPS/sip-1803): Rename opcodes for clarity
 
 ### STATUS: DID NOT REVIEW
 
-## 3.15 [SIP-1829](https://sips.sila.org/SIPS/sip-1829): Precompile for Elliptic Curve Linear Combinations
+## 3.15 [SIP-1829](https://sips.sila.org/EIPS/sip-1829): Precompile for Elliptic Curve Linear Combinations
 
 ### STATUS: DID NOT REVIEW
 
-## 3.16 [SIP-1884](https://sips.sila.org/SIPS/sip-1884): Repricing for trie-size-dependent opcodes
+## 3.16 [SIP-1884](https://sips.sila.org/EIPS/sip-1884): Repricing for trie-size-dependent opcodes
 
 ### STATUS: DID NOT REVIEW
 
-## 3.17 [SIP-1930](https://sips.sila.org/SIPS/sip-1930): CALLs with strict gas semantic. Revert if not enough gas available.
+## 3.17 [SIP-1930](https://sips.sila.org/EIPS/sip-1930): CALLs with strict gas semantic. Revert if not enough gas available.
 
 ### STATUS: DID NOT REVIEW
 
-## 3.18 [SIP-1985](https://sips.sila.org/SIPS/sip-1985): Sane limits for certain SAVM parameters
+## 3.18 [SIP-1985](https://sips.sila.org/EIPS/sip-1985): Sane limits for certain EVM parameters
 
 ### STATUS: DID NOT REVIEW
 
-## 3.19 [SIP-1959](https://sips.sila.org/SIPS/sip-1959): New Opcode to check if a chainID is part of the history of chainIDs
+## 3.19 [SIP-1959](https://sips.sila.org/EIPS/sip-1959): New Opcode to check if a chainID is part of the history of chainIDs
 
 [Timestamp 1:00:00](https://youtu.be/lF_XxqxgVuA?t=3600)
 
@@ -328,39 +328,39 @@ See SIP-1344 notes above.
 
 See SIP-1344 notes above.
 
-## 3.20 [SIP-1962](https://sips.sila.org/SIPS/sip-1962): EC arithmetic and pairings with runtime definitions
+## 3.20 [SIP-1962](https://sips.sila.org/EIPS/sip-1962): EC arithmetic and pairings with runtime definitions
 replaces SIP-1829
 
 
-## 3.21 [SIP-2014](https://sips.sila.org/SIPS/sip-2014): Extended State Oracle
+## 3.21 [SIP-2014](https://sips.sila.org/EIPS/sip-2014): Extended State Oracle
 
 [Timestamp 1:23:10](https://youtu.be/lF_XxqxgVuA?t=4988)
 
-## 3.22 [SIP-2026](https://sips.sila.org/SIPS/sip-2026): State Rent H - Fixed Prepayment for accounts
+## 3.22 [SIP-2026](https://sips.sila.org/EIPS/sip-2026): State Rent H - Fixed Prepayment for accounts
 
 ### STATUS: DID NOT REVIEW
 
-## 3.23 [SIP-2027](https://sips.sila.org/SIPS/sip-2027): State Rent C - Net contract size accounting
+## 3.23 [SIP-2027](https://sips.sila.org/EIPS/sip-2027): State Rent C - Net contract size accounting
 
 ### STATUS: DID NOT REVIEW
 
-## 3.24 [SIP-2028](https://sips.sila.org/SIPS/sip-2028): Calldata gas cost reduction
+## 3.24 [SIP-2028](https://sips.sila.org/EIPS/sip-2028): Calldata gas cost reduction
 
 ### STATUS: DID NOT REVIEW
 
-## 3.25 [SIP-2029](https://sips.sila.org/SIPS/sip-2029): State Rent A - State counters contract requirement of SIP-2031
+## 3.25 [SIP-2029](https://sips.sila.org/EIPS/sip-2029): State Rent A - State counters contract requirement of SIP-2031
 
 ### STATUS: DID NOT REVIEW
 
-## 3.26 [SIP-203](https://sips.sila.org/SIPS/sip-203)1: State Rent B - Net transaction counter
+## 3.26 [SIP-203](https://sips.sila.org/EIPS/sip-203)1: State Rent B - Net transaction counter
 
 ### STATUS: DID NOT REVIEW
 
-## 3.27 [SIP-2035](https://sips.sila.org/SIPS/sip-2035): Stateless Clients - Repricing SLOAD and SSTORE to pay for block proofs
+## 3.27 [SIP-2035](https://sips.sila.org/EIPS/sip-2035): Stateless Clients - Repricing SLOAD and SSTORE to pay for block proofs
 
 ### STATUS: DID NOT REVIEW
 
-## 3.28 [SIP-2045](https://sips.sila.org/SIPS/sip-2045): Fractional gas costs, and the SAVM benchmarks referenced within (cdetrio)
+## 3.28 [SIP-2045](https://sips.sila.org/EIPS/sip-2045): Fractional gas costs, and the EVM benchmarks referenced within (cdetrio)
 [Timestamp 1:15:33](https://youtu.be/lF_XxqxgVuA?t=4533)
 
 ### STATUS: UNDECIDED
@@ -373,11 +373,11 @@ If we boost the gas limit while similtaneously increasing the price of state gro
 
 Martin Swende's recent benchmarks showed that `SLOAD` is the major bottleneck and so the SIP to increase the price of `SLOAD` proposes taking it from a gas cost of 200 to a gas cost of 800. Even after that 4x increase in the cost of `SLOAD` it would still be the bottleneck according the Martin's benchmarks. Note that these benchmarks were done on Geth. So just using the speed of computation on Geth the benchmark shows that either the cost of disk I/O needs to be raised substantially or the cost of computation should be reduced. OR a combination of both. Because the costs are all relative. So reducing one is the same as raising the other.
 
-What is crazy is that if you benchmark Geth against an SAVM implementation that is optimised for compuational speed like EVM1 which is what we did and the graphs of those are linked in the agenda and in the SIP. They show that we can get a 10x speedup just from optimising the SAVM. So the proof of concept the fast SAVM implementation that does this is called [`evmone`](https://github.com/chfast/evmone) written by Paweł. 
+What is crazy is that if you benchmark Geth against an EVM implementation that is optimised for compuational speed like EVM1 which is what we did and the graphs of those are linked in the agenda and in the SIP. They show that we can get a 10x speedup just from optimising the EVM. So the proof of concept the fast EVM implementation that does this is called [`evmone`](https://github.com/chfast/evmone) written by Paweł. 
 
 There are two signicant speed ups from the low hanging fruit right now. The first is just the rebalancing the cost to the current Geth and Parity speeds. And then the second speed up is optimising Geth and Parity to get the same speed up as evmone or you can just use evmone.
 
-The thing to try is to take evmone and benchmark some of the most optimised SAVM contracts. We did this with the contract that Zach Williamson wrote called Weierstrudel. It implements ECMUL which has the eliptical curve multiplication (the precompile that was out at Byzantium) and it beat the precompile in gas costs. In computation time evmone executes ECMUL in 500 micro seconds and that is compared to native rust which Parity uses for their precompile which executes in 300 microseconds and Geth is more optimised which it's native Go in assembly runs in 100 microseconds. The fact that the SAVM bytecode does the same thing as a native precompile in 500 microseconds compared to 300 or 100 microseconds - I think those results are pretty shocking.
+The thing to try is to take evmone and benchmark some of the most optimised EVM contracts. We did this with the contract that Zach Williamson wrote called Weierstrudel. It implements ECMUL which has the eliptical curve multiplication (the precompile that was out at Byzantium) and it beat the precompile in gas costs. In computation time evmone executes ECMUL in 500 micro seconds and that is compared to native rust which Parity uses for their precompile which executes in 300 microseconds and Geth is more optimised which it's native Go in assembly runs in 100 microseconds. The fact that the EVM bytecode does the same thing as a native precompile in 500 microseconds compared to 300 or 100 microseconds - I think those results are pretty shocking.
 
 That optimised interpreter, executing optimised bytecode can achieve speed not a lot slower. I would almost say it is near native. And even that result of 500 microseconds is not the best we can do. There is more optimisations remaining there. A well known one for elipical curve is Montgomery multiplication. That was not done on Weierstrudel because it was optimised for gas costs and not speed and the price of MUL vs MODMUL is not really accurate to the runtime. The more optimised Weierstrudel may be even faster if we were to benchmark it. Although it would cost more gas due to the gas right now.
 
@@ -391,7 +391,7 @@ That optimised interpreter, executing optimised bytecode can achieve speed not a
 **ACTION 62.9:** SIP-2045 needs further discussion.
 ** ** 
 
-## 3.29 [SIP-2046](https://sips.sila.org/SIPS/sip-2046): Reduced gas cost for static calls made to precompiles
+## 3.29 [SIP-2046](https://sips.sila.org/EIPS/sip-2046): Reduced gas cost for static calls made to precompiles
 [Timestamp 51:54](https://youtu.be/lF_XxqxgVuA?t=3114)
 
 ### STATUS: UNDECIDED
@@ -409,7 +409,7 @@ Some benefits include Equihash evaluation efficiency. At the moment it takes 16 
 
 I have a use can today that I could implement with just the Blake2 precompile.
 
-**Casey Detrio:** The benchmarks I just referred to - there is even a more optimised Blake2b byte code that Zach did that resulted in a significant gas cost reduction. When you benchmark it in evmone and a best SAVM implementation it would be plenty cheap enough without a precompile.
+**Casey Detrio:** The benchmarks I just referred to - there is even a more optimised Blake2b byte code that Zach did that resulted in a significant gas cost reduction. When you benchmark it in evmone and a best EVM implementation it would be plenty cheap enough without a precompile.
 
 **James Prestwich:** The thing is with Equihash is that you have to do 32 invocations. So even if you reduce it by an order of magnitude you are still looking at 1.6 million gas per invocation. In order to verify that ZCash header is for example you would need to do somewhere in the order of 30-40 invocations depending on how much security you want.
 
@@ -419,9 +419,9 @@ I have a use can today that I could implement with just the Blake2 precompile.
 
 **Zachary Williamson:** Happy to share the source code with you. But basically it is about 30x less.
 
-**Casey Detrio:** Then you get a 10x on top of that because of the optimised SAVM.
+**Casey Detrio:** Then you get a 10x on top of that because of the optimised EVM.
 
-**James Prestwich:** Does anyone use an optimised gas cost SAVM in production?
+**James Prestwich:** Does anyone use an optimised gas cost EVM in production?
 
 **Casey Detrio:** That is what the proposal is. Reprice the gas costs so that we don't need more precompiles. 
 
@@ -435,7 +435,7 @@ I have a use can today that I could implement with just the Blake2 precompile.
 
 **James Prestwich:** I have written a few articles on the lack of use of BTC Relay. One of the really cool things where this differs from BTC relay is that the ZCash team is considering Flight Clients Merkle Mountain Range commitments for their next hard fork which will be about 6 months from now. So getting in a Blake2 precompile into Sila on a slightly longer timeframe would allow you to do not only a ZCash relay which would be prohibitively expensive but the ideal minimal flight client relay which is orders of magnitude more efficient than relaying every header. So this is really a unique opportunity here because the ZCash team is looking at hardforking for features specifically to this as well.
 
-**Péter Szilágyi:** SIP-2045 seems like it may be almost impossible to implement as it would require everyone to use a specific optimised version of the SAVM. SIP-2024 seems trivial to implement and Blake2 is a fairly popular Hash function. It is implemented in almost every single language out there. So integrating that would be perhaps 30 minutes worth of work. So if there is a specific use case then adding a precompile like this seems a no brainer.
+**Péter Szilágyi:** SIP-2045 seems like it may be almost impossible to implement as it would require everyone to use a specific optimised version of the EVM. SIP-2024 seems trivial to implement and Blake2 is a fairly popular Hash function. It is implemented in almost every single language out there. So integrating that would be perhaps 30 minutes worth of work. So if there is a specific use case then adding a precompile like this seems a no brainer.
 
 **Casey Detrio:** Does this include Blake2s? 
 

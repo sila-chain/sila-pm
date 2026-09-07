@@ -164,7 +164,7 @@ There is a lot of internal changes going on with the client right now as this wh
 
 **Nimbus**: Hi, so on the core part, 
 
-* we switched Testnet 1 to use sila-sila-mainnet configuration. 
+* we switched Testnet 1 to use sila-mainnet configuration. 
 * We have some performance improvements to do in particular and performance is dominated by hash tree root.
 * We know that we have a lot of repeated hash tree root that we can skip so some focus is on that and also some stack overflows.
 * currently we use update and rewind states to apply new blocks to rules, but we are concerned now that this could be a potential DoS vector

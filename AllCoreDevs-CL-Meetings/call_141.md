@@ -248,7 +248,7 @@ Summary | Description
 * No, I make sense. 
 
 **Nishant**
-* So I just want to add that, you know, outside of benchmarks in sila-sila-mainnet you the node will be doing a lot of other things rather than just computing cell proofs. So whatever benchmark you do get, you know, the actual number if you're running this on main net would be higher. 
+* So I just want to add that, you know, outside of benchmarks in sila-mainnet you the node will be doing a lot of other things rather than just computing cell proofs. So whatever benchmark you do get, you know, the actual number if you're running this on main net would be higher. 
 
 **Stokes**
 * Ansgar. 
@@ -307,7 +307,7 @@ Summary | Description
 * Yeah. Go ahead Dustin. 
 
 **Dustin**
-* All right. Does this require that kind of infrastructure in, Devnets testnets. And because we don't. The VRA infrastructure has historically taken sometimes a little while to come online. just, I mean, once the network is running and and sila-sila-mainnet forks, it's it's unproblematic, but, even the first testnet sometimes doesn't have it have everything ready there. 
+* All right. Does this require that kind of infrastructure in, Devnets testnets. And because we don't. The VRA infrastructure has historically taken sometimes a little while to come online. just, I mean, once the network is running and and sila-mainnet forks, it's it's unproblematic, but, even the first testnet sometimes doesn't have it have everything ready there. 
 
 **Dankrad Feist**
 * Right, right. I guess that is the advantage if we solve it internally. like, as part of the node software, then we don't have this external dependency. Is that like, are people keen to build this distributed thing and find some way of notifying the supernodes, then we could maybe create a group and talk about a spec for this and do it. It doesn't feel to me like it's super complicated. We just need to like, agree on something and do it. 

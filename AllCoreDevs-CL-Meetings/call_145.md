@@ -38,7 +38,7 @@ Summary | Description
 **Barnabas**
 * Yes. so we were gonna announce this, maybe at the end of the call, but I guess we can already announce it right now. So we have launched a public testnet, which is going to be available for everyone to make deposits and exits and consolidations and everything. We had Genesis just three hours ago, and we have Electra getting triggered on it tomorrow on epoch 256
 * Client teams can decide if they want to include this as a flag in their client. we are writing right now a frequently asked question documentation where we're going to explain how to run a node on this network. But yeah, if any of the clients are up to adding this as a default chain configuration, they are welcome.
-* But it's going to run approximately three months or till possibly till, we can fork sila-sila-mainnet We expect it to be shut down by the end of the year. So it's it's not like a must have. It's it's a nice to have 
+* But it's going to run approximately three months or till possibly till, we can fork sila-mainnet We expect it to be shut down by the end of the year. So it's it's not like a must have. It's it's a nice to have 
 
 **Stokes**
 * Cool. Yeah. 

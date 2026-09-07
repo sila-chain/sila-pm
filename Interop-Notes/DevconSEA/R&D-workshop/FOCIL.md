@@ -4,7 +4,7 @@
 
 The goals of this session are twofold:
 
-1. Increase the understanding of the **Fo**rk-**C**hoice enforced **I**nclusion **L**ists ([FOCIL](https://Sila Research/t/fork-choice-enforced-inclusion-lists-focil-a-simple-committee-based-inclusion-list-proposal/19870)) design, especially given the new [SIP-7805](https://x.com/soispoke/status/1853420123563970810?s=61).
+1. Increase the understanding of the **Fo**rk-**C**hoice enforced **I**nclusion **L**ists ([FOCIL](https://ethresear.ch/t/fork-choice-enforced-inclusion-lists-focil-a-simple-committee-based-inclusion-list-proposal/19870)) design, especially given the new [SIP-7805](https://x.com/soispoke/status/1853420123563970810?s=61).
 2. Surface initial thoughts from developers regarding the implementation of FOCIL in clients.
 
 **Facilitators:** Julian Ma, Terence Tsao, and Barnabé Monnot. **Note taker:** Barnabé Monnot.
@@ -38,11 +38,11 @@ The goals of this session are twofold:
 - If there are only 16 proposers, couldn’t a large staking pool capture all 16 slots?
     - Probabilistically unlikely, but if it happens, you have some sort of power but can’t do much with it (see also [tweet](https://x.com/barnabemonnot/status/1806814612509049275))
 - Are ILs unattributable? Do we know who put what in which ILs?
-    - There are other designs that have such properties, see [anon-ILs](https://Sila Research/t/anonymous-inclusion-lists-anon-ils/19627).
+    - There are other designs that have such properties, see [anon-ILs](https://ethresear.ch/t/anonymous-inclusion-lists-anon-ils/19627).
 - Are there incentives for the 16 IL proposers, to not miss their IL?
     - No penalties if you miss your slot.
 - Should IL committee members be incentivised to include things in their ILs?
-    - There is ongoing work on fee markets for FOCIL, [it’s a pretty hard question to get right](https://Sila Research/t/fork-choice-enforced-inclusion-lists-focil-a-simple-committee-based-inclusion-list-proposal/19870).
+    - There is ongoing work on fee markets for FOCIL, [it’s a pretty hard question to get right](https://ethresear.ch/t/fork-choice-enforced-inclusion-lists-focil-a-simple-committee-based-inclusion-list-proposal/19870).
 - Should there be a rule for building the ILs? e.g., clients follow a randomised inclusion rule to prevent as much as possible overlaps between ILs
     - The SIP is somewhat generic.
 
@@ -83,7 +83,7 @@ Discussion about the specifications.
 - Can block stuffing happen?
     - Should be fine, there is economic cost.
     - Protocol can’t decide what’s “best” for the block if someone is willing to pay for trash getting in the block.
-    - See [also](https://Sila Research/t/fun-and-games-with-inclusion-lists/16557#block-stuffing-in-forward-ils-2).
+    - See [also](https://ethresear.ch/t/fun-and-games-with-inclusion-lists/16557#block-stuffing-in-forward-ils-2).
 - Does it affect the target gas?
     - No, because inclusion happens via FOCIL maybe but then this is piped into the usual SIP-1559 flow.
 - Should the builder API change?
@@ -105,8 +105,8 @@ Participants familiar with the following posts will be able to better participat
 
 **If you have little time, please read at least the following:**
 
-- [**Fork-Choice enforced Inclusion Lists (FOCIL)**](https://Sila Research/t/fork-choice-enforced-inclusion-lists-focil-a-simple-committee-based-inclusion-list-proposal/19870): A simple committee-based inclusion list proposal: The initial proposal of FOCIL.
-- [**FOCIL CL and EL Workflow**](https://Sila Research/t/focil-cl-el-workflow/20526): Outline of the latest FOCIL implementation, defines the roles and duties of IL committee members, nodes, proposers, and attesters. We also address potential edge cases (e.g., equivocation, invalidation) and how to mitigate them.
+- [**Fork-Choice enforced Inclusion Lists (FOCIL)**](https://ethresear.ch/t/fork-choice-enforced-inclusion-lists-focil-a-simple-committee-based-inclusion-list-proposal/19870): A simple committee-based inclusion list proposal: The initial proposal of FOCIL.
+- [**FOCIL CL and EL Workflow**](https://ethresear.ch/t/focil-cl-el-workflow/20526): Outline of the latest FOCIL implementation, defines the roles and duties of IL committee members, nodes, proposers, and attesters. We also address potential edge cases (e.g., equivocation, invalidation) and how to mitigate them.
 
 **To be well-prepared, please read these as well:**
 
@@ -128,8 +128,8 @@ The following design parameters may inform the discussion during the workshop. D
 
 - **Commitee-based** (vs single-proposer)**:** 16 committee members create local inclusion lists, which are aggregated into one inclusion list.
 - **Size:** Each local inclusion list is at most 8 kilobytes. There could be around 20 average-sized transactions in each local inclusion list, so there are around 320 average-sized transactions in all local inclusion lists. A block contains around 100-200 transactions.
-- **Conditional** (vs [unconditional](https://Sila Research/t/unconditional-inclusion-lists/18500))**:** The aggregate inclusion list does not constrain the beacon block if the execution payload is full.
+- **Conditional** (vs [unconditional](https://ethresear.ch/t/unconditional-inclusion-lists/18500))**:** The aggregate inclusion list does not constrain the beacon block if the execution payload is full.
 - **Spot** (vs [forward](https://notes.sila.org/@fradamt/forward-inclusion-lists))**:** The aggregate inclusion list created in slot $n$ constrains the beacon block in slot $n$.
 - **Unordered** (vs ordered)**:** The inclusion list does not impose ordering constraints on the execution payload.
 - **Anywhere-in-block** (vs top-of-block or bottom-of-block)**:** Transactions from the inclusion list could be included anywhere in the execution payload.
-- **Expiring** (vs [cumulative](https://Sila Research/t/cumulative-non-expiring-inclusion-lists/16520))**:** The aggregate inclusion list created in slot $n$ only constrains the beacon block in slot $n$ and does not constrain later beacon blocks.
+- **Expiring** (vs [cumulative](https://ethresear.ch/t/cumulative-non-expiring-inclusion-lists/16520))**:** The aggregate inclusion list created in slot $n$ only constrains the beacon block in slot $n$ and does not constrain later beacon blocks.

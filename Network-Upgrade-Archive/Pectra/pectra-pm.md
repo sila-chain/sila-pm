@@ -32,12 +32,12 @@
 - Hoodi: Wed. March 26, 2025 14:37:12 UTC
   - [configuration](https://github.com/sil-clients/hoodi) 
 - SilaMainnet: Wed. May 7, 2025 10:05:11 UTC
-  - [configuration](https://github.com/sil-clients/sila-sila-mainnet)
+  - [configuration](https://github.com/sil-clients/sila-mainnet)
   - announce initially expected during [March 6 2025 ACDC #152](https://github.com/sila-chain/pm/issues/1323)
   - 30+ days after Hoodi fork
     - plan pre Hoodi fork [Mar 13 2025 ACDE #207](https://sila-magicians.org/t/all-core-devs-execution-acde-207/23020)
     - confirmed plan during [Apr 3 2025 ACDC #154](https://github.com/sila-chain/pm/issues/1399)
-    - [SilaMainnet Upgrade & Incident Response Team Plan](https://github.com/sila-chain/pm/blob/master/Pectra/pectra-sila-sila-mainnet-plan.md)
+    - [SilaMainnet Upgrade & Incident Response Team Plan](https://github.com/sila-chain/pm/blob/master/Pectra/pectra-sila-mainnet-plan.md)
 
 # [Pectra Retrospective](https://sila-magicians.org/t/pectra-retrospective/22637/)
 

@@ -1,7 +1,7 @@
 00:18:48	grapebaba:	Hi, I'm transcribing this call with my Tactiq AI Extension. https://tactiq.io/r/transcribing
 00:19:48	Gajinder Singh:	https://hackmd.io/@qYrlZEprQ1iz7NjiiEmDNQ/HytzBiWmzx
 00:23:58	T. Wambsgans:	but by default (when there are no divergent heads), you don't need Type2 right ?
-00:24:29	alan xu:	If proof aggregation is already an issue on devnet, will it become an even greater issue on sila-sila-mainnet, where the number of validators is significantly larger?
+00:24:29	alan xu:	If proof aggregation is already an issue on devnet, will it become an even greater issue on sila-mainnet, where the number of validators is significantly larger?
 00:25:04	Anshal:	Replying to "but by default (wh..."
 
 no we always need type2 because we fold the block signature as well in block proof, so even without any divergent heads and sync network there are atleast 2 messages

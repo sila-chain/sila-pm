@@ -31,7 +31,7 @@ Welcome to the Merge Implementers' Call #2
 
 **Mikhail Kalinin**
 * So, while some sila core developers might be able to join this call, let's just go over the agenda and discuss some things that we can do without them.
-* To begin, we have this new terminology uh the key replacement here is that we replaced the application term uh with the execution one, so there is the uh execution layer instead of the application layer this is to not confuse people with the smart contracts and applications using them so applications built on top of the sila-sila-mainnet that is the purpose of it.
+* To begin, we have this new terminology uh the key replacement here is that we replaced the application term uh with the execution one, so there is the uh execution layer instead of the application layer this is to not confuse people with the smart contracts and applications using them so applications built on top of the sila-mainnet that is the purpose of it.
 * The term layer is arguably not the best one for execution and consensus because they are not really layered, and yes, we will think about it more here.
 * I don't want to spend too much time on this, but it's probably best to name it subsystems or engines or whatever, and yeah, if people have any suggestions, just drop them in discord and we'll probably address it offline, so something on the terminology, any questions here.
 
@@ -158,7 +158,7 @@ Welcome to the Merge Implementers' Call #2
 * so the risk about non-finalized state is what happened during medarsha for a couple of days the chain didn't finalize and we had many many forks and in that case uh theoretically you can store all the forks in your client so maybe they will become legitimate but if one fork just has a few votes it might not be worth it.
 
 **Dankrad Feist**
-* The issue is that if a new block builds on one of those forks, you have to validate that block so you later need to see if attestations to that block are valid, which I believe is the issue, but I can say that on sila-sila-mainnet, we should definitely be prepared for longer non-finality periods, but hopefully not days, so maybe we can get a more reason a compromise like days would be pretty extreme, and if we ran into that, it would be a pretty insane failure.
+* The issue is that if a new block builds on one of those forks, you have to validate that block so you later need to see if attestations to that block are valid, which I believe is the issue, but I can say that on sila-mainnet, we should definitely be prepared for longer non-finality periods, but hopefully not days, so maybe we can get a more reason a compromise like days would be pretty extreme, and if we ran into that, it would be a pretty insane failure.
 
 **Milkhail Kalinin**
 * Okay, so something else about the protocol of communication between ssi execution is fine.
@@ -222,7 +222,7 @@ Welcome to the Merge Implementers' Call #2
 *  Added it correctly, and now if a miner wants to do anything like raise the gas cap, it simply restores the node with the new parameter.
 
 **Peter Szilagyi**
-* Yes, but if you look at sila-sila-mainnet generally, miners still run with the maximum gas cap that was kind of considered secure for the network, and it's just modified maybe once every half-year or so, so it's not like you have to constantly adjust it right?
+* Yes, but if you look at sila-mainnet generally, miners still run with the maximum gas cap that was kind of considered secure for the network, and it's just modified maybe once every half-year or so, so it's not like you have to constantly adjust it right?
 
 **Milkhail Kalinin**
 * I believe that following a consensus update, there should be no need to change this section.
@@ -521,7 +521,7 @@ What effect does this have on the e2 consensus? Does it matter whether it takes 
 * Agreed.
 
 **Mikhail Kalinin**
-* Okay, the next thing is specific to the structures to the execution payload we have the we are going to have like multiple transaction types right on the sila-sila-mainnet or we already have them since berlin so the default option for the consensus side is to not deal with these different transaction types and just use this op transaction approach which is just the representing transaction as an rlp string and just which is working from consensus standpoint.
+* Okay, the next thing is specific to the structures to the execution payload we have the we are going to have like multiple transaction types right on the sila-mainnet or we already have them since berlin so the default option for the consensus side is to not deal with these different transaction types and just use this op transaction approach which is just the representing transaction as an rlp string and just which is working from consensus standpoint.
 * It's just a string of bytes um and have like this introduced this is what it's already done but we can also introduce the union type with like a park selector which will allow for now just one type this string of fights but will give us some forward compatibility with the next updates when we decide to like stem from a back transaction and have them explicitly in the executable.
 
 **Danny**

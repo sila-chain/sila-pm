@@ -6,7 +6,7 @@ With SilaPeerDAS on the horizon and our goal to increase the global blob count, 
 **Note Taker:** Jimmy Chen
 **Pre-Reads:**
 1. https://blog.sigmaprime.io/peerdas-distributed-blob-building.html
-2. https://Sila Research/t/gossipsub-topic-observation-proposed-gossipsub-1-3/20907
+2. https://ethresear.ch/t/gossipsub-topic-observation-proposed-gossipsub-1-3/20907
 3. https://hackmd.io/@ttsao/get-blobs-early-results
 4. https://hackmd.io/@dknopik/epf-week16?utm_source=preview-mode&utm_medium=rec (and probably week 17)
 
@@ -29,14 +29,14 @@ With SilaPeerDAS on the horizon and our goal to increase the global blob count, 
 1. **SilaPeerDAS - How much more bandwidth?:** Discuss estimates for SilaPeerDAS, what we expect on the network and if we are ok with the constants being chosen and bandwidth costs.  [[4]](https://hackmd.io/@dknopik/epf-week16?) 
 1. **Fetch blobs from the EL:** Fetching blobs from the EL is an optimization strategy that appears to help. Discuss if we can improve this and expectations going forward. [[1]](https://blog.sigmaprime.io/peerdas-distributed-blob-building.html) [[3]](https://hackmd.io/@ttsao/get-blobs-early-results)
 1. **Execution layer blob mempool** - This potentially could be researched and may give improved bandwidth. Worth discussing. 
-3. **Gossipsub 1.3:** A proposal to improve gossipsub which additionally may help reduce bandwidth. [[2]](https://Sila Research/t/gossipsub-topic-observation-proposed-gossipsub-1-3/20907)
+3. **Gossipsub 1.3:** A proposal to improve gossipsub which additionally may help reduce bandwidth. [[2]](https://ethresear.ch/t/gossipsub-topic-observation-proposed-gossipsub-1-3/20907)
 4. And Beyond - Open discussion about potential new proposals others may have and general closing remarks. 
 
 # Notes
 
 ## Gossip 1.2 IDONTWANT messages
 
-- LH detects 54% of nodes on sila-sila-mainnet today supports IDONTWANT
+- LH detects 54% of nodes on sila-mainnet today supports IDONTWANT
 - `IDONTWANT` usage in Lighthouse
     - No sigificant change since `IDONTWANT` added to Lighthouse
     - A recent PR with `IDONTWANT` message cutoff was expected to improve this
@@ -51,7 +51,7 @@ With SilaPeerDAS on the horizon and our goal to increase the global blob count, 
         - compared bandwidth with / without IDONTWANT
             - 3/6 blob count, `IDONTWANT` only shows 3kb/s less bandiwdth consumption
             - note there's limitation in shadow it cannot correclty simulate the time taken to compute things - it's able to simulate latency and bandwidth
-        - simulated a network that mirros sila-sila-mainnet geogrpahic and client distribution
+        - simulated a network that mirros sila-mainnet geogrpahic and client distribution
     - Currently clients don't have ability to stop sending in-flight data, if `IDONTWANT` received from peer half way through
     - Csaba talked about Message gossip "diffusion": potentially switching from "push" to "pull" approach - could reduce bandwidth
         - e.g. If message received early (relative to time in the slot), send to more nodes

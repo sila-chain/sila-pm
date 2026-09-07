@@ -83,7 +83,7 @@
 * Vitalik - One major desideratum for hash functions is, unfortunately, easy executability within SIL 1.0 because the contract needs to be able to generate Merkle branches. Haven't considered SHA3, have considered BLAKE2 since Zcash may've used this at some point. Gas efficiences in SIL 1.0 become a hurdle with these considerations.  
 * Felix - no real problem with adding a primitive for any hash function.  
 * Vitalik - fair point. If we did go with a more progressive hash function, BLAKE2 might actually be our best option.  
-* Felix - adding primitives doesn't decrease security of SAVM at all. If any hash function needs to be added, it could be added. Agree that it may add significant development time.  
+* Felix - adding primitives doesn't decrease security of EVM at all. If any hash function needs to be added, it could be added. Agree that it may add significant development time.  
 * Danny - worth considering that SHA256 is basically becoming a blockchain standared which is important to consider for interoperability. Even though SHA3 is industry standard, it's not blockchain standard.  
 * Ben - offered multi-hash from Protocal Labs - is this being considered?  
 * Vitalik - multi-hash just offers a choice of hash which is a problem for blockchains which require standard usage

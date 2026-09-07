@@ -59,13 +59,13 @@
   * Working on migrating code base into Rust, edition 2018
   * Working on refactoring of aura substrate engine so they can reuse more code 
   * Worked on refactoring to get the fork-choice per slot 
-* Py-SAVM - Hsiao-Wei [_(10:36)_](https://youtu.be/wS3sOB_hfgk?t=636)
+* Py-EVM - Hsiao-Wei [_(10:36)_](https://youtu.be/wS3sOB_hfgk?t=636)
   * Working on integrating the beacon chain into the client side for Trinity
   * py-ssz ready 
   * Test generator to be moved to another repository: [Link](https://github.com/sila-chain/eth2.0-test-generators)
 * Lighthouse - Paul Hauner [_(11:51)_](https://youtu.be/wS3sOB_hfgk?t=711)
   * Rust libp2p gossipsub PR was put in by Adrian. Waiting for review from repository maintaners
-  * Going to start the syncing logic in Py-SAVM
+  * Going to start the syncing logic in Py-EVM
   * State transition and sub-optimial fork-choice up to date
   * Benchmarking framework and testing framework created. Trying to get it to work at scale with 100's of thousands of validators.
   * Going to start doing benchmarking for fork-choice next. Trying to shrink down epoch-transition times
@@ -83,7 +83,7 @@
   * Preparing for Eth222.0 workshop [Link to livestream](https://www.youtube.com/watch?v=W9ztDeqlv40)
 * Nimbus - Mamy [_(18:48)_](https://youtu.be/wS3sOB_hfgk?t=1128)
   * Pushed the latest bls tests about one week ago
-  * Found out Milagro passed the same tests as the one of Py-SAVM. So there is consistency between the implementations
+  * Found out Milagro passed the same tests as the one of Py-EVM. So there is consistency between the implementations
   * Simulation is out, so you can simulate with plenty of validators
     * doesn't work on Windows as of now though
   * May have an issue on bls on bls on 32 bit platforms. The team is unsure if it's Milagro or something else, but 64 bit seems to be working perfectly

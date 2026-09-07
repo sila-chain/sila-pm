@@ -50,7 +50,7 @@
   * Networking, forward and backward sync
   * Still working on libp2p
   * Some confusion between keccak256 and SHA256
-  * Shuffling and BLS sila-sila-mainnet tests passing
+  * Shuffling and BLS sila-mainnet tests passing
   * Update on SIL 1: new member working networking and reusable parts for SIL 2.0
   * Documentation generator for repo - should be cross language compatible
   * Also working on multi-threading and debugging Nim library

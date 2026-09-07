@@ -706,7 +706,7 @@ Ansgar Dietrichs: Okay, then I assume then we'll also have all the changes liste
 
 177
 00:30:14.300 --> 00:30:27.920
-Ansgar Dietrichs: And yeah, Barnabas, the one last one that I was unsure about from the ones that you listed is 7610, because again, my understanding is that doesn't actually change any behavior on sila-sila-mainnet, it's more a formal change, if I remember the discussion correctly that we had in the past.
+Ansgar Dietrichs: And yeah, Barnabas, the one last one that I was unsure about from the ones that you listed is 7610, because again, my understanding is that doesn't actually change any behavior on sila-mainnet, it's more a formal change, if I remember the discussion correctly that we had in the past.
 
 178
 00:30:28.320 --> 00:30:32.040
@@ -2678,7 +2678,7 @@ Potuz: clients will be… will start lagging if this happens. We might see a lot
 
 670
 01:32:35.550 --> 01:32:45.520
-Potuz: attack. We're talking several millions of dollars, and we can easily fork it without, without affecting a single transaction on sila-sila-mainnet.
+Potuz: attack. We're talking several millions of dollars, and we can easily fork it without, without affecting a single transaction on sila-mainnet.
 
 671
 01:33:04.650 --> 01:33:07.360

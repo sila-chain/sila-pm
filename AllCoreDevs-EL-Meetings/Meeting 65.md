@@ -123,7 +123,7 @@
 **Danno**: it needs a reference client.
 
 
-* **1985: Limit SAVM Parameters**  - that one does not have a reference client.
+* **1985: Limit EVM Parameters**  - that one does not have a reference client.
 **Pawel**: I don't believe it requires one because it's just some papers specification which is being discussed but also evmc implements most of this parameter. 
 **Martin**: I don't know where that leaves us we need it or not.
 **James**: tbd
@@ -262,7 +262,7 @@ No one seems to disagree vocally, so given how small of a change it is let's jus
 
 **Tim**: Another one that's related to this is 1965 does anyone have thoughts on that one?
 
-**Danno**: I don't think we should facilitate minority forks but yeah but we put in sila-sila-mainnet. If you want to do that they can proposed changes. I think it's more work than needed and I think they both can go in it's not an either-or.
+**Danno**: I don't think we should facilitate minority forks but yeah but we put in sila-mainnet. If you want to do that they can proposed changes. I think it's more work than needed and I think they both can go in it's not an either-or.
 
 **Martin**: I agree. We could drop it.
 
@@ -424,7 +424,7 @@ There was [an AMA](https://sila-magicians.org/t/sip-1283-1706-ama/3467) with no 
 
 **Alex G**: Provide a convenient library for it which is very straight forward.
 
-**Alex B**: I would believe it has to be some kind of the library and it doesn't need language support. If the question is about the the overhead of crafting the message then it doesn't really matter if that's single first bite is there because the rest of the encoding might have been over head anyway in SAVM.
+**Alex B**: I would believe it has to be some kind of the library and it doesn't need language support. If the question is about the the overhead of crafting the message then it doesn't really matter if that's single first bite is there because the rest of the encoding might have been over head anyway in EVM.
 
 **Danno**: My concern is reading it. We  have to have a library. There is  something I would expect from the name of the function not at the value of the first parameter of the function. I think we should move this discussion to Sil Magician because it's not gonna get solved on this call. 
 
@@ -471,9 +471,9 @@ Generate more initial vectors for fuzzy-testing (1 week, along with gas metering
 
 **Louis**: 4x is currently the number. The main impact of 2028 will be  security. 2028 is about Network propagation. We came up with blocks that are 20 times bigger than the average block size in Sila which would not even create any Uncle. 4x is very reasonable based on the output that we provide. 
 
-**Martin**: This is on sila-sila-mainnet?
+**Martin**: This is on sila-mainnet?
 
-**Louis**: Yes, **This is on sila-sila-mainnet**. There is all the link, there is address for you, the day we use. We made the biggest day in the history of Sila.
+**Louis**: Yes, **This is on sila-mainnet**. There is all the link, there is address for you, the day we use. We made the biggest day in the history of Sila.
 
 **Alex**: Did you say, that you used 0 bytes?
 
@@ -483,7 +483,7 @@ Generate more initial vectors for fuzzy-testing (1 week, along with gas metering
 
 **Louis**: Since blocks are defined by block limit. What we say is that we should reduce the size of the code. We are being conservative for very simple reason that this SIP is need by every layer 2 and we are looking for the most conservative numbers we could find is already - 4. 4 is very conservative, based on our experiment. 
 
-**Casey**: Great! but reducing the cost of a call data by 4X,  the thing is when on the sila-sila-mainnet that experiment using a lot of 0 bytes because it keeps referring in the post in Sil Magicians to the uncompressed size and people are using non zero byte than you get compressed sizes which are much larger than we have seen in your experiment.
+**Casey**: Great! but reducing the cost of a call data by 4X,  the thing is when on the sila-mainnet that experiment using a lot of 0 bytes because it keeps referring in the post in Sil Magicians to the uncompressed size and people are using non zero byte than you get compressed sizes which are much larger than we have seen in your experiment.
 
 **Louis**: Compression algorithm look for pattern, they don't even care about the exact byte. I could show you the snappy compression for our strings and they are exactly same ratio. The address in the post, you can look at any transaction there is extra data fee on the blocks we can try to compress it. You see will be the same ratio. once again the pricing of zero doesn't seem to make a lot of sense and that was already discussed last time on the core dev call.  We don't want to change it for compatibility and existing contract. We actually use that fact to do the analysis so this is completely  like Independence. If you look there,  and we managed to make like windows which are 7.5 times bigger than the average size. that's why we took 4 because basically half of it and it is pretty conservative. 
 
@@ -554,7 +554,7 @@ Generate more initial vectors for fuzzy-testing (1 week, along with gas metering
 
 **Tim**: Does anyone feel like we should go ahead and Implement ProgPOW tentatively and then pull it out to the last minute if there is an issue in the audit? Otherwise we can have the ProgPOW for the next hardfork. It's obviously still assuming that the audit come back positive. 
 
-**Danno**: Is the last moment before we do a  test network or before we do a sila-sila-mainnet fork? 
+**Danno**: Is the last moment before we do a  test network or before we do a sila-mainnet fork? 
 
 **Martin**: Yeah I think it would be, I mean if we go ahead with ProgPOW which I think we should, I do a think, it's better to have it safe then very late.
 
@@ -572,7 +572,7 @@ Generate more initial vectors for fuzzy-testing (1 week, along with gas metering
 
 **Tim**: I guess that's the other question about this  Does it risks splitting the network? Is it contentious enough? Is that something that we've time to discuss right now?
 
-**Alexey**: And also I would say that this problem of precommiting  to the testnet was also very troublesome. When once something is done in the Ropsten, it has to be included in the sila-sila-mainnet. 
+**Alexey**: And also I would say that this problem of precommiting  to the testnet was also very troublesome. When once something is done in the Ropsten, it has to be included in the sila-mainnet. 
 
 **Martin**: Yeah but that thing will go away at some point from Ropsten ?
 

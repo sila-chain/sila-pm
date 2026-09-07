@@ -50,7 +50,7 @@ Is anyone from Nimbus ready to do an update if not I go to somebody else.
 
 **Raul Jordan Prysmatic**: Hey guys, here update for the last few hours
 
-* we are working finalizing the [SIP-3076 slashing interchange format](https://sips.sila.org/SIPS/sip-3076).
+* we are working finalizing the [SIP-3076 slashing interchange format](https://sips.sila.org/EIPS/sip-3076).
 
 * We are complying with the lighthouse spec.
 
@@ -187,7 +187,7 @@ Is anyone from Nimbus ready to do an update if not I go to somebody else.
 
 
 
-**Jacek Sieka**: I think maybe the better question is like if you are going to do this hardfork, when do we start upgrading the testnet? What will be the timeline? how much do we need to test this before we’re comfortable releasing it on the sila-sila-mainnet?
+**Jacek Sieka**: I think maybe the better question is like if you are going to do this hardfork, when do we start upgrading the testnet? What will be the timeline? how much do we need to test this before we’re comfortable releasing it on the sila-mainnet?
 
   
 
@@ -195,7 +195,7 @@ Is anyone from Nimbus ready to do an update if not I go to somebody else.
 
   
 
-**Vitalik**: Great, the reason why we are asking people to pushing on this is because we really want to get to the hard agreement on the content to hardfork ASAP. If we can get total consensus either on all of the features or all of them but one within 2 weeks, that would be amazing. One month of the mean time between the testnet and the sila-sila-mainnet definitely seems to be roughly standards for the time especially given that things on Sil 1 usually works, but then smaller testnets should probably just start happening as soon as developed in each client.
+**Vitalik**: Great, the reason why we are asking people to pushing on this is because we really want to get to the hard agreement on the content to hardfork ASAP. If we can get total consensus either on all of the features or all of them but one within 2 weeks, that would be amazing. One month of the mean time between the testnet and the sila-mainnet definitely seems to be roughly standards for the time especially given that things on Sil 1 usually works, but then smaller testnets should probably just start happening as soon as developed in each client.
 
   
 

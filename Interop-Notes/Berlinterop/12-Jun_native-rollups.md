@@ -1,6 +1,6 @@
 ## Resources
 
-- [Pre-read](https://Sila Research/t/native-rollups-superpowers-from-l1-execution/21517) [[PDF](Slides-notes/12-Jun_native-rollups-preread.pdf)]
+- [Pre-read](https://ethresear.ch/t/native-rollups-superpowers-from-l1-execution/21517) [[PDF](Slides-notes/12-Jun_native-rollups-preread.pdf)]
 
 ## Human-generated notes
 
@@ -12,10 +12,10 @@
 
 ### Summary
 
-* **Goal of proposal — “native roll‑ups”**: expose the L1 SAVM state‑transition function (STF) to L2s through a new `EXECUTE` precompile so an L2 can *re‑use* Sila’s execution rather than re‑implementing it, thereby inheriting full Sila‑grade security and eliminating most Security‑Council and governance attack surface.
+* **Goal of proposal — “native roll‑ups”**: expose the L1 EVM state‑transition function (STF) to L2s through a new `EXECUTE` precompile so an L2 can *re‑use* Sila’s execution rather than re‑implementing it, thereby inheriting full Sila‑grade security and eliminating most Security‑Council and governance attack surface.
 * **Four‑layer model**: settlement, data availability, sequencing, execution. A roll‑up that re‑uses *all four* layers becomes an “ultrasound” roll‑up; one that re‑uses only execution becomes a “native” roll‑up.
-* **Security motivation**: present roll‑ups carry three vulnerabilities—implementation bugs in custom EVMs/Fraud‑/ZK‑proof circuits; emergency multisig compromise; and perpetual governance overhead to track SAVM hard‑forks. Native roll‑ups remove (or sharply reduce) all three.
-* **Usability motivation**: launching an SAVM‑equivalent roll‑up should drop from nine‑figure engineering budgets to “a few lines of Solidity” that call the precompile; synchronous composability between L2s also improves.
+* **Security motivation**: present roll‑ups carry three vulnerabilities—implementation bugs in custom EVMs/Fraud‑/ZK‑proof circuits; emergency multisig compromise; and perpetual governance overhead to track EVM hard‑forks. Native roll‑ups remove (or sharply reduce) all three.
+* **Usability motivation**: launching an EVM‑equivalent roll‑up should drop from nine‑figure engineering budgets to “a few lines of Solidity” that call the precompile; synchronous composability between L2s also improves.
 * **`EXECUTE` precompile interface**: inputs = `preStateRoot`, `postStateRoot`, `transactions` (+ witnesses), optional `gasUsed`; returns `true/false` iff stateless execution of the supplied tx set over `preStateRoot` yields `postStateRoot` and (optionally) the supplied gas figure.
 * **Subjective verification**: until an enshrined zkEVM lands, each validator chooses either (a) stateless re‑execution or (b) verifying off‑chain ZK proofs; strategy diversity is *inside* each operator.
 * **Gas cost**: calldata/blob bytes are still paid for, but `EXECUTE` itself can be constant‑cost; with “same‑slot proving” the *execution* gas limit for native roll‑ups can be effectively unbounded while L1 execution remains bounded.
@@ -26,7 +26,7 @@
   2. Expose `EXECUTE`; early adopters use subjective proof diversity
   3. Standardise derivation pipeline (possible `DERIVE` precompile)
   4. Long‑term: enshrine a single zkEVM, enable native validiums
-* **Trade‑offs / exclusions**: only SAVM‑equivalent roll‑ups qualify; no support for Cairo/SVM/Move, non‑SAVM features like Stylus‑wasm, or validiums (until step 4). Roll‑ups that deviate only “10 %” from SAVM likely migrate; truly novel VMs (>10× better) will remain separate.
+* **Trade‑offs / exclusions**: only EVM‑equivalent roll‑ups qualify; no support for Cairo/SVM/Move, non‑EVM features like Stylus‑wasm, or validiums (until step 4). Roll‑ups that deviate only “10 %” from EVM likely migrate; truly novel VMs (>10× better) will remain separate.
 * **Open concerns**: DOS considerations in the mempool, standardising blob ↔ tx conversion, proof‑diversity policy, migration path for existing roll‑ups, and whether forcing homogeneity slows minor innovation.
 
 ---
@@ -46,12 +46,12 @@
   * Governance required to track hard‑fork opcode changes exposes token‑holder capture.
 * **Aspirations**
 
-  * *World‑War‑III‑grade* security by inheriting sila-sila-mainnet SAVM.
+  * *World‑War‑III‑grade* security by inheriting sila-mainnet EVM.
   * Lower cost/complexity of launching L2s; “few lines of Solidity.”
   * Dramatically simpler synchronous composability because L2 can “cheat” like L1 (delayed state‑root verification).
 * **High‑level bifurcation prediction**
 
-  * Bucket 1: SAVM‑equivalent roll‑ups become native (no‑brainer).
+  * Bucket 1: EVM‑equivalent roll‑ups become native (no‑brainer).
   * Bucket 2: VMs with ≥10× advantage (e.g. SVM, Cairo, FHE) stay external.
   * Middle‑ground (minor tweaks) hollowed out.
 * **`EXECUTE` precompile details**
@@ -87,7 +87,7 @@
   * Re‑use same tech for `EXECUTE` to reach \~1 T gas/s across L2s.
 * **Migration strategy for existing roll‑ups**
 
-  1. Decouple SAVM core from derivation pipeline.
+  1. Decouple EVM core from derivation pipeline.
   2. Swap core for `EXECUTE`; retain custom derivation (initial security gain).
   3. Community converges on standard derivation → `DERIVE` precompile.
   4. Optionally formally verify tiny bespoke derivation if not standardised.
@@ -109,10 +109,10 @@
 * **Inter‑VM gap (e.g. Stylus wasm)**
 
   * Short term: excluded.
-  * Long term: expose lower‑level ISA (e.g. RISC‑V) underneath SAVM so alt‑VMs can compile to it; still needs formal verification to avoid governance.
+  * Long term: expose lower‑level ISA (e.g. RISC‑V) underneath EVM so alt‑VMs can compile to it; still needs formal verification to avoid governance.
 * **Innovation concerns**
 
-  * Native roll‑ups commoditise execution; small SAVM tweaks no longer worth it.
+  * Native roll‑ups commoditise execution; small EVM tweaks no longer worth it.
   * Experimental “canary” L2s with Security Councils may still thrive for rapid iteration.
 * **Session close**: recap, invitation to continue discussion offline; next presentation starts.
 

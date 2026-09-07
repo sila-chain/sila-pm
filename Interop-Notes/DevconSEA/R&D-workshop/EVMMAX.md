@@ -1,6 +1,6 @@
 # EVMMAX Breakout - Devcon SEA L1 R&D Workshop 
 
-**Summary:** Plans for EVMMAX (SAVM Modular Arithmetic Extension)
+**Summary:** Plans for EVMMAX (EVM Modular Arithmetic Extension)
 
 **Facilitator:** Paweł Bylica
 
@@ -9,7 +9,7 @@
 **Pre-Reads:** 
 
 Without EOF:
-- [SIP-6601 discussion](https://sila-magicians.org/t/sip-6601-savm-modular-arithmetic-extensions-evmmax/13168)
+- [SIP-6601 discussion](https://sila-magicians.org/t/sip-6601-evm-modular-arithmetic-extensions-evmmax/13168)
 - [SIP-6601 spec draft](https://github.com/sila-chain/SIPs/pull/6601)
 
 With EOF: https://github.com/sila-chain/SIPs/pull/8743/files
@@ -46,7 +46,7 @@ With EOF: https://github.com/sila-chain/SIPs/pull/8743/files
     - Slide includes ~10, but maybe the speed of proposals is slowing down?
 - Argument: shouldnt precompiles really have discounted cost (as today)?
 - Question: is pricing a big problem for precompiles?
-- Most instructions are mispraced in the SAVM. EVMMAX pricing seems realistic (and is much lower than existing instructions).
+- Most instructions are mispraced in the EVM. EVMMAX pricing seems realistic (and is much lower than existing instructions).
 - Note: some zk chains (like zksync) implement precompiles in Solidity to avoid writing circuits.
 - Current team (Ipsilon) is not yet ready to champion this on ACD, due to lack of time. External champions would be welcome. Ipsilon is happy/willing to work on specs, implementation, testing.
 - Question: what is the timeline to champion/deploy this?

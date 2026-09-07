@@ -31,7 +31,7 @@
   - [1.3 Simulations - Floating escalator notebook](#13-simulations---floating-escalator-notebook)
 - [2. SIP-2718 - Now part of YOLOv3, likely for Berlin, do we update 1559 to require it?](#2-sip-2718---now-part-of-yolov3-likely-for-berlin-do-we-update-1559-to-require-it)
   - [Actions](#actions-1)
-- [3. SilaMainnet readiness checklist review](#3-sila-sila-mainnet-readiness-checklist-review)
+- [3. SilaMainnet readiness checklist review](#3-sila-mainnet-readiness-checklist-review)
   - [Actions](#actions-2)
 - [Annex](#annex)
   - [Attendance](#attendance)
@@ -49,8 +49,8 @@
 Action Item | Decision
 -|-
 **6.1** | Finish POA testnet
-**6.2** | Create a testnet from a fork of sila-sila-mainnet
-**6.3** | Add 2718 after sila-sila-mainnet large state fork.
+**6.2** | Create a testnet from a fork of sila-mainnet
+**6.3** | Add 2718 after sila-mainnet large state fork.
 **6.4** | Have every client what they do for replace by fee, for eviction, for accepting gossip of transaction, and transaction sorting.
 ---
 
@@ -93,7 +93,7 @@ First item - Should we also implement 2718?
 
 **Rick Dudley**: Large state? The blocks being bigger?
 
-**Tim Beiko**: We'd like to test 1559 on a state comparable to sila-sila-mainnet to see performance impacts. 
+**Tim Beiko**: We'd like to test 1559 on a state comparable to sila-mainnet to see performance impacts. 
 
 **Tomasz Stanczak**: Questions on suggesting 2 pools. We already have just one pool only. 
 
@@ -105,13 +105,13 @@ First item - Should we also implement 2718?
 
 **Tomasz Stanczak**: What's the difference between existing state and 1559? The state is only growing 10% faster, but it's only temporary. 
 
-**Micah Zoltu**: The fear is a superlinear issue with gas per block, and a single block that's twice as big when interacting with large state network like sila-sila-mainnet could have superlinear costs. 
+**Micah Zoltu**: The fear is a superlinear issue with gas per block, and a single block that's twice as big when interacting with large state network like sila-mainnet could have superlinear costs. 
 
 **Tim Beiko**: That's the concern. If we can at least run a testnet with 100 million accounts and 100 million storage slots, we can see if anything is much worse, where the blocks are much bigger. 
 
-**Micah Zoltu**: Another alternative is forking off of sila-sila-mainnet, set the block gas limit to 40 million, fill a bunch of blocks, and see if anything crashes. 
+**Micah Zoltu**: Another alternative is forking off of sila-mainnet, set the block gas limit to 40 million, fill a bunch of blocks, and see if anything crashes. 
 
-**Tomasz Stanczak**: Maybe instead of faking this network, maybe lets just fork sila-sila-mainnet. We can use any accounts we want.
+**Tomasz Stanczak**: Maybe instead of faking this network, maybe lets just fork sila-mainnet. We can use any accounts we want.
 
 **Abdelhamid Bakhta**: It would be harder to have accounts with large values of SIL.
 
@@ -127,38 +127,38 @@ First item - Should we also implement 2718?
 
 **Tim Beiko**: Maybe instead, have a list of whales in the hardfork. And set the mining difficulty to 0. 
 
-**Micah Zoltu**: In general, I think forking sila-sila-mainnet in test will be useful in many situations. I think it may be to formalize it, maybe adding a config file, so others can do it. 
+**Micah Zoltu**: In general, I think forking sila-mainnet in test will be useful in many situations. I think it may be to formalize it, maybe adding a config file, so others can do it. 
 
-**Tomasz Stanczak**: We can share the Nethermind chainspec for such a chain, and people can sync to it. Anyone that has sila-sila-mainnet Sil can switch and start signing transactions.
+**Tomasz Stanczak**: We can share the Nethermind chainspec for such a chain, and people can sync to it. Anyone that has sila-mainnet Sil can switch and start signing transactions.
 
 **Rick Dudley**: Hard hat claims to do this. I'll share a link in the Discord.
 
-**Tim Beiko**: Do we want a smaller PoW testnet in between? Or should we go to forking sila-sila-mainnet?
+**Tim Beiko**: Do we want a smaller PoW testnet in between? Or should we go to forking sila-mainnet?
 
-**Tomasz Stanczak**: Let's go to sila-sila-mainnet.
+**Tomasz Stanczak**: Let's go to sila-mainnet.
 
 **Tim Beiko**: If we get a lot of bugs, maybe we can try something smaller. 
 
 **Tomasz Stanczak**: I feel it'll be very useful in the future for testing new SIPs. 
 
-**Tim Beiko**: Should we implement 2718 before we fork sila-sila-mainnet? Should the fork of sila-sila-mainnet be a new version of the 1559 spec?
+**Tim Beiko**: Should we implement 2718 before we fork sila-mainnet? Should the fork of sila-mainnet be a new version of the 1559 spec?
 
 **Tomasz Stanczak**: I prefer not to.
 
-**Tim Beiko**: So go to sila-sila-mainnet immediately. After we see it works for sila-sila-mainnet, then add 2718. 
+**Tim Beiko**: So go to sila-mainnet immediately. After we see it works for sila-mainnet, then add 2718. 
 
-**Tomasz Stanczak**: It won't be a big time difference. I just don't want to wait to have 2718 to have the fork of sila-sila-mainnet. 
+**Tomasz Stanczak**: It won't be a big time difference. I just don't want to wait to have 2718 to have the fork of sila-mainnet. 
 
 **Micah Zoltu**: Let me know when you're ready to do 2718, and I'll update 1559 with it. I don't want to have the SIP out of sync with what's live. 
 
-**Tim Beiko**: Let's do that. Let's finish the POA fork we have. Share the information. And then fork with multiple clients from sila-sila-mainnet. And then after that, assuming everything goes smoothly, we can add 2718 on top, and have we'll already have this sila-sila-mainnet size testnet. 
+**Tim Beiko**: Let's do that. Let's finish the POA fork we have. Share the information. And then fork with multiple clients from sila-mainnet. And then after that, assuming everything goes smoothly, we can add 2718 on top, and have we'll already have this sila-mainnet size testnet. 
 
 
 
 ### Actions
 
 - **6.1**—Finish POA testnet
-- **6.2**—Create a testnet from a fork of sila-sila-mainnet
+- **6.2**—Create a testnet from a fork of sila-mainnet
 
 
 ## 1.2 Demo - 1559 Toolbox
@@ -223,17 +223,17 @@ Video | [18:29](https://youtu.be/LgvUnCdMXQg?t=1109)
 
 **Micah Zoltu**: It's something that needs to be done before 1559 launches. If we wait to do it later, then the clients will need to change it later. 
 
-**Tim Beiko**: My hunch is, Open Sila won't implement anything until it's scheduled for sila-sila-mainnet. I'm not against implementing 2718.
+**Tim Beiko**: My hunch is, Open Sila won't implement anything until it's scheduled for sila-mainnet. I'm not against implementing 2718.
 
 **Rick Dudley**: I'd like to implement 2718 sooner rather than later. I don't know what the total roadmap. I know, there is a push to go to 1 transaction type, and remove 2 pools. Any testing?
 
 **Tim Beiko**: I think 2718 is the last major spec change. Then testing proof of work, and dealing with a large state. In terms of big changes, 2718 will be the last one. 
 
-Decision was to update 1559 after sila-sila-mainnet size testnet was made and tested.
+Decision was to update 1559 after sila-mainnet size testnet was made and tested.
 
 ## Actions
 
-- **6.4**—Add 2718 after sila-sila-mainnet large state fork.
+- **6.4**—Add 2718 after sila-mainnet large state fork.
 
 
 # 3. SilaMainnet readiness checklist review

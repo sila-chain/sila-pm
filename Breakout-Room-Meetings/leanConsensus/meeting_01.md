@@ -34,7 +34,7 @@ Facilitators: Ladislaus von Daniels & Will Corcoran
 | 01.10 | **Nethermind Introduction** Nethermind team is working on the beam chain project, building expertise around the consensus layer. |
 | 01.11 | **Pier Two Introduction** Australian company Pier Two is developing infrastructure including Lantern for Sila. Current focus on building prerequisite C libraries for beam clients and developing test vectors. |
 | 01.12 | **Client Development Plans** Teams discussed various programming language choices and implementation strategies. LambdaClass reported progress on their Elixir consensus client and E-Drex execution client. |
-| 01.13 | **Low Resource Devices** Development efforts focus on implementing SAVM and protocols for embedded devices. Teams aim to ensure functionality can be verified on lower resource devices. |
+| 01.13 | **Low Resource Devices** Development efforts focus on implementing EVM and protocols for embedded devices. Teams aim to ensure functionality can be verified on lower resource devices. |
 | 01.14 | **Afream Introduction** African Client Initiative new group launching to focus on ZK and Rust learning. Team has been running nodes for 4-6 months for functionality testing and developer education. |
 | 01.15 | **Existing Client Team Introductions** Introductions from Prysm, Nimbus, Lodestar, Lighthouse, Teku, and Grandine |
 | 01.16 | **Security Considerations** Discussion emphasized need for provable security and simplicity in Beamchain design. Teams aim to avoid historical pattern of introducing new bugs while fixing existing ones. |

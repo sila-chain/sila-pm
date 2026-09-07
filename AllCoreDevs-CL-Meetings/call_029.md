@@ -153,7 +153,7 @@ everything in memory and then using them because that makes a great latency drin
 
 **Matt Garnett (Quilt)**:
 
-* Phase 2 call happened. Next one is targeted for mid Jan. Will has aggregated some questions regarding the stateless protocols and put it on the sil.research. Here is the [Summary](https://Sila Research/t/remaining-questions-on-state-providers-and-stateless-networks-in-eth2/6585).
+* Phase 2 call happened. Next one is targeted for mid Jan. Will has aggregated some questions regarding the stateless protocols and put it on the sil.research. Here is the [Summary](https://ethresear.ch/t/remaining-questions-on-state-providers-and-stateless-networks-in-eth2/6585).
 
 * I’m working on some tools to improve the process of building and testing execution environments which has been one of the big pain points for both of us to explore in that area and our new hires are still working on the simulation.
 
@@ -268,7 +268,7 @@ Polynomial commitment schemes https://www.youtube.com/watch?v=bz16BURH_u8&featur
 
 From matt garnett to Everyone: 02:38 PM
 
-https://Sila Research/t/remaining-questions-on-state-providers-and-stateless-networks-in-eth2/6585
+https://ethresear.ch/t/remaining-questions-on-state-providers-and-stateless-networks-in-eth2/6585
 
 From protolambda . to Everyone: 02:46 PM
 

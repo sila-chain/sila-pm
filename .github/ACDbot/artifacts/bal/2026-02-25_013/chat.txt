@@ -5,11 +5,11 @@
 00:09:57	felipe:	Reacted to "It’s not a good d..." with 😅
 00:10:05	Soubhik:	Reacted to "It’s not a good d..." with 😅
 00:10:23	Stefan Starflinger:	Im back from my holiday where did everyone go 😂
-00:12:26	Karim T. (matkt):	Why not creating a shadow fork and build new blocks with transactions of the sila-sila-mainnet transaction pool ?
+00:12:26	Karim T. (matkt):	Why not creating a shadow fork and build new blocks with transactions of the sila-mainnet transaction pool ?
 00:13:06	felipe:	which endpoint is this @jochem-brouwer? `testing_buildBlockV1`?
 00:13:44	jochem-brouwer:	Replying to "Why not creating a..."
 
-If this is related to benchmarks, we want to really stress test the client. So "normal" sila-sila-mainnet texs are not sufficient here because they are not stressing the client enough. We want to generate "worst case blocks" and try to also abuse the BAL to generate worst cases there (for instance batch I/O where the storage is being loaded in reverse order than they are ordered in the BAL)
+If this is related to benchmarks, we want to really stress test the client. So "normal" sila-mainnet texs are not sufficient here because they are not stressing the client enough. We want to generate "worst case blocks" and try to also abuse the BAL to generate worst cases there (for instance batch I/O where the storage is being loaded in reverse order than they are ordered in the BAL)
 00:14:07	Stefan Starflinger:	Its not very cheap to setup a shadow fork and we generally prefer to have multiple clients ready before taking this on
 00:14:22	jochem-brouwer:	Replying to "which endpoint is ..."
 

@@ -26,7 +26,7 @@
       },
       {
         "timestamp": "00:11:43",
-        "highlight": "Spec tests exist for minimal preset only; sila-sila-mainnet preset tests under consideration but constrained by 6-hour CI time limit"
+        "highlight": "Spec tests exist for minimal preset only; sila-mainnet preset tests under consideration but constrained by 6-hour CI time limit"
       },
       {
         "timestamp": "00:30:07",

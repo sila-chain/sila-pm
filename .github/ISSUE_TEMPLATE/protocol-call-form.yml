@@ -43,17 +43,17 @@ body:
         - SIP-7732 Breakout Room
         - SIP-7928 Breakout Room
         - EIPIP Meeting
-        - SAVM Resource Pricing Breakout
-        - SAVM Static Control Flow
+        - EVM Resource Pricing Breakout
+        - EVM Static Control Flow
         - eth_simulate
         - Encrypt the Mempool
         - Ethproofs Community Call
         - Fast Confirmation Rule
         - FOCIL Breakout
+        - Frame Transaction Breakout
         - Glamsterdam Repricings
         - L1-zkEVM Breakout
         - L2 Interop Working Group
-        - Native Account Abstraction
         - P2P Networking
         - PQ Interop
         - PQ Transaction Signatures

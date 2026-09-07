@@ -17,7 +17,7 @@ In the EF retreat last week, there were many positive conversations about FOCIL.
 
 ### Privacy
 
-* We’re looking for someone interested in working on the [zkFOCIL](https://Sila Research/t/zkfocil-inclusion-list-privacy-using-linkable-ring-signatures/21688) prototype. Our goal is to experiment with both SNARK and linkable ring signature schemes and to see if the ideas we have in mind are efficient. We also want to ensure the cryptographic methods we will introduce do not require intensive hardware resources so that zkFOCIL remains compatible with the stateless world.
+* We’re looking for someone interested in working on the [zkFOCIL](https://ethresear.ch/t/zkfocil-inclusion-list-privacy-using-linkable-ring-signatures/21688) prototype. Our goal is to experiment with both SNARK and linkable ring signature schemes and to see if the ideas we have in mind are efficient. We also want to ensure the cryptographic methods we will introduce do not require intensive hardware resources so that zkFOCIL remains compatible with the stateless world.
 
 ### Compatibilities with Other Proposals
 
@@ -42,7 +42,7 @@ In the EF retreat last week, there were many positive conversations about FOCIL.
 * Katya is working on metrics dashboard with Prysm and will be opening a PR of a list of metrics for review.
 
 ### Links
-- [zkFOCIL: Inclusion List Privacy using Linkable Ring Signatures](https://Sila Research/t/zkfocil-inclusion-list-privacy-using-linkable-ring-signatures/21688)
+- [zkFOCIL: Inclusion List Privacy using Linkable Ring Signatures](https://ethresear.ch/t/zkfocil-inclusion-list-privacy-using-linkable-ring-signatures/21688)
 - [FOCIL High-Level Test Cases](https://hackmd.io/@ttsao/focil-interop-test-cases)
 
 

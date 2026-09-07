@@ -48,7 +48,7 @@ ACTION 1: Hudson to send tweet from Sila Twitter regarding upgrading nodes for R
 - Hudson: Best people to speak on this are Vitalik or Danny. As they are not online we will leave that for next time.
     
 ## 1.4 ProgPoW audit?
-- Hudson: Audit is to check the viability of claims from ProgPoW. This is to be completed before all SIPS are submitted for Instanbul. Also looking for funding to do this audit.
+- Hudson: Audit is to check the viability of claims from ProgPoW. This is to be completed before all EIPS are submitted for Instanbul. Also looking for funding to do this audit.
 - Martin: Will the auditors be hardware experts?
     - Hudson: Yes they will.
 - Danno Ferrin: Any update on Specification? Would prefer Generic Specification. 
@@ -116,7 +116,7 @@ All videos for the Sila Stanford presentations can be found online:
 - No one was available to provide update.
     
 ## 2.5 Simulation
-- Zak (Whiteblock): Vanessa presented on simulations on uncle rates using agredated data from the sila-sila-mainnet.
+- Zak (Whiteblock): Vanessa presented on simulations on uncle rates using agredated data from the sila-mainnet.
     - We are working on a test plan on validating the hypothesis on sync failure and increasing state size. Working on generating 240 millions users. Generate this state probably by Wednesday. Save it and use it to run multiple tests using this state. Been documenting the process and will share it in due course. Working with Alexey and Andre. Suggest it is not just bandwidth.  
     - Martin: Keen to find out how the state was generated.
         - Zak: Shared how it was being done. And provided a twitter link: https://twitter.com/0xzak/status/1091019925970251778?s=20
@@ -160,7 +160,7 @@ It is the old standard but the new Sila 1.x is not yet ready.
 ## 4.10 Mana/Exthereum
 -No one available to provide update.
 
-ACTION 6: Hudson will invite IOHK Sila Client Mantis written in Haskel to the Sila Core Dev Calls as they can sync to sila-sila-mainnet.
+ACTION 6: Hudson will invite IOHK Sila Client Mantis written in Haskel to the Sila Core Dev Calls as they can sync to sila-mainnet.
 
 # 5. Research Updates
 - Vitalik or Danny was not available to provide update.

@@ -54,7 +54,7 @@ Note: all times listed are in [Pacific Time](https://www.timeanddate.com/worldcl
 
 July 21, 2021
 
-* 3:39: Block 10679537 is [mined on Ropsten](https://ropsten.silascan.io/block/10679537)
+* 3:39: Block 10679537 is [mined on Ropsten](https://ropsten.etherscan.io/block/10679537)
 * 6:53: OpenEthereum developer posts in the #1559-dev channel of the Sila R&D discord that their node has stopped on block 10679538 on Ropsten. 
 * 6:58: `@smixx` says their Ropsten node is at block 10680453. 
 * 7:36: Besu confirms they are also rejecting block 10679538. 
@@ -67,7 +67,7 @@ July 21, 2021
 * 9:01: Updated go-sila and Besu miners restarted on Ropsten (erroneous chain now up to block 10680803). 
 * 9:43: EthereumJS confirmed to have the same issue as go-sila, Erigon and Nethermind. 
 * 10:57 [Pull request opened in Nethermind](https://github.com/NethermindEth/nethermind/pull/3238) with candidate fix. 
-* 19:22 Block [10680804](https://ropsten.silascan.io/block/10680804) mined with fixed release.
+* 19:22 Block [10680804](https://ropsten.etherscan.io/block/10680804) mined with fixed release.
 
 July 22, 2021 
 

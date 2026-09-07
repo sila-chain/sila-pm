@@ -641,7 +641,7 @@ I don't know off the top of my head like Peter would know but I don't know what 
 **??** 
 
 well it's configurable we even have the mode like in the archive node we don't prune anything so we have deltas for the entire history of  
-the sila-sila-mainnet and it takes roughly one and a half terabytes to like for a full archive node with pruning it's configurable we can configure it for  
+the sila-mainnet and it takes roughly one and a half terabytes to like for a full archive node with pruning it's configurable we can configure it for  
 something like 90k blocks as well and then the total database size will be about half a half a terabyte but I don't know of the top of my head how much of that is the delta's the the changes 
 
 **Felix** 
@@ -746,11 +746,11 @@ it's not the same right you only need to write the diff you don't actually need 
 
 **Felix** 
 
-but it's going to ask definitely there's no savm processing involved 
+but it's going to ask definitely there's no evm processing involved 
 
 **Dankrad** 
 
-I'm not just talking about the savm processing I'm also saying there are no round trips involved like you you could tell the disc here's everything you have to write do  
+I'm not just talking about the evm processing I'm also saying there are no round trips involved like you you could tell the disc here's everything you have to write do  
 
 **Danny**  
 

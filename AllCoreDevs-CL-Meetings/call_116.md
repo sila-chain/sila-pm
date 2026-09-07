@@ -70,13 +70,13 @@ Yeah. Thank you.
 **Pari**
 So we have this testing overview talk and the main aim of this is to create a list of different ways we're approaching testing and we want to know if we're missing something early on so that we can allocate resources to get that done asap. We do have a couple of needs at the current stage. None of them are urgent, so we will be getting to them over the next couple of weeks, but if someone's free and wants to take it up, please feel free. The testnet verifier for example would be used in kurtosis and a lot of other places essentially something that we can use to verify that the testnet is healthy. Sig test coordinators the same one we used for the merge tests it just needs an update and some loving care after about a year of not really using it.
 
-And the other ones we do have some sort of testing in the pipeline, so please reach out if you're planning on working on them. But besides that, it's just an overview of different categories of testing. So we start with spec tests. Shall we, I think nothing is really new there for savm related testing. We're banking on Hive savm sizing execution specs and I think Mario and Mario's Etc would be kind of points of contact, with sync testing since we will be having a couple of new dependencies with the blobs, we wanted to make sure that we can sync test the basic scenarios so regular syncing after blockage blog expiry Windows checkpoint sync syncing when blobs are inside the window but missing, and Optimistic sync tests.
+And the other ones we do have some sort of testing in the pipeline, so please reach out if you're planning on working on them. But besides that, it's just an overview of different categories of testing. So we start with spec tests. Shall we, I think nothing is really new there for evm related testing. We're banking on Hive evm sizing execution specs and I think Mario and Mario's Etc would be kind of points of contact, with sync testing since we will be having a couple of new dependencies with the blobs, we wanted to make sure that we can sync test the basic scenarios so regular syncing after blockage blog expiry Windows checkpoint sync syncing when blobs are inside the window but missing, and Optimistic sync tests.
 
 We still need to figure out how we do it with the sync target. We might need to wait until we have it on a public testnet before we can get this up and running and of course Hive also already has a lot of sync related tests built in. Kiosk tests are something we have been doing in the past with antithesis I think Tyler's kind of been the main point of contact a lot of you might have interact with on the topic, but Barnabas and I have also been looking at chaos mesh along with kurtosis, so the idea is that you can cause a lot of network level instability resource level time related faults, and you should be seeing something on this topic over the next month.
 
 I think we still have really alpha ideas on this but it seems to have some legs and should be able to help us with testing and public testnests, so we have devnet shadow forks and begin metrics Gaza that would help us with some optimization related topics. We have MEV related tests so kurtosis now supports two modes. First mode is mock MEV and that would use Mario's mock builder that has an implementation of the builder API. 
 
-So if you are a client team who wants to have a target where you know the API has been implemented you can use it with MEV type mock and knock out a lot of local bugs that might be happening or versioning issues and ideally once the relay side of things are up and running, you can switch this MEV type to full and that would spin up relays, builders, the relay API endpoint, and everything so this is literally the MEV workflow that you would see in sila-sila-mainnet Sila and there you should be able to test the entire integration end to end.
+So if you are a client team who wants to have a target where you know the API has been implemented you can use it with MEV type mock and knock out a lot of local bugs that might be happening or versioning issues and ideally once the relay side of things are up and running, you can switch this MEV type to full and that would spin up relays, builders, the relay API endpoint, and everything so this is literally the MEV workflow that you would see in sila-mainnet Sila and there you should be able to test the entire integration end to end.
 
 I would see that more as making sure that all the different entities work together and we don't see any surprises when once we hit the fork ? in it. The other thing that the mock MEV target supports is invalid payloads, so you can configure when an invalid payload happens, and this is really useful for checking circuit breaker conditions, so that if something does go wrong, we need to make sure that nothing happens to Sila clients.
 
@@ -124,7 +124,7 @@ Okay so I guess it could give us peace of mind that like this synthetic transact
 Then yeah so we wanted to kind of decouple that a tiny bit and kind of push everyone who thinks they're ready with the builder flow to start using kurtosis today or maybe tomorrow, because I know there's an open PR to the mock builder but the idea is that by the time devnet 9 or devnet 8 with the builder workflow is ready, it should be a nothing burger, like we should have tested everything locally already.
 
 **Danny**
-Yeah it's almost like devnet 9 if it even exists, pretty much is should is probably short-lived, it's probably like testing the fork testing, all the load testing, it looking like sila-sila-mainnet, whereas like devnet 8 we really should be we're pretty much at spec other than the deploy method and can test everything here.
+Yeah it's almost like devnet 9 if it even exists, pretty much is should is probably short-lived, it's probably like testing the fork testing, all the load testing, it looking like sila-mainnet, whereas like devnet 8 we really should be we're pretty much at spec other than the deploy method and can test everything here.
 
 **Pari**
 This is one of the kind of open question so the past folks we always had one long living test net that we kind of publicized for people who are working on Integrations, examples Kiln, do we need one this time around or since we would have SilaHolesky soon or Goerli, you should be just fork it. 
@@ -184,7 +184,7 @@ What was the opposition of 10?
 That is not power of 8196 slots.
 
 **Danny**
-I see so if we were testing error files and things it would not have the same kind of conformance that we've sought on sila-sila-mainnet.
+I see so if we were testing error files and things it would not have the same kind of conformance that we've sought on sila-mainnet.
 
 **Barnabus**
 Right.

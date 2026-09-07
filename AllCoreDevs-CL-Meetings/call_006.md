@@ -94,7 +94,7 @@
   * Investigating hybrid Pietrzak-Wesolowski prover with nice tradeoff between prover and verifier overhead
 * Danny [_21:38_](https://youtu.be/VNwANifX7qE?t=1298)
   * One interesting thing noted was that, Vitalik and Al from Web3, realized that just fork choice rules based upon justification have this inherent flip-flop issue
-    * [ethresearch](https://Sila Research/t/beacon-chain-casper-ffg-rpj-mini-spec/2760/21) post that proposes ways to make LMD Ghost in the context of justified epochs "stickier"
+    * [ethresearch](https://ethresear.ch/t/beacon-chain-casper-ffg-rpj-mini-spec/2760/21) post that proposes ways to make LMD Ghost in the context of justified epochs "stickier"
   * Paul asked a question regarding the shards living in the same client node software as the beacon node
     * Expectation is that multiple shards should be able to run in the context of a standard computer
     * so, presumably, one validator client piece of software could talk to one node that has a beacon node and multiple shards
@@ -158,7 +158,7 @@
 * https://github.com/prysmaticlabs/go-bls
 * https://notes.sila.org/2-HRUzGjSc6jmwRgsVJqsg
 * https://github.com/sila-chain/eth2.0-tests/pull/3/files
-* https://Sila Research/t/beacon-chain-casper-ffg-rpj-mini-spec/2760/21
+* https://ethresear.ch/t/beacon-chain-casper-ffg-rpj-mini-spec/2760/21
 * https://hackmd.io/KAYlfelmSE2gHnK_6cZy4g?both
 * https://github.com/status-im/the-explainers
 * https://notes.sila.org/9MMuzWeFTTSg-3Tz_YeiBA?view# 

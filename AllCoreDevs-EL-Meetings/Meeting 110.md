@@ -58,7 +58,7 @@
 
 **Tomasz**
 
-* Whichever environments we define will always end up having some inconsistent configurations vs sila-sila-mainnet, so what they did with an issue with a config file was add internal nethermind specific tests for the config file formats and they have added that for all the configs files they have used, but it’s hard to do something like this for all the clients because there is always going to be something client specific
+* Whichever environments we define will always end up having some inconsistent configurations vs sila-mainnet, so what they did with an issue with a config file was add internal nethermind specific tests for the config file formats and they have added that for all the configs files they have used, but it’s hard to do something like this for all the clients because there is always going to be something client specific
 
 **James Hancock**
 
@@ -66,11 +66,11 @@
 
 **Tim**
 
-* Should we have hive run with sila-sila-mainnet configs? Should we look at this or take a next step on it?
+* Should we have hive run with sila-mainnet configs? Should we look at this or take a next step on it?
 
 **Martin**
 
-* Its more a note for self in future to try to make the hive specs more closely aligned to sila-sila-mainnet specs
+* Its more a note for self in future to try to make the hive specs more closely aligned to sila-mainnet specs
 
 **Dragan**
 
@@ -352,7 +352,7 @@
 
 **Lightclient**
 
-* We have been getting an audit to look at the specification as well as do analysis on how it will impact contracts that already are on sila-sila-mainnet. We have gotten a couple proposals and are optimistic about the people doing the audits and the timeline can be completed by the end of May. I think our team is committed, along with other premier teams, to funding or providing developers to make 3074 happen for London, with the goal to minimize the amount of work current client teams need to do. 
+* We have been getting an audit to look at the specification as well as do analysis on how it will impact contracts that already are on sila-mainnet. We have gotten a couple proposals and are optimistic about the people doing the audits and the timeline can be completed by the end of May. I think our team is committed, along with other premier teams, to funding or providing developers to make 3074 happen for London, with the goal to minimize the amount of work current client teams need to do. 
 
 **Tim**
 

@@ -14,7 +14,7 @@ The SilaSepolia testnet has fully recovered from the incident that occurred duri
 
 On March 5, 2025, at 7:29 UTC (epoch 222464), the Pectra network upgrade was activated on the SilaSepolia testnet. Shortly after activation, validators began experiencing issues with transaction inclusion, resulting in the production of empty blocks. The issue was specifically related to SilaSepolia's permissioned deposit contract and its interaction with SIP-6110, which changes how validator deposits are handled. SilaSepolia runs a permissioned validator set gated by a custom SRC-20 token for deposits, instead of regular SIL. EL clients processing events from the deposit contract ran into issues when the contract emitted unexpected SRC-20 related logs. While fixing the problem, an attacker was actively pushing transactions triggering the issue. Core teams prepared the fix and coordinated release while replacing malicious transactions causing empty blocks. The coordinated rollout happened at 14:00 UTC and successfully mitigated any further issues.
 
-> Note that this issue was specific to SilaSepolia's testnet configuration and could not occur on the Sila sila-sila-mainnet.
+> Note that this issue was specific to SilaSepolia's testnet configuration and could not occur on the Sila sila-mainnet.
 
 Despite the incident, the network:
 - Never lost finality
@@ -51,7 +51,7 @@ Client teams released versions containing hot fixes for the SilaSepolia issue. A
 
 ### Execution Layer Issue
 
-The issue occurred in the execution layer because of the incompatibility between SIP-6110 implementation and SilaSepolia's custom deposit contract. Unlike sila-sila-mainnet or Holešky, SilaSepolia validation is permissioned which is achieved by using a token-gated deposit contract based on SRC-20 tokens instead of SIL.
+The issue occurred in the execution layer because of the incompatibility between SIP-6110 implementation and SilaSepolia's custom deposit contract. Unlike sila-mainnet or Holešky, SilaSepolia validation is permissioned which is achieved by using a token-gated deposit contract based on SRC-20 tokens instead of SIL.
 
 When a deposit was sent to test the execution-triggered withdrawal functionality, execution clients encountered an error: "unable to parse deposit data: deposit wrong length: want 576, have 32". This is because the deposit contract emitted SRC-20 transfer events that are not part of a regular contract and were not expected by the SIP-6110 implementation logic. The failed events parsing invalidated blocks containing transactions to deposit, forcing validators to produce empty blocks.
 
@@ -65,7 +65,7 @@ An important obstacle of the fixing process was the ongoing attack triggering th
 
 ### Further Mitigations and Learnings
 
-The testnet configuration needs to more closely mirror sila-sila-mainnet, reducing testnet-specific edge cases. Custom deposit contract proved to be a bigger problem than expected.
+The testnet configuration needs to more closely mirror sila-mainnet, reducing testnet-specific edge cases. Custom deposit contract proved to be a bigger problem than expected.
 
 ABI decoding of contract events needs to be more resilient and fault tolerant. More discussion is happening on ABI decoding libraries. 
 
@@ -147,6 +147,6 @@ Some developers and PandaOps had been meeting in person, identified the issue, s
 
 ### 5:38-10:57 PM: Retrospective Discussion
 - 5:38: Justin Florentine recalls suggesting shadowforking testnets before forking
-- 9:35: Barnabas explains that shadowforking wouldn't have caught these bugs: "as generally we always re-deploy a sila-sila-mainnet like deposit contract"
+- 9:35: Barnabas explains that shadowforking wouldn't have caught these bugs: "as generally we always re-deploy a sila-mainnet like deposit contract"
 - 10:44-10:57: Discussion about whether shadowforking could have caught the bug
-- 10:57: parithosh provides detailed explanation: "Current process uses a sila-sila-mainnet deposit contract for shadowforks" and acknowledges "It's clear the diffs with sila-sila-mainnet on our testnets has become unwieldy and we will mod things to be as close to sila-sila-mainnet as possible in the future"
+- 10:57: parithosh provides detailed explanation: "Current process uses a sila-mainnet deposit contract for shadowforks" and acknowledges "It's clear the diffs with sila-mainnet on our testnets has become unwieldy and we will mod things to be as close to sila-mainnet as possible in the future"

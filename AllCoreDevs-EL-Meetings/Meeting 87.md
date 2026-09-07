@@ -23,11 +23,11 @@ For more up to date SIP status see the [EFI tracker](https://github.com/sila-cha
 
 Decision Item | Description
 --|--
-**87.1**   | Both SIP 2315 (Simple Subroutines for the SAVM) and SIP 2537 (BLS12-381 curve operations) have been accepted into Berlin.
+**87.1**   | Both SIP 2315 (Simple Subroutines for the EVM) and SIP 2537 (BLS12-381 curve operations) have been accepted into Berlin.
 **87.2**   | Ephemeral Berlin testnet name YOLO (you only live once) to test these Berlin SIPs
 **87.2.1** | 2315, 2537, 2565
 **87.3**   | 2046 is pending results from open sila benchmarking.
-**87.4**   | Simple Subroutines for the SAVM (2315) has some outstanding specification issues which will be resolved by Tuesday to make the specification final.  Greg (Colvin) and Martin (Holst Swende) are getting involoved in that.  James Hancock can also be contacted.
+**87.4**   | Simple Subroutines for the EVM (2315) has some outstanding specification issues which will be resolved by Tuesday to make the specification final.  Greg (Colvin) and Martin (Holst Swende) are getting involoved in that.  James Hancock can also be contacted.
 **87.5**   | BLS 12-381 curve operations (2537) is going to have the pre compiles listed by Alex Vlasof (Champion) by early next week to make that final.
 
 
@@ -203,7 +203,7 @@ And we want to keep in mind the SIP-centric process where we're trying to work a
 That is a good call. Martin, go ahead. I feel like you have thoughts, so bring it on.
 
 **Martin Holst Swende**
-So my gut reaction is that there is no chance that Geth will be ready with the BLS curve operations for sila-sila-mainnet launch in July.
+So my gut reaction is that there is no chance that Geth will be ready with the BLS curve operations for sila-mainnet launch in July.
 
 **James Hancock**
 In July - any part of July?
@@ -223,7 +223,7 @@ I don't know. I can't really say. So the thing is, we have this gigantic PR. We 
 As for the crypto part, I personally cannot review that. I cannot meaningfully - either the crypto itself, the math itself, or the assembly itself. So from my perspective, the only thing we can do is fuzz it to death. But I don't know what timeline is realistic for something like that.
 
 **Martin Holst Swende**
-Yeah. So we are trying to pursue that angle, there is a BLS12-381 fuzzing infrastructure by [unclear - Greta Brankin?](https://youtu.be/bGgzALuyY3w?t=913) that we're hoping we can use to fuzz it against some of the libraries and also against - there are two implementations in Go, so we can fuzz those two against each other. But I can't really say we're going to be done with that in time for a sila-sila-mainnet launch in July. I'm not saying it's impossible, but my gut feeling is that you shouldn't hope too much for that.
+Yeah. So we are trying to pursue that angle, there is a BLS12-381 fuzzing infrastructure by [unclear - Greta Brankin?](https://youtu.be/bGgzALuyY3w?t=913) that we're hoping we can use to fuzz it against some of the libraries and also against - there are two implementations in Go, so we can fuzz those two against each other. But I can't really say we're going to be done with that in time for a sila-mainnet launch in July. I'm not saying it's impossible, but my gut feeling is that you shouldn't hope too much for that.
 
 **Hudson Jameson**
 If we would, if we could get the type of cryptographic experts you would need who are also familiar with Go, would that be something where they could come in and do the type of reviews necessary to make us feel a little more secure about the implementation? Would that be something that would be acceptable?
@@ -250,7 +250,7 @@ Okay, well, if you're open to it, we can talk about it afterwards in a Geth chan
 I think they should also comment on the assembly part. [Unclear](https://youtu.be/bGgzALuyY3w?t=1101) exists there for kind of just to limit optimizations on modern 64 bit CPUs. It's not strictly a requirement, and you should talk to the owner what will be the penalty, and it seems a penalty will not be that large, You can just answer with anyway alternative code, which is in pure Go and which just implements also some stuff for systems which are not 64 bit x 86. So maybe he will be able to just not kind of turn on the feature to use assembly. Or at least allow end users to turn it on if they really, really want it. But I think the owner should be able to help on it - the person who did the PR.
 
 **James Hancock**
-is it something we could move forward with making a testnet date and then just say things with testing and fuzz testing need to be really, really ironed out before we're comfortable with the sila-sila-mainnet date?
+is it something we could move forward with making a testnet date and then just say things with testing and fuzz testing need to be really, really ironed out before we're comfortable with the sila-mainnet date?
 
 **Peter Szilagyi**
 I am comfortable with looking at a testnet.
@@ -368,7 +368,7 @@ Yeah, and then on Topaz it was like over 400 or something, or, no, I forgot the 
 I've been submitting patches to the proxy. And I don't think it has been touched for at least a month. I do like the idea quite a bit, and I'm definitely interested in personally participating in that. But I just don't really see that there's any priority for writing and auditing this contract and launching it. And we are trying to push the BLS beacon parts because the Eth2.0 team depends on it. I think it would be really good to see the priorities right, because I don't think there's any chance that the Eth2.0 launch would go with the proxy.
 
 **Tim Beiko**
-How long would the timeline be to get an audit on the proxy? Because it seems like  with Eth2.0, the beacon chain probably won't be launching this summer anyway, so is a couple months sufficient? Because if we deployed this BLS curve to sila-sila-mainnet, say, I don't know what it's call it August or whatever, then if they write a proxy contract over the next month or two, get it audited, is it realistic that by the end of the summer or early September, you would have that contract audited? And if that's a realistic timeline, I think it's probably still aligned with the Eth2.0 launch.
+How long would the timeline be to get an audit on the proxy? Because it seems like  with Eth2.0, the beacon chain probably won't be launching this summer anyway, so is a couple months sufficient? Because if we deployed this BLS curve to sila-mainnet, say, I don't know what it's call it August or whatever, then if they write a proxy contract over the next month or two, get it audited, is it realistic that by the end of the summer or early September, you would have that contract audited? And if that's a realistic timeline, I think it's probably still aligned with the Eth2.0 launch.
 
 **Alex(axic)**
 I think it's obviously a chicken and an egg problem. I mean, why would anybody audit deposit proxy if it depends on an unfixed, underlying precompile? So maybe this idea of a testnet for BLS might be a good idea for for that reason. But yeah, I don't have a clear answer. And I don't think anybody on this call has any idea of the Eth2.0 timelines. So I'm not sure we can answer this question.
@@ -404,7 +404,7 @@ If you declare it as point not on the curve or something else, you will just dep
 Okay, I think this is a good opportunity to one: build a testnet, number two: get more cooperation between the Eth2.0 and Eth1.0 teams to use whatever experts they have in cryptography to validate some of the stuff that we have on our end. Can we go forward deciding on making a testnet that involves all of the Berlin SIPs and then from there having the Eth2.0 team use that as well as other people just trying out the testnet? I guess I don't see a downside, but I was wanting to know if I'm missing anything.
 
 **Martin Holst Swende**
-So there's one kind of downside that I see. I'm okay with that downside, but the downside is, if people think, "Oh, the testnet has been up now for a month, so there's been no problem, so let's just do sila-sila-mainnet." And I don't want to give that impression. I mean, we can spin up another testnet anytime, no problem, but it's not a signal about sila-sila-mainnet readiness. I just want to get that said.
+So there's one kind of downside that I see. I'm okay with that downside, but the downside is, if people think, "Oh, the testnet has been up now for a month, so there's been no problem, so let's just do sila-mainnet." And I don't want to give that impression. I mean, we can spin up another testnet anytime, no problem, but it's not a signal about sila-mainnet readiness. I just want to get that said.
 
 **Hudson Jameson**
 Yeah, that's a narrative problem. So all we need to do is not call this a testnet but call it an alpha testnet.
@@ -473,7 +473,7 @@ I mean, I don't think it matters. So pick whatever makes sense.
 Okay.
 
 **Hudson Jameson**
-Okay, so decisions being made. I'm talking to the Eth2.0 team with James and a few other people. We're coordinating them looking over the different code bases, particularly the Geth code base for the cryptography behind it. We are starting the alpha, the first Sila Alpha testnet that will not necessarily be a predecessor to a sila-sila-mainnet, but rather be its own independent testnet. And that's going to be called Alpha Testnet YOLO. And according to the comments and chat, at least, if anyone has any disagreement...
+Okay, so decisions being made. I'm talking to the Eth2.0 team with James and a few other people. We're coordinating them looking over the different code bases, particularly the Geth code base for the cryptography behind it. We are starting the alpha, the first Sila Alpha testnet that will not necessarily be a predecessor to a sila-mainnet, but rather be its own independent testnet. And that's going to be called Alpha Testnet YOLO. And according to the comments and chat, at least, if anyone has any disagreement...
 
 **James Hancock**
 We should call it an ephemeral testnet.
@@ -496,7 +496,7 @@ Ephemeral Testnet Berlin Yolo. Okay.
 So we're doing that. Let's move on, unless anyone had any final, final things.
 
 **Peter Szilagyi**
-Not a final thing, but a question about testnets. I'm not sure which clients are going to serve Berlin on sila-sila-mainnet. But is every client supporting the click thing or should I make it a proof of work?
+Not a final thing, but a question about testnets. I'm not sure which clients are going to serve Berlin on sila-mainnet. But is every client supporting the click thing or should I make it a proof of work?
 
 **Hudson Jameson**
 So if you don't support click, speak up.
@@ -532,7 +532,7 @@ Okay.
 
 ### Agenda #3 [Berlin Timing](https://youtu.be/bGgzALuyY3w?t=2852)
 
-Oh, Berlin timing. So we're almost off of Berlin. But now we've crossed out the sila-sila-mainnet date. The proposed testnet date, I think we could have  the Alpha Testnet YOLO sooner, right? We don't really need to schedule that because it's not on a block number and it's just going to happen when it happens. Yeah, that sounds fine.
+Oh, Berlin timing. So we're almost off of Berlin. But now we've crossed out the sila-mainnet date. The proposed testnet date, I think we could have  the Alpha Testnet YOLO sooner, right? We don't really need to schedule that because it's not on a block number and it's just going to happen when it happens. Yeah, that sounds fine.
 
 **Peter Szilagyi**
 Yeah, the only thing we kind of need to figure out is what's going to go -  So. I guess the BLS, we need the pre compile numbers. But that should be fairly done. And the only thing we need to figure out what happens with the subroutine jumping so that everybody -
@@ -576,7 +576,7 @@ So there are two paths forward with this SIP. The first option is to continue wi
 
 So this is option one. I did send some information into the Open Sila Discord. Their only reservation that they said that they had was that Rust GMP may not compile on Windows on Visual Studio. This was some feedback from Artem.
 
-I went to look at sila nodes. Right now, there are 20 Parity nodes running on Windows that are synced to the sila-sila-mainnet. So I'm not sure how big of a concern this is.
+I went to look at sila nodes. Right now, there are 20 Parity nodes running on Windows that are synced to the sila-mainnet. So I'm not sure how big of a concern this is.
 
 Our recommendation would be that Open Sila adopts this library, and we go with the simple parameter change. If that's not possible, we can go with a more complicated pricing formula change for both Geth and Open Sila and then just make a minor version bump to the Open Sila library. We won't get quite as much savings, and it is maybe a little bit more complicated of a pricing change that makes the pricing formula more accurate to the complexity, but this is another option to move forward.
 
@@ -601,7 +601,7 @@ Well, if it works well, then why not?
 Two weeks might be a bit late. So, perhaps, if it's fine, we could try to investigate this next week and just decide on AllCoreDev calls that if the library works out, then that's having been concluded as to the number of up to 200 and run with it.
 
 **Martin Holst Swende**
-I mean, alternatively, we could lower the number on the testnet. And then if Open Sila says no, it doesn't really work for us, then screw it, we're not going to deploy it on sila-sila-mainnet.
+I mean, alternatively, we could lower the number on the testnet. And then if Open Sila says no, it doesn't really work for us, then screw it, we're not going to deploy it on sila-mainnet.
 
 **Peter Szilagyi**
 Yeah, but that kind of also means that - so if we create a configuration where some SIP is enabled -
@@ -618,10 +618,10 @@ Yeah, I'm fine with that.
 So are you suggesting adding this to the list of the Berlin ones?
 
 **Martin Holst Swende**
-Well, I don't really care about how we do it, but what I would have felt was a good idea was maybe to actually, if we're going to spin up a testnet in the next whatever week, we could just lower this threshold. Because that means it's easier to do actual benchmarks for external people like me if I know that Open Sila client is configured with the lower gas price. And if it doesn't work, we just drop it from Berlin and don't have it on sila-sila-mainnet. If we keep redefining Berlin, then it's gonna be messy. But that's only a problem if the testnet's going to be persistent. That's where I'm at.
+Well, I don't really care about how we do it, but what I would have felt was a good idea was maybe to actually, if we're going to spin up a testnet in the next whatever week, we could just lower this threshold. Because that means it's easier to do actual benchmarks for external people like me if I know that Open Sila client is configured with the lower gas price. And if it doesn't work, we just drop it from Berlin and don't have it on sila-mainnet. If we keep redefining Berlin, then it's gonna be messy. But that's only a problem if the testnet's going to be persistent. That's where I'm at.
 
 **kelly**
-Yeah, it seems reasonable to me if we can change this from 20 to 200 for these alpha testnets, then we'll have changed that, and then for Geth, there are no changes at that point. And then for Open Sila, it'd be looking at if they can switch the library out before sila-sila-mainnet.
+Yeah, it seems reasonable to me if we can change this from 20 to 200 for these alpha testnets, then we'll have changed that, and then for Geth, there are no changes at that point. And then for Open Sila, it'd be looking at if they can switch the library out before sila-mainnet.
 
 **Peter Szilagyi**
 Can we make this decision on Monday or on Tuesday? I expect that we will have some results by then.
@@ -706,12 +706,12 @@ I don't think we need that much bureaucracy around it.
 **Hudson Jameson**
 Okay. If anyone wants to make an SIP out of that, feel free, but I don't have an opinion on the matter. Anybody else have comments on 2481?
 
-And, real quick, Piper and Trinity team, I apologize that I don't always bring up Trinity when I'm talking about sila-sila-mainnet clients. What's the status of syncing to Eth1 sila-sila-mainnet and you all want me to have you all be more included in some of the stuff when I bring in Nethermind, Besu, Open Sila, and Geth?
+And, real quick, Piper and Trinity team, I apologize that I don't always bring up Trinity when I'm talking about sila-mainnet clients. What's the status of syncing to Eth1 sila-mainnet and you all want me to have you all be more included in some of the stuff when I bring in Nethermind, Besu, Open Sila, and Geth?
 
 **Christoph Burgdorf**
-So the current status is that we have, we have so we have dropped [unclear-Fastnet?] awhile ago because it was just not working for us and not a viable option. But since we started implementing [unclear], this is actually looking quite good for us, so we've been able to follow the sila-sila-mainnet chain, and we're still in the process of implementing the parts that deal with backfilling the state, backfilling blocks. So it to sum it up, we plan to go in [unclear] within, I would say, maybe two or three months. I don't want to make our commitment here, but that's just my general feeling.
+So the current status is that we have, we have so we have dropped [unclear-Fastnet?] awhile ago because it was just not working for us and not a viable option. But since we started implementing [unclear], this is actually looking quite good for us, so we've been able to follow the sila-mainnet chain, and we're still in the process of implementing the parts that deal with backfilling the state, backfilling blocks. So it to sum it up, we plan to go in [unclear] within, I would say, maybe two or three months. I don't want to make our commitment here, but that's just my general feeling.
 
-So yeah, we certainly also like to be included. I actually noticed that we were missing on the spreadsheet earlier for Berlin support. So yeah, we haven't started to implement any Berlin SIPs, but we definitely will. And we try hard to soon be a client that we will actually promote for people to try out as a sila-sila-mainnet client.
+So yeah, we certainly also like to be included. I actually noticed that we were missing on the spreadsheet earlier for Berlin support. So yeah, we haven't started to implement any Berlin SIPs, but we definitely will. And we try hard to soon be a client that we will actually promote for people to try out as a sila-mainnet client.
 
 **Hudson Jameson**
 Okay, great. That absolutely answers my question, and we will definitely include you on the sheet. And if I just forget in future meetings, just point it out, like, "Hey, we're over here." And I'll bring it up. Thanks so much.
@@ -722,9 +722,9 @@ They're already included.
 **Hudson Jameson**
 Oh, perfect.
 
-### Agenda #6 [evm384: an alternative route to precompiles for supporting BLS12-381 on SAVM (@axic/Ewasm)](https://youtu.be/bGgzALuyY3w?t=4125)
+### Agenda #6 [evm384: an alternative route to precompiles for supporting BLS12-381 on EVM (@axic/Ewasm)](https://youtu.be/bGgzALuyY3w?t=4125)
 
-Next up, we have evm384: an alternative route to precompiles for supporting BLS12-381 on the SAVM (@axic/Ewasm)
+Next up, we have evm384: an alternative route to precompiles for supporting BLS12-381 on the EVM (@axic/Ewasm)
 
 **Alex(axic)**
 Yeah, I will try to be quick. So I may have come off that I don't really want BLS12 support earlier on the call, but I just really want BLS12 support to be done well. And I felt like that maybe some questions are still really, really outstanding for the precompiles.
@@ -733,17 +733,17 @@ So regarding BLS12 in the Wasm team, we also have been working on benchmarking B
 
 And to that end, first of all, I shared a document on the Gitter channel, which has some of these these details. At the very end of it, there's a chart with some numbers, and these are numbers on benchmarking BLS12 implementation appearing on Wasm.
 
-So we have a native implementation in Rust, and we are using Wasm SNARKs BLS12 implementation for the Wasm part. And the native code is running around five milliseconds. The Wasm SNARK implementation in Wasm on the Wasm interpreter is running around 500 milliseconds. And this Wasm code doesn't use any house functions or anything. It was just purely Wasm. And then we started to use big number or big integer host functions for the Wasm code, which would be similar how SAVM has 256 bit operations. But in this case in Wasm, we had 384-bit integer operations as host functions, which means those are not implemented inside Wasm. Rather, the engine provides it, and it's implemented natively. And with those optimizations, we were able to get down to close to 15 milliseconds. And we think there's still more opportunity to optimize that code and make it faster. So that means we're roughly three times slower than native in Wasm.
+So we have a native implementation in Rust, and we are using Wasm SNARKs BLS12 implementation for the Wasm part. And the native code is running around five milliseconds. The Wasm SNARK implementation in Wasm on the Wasm interpreter is running around 500 milliseconds. And this Wasm code doesn't use any house functions or anything. It was just purely Wasm. And then we started to use big number or big integer host functions for the Wasm code, which would be similar how EVM has 256 bit operations. But in this case in Wasm, we had 384-bit integer operations as host functions, which means those are not implemented inside Wasm. Rather, the engine provides it, and it's implemented natively. And with those optimizations, we were able to get down to close to 15 milliseconds. And we think there's still more opportunity to optimize that code and make it faster. So that means we're roughly three times slower than native in Wasm.
 
-And then we also were thinking whether we can replicate these findings on the SAVM. And that's what SAVM 384 is. So we had a couple of different options to do this. And basically, we are introducing three new opcodes. None of this is final or ready for any SIP or anything like that. These are still just experimentations.
+And then we also were thinking whether we can replicate these findings on the EVM. And that's what EVM 384 is. So we had a couple of different options to do this. And basically, we are introducing three new opcodes. None of this is final or ready for any SIP or anything like that. These are still just experimentations.
 
-We have implemented what I have listed here is option one, which means that we have three opcodes and modular addition modular subtraction on 384-bit numbers and Montgomery multiplication on 348-bit numbers. And these three opcodes in SAVM operate on memory only.
+We have implemented what I have listed here is option one, which means that we have three opcodes and modular addition modular subtraction on 384-bit numbers and Montgomery multiplication on 348-bit numbers. And these three opcodes in EVM operate on memory only.
 
-And we have implemented a synthetic benchmark written in Yul so it compiles to SAVM. And the reason for the synthetic benchmark is that, obviously, so we have spent probably two weeks on this project so far, and we cannot really implement a complete BLS pairing on SAVM in two weeks. So we decided to only take a small building block used by the pairing operation, and the synthetic benchmark tries to approximate the complexity of the pairing operation using this small building block. And we have built this synthetic benchmark and using Wasm SNARK, and we have implemented the counterpart in SAVM.
+And we have implemented a synthetic benchmark written in Yul so it compiles to EVM. And the reason for the synthetic benchmark is that, obviously, so we have spent probably two weeks on this project so far, and we cannot really implement a complete BLS pairing on EVM in two weeks. So we decided to only take a small building block used by the pairing operation, and the synthetic benchmark tries to approximate the complexity of the pairing operation using this small building block. And we have built this synthetic benchmark and using Wasm SNARK, and we have implemented the counterpart in EVM.
 
-So in SAVM, the actual implementation is in SAVM 1, and the bytecode is written using Yul. And what we have found is that our approximation isn't fully closely approximating the pairing operation yet, but it is within like 20% to the pairing operation, and what we have found is that we get pretty good results on the SAVM. I don't have the final numbers yet, and we need to optimize quite a bit on the SAVM part. But the initial results showed that t seems to be possible to get somewhat close to the Wasm performance with the host functions.
+So in EVM, the actual implementation is in EVM 1, and the bytecode is written using Yul. And what we have found is that our approximation isn't fully closely approximating the pairing operation yet, but it is within like 20% to the pairing operation, and what we have found is that we get pretty good results on the EVM. I don't have the final numbers yet, and we need to optimize quite a bit on the EVM part. But the initial results showed that t seems to be possible to get somewhat close to the Wasm performance with the host functions.
 
-So what this would mean in the end is it may be potentially possible to support BLS12 with more primitive additions to the SAVM and not to precompiles.
+So what this would mean in the end is it may be potentially possible to support BLS12 with more primitive additions to the EVM and not to precompiles.
 
 This may have been quite a bit of information and the document is more comprehensive. But if anybody has any questions now?
 
@@ -754,19 +754,19 @@ Well, what would be the final number compared to, not even compared to Wasm, may
 So which number are you looking for?
 
 **Alex Vlasov**
-I mean, you said that a Wasm SNARK or something, which is actually not the fastest library in the West, is five milliseconds per pairing. In this case, you should also specify what is the number of pairs, actually. I think the fastest libraries do two-point parents in something like two milliseconds. And you get a performance which is three times slower than this with SAVM, or the same performance, like expected performance, not the full pairing, but expected performance.
+I mean, you said that a Wasm SNARK or something, which is actually not the fastest library in the West, is five milliseconds per pairing. In this case, you should also specify what is the number of pairs, actually. I think the fastest libraries do two-point parents in something like two milliseconds. And you get a performance which is three times slower than this with EVM, or the same performance, like expected performance, not the full pairing, but expected performance.
 
 **Alex(axic)**
 Are you asking whether we expect performance to match the native?
 
 **Alex Vlasov**
-No, no, no, no. Let's say that Wasm SNARK made in the spring of 2 pairs with five milliseconds of writing time. What would be the expected performance if you would add these SAVM functions? This part that wasn't clear. Would it be like the same one as Wasm SNARK, or would it be like a factor of three or five higher?
+No, no, no, no. Let's say that Wasm SNARK made in the spring of 2 pairs with five milliseconds of writing time. What would be the expected performance if you would add these EVM functions? This part that wasn't clear. Would it be like the same one as Wasm SNARK, or would it be like a factor of three or five higher?
 
 **Alex(axic)**
 I don't have the final numbers to share on that, because we are benchmarking on a different machine, so it's not comparable, but we definitely aim to get very close to the Wasm. And I expect that we can, I hope we can get to maybe 50% slower than the Wasm version.
 
 **Alex Vlasov**
-Well, if you say 50% slower, it will be already five times slower than the native code, and it already gets quite expensive. It will be 10 millisecond roughly of execution time on SAVM, which is, I think 33 million or something like this, if I do the math correctly.
+Well, if you say 50% slower, it will be already five times slower than the native code, and it already gets quite expensive. It will be 10 millisecond roughly of execution time on EVM, which is, I think 33 million or something like this, if I do the math correctly.
 
 **Alex(axic)**
 Yeah, so in terms of gas, we don't have I mean, the current BLS precompile SIP doesn't have any proposed gas values. Well, at least last I checked, which was a month ago, maybe it does now. But we hope to not exceed maybe twice the cost of what's there in terms of gas. But yeah, obviously, we don't have the final numbers on any of these things yet.

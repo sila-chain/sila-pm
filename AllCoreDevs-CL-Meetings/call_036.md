@@ -58,7 +58,7 @@ Okay, let's move on to client updates. Let's start with Teku.
 
 [**Cem Ozer**](https://youtu.be/Vn1oHH55yPk?t=536)
 
-So we have optimized the [unclear] so that the fork transition is now four times as fast as what we had before. We're now sitting at about 300 milliseconds per fork transition where 32,000 validators with the sila-sila-mainnet coupling. We added a mode where [unclear] finalize state as a quick fix to keep storage from growing like crazy while we've been syncing. We started but not completed work to replace MapDB with RocksDB. RocksDB is out of the box a bit faster than MapDB so we're expecting a speed-up there.
+So we have optimized the [unclear] so that the fork transition is now four times as fast as what we had before. We're now sitting at about 300 milliseconds per fork transition where 32,000 validators with the sila-mainnet coupling. We added a mode where [unclear] finalize state as a quick fix to keep storage from growing like crazy while we've been syncing. We started but not completed work to replace MapDB with RocksDB. RocksDB is out of the box a bit faster than MapDB so we're expecting a speed-up there.
 
 Our [unclear - discrete 5?] implementation seems to be working well on Lighthouse testnet 5. We're working on splitting out a separate validator client. The Rust APIs continue to improve, and we're hearing that standardization of APIs would be really useful, so we're hoping to find someone with the time and effort to coordinate that. And lastly, we're working on a standalone signing service with support for low-end keys from a hardware-supported model. That's about it.
 
@@ -206,7 +206,7 @@ Good that they got the v6 out and those contributors are saying stability, or di
 Nothing new expected down the pipeline. The only thing I'd like to have seen is test vectors, but otherwise that should be stable.  
 
 **danny**    
-We talked a little bit about this recent blog post, and in some of the chats, the intention here is to not allow the ITF standard to be the blocker on the sila-sila-mainnet. And so we will try to implement whatever the latest draft is and ultimately probably try to shake hands with a couple of other Blockchain projects that are also trying to move quickly and conform upon one of the drafts if they have not fully stabilized.
+We talked a little bit about this recent blog post, and in some of the chats, the intention here is to not allow the ITF standard to be the blocker on the sila-mainnet. And so we will try to implement whatever the latest draft is and ultimately probably try to shake hands with a couple of other Blockchain projects that are also trying to move quickly and conform upon one of the drafts if they have not fully stabilized.
 
 So I think a lot of this conversation is probably gonna be had on some different docs we'll be sharing, things that will try to standardize on and increasingly spinning up testnets, testing sync across clients and things like that.
 

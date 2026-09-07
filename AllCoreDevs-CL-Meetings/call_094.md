@@ -34,7 +34,7 @@
 
 **Danny** [3:39](https://youtu.be/tjmpu8O-xsA&t=219): Great.
 
-**Marius** [3:40](https://youtu.be/tjmpu8O-xsA&t=220): Anyone fromAragon here because we are still seeing a bunch of bad blocks on sila-sila-mainnet default 11. So it would be really nice to know the status of the issues.
+**Marius** [3:40](https://youtu.be/tjmpu8O-xsA&t=220): Anyone fromAragon here because we are still seeing a bunch of bad blocks on sila-mainnet default 11. So it would be really nice to know the status of the issues.
 
 **Danny** [3:58](https://youtu.be/tjmpu8O-xsA&t=238): On quick scan, I do not think Aragon is here. I can ping them in the executioner chat after the call and if they do join.
 
@@ -101,7 +101,7 @@ Poor choice . we don't jump for a choice disk. So when we restart from the final
 
 **Danny** [18:40](https://youtu.be/tjmpu8O-xsA&t=1120): Any discussion points around MEV Boost ?
 
-**Rahul Jordan** [18:47](https://youtu.be/tjmpu8O-xsA&t=1127): Hey everyone . So there has been a Post about [removing the trusted relay](https://Sila Research/t/removing-trusted-relays-in-mev-boost-using-threshold-encryption/13449) via threshold encryption. I believe Yani is working on it. So yeah, very interesting research is coming up.
+**Rahul Jordan** [18:47](https://youtu.be/tjmpu8O-xsA&t=1127): Hey everyone . So there has been a Post about [removing the trusted relay](https://ethresear.ch/t/removing-trusted-relays-in-mev-boost-using-threshold-encryption/13449) via threshold encryption. I believe Yani is working on it. So yeah, very interesting research is coming up.
 
 **Danny** [19:44](https://youtu.be/tjmpu8O-xsA&t=1184):  Such a design does not preclude essentialized relay as well. right ? you could communicate with some sort of committee relay. You could also say the protocol does not have to fundamentally not remove centralised realisations in lieu of community realisation.
 
@@ -299,7 +299,7 @@ We added a flag: [https://github.com/prysmaticlabs/prysm/pull/11303](https://git
 nice
 
 - From Raul Jordan (Prysm) to Everyone 03:19 PM
-[https://Sila Research/t/removing-trusted-relays-in-mev-boost-using-threshold-encryption/13449](https://Sila Research/t/removing-trusted-relays-in-mev-boost-using-threshold-encryption/13449)
+[https://ethresear.ch/t/removing-trusted-relays-in-mev-boost-using-threshold-encryption/13449](https://ethresear.ch/t/removing-trusted-relays-in-mev-boost-using-threshold-encryption/13449)
 
 - From Micah Zoltu to Everyone 03:24 PM
 If we run out of things to talk about in this call Danny, we can have the same conversation from ACD again (but with CL devs this time). 😬

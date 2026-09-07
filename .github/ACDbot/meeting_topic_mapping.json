@@ -766,6 +766,135 @@
         "occurrence_number": 31,
         "discourse_topic_id": 28862,
         "discord_notification_sent": true
+      },
+      {
+        "issue_number": 2157,
+        "issue_title": "All Core Devs - Execution (ACDE) #241, July 16, 2026",
+        "start_time": "2026-07-16T14:00:00Z",
+        "duration": 90,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": false,
+        "transcript_processed": true,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": true,
+        "youtube_streams": [
+          {
+            "broadcast_id": "BvT0ra6kS7I",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1783959590866976",
+            "stream_url": "https://youtube.com/watch?v=BvT0ra6kS7I",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/mmrh-b6xf-3d6t-rfep-20jr",
+            "scheduled_time": "2026-07-16T14:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 32,
+        "discourse_topic_id": 29001,
+        "discord_notification_sent": true
+      },
+      {
+        "issue_number": 2166,
+        "issue_title": "All Core Devs - Execution (ACDE) #242, July 30, 2026",
+        "start_time": "2026-07-30T14:00:00Z",
+        "duration": 90,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": false,
+        "transcript_processed": true,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": true,
+        "youtube_streams": [
+          {
+            "broadcast_id": "5VlahzMFQ3M",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1784577957660554",
+            "stream_url": "https://youtube.com/watch?v=5VlahzMFQ3M",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/8zkf-0gwr-1sg1-uv75-7ut8",
+            "scheduled_time": "2026-07-30T14:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 33,
+        "discourse_topic_id": 29043,
+        "discord_notification_sent": true
+      },
+      {
+        "issue_number": 2178,
+        "issue_title": "All Core Devs - Execution (ACDE) #243, August 13, 2026",
+        "start_time": "2026-08-13T14:00:00Z",
+        "duration": 90,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": false,
+        "transcript_processed": true,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": true,
+        "youtube_streams": [
+          {
+            "broadcast_id": "ekpA2ZA2GJw",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1785432597422601",
+            "stream_url": "https://youtube.com/watch?v=ekpA2ZA2GJw",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/8fm5-k5er-r9yq-peuj-6vf1",
+            "scheduled_time": "2026-08-13T14:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 34,
+        "discourse_topic_id": 29210,
+        "discord_notification_sent": true
+      },
+      {
+        "issue_number": 2197,
+        "issue_title": "All Core Devs - Execution (ACDE) #244, August 27, 2026",
+        "start_time": "2026-08-27T14:00:00Z",
+        "duration": 90,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": false,
+        "transcript_processed": true,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": true,
+        "youtube_streams": [
+          {
+            "broadcast_id": "Olt0GbiEvks",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1787234771265013",
+            "stream_url": "https://youtube.com/watch?v=Olt0GbiEvks",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/7s2u-y462-8ggk-w50a-95v3",
+            "scheduled_time": "2026-08-27T14:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 35,
+        "discourse_topic_id": 29468,
+        "discord_notification_sent": true
+      },
+      {
+        "issue_number": 2211,
+        "issue_title": "All Core Devs - Execution (ACDE) #245, September 10, 2026",
+        "start_time": "2026-09-10T14:00:00Z",
+        "duration": 90,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": [
+          {
+            "broadcast_id": "znJGTuHtghw",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1788281970076206",
+            "stream_url": "https://youtube.com/watch?v=znJGTuHtghw",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/79q7-u8g4-x4c3-xb6s-198c",
+            "scheduled_time": "2026-09-10T14:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 36,
+        "discourse_topic_id": 29558
       }
     ],
     "calendar_event_id": "02cu1b1g1mscunv7d3p0ilg3gg",
@@ -1464,6 +1593,110 @@
         ],
         "occurrence_number": 28,
         "discourse_topic_id": 28968,
+        "discord_notification_sent": true
+      },
+      {
+        "issue_number": 2158,
+        "issue_title": "All Core Devs - Consensus (ACDC) #183, July 23 2026",
+        "start_time": "2026-07-23T14:00:00Z",
+        "duration": 90,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": false,
+        "transcript_processed": true,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": true,
+        "youtube_streams": [
+          {
+            "broadcast_id": "k6--unLxsuo",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1783959639503124",
+            "stream_url": "https://youtube.com/watch?v=k6--unLxsuo",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/v3fa-2e1k-1198-p7cw-78wa",
+            "scheduled_time": "2026-07-23T14:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 29,
+        "discourse_topic_id": 29002,
+        "discord_notification_sent": true
+      },
+      {
+        "issue_number": 2177,
+        "issue_title": "All Core Devs - Consensus (ACDC) #184, August 6 2026",
+        "start_time": "2026-08-06T14:00:00Z",
+        "duration": 90,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": false,
+        "transcript_processed": true,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": true,
+        "youtube_streams": [
+          {
+            "broadcast_id": "DuDyoinoEEQ",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1785432480034825",
+            "stream_url": "https://youtube.com/watch?v=DuDyoinoEEQ",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/8awu-705b-07z1-x5tx-1d77",
+            "scheduled_time": "2026-08-06T14:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 30,
+        "discourse_topic_id": 29209,
+        "discord_notification_sent": true
+      },
+      {
+        "issue_number": 2187,
+        "issue_title": "All Core Devs - Consensus (ACDC) #185, August 20 2026",
+        "start_time": "2026-08-20T14:00:00Z",
+        "duration": 90,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": false,
+        "transcript_processed": true,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": true,
+        "youtube_streams": [
+          {
+            "broadcast_id": "v5KRpMkRyhA",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1786457460982661",
+            "stream_url": "https://youtube.com/watch?v=v5KRpMkRyhA",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/9grp-6y0j-r3d8-58m7-eb0y",
+            "scheduled_time": "2026-08-20T14:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 31,
+        "discourse_topic_id": 29391,
+        "discord_notification_sent": true
+      },
+      {
+        "issue_number": 2199,
+        "issue_title": "All Core Devs - Consensus (ACDC) #186, September 3 2026",
+        "start_time": "2026-09-03T14:00:00Z",
+        "duration": 90,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": false,
+        "transcript_processed": true,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": true,
+        "youtube_streams": [
+          {
+            "broadcast_id": "917ywOz_nD0",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1787591259108309",
+            "stream_url": "https://youtube.com/watch?v=917ywOz_nD0",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/r9w3-346f-tt9k-5e80-aj8g",
+            "scheduled_time": "2026-09-03T14:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 32,
+        "discourse_topic_id": 29496,
         "discord_notification_sent": true
       }
     ],
@@ -2786,6 +3019,305 @@
         "duration": 60,
         "skip_youtube_upload": false,
         "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 55,
+        "discourse_topic_id": 28966,
+        "discord_notification_sent": true,
+        "youtube_video_id": "5qQ8M_1_j6g",
+        "breakout_youtube": {
+          "cl": {
+            "upload_attempt_count": 1,
+            "playlist_assignment_processed": true,
+            "youtube_video_id": "fT0rPrDS3gE",
+            "youtube_upload_processed": true
+          }
+        },
+        "notifications": [
+          {
+            "type": "youtube_upload",
+            "content": "CL breakout recording uploaded: ACDT #87 (CL Breakout), July 13, 2026",
+            "timestamp": "2026-07-13T15:41:47.859748+00:00",
+            "url": "https://youtu.be/fT0rPrDS3gE"
+          }
+        ]
+      },
+      {
+        "issue_number": 2162,
+        "issue_title": "All Core Devs - Testing (ACDT) #88, July 20, 2026",
+        "start_time": "2026-07-20T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 56,
+        "discourse_topic_id": 29023,
+        "discord_notification_sent": true,
+        "youtube_video_id": "LIi4RY-TrdU",
+        "breakout_youtube": {
+          "cl": {
+            "upload_attempt_count": 1,
+            "playlist_assignment_processed": true,
+            "youtube_video_id": "fe0Q3AbHwd8",
+            "youtube_upload_processed": true
+          }
+        },
+        "notifications": [
+          {
+            "type": "youtube_upload",
+            "content": "CL breakout recording uploaded: ACDT #88 (CL Breakout), July 20, 2026",
+            "timestamp": "2026-07-20T15:37:30.434836+00:00",
+            "url": "https://youtu.be/fe0Q3AbHwd8"
+          }
+        ]
+      },
+      {
+        "issue_number": 2170,
+        "issue_title": "All Core Devs - Testing (ACDT) #89, July 27, 2026",
+        "start_time": "2026-07-27T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 57,
+        "discourse_topic_id": 29069,
+        "discord_notification_sent": true,
+        "youtube_video_id": "Xh2_yW-P1Mw",
+        "breakout_youtube": {
+          "cl": {
+            "upload_attempt_count": 1,
+            "playlist_assignment_processed": true,
+            "youtube_video_id": "0Bh3K9iXhnc",
+            "youtube_upload_processed": true
+          }
+        },
+        "notifications": [
+          {
+            "type": "youtube_upload",
+            "content": "CL breakout recording uploaded: ACDT #89 (CL Breakout), July 27, 2026",
+            "timestamp": "2026-07-27T15:55:16.019470+00:00",
+            "url": "https://youtu.be/0Bh3K9iXhnc"
+          }
+        ]
+      },
+      {
+        "issue_number": 2174,
+        "issue_title": "All Core Devs - Testing (ACDT) #90, August 3, 2026",
+        "start_time": "2026-08-03T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 58,
+        "discourse_topic_id": 29108,
+        "discord_notification_sent": true,
+        "youtube_video_id": "Cy4NEJnbCPA",
+        "breakout_youtube": {
+          "cl": {
+            "upload_attempt_count": 1,
+            "playlist_assignment_processed": true,
+            "youtube_video_id": "5BteciU7Tcs",
+            "youtube_upload_processed": true
+          }
+        },
+        "notifications": [
+          {
+            "type": "youtube_upload",
+            "content": "CL breakout recording uploaded: ACDT #90 (CL Breakout), August 3, 2026",
+            "timestamp": "2026-08-03T15:59:34.623749+00:00",
+            "url": "https://youtu.be/5BteciU7Tcs"
+          }
+        ]
+      },
+      {
+        "issue_number": 2181,
+        "issue_title": "All Core Devs - Testing (ACDT) #91, August 10, 2026",
+        "start_time": "2026-08-10T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 59,
+        "discourse_topic_id": 29255,
+        "discord_notification_sent": true,
+        "youtube_video_id": "N-uknwz4klA"
+      },
+      {
+        "issue_number": 2186,
+        "issue_title": "All Core Devs - Testing (ACDT) #92, August 17, 2026",
+        "start_time": "2026-08-17T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 60,
+        "discourse_topic_id": 29386,
+        "discord_notification_sent": true,
+        "youtube_video_id": "gCi3XbsY2og",
+        "breakout_youtube": {
+          "cl": {
+            "upload_attempt_count": 1,
+            "playlist_assignment_processed": true,
+            "youtube_video_id": "kdIjDK3NHaQ",
+            "youtube_upload_processed": true
+          }
+        },
+        "notifications": [
+          {
+            "type": "youtube_upload",
+            "content": "CL breakout recording uploaded: ACDT #92 (CL Breakout), August 17, 2026",
+            "timestamp": "2026-08-17T16:07:13.459660+00:00",
+            "url": "https://youtu.be/kdIjDK3NHaQ"
+          }
+        ]
+      },
+      {
+        "issue_number": 2195,
+        "issue_title": "All Core Devs - Testing (ACDT) #93, August 24, 2026",
+        "start_time": "2026-08-24T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 61,
+        "discourse_topic_id": 29450,
+        "discord_notification_sent": true,
+        "youtube_video_id": "bPG7dpbIlXk",
+        "breakout_youtube": {
+          "cl": {
+            "upload_attempt_count": 1,
+            "playlist_assignment_processed": true,
+            "youtube_video_id": "jWNeiykanfM",
+            "youtube_upload_processed": true
+          }
+        },
+        "notifications": [
+          {
+            "type": "youtube_upload",
+            "content": "CL breakout recording uploaded: ACDT #93 (CL Breakout), August 24, 2026",
+            "timestamp": "2026-08-24T15:17:05.686452+00:00",
+            "url": "https://youtu.be/jWNeiykanfM"
+          }
+        ]
+      },
+      {
+        "issue_number": 2204,
+        "issue_title": "All Core Devs - Testing (ACDT) #94, August 31, 2026",
+        "start_time": "2026-08-31T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 62,
+        "discourse_topic_id": 29519,
+        "discord_notification_sent": true,
+        "youtube_video_id": "3CPCTuhBpTw",
+        "breakout_youtube": {
+          "cl": {
+            "upload_attempt_count": 1,
+            "playlist_assignment_processed": true,
+            "youtube_video_id": "k-JwNfdJ2YQ",
+            "youtube_upload_processed": true
+          }
+        },
+        "notifications": [
+          {
+            "type": "youtube_upload",
+            "content": "CL breakout recording uploaded: ACDT #94 (CL Breakout), August 31, 2026",
+            "timestamp": "2026-08-31T15:42:46.985476+00:00",
+            "url": "https://youtu.be/k-JwNfdJ2YQ"
+          }
+        ]
+      },
+      {
+        "issue_number": 2209,
+        "issue_title": "All Core Devs - Testing (ACDT) #95, September 7th, 2026",
+        "start_time": "2026-09-07T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 63,
+        "discourse_topic_id": 29548,
+        "discord_notification_sent": true,
+        "youtube_video_id": "xSjq9DHqavQ",
+        "breakout_youtube": {
+          "cl": {
+            "upload_attempt_count": 1,
+            "playlist_assignment_processed": true,
+            "youtube_video_id": "meI52TVtmJk",
+            "youtube_upload_processed": true
+          }
+        },
+        "notifications": [
+          {
+            "type": "youtube_upload",
+            "content": "CL breakout recording uploaded: ACDT #95 (CL Breakout), September 7th, 2026",
+            "timestamp": "2026-09-07T16:05:27.715493+00:00",
+            "url": "https://youtu.be/meI52TVtmJk"
+          }
+        ]
+      },
+      {
+        "issue_number": 2217,
+        "issue_title": "All Core Devs - Testing (ACDT) #96, September 14, 2026",
+        "start_time": "2026-09-14T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
         "youtube_upload_processed": false,
         "transcript_processed": false,
         "upload_attempt_count": 0,
@@ -2793,8 +3325,8 @@
         "telegram_message_id": null,
         "youtube_streams_posted_to_discourse": false,
         "youtube_streams": null,
-        "occurrence_number": 55,
-        "discourse_topic_id": 28966
+        "occurrence_number": 64,
+        "discourse_topic_id": 29619
       }
     ],
     "uuid": "VSEv1YKSToeM9+peGbhxDQ==",
@@ -3239,15 +3771,16 @@
         "duration": 60,
         "skip_youtube_upload": false,
         "skip_transcript_processing": false,
-        "youtube_upload_processed": false,
-        "transcript_processed": false,
-        "upload_attempt_count": 0,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 2,
         "transcript_attempt_count": 0,
         "telegram_message_id": null,
         "youtube_streams_posted_to_discourse": false,
         "youtube_streams": null,
         "occurrence_number": 9,
-        "discourse_topic_id": 28858
+        "discourse_topic_id": 28858,
+        "youtube_video_id": "j776IrXbal0"
       }
     ]
   },
@@ -3508,6 +4041,40 @@
         "youtube_streams": null,
         "occurrence_number": 13,
         "discourse_topic_id": 28706
+      },
+      {
+        "issue_number": 2159,
+        "issue_title": "EIPIP Meeting #129, Aug 12, 2026",
+        "start_time": "2026-08-12T16:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": true,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 14,
+        "discourse_topic_id": 29015
+      },
+      {
+        "issue_number": 2190,
+        "issue_title": "EIPIP Meeting #130, Sep 16, 2026",
+        "start_time": "2026-09-16T16:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": true,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 15,
+        "discourse_topic_id": 29418
       }
     ],
     "calendar_event_id": "iv5tfm9lgpgeadncqqm6h12om8"
@@ -3724,7 +4291,7 @@
       {
         "occurrence_number": 1,
         "issue_number": 1504,
-        "issue_title": "SAVM Resource Pricing Breakout #4, May 5, 2025",
+        "issue_title": "EVM Resource Pricing Breakout #4, May 5, 2025",
         "discourse_topic_id": 24040,
         "start_time": "2025-05-05T16:00:00Z",
         "duration": 60,
@@ -4381,15 +4948,70 @@
         "duration": 60,
         "skip_youtube_upload": false,
         "skip_transcript_processing": false,
-        "youtube_upload_processed": false,
-        "transcript_processed": false,
-        "upload_attempt_count": 0,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
         "transcript_attempt_count": 0,
         "telegram_message_id": null,
         "youtube_streams_posted_to_discourse": false,
         "youtube_streams": null,
         "occurrence_number": 28,
-        "discourse_topic_id": 28895
+        "discourse_topic_id": 28895,
+        "youtube_video_id": "YnOeffvTkPs"
+      },
+      {
+        "issue_number": 2179,
+        "issue_title": "FOCIL Breakout #39, August 4, 2026",
+        "start_time": "2026-08-04T13:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 29,
+        "discourse_topic_id": 29249,
+        "youtube_video_id": "vPaMS9Yix3g"
+      },
+      {
+        "issue_number": 2194,
+        "issue_title": "FOCIL Breakout #40, August 18, 2026",
+        "start_time": "2026-08-18T13:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 30,
+        "discourse_topic_id": 29446,
+        "youtube_video_id": "FqxsuTRP0YI"
+      },
+      {
+        "issue_number": 2208,
+        "issue_title": "FOCIL Breakout #41, September 1, 2026",
+        "start_time": "2026-09-01T13:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 31,
+        "discourse_topic_id": 29547,
+        "youtube_video_id": "owjg1QnsiSc"
       }
     ]
   },
@@ -4804,15 +5426,88 @@
         "duration": 60,
         "skip_youtube_upload": false,
         "skip_transcript_processing": false,
-        "youtube_upload_processed": false,
-        "transcript_processed": false,
-        "upload_attempt_count": 0,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
         "transcript_attempt_count": 0,
         "telegram_message_id": null,
         "youtube_streams_posted_to_discourse": false,
         "youtube_streams": null,
         "occurrence_number": 20,
-        "discourse_topic_id": 28981
+        "discourse_topic_id": 28981,
+        "youtube_video_id": "wzaM_aq45TQ"
+      },
+      {
+        "issue_number": 2172,
+        "issue_title": "RPC Standards # 31, July 27, 2026",
+        "start_time": "2026-07-27T15:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 21,
+        "discourse_topic_id": 29103,
+        "youtube_video_id": "843IN-rMR04"
+      },
+      {
+        "issue_number": 2185,
+        "issue_title": "RPC Standards # 32, August 10, 2026",
+        "start_time": "2026-08-10T15:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 22,
+        "discourse_topic_id": 29377,
+        "youtube_video_id": "R1h9ROc2IUQ"
+      },
+      {
+        "issue_number": 2198,
+        "issue_title": "RPC Standards # 33, August 24, 2026",
+        "start_time": "2026-08-24T15:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 23,
+        "discourse_topic_id": 29495,
+        "youtube_video_id": "AS0MWbPKz2E"
+      },
+      {
+        "issue_number": 2213,
+        "issue_title": "RPC Standards # 34,  September 7th, 2026",
+        "start_time": "2026-09-07T15:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 24,
+        "discourse_topic_id": 29605,
+        "youtube_video_id": "qlOjKhsWFQs"
       }
     ],
     "calendar_event_id": "bdlrq9mtdo9lmg981ut44k2of4"
@@ -5824,6 +6519,206 @@
         ],
         "occurrence_number": 42,
         "discourse_topic_id": 28963
+      },
+      {
+        "issue_number": 2156,
+        "issue_title": "SIP Editing Office Hour (SIP + SRC ) Meeting #106, July 14, 2026",
+        "start_time": "2026-07-14T16:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": true,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": [
+          {
+            "broadcast_id": "lLjETlecX-0",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1783950206992641",
+            "stream_url": "https://youtube.com/watch?v=lLjETlecX-0",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/xk9u-v8yt-z0q8-tazp-4vw7",
+            "scheduled_time": "2026-07-14T16:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 43,
+        "discourse_topic_id": 28998
+      },
+      {
+        "issue_number": 2160,
+        "issue_title": "SIP Editing Office Hour (SIP + SRC ) Meeting #107, July 21, 2026",
+        "start_time": "2026-07-21T16:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": true,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": [
+          {
+            "broadcast_id": "GpoEbcx2BzI",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1784074561463399",
+            "stream_url": "https://youtube.com/watch?v=GpoEbcx2BzI",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/sb31-bbr7-6ph6-xwrk-3sg5",
+            "scheduled_time": "2026-07-21T16:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 44,
+        "discourse_topic_id": 29014
+      },
+      {
+        "issue_number": 2173,
+        "issue_title": "SIP Editing Office Hour (SIP + SRC ) Meeting #108, July 28, 2026",
+        "start_time": "2026-07-28T16:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": true,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": [
+          {
+            "broadcast_id": "Xs00OkqwUO0",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1785171478700454",
+            "stream_url": "https://youtube.com/watch?v=Xs00OkqwUO0",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/5fwr-51mh-zz7u-htak-6pm8",
+            "scheduled_time": "2026-07-28T16:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 45,
+        "discourse_topic_id": 29107
+      },
+      {
+        "issue_number": 2180,
+        "issue_title": "SIP Editing Office Hour (SIP + SRC ) Meeting #109, Aug 04, 2026",
+        "start_time": "2026-08-04T16:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": true,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": [
+          {
+            "broadcast_id": "V2BDvdMKMOU",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1785768529783641",
+            "stream_url": "https://youtube.com/watch?v=V2BDvdMKMOU",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/z79s-5fm7-qyu1-he4m-bq3j",
+            "scheduled_time": "2026-08-04T16:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 46,
+        "discourse_topic_id": 29254
+      },
+      {
+        "issue_number": 2183,
+        "issue_title": "SIP Editing Office Hour (SIP + SRC ) Meeting #110, Aug 11, 2026",
+        "start_time": "2026-08-11T16:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": true,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": [
+          {
+            "broadcast_id": "bJlCY2KYimU",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1785929057980392",
+            "stream_url": "https://youtube.com/watch?v=bJlCY2KYimU",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/8cfk-zc6j-su6u-9qyz-7jvf",
+            "scheduled_time": "2026-08-11T16:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 47,
+        "discourse_topic_id": 29289
+      },
+      {
+        "issue_number": 2192,
+        "issue_title": "SIP Editing Office Hour (SIP + SRC ) Meeting #111, Aug 25, 2026",
+        "start_time": "August ~~18~~ 25, 2026, 16:00 UTC",
+        "duration": 60,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": true,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": [
+          {
+            "broadcast_id": "ROL9QuD07bc",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1786657211509605",
+            "stream_url": "https://youtube.com/watch?v=ROL9QuD07bc",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/m906-kjdy-v5ue-yvbt-6cfg",
+            "scheduled_time": "2026-08-18T16:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 48,
+        "discourse_topic_id": 29423
+      },
+      {
+        "issue_number": 2202,
+        "issue_title": "SIP Editing Office Hour (SIP + SRC ) Meeting #112, Sep 01, 2026",
+        "start_time": "2026-09-01T16:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": true,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": [
+          {
+            "broadcast_id": "s6a4NUwRx8g",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1787689630302465",
+            "stream_url": "https://youtube.com/watch?v=s6a4NUwRx8g",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/c8jx-farj-2fdw-xckx-85fc",
+            "scheduled_time": "2026-09-01T16:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 49,
+        "discourse_topic_id": 29507
+      },
+      {
+        "issue_number": 2216,
+        "issue_title": "SIP Editing Office Hour (SIP + SRC ) Meeting #113, Sep 15, 2026",
+        "start_time": "2026-09-15T16:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": true,
+        "skip_transcript_processing": true,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": [
+          {
+            "broadcast_id": "iMsTy9QmSgM",
+            "stream_id": "6rYoXJ_3BbPyWx_GQDDRRQ1788790996551614",
+            "stream_url": "https://youtube.com/watch?v=iMsTy9QmSgM",
+            "rtmp_url": "rtmp://a.rtmp.youtube.com/live2/ccb4-3k45-kzq7-fxzv-ea2u",
+            "scheduled_time": "2026-09-13T16:00:00.000Z"
+          }
+        ],
+        "occurrence_number": 50,
+        "discourse_topic_id": 29618
       }
     ],
     "calendar_event_id": "clalahl1qmmi93fkv6e3ffllk4"
@@ -6783,6 +7678,42 @@
         "occurrence_number": 21,
         "discourse_topic_id": 28972,
         "youtube_video_id": "uBOrCVnzuwY"
+      },
+      {
+        "issue_number": 2169,
+        "issue_title": "Post-Quantum (PQ) Interop #48, July 22, 2026",
+        "start_time": "2026-07-22T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 22,
+        "discourse_topic_id": 29061,
+        "youtube_video_id": "qEUHMuTv0NM"
+      },
+      {
+        "issue_number": 2176,
+        "issue_title": "Post-Quantum (PQ) Interop #49, July 29, 2026",
+        "start_time": "2026-07-29T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 23,
+        "discourse_topic_id": 29204,
+        "youtube_video_id": "pIGV-YbCLTE"
       }
     ],
     "calendar_event_id": "s3f6hddat19sar4s8atb6cit3g"
@@ -7513,6 +8444,60 @@
         "occurrence_number": 11,
         "discourse_topic_id": 28806,
         "youtube_video_id": "2NpQMjtVFuo"
+      },
+      {
+        "issue_number": 2164,
+        "issue_title": "Post Quantum transaction signature (PQTS) Breakout #12",
+        "start_time": "2026-07-22T13:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 2,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 12,
+        "discourse_topic_id": 29041,
+        "youtube_video_id": "g1vZjqT4C5A"
+      },
+      {
+        "issue_number": 2188,
+        "issue_title": "Post Quantum transaction signature (PQTS) Breakout #13",
+        "start_time": "2026-08-19T13:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 13,
+        "discourse_topic_id": 29403,
+        "youtube_video_id": "pvZMN5r7wdc"
+      },
+      {
+        "issue_number": 2210,
+        "issue_title": "Post Quantum transaction signature (PQTS) Breakout #14",
+        "start_time": "2026-09-02T13:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 14,
+        "discourse_topic_id": 29552,
+        "youtube_video_id": "qXdFNUNqt4Y"
       }
     ],
     "duration": 60,
@@ -7630,6 +8615,41 @@
         "occurrence_number": 6,
         "discourse_topic_id": 28945,
         "youtube_video_id": "omWy4vNM6Pg"
+      },
+      {
+        "issue_number": 2184,
+        "issue_title": "L1-zkEVM breakout #07, August 12, 2026",
+        "start_time": "2026-08-12T15:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 7,
+        "discourse_topic_id": 29381,
+        "youtube_video_id": "kQCNGeydelQ"
+      },
+      {
+        "issue_number": 2215,
+        "issue_title": "L1-zkEVM breakout #08, September 09, 2026",
+        "start_time": "2026-09-09T15:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 8,
+        "discourse_topic_id": 29617
       }
     ],
     "duration": 60,
@@ -7917,6 +8937,60 @@
         "occurrence_number": 7,
         "discourse_topic_id": 28765,
         "youtube_video_id": "RMB_3dXCsww"
+      },
+      {
+        "issue_number": 2165,
+        "issue_title": "Encrypt The Mempool #7, July 22, 2026",
+        "start_time": "2026-07-22T15:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": false,
+        "upload_attempt_count": 2,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 8,
+        "discourse_topic_id": 29042,
+        "youtube_video_id": "6Z87-SdoCy0"
+      },
+      {
+        "issue_number": 2182,
+        "issue_title": "Encrypt The Mempool #8, August 12, 2026",
+        "start_time": "2026-08-12T15:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 9,
+        "discourse_topic_id": 29256,
+        "youtube_video_id": "R1es3FdhHVA"
+      },
+      {
+        "issue_number": 2193,
+        "issue_title": "Encrypt The Mempool #9, August 19, 2026",
+        "start_time": "2026-08-19T15:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 10,
+        "discourse_topic_id": 29448,
+        "youtube_video_id": "UDAnB20cwbE"
       }
     ],
     "duration": 30,
@@ -8060,15 +9134,34 @@
         "duration": 60,
         "skip_youtube_upload": false,
         "skip_transcript_processing": false,
-        "youtube_upload_processed": false,
-        "transcript_processed": false,
-        "upload_attempt_count": 0,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
         "transcript_attempt_count": 0,
         "telegram_message_id": null,
         "youtube_streams_posted_to_discourse": false,
         "youtube_streams": null,
         "occurrence_number": 8,
-        "discourse_topic_id": 28961
+        "discourse_topic_id": 28961,
+        "youtube_video_id": "xROg726R6FM"
+      },
+      {
+        "issue_number": 2167,
+        "issue_title": "Fast Confirmation Rule (FCR) #12, August 4, 2026",
+        "start_time": "2026-08-04T12:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 9,
+        "discourse_topic_id": 29050,
+        "youtube_video_id": "U-6Vw9b6zS4"
       }
     ],
     "duration": 60,
@@ -8157,7 +9250,10 @@
   },
   "nativeaa": {
     "call_series": "nativeaa",
-    "meeting_id": "81402549334",
+    "meeting_id": "82474738131",
+    "historical_meeting_ids": [
+      "81402549334"
+    ],
     "occurrence_rate": "other",
     "occurrences": [
       {
@@ -8177,10 +9273,63 @@
         "occurrence_number": 1,
         "discourse_topic_id": 28227,
         "youtube_video_id": "pxWZyZ-exLA"
+      },
+      {
+        "issue_number": 2191,
+        "issue_title": "Frame Transaction Breakout #2, August 25, 2026",
+        "start_time": "2026-08-25T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 4,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 2,
+        "discourse_topic_id": 29419,
+        "youtube_video_id": "Koc98fAkiFA"
+      },
+      {
+        "issue_number": 2206,
+        "issue_title": "Frame Transaction Breakout #3, Sep 1, 2026",
+        "start_time": "2026-09-01T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 3,
+        "discourse_topic_id": 29539,
+        "youtube_video_id": "2-10Mh1ODQM"
+      },
+      {
+        "issue_number": 2212,
+        "issue_title": "Frame Transaction Breakout #4, Sep 8, 2026",
+        "start_time": "2026-09-08T14:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": false,
+        "transcript_processed": false,
+        "upload_attempt_count": 0,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 4,
+        "discourse_topic_id": 29578
       }
     ],
     "duration": 60,
-    "calendar_event_id": "vjap3h4odrqujh7gopt866ph9g"
+    "calendar_event_id": "hej1f0bn14r5vujvk53mul4rm0"
   },
   "p2pnetworking": {
     "call_series": "p2pnetworking",
@@ -8240,6 +9389,78 @@
         "occurrence_number": 3,
         "discourse_topic_id": 28823,
         "youtube_video_id": "-3S0tNAsXnw"
+      },
+      {
+        "issue_number": 2161,
+        "issue_title": "P2P Networking #4 July 15, 2026",
+        "start_time": "2026-07-15T15:30:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 4,
+        "discourse_topic_id": 29021,
+        "youtube_video_id": "EUGRiY9wRD8"
+      },
+      {
+        "issue_number": 2175,
+        "issue_title": "P2P networking #5, July 29, 2026",
+        "start_time": "2026-07-29T15:30:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 2,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 5,
+        "discourse_topic_id": 29200,
+        "youtube_video_id": "iOysOKXuD_c"
+      },
+      {
+        "issue_number": 2189,
+        "issue_title": "P2P networking #6 August 12, 2026",
+        "start_time": "2026-08-12T15:30:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 6,
+        "discourse_topic_id": 29404,
+        "youtube_video_id": "-428cUZ3Mfo"
+      },
+      {
+        "issue_number": 2203,
+        "issue_title": "P2P networking #7 August 26, 2026",
+        "start_time": "2026-08-26T15:30:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 7,
+        "discourse_topic_id": 29518,
+        "youtube_video_id": "-pRrQdzmqzM"
       }
     ],
     "duration": 60,
@@ -8285,6 +9506,42 @@
         "occurrence_number": 2,
         "discourse_topic_id": 28894,
         "youtube_video_id": "_i6gjV6kd80"
+      },
+      {
+        "issue_number": 2168,
+        "issue_title": "SSZ engine api call 3, July 24, 2026",
+        "start_time": "2026-07-24T13:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 3,
+        "discourse_topic_id": 29060,
+        "youtube_video_id": "U1dJJL1aV1U"
+      },
+      {
+        "issue_number": 2196,
+        "issue_title": "SSZ Engine api call 4, August 28,2026",
+        "start_time": "2026-08-28T09:00:00Z",
+        "duration": 60,
+        "skip_youtube_upload": false,
+        "skip_transcript_processing": false,
+        "youtube_upload_processed": true,
+        "transcript_processed": true,
+        "upload_attempt_count": 1,
+        "transcript_attempt_count": 0,
+        "telegram_message_id": null,
+        "youtube_streams_posted_to_discourse": false,
+        "youtube_streams": null,
+        "occurrence_number": 4,
+        "discourse_topic_id": 29467,
+        "youtube_video_id": "lGLkelah-3A"
       }
     ],
     "duration": 60,
@@ -8297,7 +9554,7 @@
     "occurrences": [
       {
         "issue_number": 2135,
-        "issue_title": "Subroutines for the SAVM #1,  June 30, 2026",
+        "issue_title": "Subroutines for the EVM #1,  June 30, 2026",
         "start_time": "2026-06-30T15:00:00Z",
         "duration": 60,
         "skip_youtube_upload": false,

@@ -81,7 +81,7 @@ I would expect that we'll finally have a bare-bones something that we can know t
 * yes I from our end we've updated everything to 11.1 and 
 * as far as I know everything's sorted today. so we finished off all the main net required protocol that we need, so we’re ready for that
 * We’re doing some internal testing for any bugs 
-* Would also be doing public multiclient testnet for 11.1 with all protocol spec that we need for the sila-sila-mainnet.  
+* Would also be doing public multiclient testnet for 11.1 with all protocol spec that we need for the sila-mainnet.  
 * Other internal things being working on is kind of a more sophisticated peer management reputation system.
 * Upgrading to Rust peer management system,  I think we've been working on for a while and 
 * we're looking at testing some of the snappy compression stuff that we've done in Gossip sub 
@@ -99,7 +99,7 @@ That’s pretty much from us.
 * we were able to sync to lighthouses testnet and catch up which is a pretty big milestone for us.
 *  we made some general stability improvements in the last couple weeks which were crucial in allowing us to catch up. 
 * In terms of performance, we implemented some optimization are remarkable implementation.
-* we're now able to import about 7-8blocks/sec on average that's with sila-sila-mainnet config 32k validators 
+* we're now able to import about 7-8blocks/sec on average that's with sila-mainnet config 32k validators 
 * we also finished implementing a new RocksDB backed database, which also gives us a little bit performance boost
 * We’ve done some work to improve attestation aggregation in particular we fix some issues with block creation which were causing us to fail to include a lot of attestations.
 *  we're just now starting to look v11  but we should be ready for a v 11 testnet in couple weeks
@@ -171,7 +171,7 @@ Cool!
 * So, one of the questions would be, in this phased approach, do we have Sil 1.x 64 or do we create a new execution model from the ground up? If it’s a little bit too difficult to make new upgrades that we want to apply Sil 1 and so that is in progress. That decision would need to be made. So yeah that's where at. So some of this work around account abstraction could answer some of these questions. So just **trying to get us to the most functional Sil 2, phase 1.5 as soon as possible**. Otherwise we’ve also been working on the Eth2, so that’s been moving along and that’s become main as well and trying to get feedback on that. That’s been going through the Moloch DAO soon, and will also have Gitcoin grants.
 
 **Danny**: Cool, thanks Will.
-I posted a write-up on how the [relationship between Sil 2 and Sil 1 client](https://Sila Research/t/eth1-eth2-client-relationship/7248) and such a merger, single-chain merger. If you're interested in that ongoing work and getting involved in prototye and spec, take a look at that. 
+I posted a write-up on how the [relationship between Sil 2 and Sil 1 client](https://ethresear.ch/t/eth1-eth2-client-relationship/7248) and such a merger, single-chain merger. If you're interested in that ongoing work and getting involved in prototye and spec, take a look at that. 
 Other research update.
 
 ### TXRX
@@ -372,7 +372,7 @@ Thanks everyone, bye!
 * Proto: @mamy https://github.com/protolambda/not-a-client is the zrnt lighthouse sync experiment. hope you like the name, haha
 * Danny: https://github.com/goerli/schlesi
 * Mamy: I think the repo would be best under the https://github.com/eth2-clients umbrella. we’ve been working to revive the starter scripts in there
-https://Sila Research/t/eth1-eth2-client-relationship/7248 
+https://ethresear.ch/t/eth1-eth2-client-relationship/7248 
 * Preston: link to the BLS library Justin mentioned?
 * Mamy: it’s not opensource yet init/update/finish scheme for batch BLS operations: https://github.com/status-im/nim-blscurve/blob/master/blscurve/bls_signature_scheme.nim#L205-L248 
 * Mamy: and how to use it for various aggregation scheme is below and this can be used for keys/messages streaming from the network 

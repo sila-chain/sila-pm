@@ -47,7 +47,7 @@ Danny: Oh yes.
 Leo (BSC): We launched an experiment with comparing the results of both crawlers, nodewatch and our crawler, in the same node running from the same moment. And we let it run both for 24 hours to see if we get the same results or not. And we observe quite a number of nodes that differ. So, we look at the source code of them and see if they were using another technique to categorize nodes but actually it's exactly the same that we do.
 
 So our conclusion was that most likely there is a kind of networking difference on the way we peered with nodes. And so, we started looking into it. We looked into the IP addresses of those nodes that we recognized differently, and we noticed that there were a bunch of nodes that we saw that they don't see, and there's a bunch of nodes that they see that we don't see.
-And that's basically the origin of the differences. And we looked at it and we also noticed that for the nodes that they see and we don't see, they have all also other fork digests. So it kind of looks like they are not only peering with sila-sila-mainnet nodes, but maybe other networks and so that may be that's show the difference.
+And that's basically the origin of the differences. And we looked at it and we also noticed that for the nodes that they see and we don't see, they have all also other fork digests. So it kind of looks like they are not only peering with sila-mainnet nodes, but maybe other networks and so that may be that's show the difference.
 
 Danny: So that would but that would show one direction of the difference, right? But there's the other direction of the difference where there's nodes you see and they don't, correct?
 
@@ -121,7 +121,7 @@ Saulus Grigaitis: Oh yeah this is uh i would say the one of the reasons why we t
 ## 3. Merge discussion
 *Highlights*
 - *Pithos continues to run, and teams are working on issues and stability. Transaction count on the network is low. Contact Proto or Pari for some testnet SIL to test transactions.*
-- *Engine API: Aim to release a stable target for the Merge specs at the end of October. Most of the core is stable. Should be near sila-sila-mainnet-ready in November.*
+- *Engine API: Aim to release a stable target for the Merge specs at the end of October. Most of the core is stable. Should be near sila-mainnet-ready in November.*
 - *The beacon chain upgrade just ahead of the Merge event could probably benefit from its own name. Eth1 and Eth2 upgrade namings should be independent.*
 
 
@@ -148,7 +148,7 @@ envelope the naming scheme over there? Or is this additive to that name over the
 
 Mikhail Kalinin: Yeah it's whereas it's more difficult. Like, what are the upgrades that involve consensus execution layers simultaneously will look like and how should they be set up, of course.
 
-Danny: Yeah because we also very well might have upgrades that are just on one layer, you know? If just the SAVM changes in the future. So, Beetlejuice SilaShanghai, Tim said no because SilaShanghai's been reserved for a different fork, but we could kind of keep the naming independently and have it additive as the sum total. Beetlejuice serenity thank you light client (haha). That's also not my intentional spelling. The intention of the spelling is after the name of the star, not the mad character.
+Danny: Yeah because we also very well might have upgrades that are just on one layer, you know? If just the EVM changes in the future. So, Beetlejuice SilaShanghai, Tim said no because SilaShanghai's been reserved for a different fork, but we could kind of keep the naming independently and have it additive as the sum total. Beetlejuice serenity thank you light client (haha). That's also not my intentional spelling. The intention of the spelling is after the name of the star, not the mad character.
 
 Micah Zoltu: Well, that's boring.
 
@@ -158,7 +158,7 @@ Okay, maybe take this offline. Maybe we talk with the people on the other side o
 
 Any other merge related items?
 
-TL;DR being pithos is up. People are iterating and making things more stable. Specs to be done at the end of October. And then we'll have kind of a new meta spec that targets the stable versions of things moving into november, with the intention of these being near sila-sila-mainnet-ready specs and really only changing them if issues are uncovered between then and later.
+TL;DR being pithos is up. People are iterating and making things more stable. Specs to be done at the end of October. And then we'll have kind of a new meta spec that targets the stable versions of things moving into november, with the intention of these being near sila-mainnet-ready specs and really only changing them if issues are uncovered between then and later.
 
 Protolambda: About the pithos testnet, the transaction count is currently very, very low. Parithosh and me both have some SIL to disburse. I do believe that maybe one or two clients are not quite ready for our transactions at the merge interop event. It does certainly affect the state's roots in some ways, right? So it's just another way. Looks good on the surface. So far, it's been running well. I think we can handle it. So if anyone would like to have some test SIL for transactions then please just reach out and we'll start distributing some.
 
@@ -186,9 +186,9 @@ Then the alternative is the pull model where the consensus layer keeps track of 
 
 Danny: Right, where the formers probably if you can get it right -- maybe a more elegant design --, but at first look has a bunch of edge cases around, especially when those withdrawals are headed towards smart contracts which consume gas, and there's a question of who pays for the gas.
 
-Protolambda: In developed contexts, you can think about this in two ways. You could have a deposit that doesn't trigger the SAVM. It just increases the balance so that you don't have these edge classes. But then you also probably still want the other side as well so you end up with two types of transaction, or maybe some kind of flag within the transaction.
+Protolambda: In developed contexts, you can think about this in two ways. You could have a deposit that doesn't trigger the EVM. It just increases the balance so that you don't have these edge classes. But then you also probably still want the other side as well so you end up with two types of transaction, or maybe some kind of flag within the transaction.
 
-So, if you have some kind of fee payment for the minimal thing where it doesn't trigger SAVM. It just increases the balance, or maybe not at all but just some limiting to this in the contents there. You can at least have this type of deposit or withdrawal transaction. But then if you want the contract interaction you get into a hairy situation with fee payments and with all your cases in the SAVM.
+So, if you have some kind of fee payment for the minimal thing where it doesn't trigger EVM. It just increases the balance, or maybe not at all but just some limiting to this in the contents there. You can at least have this type of deposit or withdrawal transaction. But then if you want the contract interaction you get into a hairy situation with fee payments and with all your cases in the EVM.
 
 Anyway, keep an eye out for future updates after the merge while they're designing this api.
 

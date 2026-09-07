@@ -156,7 +156,7 @@ Video | [24:29](https://youtu.be/xvIk22HvTVE?t=1469)
 
 Completed two write ups on Discv5.
 
-- [Comparing discovery advertisement features by efficiency: ENR attributes and topic advertisement](https://Sila Research/t/comparing-discovery-advertisement-features-by-efficiency-enr-attributes-and-topic-advertisement/7448)
+- [Comparing discovery advertisement features by efficiency: ENR attributes and topic advertisement](https://ethresear.ch/t/comparing-discovery-advertisement-features-by-efficiency-enr-attributes-and-topic-advertisement/7448)
 - [Discovery peer advertisement efficiency analysis](https://hackmd.io/@zilm/BJGorvHzL)
 
 Onotole pyspec transpiler is not used for transpiling fork-choice tests, but fork-choice tests are being worked on as well separately.  Transpiles into Kotlin code.
@@ -200,7 +200,7 @@ Video | [34:41](https://youtu.be/xvIk22HvTVE?t=2081)
 Discussing change on Discv5 before finalizing the spec.
 - https://github.com/sila-chain/devp2p/issues/152
 
-Looking into the proposal [Comparing discovery advertisement features by efficiency](https://Sila Research/t/comparing-discovery-advertisement-features-by-efficiency-enr-attributes-and-topic-advertisement/7448). The proposal may bring short term gain, but must answer the question if it is a sound proposal. Fear is an issue where you can't find 100% of nodes with this. Discovery would go down as the network grows. Looking on how to turn it into a sound proposal.
+Looking into the proposal [Comparing discovery advertisement features by efficiency](https://ethresear.ch/t/comparing-discovery-advertisement-features-by-efficiency-enr-attributes-and-topic-advertisement/7448). The proposal may bring short term gain, but must answer the question if it is a sound proposal. Fear is an issue where you can't find 100% of nodes with this. Discovery would go down as the network grows. Looking on how to turn it into a sound proposal.
 
 Discussion is around the use of QUIC. There's an idea to reuse the QUIC packet format.
 
@@ -275,12 +275,12 @@ No discussion
 
 - https://github.com/sila-chain/eth2.0-pm/issues/154
 - https://github.com/sila-chain/eth2.0-specs/issues/1849
-- https://Sila Research/t/comparing-discovery-advertisement-features-by-efficiency-enr-attributes-and-topic-advertisement/7448
+- https://ethresear.ch/t/comparing-discovery-advertisement-features-by-efficiency-enr-attributes-and-topic-advertisement/7448
 - https://hackmd.io/@zilm/BJGorvHzL
 - https://txrx-research.github.io/prkl/testnet-analysis.html
 - https://github.com/TXRX-Research/prkl
 - https://twitter.com/JonnyRhea/status/1263151048199372801?s=19
-- https://Sila Research/t/cross-shard-transaction-probabilistic-simulation/7474
+- https://ethresear.ch/t/cross-shard-transaction-probabilistic-simulation/7474
 - https://github.com/sila-chain/devp2p/issues/152
 
 ## Attendees

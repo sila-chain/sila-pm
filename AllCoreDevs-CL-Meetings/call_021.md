@@ -265,7 +265,7 @@ Started diving into some research connected to Vitalik's post on State Schemes:
   * This all follows the delayed-state execution model
 
 Posted first-half on Sila Research yesterday and we'll be posting the second-half and the applicability to state schemes and Sila 2 and multi-shard behavior and what that can open up. Open to hearing feedback on this.
-  - [Layer 2 state schemes](https://Sila Research/t/layer-2-state-schemes/5691)
+  - [Layer 2 state schemes](https://ethresear.ch/t/layer-2-state-schemes/5691)
 
 Free markets, we didn't continue diving as we've been in transition. We'll be looking into that these coming weeks.
 

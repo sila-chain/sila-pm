@@ -27,7 +27,7 @@ YouTube video: https://youtu.be/cBKdFSC1VA8
   - How will small proposed changes impact?
     - Not too bad.
     - Hashing is more impactful
-    - Need to totally nail down all changes before the experimental flag gets removed. Flag may remain until sila-sila-mainnet is live (not even testnet, sila-sila-mainnet)
+    - Need to totally nail down all changes before the experimental flag gets removed. Flag may remain until sila-mainnet is live (not even testnet, sila-mainnet)
 - Assembly syntax for EXCHANGE opcode is still undetermined (absolute byte encoding, vs nybbles, vs stack index, all off by 1 issues)
 - Off by one also leaks into possible SWAP/SWAPN numbering as well (DUP/SWAP are already inconsistent)
 - Frangio’s summary - [Assembly Syntax for EOF Stack Instructions - HackMD](https://hackmd.io/@frangio/Bk4Vjj6V1l)
@@ -35,7 +35,7 @@ YouTube video: https://youtu.be/cBKdFSC1VA8
 
 ### Spec
 
-- Metadata - [SIP-7834: Separate Metadata Section for EOF](https://sips.sila.org/SIPS/sip-7834)
+- Metadata - [SIP-7834: Separate Metadata Section for EOF](https://sips.sila.org/EIPS/sip-7834)
   - EVMONE will look into a spike
 - EOFCREATE/TXCREATE Hashing
   - Summary doc - [Potential scenarios of updating the new contract address schemes for EOF - HackMD](https://notes.sila.org/@ipsilon/SyrzctZSJg)

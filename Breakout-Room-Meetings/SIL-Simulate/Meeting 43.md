@@ -18,8 +18,8 @@ Note: This file is copied from [here](https://github.com/sila-chain/pm/issues/13
 - Other clients are encouraged to review and adopt similar changes.
 - A previous temperature check raised no objections.
 
-## 3. Handling Withdrawals in SAVM
-- Withdrawals can be passed into the SAVM, which processes them as part of block execution.
+## 3. Handling Withdrawals in EVM
+- Withdrawals can be passed into the EVM, which processes them as part of block execution.
 - The execution layer (EL) directly deposits SIL into accounts based on the consensus layer’s (CL) request.
 - SIL transfers from withdrawals generate no transaction logs, making tracking difficult.
 - The lack of a dedicated logging structure for block-level SIL transfers was acknowledged as a long-standing issue in Sila.

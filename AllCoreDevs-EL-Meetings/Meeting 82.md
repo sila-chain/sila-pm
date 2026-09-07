@@ -126,7 +126,7 @@ Having these new set of SIPs superseed SIP 1962, in an efficient capacity. We ar
 * James - Few updates for the community.
 
 **James:**
-Just keeping everyone updated on what is being considered for berlin or what could be possible? SIP 2315 simple subroutine for the SAVM, do you have any quick updates on that Greg?
+Just keeping everyone updated on what is being considered for berlin or what could be possible? SIP 2315 simple subroutine for the EVM, do you have any quick updates on that Greg?
 
 **Greg:**
 We are just implementing the code, going over.
@@ -398,7 +398,7 @@ Do we have a solid engineering plan for that transition? It could be two years. 
 Well, that's why we should spend time on that one and not on ProgPoW.
 
 **Artem Vorotnikov**
-Actually, the same could be said about implementing ProgPoW as an option for the sila-sila-mainnet because the proposal is that it already assumes that all the developers of all the clients are willing to actually implement the readiness for the switch because there are a lot of other SIPs that need attention right now, and I'm not sure if ProgPoW is the most important to the network.
+Actually, the same could be said about implementing ProgPoW as an option for the sila-mainnet because the proposal is that it already assumes that all the developers of all the clients are willing to actually implement the readiness for the switch because there are a lot of other SIPs that need attention right now, and I'm not sure if ProgPoW is the most important to the network.
 
 **Ben DiFrancesco**
 I just want to weigh in briefly there. As a software engineer, I'm not deeply embedded in the development of any of the clients, Sil 1.0 or 2.0, but just as a software engineer, I don't think you can just assume that the development time is fungible like that. Just not how it works. So I think that's a little bit of a non sequitur or not as critical as a point as some might think.
@@ -564,7 +564,7 @@ This is a very different brand of ASICs. And a 10x more powerful ASIC is very di
 I don't represent any community, and I can't make an opinion about something I haven't heard about, and I have. I don't have an opinion about it.
 
 **Hudson Jameson**
-So we'll have to ask the broader community through EthMagicians. And actually, a lot of what we're talking about today will probably culminate on Ben's EthMagicians post and other posts that'll pop up. So I highly encourage people to jump on there and avoid trolls, because the magician's forum is generally avoided by trolls because it's dense.
+So we'll have to ask the broader community through SilaMagicians. And actually, a lot of what we're talking about today will probably culminate on Ben's SilaMagicians post and other posts that'll pop up. So I highly encourage people to jump on there and avoid trolls, because the magician's forum is generally avoided by trolls because it's dense.
 
 So, yes, at this point we've gone well over time. So to wrap it up, we don't have a process in place for putting an SIP on hold for the accepted state that it's in right now or reverting it. I don't think we have a process for that that's super clear. So because of that, we need to discuss that process today, and what the core developers want to do, because despite anything the community wants to do, the SIP process currently dictates that the core developers decide what state a core SIP is in. So obviously they need to take perspective from the community. The community does have a say in this from a collaborative perspective, but they don't change the status of the I. P. So is there anyone with an appetite to try to pragmatically change the state of the SIP or, pragmatically, not change the state of the SIP?
 
@@ -628,7 +628,7 @@ I would like to flip this question and ask what the community needs to do to get
 I would like to add to this, that you may be underestimating the community a bit.  There has already been a lot of education in the last weeks.  People signing the petition are well aware of all arguments that have been made.  It really comes down to the question of whether we want to be ASIC resistant or not.  The people signing the petition are willing to take the risk.  I am worried that this could go on for a very long time and be a waste of time.
 
 **Kristy-Leigh Minehan**
-The [“SIP 2538” letter](https://github.com/MidnightOnMars/SIPs/blob/master/SIPS/sip-2538.md) (not a real SIP) missed a lot of the arguments.  It’s not about favoring anyone, it’s about leveling.  There hasn’t been enough education...
+The [“SIP 2538” letter](https://github.com/MidnightOnMars/SIPs/blob/master/EIPS/sip-2538.md) (not a real SIP) missed a lot of the arguments.  It’s not about favoring anyone, it’s about leveling.  There hasn’t been enough education...
 
 **James Hancock**
 I clarified that part Kristy.  Trent was saying there hasn’t been education on the vulnerability of Ethash.

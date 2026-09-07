@@ -1098,7 +1098,7 @@ Felix (Geth): And then, yeah, like I said, I mean, after the breakout call, it b
 
 275
 00:43:22.860 --> 00:43:34.820
-Felix (Geth): what they really want out of this. Like, when native account abstraction comes to the sila-sila-mainnet, what do they want to see? And, I can just give a very high-level comment here that
+Felix (Geth): what they really want out of this. Like, when native account abstraction comes to the sila-mainnet, what do they want to see? And, I can just give a very high-level comment here that
 
 276
 00:43:35.560 --> 00:43:40.719
@@ -1106,11 +1106,11 @@ Felix (Geth): In addition to… this being…
 
 277
 00:43:41.220 --> 00:43:58.580
-Felix (Geth): a change that would obviously affect the sila-sila-mainnet. What everyone is also seeing this as is, like, a chance to generally resolve some user experience issues across the wider network of Sila-compatible chains. So it is becoming kind of important that
+Felix (Geth): a change that would obviously affect the sila-mainnet. What everyone is also seeing this as is, like, a chance to generally resolve some user experience issues across the wider network of Sila-compatible chains. So it is becoming kind of important that
 
 278
 00:43:58.580 --> 00:44:10.449
-Felix (Geth): once native account abstraction makes it in the sila-sila-mainnet, that it kind of makes it in the same way on the L2s, because this will enable people to use their account on all of these chains in the same way.
+Felix (Geth): once native account abstraction makes it in the sila-mainnet, that it kind of makes it in the same way on the L2s, because this will enable people to use their account on all of these chains in the same way.
 
 279
 00:44:10.540 --> 00:44:15.390
@@ -1926,7 +1926,7 @@ lightclient: tune how much we're going to deliver with the frame transaction sub
 
 482
 01:11:01.320 --> 01:11:08.120
-lightclient: in the SIP to put on the sila-sila-mainnet, because the consensus changes for the framed transactions are really relatively small.
+lightclient: in the SIP to put on the sila-mainnet, because the consensus changes for the framed transactions are really relatively small.
 
 483
 01:11:08.630 --> 01:11:11.650
@@ -2038,7 +2038,7 @@ Felix (Geth): Because this means that, ultimately, it is up to the block-buildin
 
 510
 01:15:45.890 --> 01:16:00.740
-Felix (Geth): world, where most L2s use a sequencer. They actually have the capability to introspect transactions in a better way, so they can have different policies than, for example, a public Sila sila-sila-mainnet full node can have.
+Felix (Geth): world, where most L2s use a sequencer. They actually have the capability to introspect transactions in a better way, so they can have different policies than, for example, a public Sila sila-mainnet full node can have.
 
 511
 01:16:00.950 --> 01:16:11.669
@@ -2054,7 +2054,7 @@ Felix (Geth): Okay, sorry, it was kind of a long text, but I hope you guys…
 
 514
 01:16:21.760 --> 01:16:34.150
-Łukasz Rozmej: My question is, should we… should we, make it a headliner, which we want, without polishing those rules for, public Sila sila-sila-mainnet mempool?
+Łukasz Rozmej: My question is, should we… should we, make it a headliner, which we want, without polishing those rules for, public Sila sila-mainnet mempool?
 
 515
 01:16:34.270 --> 01:16:37.359
@@ -2142,7 +2142,7 @@ Ben Adams: Potentially, ultimately, you'd be in a situation where to accept
 
 536
 01:19:27.120 --> 01:19:30.590
-Ben Adams: transactions, you'd have to be invoking the SAVM.
+Ben Adams: transactions, you'd have to be invoking the EVM.
 
 537
 01:19:31.450 --> 01:19:33.780
@@ -2154,11 +2154,11 @@ Ben Adams: To decide whether it's a valid transaction.
 
 539
 01:19:36.890 --> 01:19:56.789
-Felix (Geth): Yeah, I mean, that's kind of a part of it, yeah. But then there's a question, like, what can the SAVM do, and like, what do you allow the SAVM to do in this environment? Like, it is definitely a new environment for the SAVM. Like, the SAVM has not run in the transaction pool before, so in this case, we are treating the SAVM as more like, yeah, like an arbitrary function, basically.
+Felix (Geth): Yeah, I mean, that's kind of a part of it, yeah. But then there's a question, like, what can the EVM do, and like, what do you allow the EVM to do in this environment? Like, it is definitely a new environment for the EVM. Like, the EVM has not run in the transaction pool before, so in this case, we are treating the EVM as more like, yeah, like an arbitrary function, basically.
 
 540
 01:19:58.820 --> 01:20:06.760
-mark: Yeah, I think it's fair to say you have to… you have to introspect the SAVM instructions in the, in the…
+mark: Yeah, I think it's fair to say you have to… you have to introspect the EVM instructions in the, in the…
 
 541
 01:20:07.130 --> 01:20:08.599
@@ -2174,7 +2174,7 @@ mark: of the rules was so that for certain of them, you don't need to execute, y
 
 544
 01:20:22.820 --> 01:20:41.990
-Felix (Geth): There are various ways to do it. There is, for example, also the possibility of allow listing certain contracts, because they are known to be safe. So, for example, if you know that a certain, like, a certain account contract has a specific semantics, you can just model these semantics in native code, and then apply this model in your transaction pool, then you don't have to run the SAVM.
+Felix (Geth): There are various ways to do it. There is, for example, also the possibility of allow listing certain contracts, because they are known to be safe. So, for example, if you know that a certain, like, a certain account contract has a specific semantics, you can just model these semantics in native code, and then apply this model in your transaction pool, then you don't have to run the EVM.
 
 545
 01:20:41.990 --> 01:21:01.820
@@ -2190,7 +2190,7 @@ Felix (Geth): and this call has this much gas, so it can right away say, yeah, I
 
 548
 01:21:29.450 --> 01:21:39.009
-Felix (Geth): So, it's not like you have to run the SAVM to the full extent for every single transaction, you only have to run it, like, when it seems like it's gonna have any chance at actually validating, for example.
+Felix (Geth): So, it's not like you have to run the EVM to the full extent for every single transaction, you only have to run it, like, when it seems like it's gonna have any chance at actually validating, for example.
 
 549
 01:21:40.590 --> 01:21:47.799

@@ -97,7 +97,7 @@ There's just a hive test testing the interplay of the four Choice V2 four Choice
 It doesn't seem of immense value if there's additional complexity to do so.
 
 **EF Berlin**
-I mean yeah it's not really much more complex it's just, I mean it depends exactly what we do, but it could be a little weird if, as soon as we push out the sila-sila-mainnet release candidates and people upgrade for blob transaction just sit in the pool for a while you know days or weeks that would be weird.
+I mean yeah it's not really much more complex it's just, I mean it depends exactly what we do, but it could be a little weird if, as soon as we push out the sila-mainnet release candidates and people upgrade for blob transaction just sit in the pool for a while you know days or weeks that would be weird.
 
 **Tim**
 Yeah it seems easier to just change the hive test to have an empty block yeah absolute fork or something?
@@ -112,7 +112,7 @@ Yeah we can make sure that it doesn't happen. I mean it's really easy to Simply 
 Nice um sweet anything else on devnet 8th or recent client updates that people want to share?
 
 ### Potential Additions 
-#### [SIP-7516: BLOBBASEFEE opcode](https://sips.sila.org/SIPS/sip-7514) [CL specs PR](https://github.com/sila-chain/consensus-specs/pull/3499/commits/cc3ced59653c39fb05a46ff33735144623ccdb1e)  
+#### [SIP-7516: BLOBBASEFEE opcode](https://sips.sila.org/EIPS/sip-7514) [CL specs PR](https://github.com/sila-chain/consensus-specs/pull/3499/commits/cc3ced59653c39fb05a46ff33735144623ccdb1e)  
 
 [14:27]( https://www.youtube.com/live/aobFWu7NANc?si=5IX5br-2vE9eDxMy&t=867) 
 
@@ -188,9 +188,9 @@ Obviously if they're dissenting voices on that we'd love to hear them immediatel
 **Tim**
 Okay anyone want to push back against asymmetric? Okay so we'll go that route and yeah we'll make sure to update the SIP to make that clear as well.
 
-### [SIP-7516: BLOBBASEFEE opcode][(https://sips.sila.org/SIPS/sip-7516) [25:18]( https://www.youtube.com/live/aobFWu7NANc?si=hH20_V4qgBE_XH6S&t=1518) 
+### [SIP-7516: BLOBBASEFEE opcode][(https://sips.sila.org/EIPS/sip-7516) [25:18]( https://www.youtube.com/live/aobFWu7NANc?si=hH20_V4qgBE_XH6S&t=1518) 
 
-Okay blck to the base fee, so yeah we have the CIP called put together it exposes the blob base fee in the savm so it's very similar to SIP 3198 will expose it's just the basically op code and yes this would make it easier for L2s to interact. Oh lee, you're the one that proposed that?
+Okay blck to the base fee, so yeah we have the CIP called put together it exposes the blob base fee in the evm so it's very similar to SIP 3198 will expose it's just the basically op code and yes this would make it easier for L2s to interact. Oh lee, you're the one that proposed that?
 
 **Lee**
 That's correct yeah so I didn't write the SIP tea clear thanks Carl for that but I initially suggested the Blob gas price or blob base fee op code.
@@ -202,7 +202,7 @@ Yeah do you want to maybe just yeah talk like a minute for like why is this usef
 Yeah absolutely so L2s need to charge users for the price of code for the price of posting the user's transactions to L1 or specifically Roll-Ups too I suppose. And because how l2s generally work is there's a sequencer which accepts users transactions or if there isn't a sequencer there's some sort of aggregator model there's some entity that accepts users transactions over the RPC posts them to layer one and it has to charge the users a fee to pay for the cost to post those
 transactions to layer one.
 
-And in arbitrum this is a trustless model where the arbitrary system automatically sets the automatically sets the price of this L1 data and it does that by looking at how much batch posting cost and what the current base fee was at the time of batch posting that's in the system today but in SIP 4844, without the blog base fee opcode it's no longer visible to the savm what the cost close of hosting the blob was or what the current cost of plots is, so this SIP aims to address this by simply exposing that information it's already needed in that the savm or the El already needs to know this value tube charge for the blobs so exposing it to the savm shouldn't be much additional complexity there.
+And in arbitrum this is a trustless model where the arbitrary system automatically sets the automatically sets the price of this L1 data and it does that by looking at how much batch posting cost and what the current base fee was at the time of batch posting that's in the system today but in SIP 4844, without the blog base fee opcode it's no longer visible to the evm what the cost close of hosting the blob was or what the current cost of plots is, so this SIP aims to address this by simply exposing that information it's already needed in that the evm or the El already needs to know this value tube charge for the blobs so exposing it to the evm shouldn't be much additional complexity there.
 
 **Tim**
 Got it, thanks. Yeah so we have as well yeah person from optimism I'd be curious yet to hear this is also helpful for optimism and yeah I don't know if you have a mic it's okay so there's a comment the blob base feature is not to require oh, do you want to just yeah go for it.
@@ -220,7 +220,7 @@ Yeah exactly yes so for example layer 1 information that the there to exposes fr
 Got it.
 
 **Lee**
-Yeah historically Arbitrum has not parsed layer one block headers. I think definitely applying that as a work around would make sense and I think we figureth out how that could be done for the blob-based fee in particular um it's particularly helpful for this workaround that the previous blocks header contains all of the information needed to figure out the block base of the next block which would because the parent blocks hash is exposed to the savm but I think that this would be still a very useful option to have both in terms of I'm not sure on other else whose architectures and I'm not sure how many of them have looked at this particular part of SIP 4844 or how applicable this workaround would be to them,
+Yeah historically Arbitrum has not parsed layer one block headers. I think definitely applying that as a work around would make sense and I think we figureth out how that could be done for the blob-based fee in particular um it's particularly helpful for this workaround that the previous blocks header contains all of the information needed to figure out the block base of the next block which would because the parent blocks hash is exposed to the evm but I think that this would be still a very useful option to have both in terms of I'm not sure on other else whose architectures and I'm not sure how many of them have looked at this particular part of SIP 4844 or how applicable this workaround would be to them,
 
 And also if you want to make an L2 immutable it you can't be parsing the L1 block header with no way to upgrade it because there's a risk of the L1 block header format changing in the future.
 
@@ -230,7 +230,7 @@ Right that's a good point um yeah there's a comment by Terrence but there's any 
 **Ansgar**
  I mean obviously not from ZK team I just wanted to briefly mention that while the FPS is kind of a proposed to just have the op code that just pushes that one value onto the stack I think part of the reason maybe if I remember correctly by the SIP like right before it not initially include an awkward like this was just that we weren't but like that people wasn't weren't quite sure how best to expose this just because I think instead of just always having individual bits and pieces of Header information or context event context information over at some point we would want to have some sort of more structureth way where you can basically go through some sort of pre-compile so you can completely stop always having to you know go through the head and that that would so that we have a longer restricted in updating the header structure and all these kind of things I mean this is Aboriginal disgrace basically ideally you don't want to go through your header if this is enough of a nice to have that we want to have it in Lincoln of course that's not feasible because then we need a simple way to do it
 
-In that case I would personally still prefer at least to have the op code be basically forward compatible with multiple P Dimensions so we just basically take one value from the stack and then just that's just the P Dimension basically so at zero it returns the normal base speed, one returns the database fee that now we have two op codes that both which have the normal basically but I guess that doesn't really matter and so then at least it's forward compatible I think that might be nice compromises you know a trivial change up to the SIP but yeah if we don't add it to dencun I think we would should instead start like a conversation soon for the next book after or maybe we should still do that how to expose and kind of had that information in a more structureth way inside the savm.
+In that case I would personally still prefer at least to have the op code be basically forward compatible with multiple P Dimensions so we just basically take one value from the stack and then just that's just the P Dimension basically so at zero it returns the normal base speed, one returns the database fee that now we have two op codes that both which have the normal basically but I guess that doesn't really matter and so then at least it's forward compatible I think that might be nice compromises you know a trivial change up to the SIP but yeah if we don't add it to dencun I think we would should instead start like a conversation soon for the next book after or maybe we should still do that how to expose and kind of had that information in a more structureth way inside the evm.
 
 **Tim**
 Right thanks Carl?
@@ -242,7 +242,7 @@ yeah I mean I think it's very nice to be able to expose more of these things fro
 Got it Lee and then Andrew.
 
 **Lee**
-Yeah I wanted to just briefly mention that well I definitely think something like an OP code that exposes different parts of the savm context could be very useful I don't think it could be quite as general as reading different parts of the header there are some parts of the header which should not be exposed to the savm because that would break the mining process and also the blob gas price isn't a field in the header, it's computed from two different fields in the header, so I think exposing the even context would definitely make sense I'm not sure about the just exposing generalized header fields also I think it would make more sense for this to be in the op code instead of a pre-compiled if we're talking about generally exposing the generally exposing  different parts of the savm because for instance base fee block number those things I don't think you want to pay the overhead of calling fruit and pile for blob-based feed I'm not concerned about overhead 4 but if this is just a general SAVM context getting thing then keeping it as not code would probably make the most sense.
+Yeah I wanted to just briefly mention that well I definitely think something like an OP code that exposes different parts of the evm context could be very useful I don't think it could be quite as general as reading different parts of the header there are some parts of the header which should not be exposed to the evm because that would break the mining process and also the blob gas price isn't a field in the header, it's computed from two different fields in the header, so I think exposing the even context would definitely make sense I'm not sure about the just exposing generalized header fields also I think it would make more sense for this to be in the op code instead of a pre-compiled if we're talking about generally exposing the generally exposing  different parts of the evm because for instance base fee block number those things I don't think you want to pay the overhead of calling fruit and pile for blob-based feed I'm not concerned about overhead 4 but if this is just a general EVM context getting thing then keeping it as not code would probably make the most sense.
 
 **Tim**
 Got it thanks. Andrew? You're on mute Andrew. 
@@ -261,7 +261,7 @@ Other yeah just on the last comments thing I see I had a collision with the opco
 So what's the op code number that we will use?
 
 **Carlbeek**
-I had zero x49 just goes next to the blob base fee yes because I was using savm.codes and that's an account for blob hash which already has rx49 so then it'll be zero x4a.
+I had zero x49 just goes next to the blob base fee yes because I was using evm.codes and that's an account for blob hash which already has rx49 so then it'll be zero x4a.
 
 **Tim**
 Okay so 0x4a would be the right one okay and we already have a PR for testing, great yeah. Okay so last call any objections to including this?
@@ -377,7 +377,7 @@ Okay I see there's a couple of raised hands already so Marek?
 **Marek**
 Okay my opinion is that we should remove this account from the state just by readings all the SIPs however it's important to have that it's not minute issue and we analyze here only the edge case that is possible in hive test, but if we agree that we should remove this account from the state it would mean that some clients would stop passing the test only because of this empty edge case.
 
-However the client won't pass the test if they implement for 788 as a direct right to the state without system transactions so they do not touch system account, so what else we have, an SIP 4747 that said that we removed all empty accounts on sila-sila-mainnet and clients are free to remove empty account handling edge cases from the code base. So the thing is that we end up in the funny situation where there are two valid results of these tests, unfortunately this edge case is bundled together with two other with other cases that all clients really really want to pass and test so my proposition is to move this edge case scenario outside of other 4788 and got contesting and just keep it as a separate test and I'm not sure maybe it sounds weird but clients will be free to pass it or not depending if they want to rely on this system account assumptions 
+However the client won't pass the test if they implement for 788 as a direct right to the state without system transactions so they do not touch system account, so what else we have, an SIP 4747 that said that we removed all empty accounts on sila-mainnet and clients are free to remove empty account handling edge cases from the code base. So the thing is that we end up in the funny situation where there are two valid results of these tests, unfortunately this edge case is bundled together with two other with other cases that all clients really really want to pass and test so my proposition is to move this edge case scenario outside of other 4788 and got contesting and just keep it as a separate test and I'm not sure maybe it sounds weird but clients will be free to pass it or not depending if they want to rely on this system account assumptions 
 
 **Tim**
 Okay anyone else have thoughts or 
@@ -389,7 +389,7 @@ Makes sense to me.
 Okay so just to make sure we're all clear you mind just summarizing quickly what the path forward is?
 
 **Marek**
-So I guess we should remove this empty account handling from hive test and maybe keep it as a separate test yeah and it will be up to the client if um it is weird but it will be up to the client to pass or not this test, so they can rely on assumption that there is no empty accounts on sila-sila-mainnet and they don't need to touch and remove this account, does it makes sense for lightclient as well? 
+So I guess we should remove this empty account handling from hive test and maybe keep it as a separate test yeah and it will be up to the client if um it is weird but it will be up to the client to pass or not this test, so they can rely on assumption that there is no empty accounts on sila-mainnet and they don't need to touch and remove this account, does it makes sense for lightclient as well? 
 
 **Andrew**
 Well I would like us to agree on the same behavior because we actually, it's kind of this, one of those corner cases that better if we do if all clients we had the same because then we'll have worry less about Pro protocol failures yeah I I would prefer to formalize it and agree on a single approach 
@@ -406,7 +406,7 @@ Exactly when an address is touched, transfer so well okay kind of color I see it
 Yeah or maybe I don't know does the new does EOS specify whether an address is touched or not like exactly that like the executions back does it specify exactly when address is attached? For
 
 **Danno**
-The reference test is normative whether or not it's in the yellow paper so that's when I do savm stuff and basically that's the approach I've been taking is that the tests that have been in place for years are normative, as far as system accounts the rules not deleting system accounts is about specifically not deleting the right MD
+The reference test is normative whether or not it's in the yellow paper so that's when I do evm stuff and basically that's the approach I've been taking is that the tests that have been in place for years are normative, as far as system accounts the rules not deleting system accounts is about specifically not deleting the right MD
 address um that's what's written into the yellow paper so that's the one exception that resulted from the SilaShanghai attacks.
 
 **Tim**
@@ -415,10 +415,10 @@ So given there's like some uncertainty here is it worth maybe taking it offline 
 But aside from that basically we've agreed we'll add the max epoch churn, we'll add the blog base fee we'll also add the changes that have currently been proposed by the audits for the 4788 contract. Is there anything else people feel should go in devnet-9 specs assuming we'd want devnet-9 to be the last one before we move to actual testnets, so is there anything else we should be testing there? yeah Mario?
 
 **Mario**
-So yeah probably the trusted setup update would be a good idea to have it in the devnet 9 the sila-sila-mainnet across the setup.
+So yeah probably the trusted setup update would be a good idea to have it in the devnet 9 the sila-mainnet across the setup.
 
 **Tim**
-Using this so loading the sila-sila-mainnet file and using that?
+Using this so loading the sila-mainnet file and using that?
 
 **Mario**
 Yeah but this also comes with the update of almost all tests I think so it's a pretty high modification to all of the tests, it's easy to do but I was just wondering if it's ready for us to use.
@@ -447,7 +447,7 @@ to be CPU bound others are going to be i o bound and you can very carefully opti
 
 We employ a new mechanism that we call the blockchain tree for staying up to sync so the pipeline or the stage sync is used only for the historical sync. You should almost think of it as like a database batch read, a batch historical backfill, where the benefits of loading over big ranges of blocks are valuable was for the live sync we employ an in-memory data structure which basically tracks the last n blocks configurable uh it creates a tree of all the possible states that you can be in depending on the messages received from the engine API um and then anytime we receive the fork updated, we can only realize a branch of that tree or Flash into disk and everything else gets discarded. 
 
-In the database we employ the flat database design also an Aragon innovation using the fast incremental State Route algorithm that they also came up with and we use mdbx via rust because we like consistency we like having multiple readers on the database and we have historically really liked its performance which is also driven somewhat by the usage of Mema I haven't run personal benchmarks on this but the node also performs well on ZFS. Currently we employ that is decompression in some of our tables but some people have run rest nodes with ZFS and zsdd or lc4 I forget enabled, and they had an archive node as low as 1.2 terabytes. Big asterisk on this number I haven't replicated it but I've heard it from more than one person. revenue is the engine at the core of ref it's a VM developed by a dragon who some people here might know we use that savm in Foundry as well.
+In the database we employ the flat database design also an Aragon innovation using the fast incremental State Route algorithm that they also came up with and we use mdbx via rust because we like consistency we like having multiple readers on the database and we have historically really liked its performance which is also driven somewhat by the usage of Mema I haven't run personal benchmarks on this but the node also performs well on ZFS. Currently we employ that is decompression in some of our tables but some people have run rest nodes with ZFS and zsdd or lc4 I forget enabled, and they had an archive node as low as 1.2 terabytes. Big asterisk on this number I haven't replicated it but I've heard it from more than one person. revenue is the engine at the core of ref it's a VM developed by a dragon who some people here might know we use that evm in Foundry as well.
 
 It's I think the fastest if like I think evm1 might be faster in some benchmark or most benchmarks but it's general very easy to consume as a library it's basically hook on in various steps so it allowed us to build a lot of nice things on top of it. For Json RPC no we support both geth debug trace including the JavaScript Tracer by embedding a JavaScript runtime um whenever a user provides them a tracer and we also support parities, original Trace module which is obviously very useful for map searching, for data analytics and so on.
 
@@ -461,7 +461,7 @@ Again something that people know here is that the AVM is single threaded so less
 
 This is like a meme I like to use from around we might have here basically we're not production ready we are eight Alphas in. We've been running nodes for weeks without issues but I cannot in good faith recommend somebody to put a hundred thousand dollars or whatever it is uh today in software that is a few months old without an audit, if there is interest in helping with another please reach out.
 
-If you want to run a node also please reach out I know people are running it in production we don't provide any reliability or warranty for it I don't know that we will ever will but we hope to be production ready by the end of the year. SilaCancun which is the big question for here basically you can see the  establish here 4844 we basically have it all done in the savm we're merging the pr today mem copy is done t-store is done self-destruct we just had an open VR The Blob base fee we just had the APR um for it actually like a few minutes ago 4788 it was very nice to actually see that it was not requireth to make savm changes for it and I think it's almost done and for 4844 the main thing that we're missing is a non-disc implementation of The Blob pool but we
+If you want to run a node also please reach out I know people are running it in production we don't provide any reliability or warranty for it I don't know that we will ever will but we hope to be production ready by the end of the year. SilaCancun which is the big question for here basically you can see the  establish here 4844 we basically have it all done in the evm we're merging the pr today mem copy is done t-store is done self-destruct we just had an open VR The Blob base fee we just had the APR um for it actually like a few minutes ago 4788 it was very nice to actually see that it was not requireth to make evm changes for it and I think it's almost done and for 4844 the main thing that we're missing is a non-disc implementation of The Blob pool but we
 have an in-memory implementation of it which means that we can move on hopefully to the devnet testing.
 
 High level cultural point from like our team we try to be good vibes and collaborative and I think this is kind of like the cornerstone of the vibe. We have been attending all core devs, I haven't been because it's 7 A.M on a Thursday but sometimes I think most of the team is present because they're in Europe. We are happy to be part of any calls discords like sending us stuff to prototype we want to hope that we are able to prototype quickly one thing that was part of the core not like motivation of building the clients. We're happy to give feedback on future SIPs or to be asked for feedback.
@@ -470,7 +470,7 @@ And just to say it like we don't have like any political agenda here like to pus
 
 So TBD there but again open to experimentation we're like clean slate oh there's a big slide um so uh next stop devnet9 uh we hope to be ready for it, SilaHolesky as well, very excited for that to kind of like Get out of your of our channel in the next steps, or roadmap items, we have snapshots um snapshots are kind of Aragon style flat files that are used for accessing historical data, unfortunately due to the way that we set up the sync which is also similar to Oregon we're not compatible to the geth, nethermind snapsync. 
 
-We want to be part of some kind of snapshot thing that lets us be collaborative and also see data in the network not just be Victorian glitch which is it's not clear how we get there so if there is questions or discussion we can have on that please reach out and the third one is production readiness so the hope is basically where feature complete with cancun and snapshots and end of the year two three months of more polish audience refactors having our coverage and sharing 100 on hive all of that and we hope to have sila-sila-mainnet production testers soon and ideally you know we can enter 2024 and be like reth is 1.0, use it let's go.
+We want to be part of some kind of snapshot thing that lets us be collaborative and also see data in the network not just be Victorian glitch which is it's not clear how we get there so if there is questions or discussion we can have on that please reach out and the third one is production readiness so the hope is basically where feature complete with cancun and snapshots and end of the year two three months of more polish audience refactors having our coverage and sharing 100 on hive all of that and we hope to have sila-mainnet production testers soon and ideally you know we can enter 2024 and be like reth is 1.0, use it let's go.
 
 There's a lot of like research that we want to do in particular more performance things I'm a big fan of IO Innovations in databases whether it is I O urine in the kernel or direct i o if you have experience with that please help us um on Parallel VM we have designs we have read all the blog STM papers we have read the Aptos to move the like polygon implementations like we know how to do it I think but I think there's like low level issues that prevent you from like going too fast so we're also happy to discuss about these.
 

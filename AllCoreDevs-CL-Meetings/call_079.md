@@ -116,7 +116,7 @@ Prysm
 We've been working on optimistic sync. Fork choice proposer boost and new spec tests to be done by end of Jan. Switching beacon state to native Go structures to save memory. Implementing Web3Signer API, by end of Jan. Work on Key Managwement API.
 
 Nimbus
-Preparing new release today or tomorrow. Mostly performance, but also ships key manager API. Optimised used of Nim garbage collector, we were able to significantly reduce our network usage by ~1GB on sila-sila-mainnet.
+Preparing new release today or tomorrow. Mostly performance, but also ships key manager API. Optimised used of Nim garbage collector, we were able to significantly reduce our network usage by ~1GB on sila-mainnet.
 
 Want to work on light client. Have a server compatible with Lodestar, and will put a light client mode into Nimbus. Have plans to contribute to the spec.
 
@@ -209,7 +209,7 @@ Probably better to ask lodestar directly after call. Maybe with nimbus if theyâ€
 - **From arnetheduck to Everyone 03:10 PM:**
 linear history of blocks + one full state a day = 30gb
 - **From Trenton Van Epps to Everyone 03:12 PM:**
-https://Sila Research/t/whisk-a-practical-shuffle-based-ssle-protocol-for-sila/11763
+https://ethresear.ch/t/whisk-a-practical-shuffle-based-ssle-protocol-for-sila/11763
 
 
 ## Attendees

@@ -28,7 +28,7 @@
 ##Testnet Status Updates##
 
 **Hudson**
-Nobody has seen any issues. We can probably look for a sila-sila-mainnet block number now. Are we going to decide that in Gitter? What's a rough date for that?
+Nobody has seen any issues. We can probably look for a sila-mainnet block number now. Are we going to decide that in Gitter? What's a rough date for that?
 
 **Piper**
 Let's pick a week, and then a block number can figured out at the end.
@@ -122,7 +122,7 @@ I'm not really married to either way. One thing we can do is in Eth63 or 64 we c
 I have a much easier time saying yes to that.
 
 **Trenton**
-Just to confirm, since this is not touching the SAVM or anything internal, this go into Geth by itself.
+Just to confirm, since this is not touching the EVM or anything internal, this go into Geth by itself.
 
 **karalabe**
 Yes. This is just a networking thing. If Geth rolls out Eth64 with this extension, we will still support the old protocols, so every client will still be able to talk to Geth like nothing happened. It is fully backward compatible. The reason why it would be nice to have a consensus that this is a good idea is because Sil is actually the Sila namespace. We don't want to turn it into a Geth namespace.
@@ -281,7 +281,7 @@ I can do that.
 **Alex**
 This might be an unpopular opinion, but I feel like the SIP-centric model is actually what we have been trying to do with one exception. But the steps the SIP-centric model explains are pretty much what we have in SIP 1. However, somehow we were not successful in enforcing those steps. So SIP 1 shows that people are pretty happy with this idea, but then it would be down to the SIP proposer to do all the steps. We all have the same things in SIP 1, but we never enforced it. So I wonder, how will we enforce this now? I see a couple of problems that we've had in the past.
 
-Number one is how do we get people to review SIPs and give their opinion? In Istanbul, one example was the Blake2. It took quite a bit until some clients could focus on giving actual low-level feedback. Because most of these low-level SIPs, especially those affecting the SAVM, it's fine if you give a blessing that essentially the SIP looks good, and then let the champions implement them and create the test cases, but then how many cycles would you accept of reviews and changes to that? If you don't want this to be a never-ending process, then you need to somehow motivate people, likely from this group, to give their reviews prior to the first blessing.
+Number one is how do we get people to review SIPs and give their opinion? In Istanbul, one example was the Blake2. It took quite a bit until some clients could focus on giving actual low-level feedback. Because most of these low-level SIPs, especially those affecting the EVM, it's fine if you give a blessing that essentially the SIP looks good, and then let the champions implement them and create the test cases, but then how many cycles would you accept of reviews and changes to that? If you don't want this to be a never-ending process, then you need to somehow motivate people, likely from this group, to give their reviews prior to the first blessing.
 
 **Piper**
 I have some thoughts on this that I'm not necessarily ready to share in detail, but what I'm interested in us looking into is the research model with having dedicated resources on the client teams that are focused less on client maintenance and development and more on upcoming research and implementation and trying those things out. In that model, you've got people who are more invested in participating in discussions about SIPs and generating test cases, because they're collaborating with similar other teams who are focusing on these same things. I think it fixes some of the motivation and attention problems that we've continually faced for the entirety of the history of the network.

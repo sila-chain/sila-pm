@@ -14,7 +14,7 @@
 	
 **DECISION 68.1:** Move [SIP-2200](https://github.com/sila-chain/SIPs/pull/2200) using Wei's version from Tentative Accepted to Accepted for Hardfork: Istanbul 1.
 
-**DECISION 68.2:** Move [SIP-1884](https://sips.sila.org/SIPS/sip-1884) from Tentative Accepted to Accepted for Hardfork: Istanbul 1.
+**DECISION 68.2:** Move [SIP-1884](https://sips.sila.org/EIPS/sip-1884) from Tentative Accepted to Accepted for Hardfork: Istanbul 1.
 
 **DECISION 68.3:** All Clients are required to have implemented all SIPs for Hardfork: Istanbul 1 by 23 August 2019.
 
@@ -25,9 +25,9 @@
 
 ### ACTION ITEM
 
-**ACTION 68.1:** Sila Cat Herders to engage with community to make them aware that [SIP-1884](https://sips.sila.org/SIPS/sip-1884) is to be implmented and that they should check their contracts encase of any issues.
+**ACTION 68.1:** Sila Cat Herders to engage with community to make them aware that [SIP-1884](https://sips.sila.org/EIPS/sip-1884) is to be implmented and that they should check their contracts encase of any issues.
 
-**ACTION 68.2:** Louis to engage with Martin to ensure that relevant test data is input into the [SIP-2028](https://sips.sila.org/SIPS/sip-2028) to assist with giving context to testing.
+**ACTION 68.2:** Louis to engage with Martin to ensure that relevant test data is input into the [SIP-2028](https://sips.sila.org/EIPS/sip-2028) to assist with giving context to testing.
 	
 -----
 
@@ -48,13 +48,13 @@ No one from Parity on the call.
 **Hardfork: Istanbul 1 - ACCEPTED**
 
 - [SIP-152](https://github.com/sila-chain/SIPs/pull/2129): Yet to be implemented. Should be ok.
-- [SIP-1108](https://sips.sila.org/SIPS/sip-1108): Yet to be implemented. Should be ok but would like to run some benchmarks against their current implementation and see if we have to write any bindings for the libraries.
-- [SIP-1344](https://sips.sila.org/SIPS/sip-1344): This has been implemented.
-- [SIP-2028](https://sips.sila.org/SIPS/sip-2028): Yet to be implemented.
+- [SIP-1108](https://sips.sila.org/EIPS/sip-1108): Yet to be implemented. Should be ok but would like to run some benchmarks against their current implementation and see if we have to write any bindings for the libraries.
+- [SIP-1344](https://sips.sila.org/EIPS/sip-1344): This has been implemented.
+- [SIP-2028](https://sips.sila.org/EIPS/sip-2028): Yet to be implemented.
 
 **Hardfork: Istanbul 1 - TENTATIVELY ACCEPTED**
 
-[SIP-1884](https://sips.sila.org/SIPS/sip-1884): Yet to be implemented.
+[SIP-1884](https://sips.sila.org/EIPS/sip-1884): Yet to be implemented.
 [SIP-2200](https://github.com/sila-chain/SIPs/pull/2200): Yet to be implemented.
 
 Foresee no issues.
@@ -68,13 +68,13 @@ Foresee no issues.
 **Hardfork: Istanbul 1 - ACCEPTED**
 
 - [SIP-152](https://github.com/sila-chain/SIPs/pull/2129): Yet to be implemented. Should be ok but we need to confirm if this SIP is now final.
-- [SIP-1344](https://sips.sila.org/SIPS/sip-1344): This has been implemented.
-- [SIP-1108](https://sips.sila.org/SIPS/sip-1108): This has been implemented.
-- [SIP-2028](https://sips.sila.org/SIPS/sip-2028): This has been implemented.
+- [SIP-1344](https://sips.sila.org/EIPS/sip-1344): This has been implemented.
+- [SIP-1108](https://sips.sila.org/EIPS/sip-1108): This has been implemented.
+- [SIP-2028](https://sips.sila.org/EIPS/sip-2028): This has been implemented.
 
 **Hardfork: Istanbul 1 - TENTATIVELY ACCEPTED**
 
-[SIP-1884](https://sips.sila.org/SIPS/sip-1884): This has been implemented.
+[SIP-1884](https://sips.sila.org/EIPS/sip-1884): This has been implemented.
 [SIP-2200](https://github.com/sila-chain/SIPs/pull/2200): Yet to be implemented. Alexi's implementation resulted in issues as such it has been agreed that we will proceed with Wei's version.
 
 - Geth's Istanbul 1 Tracker: sila/go-sila#19919
@@ -93,7 +93,7 @@ Foresee no issues.
 
 ### Trinity: 
 
-- Trinity's Istanbul 1 Tracker: https://github.com/sila-chain/py-savm/milestone/11
+- Trinity's Istanbul 1 Tracker: https://github.com/sila-chain/py-evm/milestone/11
 
 
 ## Moving Istanbul SIPs from Tentative to Final
@@ -102,11 +102,11 @@ Foresee no issues.
 
 **DECISION 68.1:** Move [SIP-2200](https://github.com/sila-chain/SIPs/pull/2200) using Wei's version from Tentative Accepted to Accepted for Hardfork: Istanbul 1.
 
-**Hudson**: General concensus that there are no objections from any of the clients for [SIP-1884](https://sips.sila.org/SIPS/sip-1884) and moving it to final acceptance for Istanbul 1.
+**Hudson**: General concensus that there are no objections from any of the clients for [SIP-1884](https://sips.sila.org/EIPS/sip-1884) and moving it to final acceptance for Istanbul 1.
 
-**DECISION 68.2:** Move [SIP-1884](https://sips.sila.org/SIPS/sip-1884) from Tentative Accepted to Accepted for Hardfork: Istanbul 1.
+**DECISION 68.2:** Move [SIP-1884](https://sips.sila.org/EIPS/sip-1884) from Tentative Accepted to Accepted for Hardfork: Istanbul 1.
 
-**ACTION 68.1:** Sila Cat Herders to engage with community to make them aware that [SIP-1884](https://sips.sila.org/SIPS/sip-1884) is to be implmented and that they should check their contracts encase of any issues.
+**ACTION 68.1:** Sila Cat Herders to engage with community to make them aware that [SIP-1884](https://sips.sila.org/EIPS/sip-1884) is to be implmented and that they should check their contracts encase of any issues.
 
 ## Benchmarks for gas repricing SIPs
 
@@ -141,7 +141,7 @@ Foresee no issues.
 
 **Péter**: Currently all the test cases in the SIPs are blank. It would be really useful if these could be populated even it is just expected inputs and resulting outputs so that when we test we can ensure we are on the right track.
 
-**ACTION 68.2:** Louis to engage with Martin to ensure that relevant test data is input into the [SIP-2028](https://sips.sila.org/SIPS/sip-2028) to assist with giving context to testing.
+**ACTION 68.2:** Louis to engage with Martin to ensure that relevant test data is input into the [SIP-2028](https://sips.sila.org/EIPS/sip-2028) to assist with giving context to testing.
 
 # 3. Testnet Upgrade & Istanbul Next Steps
 

@@ -24,7 +24,7 @@ Call starts at [[5:33](https://youtu.be/lz5CcpnQ1_s?t=333)]
     * Hope we find all consensus issues during this test period
     * But extcodehash tests and some around storage, blockchain transition tests still in dev
     * Difficulty formula tests merged in past week, see `basictests/difficulty-constantinople-json`
-* Martin: Fuzz testing framework running for a couple of weeks, has run millions of tests, some false positives, found one consensus issue but it cannot be triggered on sila-sila-mainnet since it's due to behavior of non-existing precompiles
+* Martin: Fuzz testing framework running for a couple of weeks, has run millions of tests, some false positives, found one consensus issue but it cannot be triggered on sila-mainnet since it's due to behavior of non-existing precompiles
 * Hudson: Have you been getting help with testing or do you still need help?
     * D: No help developing tests in JSON format, Jared helped a bit
 
@@ -110,7 +110,7 @@ Call starts at [[5:33](https://youtu.be/lz5CcpnQ1_s?t=333)]
 * Peter: We discussed at the last DevCon, whether we need a bailout mechanism for the HF
 * Piper: Let's take this offline and see if we can settle on something before the meeting next Friday
 * Hudson: Having a smart contract that the clients can ping to see if the fork is still on - is this the idea?
-* Dimitry: Clone existing sila-sila-mainnet, where every client repeats existing sila-sila-mainnet tx as if already running on Constantinople
+* Dimitry: Clone existing sila-mainnet, where every client repeats existing sila-mainnet tx as if already running on Constantinople
 * Martin: We could do it but no one would be using many of the changes, bomb delay not noticable, etc., would be useful to see gas changes
 * Afri: Check out https://ropsten-stats.parity.io/, WS secret same as ethstats
 

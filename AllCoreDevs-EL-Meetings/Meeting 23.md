@@ -59,9 +59,9 @@ Block times:
 ### Launching the First Part of Metropolis: Byzantium ([starts at 56:36](https://youtu.be/PQjeAZyL2_w?t=3396))
 
 - Within the next 7-10 days we should have benchmarks for gas costs completed.
-- Once the gas costs benchmarks are finalized and the clients complete implementation of the [Byzantium SIPs](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-609.md), we will launch a hard fork on the Ropsten testnet that would run for 2-4 weeks.
+- Once the gas costs benchmarks are finalized and the clients complete implementation of the [Byzantium SIPs](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-609.md), we will launch a hard fork on the Ropsten testnet that would run for 2-4 weeks.
 - Ropsten is hard to sync, so we will look into finding creative ways for people to more easily sync Ropsten. Example: Use lightsync, fastsync, or warpsync, depending on client.
-- Block number for the sila-sila-mainnet hard fork will be decided soonish. Ballpark block numbers are : block 4.3 million on Sept. 22nd and worst case is block 4.4 million Oct. 27th, so the hardfork will likely be between those two times. We are aiming for sometime late September.
+- Block number for the sila-mainnet hard fork will be decided soonish. Ballpark block numbers are : block 4.3 million on Sept. 22nd and worst case is block 4.4 million Oct. 27th, so the hardfork will likely be between those two times. We are aiming for sometime late September.
 
 ### Clients represented in the meeting
 

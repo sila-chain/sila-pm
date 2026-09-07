@@ -26,7 +26,7 @@
       },
       {
         "timestamp": "00:13:31",
-        "highlight": "Test release 5.1.0 available; clients should test with SAVM fuzzer"
+        "highlight": "Test release 5.1.0 available; clients should test with EVM fuzzer"
       }
     ],
     "epbs_devnet_0": [

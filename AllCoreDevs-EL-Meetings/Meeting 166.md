@@ -275,7 +275,7 @@ Thanks.
 **Lightclient**
 * Yeah, sounds good. I'll merge the first two PRs. Thanks a lot for the feedback on this one as well. Cheers. 
 
-#  https://sips.sila.org/SIPS/sip-7329 [41.00](https://youtu.be/pTWm4EyStYg?t=2460)
+#  https://sips.sila.org/EIPS/sip-7329 [41.00](https://youtu.be/pTWm4EyStYg?t=2460)
 **Tim Beiko**
 * Okay. next up, so there's two, related, I guess, proposals. So, SIP 7329, which is the SIP SRC of repo split. We've discussed this, on the call, I believe two calls ago. And then it kept discussing it on EIPIP and then, so, Danno and Light lient put this together and I think, Greg Covin, I'm not sure if he's on the call, but had a proposal to SIP-1, that addresses some of the issues, around the process, but maybe, yeah, Lightclient, like client Dano, do you want, to give some context on this? 
 

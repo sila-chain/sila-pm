@@ -802,7 +802,7 @@ Chase Wright: So, in… in Hive, someone made a change to the tests, or the conf
 
 201
 00:24:09.750 --> 00:24:23.710
-Chase Wright: contract address, such that it defaults over to the sila-sila-mainnet, address, and then… but, hiveChain doesn't deploy a con… a deposit contract. It's true.
+Chase Wright: contract address, such that it defaults over to the sila-mainnet, address, and then… but, hiveChain doesn't deploy a con… a deposit contract. It's true.
 
 202
 00:24:23.710 --> 00:24:26.000
@@ -814,7 +814,7 @@ Chase Wright: Yeah, and so…
 
 204
 00:24:27.910 --> 00:24:39.259
-Chase Wright: this PR is changing the contract address to sila-sila-mainnet, but I don't think this PR would survive a hive chain regeneration. I think…
+Chase Wright: this PR is changing the contract address to sila-mainnet, but I don't think this PR would survive a hive chain regeneration. I think…
 
 205
 00:24:39.260 --> 00:24:55.829
@@ -854,7 +854,7 @@ Chase Wright: So, my only… Counter there is that… It's kind of…
 
 214
 00:25:40.470 --> 00:25:45.749
-Chase Wright: Like, it's… it's a lie to say that the deposit contract address is sila-sila-mainnet in this.
+Chase Wright: Like, it's… it's a lie to say that the deposit contract address is sila-mainnet in this.
 
 215
 00:25:45.750 --> 00:25:53.650
@@ -938,7 +938,7 @@ Tullio | Erigon: It's… it's… it's the config to be fixed, not the… not the
 
 235
 00:27:42.910 --> 00:27:47.799
-Felix (Geth): So the current response contains the sila-sila-mainnet address? I'm not sure, I think it shouldn't.
+Felix (Geth): So the current response contains the sila-mainnet address? I'm not sure, I think it shouldn't.
 
 236
 00:27:47.800 --> 00:27:49.640

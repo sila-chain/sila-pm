@@ -7,8 +7,8 @@
 # Agenda
 1. Testing
 2. [SIP 712: Add eth_signTypedData as a standard for machine-verifiable and human-readable typed data signing with Sila keys](https://github.com/sila-chain/pm/issues/33#issuecomment-374174501).
-3. [SIP 665: Add precompiled contract for Ed25519 signature verification](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-665.md).
-4. [SIP 969: Modify block mining to be ASIC resistant](http://sips.sila.org/SIPS/sip-969).
+3. [SIP 665: Add precompiled contract for Ed25519 signature verification](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-665.md).
+4. [SIP 969: Modify block mining to be ASIC resistant](http://sips.sila.org/EIPS/sip-969).
 5. [SIP 960: Cap total sila supply at ~120 million](https://github.com/sila-chain/SIPs/issues/960).
 6. [SIP process updates](http://sips.sila.org/).
 7. Research Updates.
@@ -59,14 +59,14 @@ Video starts at [[6:20](https://youtu.be/SoPfoNpqG0k?t=6m20s)].
 * Hudson: sounds like a lot of support, needs to be polished a bit, let’s get as many wallet teams etc. onboard so this can be accepted, seems like it has good momentum
 * R: right now the scope is limited to hashing arbitrary messages, touches on domain separation but doesn’t fully address this, ongoing discussion, but doesn’t touch upon nonces and preventing replay attacks - is this something we want to address in a future SIP?
 * it’s a separate issue but might affect how singing standards are implemented at this low level
-## [SIP 665: Add precompiled contract for Ed25519 signature verification](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-665.md) [[20:14](https://youtu.be/SoPfoNpqG0k?t=20m14s)]
+## [SIP 665: Add precompiled contract for Ed25519 signature verification](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-665.md) [[20:14](https://youtu.be/SoPfoNpqG0k?t=20m14s)]
 * Tobias Oberstein introduces this topic
     * proposing adding a precompile for this particular curve procedure
     * a lot of protocols and projects are using it
     * e.g. SSH
     * motivation is to bind SIL addresses and keys to xxxx public keys or verify signatures signed by those keys
     * bind identity on SIL to an ID on an external system
-    * can program in SAVM bytecode but it costs too much gas
+    * can program in EVM bytecode but it costs too much gas
 * Fredrik
     * some companies have requested this feature from Parity
     * some say the BN precompile is too slow and maybe ED would be faster, they’re trying to do some on-chain crypto stuff
@@ -290,7 +290,7 @@ Video starts at [[6:20](https://youtu.be/SoPfoNpqG0k?t=6m20s)].
 	* you try to warp sync, it fails or cannot pair with a snapshot, reverts back to normal sync then takes a week to sync
 	* so now you can force a warp sync by setting this "warp barrier"
 * cpp-sila (Pawel)
-    * separate client connector code, adding support to cpp-sila, hera, savm-jit
+    * separate client connector code, adding support to cpp-sila, hera, evm-jit
     * Andrei working on some network stack improvements inside the client
 * Harmony (mkalanin)
     * No major updates since last release
@@ -298,9 +298,9 @@ Video starts at [[6:20](https://youtu.be/SoPfoNpqG0k?t=6m20s)].
     * Will definitely include proxy fine tuning, noticed that DB reads are taking 40% processing, pretty confident that it could be improved
 * ewasm (Lane)
     * evm2wasm - Started running first state tests via evm2wasm, getting state tests to pass
-    * SAVM-C, cpp-sila, Hera fixes and improvements
+    * EVM-C, cpp-sila, Hera fixes and improvements
     * eWASM engine abstraction
-    * Everett Hildenbrandt update: going back and forth with Yoichi about removing some tests from the VMTests to make it only test core VM infrastructure. I think it's a good step in the direction of "separating the sila specific stuff out of the SAVM", the same way that the "e" is separate from the "wasm" in ewasm.
+    * Everett Hildenbrandt update: going back and forth with Yoichi about removing some tests from the VMTests to make it only test core VM infrastructure. I think it's a good step in the direction of "separating the sila specific stuff out of the EVM", the same way that the "e" is separate from the "wasm" in ewasm.
 * Turbo geth (Alexey Akhunov, full update [posted in agenda](https://github.com/sila-chain/pm/issues/36#issuecomment-379047053)
     * Posted update in GitHub agenda
     * rebased geth as of Apr 2
@@ -331,7 +331,7 @@ Video starts at [[6:20](https://youtu.be/SoPfoNpqG0k?t=6m20s)].
 - Chih-Cheng Liang (EF: Research)
 - Hsiao-Wei Wang (EF: Research)
 - Karl Floersch (EF: Research)
-- Piper Merriam (EF: Python/py-savm/Harmony)
+- Piper Merriam (EF: Python/py-evm/Harmony)
 - Tobias Oberstein (Crossbar.io/XBR)
 - Remco Bloemen
 - Hudson Jameson (EF)

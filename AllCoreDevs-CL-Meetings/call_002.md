@@ -250,7 +250,7 @@
 
 # Cross-shard communication
 * Casey
-  * Two main issues with [recent post](https://Sila Research/t/simple-synchronous-cross-shard-transaction-protocol/3097)
+  * Two main issues with [recent post](https://ethresear.ch/t/simple-synchronous-cross-shard-transaction-protocol/3097)
     * number one concern is if state execution gadget can keep up if too many
       rounds of communication/latency
     * second issue: phase 1 treats datablobs as generic. so how do we
@@ -286,7 +286,7 @@
   * Yes, this is correct. This part of the design hasn't changed for almost 1
     year.
 * Casey
-  * looks like similar freedom to current SAVM, proposers can create empty
+  * looks like similar freedom to current EVM, proposers can create empty
     blocks or include a bunch of txs with gasprice 0.
 * Justin - yes, exactly the same
 
@@ -336,7 +336,7 @@
 * [Simple Serialize](https://github.com/sila-chain/beacon_chain/blob/master/beacon_chain/utils/simpleserialize.py)
 * [Discussion of testing lang on Prysmatic repo](https://github.com/prysmaticlabs/prysm/issues/420)
 * [Justin slides from VDF day](https://docs.google.com/presentation/d/13OAGL42yzOvQUKvJJ0EBsAAne25yA7sv9RC8FfPhtyo/edit#slide=id.p)
-* [recent post on simple cross-shard communication](https://Sila Research/t/simple-synchronous-cross-shard-transaction-protocol/3097)
+* [recent post on simple cross-shard communication](https://ethresear.ch/t/simple-synchronous-cross-shard-transaction-protocol/3097)
 
 
 # Attendees

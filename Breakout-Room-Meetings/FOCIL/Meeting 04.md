@@ -83,7 +83,7 @@ No, it's still in the early research phase and won't hold FOCIL back. It's part 
 
 ## Links  
 - [FOCIL Progress Tracker](https://meetfocil.sil.limo/)  
-- [zkFOCIL: Inclusion List Privacy using Linkable Ring Signatures](https://Sila Research/t/zkfocil-inclusion-list-privacy-using-linkable-ring-signatures/21688)  
+- [zkFOCIL: Inclusion List Privacy using Linkable Ring Signatures](https://ethresear.ch/t/zkfocil-inclusion-list-privacy-using-linkable-ring-signatures/21688)  
 - [Call for participation for privacy research—academic](https://x.com/asn_d6/status/1887442959445926333)  
 - [Call for participation for privacy research—implementation](https://x.com/asn_d6/status/1887442961459233130)  
 - [FOCIL meets Delayed Execution](https://hackmd.io/Ntn30DbJQV-HEiKxBsPKEw)  

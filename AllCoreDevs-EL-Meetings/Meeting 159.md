@@ -11,7 +11,7 @@
 | 159.1 | Tim Bieko, Chris Hager and terence will contribute to releasing information on the Prism / MEV boost situation related to Shapella in a more permanent fashion. 
 | 159.2 | [ACDE 160](https://github.com/sila-chain/pm/issues/759) will focus on [SilaCancun CFI considerations](https://sila-magicians.org/t/cancun-network-upgrade-meta-thread/12060).
 | 159.3 | Pari will reach out to client teams regarding support for testnets that start from Capella Genesis, instead of Bellatrix Genesis. This is already possible for Lodestar. 
-| 159.4 | All the SIPs for SilaShanghai are final now that they're on sila-sila-mainnet. So SIP authors of the SilaShanghai SIPs, please open a PR just to move it to final, if possible.
+| 159.4 | All the SIPs for SilaShanghai are final now that they're on sila-mainnet. So SIP authors of the SilaShanghai SIPs, please open a PR just to move it to final, if possible.
 | 159.4 | [State that payloadId should be unique for each PayloadAttributes instance execution-apis#401](https://github.com/sila-chain/execution-apis/pull/401) will be merged in the following days after feedback from various sources, at the latest by the next CL meeting. 
 
 ## SilaShanghai Recaps [02:22](https://www.youtube.com/live/u8Nm8AGyCQM?feature=share&t=142) 
@@ -104,7 +104,7 @@ But I think one lesson that we all should be learning is that at least I myself 
 Also we don't run enough validators to MEV boost for our testnet. We only run like 10% so which means that there's about 1% of the total share of the network. So it was hard to catch this. 
 
 **Potuz**
-Yeah. We should definitely have a network testnet, which is more or less stable so that we can actually test our production in which at least most blocks go through the builder. So that we see these kind of things. We could not have seen this on Goerli where we only had like 1% of the network, instead of the 40% and everyone sending them to us in sila-sila-mainnet. 
+Yeah. We should definitely have a network testnet, which is more or less stable so that we can actually test our production in which at least most blocks go through the builder. So that we see these kind of things. We could not have seen this on Goerli where we only had like 1% of the network, instead of the 40% and everyone sending them to us in sila-mainnet. 
 
 **Tim**
 Thanks. Any other comments or thoughts on the Prism bug specifically? Okay, I saw I believe Lighthouse also put out a new release. I don't know if you want to quickly walk through just anyone from Lighthouse actually who can walk through what happened there? If not…
@@ -134,7 +134,7 @@ And I guess on to the next thing. SilaCancun. Yeah, Alex, you had posted an upda
 **Alex**
 Yeah, that works for me. So this SIP was written a little while ago, actually for withdrawals. And we went down a different path that didn't really need it and that being said, I've gone back and looked at this again. I made a number of updates. I'll just run through them kind of at a high level. The biggest thing is moving while even just taking a step back. 
 
-So 4788, the idea is to get some sort of a computer graphics accumulator from the consensus layer into execution layer. So, for example, this could be like the state route and that's how the SIP was originally written. So committing to the state of the beacon chain. And then the reason this is cool is because then you know, there's some SAVM upcode or something. And you can access to this route and then you can make proofs or you can verify proofs. I guess this route. 
+So 4788, the idea is to get some sort of a computer graphics accumulator from the consensus layer into execution layer. So, for example, this could be like the state route and that's how the SIP was originally written. So committing to the state of the beacon chain. And then the reason this is cool is because then you know, there's some EVM upcode or something. And you can access to this route and then you can make proofs or you can verify proofs. I guess this route. 
 
 So that's the general idea is to have some way to access the consensus state in a trust randomized fashion. And the way this SIP originally worked was using the state route for the beacon chain. I changed it to use each beacon block route instead of the state route. The reason why is because the way the beacon chain works is every state has a unique state route. But not well, there can be the same block route if there's a missed slot. 
 
@@ -177,7 +177,7 @@ Right. So for the EL to compute these slot numbers, which is also something. Abs
 Mikhail, your hands up. 
 
 **Mikhail**
-Yeah, I just wanted to add that we still have a non spilled EL or header unused, which sounds like a good place for a slot. So it doesn't add any data complexity and potentially we can expose slot on the SAVM level in some in some future. You could think that it will be useful. So and avoiding the company derives and slots from time stamp on the outside. It's a good thing in my opinion because if we at some point in time change it. I mean like this slot duration. So we'll have to. We'll have to become a configurable effort very so more more configs more time between the two layers. If it can be avoided that would be. 
+Yeah, I just wanted to add that we still have a non spilled EL or header unused, which sounds like a good place for a slot. So it doesn't add any data complexity and potentially we can expose slot on the EVM level in some in some future. You could think that it will be useful. So and avoiding the company derives and slots from time stamp on the outside. It's a good thing in my opinion because if we at some point in time change it. I mean like this slot duration. So we'll have to. We'll have to become a configurable effort very so more more configs more time between the two layers. If it can be avoided that would be. 
 
 **Tim**
 And are there…sorry…Alex? Are you going to say something?
@@ -189,7 +189,7 @@ So I'm going to call it EL devs because I see many of them here and I feel like 
 I was going to say is there so if I understand Mikhail correctly it's like you remove the need for this precompile that you're writing to. You instead have this slot number as part of the block number for free as you know the non value. 
 
 **Alex**
-So right. Yeah so yeah so well there's kind of two things so one of them was just exposing the slot to the SAVM as well. And that's like a separate downstream question. But then upstream is like yeah how do you even get this data to the EL in the first place. And one option is rather than try to look at the timestamps and the headers and compute the slot. You would just pass along with this blocker as well in the question that is where does it go. There's apparently this knots which I believe is bit 64 storage size is just sitting there and not used basically. So we could put it there.
+So right. Yeah so yeah so well there's kind of two things so one of them was just exposing the slot to the EVM as well. And that's like a separate downstream question. But then upstream is like yeah how do you even get this data to the EL in the first place. And one option is rather than try to look at the timestamps and the headers and compute the slot. You would just pass along with this blocker as well in the question that is where does it go. There's apparently this knots which I believe is bit 64 storage size is just sitting there and not used basically. So we could put it there.
 
 **Tim**
 And yeah and I assume there's no non upload right? Like I don't think this is previously exposed.
@@ -213,10 +213,10 @@ Then we can give some room to talk about it in one week on ACDC. We can see from
 Yeah, Potuz?
 
 **Potuz**
-Yeah so I'm a bit confused about this difference. So are we talking about like exposing this slot number on the SAVM? On every block instead of just making the computation from Genesis time blasts this number of. And this time stamp? Just because we might change the slot ration. It seems to me that the complexity of changing the slot ration is going to be just adding a constant after a particular fork. And which shouldn't happen in many forks that we're going to change that slot time to sort of like adding data on the SAVM on every single block to prevent this extra computation seems crazy to me. 
+Yeah so I'm a bit confused about this difference. So are we talking about like exposing this slot number on the EVM? On every block instead of just making the computation from Genesis time blasts this number of. And this time stamp? Just because we might change the slot ration. It seems to me that the complexity of changing the slot ration is going to be just adding a constant after a particular fork. And which shouldn't happen in many forks that we're going to change that slot time to sort of like adding data on the EVM on every single block to prevent this extra computation seems crazy to me. 
 
 **Mikhail**
-I'm not sure what you mean by the SAVM. It's just you know pass the slot into EL header and we have a place there which is remains unused since the merge. So there is a field of you instinct for data type which is that filled with zeros currently. 
+I'm not sure what you mean by the EVM. It's just you know pass the slot into EL header and we have a place there which is remains unused since the merge. So there is a field of you instinct for data type which is that filled with zeros currently. 
 
 **Potuz**
 I understand that, but and so we can use something useful to send instead of the data that is completely equivalent to the timestamp that we have already sent it in that header. 
@@ -261,7 +261,7 @@ Yeah, I agree. Yeah, without consideration of 256 is we I think everyone thinks 
 Okay, thanks. 
 
 **Tim**
-So yeah, there's some comments in the chat about exposing it to the SAVM as well. So I think there's like two separate things, right. One is like, where do we store this data? What are the states? The ones something like that. But then obviously how do we expose it in the SAVM? Alex, you may want to take a minute or two to talk about like why we should expose this in the SAVM and what's like the value that you get out of this?
+So yeah, there's some comments in the chat about exposing it to the EVM as well. So I think there's like two separate things, right. One is like, where do we store this data? What are the states? The ones something like that. But then obviously how do we expose it in the EVM? Alex, you may want to take a minute or two to talk about like why we should expose this in the EVM and what's like the value that you get out of this?
 
 **Alex**
 Well, we're talking about the slot numbers themselves or this route? 
@@ -288,10 +288,10 @@ Yeah, that's a good point.
 So was that the argument for putting in the state or that this is the argument for the op code in the first place. 
 
 **Alex** 
-Well, right. So we're just talking about. And the so well, there's a number of decisions here because it could also not be an op code, but basically this is just the idea of having the route to be exposed in the SAVM. So like that's what the SIP sets out to do. That's the important bit. I don't think we should get tied up and like, is the slot exposed like what does that look like, all of that stuff. 
+Well, right. So we're just talking about. And the so well, there's a number of decisions here because it could also not be an op code, but basically this is just the idea of having the route to be exposed in the EVM. So like that's what the SIP sets out to do. That's the important bit. I don't think we should get tied up and like, is the slot exposed like what does that look like, all of that stuff. 
 
 **Tim**
-And sorry, just to make sure I understand why, like what's the value that you get from having this slot number if it's not exposed in the SAVM itself?
+And sorry, just to make sure I understand why, like what's the value that you get from having this slot number if it's not exposed in the EVM itself?
 
 **Alex**
 Well, so it would be written in this contract and anyone could read it. So in that sense, it's exposed. 
@@ -389,7 +389,7 @@ I just given the like amount of back and forth on the design on this, it probabl
 We can do this one. I think. Yeah, we have a low agenda next week. So we can spend 30 minutes on it. Its fine. And I think. Oh, sorry about. 
 
 **Lightclient**
-I just say obviously I think that this SIP is pretty important and that we need to come up with a way of getting the beacon block root into the SAVM. I just want to come up with the best design. 
+I just say obviously I think that this SIP is pretty important and that we need to come up with a way of getting the beacon block root into the EVM. I just want to come up with the best design. 
 
 **Tim**
 Yeah. And I guess yeah, in terms of like this CFI conversation, I feel like now that Shapella is completely out of the way does it make sense to have the next EL call focused on just generally what are the things we might want to verify for SilaCancun and so that we're not like just making this one like one off decision now, but like we can also have like two weeks for teams to just look at the set of things that are being proposed and try to think about like what's like a coherent set of things we want to do. And even if we don't agree to like everything we want to do in the next week, like maybe we can like flesh out the one or two most important things on the next call alongside for it for 4844. 
@@ -418,10 +418,10 @@ Cool, I can also reach out to the teams separately for that. Thanks. One other t
 Got it. And I know in the 4844 calls, like two weeks ago, we were talking about setting up a longer lived 4844 devnet in the next few weeks or so as a spec, yeah, once we have that up, we can point people in that direction is like the main thing to go if you want to test the cutting edge features before they go on public test. Okay, anything else on SilaCancun?
 
 **Danny**
-Just real quick, the way that we do releases on the consensus specs is they don’t release candidates until the rules are actually on sila-sila-mainnet, the rules and logic is now on sila-sila-mainnet so the next couple days will be releasing a consensus specs non RC release. This will also include the transaction type change to 0x3 on 4844. So I believe that will kind of give us a good target for testnets. 
+Just real quick, the way that we do releases on the consensus specs is they don’t release candidates until the rules are actually on sila-mainnet, the rules and logic is now on sila-mainnet so the next couple days will be releasing a consensus specs non RC release. This will also include the transaction type change to 0x3 on 4844. So I believe that will kind of give us a good target for testnets. 
 
 **Tim**
-Nice. And this reminds me we should mark all the SIPs for SilaShanghai as final now that they're on sila-sila-mainnet. So SIP authors of the SilaShanghai SIPs. Yeah, if you can open a PR just to move it to final given that they've all been activated as well. Sweet. Anything else on SilaShanghai or Capella?
+Nice. And this reminds me we should mark all the SIPs for SilaShanghai as final now that they're on sila-mainnet. So SIP authors of the SilaShanghai SIPs. Yeah, if you can open a PR just to move it to final given that they've all been activated as well. Sweet. Anything else on SilaShanghai or Capella?
 
 ## [State that payloadId should be unique for each PayloadAttributes instance execution-apis#401]( https://github.com/sila-chain/execution-apis/pull/401)
  

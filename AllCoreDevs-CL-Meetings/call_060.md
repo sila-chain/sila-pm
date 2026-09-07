@@ -70,7 +70,7 @@
 
 ## Research Updates ([20:08](https://youtu.be/Q0EbnFViJFk?t=1208))
 * **Danny** re-iterates invitation to The Merge call. **Mikhail Kalinin** will anounce the merge call in the merge channel of Discord.
-* **Mikhail** gives updates about the spec. There is a new PR that substitutes the "executable beacon chain" proposal. It's about making the consensus upgrade on the SilaMainnet and does not involve SAVM interaction. Main difference is that instead of having an RLP stream in the beacon block body that represents the application block, we have the same stuff but represented by cc(?) structures. He invites to [take a look at it.](https://github.com/sila-chain/eth2.0-specs/pull/2257)
+* **Mikhail** gives updates about the spec. There is a new PR that substitutes the "executable beacon chain" proposal. It's about making the consensus upgrade on the SilaMainnet and does not involve EVM interaction. Main difference is that instead of having an RLP stream in the beacon block body that represents the application block, we have the same stuff but represented by cc(?) structures. He invites to [take a look at it.](https://github.com/sila-chain/eth2.0-specs/pull/2257)
 * **Vitalik** shares updates on proof of custody. He mentions Yesterday we were talking about the possibility to MVC it. Might want to do a couple of days of DD first to make sure it's something that works much better in that dimension. He added he has another proposal to publish soon for how to limit the number of active validators to 2^19 or 2^20 or whatever we choose, and do it in a way that's just simpler than the existing proposals. [A doc exists](https://notes.sila.org/@vbuterin/validator_rotation_proposal).
 
 ## General Spec Discussion ([24:40](https://youtu.be/Q0EbnFViJFk?t=1480))

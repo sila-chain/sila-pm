@@ -50,15 +50,15 @@
 
 **Hudson**: We're at the eligibility for inclusion (EFI) SIP review. The first one is going to be SIP 1930.
 
-## [SIP-1930](https://sips.sila.org/SIPS/sip-1930): CALLs with strict gas semantic. Revert if not enough gas available
+## [SIP-1930](https://sips.sila.org/EIPS/sip-1930): CALLs with strict gas semantic. Revert if not enough gas available
 
-**Ronan**: TLDR; The desc of SIP is in this [link](https://sips.sila.org/SIPS/sip-1930).
+**Ronan**: TLDR; The desc of SIP is in this [link](https://sips.sila.org/EIPS/sip-1930).
 
 09:24
 
 **Martin**: Still not clear about the motivation behind it? What are the actual use cases? Why can't this just be solved by checking opcode?
 
-**Ronan**: There are two issues: 1. Its opcode pricing dependent. 2. It's a waste because you are computing something which SAVM has already computed. 
+**Ronan**: There are two issues: 1. Its opcode pricing dependent. 2. It's a waste because you are computing something which EVM has already computed. 
 
 * Especially the use case of metatransactions, Gnosis safe tackled that issue by making changes in the UI. Which pushed the security out of contracts and made it vulnerable. 
 
@@ -94,9 +94,9 @@
 
 SIP 1930, will not go forward.
 
-## [SIP-2315](https://sips.sila.org/SIPS/sip-2315): Simple Subroutines for the SAVM 
+## [SIP-2315](https://sips.sila.org/EIPS/sip-2315): Simple Subroutines for the EVM 
 
-**Hudson:** Brought by greg, also there is Sila magician [link](https://sila-magicians.org/t/sip-2315-simple-subroutines-for-the-savm/3941). 
+**Hudson:** Brought by greg, also there is Sila magician [link](https://sila-magicians.org/t/sip-2315-simple-subroutines-for-the-evm/3941). 
 
 **Gandalf:** Yeah, you can follow the discussion in the link above. Basically, this is a total strip down of SIP-615, no validation just providing mechanism of call & Return, and any validation has moved up a layer for the time being. Just the mechanism that says, I am making a subroutine call, so  I take the current construction pointer and push it on a second stack just like forth and when I need to return I pop the stack and go back to where I was.
 
@@ -128,7 +128,7 @@ SIP 1930, will not go forward.
 * Thanks for that greg. This will continue to be under review. Let's move to the next one. 
 
 
-## [SIP-1962](https://sips.sila.org/SIPS/sip-1962)
+## [SIP-1962](https://sips.sila.org/EIPS/sip-1962)
 
 **Alex Vlasov**: Updates are mostly internal, changed binary interface to remove some restriction for the users. Also, made some checks in the pre-compile optional. What's left now is integration, and alternative implementation in Go which doesn't use assembly. My teammate is listening from youtube, and he told me that it will take 2-3 weeks. Right now, there are three implementations in "", C++ 17, and go in assembly x86 64 and these are consistent between each other in terms of acid testing. 
 
@@ -211,7 +211,7 @@ the formatting that they're using for the baby Jubjub curve (Georgie Valina SIP)
 **Action Item 80.2:** Alex can bring few more experts on this topic, and greg will get carl and others involved too as SIP 1962 will be a major topic in the next call. 
 
 
-## [SIP-2046](https://sips.sila.org/SIPS/sip-2046)
+## [SIP-2046](https://sips.sila.org/EIPS/sip-2046)
 
 **Hudson:** Alex is not on the call, so maybe we can skip that. 
 

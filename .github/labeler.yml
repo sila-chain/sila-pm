@@ -2,7 +2,7 @@ ACD:
   - "^([Ee]xecution [Ll]ayer [Mm]eeting.*|.*[Cc]onsensus.*[Cc]all.*\\d+.*|.*ACDC.*|.*ACDE.*|.*All Core Devs.*)"
 
 Execution:
-  - "^([Ee]xecution [Ll]ayer [Mm]eeting.*|.*EOF.*|.*EVMMAX.*|.*eth_simulate.*|.*eth_multicall.*|.*Portal.*|.*RPC.*|.*SAVM.*|.*[Ss]tateless.*|All Core Devs - Execution.*|.*ACDE.*)"
+  - "^([Ee]xecution [Ll]ayer [Mm]eeting.*|.*EOF.*|.*EVMMAX.*|.*eth_simulate.*|.*eth_multicall.*|.*Portal.*|.*RPC.*|.*EVM.*|.*[Ss]tateless.*|All Core Devs - Execution.*|.*ACDE.*)"
 
 Consensus:
   - "^(.*[Cc]onsensus.*[Cc]all.*\\d+.*|.*FOCIL.*|All Core Devs - Consensus.*|.*ACDC.*)"
@@ -83,13 +83,13 @@ EncryptMempool:
  - "^(.*[Ee]ncrypt the [Mm]empool.*|.*[Ee]ncrypt [Mm]empool.*|.*SIP-8105.*)"
 
 EVMStaticControlFlow:
- - "^(.*[Ss]tatic [Cc]ontrol [Ff]low.*|.*SAVM Static Control Flow.*)"
+ - "^(.*[Ss]tatic [Cc]ontrol [Ff]low.*|.*EVM Static Control Flow.*)"
 
 FCR:
  - "^(.*[Ff]ast [Cc]onfirmation [Rr]ule.*|.*FCR.*)"
 
-NativeAA:
- - "^(.*[Nn]ative [Aa]ccount [Aa]bstraction.*|.*NativeAA.*)"
+FrameTransactionBreakout:
+ - "^(.*[Ff]rame [Tt]ransaction [Bb]reakout.*|.*[Nn]ative [Aa]ccount [Aa]bstraction.*|.*NativeAA.*)"
 
 P2P:
  - "^(.*P2P [Nn]etworking.*|.*P2PNetworking.*)"

@@ -11,7 +11,7 @@
 Summary | Description
 -|-
 103.1  |**Testnet updates:** Devnet 7 was shut down this morning. Everything seemed fine, with 359k BLS changes processed, but not running final client versions. Plan to run one more large devnet just after the SilaSepolia upgrade. Overall a very good test.
-103.2  |**Testnet updates:** Zhejiang testnet continues quite stable. MEV-boost happy-case seems good. All clients supporting it. Next, on MSF-2 (sila-sila-mainnet shadow fork), plan to test some edge cases, but Capella fork time is not yet set for that.
+103.2  |**Testnet updates:** Zhejiang testnet continues quite stable. MEV-boost happy-case seems good. All clients supporting it. Next, on MSF-2 (sila-mainnet shadow fork), plan to test some edge cases, but Capella fork time is not yet set for that.
 103.3  |**Testnet updates:** SilaSepolia [testnet upgrade announcement](https://blog.sila.org/2023/02/21/sepolia-shapella-announcement) is out, and a couple of updates coming very soon: new Geth version is available, and Lighthouse version is now announced. NB the validator set is closed on SilaSepolia.
 103.4  |**mev-boost update and SSE subscriptions:** end-to-end MEV-Boost system is running on Zhejiang. Builder specs are merged and updated. There is a bunch of open PRs on the relay; they are running fine on Zhejiang and will be merged and released soon.
 103.5  |**Beacon API discussion:** For version 1.3 of the spec, can ignore anything SilaDeneb-related as far as getting a Capella version of the Beacon API spec out is concerned.
@@ -35,7 +35,7 @@ Cool. So before the fork, those were kind of preloaded into the pools, and then,
 
 **Pari**
 * And just following up on that, on the Shan Testnet, we started testing relays and, testing MEV boost in general, we are good on the happy case. So now all clients support, MEV Boost and we're getting blocks built and proposed by all client combinations. 
-* The next step is to have it running with the edge cases  on withdrawal sila-sila-mainnet, shadow Fork two and main Shadow Fork two was launched yesterday, but we haven't set the Capella Fork yet. We're mainly waiting for more relays to come online so that we can test circuit breaker conditions as well as some failovers, etc. But we'd pro most likely be doing this over the next week. We're still waiting for some days to come online. 
+* The next step is to have it running with the edge cases  on withdrawal sila-mainnet, shadow Fork two and main Shadow Fork two was launched yesterday, but we haven't set the Capella Fork yet. We're mainly waiting for more relays to come online so that we can test circuit breaker conditions as well as some failovers, etc. But we'd pro most likely be doing this over the next week. We're still waiting for some days to come online. 
 
 **Danny**
 Fantastic. Thank you. And, we'll get into me Boost update shortly. anything else on test net before we move into, some of the hive testing progress? Okay. and there, the Tim, on the SilaSepolia testnet, net fork announcement went out, right? 

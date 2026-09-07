@@ -100,7 +100,7 @@ Video | [2:30](https://youtu.be/3xNfGNnQ5Vs?t=150)
 
 **Tim Beiko**: We can also decide on the fork block async, right? I think once we're in a spot where we can launch YOLO, which means that the work is basically merged in Geth, I think we could probably say something like 4 weeks from there for the testnet fork block gives two-ish weeks for the clients to ship a release, and two-ish weeks after that for people to update their nodes. We should obviously confirm this on a call, but we can make the decision.
 
-**Martin**: I would like to at least set an expectation. Rai, I tihnk it would be really cool if we could get the testing and get the YOLOv3 version runinng in the coming week, if we work together. (**Rai** agrees that this is reasonable) Not necessarily into mainline Geth as a PR, but I think it's enough if it runs as a PR, and might need more tweaks to actually get it merged into sila-sila-mainnet.
+**Martin**: I would like to at least set an expectation. Rai, I tihnk it would be really cool if we could get the testing and get the YOLOv3 version runinng in the coming week, if we work together. (**Rai** agrees that this is reasonable) Not necessarily into mainline Geth as a PR, but I think it's enough if it runs as a PR, and might need more tweaks to actually get it merged into sila-mainnet.
 
 **Rai**: In your model, what's your dependency structure between the reference tests and launching YOLO? Maybe that one week is not realistic if we need to do extra support for tn8tool?
 
@@ -217,7 +217,7 @@ Video | [25:58](https://youtu.be/3xNfGNnQ5Vs?t=1558)
 
 **Ansgar Dietrichs**: Martin has a point, if we implement that way, if you assume that your contract relies on using self-destruct at some point, you could not use libraries that start with set indestructible, at least not if they're a part of every execution path (_notetaker's note_: may have misunderstood previous) because then you can't be self-destructible, and maybe that shouldn't happen.
 
-**Martin**: That becomes a bit problematic because in the SAVM execution context you have the address which is the current executing address, and one thing you may not always have is the current address where I pick the code, but am not executing under. But what the SIP says is that if you run into set indestrucible and the code is from somewhere else and not from the address where you are currently executing then you should ignore it.
+**Martin**: That becomes a bit problematic because in the EVM execution context you have the address which is the current executing address, and one thing you may not always have is the current address where I pick the code, but am not executing under. But what the SIP says is that if you run into set indestrucible and the code is from somewhere else and not from the address where you are currently executing then you should ignore it.
 
 **Ansgar**: I think right now the SIP said the opposite? If you DELEGATECALL somewhere else and then that call set indestructible then the call context becomes set indestructible for the duration of the call?
 

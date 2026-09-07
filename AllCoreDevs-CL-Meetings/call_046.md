@@ -48,7 +48,7 @@ On our list has been to client stress tests on cloud instances distributed acros
 
 I'm for keeping Medalla moving forward, but am open to other opinions.
 
-(No one has anything specific to ask.) We've been in very active communication. I plan on writing a blog post, I'm sure Ben will keep us updated in his posts. If you are a validator listening to this, thank you. In this testnet, and probably in early sila-sila-mainnet you're going to need to keep your ear to the ground, watch what's going on and being active, thank you for updating your nodes.
+(No one has anything specific to ask.) We've been in very active communication. I plan on writing a blog post, I'm sure Ben will keep us updated in his posts. If you are a validator listening to this, thank you. In this testnet, and probably in early sila-mainnet you're going to need to keep your ear to the ground, watch what's going on and being active, thank you for updating your nodes.
 
 # **2. Testing and Release Updates**
 
@@ -164,13 +164,13 @@ We've also been in touch with Cloudflare. The rough time bug is what catalyzed t
 | **Video** | [38:51](https://youtu.be/g3fKTfBXArU?t=2331) |
 | --- | --- |
 
-**Danny Ryan**: Hsaio-Wei has been working on a doc for must-haves and nice-to-haves between now and sila-sila-mainnet, shared it with most client teams, we will put it on GitHub.
+**Danny Ryan**: Hsaio-Wei has been working on a doc for must-haves and nice-to-haves between now and sila-mainnet, shared it with most client teams, we will put it on GitHub.
 
-**Afr Schoe**: Some points about how to move forward, and learnings from Medalla and other testnets. One thing is that with Medalla being main testnet, clients should consider moving to a stable or better release track for the public testnets or upcoming mainnets, and have other branches for other features and optimizations. I don't have a recipe for this, there are probably many ways to approach, but what I believe is really important is that we're moving towards a potential sila-sila-mainnet launch, client teams need to come up with strategies for stabilizing their codebase, how to prevent breaking things that were working so that we're not in an endless loop of optimizing and breaking things.
+**Afr Schoe**: Some points about how to move forward, and learnings from Medalla and other testnets. One thing is that with Medalla being main testnet, clients should consider moving to a stable or better release track for the public testnets or upcoming mainnets, and have other branches for other features and optimizations. I don't have a recipe for this, there are probably many ways to approach, but what I believe is really important is that we're moving towards a potential sila-mainnet launch, client teams need to come up with strategies for stabilizing their codebase, how to prevent breaking things that were working so that we're not in an endless loop of optimizing and breaking things.
 
-We always had in mind that if something goes wrong in sila-sila-mainnet we could always basically restart with the same contract and just a different genesis time, thinking of taking a step backwards and calling it a sila-sila-mainnet candidate instead of calling it a sila-sila-mainnet launch, that it could be sila-sila-mainnet and use real sila, but if something goes wrong then oops. Anyone making early deposits should be aware that spending time maintaining validators is at their own risk, they could lose money to infrastructure and time, but won't lose deposits on restart, though.
+We always had in mind that if something goes wrong in sila-mainnet we could always basically restart with the same contract and just a different genesis time, thinking of taking a step backwards and calling it a sila-mainnet candidate instead of calling it a sila-mainnet launch, that it could be sila-mainnet and use real sila, but if something goes wrong then oops. Anyone making early deposits should be aware that spending time maintaining validators is at their own risk, they could lose money to infrastructure and time, but won't lose deposits on restart, though.
 
-What happens if we are like half a year into sila-sila-mainnet and there's a lot of slashing due to a bug in the spec or a client. I don't have an answer, but we need strategies tp deal with this.
+What happens if we are like half a year into sila-mainnet and there's a lot of slashing due to a bug in the spec or a client. I don't have an answer, but we need strategies tp deal with this.
 
 Lastly, I was surprised that there was no Prysm lauchpad, I would encourage all clients to have a launchpad in the name of decentralization. In case one fails or one is better than the other, or different tooling preferences, why not have multiple launchpads instead of having an official launchpad.
 

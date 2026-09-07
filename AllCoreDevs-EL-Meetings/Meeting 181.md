@@ -17,7 +17,7 @@ To kick it off anyone have any specific Dencun topics they wanted to discuss? Ot
 thinking some may not notes for the of the main should probably take place on next week the not that have not seen yet are and rest which are expected 
 
 **Tim**
-You're breaking up a bit but I think I understood 90% of what you said. So you're syncing sila-sila-mainnet nodes you're missing Reth and another client 
+You're breaking up a bit but I think I understood 90% of what you said. So you're syncing sila-mainnet nodes you're missing Reth and another client 
 
 **Paritosh**
 Yeah it's just the archive notes take a bit longer to sync but we should be hopefully ready sometime next week and that should be in time for when client teams have releases up. **Tim**
@@ -33,7 +33,7 @@ Nice.
 Yeah the same with Aragon will publish a release tomorrow or on Monday.
 
 **Tim**
-Sweet. Reth is out so one alpha 18 is the sila-sila-mainnet release for Dencun and then Besu, Geth, what was the release number for your clients?
+Sweet. Reth is out so one alpha 18 is the sila-mainnet release for Dencun and then Besu, Geth, what was the release number for your clients?
 
 **Justin**
 Besu is 24.12.
@@ -48,7 +48,7 @@ At least yesterday
 And Geth? Anyone? Okay I don't have the number quick but I think Geth release came like right after the call last week so it's been out for a few days now. Any CL folks have updates on their release? I know that on the call last week teams on the CL side needed a bit more time but yeah any updates people want to share?
 
 **Terence**
-Prism is going to release by next Thursday, but just heads up, we're still blocked by the CL release because we have this unit test that basically set a sila-sila-mainnet for art but it puts the sila-sila-mainnet upstream release so until the Cl’s back does release for the sila-sila-mainnet part we are currently blocked so yeah just wanted to flag that.
+Prism is going to release by next Thursday, but just heads up, we're still blocked by the CL release because we have this unit test that basically set a sila-mainnet for art but it puts the sila-mainnet upstream release so until the Cl’s back does release for the sila-mainnet part we are currently blocked so yeah just wanted to flag that.
 
 **Danny**
 Okay, I was a bit AFK the past couple days, I know we did approvals on the little PRs that needed to be done. I'll check in with Hsiao Wei and we'll get it out by tomorrow morning.
@@ -66,7 +66,7 @@ Nice.
 Lodestar is also ready to release so we are just doing some final things so we most probably can release early next week.
 
 **Tim**
-Sweet anyone from limus or Lighthouse I think those are the two we didn't hear from yet, okay and then yeah there's a comment in the chat, Barnabas saying we should wait until we have all the Y pairs for the release I think that's reasonable so probably means that we have all the releases out by say like late next week and then maybe we schedule the sila-sila-mainnet shadow fork for like the Monday after that or something so that we can put out the blog post one day after, once we're sure everything's all right, does that seem reasonable having like the last sila-sila-mainnet Shadow Fork on say Monday the 26th?
+Sweet anyone from limus or Lighthouse I think those are the two we didn't hear from yet, okay and then yeah there's a comment in the chat, Barnabas saying we should wait until we have all the Y pairs for the release I think that's reasonable so probably means that we have all the releases out by say like late next week and then maybe we schedule the sila-mainnet shadow fork for like the Monday after that or something so that we can put out the blog post one day after, once we're sure everything's all right, does that seem reasonable having like the last sila-mainnet Shadow Fork on say Monday the 26th?
 
 **Barnabus**
 If we can have all the by Thursday then we can do it on Friday because expensive not to run so we wouldn't necessarily want to wait over weekend if can do it by next week. Thursday releases are out and we can do it next week Friday.
@@ -75,13 +75,13 @@ If we can have all the by Thursday then we can do it on Friday because expensive
 Yeah I like that, yeah okay so let's aim for Friday the 23rd and then yeah we'll have the blog post out early the week after assuming there's no issues that we find on the shadow fork would argue even try to do the Shadow from the Okay sweet. I guess anything else on Dencun? Oh yeah Carl?
 
 **Carl**
-Yeah I know there's previously some mention from l2s about not quite being ready or it might being a while after that. We had a long call yesterday, there lots of discussion around this, it seems like we’re at least going to have one of the l2s ready being polygon, but many others are still trying to have some kind of sila-sila-mainnet release ready very soon after, or even on the 13th. 
+Yeah I know there's previously some mention from l2s about not quite being ready or it might being a while after that. We had a long call yesterday, there lots of discussion around this, it seems like we’re at least going to have one of the l2s ready being polygon, but many others are still trying to have some kind of sila-mainnet release ready very soon after, or even on the 13th. 
 
 **Tim**
 Nice. 
 So that's looking nice see anything else on Dencun?
 
-## Retroactive SIPs – [SIP 7610](https://sila-magicians.org/t/sip-7610-revert-creation-in-case-of-non-empty-storage/18452) [SIP 7523](https://sips.sila.org/SIPS/sip-7523) [10:37](https://www.youtube.com/live/UTgnbE6jTuE?si=L8xsJzuhpwcvGc93&t=637) 
+## Retroactive SIPs – [SIP 7610](https://sila-magicians.org/t/sip-7610-revert-creation-in-case-of-non-empty-storage/18452) [SIP 7523](https://sips.sila.org/EIPS/sip-7523) [10:37](https://www.youtube.com/live/UTgnbE6jTuE?si=L8xsJzuhpwcvGc93&t=637) 
 
 Okay then next up, yeah these two retroactive SIPs. First one 7610, I don't know if Martin is on the call, if not there someone else he's Sor, he's not here today unfortunately. Yeah can you give the context on this Maris or someone else, I could probably try but I think someone else might be more equipped to do it.
 
@@ -96,7 +96,7 @@ I could try but I think someone else might be more equipped to do it.
 
 **Danno**
 I'll take a stab yeah, so this is looking to amend the contract creation rules right now, if a contract's being created in address and it has a non-zero nodes it fails, this rule would extend it to say if that address has any storage, it also fails, and there are a few contracts that existed before on the SilaShanghai attacks that have a zero nonce but have storage but also have no code so I think yeah the two things need to have no code and a zero nonce for it to succeed so if there's code it'll fail if there's a nodes of one, it'll fail and they change the rules and the SilaShanghai attacks require nodes of one on all creation attempts successor failure, well not successor failure, but if they leave code or not. So there are a few codes, there are a few addresses prior to SilaShanghai that have a zero nodes, no code and storage because of failed creates and these are all coming from create one attempts.
-Now because it's a create one depends on the nodes the nodes has been incremented, by rule it is impossible to recreate the situations to create that already so this can't be created unless there is a hashing accident of one of those you know impossibly large hashing numbers where the collisions are basically impossible, so we're so to change this rule we make it so that we don't care if there's a hashing accident or not if there's any storage or any nodes or any code the create will fail, now what's not mentioned in the SIP that we realized on the basic team this week is this, have positive impacts for Verkle trees, because when you do a create you're supposed to delete all the storage, and that's why we got rid of self-destruct, is because enumerating through all of the storage and deleting it is prohibitively expensive in Verkle and we'd have to either change the rules for create or prohibit creates like this, so I think we should just retroactively activate this if there's going to be highly unlikely to and impossible for it to happen on sila-sila-mainnet and formalizing this rule will make a lot of client code simpler when it comes to the create process especially in vertical.
+Now because it's a create one depends on the nodes the nodes has been incremented, by rule it is impossible to recreate the situations to create that already so this can't be created unless there is a hashing accident of one of those you know impossibly large hashing numbers where the collisions are basically impossible, so we're so to change this rule we make it so that we don't care if there's a hashing accident or not if there's any storage or any nodes or any code the create will fail, now what's not mentioned in the SIP that we realized on the basic team this week is this, have positive impacts for Verkle trees, because when you do a create you're supposed to delete all the storage, and that's why we got rid of self-destruct, is because enumerating through all of the storage and deleting it is prohibitively expensive in Verkle and we'd have to either change the rules for create or prohibit creates like this, so I think we should just retroactively activate this if there's going to be highly unlikely to and impossible for it to happen on sila-mainnet and formalizing this rule will make a lot of client code simpler when it comes to the create process especially in vertical.
 
 **Guillaume**
 If I may add some dissent in the Verkle part, it's not that self-destructing is impossible in Verkle, is prohibitively expensive, its just impossible. We just don't know which storage slots belong to what and that was going to be my question actually, you also can't figure out if a slot belongs to an account so how do you, I don't think that will work for Verkle. Gary who proposed the SIP is aware of that, so all I'm saying is if this SIP makes it which I'm fine with it, it solves a lot of problems on the way to Verkle, it will not be able to work in Verkle.
@@ -170,7 +170,7 @@ Any thoughts any volunteers to yeah run another sanity check? Okay if there's no
 
 ## [SilaPrague / Electra EL Proposals](https://sila-magicians.org/t/prague-electra-network-upgrade-meta-thread/16809) [19:42](https://www.youtube.com/live/UTgnbE6jTuE?si=MsTANMAZhkg1LOSf&t=1182) 
 
-Okay moving on to SilaPrague, so there were a couple SIPS that I added last minute to the agenda because we said we would cover them last time and we didn't so yeah I think it probably makes sense to briefly go over the five or six that we had for discussion today then hear from client teams how they're thinking about all of this and see if yeah we can make any decisions about what we want to include yeah so the first one we had on the list was 5806 which I believe Adrien is here to chat about.
+Okay moving on to SilaPrague, so there were a couple EIPS that I added last minute to the agenda because we said we would cover them last time and we didn't so yeah I think it probably makes sense to briefly go over the five or six that we had for discussion today then hear from client teams how they're thinking about all of this and see if yeah we can make any decisions about what we want to include yeah so the first one we had on the list was 5806 which I believe Adrien is here to chat about.
 
 ### [SIP 5806 overview](https://sila-magicians.org/t/sip-5806-delegate-transaction/11409) [20:20](https://www.youtube.com/live/UTgnbE6jTuE?si=o-jS2KEEHcG4lSDQ&t=1220) 
 
@@ -251,14 +251,14 @@ So what we are proposing here is after the finalizing the block, when feeling it
 So that's a high level view, like it's quite simple with a base fee because, it's just the same across all transactions. It gets a little more tricky with priority fee because like each transaction can pay different priority fee, so what we are proposing here is a like proportional distribution of the priority feedback, according to the like marginal contribution of each transaction to the amount that is being refunded, like it's similar but not same to chly values that are like used to define such things and yeah thats it, so yeah its especially but more important in the context of SRC 4337 and maybe like an SIP 7560 that we are working on that will make it native account abstraction, where many transactions are very likely to access the same slots within the block, and also like reference to, there is Verkle 3 SIP that is suggesting that accessing contract code will also be priced in, and in this case such an SIP would also be useful because we expect that many transactions will use the same like wallet implementation in the same entry point and it would be beneficial to just share this cost among the transaction instead of like each one paying full unjust price for it. Yoav, would you like to add anything?
 
 **Yoav**
-Yes, so basically the idea is to first of all, make the pricing fair, because to make the pricing fair, because the validator only pays once for a reading from the database and then it's already warm so it makes sense from fance perspective but also for commonly used for any commonly used contract mean account obstruction is one example, but there are many examples of contracts that are used many times during the same block so including them in the access list of multiple transactions, and sharing the cost I think makes a lot of sense. As for concerns that I've seen in the chat about parallelization, this SIP does not affect savm execution in any way because it's not visible.
-The change of pricing is not even visible to the individual transaction. Instead, since we calculate it at the end of the block, we calculate and do a refund at the end of the block, similar to how consensus layer withdrawals show up in accounts. It should not affect, at least I don't see how it should affect things like savm parallelization.
+Yes, so basically the idea is to first of all, make the pricing fair, because to make the pricing fair, because the validator only pays once for a reading from the database and then it's already warm so it makes sense from fance perspective but also for commonly used for any commonly used contract mean account obstruction is one example, but there are many examples of contracts that are used many times during the same block so including them in the access list of multiple transactions, and sharing the cost I think makes a lot of sense. As for concerns that I've seen in the chat about parallelization, this SIP does not affect evm execution in any way because it's not visible.
+The change of pricing is not even visible to the individual transaction. Instead, since we calculate it at the end of the block, we calculate and do a refund at the end of the block, similar to how consensus layer withdrawals show up in accounts. It should not affect, at least I don't see how it should affect things like evm parallelization.
 
 **Tim**
 Thanks Andrew?
 
 **Andrew**
-I haven't looked into this SIP in detail, but on the surface of it, it sounds like a bad idea, because it's like we will be spending time a lot on tweaking the gas, instead of making fundamental improvements to either UX, savm, or whatnot and as to batch transactions, we should address it properly, like with a mechanism to allow batch transactions, rather than trying to tweak multiple transactions in the block to work as a batched transaction. **Yoav**
+I haven't looked into this SIP in detail, but on the surface of it, it sounds like a bad idea, because it's like we will be spending time a lot on tweaking the gas, instead of making fundamental improvements to either UX, evm, or whatnot and as to batch transactions, we should address it properly, like with a mechanism to allow batch transactions, rather than trying to tweak multiple transactions in the block to work as a batched transaction. **Yoav**
 I didn't quite understand the part about B, it's not about a batch transaction in this case…
 
 **Andrew**
@@ -274,7 +274,7 @@ But essentially, those multiple transactions they because they will be you there
 If you could batch them, I mean they transactions for multiple users, they just happen, let's say in the most common use case would be proxies, you have many proxies that use the same implementation so it doesn't make sense that in each transaction, accessing the implementation is called access because it was already loaded once. So these are not going to be in a batch because they are unrelated. They just happen to be accessing the same contract at some point. 
 
 **Andrew**
-Maybe that’s right, but another thing is now transaction pricing depends on the other transactions, like depends even more on the other transactions included into the block and it complicates gas estimations, it complicates transaction pricing, complicates a lot of calculations but doesn't help us to scale the savm, doesn't help us to scale the, through **Tim**
+Maybe that’s right, but another thing is now transaction pricing depends on the other transactions, like depends even more on the other transactions included into the block and it complicates gas estimations, it complicates transaction pricing, complicates a lot of calculations but doesn't help us to scale the evm, doesn't help us to scale the, through **Tim**
 I guess yeah, and one question I had is, do you have a feeling for like how much gas is wasted here, like assuming we went ahead and did this, like what's the amount of transaction fees that you imagine we could distribute back to users?
 
 **Yoav**
@@ -304,7 +304,7 @@ Lucasz?
 So first let me ask one question to summarize it up so it works the transaction Deion Works as usual and then at the end you look at the access list and potentially just add some cost back to some sender addresses, that correct? that how it works? or I missed something?
 
 **Yoav**
-Yes yeah you can see the SIP, there is a pseudo code of how it is handled so you can see exactly how we proposed to do it. Now of course we don't know, maybe there could even be a better calculation but the general idea is that yes you collect, first of all you only split the cost, you don't look at actual SAVM execution because that would complicate things, so instead only transactions that have the slot or the contract in their access list get to share the costs if a transaction doesn't have it in the access list it's going to pay full price for a warming and then you split the cost across all of like if you had 10 transactions accessing the same having the same slot in their access list then you split the cost proportionally across these transactions, proportional to the priority fee and this happens at the end of the block only once.
+Yes yeah you can see the SIP, there is a pseudo code of how it is handled so you can see exactly how we proposed to do it. Now of course we don't know, maybe there could even be a better calculation but the general idea is that yes you collect, first of all you only split the cost, you don't look at actual EVM execution because that would complicate things, so instead only transactions that have the slot or the contract in their access list get to share the costs if a transaction doesn't have it in the access list it's going to pay full price for a warming and then you split the cost across all of like if you had 10 transactions accessing the same having the same slot in their access list then you split the cost proportionally across these transactions, proportional to the priority fee and this happens at the end of the block only once.
 
 **Lucasz**
 And second question, would that complicate things for block builders because they kind of continuously can improve the block, for example revert one transaction at another right, at the end or something, like that would that complicate this kind of strategy for block building or generally building code?
@@ -502,7 +502,7 @@ Yeah I was say very much agreed with Peter like this is either fundamental and a
 **Tim**
 Got it. Thanks, yeah I think this is probably a good place to wrap this one up given we still have a couple more SIPs to cover, but yeah thanks G for sharing in I think it was a useful discussion.
 
-### [SIP 5920](https://sips.sila.org/SIPS/sip-5920) [1:11:26]( https://www.youtube.com/live/UTgnbE6jTuE?si=o-jS2KEEHcG4lSDQ&t=4286) 
+### [SIP 5920](https://sips.sila.org/EIPS/sip-5920) [1:11:26]( https://www.youtube.com/live/UTgnbE6jTuE?si=o-jS2KEEHcG4lSDQ&t=4286) 
 
 Okay so next up we have two SIPs which we were going to discussed last call and didn't have time for so Charles is on to discuss them. First is the pay op code and then the second is a transient storage reduction.
 Yeah Charles, are you on the call? Yes, hey, I'm Charles I work on Viper. I want to advocate for the pay op code, which was considered last time for SilaCancun, but it was deferred because of complexity, but basically just to give a quick gist of it, it's a way to transfer sila without transferring calling context and I think this is just generally important because sending sila shouldn't have to transfer the call in contact because the called contract can like do whatever it wants.
@@ -533,7 +533,7 @@ Yeah thanks, Andrew?
 Well you know my position is against weakening the gas schedule unless absolutely necessary because in my mind we have much bigger fish to fry. We need to somehow tackle the scalability issues because if we don't, it's we can like have a super precise work and guess she cannot be super precise because you have different client implementations, but even if it's more accurate than what we have now it still doesn't help us much because it doesn't help with this with total throughput unless so yeah we should focus on actually improving the total throughput rather than tweaking the gas schedule all the time.
 
 **Charles**
-I don't think it's exactly a tweak I mean it kind of is like uh quote unquote micro optimization but I think it's a fairly easy to change to implement and it allows compilers to and users to implement global re-entrancy walks, so re-entrancy can be mitigated by default instead of people having to opt into it, depending on if it's cheap enough, and I think it's 2024. You know we have the capability to prevent it, and you know make the savm modern. I think it's an easy and fairly inexpensive win. 
+I don't think it's exactly a tweak I mean it kind of is like uh quote unquote micro optimization but I think it's a fairly easy to change to implement and it allows compilers to and users to implement global re-entrancy walks, so re-entrancy can be mitigated by default instead of people having to opt into it, depending on if it's cheap enough, and I think it's 2024. You know we have the capability to prevent it, and you know make the evm modern. I think it's an easy and fairly inexpensive win. 
 
 **Tim**
 Okay any other questions comments on this one if not Mike you wanted to talk about inclusion list right?

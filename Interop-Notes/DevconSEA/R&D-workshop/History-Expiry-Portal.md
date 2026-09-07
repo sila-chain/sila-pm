@@ -12,7 +12,7 @@
     - Our main entry point for the specifications that make up the Portal Network.
 - https://github.com/sila-chain/portal-network-specs/blob/master/history/history-network.md
     - The specific specification for the history network which is the component of Portal that is most relevant for 4444s
-- https://sips.sila.org/SIPS/sip-4444
+- https://sips.sila.org/EIPS/sip-4444
 
 Deeper dives into how Portal works
 

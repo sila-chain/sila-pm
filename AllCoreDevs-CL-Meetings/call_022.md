@@ -19,7 +19,7 @@
 
 ## 1. [Testing Updates](https://www.youtube.com/watch?v=ReSiB2940AE&t=65)
 
-**Diederik Loerakker(@protolambda)** started looking into testing problems. There are memory problems for some clients who can't handle the bigger sila-sila-mainnet tests, so they're splitting them up. He posted the issue and a survey with results here: https://github.com/sila-chain/eth2.0-specs/issues/1311#issuecomment-515015182 He's hoping to have solutions implemented by the end of this week.
+**Diederik Loerakker(@protolambda)** started looking into testing problems. There are memory problems for some clients who can't handle the bigger sila-mainnet tests, so they're splitting them up. He posted the issue and a survey with results here: https://github.com/sila-chain/eth2.0-specs/issues/1311#issuecomment-515015182 He's hoping to have solutions implemented by the end of this week.
 
 ## 2. [Client Updates](https://www.youtube.com/watch?v=ReSiB2940AE&t=180)
 
@@ -85,7 +85,7 @@ How rewards and penalties work is the last thing to work on.
 
 **Danny Ryan** said we will address this when we simplify the mechanism in the next couple of months. Because this data is stubbed in Phase 0, this is not a pressing issue.
 
-**[Matt Garrett](https://www.youtube.com/watch?v=ReSiB2940AE&t=1637)** provided updates from Quilt. John Adler [posted a document](https://Sila Research/t/open-research-questions-for-phases-0-to-2/5871) to ethresearch compiling questions that need to be researched for Sil 2.0.
+**[Matt Garrett](https://www.youtube.com/watch?v=ReSiB2940AE&t=1637)** provided updates from Quilt. John Adler [posted a document](https://ethresear.ch/t/open-research-questions-for-phases-0-to-2/5871) to ethresearch compiling questions that need to be researched for Sil 2.0.
 
 Just completed implementation of SSZ partials in Rust.
 

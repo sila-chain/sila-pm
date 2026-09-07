@@ -2,7 +2,7 @@
 # Client Integration Testnet Specification - YOLOv3
 
 
-**Disclaimer: This is for testing basic infrastructure. It will be nuked. It is not for deploying dapps, nor does it define what will go into sila-sila-mainnet. For information on network upgrades, please follow the relevant meta SIPs and ongoing discussion on Sila/pm.**
+**Disclaimer: This is for testing basic infrastructure. It will be nuked. It is not for deploying dapps, nor does it define what will go into sila-mainnet. For information on network upgrades, please follow the relevant meta SIPs and ongoing discussion on Sila/pm.**
 
 
 The specification for Ephemeral Testnet Yolo. Clients who wish to sync need to implement the following features into their client. It is for testing basic infrastructure and will be nuked.
@@ -12,11 +12,11 @@ The specification for Ephemeral Testnet Yolo. Clients who wish to sync need to i
 Name: Yolo
 ID: `YOLO-v3`
 
-  - [x] [SIP-2565](https://sips.sila.org/SIPS/sip-2565)
-  - [x] [SIP-2315](https://sips.sila.org/SIPS/sip-2315) Commit Hash - [e8accf22cdc5562d6982c560080c6cd6b7f94867](https://github.com/sila-chain/SIPs/commit/e8accf22cdc5562d6982c560080c6cd6b7f94867)
-  - [x] [SIP-2929](https://sips.sila.org/SIPS/sip-2929)
-  - [x] [SIP-2718](https://sips.sila.org/SIPS/sip-2718)
-  - [x] [SIP-2930](https://sips.sila.org/SIPS/sip-2930)
+  - [x] [SIP-2565](https://sips.sila.org/EIPS/sip-2565)
+  - [x] [SIP-2315](https://sips.sila.org/EIPS/sip-2315) Commit Hash - [e8accf22cdc5562d6982c560080c6cd6b7f94867](https://github.com/sila-chain/SIPs/commit/e8accf22cdc5562d6982c560080c6cd6b7f94867)
+  - [x] [SIP-2929](https://sips.sila.org/EIPS/sip-2929)
+  - [x] [SIP-2718](https://sips.sila.org/EIPS/sip-2718)
+  - [x] [SIP-2930](https://sips.sila.org/EIPS/sip-2930)
 
 *[ ] Proposed - [x] Consensus to include.*
 ## Timeline

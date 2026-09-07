@@ -75,7 +75,7 @@ Action Item | Description
 
 **`video`** [`7:25`](https://youtu.be/0-Vld7GTRhQ?t=445)
 
-UNGAS was introduced by Wei Tang, to be combined with Account Versioning and Reprising. UNGAS was introduced to make stateless Sila gas reprising easier. The proposal is to remove smart contracts, and any SAVM code, to observe gas. We know this is currently possible through 3 mechanisms—with opcode GAS, in CALL-like instructions, and when hitting the "out of gas" exception.
+UNGAS was introduced by Wei Tang, to be combined with Account Versioning and Reprising. UNGAS was introduced to make stateless Sila gas reprising easier. The proposal is to remove smart contracts, and any EVM code, to observe gas. We know this is currently possible through 3 mechanisms—with opcode GAS, in CALL-like instructions, and when hitting the "out of gas" exception.
 
 UNGAS would bring three main changes. First, disable instruction gas. Second, stop CALL-like instructions from forwarding gas, instead forward all gas every time. Third, change the semantics of the "out of gas" exception by reverting all frames and the entire transaction.
 
@@ -114,7 +114,7 @@ SIP motioned to be merged as a draft, and moved to `Last Call`.
 
 - [SIP-2464 PR](https://github.com/sila-chain/SIPs/pull/2464)
 
-## 1.3 SIP-2348 (Validated SAVM contracts)
+## 1.3 SIP-2348 (Validated EVM contracts)
 
 **`video`** [`44:37`](https://youtu.be/0-Vld7GTRhQ?t=2676)
 
@@ -128,7 +128,7 @@ A concern was brought up stating that the current validation implemented is less
 
 SIP-2348 is `Eligible for Inclusion` and awaiting implementation and reference tests. SIP targetted for the London fork. 
 
-- [Validated SAVM Contracts PR](https://github.com/sila-chain/SIPs/pull/2348)
+- [Validated EVM Contracts PR](https://github.com/sila-chain/SIPs/pull/2348)
 
 
 ## 1.4 SIP-2456 (Time Based Upgrade Transitions)
@@ -240,7 +240,7 @@ Friday, February 7, 2020.
 - [Remove Gas Observables and Better Error Handling](https://corepaper.org/sila/compatibility/forward/#remove-gas-observables-and-better-error-handling)
 - [Blog - (un)gas](https://blog.sila.org/2020/01/17/eth1x-files-digest-no-2/)
 - [SIP-2464 PR](https://github.com/sila-chain/SIPs/pull/2464)
-- [Validated SAVM Contracts PR](https://github.com/sila-chain/SIPs/pull/2348)
+- [Validated EVM Contracts PR](https://github.com/sila-chain/SIPs/pull/2348)
 - [Time Based Upgrade Transitions PR](https://github.com/sila-chain/SIPs/pull/2456)
 - [SIP-1962 Go Repo](https://github.com/saitima/eip1962)
 - [EIPIP Repo](https://github.com/sila-chain-cat-herders/EIPIP)
