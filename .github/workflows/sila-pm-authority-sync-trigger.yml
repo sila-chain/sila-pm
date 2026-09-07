@@ -34,99 +34,88 @@ jobs:
           from pathlib import Path
           import re, shutil
 
-          root = Path.cwd()
-          upstream = root / '_upstream'
-          preserve = root / '_sila_binary_preserve'
-          preserve.mkdir()
-
-          binary_exts = {'.pdf','.png','.jpg','.jpeg','.gif','.webp','.ico','.zip','.gz','.tgz','.bz2','.xz','.mp3','.mp4','.mov','.webm','.woff','.woff2','.ttf','.otf','.bin','.db','.sqlite'}
+          root=Path.cwd(); upstream=root/'_upstream'; preserve=root/'_sila_binary_preserve'; preserve.mkdir()
+          binary_exts={'.pdf','.png','.jpg','.jpeg','.gif','.webp','.ico','.zip','.gz','.tgz','.bz2','.xz','.mp3','.mp4','.mov','.webm','.woff','.woff2','.ttf','.otf','.bin','.db','.sqlite'}
           def is_binary(p):
               if p.suffix.lower() in binary_exts: return True
-              b = p.read_bytes()[:8192]
+              b=p.read_bytes()[:8192]
               if b'\x00' in b: return True
               try: b.decode('utf-8'); return False
               except UnicodeDecodeError: return True
 
           for p in root.rglob('*'):
               if not p.is_file() or '.git' in p.parts or '_upstream' in p.parts or '_sila_binary_preserve' in p.parts: continue
-              rel = p.relative_to(root)
-              if (upstream / rel).is_file() and is_binary(p):
-                  q = preserve / rel; q.parent.mkdir(parents=True, exist_ok=True); shutil.copy2(p,q)
-
+              rel=p.relative_to(root)
+              if (upstream/rel).is_file() and is_binary(p):
+                  q=preserve/rel; q.parent.mkdir(parents=True,exist_ok=True); shutil.copy2(p,q)
           for p in list(root.iterdir()):
               if p.name in {'.git','_upstream','_sila_binary_preserve'}: continue
-              if p.is_dir(): shutil.rmtree(p)
-              else: p.unlink()
-
+              shutil.rmtree(p) if p.is_dir() else p.unlink()
           for src in upstream.rglob('*'):
-              rel = src.relative_to(upstream)
+              rel=src.relative_to(upstream)
               if '.git' in rel.parts: continue
-              dst = root / rel
-              if src.is_dir(): dst.mkdir(parents=True, exist_ok=True)
-              elif src.is_file(): dst.parent.mkdir(parents=True, exist_ok=True); shutil.copy2(src,dst)
-
+              dst=root/rel
+              if src.is_dir(): dst.mkdir(parents=True,exist_ok=True)
+              elif src.is_file(): dst.parent.mkdir(parents=True,exist_ok=True); shutil.copy2(src,dst)
           for src in preserve.rglob('*'):
               if src.is_file():
-                  rel = src.relative_to(preserve)
-                  if (upstream / rel).is_file():
-                      dst = root / rel; dst.parent.mkdir(parents=True, exist_ok=True); shutil.copy2(src,dst)
+                  rel=src.relative_to(preserve)
+                  if (upstream/rel).is_file():
+                      dst=root/rel; dst.parent.mkdir(parents=True,exist_ok=True); shutil.copy2(src,dst)
 
-          literal = [
-              ('https://eips.ethereum.org','https://sips.sila.org'),('eips.ethereum.org','sips.sila.org'),
-              ('https://github.com/ethereum/','https://github.com/sila-chain/'),('github.com/ethereum/','github.com/sila-chain/'),
-              ('https://ethereum.org','https://sila.org'),('ethereum.org','sila.org'),
-              ('https://ethereum-magicians.org','https://sila-magicians.org'),('ethereum-magicians.org','sila-magicians.org'),
-              ('Ethereum Foundation','Sila Foundation'),('EF Protocol Support','Sila Protocol Support'),
-              ('Ethereum Magicians','Sila Magicians'),('EthMagicians','SilaMagicians'),('Ethereum Calendar','Sila Calendar'),
-              ('Etherscan','SilaScan'),('WETH','WSIL'),('IWETH','IWSIL'),('IERC','ISRC'),('AERC','ASRC'),('IEIP','ISIP')]
-          token = [
-              (r'\bEIPs\b','SIPs'),(r'\beips\b','sips'),(r'\bEIP\b','SIP'),(r'\beip\b','sip'),
-              (r'\bERCs\b','SRCs'),(r'\bERCS\b','SRCS'),(r'\bERC\b','SRC'),(r'\berc\b','src'),
-              (r'\bEthereum\b','Sila'),(r'\bethereum\b','sila'),(r'\bETHEREUM\b','SILA'),
-              (r'\bEther\b','Sila'),(r'\bether\b','sila'),(r'\bETH\b','SIL'),(r'\bEth\b','Sil'),(r'\beth\b','sil'),
-              (r'\bMainnet\b','SilaMainnet'),(r'\bmainnet\b','sila-mainnet'),(r'\bMAINNET\b','SILA_MAINNET'),
-              (r'\bSepolia\b','SilaSepolia'),(r'\bHolesky\b','SilaHolesky'),(r'\bDeneb\b','SilaDeneb'),(r'\bFulu\b','SilaFulu'),
-              (r'\bPeerDAS\b','SilaPeerDAS'),(r'\bCancun\b','SilaCancun'),(r'\bShanghai\b','SilaShanghai'),(r'\bPrague\b','SilaPrague'),
-              (r'\bOsaka\b','SilaOsaka'),(r'\bParis\b','SilaParis'),(r'\bAmsterdam\b','SilaAmsterdam'),(r'\bKovan\b','SilaKovan')]
+          literals=[
+            ('https://eips.ethereum.org','https://sips.sila.org'),('eips.ethereum.org','sips.sila.org'),
+            ('https://github.com/ethereum/','https://github.com/sila-chain/'),('github.com/ethereum/','github.com/sila-chain/'),
+            ('https://ethereum.org','https://sila.org'),('ethereum.org','sila.org'),
+            ('https://ethereum-magicians.org','https://sila-magicians.org'),('ethereum-magicians.org','sila-magicians.org'),
+            ('Ethereum Foundation','Sila Foundation'),('EF Protocol Support','Sila Protocol Support'),
+            ('Ethereum Magicians','Sila Magicians'),('EthMagicians','SilaMagicians'),('Ethereum Calendar','Sila Calendar'),
+            ('Etherscan','SilaScan'),('WETH','WSIL'),('IWETH','IWSIL'),('IERC','ISRC'),('AERC','ASRC'),('IEIP','ISIP')]
+          token_map={'EIPs':'SIPs','eips':'sips','EIP':'SIP','eip':'sip','ERCs':'SRCs','ERCS':'SRCS','ERC':'SRC','erc':'src','Ethereum':'Sila','ethereum':'sila','ETHEREUM':'SILA','Ether':'Sila','ether':'sila','ETH':'SIL','Eth':'Sil','eth':'sil','Mainnet':'SilaMainnet','mainnet':'sila-mainnet','MAINNET':'SILA_MAINNET','Sepolia':'SilaSepolia','Holesky':'SilaHolesky','Deneb':'SilaDeneb','Fulu':'SilaFulu','PeerDAS':'SilaPeerDAS','Cancun':'SilaCancun','Shanghai':'SilaShanghai','Prague':'SilaPrague','Osaka':'SilaOsaka','Paris':'SilaParis','Amsterdam':'SilaAmsterdam','Kovan':'SilaKovan'}
+          token_rx=re.compile(r'\b(?:'+ '|'.join(sorted(map(re.escape,token_map),key=len,reverse=True)) +r')\b')
+          def convert_text(s):
+              for a,b in literals: s=s.replace(a,b)
+              return token_rx.sub(lambda m: token_map[m.group(0)],s)
 
           for p in list(root.rglob('*')):
               if not p.is_file() or '.git' in p.parts or '_upstream' in p.parts or '_sila_binary_preserve' in p.parts or is_binary(p): continue
-              try: s = p.read_text('utf-8')
+              try: s=p.read_text('utf-8')
               except UnicodeDecodeError: continue
-              n = s
-              for a,b in literal: n = n.replace(a,b)
-              for a,b in token: n = re.sub(a,b,n)
-              if n != s: p.write_text(n,'utf-8')
+              n=convert_text(s)
+              if n!=s: p.write_text(n,'utf-8')
 
-          exact = {'ethereum':'sila','Ethereum':'Sila','ETHEREUM':'SILA','eip':'sip','EIP':'SIP','eips':'sips','EIPs':'SIPs','erc':'src','ERC':'SRC','ercs':'srcs','ERCs':'SRCs','ethereum_vocab.yaml':'sila_vocab.yaml','eth-protocol-transcripts':'sila-protocol-transcripts'}
-          for p in sorted([x for x in root.rglob('*') if '.git' not in x.parts and '_upstream' not in x.parts and '_sila_binary_preserve' not in x.parts], key=lambda x: len(x.parts), reverse=True):
+          def rename_component(name):
+              exact={'ethereum_vocab.yaml':'sila_vocab.yaml','eth-protocol-transcripts':'sila-protocol-transcripts'}
+              n=exact.get(name,name)
+              reps=[('ETHEREUM','SILA'),('Ethereum','Sila'),('ethereum','sila'),('EIPs','SIPs'),('eips','sips'),('EIP','SIP'),('eip','sip'),('ERCs','SRCs'),('ERCS','SRCS'),('ERC','SRC'),('erc','src'),('ETH','SIL'),('Eth','Sil'),('eth','sil')]
+              for a,b in reps:
+                  n=re.sub(r'(?<![A-Za-z0-9])'+re.escape(a)+r'(?![A-Za-z0-9])',b,n)
+              n=re.sub(r'^Eth(?=[A-Z])','Sil',n)
+              n=re.sub(r'^ETH(?=[-_A-Z0-9])','SIL',n)
+              return n
+          for p in sorted([x for x in root.rglob('*') if '.git' not in x.parts and '_upstream' not in x.parts and '_sila_binary_preserve' not in x.parts],key=lambda x:len(x.parts),reverse=True):
               if not p.exists(): continue
-              nn = exact.get(p.name,p.name)
-              nn = re.sub(r'(?<![A-Za-z0-9])ethereum(?![A-Za-z0-9])','sila',nn)
-              nn = re.sub(r'(?<![A-Za-z0-9])Ethereum(?![A-Za-z0-9])','Sila',nn)
-              nn = re.sub(r'(?<![A-Za-z0-9])eip(?![A-Za-z0-9])','sip',nn)
-              nn = re.sub(r'(?<![A-Za-z0-9])erc(?![A-Za-z0-9])','src',nn)
-              if nn != p.name:
-                  q = p.with_name(nn)
+              nn=rename_component(p.name)
+              if nn!=p.name:
+                  q=p.with_name(nn)
                   if q.exists(): raise SystemExit(f'PATH_COLLISION:{p}->{q}')
                   p.rename(q)
 
           shutil.rmtree(upstream); shutil.rmtree(preserve)
-          rx = re.compile(r'\b(?:Ethereum|ethereum|ETHEREUM|EIPs?|eips?|ERCs?|ercs?|ETH|Eth|eth|Ether|ether)\b|github\.com/ethereum|eips\.ethereum\.org|ethereum\.org')
+          residual_rx=re.compile(r'\b(?:Ethereum|ethereum|ETHEREUM|EIPs?|eips?|ERCs?|ercs?|ETH|Eth|eth|Ether|ether)\b|github\.com/ethereum|eips\.ethereum\.org|ethereum\.org')
           residual=[]
           for p in root.rglob('*'):
               if '.git' in p.parts or not p.is_file(): continue
               rel=p.relative_to(root).as_posix()
-              if rx.search(rel): residual.append('PATH:'+rel)
+              if residual_rx.search(rel): residual.append('PATH:'+rel)
               if is_binary(p): continue
               try: s=p.read_text('utf-8')
               except UnicodeDecodeError: continue
-              if rx.search(s): residual.append('TEXT:'+rel)
+              if residual_rx.search(s): residual.append('TEXT:'+rel)
           print('ACTIONABLE_IDENTITY_RESIDUAL_COUNT='+str(len(residual)))
           if residual:
               print('\n'.join(residual[:300])); raise SystemExit(1)
           PY
-
           git config user.name 'SILA Network'
           git config user.email 'sila-chain@users.noreply.github.com'
           git add -A
