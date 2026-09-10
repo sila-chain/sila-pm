@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   sync:
-    if: github.event.issue.title == 'SILA PM SYNC AUTHORITY 91f6060f'
+    if: github.event.issue.title == 'SILA PM SYNC AUTHORITY e9b04222'
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout Sila target branch
@@ -174,5 +174,9 @@ jobs:
           git config user.name 'SILA Network'
           git config user.email 'sila-chain@users.noreply.github.com'
           git add -A
-          git commit -m 'sync: exact latest PM authority as pure Sila'
-          git push origin HEAD:sila/pm-latest-pure-20260907
+          if git diff --cached --quiet; then
+            echo 'PM_AUTHORITY_TREE_ALREADY_CURRENT=1'
+          else
+            git commit -m 'sync: exact latest PM authority as pure Sila'
+            git push origin HEAD:sila/pm-latest-pure-20260907
+          fi
