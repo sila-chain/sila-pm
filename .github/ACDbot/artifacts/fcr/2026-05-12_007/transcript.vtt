@@ -206,7 +206,7 @@ Nazar Hussain: Some code reviews from my team members are…
 
 52
 00:09:16.840 --> 00:09:22.380
-Nazar Hussain: That we don't have the specs test for the sila-sila-mainnet reset for it.
+Nazar Hussain: That we don't have the specs test for the sila-mainnet reset for it.
 
 53
 00:09:23.180 --> 00:09:29.450
@@ -238,7 +238,7 @@ Nazar Hussain: It's not highly desired, but it was one of the… observation tha
 
 60
 00:10:08.910 --> 00:10:14.790
-Nazar Hussain: improved trust from the team that, okay, we have some specs for the sila-sila-mainnet and which are passing.
+Nazar Hussain: improved trust from the team that, okay, we have some specs for the sila-mainnet and which are passing.
 
 61
 00:10:17.150 --> 00:10:18.190
@@ -254,7 +254,7 @@ Nazar Hussain: 20% or 10% of the specs.
 
 64
 00:10:27.860 --> 00:10:33.629
-Nazar Hussain: Or even less for the sila-sila-mainnet, for some edge cases, which are very vital for the fast transformation.
+Nazar Hussain: Or even less for the sila-mainnet, for some edge cases, which are very vital for the fast transformation.
 
 65
 00:10:34.310 --> 00:10:36.480
@@ -270,7 +270,7 @@ Mikhail Kalinin: That's true.
 
 68
 00:10:38.220 --> 00:10:43.420
-Justin Traglia: Does that affect sila-sila-mainnet and not minimal? I mean, are they not the same code paths with different…
+Justin Traglia: Does that affect sila-mainnet and not minimal? I mean, are they not the same code paths with different…
 
 69
 00:10:43.750 --> 00:10:45.250
@@ -314,7 +314,7 @@ Nazar Hussain: Okay, I was not aware of it, then I will check it.
 
 79
 00:11:38.900 --> 00:11:43.939
-Justin Traglia: Mikael, how slow are they sila-sila-mainnet tests? Do you know if they would be able to complete within 6 hours?
+Justin Traglia: Mikael, how slow are they sila-mainnet tests? Do you know if they would be able to complete within 6 hours?
 
 80
 00:11:44.200 --> 00:11:46.170
@@ -354,7 +354,7 @@ Mikhail Kalinin: A subset of those tests to make them
 
 89
 00:12:28.880 --> 00:12:31.319
-Mikhail Kalinin: work with sila-sila-mainnet Reset as well.
+Mikhail Kalinin: work with sila-mainnet Reset as well.
 
 90
 00:12:34.030 --> 00:12:42.690
@@ -406,7 +406,7 @@ Nazar Hussain: Yeah, yeah, we have a couple of metrics, so I will then…
 
 102
 00:13:44.610 --> 00:13:59.599
-Nazar Hussain: extract everything out. We have different nodes in different configurations. One is running in the sila-sila-mainnet, one is running on something different configurations, so I will put them all together on my PR, so… and then I will share with you guys to look at it.
+Nazar Hussain: extract everything out. We have different nodes in different configurations. One is running in the sila-mainnet, one is running on something different configurations, so I will put them all together on my PR, so… and then I will share with you guys to look at it.
 
 103
 00:14:01.160 --> 00:14:04.800
@@ -830,7 +830,7 @@ Mikhail Kalinin: Yeah, I see. Okay, cool. So…
 
 208
 00:23:58.800 --> 00:24:06.130
-Mikhail Kalinin: For sila-sila-mainnet tests, we have a little bit of a room, right? So… so we can include some core…
+Mikhail Kalinin: For sila-mainnet tests, we have a little bit of a room, right? So… so we can include some core…
 
 209
 00:24:07.480 --> 00:24:12.299

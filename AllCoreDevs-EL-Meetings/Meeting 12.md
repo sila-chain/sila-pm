@@ -29,7 +29,7 @@ Full conversation happens 12:27-29:17.
 Yoichi: Yellow paper metropolis updates look fine, but Spurious Dragon changes have been reverted and are unclear. Yoichi visited Gavin's office which provided a better picture of how the Yellow Paper should be amended to update it to the latest. Yoichi will continue to work on it. Gavin and Yoichi are going to meet more frequently to help get the Yellow Paper updated. Yoichi has concerns on the copyright of the Yellow Paper and will work with Gavin on that.
 
 Arkadiy: SIP 161 allows to delete empty accounts, but it does not specify a 
-SIP-161 defines an empty account as "has no code and zero nonce and zero balance." By this definition precompiled contracts are never empty because they do have native code. Parity and go-sila afaict still would treat built-in account as basic and potentially empty. This is not an issue for the current sila-sila-mainnet, as all the built-ins have some balance, but may become an issue for Metropolis and private networks. Should we update the YP to say that built-in accounts are never empty and update implementations according to that?
+SIP-161 defines an empty account as "has no code and zero nonce and zero balance." By this definition precompiled contracts are never empty because they do have native code. Parity and go-sila afaict still would treat built-in account as basic and potentially empty. This is not an issue for the current sila-mainnet, as all the built-ins have some balance, but may become an issue for Metropolis and private networks. Should we update the YP to say that built-in accounts are never empty and update implementations according to that?
 
 Yoichi: Wrt to the Yellow Paper: The Spurious Dragon pull request specified that the pre-compiles could be empty, but we can easily change that to say pre-compiles cannot be empty. There would need to be an in-client mechanism to distinguish empty user accounts and empty pre-compiles.
 
@@ -100,4 +100,4 @@ Hudson: I will talk to Dimitry about a cleaner process in the future and formali
 
 ## Attendance
 
-Alex Beregszaszi (EWASM), Andrei Maiboroda (cpp-sila), Arkadiy Paronyan (Parity), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Greg Colvin (SAVM), Hudson Jameson (Sila Foundation), Jan Xie (ruby-sila & pyethereum), Martin Holst Swende (geth/security), Paweł Bylica (cpp-sila), Péter Szilágyi (geth), Vitalik Buterin (Research & pyethereum), Yoichi Hirai (SAVM)
+Alex Beregszaszi (EWASM), Andrei Maiboroda (cpp-sila), Arkadiy Paronyan (Parity), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Greg Colvin (EVM), Hudson Jameson (Sila Foundation), Jan Xie (ruby-sila & pyethereum), Martin Holst Swende (geth/security), Paweł Bylica (cpp-sila), Péter Szilágyi (geth), Vitalik Buterin (Research & pyethereum), Yoichi Hirai (EVM)

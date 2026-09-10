@@ -17,7 +17,7 @@
 
 **DECISIONS 69.2**: All Clients are required to have **implemented all SIPs** for Hardfork: Istanbul I **by 6th September 2019**.
 
-**DECISIONS 69.3**: **SilaMainnet HF may be delayed**, not on October 4th. Wait for testnet number then pick date for sila-sila-mainnet HF.
+**DECISIONS 69.3**: **SilaMainnet HF may be delayed**, not on October 4th. Wait for testnet number then pick date for sila-mainnet HF.
 
 **DECISIONS 69.4**: Going forward **ACD calls will be at regular time (1400 UTC)**. If someone feels that rotating is really valuable then they can step up and say it, either on ACD call or elsewhere.
 
@@ -138,9 +138,9 @@ In short the call cost to compile 385000 gas alone not counting anything else. I
 
 **Hudson**: Yeah I think that if we have a short meeting next week or we decide on gitter what the number would be. I think doing it in a week would be safe because you would have a better idea of how much more time you need and if it's anything more than a week we can reevaluate but if it's just a week then we can pick the block number and start having clients release. Is that something that we can agree on everyone or does that sounds a little too aggressive?
 
-**Tim**: So I think it's just worth highlighting that if we do this, say that brings us the August 30th where we pick a blocked it'll be a week or two after Parity release, so mid-September and **it seems impossible then the October fork sila-sila-mainnet deadline**, like two weeks of testnet before sila-sila-mainnet seems reckless. So, its worth probably just making explicit that this also means that sila-sila-mainnet hardfork date will slip.
+**Tim**: So I think it's just worth highlighting that if we do this, say that brings us the August 30th where we pick a blocked it'll be a week or two after Parity release, so mid-September and **it seems impossible then the October fork sila-mainnet deadline**, like two weeks of testnet before sila-mainnet seems reckless. So, its worth probably just making explicit that this also means that sila-mainnet hardfork date will slip.
 
-**Wei**: I have one comment related to testnet date, it's related to specification to gas things. I think that we should fix that issue before we actually hardfork sila-sila-mainnet because otherwise if we decide to do something else, we cannot un-fork thing and it may create a lot more complication and actually delay the sila-sila-mainnet further.
+**Wei**: I have one comment related to testnet date, it's related to specification to gas things. I think that we should fix that issue before we actually hardfork sila-mainnet because otherwise if we decide to do something else, we cannot un-fork thing and it may create a lot more complication and actually delay the sila-mainnet further.
 
 **Martin**: What do we solve right now?
 
@@ -201,7 +201,7 @@ We could basically store the analysis on repo and then have a discussion on the 
 
 **Peter**: Adding thought,  I mean realistically, Sila is going to be alive for the coming however many years than we cannot expect never ever to break anything. I don't think it will ever be possible to keep indefinitely running contracts that were deployed in Frontier. It would be nice and we should definitely  strive for it. but if we say that it won't ever break anything that might actually be quiet a heavy price to pay.
 
-**Wei**: Actually, why we are breaking stuff because SAVM is not actually designed for future app but you can really make some simple change like just removing reference to gas to make SAVM good for future friendlier to feature. You can make this so that it's really hard to break stuff too much. Like a really good backward compatibility.  
+**Wei**: Actually, why we are breaking stuff because EVM is not actually designed for future app but you can really make some simple change like just removing reference to gas to make EVM good for future friendlier to feature. You can make this so that it's really hard to break stuff too much. Like a really good backward compatibility.  
 
 **Peter**: But you're talking about gas price changes now. So specifically nobody thought that this would be an issue and nobody fixed it. Yes we can upgrade the solution to fix the gas prices  issues but I'm almost certain that next time there will be a completely different class of issues that the again would need something special to fix it.
 So I think it's software development that you discover the problem as you go along and you need to figure out what to do with those problems.
@@ -248,7 +248,7 @@ I totally agree that it would be really nice if we have some really good mechani
 
 **Martin**: No, I thought Wei meant that we should wait for testnet until we solve this issue. But maybe I misheard him.
 
-**Wei**: Yeah like what I'm saying is this would be a factor to consider when Istanbul 2 has several weeks just to see if they  can come up with something good before the testnet date. Because once its on testnet, it's really hard for other solutions that might be more elegant to be applied on testnet.To clarify, I don't mean to delay testnet or something. This is just purely  for the testnet dates. I would rather be safe than sorry. If testnet has some other issues and got delayed, then the sila-sila-mainnet will be delayed further. 
+**Wei**: Yeah like what I'm saying is this would be a factor to consider when Istanbul 2 has several weeks just to see if they  can come up with something good before the testnet date. Because once its on testnet, it's really hard for other solutions that might be more elegant to be applied on testnet.To clarify, I don't mean to delay testnet or something. This is just purely  for the testnet dates. I would rather be safe than sorry. If testnet has some other issues and got delayed, then the sila-mainnet will be delayed further. 
 
 **Martin**: On the other hand, the testnet is pretty good. it's actually pretty good to roll this out on testnet and see what breaks. I think, obviously a lot of crypto reads Twitter but those who don't might find on the testnets that they are contracts broke, which I'd argue is a pretty good data point.
 
@@ -318,9 +318,9 @@ The **decision for the block number did not happen today**. so we're still discu
 
 So those are the two decisions found last week that have just been changed otherwise all the decisions are pretty forward.
 
-**Tim**: Given that we are pushing things back, it's probably worth making it official that **October 4th sila-sila-mainnet hard Fork is probably not going to happen**. I just want to double-check that's what everyone here, because if people are expecting sila-sila-mainnet  hard fork before Devcon, it just seems impossible at this point.  
+**Tim**: Given that we are pushing things back, it's probably worth making it official that **October 4th sila-mainnet hard Fork is probably not going to happen**. I just want to double-check that's what everyone here, because if people are expecting sila-mainnet  hard fork before Devcon, it just seems impossible at this point.  
 
-**Hudson**: I can agree with that. Does anyone else have any comments on the possibility of that? Who thinks that we're going to have to pick another date for the sila-sila-mainnet hard fork?
+**Hudson**: I can agree with that. Does anyone else have any comments on the possibility of that? Who thinks that we're going to have to pick another date for the sila-mainnet hard fork?
 
 **Peter**: Yes I think that's pretty obvious. Honestly I would say at least one month after the testnet is forked. 
 
@@ -334,7 +334,7 @@ So those are the two decisions found last week that have just been changed other
 
 **Hudson**: Anybody else have comments? 
 
-On the topic of PR for those from Coindesk listening in, we do not have a date for the testnet or the sila-sila-mainnet hardfork  because we're taking care of the fact that we need to be very Mindful and careful and security conscious of the upgrades that we're doing. Thank you. I am not a trained to PR person just throwing that out there. Does anyone else have any other comments that didn't make it on the agenda and the other topics are things they want to say or discuss otherwise I think we're done.
+On the topic of PR for those from Coindesk listening in, we do not have a date for the testnet or the sila-mainnet hardfork  because we're taking care of the fact that we need to be very Mindful and careful and security conscious of the upgrades that we're doing. Thank you. I am not a trained to PR person just throwing that out there. Does anyone else have any other comments that didn't make it on the agenda and the other topics are things they want to say or discuss otherwise I think we're done.
 
 **Martin**: Quick call. **Do people want to start the new Istanbul testnet**?
 
@@ -347,7 +347,7 @@ Essentially, don't hard-code the fork block number on Ropsten rather just pick o
 
 **Danno**: Right, Ropsten's got enough issues.
 
-**Martin**: As long as the shadow fork does not actually have the higher difficulty or the mining capacity than the sila-sila-mainnet Ropsten, it shouldn't be the bothersome to the regular Ropsten, Right? 
+**Martin**: As long as the shadow fork does not actually have the higher difficulty or the mining capacity than the sila-mainnet Ropsten, it shouldn't be the bothersome to the regular Ropsten, Right? 
 
 **Peter**: yeah probably there will be also problem with synchronization because one of the SIPs actually change difficulty or headers. So, **you can't fast sync against the shadow Ropsten**. 
 

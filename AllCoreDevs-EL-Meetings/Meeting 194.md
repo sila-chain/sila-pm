@@ -274,7 +274,7 @@ I think there was an arrogant block production issue that's now been fixed. but 
 * Yeah. So the idea would be that SilaPeerDAS devnet would still be, independent of the devnet, and we would just use an older version of the Fuzzer, something that is pre prog. So all the transactions that would show up would be only that specific transactions 
 
 **Marius**
-* But the thing is, RT fuzz can produce transactions that are like even the old versions can produce transactions that are now valid or that that are now triggering something I can modify it first to, sample transactions. I actually have some code to send block transactions that are just verify that the blob hashes are correct or something. so that do some small things with the blob hashes. So we verify that. But and we get a bunch of load on the network without triggering SAVM execution at all
+* But the thing is, RT fuzz can produce transactions that are like even the old versions can produce transactions that are now valid or that that are now triggering something I can modify it first to, sample transactions. I actually have some code to send block transactions that are just verify that the blob hashes are correct or something. so that do some small things with the blob hashes. So we verify that. But and we get a bunch of load on the network without triggering EVM execution at all
  
 **Dustin**
 * Is this configurable? Like can the can the fuzzer be told to sort of not do this? 

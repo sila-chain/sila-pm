@@ -16,10 +16,10 @@
 
 **ACTION 60.2**: Danno Ferrin to add 9 month out Hardfork kickoff to [timeframes](https://sila-magicians.org/t/more-frequent-smaller-hardforks-vs-less-frequent-larger-ones/2929/28).
 
-**ACTION 60.3**: [SIP 615](https://sips.sila.org/SIPS/sip-615) decision discussion at next meeting.
+**ACTION 60.3**: [SIP 615](https://sips.sila.org/EIPS/sip-615) decision discussion at next meeting.
 **Status**: PR will be made.
 
-**ACTION 60.6**:  Martin Holste Swende and Alex Beregszaszi to confirm whether [SIP 689](https://sips.sila.org/SIPS/sip-689) needs to be implemented.
+**ACTION 60.6**:  Martin Holste Swende and Alex Beregszaszi to confirm whether [SIP 689](https://sips.sila.org/EIPS/sip-689) needs to be implemented.
 **Status**: WIP
 
 **Action 60.7**: Parity to comment on Libraries for Precompiles (https://github.com/sila-chain/pm/issues/95#issuecomment-486879991)
@@ -35,7 +35,7 @@
 
 **Decision 61.3**: And furthermore that as of this particular deadline 7 days from today, these SIPs today may still be in draft form; they're not expected necessarily to be thorough and complete, nor in Accepted state. And of course not expected to have implementations ready.
 
-**Decision 61.4**: [SIP 615](https://sips.sila.org/SIPS/sip-615) -  PR will be made to list it.
+**Decision 61.4**: [SIP 615](https://sips.sila.org/EIPS/sip-615) -  PR will be made to list it.
 
 ## SUGGESTIONS
 
@@ -65,10 +65,10 @@ Tim: I've a [PR](https://github.com/sila-chain/SIPs/pull/1991) open, anyone want
 
 **ACTION 60.2**: Danno Ferrin to add 9 month out Hardfork kickoff to [timeframes](https://sila-magicians.org/t/more-frequent-smaller-hardforks-vs-less-frequent-larger-ones/2929/28).
 
-**ACTION 60.3**: [SIP 615](https://sips.sila.org/SIPS/sip-615) decision discussion at next meeting.
+**ACTION 60.3**: [SIP 615](https://sips.sila.org/EIPS/sip-615) decision discussion at next meeting.
 **Lane**: I'll add it to the agenda for this meeting. 
 
-**ACTION 60.4**: Danno Ferrin to add list of conditions for implementation and Pull Request [SIP 1057](https://sips.sila.org/SIPS/sip-1057) into the Hardfork Meta SIP [1679](https://sips.sila.org/SIPS/sip-1679).
+**ACTION 60.4**: Danno Ferrin to add list of conditions for implementation and Pull Request [SIP 1057](https://sips.sila.org/EIPS/sip-1057) into the Hardfork Meta SIP [1679](https://sips.sila.org/EIPS/sip-1679).
 
 **Danno**: It is now in the SIP 1679. I just put it there to say that it is above and beyond. The Standard Security audit requirements should be considered before inclusion. I didn't list any exclusive reason because we don't know what the audit is going to come back. Basically, discussion needs to happen when the audit comes back.
 
@@ -80,11 +80,11 @@ Tim: I've a [PR](https://github.com/sila-chain/SIPs/pull/1991) open, anyone want
 
 **Lane**: Added to this agenda - Testing, testnets, and road to Istanbul. 
 
-**ACTION 60.5**: Martin Holste Swende to confirm that [SIP 1884](https://sips.sila.org/SIPS/sip-1884) has merged into the Hardfork Meta SIP 1679.
+**ACTION 60.5**: Martin Holste Swende to confirm that [SIP 1884](https://sips.sila.org/EIPS/sip-1884) has merged into the Hardfork Meta SIP 1679.
 **Martin**: It is in meta.
 Status: Done.
 
-**ACTION 60.6**:  Martin Holste Swende and Alex Beregszaszi to confirm whether [SIP 689](https://sips.sila.org/SIPS/sip-689) needs to be implemented.
+**ACTION 60.6**:  Martin Holste Swende and Alex Beregszaszi to confirm whether [SIP 689](https://sips.sila.org/EIPS/sip-689) needs to be implemented.
 
 **Martin**: My take is that we can slip it because [SIP 684](https://github.com/sila-chain/SIPs/issues/684) is already implemented and are basically the same thing.
 
@@ -205,7 +205,7 @@ Anyone opposed to those that summary otherwise we can keep moving.
 Do we want to review the list of the ideas currently scheduled for Istanbul are there any more SIPs to add?
 I believe the canonical listed  SIPs is in SIP 1679 that are scheduled for Istanbul. 
 
-**Boris**: Yeah. [615](https://sips.sila.org/SIPS/sip-615) is still something that we'd like to get in. Those are the ones that are already fully in. The [wiki link](https://en.sila.wiki/roadmap/istanbul) there  have an extended list of other ones, that are people are like yes we're going to get this ready and PR them in as well. Trenton I have been teaming up on keeping wiki up to date, so that we can get even more review on the train of other SIPs that may still be proposed.
+**Boris**: Yeah. [615](https://sips.sila.org/EIPS/sip-615) is still something that we'd like to get in. Those are the ones that are already fully in. The [wiki link](https://en.sila.wiki/roadmap/istanbul) there  have an extended list of other ones, that are people are like yes we're going to get this ready and PR them in as well. Trenton I have been teaming up on keeping wiki up to date, so that we can get even more review on the train of other SIPs that may still be proposed.
 
 **Danno**: SIP 1965 is waiting on editors approval. There is some debate as to how the EPI 1344 and one I just meant and should be implemented. The author of SIP 1965 is trying to get attention of these people. SO, there's some contention with these SIPs right now.
 
@@ -220,11 +220,11 @@ I believe the canonical listed  SIPs is in SIP 1679 that are scheduled for Istan
 
 ## a) Refer to Roadmap link for list
 
-[SIP 1679](https://sips.sila.org/SIPS/sip-1679) - Istanbul canonical list
+[SIP 1679](https://sips.sila.org/EIPS/sip-1679) - Istanbul canonical list
 
 **Lane**: Are there any additional SIPs already on the agenda and not in 1679 and if people want to discuss right now actually? My understanding of the status to be Hudson reached out to Zooko and Zcash would like to see this as well. But they're looking for a champion and Virgil has also offered some funding and Gitcoin has offered some funding but unless anyone has heard otherwise I'm not aware that this is currently being worked on. And therefore is not going to make it into Istanbul unless that changes in the next 7 days.
 
-**Alexey**: So there's another SIP which is not listed but there is a working group going on this one. It is the generalized electric curved precompile, I think. I think I'm almost to make sure that it will be included as essentially the generalization of the previous one [1829](https://sips.sila.org/SIPS/sip-1829).
+**Alexey**: So there's another SIP which is not listed but there is a working group going on this one. It is the generalized electric curved precompile, I think. I think I'm almost to make sure that it will be included as essentially the generalization of the previous one [1829](https://sips.sila.org/EIPS/sip-1829).
 
 **Alex**: Alexey, there is a waiting to finish his PR which proposes that for 1679. 
 
@@ -290,7 +290,7 @@ So I haven't covered testnets and stuff like this because it also requires a lit
 
 **Rick**: I'll just be frank. In my professional experience, we don't solicit the public for these sorts of things. So I don't have any experience myself nor does anyone in my staff really do that sort of thing. one of my staff might do it in future but we're not quite there yet. I want to make sure that we have at least one commitment for funding before we start spending time going out and at trashes the bushes.
 
-**Boris**: To your meta question Lane, Alexey has been coordinating the budget proposals for the working group to look at funding. He is quarterbacking at and keeping everyone updated. On our case with the SAVM evolution we've been feeding Alexey updates. So we're working on 615 to the level that we can and if emergent we can talk about that in the in the next section with that. Light work on coordinating in the sense that the pre compiles, the big question related to SAVM evolution is other will be certain things including the the Blake precompile that may not need to be a precompile if we can get core clients SAVM implementations tuned. We know that we either have the people who could do the work or can easily get some people to make time available if funding is available but currently funding is not available.
+**Boris**: To your meta question Lane, Alexey has been coordinating the budget proposals for the working group to look at funding. He is quarterbacking at and keeping everyone updated. On our case with the EVM evolution we've been feeding Alexey updates. So we're working on 615 to the level that we can and if emergent we can talk about that in the in the next section with that. Light work on coordinating in the sense that the pre compiles, the big question related to EVM evolution is other will be certain things including the the Blake precompile that may not need to be a precompile if we can get core clients EVM implementations tuned. We know that we either have the people who could do the work or can easily get some people to make time available if funding is available but currently funding is not available.
 
 **Lane**: Thank you. Any other Eth1.x working group updates?
 
@@ -351,7 +351,7 @@ Two leading places are Seattle and somewhere in Canada.
 
 **Action 61.1**: Will come back on it in one or two meetings.
 
-From [comments](https://github.com/sila-chain/pm/issues/97#issuecomment-491333940) - regarding the JSON-RPC spec there seems to be on already: https://sips.sila.org/SIPS/sip-1474. 
+From [comments](https://github.com/sila-chain/pm/issues/97#issuecomment-491333940) - regarding the JSON-RPC spec there seems to be on already: https://sips.sila.org/EIPS/sip-1474. 
 
 # 8. [SIP 615](https://github.com/sila-chain/pm/blob/master/AllCoreDevs-Meetings/Meeting%2060.md#sip-615-status-draft) (from last meeting)
 

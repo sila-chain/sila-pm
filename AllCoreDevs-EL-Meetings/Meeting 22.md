@@ -24,7 +24,7 @@
             - Other clients
         2. Determining gas prices for new opcodes & pre-compiles [Martin HS/Arkadiy]
   **d. Review time estimate for testing/release.**
-2. SIP 215 sila/SIPs#215: Bitwise shifting instructions in SAVM to replace [SIP 145](https://github.com/sila-chain/SIPs/issues/145) [Alex B.]
+2. SIP 215 sila/SIPs#215: Bitwise shifting instructions in EVM to replace [SIP 145](https://github.com/sila-chain/SIPs/issues/145) [Alex B.]
 
 # Notes
 TODO

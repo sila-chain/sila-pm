@@ -8,11 +8,11 @@
       },
       {
         "timestamp": "00:33:10",
-        "highlight": "Lighthouse plans to enable partial columns on Hoodi by default (sila-sila-mainnet off); release targeting June"
+        "highlight": "Lighthouse plans to enable partial columns on Hoodi by default (sila-mainnet off); release targeting June"
       },
       {
         "timestamp": "00:27:30",
-        "highlight": "discv5: Besu lacks parallel stack support; Nethermind has it disabled on sila-sila-mainnet; Reth uses wrong port"
+        "highlight": "discv5: Besu lacks parallel stack support; Nethermind has it disabled on sila-mainnet; Reth uses wrong port"
       }
     ],
     "networking_research": [
@@ -59,7 +59,7 @@
   "decisions": [
     {
       "timestamp": "00:34:09",
-      "decision": "Lighthouse will enable partial columns on Hoodi by default while keeping it disabled on sila-sila-mainnet"
+      "decision": "Lighthouse will enable partial columns on Hoodi by default while keeping it disabled on sila-mainnet"
     }
   ],
   "targets": [

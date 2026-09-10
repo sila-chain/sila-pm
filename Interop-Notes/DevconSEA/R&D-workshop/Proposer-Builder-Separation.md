@@ -7,10 +7,10 @@
 **[*Required*] Note Taker:** *Terence and Mike.* 
 
 **[*Required*] Pre-Reads:** 
-- [SIP-7732](https://sips.sila.org/SIPS/sip-7732)
-- [Why Enshrine PBS](https://Sila Research/t/why-enshrine-proposer-builder-separation-a-viable-path-to-epbs/15710)
-- [Relays in a post-ePBS world](https://Sila Research/t/relays-in-a-post-epbs-world/16278)
-- [PTC](https://Sila Research/t/payload-timeliness-committee-ptc-an-epbs-design/16054)
+- [SIP-7732](https://sips.sila.org/EIPS/sip-7732)
+- [Why Enshrine PBS](https://ethresear.ch/t/why-enshrine-proposer-builder-separation-a-viable-path-to-epbs/15710)
+- [Relays in a post-ePBS world](https://ethresear.ch/t/relays-in-a-post-epbs-world/16278)
+- [PTC](https://ethresear.ch/t/payload-timeliness-committee-ptc-an-epbs-design/16054)
 
 **[*Optional*] Slides:** 
 - [Terence's Slides](https://docs.google.com/presentation/d/1XUTsw98hprHSNnpzCkRUgSU9nuQiq5wkpHGon3Nw7wU/edit#slide=id.g31207e378c5_2_86)
@@ -64,6 +64,6 @@ _These are Julian’s notes on the ePBS session. They cover only the discussion 
     - Is it possible to make this separation without facilitating the fair exchange problem between the proposer and builder?
 - Does ePBS introduce problems in the fork-choice?
     - Francesco’s new design might solve the fork-choice issues with the Payload-Timeliness Committee (PTC) in SIP-7732.
-    - Still, in the past, fork-choice issues were only raised when attacks were possible on the sila-sila-mainnet. Changing the fork choice is risky.
+    - Still, in the past, fork-choice issues were only raised when attacks were possible on the sila-mainnet. Changing the fork choice is risky.
 - What is the minimal pipelining implementation?
     - Potuz believes SIP-7732 is a minimal pipelining implementation. Given this, it is better to implement SIP-7732 with the auction since the auction is not on-chain. Perhaps later, it can be written out why SIP-7732 is the minimal pipelining implementation.

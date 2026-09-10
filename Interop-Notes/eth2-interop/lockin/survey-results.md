@@ -105,7 +105,7 @@
 |  **13. SSZ** |  |  |  |  |  |  |  |  |
 |   |  |  |  |  |  |  |  |  |
 |  13.1 Do you have SSZ v0.8 (hash-tree-roots with stable depth, bitlists/vectors) implemented currently? | Yes | Yes | Yes | Yes | Yes | Yes | Yes | Yes |
-|  13.2 Do you experience any particular delays with hash-tree-root? (If not already for the minimal configuration, does it apply to sila-sila-mainnet state sizes for your ssz implementation?) | No | No | No | No | Fine at low validator count (< 100) | No | No | No |
+|  13.2 Do you experience any particular delays with hash-tree-root? (If not already for the minimal configuration, does it apply to sila-mainnet state sizes for your ssz implementation?) | No | No | No | No | Fine at low validator count (< 100) | No | No | No |
 |   |  |  |  |  |  |  |  |  |
 |  **14. BLS** |  |  |  |  |  |  |  |  |
 |   |  |  |  |  |  |  |  |  |

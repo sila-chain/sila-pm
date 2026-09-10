@@ -863,10 +863,10 @@ enode://aec88fd902744bf67705c098bf532b01017ccc3a156395508e2d9c4e7c22699ecccae1e7
 ```
 
 **Included SIPs:**
-  - [x] [SIP-1559](https://sips.sila.org/SIPS/sip-1559) Commit Hash - [efd64dba56f485eb6eb51567ee83819a12fa0bda](https://github.com/sila-chain/SIPs/commit/efd64dba56f485eb6eb51567ee83819a12fa0bda)
-  - [x] [SIP-3198](https://sips.sila.org/SIPS/sip-3198) Commit Hash - [081db1a6614e523dd791691cff7016e32c369912](https://github.com/sila-chain/SIPs/commit/081db1a6614e523dd791691cff7016e32c369912)
-  - [x] [SIP-3529](https://sips.sila.org/SIPS/sip-3529) Commit Hash - [6079eba5d1344a6b68075f79c14d4b7caf13ef53](https://github.com/sila-chain/SIPs/commit/6079eba5d1344a6b68075f79c14d4b7caf13ef53)
-  - [x] [SIP-3541](https://sips.sila.org/SIPS/sip-3541) Commit Hash - [168245a87a5a21890cb909e1624135fff63dea71](https://github.com/sila-chain/SIPs/commit/168245a87a5a21890cb909e1624135fff63dea71)
+  - [x] [SIP-1559](https://sips.sila.org/EIPS/sip-1559) Commit Hash - [efd64dba56f485eb6eb51567ee83819a12fa0bda](https://github.com/sila-chain/SIPs/commit/efd64dba56f485eb6eb51567ee83819a12fa0bda)
+  - [x] [SIP-3198](https://sips.sila.org/EIPS/sip-3198) Commit Hash - [081db1a6614e523dd791691cff7016e32c369912](https://github.com/sila-chain/SIPs/commit/081db1a6614e523dd791691cff7016e32c369912)
+  - [x] [SIP-3529](https://sips.sila.org/EIPS/sip-3529) Commit Hash - [6079eba5d1344a6b68075f79c14d4b7caf13ef53](https://github.com/sila-chain/SIPs/commit/6079eba5d1344a6b68075f79c14d4b7caf13ef53)
+  - [x] [SIP-3541](https://sips.sila.org/EIPS/sip-3541) Commit Hash - [168245a87a5a21890cb909e1624135fff63dea71](https://github.com/sila-chain/SIPs/commit/168245a87a5a21890cb909e1624135fff63dea71)
 
 ## Client Consensus -> Implementation
 

@@ -56,7 +56,7 @@ Video | [1:49](https://youtu.be/xNt6MmEV3JI?t=109)
 
 ## 1.3 Lighthouse
 
-- Coordinating with the team to best apply to phase 0 sila-sila-mainnet, and sharding and merge blocks. Made blog post
+- Coordinating with the team to best apply to phase 0 sila-mainnet, and sharding and merge blocks. Made blog post
 - Published a few releases
 - Added new system for monitoring validators, in PR now, in beacon node side
 - Adding support for weak subjectivity sync. 
@@ -99,7 +99,7 @@ Beyond that, there are network iterations and fixes release prior this fork. A c
 
 Happy to open up for discussion here and in the repo. 
 
-This serves as a warmup to forking sila-sila-mainnet, first in testnets. 
+This serves as a warmup to forking sila-mainnet, first in testnets. 
 
 The target is to come into agreement on the updates within the next two weeks, by the end of January, by next call.
 
@@ -155,7 +155,7 @@ Video | [39:02](https://youtu.be/xNt6MmEV3JI?t=2342)
 
 Issue open. In the way we do attestation aggregation, a nice to have optimization, that ultimately made more work on the network today.
 
-If someone can quantify "I want I have" on sila-sila-mainnet, it would be useful.
+If someone can quantify "I want I have" on sila-mainnet, it would be useful.
 
 The unintended consequences may show up in the case of an attack. 
 

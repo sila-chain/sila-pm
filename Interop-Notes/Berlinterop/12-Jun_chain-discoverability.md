@@ -13,7 +13,7 @@
 * **Standardized L1→L2 bridge wrapper**: thin contract sitting in front of each canonical bridge normalises `depositGasToken()` and `depositToken()` (SRC‑20). Wallets interact with one ABI while underlying implementations vary. Wrapper MUST stay trust‑minimal and reside in the on‑chain registry.
 * **Open design questions**: handling custom gas‑tokens, failed deposits/recovery, attribute encoding (SRC‑7786), permissionless asset‑ID↔token‑address mapping across chains. A separate Telegram working group was formed to draft the ABI.
 * **Standardised light‑client contracts**: each L2 publishes an L1 contract that verifies L2 proofs (`verifyFinalizedState`, `verifyRecentState`). Wallets fetch proofs via RPC, then use `eth_call` on L1 for verification—eliminating blind trust in RPC responses. Helios (OP chains) cited as proof‑of‑concept.
-* **Further RPC spec work**: proposal for an `eth_callWithProof` endpoint so wallets can request execution results plus merkle/other proofs in a single response, regardless of underlying VM (SAVM, Stylus/Wasm, etc.).
+* **Further RPC spec work**: proposal for an `eth_callWithProof` endpoint so wallets can request execution results plus merkle/other proofs in a single response, regardless of underlying VM (EVM, Stylus/Wasm, etc.).
 * **Action items**:
 
   * Join two Telegram groups (On‑chain‑Config & Bridge Wrapper / Light‑client).
@@ -29,7 +29,7 @@
 
 * *Current UX pain points*
 
-  * 2020: single‑chain simplicity → 2024: >100 new SAVM chains (Chainlist).
+  * 2020: single‑chain simplicity → 2024: >100 new EVM chains (Chainlist).
   * Wallets hard‑code chain lists; users paste RPC URLs, creating phishing surface and brittle configs when URLs rotate.
   * Fragmented liquidity & stuck assets when gas token absent.
 
@@ -111,7 +111,7 @@
 
 ### Relevant links
 
-* [https://sips.sila.org/SIPS/sip-7828](https://sips.sila.org/SIPS/sip-7828)
-* [https://sips.sila.org/SIPS/sip-7785](https://sips.sila.org/SIPS/sip-7785)
-* [https://sips.sila.org/SIPS/sip-7786](https://sips.sila.org/SIPS/sip-7786)
+* [https://sips.sila.org/EIPS/sip-7828](https://sips.sila.org/EIPS/sip-7828)
+* [https://sips.sila.org/EIPS/sip-7785](https://sips.sila.org/EIPS/sip-7785)
+* [https://sips.sila.org/EIPS/sip-7786](https://sips.sila.org/EIPS/sip-7786)
 * [https://github.com/a16z/helios](https://github.com/a16z/helios)

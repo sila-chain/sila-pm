@@ -13,13 +13,13 @@ Summary | Description
 105.1  |**Client releases:** Consensus spec release 1.3.0-rc5 is out.
 105.2  |**Client releases:** Round-robin call-out for Capella (and SilaShanghai) readiness: all client teams on call will have a release out this week or early next week.
 105.3  |**Client releases:** EF Blog post should be up Tuesday or Wednesday next week.
-105.4  |**Client releases:** Pari, there will be one more sila-sila-mainnet shadow fork once all releases are out.
+105.4  |**Client releases:** Pari, there will be one more sila-mainnet shadow fork once all releases are out.
 105.5  |**Client releases:** Bug bounty for SilaShanghai–Capella specific issues have been boosted to 2x. Up to $0.5m now: [bounty.sila.org](https://sila.org/en/bug-bounty/).
 105.6  |**Client releases:** MEV-boost community call upcoming, mainly to discuss Capella readiness. March 30th at 16:00 UTC.
 105.7  |**SilaDeneb:** Discussion of [Add corresponding proofs to BlobsBundleV1](https://github.com/sila-chain/execution-apis/pull/392): add proofs to the get-blobs engine API. SIP [6610](https://github.com/sila-chain/SIPs/pull/6610) means that the execution layer now has the proofs, so it is easy to pass them to the consensus layer. Consensus layer doesn’t need to generate any proofs or commitments, just verify what it receives from the execution client.
 105.8  |**SilaDeneb:** KZG library startup times. Some can be slow to start and mean that every test can take 2 seconds. To be addressed in the KZG library. Not a problem in normal running, but a big problem for testing. [Dankrad] Transforming the setup data to Lagrange form is what takes most of the time. We could change the initialisation file to store in Lagrange form rather than compressed point form. This should reduce the startup time to milliseconds.
 105.9  |**SilaDeneb:** SSZ discussions remain ongoing. How much of the changes do we want to bring forward into SilaDeneb? [Tim] Monday’s SSZ breakout call decided to wait until All Core Devs makes a decision on this - there are lots of factors to consider. Different client teams are in different places on this.
-105.10 |**Research, spec, etc:** [Naming for the post-SilaDeneb upgrade](https://sila-magicians.org/t/e-star-name-for-consensus-layer-upgrade-after-deneb/13248). “Electra” seems popular. Join the EthMagicians’ discussion to give input.
+105.10 |**Research, spec, etc:** [Naming for the post-SilaDeneb upgrade](https://sila-magicians.org/t/e-star-name-for-consensus-layer-upgrade-after-deneb/13248). “Electra” seems popular. Join the SilaMagicians’ discussion to give input.
 
 **Tim Beiko**
 * We are live. 
@@ -55,10 +55,10 @@ Summary | Description
 * Is there anything else anyone wants to discuss about Capella at the moment? then we'll move on to 4844 up stuff. 
 
 **Pari**
-* Just one thing, we started syncing some sila-sila-mainnet nodes and once all the releases are done, we'd have a main net shadow fog and I guess that would be the last, attempt of the transition publicly before we hit it on main net. 
+* Just one thing, we started syncing some sila-mainnet nodes and once all the releases are done, we'd have a main net shadow fog and I guess that would be the last, attempt of the transition publicly before we hit it on main net. 
 
 **Alex Stokes**
-* Okay, great. Thanks Perry. so one more sila-sila-mainnet shadow fork, with the final releases. That'll be nice just to, you know, give us one more go at things, not expecting any issues, but that'll be good to confirm. And yeah, any other Capella things while we're here? 
+* Okay, great. Thanks Perry. so one more sila-mainnet shadow fork, with the final releases. That'll be nice just to, you know, give us one more go at things, not expecting any issues, but that'll be good to confirm. And yeah, any other Capella things while we're here? 
 
 **Tim Beiko**
 * Frederick, do you wanna mention the bug bounty? 
@@ -109,7 +109,7 @@ Summary | Description
 
 ## kzg library startup times [17.34](https://youtu.be/Xc6Ss-m_nlE?t=1054)
 **Marius**
-* Yes. So something that, Mario discovered during, testing for 4844 is that now every test execution, on the 4844 branch takes a couple of seconds. And this is of the startup time of the, the savm binary, which has to initialize the, the kzg library. 
+* Yes. So something that, Mario discovered during, testing for 4844 is that now every test execution, on the 4844 branch takes a couple of seconds. And this is of the startup time of the, the evm binary, which has to initialize the, the kzg library. 
 * And, I think he said that, it, this is going to be fixed by the kzg library that is used in kzg 4844 at the moment. but it's just something That, this is kzg I think it's kzg, I'm not sure. 
 
 **Alex Stokes**
@@ -130,7 +130,7 @@ Summary | Description
 * Okay. Yeah, that sounds good. we can talk to the kzg containers and anyone else working on those libraries, so look at that and yeah, if it improves startup times and then sounds like we'll get around that issue. So I think that's all we had on the agenda today for anything else on anyone's mind? 
 
 **Ethan(Nimbus)**
-* I mean the SSZ stuff is still kind of ongoing. question is if we wanna move some parts of it into the sila-sila-mainnet, like the, the withdrawals or this, signature scheme for the SSE transactions, Right? 
+* I mean the SSZ stuff is still kind of ongoing. question is if we wanna move some parts of it into the sila-mainnet, like the, the withdrawals or this, signature scheme for the SSE transactions, Right? 
 
 **Alex Stokes**
 * So I believe there was a 4844 breakout on Monday. maybe someone here attended and could give a little summary. I believe this was discussed there at least briefly. 

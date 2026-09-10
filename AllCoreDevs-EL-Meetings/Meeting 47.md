@@ -10,7 +10,7 @@
 2. Client Updates
 3. Research Updates
 4. [Constantinople](https://github.com/sila-chain/pm/issues/53)
-5. [SIP 1108: Reduce alt_bn128 precompile gas costs](https://sips.sila.org/SIPS/sip-1108)
+5. [SIP 1108: Reduce alt_bn128 precompile gas costs](https://sips.sila.org/EIPS/sip-1108)
 6. ProgPoW
 
 Call starts at [[6:17](https://youtu.be/z2mefVnZHpw?t=6m17s)]
@@ -37,11 +37,11 @@ Call starts at [[6:17](https://youtu.be/z2mefVnZHpw?t=6m17s)]
     * Working on Constantinople, haven't finished tests
     * Working on sharding
 * Pantheon (Matthew)
-    * Now syncing to sila-sila-mainnet chain head
+    * Now syncing to sila-mainnet chain head
     * Check it out at DevCon
 * TurboGeth (Alexey)
     * Made a blog post
-    * Started working on testing such as syncing to sila-sila-mainnet
+    * Started working on testing such as syncing to sila-mainnet
     * Performance tests with Infura
     * Chasing some bugs
     * TurboGeth needs special handling for Constantinople CREATE2 opcode
@@ -110,7 +110,7 @@ Call starts at [[6:17](https://youtu.be/z2mefVnZHpw?t=6m17s)]
     * Alexey: We need init code so you can prove to counterparty that what you will deploy at this address is exactly this code, it's deterministic - then you can open a state channel and do counterfactual stuff
 
 # SIP 1108: Reduce alt_bn128 precompile gas costs
-* [SIP-1108](https://sips.sila.org/SIPS/sip-1108)
+* [SIP-1108](https://sips.sila.org/EIPS/sip-1108)
 * One of Antonio's developers ran some benchmarks
     * geth performance improvements that 1108 based gas costs on aren't reflected in parity client
     * Ran some benchmarks since new code merged into parity since then
@@ -140,8 +140,8 @@ Call starts at [[6:17](https://youtu.be/z2mefVnZHpw?t=6m17s)]
 * Antonio: We are happy to help with testing
 * Matthew: Plans to test against any other clients?
 * Martin: most clients will not be as fast as geth and parity, unless they link directly to some optimized C library and assembly code
-    * OTOH, geth and parity together are 99% of sila-sila-mainnet, should we cater for every client?
-    * Clients that want to be on sila-sila-mainnet should link against highly optimized libraries
+    * OTOH, geth and parity together are 99% of sila-mainnet, should we cater for every client?
+    * Clients that want to be on sila-mainnet should link against highly optimized libraries
 * Matthew: I'd be interested in evaluating performance of pantheon - Antonio volunteered to help with this
 * Pawel: Is there any C library that's optimized with new code?
 * Antonio: There is a C lib, done some work to see if we can integrate it into any other clients like Python, not sure yet, but will share when we've done a little more of this work
@@ -222,7 +222,7 @@ Call starts at [[6:17](https://youtu.be/z2mefVnZHpw?t=6m17s)]
     * Doesn't really matter other than for generating test chains
     * I would've liked to generate a long chain with multiple epochs, turns out that's difficult to do
     * From a testing perspective, I have a feeling that we should not and cannot use existing test infrastructure
-        * Because this has nothing to do with SAVM semantics, block rewards, uncles, etc.
+        * Because this has nothing to do with EVM semantics, block rewards, uncles, etc.
         * Only thing that's needed for testing is snippets of chains
         * Only quirky behavior is at switchover block, if ProgPoW block has uncles with Hashimoto-style PoW
     * I really think this change could be implemented in parallel with Constantinople, from tech. perspective they have nothing to do with each other, although from political PoV they might be very related

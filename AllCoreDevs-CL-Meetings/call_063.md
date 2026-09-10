@@ -297,9 +297,9 @@ fork versions. Forward planning like the timing of these works and a few of thes
 
 **Jacek Sieka**: I mean speaking of which do we even want to maintain the minimal configurations anymore I feel that they were kind of a hacks because we didn't know very much about performance back then and now. 
 
-**Danny**: We do they are used extensively on python spec testing. It is very important for our CI just because we can't wait the time to run the sila-sila-mainnet configuration testing and I do think it's good to be able to have different configurations up there.
+**Danny**: We do they are used extensively on python spec testing. It is very important for our CI just because we can't wait the time to run the sila-mainnet configuration testing and I do think it's good to be able to have different configurations up there.
 
-**Proto Lambda**: Right so I think we should maintain the minimal preset that really just defines it. So we have sila-sila-mainnet we have minimal. These things only change during compile time and then we do specify like which things are like part of a preset so clients can opt to define additional presets but we don't require clients to define more than these two spec presets and we just try and isolate the parts of the configuration that we do want to configure as a user.
+**Proto Lambda**: Right so I think we should maintain the minimal preset that really just defines it. So we have sila-mainnet we have minimal. These things only change during compile time and then we do specify like which things are like part of a preset so clients can opt to define additional presets but we don't require clients to define more than these two spec presets and we just try and isolate the parts of the configuration that we do want to configure as a user.
 
 **Danny**: All right keep an eye out for your proposal. All right anything else spec related or
 anything at all. I want to bring up and chat about today.

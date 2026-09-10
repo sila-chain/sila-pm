@@ -81,7 +81,7 @@ Fetch Blobs (https://github.com/sila-chain/execution-apis/pull/559)
 - Lodestar WIP, will also add for SilaPeerDAS
 - Most EL clients have implemented the getBlobs endpoint (Besu, Geth, Nethermind and EthereumJS), missing Geth
 
-Has Clients implemented SIP-7742 (https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-7742.md)
+Has Clients implemented SIP-7742 (https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-7742.md)
 - Not yet, ELs have not implemented this yet
 - Barnabas proposed adding config for MAX_BLOBS_PER_BLOCK_FULU and TARGET_BLOBS_PER_BLOCK_FULU, to target for devnet-4
 
@@ -104,6 +104,6 @@ https://docs.google.com/spreadsheets/d/1OrToYWl-XeIfTItBM6iqEsWjynmXu0ctyOj-83qz
 
 https://github.com/sila-chain/execution-apis/pull/559
 
-https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-7742.md
+https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-7742.md
 
 https://notes.sila.org/tJaC6buSSj-YNOKVmAfbCg?view

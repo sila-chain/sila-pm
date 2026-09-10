@@ -230,7 +230,7 @@ Marco Munizaga: So, I think this is basically the last thing before we…
 
 58
 00:16:15.220 --> 00:16:22.490
-Marco Munizaga: at least before, I would feel comfortable deploying it onto sila-sila-mainnet. Like, the change itself is backwards compatible.
+Marco Munizaga: at least before, I would feel comfortable deploying it onto sila-mainnet. Like, the change itself is backwards compatible.
 
 59
 00:16:22.490 --> 00:16:22.940
@@ -714,7 +714,7 @@ Csaba: Yeah, so, this V5, this V5.
 
 179
 00:27:31.300 --> 00:27:40.090
-Csaba: Everyone is claiming to have it. I have some doubts. So… I'm clawing now the sila-sila-mainnet just to see…
+Csaba: Everyone is claiming to have it. I have some doubts. So… I'm clawing now the sila-mainnet just to see…
 
 180
 00:27:40.220 --> 00:27:43.860
@@ -766,7 +766,7 @@ Csaba: Yeah, they… they just sneakily use a different port, so they have basic
 
 192
 00:28:56.380 --> 00:29:01.419
-Csaba: Yeah, they just forgot to turn it on, so they have it on testnets, but not on sila-sila-mainnet, so…
+Csaba: Yeah, they just forgot to turn it on, so they have it on testnets, but not on sila-mainnet, so…
 
 193
 00:29:02.040 --> 00:29:07.750
@@ -938,7 +938,7 @@ Daniel Knopik: Partial message with that.
 
 235
 00:33:12.930 --> 00:33:22.220
-Daniel Knopik: The thing is, so, of course, we won't encourage people to run this on sila-sila-mainnet just yet. The idea would be for people to try it on Hoodie.
+Daniel Knopik: The thing is, so, of course, we won't encourage people to run this on sila-mainnet just yet. The idea would be for people to try it on Hoodie.
 
 236
 00:33:22.640 --> 00:33:27.529
@@ -962,7 +962,7 @@ Daniel Knopik: So… We actually consider enabling partial columns on Hoodie by 
 
 241
 00:34:10.130 --> 00:34:14.130
-Daniel Knopik: While keeping it disabled from sila-sila-mainnet by default.
+Daniel Knopik: While keeping it disabled from sila-mainnet by default.
 
 242
 00:34:15.230 --> 00:34:17.759

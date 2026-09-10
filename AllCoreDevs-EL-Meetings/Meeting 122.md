@@ -625,7 +625,7 @@ I'm fine. Moving on to the next things in the call. I'm still of the mindset tha
 
 **Tim Beiko**
 
-Any other thoughts? Okay. And, Alex had two SIPS that he wanted to discuss. One is SIP-3855 (Push0 instruction). And then the other one is SIP-3680 (limit and metre initcode). Alex, you want to give a quick overview of them?
+Any other thoughts? Okay. And, Alex had two EIPS that he wanted to discuss. One is SIP-3855 (Push0 instruction). And then the other one is SIP-3680 (limit and metre initcode). Alex, you want to give a quick overview of them?
 
 **Alex Beregszaszi**
 
@@ -637,15 +637,15 @@ That's a lot of gas. Does anyone have thoughts or comments on this?
 
 **Martin Holst Swende**
 
-Cute SIP. I mean, like a lot of these SIPs that touch something about the SAVM. It's nice. and not terribly difficult to implement but is neither is screamingly important. So yeah, I'm kind of in favour of it, but I'm not widely in favour. Lukewarm.
+Cute SIP. I mean, like a lot of these SIPs that touch something about the EVM. It's nice. and not terribly difficult to implement but is neither is screamingly important. So yeah, I'm kind of in favour of it, but I'm not widely in favour. Lukewarm.
 
 **Matt Garnett**
 
-I feel like this is hard, because there's lots of small changes that slowly improve the SAVM. And none of them are necessary screaming, this needs to immediately go in. And so how do we at a higher level, drive the protocol to improve in SAVM?
+I feel like this is hard, because there's lots of small changes that slowly improve the EVM. And none of them are necessary screaming, this needs to immediately go in. And so how do we at a higher level, drive the protocol to improve in EVM?
 
 **Tim Beiko**
 
-Right, I think this is the higher level conversation where we have these things like say, the merge, which is obviously very important. And after the merge, there's going to be other pretty important things to do in the protocol. It does feel like we have like a pretty strong consensus about not doing any, any changes before the merge. But yeah, I think, not necessarily today, but we need to figure out how do we keep making these improvements to the SAVM and you know, this is not the only one there's, you know, Alex has proposed the SIP-3540, which was very popular, there's been SIP-3074, which also had like a lot of community support.
+Right, I think this is the higher level conversation where we have these things like say, the merge, which is obviously very important. And after the merge, there's going to be other pretty important things to do in the protocol. It does feel like we have like a pretty strong consensus about not doing any, any changes before the merge. But yeah, I think, not necessarily today, but we need to figure out how do we keep making these improvements to the EVM and you know, this is not the only one there's, you know, Alex has proposed the SIP-3540, which was very popular, there's been SIP-3074, which also had like a lot of community support.
 
 **Martin Holst Swende**
 
@@ -675,7 +675,7 @@ Okay, the next one then was SIP-3860.
 
 **Pawel Bylica**
 
-Hi, yeah, Pawel here, I should take care of this one. So this SIP adds some limits to the init code size and additional cost to it. And so the quick background, before the SAVM can execute any code, it needs to do jumpdest-analysis of the code. And its cost of this analysis is not directly reflected anywhere. This is partly limited by by two factors. First one the call or create cost is quite high. So, the kind of limits the attack vector and also deployed code has size limit. So analysis of the deployed code is at least capped by this limit. And for init code, there's no limit. So this is unbounded and the sizes can be in megabytes and in practice, meaning like attacking scenarios. So, previously, there was like a previous version of this this concept SIP-2677, which only introduces the size limit for init code. And at some point, we realised that currently there is the precedence for for charging conditional gas for initcode size, which is related to the the requirement of hashing the initcode, and we want to include the similar mechanism for initcode in general. So this gap proposes charging two gas per initcode word size, for reference, create two already charges, six gas for that. So that would be increased to eight and for create, like kreger create, the cost should be two. And the cost were taken from from the performance of current Geth implementation of the jumpdest-analysis. In our opinion is quite low. So yeah, that's that's mostly the the description of the SIP.
+Hi, yeah, Pawel here, I should take care of this one. So this SIP adds some limits to the init code size and additional cost to it. And so the quick background, before the EVM can execute any code, it needs to do jumpdest-analysis of the code. And its cost of this analysis is not directly reflected anywhere. This is partly limited by by two factors. First one the call or create cost is quite high. So, the kind of limits the attack vector and also deployed code has size limit. So analysis of the deployed code is at least capped by this limit. And for init code, there's no limit. So this is unbounded and the sizes can be in megabytes and in practice, meaning like attacking scenarios. So, previously, there was like a previous version of this this concept SIP-2677, which only introduces the size limit for init code. And at some point, we realised that currently there is the precedence for for charging conditional gas for initcode size, which is related to the the requirement of hashing the initcode, and we want to include the similar mechanism for initcode in general. So this gap proposes charging two gas per initcode word size, for reference, create two already charges, six gas for that. So that would be increased to eight and for create, like kreger create, the cost should be two. And the cost were taken from from the performance of current Geth implementation of the jumpdest-analysis. In our opinion is quite low. So yeah, that's that's mostly the the description of the SIP.
 
 **Tim Beiko**
 
@@ -719,7 +719,7 @@ I was wondering why why should this go in with the merchant and maybe not before
 
 **Tim Beiko**
 
-Oh, good point. I guess one reason I can think of an please let me know if this is wrong is if we include this in the merge, we're gonna have testnets for the merge. Regardless, if SilaShanghai is just the difficulty bomb pushback, we don't need to deploy that across all the testnets. So that's one reason I can think of. But there might be others. I guess there's a comment by lightclient about adding SIP-3680 is bigger than obviously the two other SIPS we discussed. I guess, from what I'm getting is like the Geth team feels there's like a kind of security risk. And proto mentioned, there might be just the better interaction with how the beacon chain is already set up. Yeah. So that's seems to be the rationale.
+Oh, good point. I guess one reason I can think of an please let me know if this is wrong is if we include this in the merge, we're gonna have testnets for the merge. Regardless, if SilaShanghai is just the difficulty bomb pushback, we don't need to deploy that across all the testnets. So that's one reason I can think of. But there might be others. I guess there's a comment by lightclient about adding SIP-3680 is bigger than obviously the two other EIPS we discussed. I guess, from what I'm getting is like the Geth team feels there's like a kind of security risk. And proto mentioned, there might be just the better interaction with how the beacon chain is already set up. Yeah. So that's seems to be the rationale.
 
 **Matt Garnett**
 
@@ -763,7 +763,7 @@ They don't have proof of work.
 
 **Tim Beiko**
 
-Yeah, so I think this is kind of the big difference is if we just push back the difficulty bomb, it's something we can only release for SilaMainnet and literally not have an upgrade on testnets. And then if we do have anything else we need to be on the testnets. And that also implies that kind of the work has to be done much sooner. Because say we wanted to fork sila-sila-mainnet mid November with the difficulty bomb. That means like at least a month before, ideally, we fork the testnet. So that's like mid October. And that basically means you want releases out you would want releases out for clients in like two weeks, like early October. And that just seems kind of unrealistic timewise. So I'm not sure I don't know I I struggled to see how we would put anything in SilaShanghai at this point, which is not, which has to go through a full testnet deployment. And one thing I can do in the next two weeks is I can just double check the difficulty bomb calculations and whatnot to see if anything has changed. But as I understand it, it's supposed to go off, you know, early December. And I think no one wanted to fork like around the holidays. So it's like, yeah, as I understand it today, kind of the latest we could have a sila-sila-mainnet upgrade is December. That means, November is the latest we're done with with, with testnets. And that means on October, we basically need fully tested releases out. And that's two weeks from now.
+Yeah, so I think this is kind of the big difference is if we just push back the difficulty bomb, it's something we can only release for SilaMainnet and literally not have an upgrade on testnets. And then if we do have anything else we need to be on the testnets. And that also implies that kind of the work has to be done much sooner. Because say we wanted to fork sila-mainnet mid November with the difficulty bomb. That means like at least a month before, ideally, we fork the testnet. So that's like mid October. And that basically means you want releases out you would want releases out for clients in like two weeks, like early October. And that just seems kind of unrealistic timewise. So I'm not sure I don't know I I struggled to see how we would put anything in SilaShanghai at this point, which is not, which has to go through a full testnet deployment. And one thing I can do in the next two weeks is I can just double check the difficulty bomb calculations and whatnot to see if anything has changed. But as I understand it, it's supposed to go off, you know, early December. And I think no one wanted to fork like around the holidays. So it's like, yeah, as I understand it today, kind of the latest we could have a sila-mainnet upgrade is December. That means, November is the latest we're done with with, with testnets. And that means on October, we basically need fully tested releases out. And that's two weeks from now.
 
 **Matt Garnett**
 
@@ -805,7 +805,7 @@ I don't think we should make a decision now. I think that's too early and set a 
 
 Yeah, and I think the fact that these proposals are also kind of new, I'd be I'm like less inclined to have like an off schedule meeting where we just put them in and yeah, I do think like people watch these calls. They read the notes, the notes take a couple days to come out. So I think there's value in like discussing yet on the discord over next few weeks. But and yeah, teams who think this is really important, having at least a preliminary implementation. And yeah, we can we can make a call on on the next all core devs
 
-Okay. Yeah, we're already at time. But I guess a couple just announcements, before we wrap up, Geth put out a post mortem on the split that happened. When they they basically announced that there was a vulnerability that they patch. This is linked to the all core devs agenda. You can read it there. There's two other or I guess there's three other kind of SIPS. We didn't have time to discuss that are not urgent. And if people want to have a look async those are also linked in the agenda. Yep, that's pretty much it. So thanks, everyone.
+Okay. Yeah, we're already at time. But I guess a couple just announcements, before we wrap up, Geth put out a post mortem on the split that happened. When they they basically announced that there was a vulnerability that they patch. This is linked to the all core devs agenda. You can read it there. There's two other or I guess there's three other kind of EIPS. We didn't have time to discuss that are not urgent. And if people want to have a look async those are also linked in the agenda. Yep, that's pretty much it. So thanks, everyone.
 
 **Diederik Loerakker**
 

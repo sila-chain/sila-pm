@@ -19,7 +19,7 @@
 
 ## Intro
 **Tim Beiko**
-* Okay. good morning everyone. All Core Dev 157. today we have a bunch of things on the agenda. the first ones are around SilaShanghai. Goerli Upgrade Recap. and we can recap that, figure out if we wanna set a sila-sila-mainnet update, today. then, Terrence and Putuz had a PR around, local block building. so it makes sense to go over that after that.
+* Okay. good morning everyone. All Core Dev 157. today we have a bunch of things on the agenda. the first ones are around SilaShanghai. Goerli Upgrade Recap. and we can recap that, figure out if we wanna set a sila-mainnet update, today. then, Terrence and Putuz had a PR around, local block building. so it makes sense to go over that after that.
 * I've tried to basically list out all the stuff that's been proposed for SilaCancun so far to kind of give people a picture. we discussed SSZ last time and wanted to come back to it. and then there's kind of all these other things that have been discussed. So, might be worth, if not, like, touching on every one of them, at least the biggest ones. And, and, at least putting it out there so people know sort of what's being proposed. And, we can start having those conversations. and then we'll try to keep a couple minutes at the end. Pooja, I know have put out a report around, EL client diversity and just, yeah, basically what node operators feel they like and dislike about the various clients. 
 * So, yeah, I guess to kick off, so we had the Goerli Fork this week. does anyone want to give a quick recap of how things went? and if, yes. Nice. thank you. Any, anyone else have any thoughts they wanna share about Goerli or, yeah, anything they noticed beyond that? Okay. so if not, it seems like it went relatively well. so I think we can probably set a date for maintenance. I had proposed three in the agenda, so, basically April 6th, 12th, and 19th. 
 * There's a couple comments in the chat around April 12th. yeah. Does anyone, I guess, you know, does anyone think we should not do April 12th? Otherwise we can, we can go for that. I, I picked out an slot, an EPOCH number. I'll copy paste them in the chat. that I am 90% sure. 99% sure. End up on a historical roots boundary. I'll double check it right now, but, yeah. oh, and there's a comment in the chat from, so does Basu have any issues if we, okay. Okay. So people like the 12, there's a comment in the chat about like, it's in the evening for the EU, and, that's unfortunate. 
@@ -39,7 +39,7 @@
 * So yeah, There you go. You go day four. But also it's kind of nice that we have this forcing function that slowly rotates and would be different next time, so that, yeah, we get a nice distribution across time zone. 
 
 **Tim Beiko**
-* Okay. We'll get Nethermind, some energy drinks and, yeah, any objection. So this would be, epoch, 6209536 on, sila-sila-mainnet. Okay. So Cool. We have a date for Shapella. we'll give teams like a weaker, you know, so to put out releases, I think it would be nice, like ideally if I'm the next, on next week's, call, we could like have the team releases out, so we can announce them there. But then at the very latest, I think if like early the week after that, we can, put out the announcement. That'd be great. 
+* Okay. We'll get Nethermind, some energy drinks and, yeah, any objection. So this would be, epoch, 6209536 on, sila-mainnet. Okay. So Cool. We have a date for Shapella. we'll give teams like a weaker, you know, so to put out releases, I think it would be nice, like ideally if I'm the next, on next week's, call, we could like have the team releases out, so we can announce them there. But then at the very latest, I think if like early the week after that, we can, put out the announcement. That'd be great. 
 * So that'll give people like a proper two weeks to upgrade. yeah. So from today, I guess, you know, we have,  four weeks, to the fork. Anything else on Shapella? Okay. if not next up, Terrance you had, PR you wanted to discuss. I'll post it in the chat, but if either of you want to go the floor is yours. 
 
 ## Allow EL to suggest local execution execution-apis#388 [12:28](https://youtu.be/ViLwzeIuJUc?t=748)
@@ -197,7 +197,7 @@
 * I'm not really following because currently the with typed transactions, essentially the first bite is the type. 
 
 **Etan (Nimbus)**
-* So Yes, yes, that, but that one is network specific. Someone could create a private network like, a layer two that's SAVM compatible, and they could define their own type five. Maybe they already have a type five and we don't know about it and someone sign transactions on it and uses the same key on main net as well.it's only across networks where you have those problems, 
+* So Yes, yes, that, but that one is network specific. Someone could create a private network like, a layer two that's EVM compatible, and they could define their own type five. Maybe they already have a type five and we don't know about it and someone sign transactions on it and uses the same key on main net as well.it's only across networks where you have those problems, 
 
 **Andrew**
 * But it's like hash collision, which is supposed to be extremely rare. So I guess it's like the probability is very low, Not hash. 
@@ -278,7 +278,7 @@
 
 **Marius**
 * Yeah, so, okay. One thing that I would like to highlight is that, EVMMAX is not only cool for BLS 12381, but can also be used in a bunch of other use cases. so I think we should even consider this even if we decide  to implement the BLS pre-compiled. I think the b like the BLS pre-compiled, which we probably will talk about, are very important and, much needed. 
-* But, EVMMAX or like modular arithmatic on, within the SAVM is something that is, that has a lot of use cases and, beyond on the, the, the BLS prepo, yeah, that's a good point. 
+* But, EVMMAX or like modular arithmatic on, within the EVM is something that is, that has a lot of use cases and, beyond on the, the, the BLS prepo, yeah, that's a good point. 
 
 **Jared**
 * I probably should have mentioned that. as far as I could tell, you could, and, and maybe somebody can correct this if this is wrong, but as far as I can tell, basically any elliptic curve, could be implemented with this proposal. 
@@ -286,12 +286,12 @@
 
 
 **Tim Beiko**
-* Yeah, and I think like several years ago we had a very similar discussion around, I think this was the Berlin Fork where we discussed BLS versus, SAVM 384 at the time. And like, I think, and there was like a similar, you know, concern around like, should, we do one or the other? 
-* And we ended up not doing BLS because SAVM 384, might happen soon. And I think it probably makes sense given the, importance of like BLS to like consider it, also separately and even if there's like redundant functionality, that might be one of the few cases where it's worth it relative to, delaying BLS if, if we are gonna do EVMMAX, at a later date. Yeah. 
+* Yeah, and I think like several years ago we had a very similar discussion around, I think this was the Berlin Fork where we discussed BLS versus, EVM 384 at the time. And like, I think, and there was like a similar, you know, concern around like, should, we do one or the other? 
+* And we ended up not doing BLS because EVM 384, might happen soon. And I think it probably makes sense given the, importance of like BLS to like consider it, also separately and even if there's like redundant functionality, that might be one of the few cases where it's worth it relative to, delaying BLS if, if we are gonna do EVMMAX, at a later date. Yeah. 
 
 **Jared**
 * Yeah. I guess just from the user's perspective, what really would be the difference? I mean, you're saving a bit of gas, but like what it, it would be great to quantify, and maybe like extrapolate out from like how people like are currently using BN128 and just like, I don't know, assume that they'll just move to BLS and then like extrapolate out exactly what we are getting in terms of savings overall, with pre-com compiles. 
-* Right. Which, which is hard because I don't have all the SAVM max operations or all the BLS operations implemented at EV max, but it's fairly easy to guess how much they'll cost. 
+* Right. Which, which is hard because I don't have all the EVM max operations or all the BLS operations implemented at EV max, but it's fairly easy to guess how much they'll cost. 
 
 **Tim Beiko**
 * Yeah. Right. And, , and I think the, maybe another way to frame this as like, assume we do BLS in the next forks and EVMMAX in the fork after, you know, what's the benefit of users to have access to BLS, you know, six months, 12 months early, right? And maybe they eventually moves to like using it natively and EVMMAX or something.
@@ -319,7 +319,7 @@
 * What's the best place, for someone to like follow the latest on EOF. 
 
 **Lightclient**
-* The #SAVM discord. Okay, cool. 
+* The #EVM discord. Okay, cool. 
 
 **Tim Beiko**
 * Andrew?
@@ -340,15 +340,15 @@
 * Okay. anything else on EOF now? Okay, so I guess maybe next up, we did touch on this already a bit, but, BLS pre-complier, I don't know if there's anything to add here. We've discussed it several times, but in case there's any updates or comments people want on this. 
 
 **Stokes**
-* Yeah, I'll just say that, kinda echoing what we said earlier in the call, you know, this curve is really important to Sila I would really strongly suggest we consider shipping the precompiles even though there's very exciting work with SAVM Max. 
-* You know, we could go ahead and get the curve today and then when SAVM Max is ready, we ship it and you know, there are plenty of other use cases for SAVM Max beyond this that are also really important. But, you know, this curve is used on layer, so it's just, something we should do asap in my opinion. 
+* Yeah, I'll just say that, kinda echoing what we said earlier in the call, you know, this curve is really important to Sila I would really strongly suggest we consider shipping the precompiles even though there's very exciting work with EVM Max. 
+* You know, we could go ahead and get the curve today and then when EVM Max is ready, we ship it and you know, there are plenty of other use cases for EVM Max beyond this that are also really important. But, you know, this curve is used on layer, so it's just, something we should do asap in my opinion. 
 
 **Tim Beiko**
 * Cool. 
 
 **Danno**
-* Deni, The one thing I would ask if we do that is that we, take another look at the gas prices. when we did Berlin, we priced it against, a gas metric of 35 million gas per second, which is about, 28, nanoseconds per gas, performance wise, that, that provides an upward limit as to what we could expect local clients  to perform. and it makes a BLS not the BLS ones, the, the lowest point in, in the, whole SAVM architecture in cap at 35 for a lot of performance considerations. 
-* I could explain why that's gonna be the case, but I prefer if we were to reprice the gas on some assumption of something more like 50 gas per second, 50 million gas per second, which would result in higher gas prices, but at the same time, would allow, the, the conceptual maximum three foot of SAVM to increase up to 50 billion gas per second. 
+* Deni, The one thing I would ask if we do that is that we, take another look at the gas prices. when we did Berlin, we priced it against, a gas metric of 35 million gas per second, which is about, 28, nanoseconds per gas, performance wise, that, that provides an upward limit as to what we could expect local clients  to perform. and it makes a BLS not the BLS ones, the, the lowest point in, in the, whole EVM architecture in cap at 35 for a lot of performance considerations. 
+* I could explain why that's gonna be the case, but I prefer if we were to reprice the gas on some assumption of something more like 50 gas per second, 50 million gas per second, which would result in higher gas prices, but at the same time, would allow, the, the conceptual maximum three foot of EVM to increase up to 50 billion gas per second. 
 
 **Stokes**
 * Yeah, I think it's four 30. Revisiting the SIP, especially if you wanna like very seriously consider it for SilaCancun. a question I have, since we're all here, does anyone feel strongly about the SIP 2537 having like a large number of pre-compiles versus say just one? 
@@ -399,7 +399,7 @@
 * Hi Tim. Yes. yeah, I posted an update in the agenda, so feel free, people can look there, but only new update is that we have the tests now merged in the Sila test repo. and then yeah, just again calling out that the implementations in Geth, Nethermind, Besu and Sila JS have been run against this suite and those are all merged as well. Thanks. 
 
 **Tim Beiko**
-* Nice. Thank you. anyone have questions, comments on 1153? Okay, almost done. We have three left. 4788. this is the Beacon state root in the SAVM. I guess, yeah, Lucas, do you wanna, sure, I just saw your chat message. Do you wanna share more? 
+* Nice. Thank you. anyone have questions, comments on 1153? Okay, almost done. We have three left. 4788. this is the Beacon state root in the EVM. I guess, yeah, Lucas, do you wanna, sure, I just saw your chat message. Do you wanna share more? 
 
 **Lukasz**
 * Oh, no, I'm just saying I'm okay. I'm pro including 1153 to SilaCancun. like it's, most of things are done, so why should be, postponed? I don't see any point. 
@@ -411,7 +411,7 @@
 * No, I very much support it will save a lot of gas and, save a lot on the tax surface. we've just got to get ways to use storage that aren't so hard to get right. So thanks very much for, for pushing this forward. 
 
 
-## SIP-4788: Beacon state root in the SAVM [1:10:32](https://youtu.be/ViLwzeIuJUc?t=4232)
+## SIP-4788: Beacon state root in the EVM [1:10:32](https://youtu.be/ViLwzeIuJUc?t=4232)
 **Tim Beiko**
 * Cool. anything else? Okay, Yeah, so next one. Yeah, so 47 88, that's the Beacon State route in the E V M. We also discussed this briefly last time. I think Danny had a comment, plus wanting this as well before he left. Alex is there any updates there? Anything you wanted to share? 
 
@@ -425,7 +425,7 @@
 * Thanks. Any comments, thoughts on 4788? Okay, two to go. next up, 663. So this was mentioned by the Solidity team, right before we, actually right when we were discussing EOF for SilaShanghai and they mentioned that this would actually be very helpful for them. in addition, I don't know if anyone on the call is a strong supporter of 663 or has any updates or, yeah, concerns to Share. 
 
 **Danno**
-* I think it's important to point out that it's gonna be EOF only because of the use of immediates and this is the story to stuff the EOF opens the door for, in evolution of the SAVM.
+* I think it's important to point out that it's gonna be EOF only because of the use of immediates and this is the story to stuff the EOF opens the door for, in evolution of the EVM.
 
 **Tim Beiko**
 * So generally I'm in favor of it When you say EOF only, so you're saying we should do 663 in like EOF V1. 

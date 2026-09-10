@@ -128,7 +128,7 @@ So this is the [link]( https://gitter.im/sila/AllCoreDevs?at=5d31988ae2d1aa6688d
 
 **Tim**: yes 
 
-**Alex**: I think 1283 is implemented in most of the clients. But, the last call we decided it should go together with [1706](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-1706.md) which is the extra check. I don't think it's implemented anywhere. But that's where Pawel build up his other option. We should introduce kind of new semi static mode.
+**Alex**: I think 1283 is implemented in most of the clients. But, the last call we decided it should go together with [1706](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-1706.md) which is the extra check. I don't think it's implemented anywhere. But that's where Pawel build up his other option. We should introduce kind of new semi static mode.
 
 **Peter**: Can you please link the SIP because I've no idea what you guys are talking about? 
 
@@ -147,29 +147,29 @@ My question is maybe to Peter and the others on the call. I do like the semi sta
 
 **Tim**: So is it worth moving on to something else or do we want to wrap up this discussion ? Or does everyone just need time to look at the different options?
 
-**Peter**: Just to react, I haven't seen this semi-static thing up until now or I somehow missed it. But personally I don't really like the idea of introducing yet another internal states to the SAVM that tracks whatever. I mean from my perspective, we're going to shoot ourselves in the foot eventually with the more these behavioral subtleties we introduce. So, if there 's an alternative that can work around and not having these special cases then I would go with that. 
+**Peter**: Just to react, I haven't seen this semi-static thing up until now or I somehow missed it. But personally I don't really like the idea of introducing yet another internal states to the EVM that tracks whatever. I mean from my perspective, we're going to shoot ourselves in the foot eventually with the more these behavioral subtleties we introduce. So, if there 's an alternative that can work around and not having these special cases then I would go with that. 
 
-**Danno**: What alternative is to hide it behind the versioning flag. Only allowed 1283 to be uses on newly deployed code with the 1702. 1702 is the version SIP. That's  a discussion later down - which of these SIPs we have, are subjective to versioning and which ones are going to be under all versions of the SAVM? On the section the one that's enumerated 1706 is to use versioning. But people felt that they wanted to have this available to previous existing Dapp developers because we try it on Constantinople. There is some some feeling we should try it at least subversion 0.
+**Danno**: What alternative is to hide it behind the versioning flag. Only allowed 1283 to be uses on newly deployed code with the 1702. 1702 is the version SIP. That's  a discussion later down - which of these SIPs we have, are subjective to versioning and which ones are going to be under all versions of the EVM? On the section the one that's enumerated 1706 is to use versioning. But people felt that they wanted to have this available to previous existing Dapp developers because we try it on Constantinople. There is some some feeling we should try it at least subversion 0.
 
-**Peter**: So honestly, I'm not a fan of version accounts because then we have to maintain two SAVM. That's a different discussion but I would really like to not have special features for different versions as much as possible.
+**Peter**: So honestly, I'm not a fan of version accounts because then we have to maintain two EVM. That's a different discussion but I would really like to not have special features for different versions as much as possible.
 
 **Danno**: This is more different accounting in different versions not as a  special featuring different versions.
 
 **Peter**: But if there's a way to solve it for uniformly for everybody then why would we pick a solution that doesn't solve it for old accounts?
 
 **Alexey**: My comment on the versioning SIP. Originally the real reason why it came up,  there was two reasons why it came up 
-1. first of all was the SIP 615 which was the static jump and extensions to the SAVM which has now  been withdrawn.
+1. first of all was the SIP 615 which was the static jump and extensions to the EVM which has now  been withdrawn.
 2. then did another reason for that was the potential introduction and Ewasm engine into the Eth1.0.0, which is now also not very uncertain, probably not going to happen. 
 So from my point of view, we lost the appeal for it. We lost the real initial reason why the account versioning was proposed.
 
-**Danno**: So, that's the discussion I want to have after we get it some resolution today on some of the SIPs was number two on the discussion. I kind of agree if we don't have 615 or SAVM then, do we need versioning now or do we bring it in then? But, do we  want to table 1283 and discuss versioning or do we want get resolution on 1283 first?
+**Danno**: So, that's the discussion I want to have after we get it some resolution today on some of the SIPs was number two on the discussion. I kind of agree if we don't have 615 or EVM then, do we need versioning now or do we bring it in then? But, do we  want to table 1283 and discuss versioning or do we want get resolution on 1283 first?
 
-**Peter**: I just wanted to say that if there is a version of topic 3 that can solve issues for all the accounts and doesn't require versioning and doesn't require behavioral changes to the SAVM. I mean adding extra subtle SAVM modes then I would just go with that. Problem solve self-containe the SIP, done. 
+**Peter**: I just wanted to say that if there is a version of topic 3 that can solve issues for all the accounts and doesn't require versioning and doesn't require behavioral changes to the EVM. I mean adding extra subtle EVM modes then I would just go with that. Problem solve self-containe the SIP, done. 
 
 
 **Danno**: I think it's a trilemma. I don't think we can get all three. 
 
-**Alexey**: Well I think this is what the SIP 2200 does, right? It basically the combination of the old one, 1283 + extra fix  for the stipends and it doesn't introduce any extra SAVM features. I think that's what it is.
+**Alexey**: Well I think this is what the SIP 2200 does, right? It basically the combination of the old one, 1283 + extra fix  for the stipends and it doesn't introduce any extra EVM features. I think that's what it is.
 
 **Peter**: That's exactly what I wanted to say that if this last version 00 let me to 00 fix, then that seems like the correct choice to make and it seems like a good thing to have in the next hardfork. So unless somebody can actually say a legitimate technical reason why 2200 shouldn't go in, I don't see a reason why it shouldn't go in.
 
@@ -211,9 +211,9 @@ So, I think at the very least it make sense to use 2200 as this sort of going fo
 
 **Bryant**: I also think you'd like the political contentiousness of it having it in Istanbul would be a risk for Istanbul being adopted? I think the majority of people would prefer to be its own separate fork.
 
-**Peter**: What I want to say is that ProgPOW is really ultra separate SIP that could be pulled even at the last minute. So one alternative would be to consider it doable and if the auditors come back and tell us that it's a no-go for whatever reason. I think it should be really easy and simple to just tear it even at the last moment. From this perspective, it's a bit tough and bit of an easier SIP then, than other ones which mess with the SAVM. Because this one is just the stand-alone separate thing that doesn't touch consensus, that doesn't touch anything or I mean doesn't touch execution concerns.
+**Peter**: What I want to say is that ProgPOW is really ultra separate SIP that could be pulled even at the last minute. So one alternative would be to consider it doable and if the auditors come back and tell us that it's a no-go for whatever reason. I think it should be really easy and simple to just tear it even at the last moment. From this perspective, it's a bit tough and bit of an easier SIP then, than other ones which mess with the EVM. Because this one is just the stand-alone separate thing that doesn't touch consensus, that doesn't touch anything or I mean doesn't touch execution concerns.
 
-**Danno**: What is the last moment, before the testnet launch or the sila-sila-mainnet launch?
+**Danno**: What is the last moment, before the testnet launch or the sila-mainnet launch?
 
 **Peter**: Well, I had the suggestion that instead of the hardforking the testnet what we could do is create the so called "shadow fork", where we don't upgrade to the testnet rather we just create a side chain for the test. So we still propagate the same transaction, we just start executing with this new engine. It would be public but clients who don't buy before switch over, they could rather have a special flag that says play around with this testnet. And then you have the feedback that you can see the clients agree with each other. You can test everything but it's not live yet officially. The chain will be discarded anyway or could be discarded. I don't really want to figure out the new forking strategies at this point.
 
@@ -247,7 +247,7 @@ There was a concern about the specification. We wanted to prepare it for this ca
 **Danno**: SO, I have been the one asking for four addresses. One of **my big concerns** is we **have to read the byte stream and interpret and based on that branch on four different functions for the gas calculation**. If we're doing four separate not just constants but straight up different formulas in the gas. It sounds like something that should be split up into at least four and because there's a G2 G3 separation 7 methods to calculate the gas so we don't have to basically run the library program to calculate the gas. If we keep the gas function where there's seven main branches get seven main functions.
 The **second thing** is also **this matches the design pattern of what went on the EC with the RPM 128 function**. There is a pad, I multiply the pairing check . This library adds an exponentiation and is also for G1 and G2. So, I also follow what we've been doing with our other pre-compiled were there. There is basically one function and not one giant function hiding seven different functions with four different gas calculation formulas. I think it would be a better reflection of the true complexity of what's going on here.  I think parameterizing the particular curves is fine but I think the operation  should match existing pattern we have without.
 
-**Alexey**: I  actually just now thought about it.  I know a lot of people do not read the bytecode but some people do.  when you read the bytecode and you see the pre-compiled code, that basically put the address of the caller of the other pre-compiled onto the stack and then you do another six things in the stack and I need you to call. And usually if you know what you're calling, you can actually see from the bytecode that you're actually pulling.  However if you encode the function as the first byte of the parameter than it actually ends up in memory somewhere and it might not be obvious where it is. I guess, from the SAVM bytecode readability will be easier to identify which precompile is calling. And might not also be easier from a static analysis point of view. But as I said that not many people read but sometimes I do. 
+**Alexey**: I  actually just now thought about it.  I know a lot of people do not read the bytecode but some people do.  when you read the bytecode and you see the pre-compiled code, that basically put the address of the caller of the other pre-compiled onto the stack and then you do another six things in the stack and I need you to call. And usually if you know what you're calling, you can actually see from the bytecode that you're actually pulling.  However if you encode the function as the first byte of the parameter than it actually ends up in memory somewhere and it might not be obvious where it is. I guess, from the EVM bytecode readability will be easier to identify which precompile is calling. And might not also be easier from a static analysis point of view. But as I said that not many people read but sometimes I do. 
 
 **Alex G.**: Okay so we can switch to this. Does anybody disagree with **switching to having separate addresses** for the operations? 
 It seems  there is consensus, so we will just change the code to this. 
@@ -346,7 +346,7 @@ My thought is we have two realistic options. 1 month or to delay 3 months becaus
 
 **Danno**: Yeah because we need the time to sit through all the entries.
 
-**Tim**: Does anyone disagrees with this from schedule perspective to break Istanbul out in two parts - have our agreed upon schedule which implies we fork a testnet in 2-3 weeks time and then sila-sila-mainnet upgrades will happen in January and July. 
+**Tim**: Does anyone disagrees with this from schedule perspective to break Istanbul out in two parts - have our agreed upon schedule which implies we fork a testnet in 2-3 weeks time and then sila-mainnet upgrades will happen in January and July. 
 
 **Peter**: I am still convinced, we can not fork the testnet in 2 weeks time because there are SIPs to be implemented, somewhat tested because people still rely on testnet so you can't just blow it up. After it's implemented and semi tested or it seems to be solid butthen clients need to do the releases, people need to upgrade to testnet otherwise testnet going to fall apart and become unusable. 
 You need I would say after everything for the SIPs are  implemented they seem to be working okay cross client mini test, that also work, at that point if clients with the release; I would say you still need two weeks to convince people to operate and I think shorter is not realisti. it's just going to be chaos.
@@ -379,9 +379,9 @@ You need I would say after everything for the SIPs are  implemented they seem to
 
 **Tim**: SO, you're saying, you would be comfortable keeping the mid October date but perhaps pushing the testnet dates.
 
-**Peter**: yes. If we want to really push Istanbul then I would say if we pick up late August or end of August beginning of September as the hardfork for the Istanbul to put on testnet Ropsten. Then depending on the SIPs, if they're implementable within 1-2 weeks,thats realistic. that we can release within 2 weeks and let everybody upgrades within 2 weeks. If we keep this timeline and I don't think we need to push the sila-sila-mainnet Istanbul further.
+**Peter**: yes. If we want to really push Istanbul then I would say if we pick up late August or end of August beginning of September as the hardfork for the Istanbul to put on testnet Ropsten. Then depending on the SIPs, if they're implementable within 1-2 weeks,thats realistic. that we can release within 2 weeks and let everybody upgrades within 2 weeks. If we keep this timeline and I don't think we need to push the sila-mainnet Istanbul further.
 
-**Tim**: So, September 4th is basically the middle of the week of the first week of September. Would it make sense to agree to the date for Istanbul testnet then keep October 16th as Istanbul sila-sila-mainnet. I don't know what the next fork looks like but maybe keeping our  back pocket SIP around, potentially  having a January / February fork along with one later in 2020 where we accept new SIPs,  does that make sense ?
+**Tim**: So, September 4th is basically the middle of the week of the first week of September. Would it make sense to agree to the date for Istanbul testnet then keep October 16th as Istanbul sila-mainnet. I don't know what the next fork looks like but maybe keeping our  back pocket SIP around, potentially  having a January / February fork along with one later in 2020 where we accept new SIPs,  does that make sense ?
 
 **Peter**: At this point I would say that we should either decide. I guess this crypto SIP is legitimately useful. So if ideally we want to get that in then option A is to do two hardforks.  One of them fast so to say and the other one soonish enough afterwards. If we go down that path then we should probably already now decide that you want to do second hardfork in January and we want that SIP in, so people can work already.
 If we don't want to do two hardforks, then I would push the main Istanbul a bit so that there's a chance to get it into the original Istanbul. If this SIP is worthy it to be included then I would figure it out now how to include it?
@@ -432,7 +432,7 @@ The advantage of fixing the dates is that we can do the more regularly, we can d
 
 **Danno**: I think we should move 1702 account versioning into the next fork maybe because I think we come to a consensus nothing in this list requires it.
 
-**Wei**: I mean at this point, it's not require at the sila-sila-mainnet, but I still want to propose, we include it in the testing as early as possible date, may be the  1st Istanbul fork because at this moment, we have 3 client draft implementation. It doesn't affect sila-sila-mainnet but I think this is a really good thing to have if we include it in the Istanbul testing. 
+**Wei**: I mean at this point, it's not require at the sila-mainnet, but I still want to propose, we include it in the testing as early as possible date, may be the  1st Istanbul fork because at this moment, we have 3 client draft implementation. It doesn't affect sila-mainnet but I think this is a really good thing to have if we include it in the Istanbul testing. 
 
 **Alexey**: We could actually do something like preemptive refactoring instead so that  in  the future if you need to do this SIP, it will be super simple. Because a lot of complexities is now actually in the refactor.
 
@@ -440,7 +440,7 @@ The advantage of fixing the dates is that we can do the more regularly, we can d
 
 **Danno**: But we don't have any SIPs targeting version 1 and not version 0 is the big issue right now.
 
-**Wei**: Say if we implement the account versioning, it doesn't really affect the sila-sila-mainnet because they don't have version one and version 0 is backwards compatible.
+**Wei**: Say if we implement the account versioning, it doesn't really affect the sila-mainnet because they don't have version one and version 0 is backwards compatible.
 
 **Peter**: I guess that's the reason why I am reluctant to go this path because we've this SIP that we figure out that we needed, in the end it turn out we don't need; I am questioning the viability of it. SO, why do we need at all in the future?
 
@@ -598,7 +598,7 @@ August 02, 2019 at 6:00 UTC.
 * https://github.com/sila-chain/SIPs/pull/2200
 * https://gitter.im/sila/AllCoreDevs?at=5d31988ae2d1aa6688d09f39
 * https://github.com/alex-forshtat-tbk/SIPs/issues/1#issuecomment-508693797
-* https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-1706.md
+* https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-1706.md
 * https://medium.com/least-authority/https-medium-com-least-authority-kicking-off-our-review-of-progpow-be1368ae9a50
 * https://github.com/sila-chain/pm/issues/113#issuecomment-515403686
 * https://github.com/sila-chain/SIPs/pull/2123

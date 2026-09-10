@@ -401,7 +401,7 @@ Paritosh: I wanted to bring up an update on the test net call we had just before
 
 Stokes: Yeah please.
 
-Paritosh: Yeah so we had the Hosekey first hoskey test net call  about an hour ago and we're gonna have the next one again on June 29th with a couple of asks I can link the summary over here. But one of the big questions that was still open is the current ideas to start with about a million and a half validators so that we have significantly more than sila-sila-mainnet and we don't have to rush to immediately make deposits keep ahead. We're just not sure if all clients think that they'd be ready for such a big value data set, a Genesis or such a big Genesis State. So just looking to hear some thoughts on that.
+Paritosh: Yeah so we had the Hosekey first hoskey test net call  about an hour ago and we're gonna have the next one again on June 29th with a couple of asks I can link the summary over here. But one of the big questions that was still open is the current ideas to start with about a million and a half validators so that we have significantly more than sila-mainnet and we don't have to rush to immediately make deposits keep ahead. We're just not sure if all clients think that they'd be ready for such a big value data set, a Genesis or such a big Genesis State. So just looking to hear some thoughts on that.
 
 Lion Dapplion: Will we ever reach that in a minute what percentage of total each Supply stake will represent.
 
@@ -421,7 +421,7 @@ Lion Dapplion: Yeah I'm not opposed like seeing the difficulties I would rather 
 
 Sean: Okay yeah I also support the nine and a half size.
 
-Potuz:  I have a suggestion as well. I'm not sure how hard is it to do. But one of the things that we're seeing on sila-sila-mainnet is that we now have some validators that are exit. And even if we start with a large number of deposits we may increase even the evaluator slides by just adding validators that are already exited on Genesis. So that we start with a we don't need to have like a large number of validators sending attestations but the slice itself is still large. 
+Potuz:  I have a suggestion as well. I'm not sure how hard is it to do. But one of the things that we're seeing on sila-mainnet is that we now have some validators that are exit. And even if we start with a large number of deposits we may increase even the evaluator slides by just adding validators that are already exited on Genesis. So that we start with a we don't need to have like a large number of validators sending attestations but the slice itself is still large. 
 
 Lion Dapplion: That's a great point.
 

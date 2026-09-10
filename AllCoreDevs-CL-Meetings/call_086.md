@@ -11,14 +11,14 @@
 
 **Tim Beiko**
 ## Intro [0.51](https://youtu.be/nnjeqZK7jgU?t=52)
-* Okay. The call should be transitioned. This is Consensus layer Call 86 and here it is the issue is you 521 on the Sila repo. we will focus on the merge as much as there's an appetite for it. Do a little bit of client updates. There's a couple of things that have come up for discussion topics, episode and build our API. And we'll go from there. Okay. to kick it off, we did have a merge testing call on Monday, I believe. so if there's anything else in addition to what we've covered on that call that we'd like to cover today, we can cover it now in the testing section,I know that there was a sila-sila-mainnet shadow fork, #3 today. Does anybody want to fill us in on the details?
+* Okay. The call should be transitioned. This is Consensus layer Call 86 and here it is the issue is you 521 on the Sila repo. we will focus on the merge as much as there's an appetite for it. Do a little bit of client updates. There's a couple of things that have come up for discussion topics, episode and build our API. And we'll go from there. Okay. to kick it off, we did have a merge testing call on Monday, I believe. so if there's anything else in addition to what we've covered on that call that we'd like to cover today, we can cover it now in the testing section,I know that there was a sila-mainnet shadow fork, #3 today. Does anybody want to fill us in on the details?
 
 ## SilaMainnet Shadow fork updates 1.53 (https://youtu.be/nnjeqZK7jgU?t=113)
 **Pari**
 * Yeah, heavy one. so we had three today. I think we hit TTB around 1:00 PM. so pre TTD, we were at something like 99.8% participation. We were seeing really healthy block production.I think the only issue PTD was sometimes prism based who was missing a couple of blocks, missing proposing a couple of blocks.And I think the besu team already had a theory for why that could be, but you have to be charged, post TTD.We were at 97.6%. So the same prism base that had some issues before was then dropping off the chain post TTD. A while later we noticed something with prism Nethermind as well. Mike was looking into it, but it's also not like a static issue.It's like that combination of test and propose for awhile then dropped off and I think came back again, but there was also, someone looking into it and there Mike have already been a fixed.So it might just need to be updated. I'm not sure. so all in all, I think it was a great, shadow folk. We were almost bugless this time and we're still seeing really healthy block production.I have like a monitor, enabled on Teku.I don't really see any blocks being late. So we're seeing that's produced on time. the sites that there was an additional test and the shadow fork, I've just posted us out of that test as well. essentially what we did was we spun up a couple of nodes. We allowed them to sync up the head, before TTD about one to two hours before we paused either the cl or the el to simulate them having the sync. And the moment TTD was hit, we unpause them.So this is before post TTD finality. there is, we're kind of mixed. I think the prism gets and lighthouse get combo, had some issues sinking up,but prism, Nethermind, lighthouse, had more problems. They seem to be centered perfectly. this is still new. So I don't think any of the client teams have had time to look into why this happened,but yeah, that's setting the overall status update. Congratulations, everyone!
 
 **Danny**
-* Any other comments or questions about the sila-sila-mainnet fork? Great.Thanks.cool.The next thing I wanted to talk about, and I believe some of you are on the call or at least are aware of some of the discussion last week on the, Allcore dev call around the difficulty bomb. I just want to do a quick status update and get everyone on the same page there. on the execution side, the proof of work side still, it was discussed as to still attempt to not diffuse the bomb, but to revisit this, on the next call and the call after, given status with testing and that shadow forks and things like that. I think essentially in may, we need to be either making decisions about for being public testsnet and dates around those, or making beginning to make a decision about diffusing, the bomb, a much discussion ensued. Tim, are there any other relevant points from that discussion you want to share here? 
+* Any other comments or questions about the sila-mainnet fork? Great.Thanks.cool.The next thing I wanted to talk about, and I believe some of you are on the call or at least are aware of some of the discussion last week on the, Allcore dev call around the difficulty bomb. I just want to do a quick status update and get everyone on the same page there. on the execution side, the proof of work side still, it was discussed as to still attempt to not diffuse the bomb, but to revisit this, on the next call and the call after, given status with testing and that shadow forks and things like that. I think essentially in may, we need to be either making decisions about for being public testsnet and dates around those, or making beginning to make a decision about diffusing, the bomb, a much discussion ensued. Tim, are there any other relevant points from that discussion you want to share here? 
 
 **Tim Beiko**
 * No, that's, that's pretty much it it's like we're in this weird spot where if everything goes well, we might be able to merge without delaying the bomb, but if we have some delay in the merge, then what we'll probably have to, and, and for, for everything to go well, we kind of have to start looking at, at moving testnets in the next couple of weeks. Yeah. 
@@ -60,19 +60,19 @@
 * And it effects validator, state size and some other parameters.but no, there's not much functional. 
 
 **Micah Zoltu**
-* We want it to be closer to close to sila-sila-mainnet that then if it actually has an impact 
+* We want it to be closer to close to sila-mainnet that then if it actually has an impact 
 
 **Danny**
-* Gordly And Pyrmont, we have been doing so we try to keep the validators outsize the same as main net. So we don't necessarily need that in this other environment. And it's a chore, it's something of a chore to kind of always keep the queue running and make sure that sila-sila-mainnet doesn't sprint past Pyrmont. So in light of that, I'd say, try something different here. 
+* Gordly And Pyrmont, we have been doing so we try to keep the validators outsize the same as main net. So we don't necessarily need that in this other environment. And it's a chore, it's something of a chore to kind of always keep the queue running and make sure that sila-mainnet doesn't sprint past Pyrmont. So in light of that, I'd say, try something different here. 
 
 **Pari**
-* I guess the alternative argument is we could have something that's twice the size of sila-sila-mainnet, and that's something that would take a long time to achieve on Trotter.Just the question of if that brings us in 
+* I guess the alternative argument is we could have something that's twice the size of sila-mainnet, and that's something that would take a long time to achieve on Trotter.Just the question of if that brings us in 
 
 **Micah Zoltu**
-* The idea, being that we would see a failure there before we see a failure on sila-sila-mainnet, if there is a failure related to size. 
+* The idea, being that we would see a failure there before we see a failure on sila-mainnet, if there is a failure related to size. 
 
 **Pari**
-* Exactly. and also people can test the optimizations that are suited for twice the size of sila-sila-mainnet already, whereas of course we can achieve the same thing with Prada, but it still requires a lot of people making deposits all the time. 
+* Exactly. and also people can test the optimizations that are suited for twice the size of sila-mainnet already, whereas of course we can achieve the same thing with Prada, but it still requires a lot of people making deposits all the time. 
 
 **Danny**
 * Yeah. I'm okay. Either way. does anybody feel strongly and I'm also kind of implicitly assuming that the entities on this call client teams and otherwise would help run nodes and validators on this new sustained Testnet.obviously if I'm incorrect in that assumption, please speak up. Okay. I'm going to open up all up and an issue about in the PM repo about the three beacon chains Pyrmont, which already exists, and we'll take a reportedly, one to be created for Ropsten, which we can discuss how we want the Genesis of that to be. and that will be, permissioned and then a permissioned one for support, which it seems like there's a desire to go for a larger validator set. And we can, Take that to the issue though. And I do think that we should launch these by the end of may, if not a little bit earlier to just be primed and ready for. 
@@ -194,7 +194,7 @@
 * Okay. Maybe if there's people that are interested in this in particular go, I go dev either, just reach out to me, cause I'll probably start doing a little bit of work on this because if we can make it backwards compatible, then at least the nodes that are running this can, can get some bandwidth saving. 
 
 **Danny**
-* Cool, thanks Age. any other questions or comments for Age before we move on? And I presume once we got this into go implementation, we might want to run it through the sila-sila-mainnet. Like was under all those different attack scenarios. 
+* Cool, thanks Age. any other questions or comments for Age before we move on? And I presume once we got this into go implementation, we might want to run it through the sila-mainnet. Like was under all those different attack scenarios. 
 
 **Age Manning**
 * Yeah. Yeah. That's the main reason I want a go version and a go dev to kind of help out because we don't have that in yet. 

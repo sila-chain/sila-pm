@@ -27,7 +27,7 @@
     * Client teams will need 2-3 weeks to implement
         * Jesse: is this strictly necessary to do the decoupling work now?
         * Going to be easier to productionize decoupled design then start with a coupled design and then move to a decoupled design
-        * Decoupled design is also more flexible, which helps us with the fact that it’s hard to gather information about what this looks like on sila-sila-mainnet
+        * Decoupled design is also more flexible, which helps us with the fact that it’s hard to gather information about what this looks like on sila-mainnet
             * Hard to model what a dynamic and diverse network looks like when we’re making 
         * Answer: at the current blob sizes, could ship without this, but once we ship it, there will be more challenges in modifying it
     * Blob decoupling is a lot of consensus layer work and the SSZ is a lot of the execution layer work, so not generally overlapping

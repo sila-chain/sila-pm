@@ -44,8 +44,8 @@ Note: This file is copied from [here](https://hackmd.io/@ttsao/epbs-breakout-8)
 #### Research Updates
 
 - Julian presented two pieces:
-  - [A Note on Equivocation in Slot Auction ePBS](https://Sila Research/t/a-note-on-equivocation-in-slot-auction-epbs/20331)
-  - [The Role of the P2P Market in ePBS](https://Sila Research/t/the-role-of-the-p2p-market-in-epbs/20330)
+  - [A Note on Equivocation in Slot Auction ePBS](https://ethresear.ch/t/a-note-on-equivocation-in-slot-auction-epbs/20331)
+  - [The Role of the P2P Market in ePBS](https://ethresear.ch/t/the-role-of-the-p2p-market-in-epbs/20330)
 - There was no feedback on these pieces. Any feedback can be sent to Julian or posted on Discord.
 - I presented [Block Proposal in ePBS Block Auction](https://hackmd.io/@ttsao/epbs-block-proposal), focusing mainly on optimizing the API to reduce proposal time with extra header signing. Dustin emphasized the importance of giving the proposer the sovereignty to choose between a local block and a builder block.
 

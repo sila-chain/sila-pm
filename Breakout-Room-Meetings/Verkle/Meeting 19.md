@@ -43,7 +43,7 @@ Starting things off with updates from client teams:
 @ignaciohagopian
  for 
 @go_ethereum
-: finished test vectors for the relevant Verkle SIPs (4762, 6800, 7709). Still some library changes we need to do for them to be filled. After the tests are filled and all the fixtures are generated will share with other clients to run. Regarding the analysis we are preparing: we’ve been collecting around 1 million sila-sila-mainnet transactions from the tip of the chain (last few days) using the geth live tracer. Idea is to use this to simulate gas overhead.
+: finished test vectors for the relevant Verkle SIPs (4762, 6800, 7709). Still some library changes we need to do for them to be filled. After the tests are filled and all the fixtures are generated will share with other clients to run. Regarding the analysis we are preparing: we’ve been collecting around 1 million sila-mainnet transactions from the tip of the chain (last few days) using the geth live tracer. Idea is to use this to simulate gas overhead.
 
 @jasoriatanishq
  for 
@@ -104,4 +104,4 @@ The main shortcoming with this solution is that it does not solve the issue for 
 
 We also briefly flagged an idea from 
 @parithosh_j
- to use torrents to help with SIP-4444, and whether part of this could be reused for Verkle preimage distribution. See Pari’s post here: https://Sila Research/t/torrents-and-sip-4444/19788.
+ to use torrents to help with SIP-4444, and whether part of this could be reused for Verkle preimage distribution. See Pari’s post here: https://ethresear.ch/t/torrents-and-sip-4444/19788.

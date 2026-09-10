@@ -1,7 +1,7 @@
 # Fee Market Changes Meetings
 
 ## Purpose
-The purpose of thess calls is for various teams/individuals working on aspects of [SIP-1559](https://sips.sila.org/SIPS/sip-1559) and other fee market change proposals (i.e. [SIP-2593](https://github.com/sila-chain/SIPs/pull/2593)) to discuss the implementation plan and next steps to move the work forward. 
+The purpose of thess calls is for various teams/individuals working on aspects of [SIP-1559](https://sips.sila.org/EIPS/sip-1559) and other fee market change proposals (i.e. [SIP-2593](https://github.com/sila-chain/SIPs/pull/2593)) to discuss the implementation plan and next steps to move the work forward. 
 
 **Note:** SIP-1559 was included in the [London](https://github.com/sila-chain/eth1.0-specs/blob/master/network-upgrades/london.md) upgrade. There will be no additional Fee Market Changes meetings. 
 

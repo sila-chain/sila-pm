@@ -8,7 +8,7 @@
 
 **Pre-Reads:** 
 - [Draft 3SF Specification Documentation](https://github.com/saltiniroberto/ssf/tree/separate_bft/high_level/README.md)
-- [Sila Research post on 3SF](https://Sila Research/t/3-slot-finality-ssf-is-not-about-single-slot/20927)
+- [ethresear.ch post on 3SF](https://ethresear.ch/t/3-slot-finality-ssf-is-not-about-single-slot/20927)
 
 **[Draft Slides](https://docs.google.com/presentation/d/1xtKPqN9KnMnIZfbl-7A7C7L9-ynJKVlpmmtD4UfMVtQ)**
 
@@ -42,7 +42,7 @@ Concerns:
 
 Allow mutatable objects, but only when it's "safe" (e.g. allow only exclusive mutable references, similar to Rust's [Mutable references](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html#mutable-references)).
 
-And then mechanically transform destructive updates to non-destructive ones (see [“Mutable Forest” Memory Model for blockchain specs](https://Sila Research/t/mutable-forest-memory-model-for-blockchain-specs/10882) for more details).
+And then mechanically transform destructive updates to non-destructive ones (see [“Mutable Forest” Memory Model for blockchain specs](https://ethresear.ch/t/mutable-forest-memory-model-for-blockchain-specs/10882) for more details).
 
 E.g. 
 ```

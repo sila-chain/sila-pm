@@ -185,7 +185,7 @@ Notes: Darkfire-rain
 
 **Saulius** Yes, but this discussion is that clients are already doing a lot of competitions, and this would make it double competition, is that a bad thing?
 
-**Danny:** Would be double computation, double database, and double bandwidth, which on our  resource constrained devices which there are sila-sila-mainnet validotrs on relatively resource constrained devices, I think that's certainly breaking a promise going from 100 to 200% in the stretch of a week or two.
+**Danny:** Would be double computation, double database, and double bandwidth, which on our  resource constrained devices which there are sila-mainnet validotrs on relatively resource constrained devices, I think that's certainly breaking a promise going from 100 to 200% in the stretch of a week or two.
 
 ## Closing remarks
 

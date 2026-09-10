@@ -16,7 +16,7 @@
 
 ## Kintsugi Office Hours
 Tim Beiko
-Morning, everyone. Welcome to All Core Devs 130. Basically, a bunch of merge stuff to discuss today, along with some discussion on a couple of SIPS for SilaShanghai, potentially. 
+Morning, everyone. Welcome to All Core Devs 130. Basically, a bunch of merge stuff to discuss today, along with some discussion on a couple of EIPS for SilaShanghai, potentially. 
 
 ## Engine API: extend semantics of executePayload and forkchoiceUpdated methods
 ***Highlights***
@@ -380,7 +380,7 @@ Rai:
 Well, I think there's still a use case for disabling something in the regime under which it was created to recover the intent of it. Because maybe you want to understand how it works, but yeah, it's true. It's completely unambiguous how it's going to run now you just disassemble it under with the new semantics. 
 
 Mikhail Kalinin: 
-I should also say that you may actually distinguish whether it's randomness or whether it's randomness output or difficulty based on the value. Uh, because for the uh, sila-sila-mainnet and uh, for other networks, we assume that the um, main ad has the highest difficulty that is possible. This, um number is down to the power of two to 64. 
+I should also say that you may actually distinguish whether it's randomness or whether it's randomness output or difficulty based on the value. Uh, because for the uh, sila-mainnet and uh, for other networks, we assume that the um, main ad has the highest difficulty that is possible. This, um number is down to the power of two to 64. 
 
 And for randomness out to fall into this range, into this lower range, there is a very, very low probability. So it's negligible. So basically, if that need be, probably two tools these assemblers make good from the value the uh, size of December. Whether, uh it's random or difficult, I don't know whether it's helpful or not. 
 
@@ -391,25 +391,25 @@ Harry Altman:
 Yes, for tracing when you have that information, it's not a big problem. 
 
 Mikhail Kalinin: 
-Yeah. One thing, uh, just came to my mind. These SIPS, uh, are currently in scope for um, the merge. And this is going to be may not change and other things changed if we decided to turn that um, test into proof of stake. So there will be like uh, one of the hard work and I don't think that who uh, may make assumptions on this or that goes without knowing the context, without knowing that this block is like from the sila-sila-mainnet or another testnets. 
+Yeah. One thing, uh, just came to my mind. These EIPS, uh, are currently in scope for um, the merge. And this is going to be may not change and other things changed if we decided to turn that um, test into proof of stake. So there will be like uh, one of the hard work and I don't think that who uh, may make assumptions on this or that goes without knowing the context, without knowing that this block is like from the sila-mainnet or another testnets. 
 
 But I haven't used the December and I don't know how do they work. So I would assume that there is a uh, context for the exact block and for the exact transaction that provide some information on um, payload execution. 
 
 Yeah, finished. Just the point that I don't know if the context is provided for disassemblers. 
 
-I mean the context for the SAVM, uh and uh change that uh, and the SIPS that uh um, are taking uh effect for the blog that is being disassembled. If it's not the case, then. 
+I mean the context for the EVM, uh and uh change that uh, and the EIPS that uh um, are taking uh effect for the blog that is being disassembled. If it's not the case, then. 
 
 Harry Altman: 
 Yeah, sometimes you have that information. Not always. 
 
 Mikhail Kalinin: 
-And so if you don't have this information, I would assume that you're uh, in the version that um is from the yellow paper, the original version of SAVM without any change. 
+And so if you don't have this information, I would assume that you're uh, in the version that um is from the yellow paper, the original version of EVM without any change. 
 
 Harry Altman: 
 That is not an assumption I would make. 
 
 Mikhail Kalinin: 
-Yeah. I mean, how does other change to the SAVM, uh are handled by this tool if there is no context? 
+Yeah. I mean, how does other change to the EVM, uh are handled by this tool if there is no context? 
 
 Harry Altman: 
 Well, for the most part at least. So, speaking for truffles disassembler, like the way we handle it is mostly just to assume that until now this is basically this has never come up in a practical sense, obviously, technically every time you add an opcode you are changing an old Invalid opcode to a new function. But since we don't expect to encounter Invalid Opcodes, uh, other than the designated one at zero XFE, this is just not, um, really a problem and we just assume everything is the most recent version and that all opcodes that have ever been created exist. This is the um, first time that a Opcode would have its functionality and name changed in a way that is not from Invalid to valid. 
@@ -442,10 +442,10 @@ Okay, yeah, that's what I was curious about.
 Maybe there's something missing because I don't use this assembler ever really. 
 
 Harry Altman: 
-You may want to do this with a contract that has not been deployed and therefore the SAVM version, uh, is not defined in that sense, although it could be defined in the sense of what it was compiled for, assuming you have that compiler information which you may or you may not. 
+You may want to do this with a contract that has not been deployed and therefore the EVM version, uh, is not defined in that sense, although it could be defined in the sense of what it was compiled for, assuming you have that compiler information which you may or you may not. 
 
 Andrew Ashikhmin: 
-Um, so if you are investigating a code to be deployed, um, and uh, you don't know what is the SAVM revision, then most, um, likely there is a high probability that it will be deployed later so I guess if you don't have, uh, an SAVM revision, you can assume the latest SAVM revision, assume post merge and say that it's Random, right? To my mind, it's like, oh, uh, you can be completely accurate. You can rename this if it's only about the name renaming its Difficulty or Random and let the user figure it out. So, to my mind, I don't see any practical problems apart from some confusing about the name. 
+Um, so if you are investigating a code to be deployed, um, and uh, you don't know what is the EVM revision, then most, um, likely there is a high probability that it will be deployed later so I guess if you don't have, uh, an EVM revision, you can assume the latest EVM revision, assume post merge and say that it's Random, right? To my mind, it's like, oh, uh, you can be completely accurate. You can rename this if it's only about the name renaming its Difficulty or Random and let the user figure it out. So, to my mind, I don't see any practical problems apart from some confusing about the name. 
 
 Harry Altman: 
 Sorry, I'm trying to be a discussion going on in the text chat also. 
@@ -497,7 +497,7 @@ Not necessarily looking for a full list and all decisions on them. But I'm curio
 Maris has a comment about the shadow for Goerli. I'm not sure if that implies we're keeping Goerli or not, but yeah, just curious, um, about people's general thoughts about that, like which Tesla should applications be using if they want to be like merge proof? 
 
 Martin Holst Swende: 
-So I have a question. As core devs, really is there anything from our perspective to be kind of gained from having testnets that are not following going out onto sila-sila-mainnet? 
+So I have a question. As core devs, really is there anything from our perspective to be kind of gained from having testnets that are not following going out onto sila-mainnet? 
 
 Tim Beiko: 
 What do you mean? I'm not sure I understand. 
@@ -649,8 +649,8 @@ Yeah, that makes sense.
 ## SilaShanghai Planning
 ***Highlights***
 - ***Several external components of SIP 4444 have been, or is being, worked on such as developing standard format for scoring epoch blocks, archive nodes and methods for sharing information (not included in SIP 4444 itself)***
-- ***Status on SIP 2537 will be continued on sila-chain/pm repo in issues thread about including it in SilaShanghai***
-- ***Introduced new SIP regarding SAVM and strong desire to improve it***
+- ***Status on SIP 2537 will be continued on sila/pm repo in issues thread about including it in SilaShanghai***
+- ***Introduced new SIP regarding EVM and strong desire to improve it***
 
 Tim Beiko: 
 Okay, we only have seven minutes left. There were two comments about people wanting to champion SIP 2537 and 2315. It doesn't, um, seem like there's I guess. Yeah, the two of them wanted to discuss this, but then there was also kind of a big question around 4444. So I think it maybe makes sense to just do SIP 4444 first. And then if we have time, we can kind of also touch on the two other ones briefly. Uh, but we've discussed those two other ones quite a fair amount in the past, so, uh, it's probably less blocking than 4444. Martin, you have kind of a comment about basically 4444 being a prerequisite for 4488. 
@@ -693,12 +693,12 @@ Yeah, that's about it. I just wanted to ask client teams on the uh, call sort of
 And the first step I think is just getting a sense of where it's at. Things may have gone a little stale since people were lost actively looking at it. So if anyone knows of anything blocking or any potential issues, it would be good to know about them sooner rather than later. 
 
 Tim Beiko: 
-Cool. And I guess the best place for that would be there is an issue on the sila-chain/pm repo about including 2537 in SilaShanghai. So it might make sense to just if clients have issues or concerns to just share them in that thread. 
+Cool. And I guess the best place for that would be there is an issue on the sila/pm repo about including 2537 in SilaShanghai. So it might make sense to just if clients have issues or concerns to just share them in that thread. 
 
 I'll post a link in GitHub and it was a comment by Danny and that thread as well that um, a lot of the libraries have been tested and are being used in production on the consensus layer side. So we do have more data on that since the Beacon chain has been live for a while. 
 
 Marius Van Der Wijden: 
-Um, there were two things that I remember from the last debate that were still open. And the one thing was this SAVM 384. I think that's not coming, so I would be fine with 2537. 
+Um, there were two things that I remember from the last debate that were still open. And the one thing was this EVM 384. I think that's not coming, so I would be fine with 2537. 
 
 But the other thing was it introduces nine pre-compilers, I think, and there was some discussion that we might not need all of those nine pre-compilers. And so it would be really cool if someone could describe why we absolutely need these pre compiled for each one of the pre compilers. Or if it makes sense to just, I don't know, do the three most important ones that we actually need for building stuff on them. That's it. 
 
@@ -709,16 +709,16 @@ Tim Beiko:
 Okay. 1 minute to go. Greg, you also had a comment about the SIP. Are you still here, Greg? 
 
 Greg Colvin: 
-We're out of time. But that and the whole set of SAVM changes is there and I'd like to keep it on the table and discuss it because I and I think the other people never want to go through years of work to have the whole thing fall apart on the day of shipping. 
+We're out of time. But that and the whole set of EVM changes is there and I'd like to keep it on the table and discuss it because I and I think the other people never want to go through years of work to have the whole thing fall apart on the day of shipping. 
 
 Tim Beiko: 
-Right. And you had a comment on one of the open issues about the different SIPS for the SAVM and how they relate. 
+Right. And you had a comment on one of the open issues about the different EIPS for the EVM and how they relate. 
 
 Greg Colvin: 
 Yeah, there's basically an order in which there's an order of dependencies there. 
 And for 2315, there's specific changes to answer criticisms that did come up literally at the last minute. So I've made changes to answer those and introduced a new SIP to answer some of those. 
 
-And, the SIP that the other people on the foundations SAVM team are also related. So, I just like to see some commitment early on that we're moving on with improving the SAVM or after six years deciding that no, we do not actually want to fix the SAVM unless quit wasting time on it. 
+And, the SIP that the other people on the foundations EVM team are also related. So, I just like to see some commitment early on that we're moving on with improving the EVM or after six years deciding that no, we do not actually want to fix the EVM unless quit wasting time on it. 
 
 Tim Beiko: 
 Right. 

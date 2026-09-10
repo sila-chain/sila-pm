@@ -69,7 +69,7 @@ Call starts at [[8:04](https://youtu.be/0Lyn5OryooA?t=8m4s)]
 * mana - no one
 * nethermind - no one
 * PegaSys (Matt)
-    * still working on sila-sila-mainnet sync
+    * still working on sila-mainnet sync
     * were at 2.8mm, now up to 4.46mm
     * still implementing zk-snarks precompiles
     * stabilizing networking code
@@ -79,7 +79,7 @@ Call starts at [[8:04](https://youtu.be/0Lyn5OryooA?t=8m4s)]
     * Continuing to work on Rust, AssemblyScript tooling
     * precompiles in Rust
     * work continues on testnet devops
-    * EEI design and versioning, we've got a tentative versioning system, sealing off current version and beginning to add some EEI methods that deviate a bit more from SAVM compatibility
+    * EEI design and versioning, we've got a tentative versioning system, sealing off current version and beginning to add some EEI methods that deviate a bit more from EVM compatibility
 * TurboGeth (Alexey)
     * latest instance has been following the tip of the chain for about a week now, seems stable
     * currently testing and fixing RPC API
@@ -222,12 +222,12 @@ Call starts at [[8:04](https://youtu.be/0Lyn5OryooA?t=8m4s)]
         * We can set a minimum but it should be added to the gas cost of the specific precompile
     * Matt: Put precompile address on stack, if it's there it uses existing precompile gas calc mechanism, if too large it halts, otherwise if contract not there there's zero gas cost and executes as a NOP
     * Hudson: this would require a hard fork right?
-    * Matt: Would require adding an SAVM opcode, doing this is slightly easier than modifying semantics of CALL to do that
+    * Matt: Would require adding an EVM opcode, doing this is slightly easier than modifying semantics of CALL to do that
     * Hudson: sounds like it would be hard on testing to put this into Constantinople
-        * Pawel: Breaks SAVM abstraction
-            * Currently SAVM doesn't need to know which contracts are precompiles
+        * Pawel: Breaks EVM abstraction
+            * Currently EVM doesn't need to know which contracts are precompiles
             * I like idea of adding a new opcode, sounds better
-            * Alternative: allow precompiles to refund some of the gas, refund counter is mostly handled per tx so it's on the boundary between SAVM and the client, SAVM is not strictly responsible
+            * Alternative: allow precompiles to refund some of the gas, refund counter is mostly handled per tx so it's on the boundary between EVM and the client, EVM is not strictly responsible
             * From implementation perspective it might be easier to add some gas, get it back at end of tx
         * Martin: As SIP is written it doesn't care what's a precompile, valid for calling anything < 256
         * Jordi: precompiles already have a different cost

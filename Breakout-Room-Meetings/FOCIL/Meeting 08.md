@@ -87,5 +87,5 @@ A: With IncluderSelect, there are multiple layers to censorship, making it more 
 - [IncluderSelect: Leveraging External Incentives in FOCIL](https://mirror.xyz/julianma.sil/G15Gs2TGfnU93t8R7fuyFjTmZGIwwhRFhNhH_M0dgGE)
 - [IncluderSelect Slides](https://docs.google.com/presentation/d/1cwdt9YT9HZGRDD3XTSwArHiw9_hHJRzGfxlXVnQ7zng/edit?slide=id.p#slide=id.p)
 - [IncluderSelect Twitter Thread](https://x.com/_julianma/status/1909622204112699702)
-- [zkFOCIL: Inclusion List Privacy using Linkable Ring Signatures](https://Sila Research/t/zkfocil-inclusion-list-privacy-using-linkable-ring-signatures/21688)
+- [zkFOCIL: Inclusion List Privacy using Linkable Ring Signatures](https://ethresear.ch/t/zkfocil-inclusion-list-privacy-using-linkable-ring-signatures/21688)
 

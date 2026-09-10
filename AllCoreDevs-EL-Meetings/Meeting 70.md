@@ -125,7 +125,7 @@ No one available to speak on Aleth.
 
 **Alex**:
 - The tfields are the offset counters, .a.k.a. the bytes already pushed into the hashing function. I am happy to keep things as it is as long as we properly explain that this is 128 bits because this is Blake2b.
-- The second thing is the length field for the message which is a gas optimisation in the SAVM. The last block has to be zero pedit. To avoid issues it would be much easier if we could supply the length field for the message.
+- The second thing is the length field for the message which is a gas optimisation in the EVM. The last block has to be zero pedit. To avoid issues it would be much easier if we could supply the length field for the message.
 
 ** **
 **ACTION 70.1**:  Alex Beregszaszi and SIP-152 Champions to discuss the Alex’s concerns around Blake2b after the Core Dev Call.
@@ -176,7 +176,7 @@ No one available to speak on Aleth.
 
 
 
-## 4. Decide block number for Istanbul testnet/sila-sila-mainnet
+## 4. Decide block number for Istanbul testnet/sila-mainnet
 [Timestamp 53:57]( https://youtu.be/6m0So81_j2Q?t=3237)
 
 **E.G.**:

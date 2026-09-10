@@ -36,7 +36,7 @@ I'll give a high level and people can fill in the technical details. But basical
 
 **Diederik Loerakker 08:26**
 
-Yes, so about Pithos. We started with Amphora during the interop event. This was on a minimal configuration in Sila 2.0, which turns out to be actually more stressful, and then the SilaMainnet configuration because of the sheer amount of validators. The sila-sila-mainnet configuration is built for this type of node. So we decided to launch Pithos, which is also an Amphora, just a larger one. Hence the name. Thanks again for helping of the DevOps here. If you need nodes or needs keys to validate on this network, let us know and we'll try to facilitate that. We're trying to stabilise the remaining clients. So far we have three consensus clients running really stable on the network, and Geth on execution side. We're working on getting Besu and Nethermind running aswell..
+Yes, so about Pithos. We started with Amphora during the interop event. This was on a minimal configuration in Sila 2.0, which turns out to be actually more stressful, and then the SilaMainnet configuration because of the sheer amount of validators. The sila-mainnet configuration is built for this type of node. So we decided to launch Pithos, which is also an Amphora, just a larger one. Hence the name. Thanks again for helping of the DevOps here. If you need nodes or needs keys to validate on this network, let us know and we'll try to facilitate that. We're trying to stabilise the remaining clients. So far we have three consensus clients running really stable on the network, and Geth on execution side. We're working on getting Besu and Nethermind running aswell..
 
 **Tim Beiko 09:25**
 
@@ -150,7 +150,7 @@ So I would argue that the merge kind of requires much longer timeline than just 
 
 **Tim Beiko 23:42**
 
-Right? Yeah, I definitely agree don't want to rush it. I think one thing we're planning to do is also when we start having these dev net, hopefully, start to get people running on the dev nets before so that if they are a large infrastructure provider, they don't learn about this and start setting up their infrastructure when the sila-sila-mainnet releases are out. But I do agree, we probably want a longer delay. And there's a comment in the cht, why do we have to pick a block number now? So the reason for that is based on the bomb going off in December, depending on when we want to push it back. We also need client releases to be available at least a couple of weeks before the upgrade. We can probably fork anytime in December. later December will be a bit harder because the bomb might actually start to show and also it's the holidays which is just not a great time. So that means that you know if say we wanted to fork December 1st, that means you probably want client releases around November 1st, which is two weeks from now. And similarly if we wanted to fork say the week after that, you probably want releases, the second of November, which is like three weeks from now already. So I think basically making that decision today means we then have a few weeks for clients to actually implement that change and write tests for it. And make sure that we're in a good spot. Whereas if we wait much longer then it'll just be a very last minute upgrade. Lightclient, you have your hand up?
+Right? Yeah, I definitely agree don't want to rush it. I think one thing we're planning to do is also when we start having these dev net, hopefully, start to get people running on the dev nets before so that if they are a large infrastructure provider, they don't learn about this and start setting up their infrastructure when the sila-mainnet releases are out. But I do agree, we probably want a longer delay. And there's a comment in the cht, why do we have to pick a block number now? So the reason for that is based on the bomb going off in December, depending on when we want to push it back. We also need client releases to be available at least a couple of weeks before the upgrade. We can probably fork anytime in December. later December will be a bit harder because the bomb might actually start to show and also it's the holidays which is just not a great time. So that means that you know if say we wanted to fork December 1st, that means you probably want client releases around November 1st, which is two weeks from now. And similarly if we wanted to fork say the week after that, you probably want releases, the second of November, which is like three weeks from now already. So I think basically making that decision today means we then have a few weeks for clients to actually implement that change and write tests for it. And make sure that we're in a good spot. Whereas if we wait much longer then it'll just be a very last minute upgrade. Lightclient, you have your hand up?
 
 **Matt Garnett 25:34**
 
@@ -174,7 +174,7 @@ I was just trolling. But I do have something to say. What was the final decision
 
 **Peter Szilaygyi 27:47**
 
-Well, I guess that's how we also get over that is that you have the code and then you just ship it a TDD for it. And you just ship some fixes. For another tesnet, eventually, you just put that the TDD into sila-sila-mainnet.
+Well, I guess that's how we also get over that is that you have the code and then you just ship it a TDD for it. And you just ship some fixes. For another tesnet, eventually, you just put that the TDD into sila-mainnet.
 
 **Micah Zoltu 28:06**
 
@@ -266,7 +266,7 @@ So from my side -- the hardest part of saying when we will be code complete read
 
 **Tim Beiko 36:49**
 
-Got it. There's a couple comments in the chat about like what's worse? Is it you know pushing back the bombs two times or what like alienates the community my opinion there is like a bad merge is what alienates the community by far the most. People will take a good merge with two difficulty-bomb push backs over a bad merge with one because we had to get it out two weeks earlier. I think we kind of saw that also with London where some people were a bit like unhappy with how quickly we went the sila-sila-mainnet after we found that last issue and then obviously people want the merge and like they wanted as quick as possible but there's no there's no way to expedite it beyond just doing the work and making sure that it's safe. Based on all of this it does seem like trying to get a date that's far enough in the future to give us some buffer ideally not far enough that it's like completely irrelevant and that that we we kind of forget about the difficulty bomb and I don't think it would be the end of the world to push back the difficulty bomb a second time from like the community point of view. Anyways at that point it's like if we pick in a reasonable delay for the difficulty-bomb and we push it back it kind of means that the merge is late and people will be upset about that not about the fact that we're pushing the difficulty-bomb back so yeah. I guess the second long winded way of saying I think I kind of agree with what Peter said at the very beginning that like something that's like far off but not completely far off based on this if you want like a rough four months from like the code quality to like actually going on SilaMainnet it seems like probably somewhere around like June-ish to have the bomb goes off make sense which means you kind of need the code done around February ish and obviously if we get there and we realised that's just not going to be the case then we push back the bomb again. The expectation we said is around the merge not around like the difficulty bomb and if we have to push it again, that's less worse than having like shipped the merge too quickly or something like that. Yeah. Andrew?
+Got it. There's a couple comments in the chat about like what's worse? Is it you know pushing back the bombs two times or what like alienates the community my opinion there is like a bad merge is what alienates the community by far the most. People will take a good merge with two difficulty-bomb push backs over a bad merge with one because we had to get it out two weeks earlier. I think we kind of saw that also with London where some people were a bit like unhappy with how quickly we went the sila-mainnet after we found that last issue and then obviously people want the merge and like they wanted as quick as possible but there's no there's no way to expedite it beyond just doing the work and making sure that it's safe. Based on all of this it does seem like trying to get a date that's far enough in the future to give us some buffer ideally not far enough that it's like completely irrelevant and that that we we kind of forget about the difficulty bomb and I don't think it would be the end of the world to push back the difficulty bomb a second time from like the community point of view. Anyways at that point it's like if we pick in a reasonable delay for the difficulty-bomb and we push it back it kind of means that the merge is late and people will be upset about that not about the fact that we're pushing the difficulty-bomb back so yeah. I guess the second long winded way of saying I think I kind of agree with what Peter said at the very beginning that like something that's like far off but not completely far off based on this if you want like a rough four months from like the code quality to like actually going on SilaMainnet it seems like probably somewhere around like June-ish to have the bomb goes off make sense which means you kind of need the code done around February ish and obviously if we get there and we realised that's just not going to be the case then we push back the bomb again. The expectation we said is around the merge not around like the difficulty bomb and if we have to push it again, that's less worse than having like shipped the merge too quickly or something like that. Yeah. Andrew?
 
 **Andrew Ashikhmin 39:40**
 
@@ -494,7 +494,7 @@ Why do we have to pick a block number now?
 because difficulty bomb
 
 15:23:07 From Micah Zoltu to Everyone:
-I find peter's point quite compelling. I feel like we should have like 2 months between sila-sila-mainnet block chosen and The Merge.
+I find peter's point quite compelling. I feel like we should have like 2 months between sila-mainnet block chosen and The Merge.
 
 15:23:11 From Ansgar Dietrichs to Everyone:
 I think regarding learning to use the clients it is very much a "whatever timeline we pick, people will start looking into it a few weeks before" kind of situation
@@ -563,7 +563,7 @@ I can’t decide if I think community alienation is soothed more by multiple pus
 I think that would alienate the community even more than moving the bomb a bit later and merging earlier
 
 15:35:14 From Ansgar Dietrichs to Everyone:
-I just don’t think code complete by end of January and sila-sila-mainnet fork by mid April is completely unrealistic, and the slow bomb rampup would already give us another month of buffer with that
+I just don’t think code complete by end of January and sila-mainnet fork by mid April is completely unrealistic, and the slow bomb rampup would already give us another month of buffer with that
 
 15:35:54 From danny to Everyone:
 are we live?
@@ -701,7 +701,7 @@ The difficulty is continuous, it is always happening.
 13,773,000
 
 15:58:31 From Tim Beiko to Everyone:
-https://silascan.io/block/countdown/13773000
+https://etherscan.io/block/countdown/13773000
 
 15:58:46 From Ansgar Dietrichs to Everyone:
 Sorry about raised hand, different zoom client

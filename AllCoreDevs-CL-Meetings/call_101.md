@@ -10,7 +10,7 @@
 ## Summary <!-- omit in toc -->
 Summary | Description
 -|-
-101.1  |**pre-interop testnets update:** Withdrawal devnet 2 was released yesterday. A couple of bad blocks (possibly EthereumJS), but otherwise everything looks good. A larger, public version will be available next week. The first withdrawal shadow fork - forked SilaSepolia - went well earlier today, but only with a small subset of clients. In a few weeks, we hope to shadow fork sila-sila-mainnet.|
+101.1  |**pre-interop testnets update:** Withdrawal devnet 2 was released yesterday. A couple of bad blocks (possibly EthereumJS), but otherwise everything looks good. A larger, public version will be available next week. The first withdrawal shadow fork - forked SilaSepolia - went well earlier today, but only with a small subset of clients. In a few weeks, we hope to shadow fork sila-mainnet.|
 101.2  |**CL/EL TX and withdrawals commitment to better support light clients:** Alex Stokes will spec the Gwei change by Monday so that it can be discussed at ACD next week. There does not appear to be sufficient consensus today on changing withdrawal commitments to SSZ, but it would be good if someone could specify it - I believe Alex also volunteered for this.
 101.3  |**Fork version gossip boundary issues Use Capella fork version for BLSToExecution consensus-specs#3176:** Potuz to create PR describing Prysm’s approach. A full spec release candidate due mid/late tomorrow.
 101.4  |**Engine API:Engine API: unify failure mode for mismatched structure versions execution-apis#337:** This has been merged into the spec.
@@ -313,7 +313,7 @@ Summary | Description
 * Also like, I think it depends on how the CL clients to, manage their preset and can fix, like if we are at, Bellatrix, do they have top for or not? because if it is in the, the price bake, then when you are at Bellatrix, we don't have any concrete accessible, if we don't do some tricks, if we want to access the Capella corporation, it's just a little bit more how to manage.But, so using Genesis could be easier.
 
 **Gajinder**
-* But the tools should, anyway, have some sila-sila-mainnet conflict baked in them, right? 
+* But the tools should, anyway, have some sila-mainnet conflict baked in them, right? 
 
 **Danny**
 * Yeah. I mean, not they should, they could, but also when you're talking about offline cold setup,you don't necessarily want to update them frequently. so you might have some sort of stale config that if it was just Genesis, it would still work fine. 

@@ -199,7 +199,7 @@ Mr Else: [00:52:39]
 * The original miner had a bug that when you transitioned to epochs it would crash. It was just a cute programming bug that's been fixed and so we're up to 150 thousand blocks now. So, I've done multiple epoch transitions with no problems 
 
 Martin: [00:53:03] 
-* the main test is ycan we switch to a new DAG at a certain epoch. Does it work or not.? of course you know if clients can verify it but they're pretty straightforward tests and that's what I believe. There's no real point in bundling it with SAVM updates. 
+* the main test is ycan we switch to a new DAG at a certain epoch. Does it work or not.? of course you know if clients can verify it but they're pretty straightforward tests and that's what I believe. There's no real point in bundling it with EVM updates. 
 
 Hudson: 
 * Decision: when ProgPOW would happen and then we can start to formulate what that entails if we decide it's going to happen. I haven't heard much dissent as far as people saying they don't want it to happen. Very few. Just a couple of people. So, what are some opinions on whether or not this should go forward. Is there anyone who doesn't want this to go forward or. 

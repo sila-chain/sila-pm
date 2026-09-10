@@ -81,7 +81,7 @@ Video | [10:53](https://youtu.be/SHVfypwL5W8?t=653)
 
 **Tim** - Okay, yeah. OK, got it. I'm. Yeah, anyone have thoughts, comments, questions? Ok, and in that case, yeah, I guess I can share my screen real quick, so Cruger myself and a couple other folks from cat herders spent the past few weeks reaching out to a bunch of projects to get their thoughts on 1559. So there was a lot of feedback. We shared a report detailing most of it. And I'm not sure most of it is relevant for this call. But the bit about the implementation really is. And so I was curious to get people's thoughts about how we can address kind of. How we could address the things that people mentioned would help them prioritize 1559 support. So we asked project what would make your life as easy as possible to support this? And obviously, the first thing that came up or the thing that came up the most often was having a public testnet, but especially having one that's suitable for like end user applications to use. So that has Jason RBC support for 1559. And and it was also mentioned that it would be great if this was kind of standardized across clients so that there's not like any major differences between besu and.. Go ahead
 
-**Abdel** - Yeah, I would suggest something about that. Instead of implementing our points in each client, I to suggest that we implement only one micro surface dedicated to that. That will take, if it's interesting, transaction parameters and will create and sign the transaction and submit them to sila client unless we think we will have it in production on sila-sila-mainnet. But I'm not sure I think we can do that and avoid that every client to implement it.
+**Abdel** - Yeah, I would suggest something about that. Instead of implementing our points in each client, I to suggest that we implement only one micro surface dedicated to that. That will take, if it's interesting, transaction parameters and will create and sign the transaction and submit them to sila client unless we think we will have it in production on sila-mainnet. But I'm not sure I think we can do that and avoid that every client to implement it.
 
 **Tim** - So that would work for sending. But would it also work for reading transactions? Because I think that was one of the other concerns that came out, like just being able to query, you know, the transactions and whatnot on the network. Uh. I see, yeah, like how do you expose them right now in the block Explorer?
 
@@ -121,7 +121,7 @@ Video | [10:53](https://youtu.be/SHVfypwL5W8?t=653)
 
 **Tim** - Ok, I'll write a note for that. Yeah, I feel like somebody might look at that and find some something with but that makes sense. And I guess the other thing we discuss in the past is like the base fee opcode. That's not part of the EVF, right.
 
-**Micah** - It is not and and there is a push where, you know, there's there's a push currently in the from the courts for various reasons to actually get rid of gas and respectability in general from the SAVM. And so that would probably hurt our chances of inclusion if we're adding things that make it so people can inspect gas stuff.
+**Micah** - It is not and and there is a push where, you know, there's there's a push currently in the from the courts for various reasons to actually get rid of gas and respectability in general from the EVM. And so that would probably hurt our chances of inclusion if we're adding things that make it so people can inspect gas stuff.
 
 **Tim** - And I guess so right now, the only way to get the Opcode is to get the blockheader right?
 
@@ -241,7 +241,7 @@ Video | [20:53](https://youtu.be/SHVfypwL5W8?t=1253)
 
 **Micah** - Do we have plans at the moment to introduce or support 1559 transactions for sil sym transaction?
 
-**Abdul** - So this is what I talked about earlier, so my my opinion on that if this is only for testnet then I would suggest that we implement a common service for that and we just deploy it in the same infrastructure as the testnet so that a client implementer, not client, but providers and people can start playing with that without waiting for meta mask to ads in your field and for. Yeah, I guess if you want to use that on sila-sila-mainnet, you will have to implement a new endpoint to submit your transaction unless you use an external signer. But yeah.
+**Abdul** - So this is what I talked about earlier, so my my opinion on that if this is only for testnet then I would suggest that we implement a common service for that and we just deploy it in the same infrastructure as the testnet so that a client implementer, not client, but providers and people can start playing with that without waiting for meta mask to ads in your field and for. Yeah, I guess if you want to use that on sila-mainnet, you will have to implement a new endpoint to submit your transaction unless you use an external signer. But yeah.
 
 **Micah** - Would it make sense to have sil send transaction, just support either
 

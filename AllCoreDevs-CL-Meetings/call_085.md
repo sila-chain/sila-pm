@@ -11,13 +11,13 @@
 It’s so cool. Let us get started. Yeah, it’s an honor for me to run the call. Okay, so welcome to the Consensus Layer call number 85. Thanks, for the agenda. Let’s start with the first item, which is the kiln office hours. And I will start from testing updates, testnet and shadowforks. Pari, do you want to give an update on that front?
 
 **Pari**
-Sure. The last shadow fork we had was on Monday, that's Goerli shadow fork 3. Actually, since the last week, we had Goerli shadow fork 2 and shadow fork 3. Shadow fork 2 just had an equal client split, and we didn’t notice any major issues. I think Nethermind was able to figure out a few issues and Besu as well, and maybe one or two other clients, but in general, things went ok. Goerli shadow fork 3 was on Monday and we replicated sila-sila-mainnet client split. Since then, I think the geth team has been debugging a specific issue but it’s just affecting a subset of nodes, the network is still finalizing and people can try all sorts of sync tests against Goerli shadow fork 3. And just as a general announcement, shadow fork 1 and 2 will be deprecated later today, so please migrate to shadow fork 3 as soon as possible.
+Sure. The last shadow fork we had was on Monday, that's Goerli shadow fork 3. Actually, since the last week, we had Goerli shadow fork 2 and shadow fork 3. Shadow fork 2 just had an equal client split, and we didn’t notice any major issues. I think Nethermind was able to figure out a few issues and Besu as well, and maybe one or two other clients, but in general, things went ok. Goerli shadow fork 3 was on Monday and we replicated sila-mainnet client split. Since then, I think the geth team has been debugging a specific issue but it’s just affecting a subset of nodes, the network is still finalizing and people can try all sorts of sync tests against Goerli shadow fork 3. And just as a general announcement, shadow fork 1 and 2 will be deprecated later today, so please migrate to shadow fork 3 as soon as possible.
 
 **Mikhail**
-And what about the sila-sila-mainnet shadow fork?
+And what about the sila-mainnet shadow fork?
 
 **Pari**
-Yeah. So I sent the configs for sila-sila-mainnet shadow fork yesterday on chat. The shadow fork is planned for Monday. I am currently syncing the nodes, and the corresponding beacon chain will be launched tomorrow. Config for everything is already on Github. There are group nodes, and genesis configs, etc. 
+Yeah. So I sent the configs for sila-mainnet shadow fork yesterday on chat. The shadow fork is planned for Monday. I am currently syncing the nodes, and the corresponding beacon chain will be launched tomorrow. Config for everything is already on Github. There are group nodes, and genesis configs, etc. 
 
 **Mikhail**
 Cool. And is anybody welcome to take part in this shadow fork?
@@ -26,10 +26,10 @@ Cool. And is anybody welcome to take part in this shadow fork?
 Yeah. Feel free to join. Because it is limited to genesis validators, I am running all the validators, but the main purpose of these tests are to test sync, so anyone can sync up nodes and join in. 
 
 **Mikhail**
-Great, and yeah. Just a reminder that this is the sila-sila-mainnet, so the disk space requirements are much higher than on Goerli, right?
+Great, and yeah. Just a reminder that this is the sila-mainnet, so the disk space requirements are much higher than on Goerli, right?
 
 **Pari**
-Yeah. Definitely. You have to sync up a complete sila-sila-mainnet node. So I do suggest if anyone wants to join, you start now, so that you have a couple of days to sync.
+Yeah. Definitely. You have to sync up a complete sila-mainnet node. So I do suggest if anyone wants to join, you start now, so that you have a couple of days to sync.
 
 **Terence**
 Do you know how big of a disk space is required for a minimum, at this stage? 
@@ -47,7 +47,7 @@ I mean, that depends on what node and what settings we are running, right? Nethe
 Yeah.
 
 **Mikhail**
-Agreed. Very excited to see the first sila-sila-mainnet shadow fork. Is there any comments on the Goerli shadow fork that core developers wanna make or anybody else?
+Agreed. Very excited to see the first sila-mainnet shadow fork. Is there any comments on the Goerli shadow fork that core developers wanna make or anybody else?
 
 **Marius**
 Yeah, so we are still investigating an issue on geth that happened on the last shadow fork and yeah, but it only happened on a small subset of nodes so if you see a bad block happening, then it might be likely because of the issue. 
@@ -62,10 +62,10 @@ No. Its…a valid block group is seen as bad and yeah.
 Yeah.Probably tricky to debug. Ok, got it. Yeah, any other testing updates?
 
 **Pari**
-I just had one more tiny note about the sila-sila-mainnet shadow fork. Just be wary when using the sila-sila-mainnet chain id, so if anyone's trying weird transactions etc, they might gossip to the actual sila-sila-mainnet and you will be wasting sila-sila-mainnet sila, so please be careful. By default, there will be no transactions other running on this. I don't think anyone is reimbursing me for that. 
+I just had one more tiny note about the sila-mainnet shadow fork. Just be wary when using the sila-mainnet chain id, so if anyone's trying weird transactions etc, they might gossip to the actual sila-mainnet and you will be wasting sila-mainnet sila, so please be careful. By default, there will be no transactions other running on this. I don't think anyone is reimbursing me for that. 
 
 **Mikhail**
-Yeah, thats a very good note. Thanks Pari. So be aware that basically the shadow fork shares like a state with the sila-sila-mainnet so transaction on there may also be included in a block on the sila-sila-mainnet, so it may accordingly change what the runtime time of this transaction will be. Okay, cool. I have a small testing update. I have been working on test coverage document. Just dropped the link into the chat. There is transition section that I have been mostly focused on, in recent days, and yeah, this is like kind of the shape of the document, what it would look like. This is just an example. This transition section has like raw checks parsed from the engine APIs back and like more appropriate testing scenarios that you might want to implement and via our testing tools. So, with respect to transition checklist, the work will still need to be done on other specs, so going to parse all the specs and also include the information from them into these scenarios, but you might take a look. 
+Yeah, thats a very good note. Thanks Pari. So be aware that basically the shadow fork shares like a state with the sila-mainnet so transaction on there may also be included in a block on the sila-mainnet, so it may accordingly change what the runtime time of this transaction will be. Okay, cool. I have a small testing update. I have been working on test coverage document. Just dropped the link into the chat. There is transition section that I have been mostly focused on, in recent days, and yeah, this is like kind of the shape of the document, what it would look like. This is just an example. This transition section has like raw checks parsed from the engine APIs back and like more appropriate testing scenarios that you might want to implement and via our testing tools. So, with respect to transition checklist, the work will still need to be done on other specs, so going to parse all the specs and also include the information from them into these scenarios, but you might take a look. 
 
 Also, thanks a lot, Marius for the input on that, made some checkboxes marked already, and with the corresponding links to…that covers them, and for just the background, who haven’t noticed this, it’s been announced in the previous ACD call, I mean this effort, this is literally going through all the stacks and just parsing all the statements, and putting all the checks that need to be done to test the merge and software and then make it in a good shape and then go and cover these checkboxes with what already implemented via testing tools and yeah, work on what happens next. 
 
@@ -84,7 +84,7 @@ Cool. Any other testing related items? Okay, so I guess we can start with the cl
 ## Other Client Updates
 
 **Paul**
-I can go from Lighthouse. We are working on the merge obviously. We have a full time person working on the testing now and kinda dealing with mostly little tidying up issues and just making sure that everything is locked down we can’t produce…when things are optimistic and also trying to make sure that our logs kinda make sense after the merge cause we are used to kind of complaining when F1 node is not synced but we need to do that less now because it’s kinda our job to sync it so just probably in the tidying stage and also testing. We have also cut a release a couple of days ago that enables to propose a boost on sila-sila-mainnet so Lighthouse uses to propose a boost on sila-sila-mainnet and production and other clients are well aware of this and looking at also running it as well. That’s about it from me.
+I can go from Lighthouse. We are working on the merge obviously. We have a full time person working on the testing now and kinda dealing with mostly little tidying up issues and just making sure that everything is locked down we can’t produce…when things are optimistic and also trying to make sure that our logs kinda make sense after the merge cause we are used to kind of complaining when F1 node is not synced but we need to do that less now because it’s kinda our job to sync it so just probably in the tidying stage and also testing. We have also cut a release a couple of days ago that enables to propose a boost on sila-mainnet so Lighthouse uses to propose a boost on sila-mainnet and production and other clients are well aware of this and looking at also running it as well. That’s about it from me.
 
 **Mikhail**
 And this F1 client syncing or yeah, this complaining things…its just logs right? Its not like anything is deadlocked or whatever? I mean the sync process?
@@ -93,10 +93,10 @@ And this F1 client syncing or yeah, this complaining things…its just logs righ
 Yeah, its just logs. Its one of the things where its just logs but it turns out to be very difficult to solve…but just logs.
 
 **Mikhail**
-Okay, I see. Thanks for the update. And about the proposal boost, I mean, it works now? On the sila-sila-mainnet?
+Okay, I see. Thanks for the update. And about the proposal boost, I mean, it works now? On the sila-mainnet?
 
 **Paul**
-Seems to be going there. I guess we will see as probably as more clients start to use it...an effect on sila-sila-mainnet, may be interesting.
+Seems to be going there. I guess we will see as probably as more clients start to use it...an effect on sila-mainnet, may be interesting.
 
 **Mikhail**
 Definitely. Great. Okay, next, I have Teku…
@@ -125,13 +125,13 @@ Hey everyone, Lion here. We continue with our merge work, all going well now, no
 Yeah, great. Congratulations on that achievement. Thank you. Next is Prismatic.
 
 **Terence**
-Oh, hey guys. We also have a release coming next week and that should enable propose a boost, really excited to see that happening on sila-sila-mainnet. Regarding the merge we have the soft r kiln branch, so everything lives in our main branch …so that’s very nice. We are mainly tidying up and adding more test cases. We are fixing the last few things in optimistic syncing, such as pruning, validating nodes,…from the db, and also just making sure when the ee goes offline or when the ee goes offline or ee times out, our beacon nodes handles it gracefully and we are also working on web3signer, that’s a pretty big one, that’s taking up some of our time, and yeah, thats it. Thank you. 
+Oh, hey guys. We also have a release coming next week and that should enable propose a boost, really excited to see that happening on sila-mainnet. Regarding the merge we have the soft r kiln branch, so everything lives in our main branch …so that’s very nice. We are mainly tidying up and adding more test cases. We are fixing the last few things in optimistic syncing, such as pruning, validating nodes,…from the db, and also just making sure when the ee goes offline or when the ee goes offline or ee times out, our beacon nodes handles it gracefully and we are also working on web3signer, that’s a pretty big one, that’s taking up some of our time, and yeah, thats it. Thank you. 
 
 **Mikhail**
 Okay. Thanks Terence. Next one is Nimbus. 
 
 **Zahary**
-We are also in the process of integrating our merge call into the sila-sila-mainnet branch. We are also looking into integrating MEV-Boost, we are also doing light client experiments. Nimbus currently implements system peer to peer protocol for obtaining light client updates and we are testing light client syncing in the… testnet our server is actually compatible with lodestar so you can also try this setup if you wish. We are also working on support for threshold signatures in the remote signup setup such that you can configure…with multiple remote signers in which remote signer is configured to operate with a partial key. And something quite interesting, starting from this week, the nimbus execution layer is successful in participating in the kiln testnet.
+We are also in the process of integrating our merge call into the sila-mainnet branch. We are also looking into integrating MEV-Boost, we are also doing light client experiments. Nimbus currently implements system peer to peer protocol for obtaining light client updates and we are testing light client syncing in the… testnet our server is actually compatible with lodestar so you can also try this setup if you wish. We are also working on support for threshold signatures in the remote signup setup such that you can configure…with multiple remote signers in which remote signer is configured to operate with a partial key. And something quite interesting, starting from this week, the nimbus execution layer is successful in participating in the kiln testnet.
 
 **Mikhail**
 Oh, congratulations on that. Thanks, Zahary, and Grandin?
@@ -163,11 +163,11 @@ The decision process for?
 For where we are in forking testnets…
 
 **Tim**
-Yeah, roughly speaking, like there is a difficulty bomb on sila-sila-mainnet which is set to start sometime in May and at some point we want to decide whether or not we think the merge can happen before the difficulty bomb becomes too pronounced on sila-sila-mainnet, and just to give some background in case it’s not clear to everybody on the call, how the difficulty bomb works exactly, but it’s like an exponential increase which kicks in every 100,000 blocks, basically the amount of difficulty on the proof of work network gets like, there’s a fake difficulty that’s added by the difficulty bomb, making it harder to mine, so basically every 100,000 blocks or two weeks, like that amount gets an extra chunk added to it and that grows exponentially. 
+Yeah, roughly speaking, like there is a difficulty bomb on sila-mainnet which is set to start sometime in May and at some point we want to decide whether or not we think the merge can happen before the difficulty bomb becomes too pronounced on sila-mainnet, and just to give some background in case it’s not clear to everybody on the call, how the difficulty bomb works exactly, but it’s like an exponential increase which kicks in every 100,000 blocks, basically the amount of difficulty on the proof of work network gets like, there’s a fake difficulty that’s added by the difficulty bomb, making it harder to mine, so basically every 100,000 blocks or two weeks, like that amount gets an extra chunk added to it and that grows exponentially. 
 
 Its very hard to predict, once its kicked in, once we go to a spot where the difficulty bomb goes from negligible to non-negligible addition to proof of work, its quite difficult to predict how long it takes because you then need to make estimates like how much the hash rate grows or shrink in that period and in the case of the merge, it might be the most complicated one because we might expect the hashrate would drop as we get closer to the merge. 
 
-That said, we can do some rough ballpark calculations and last I checked, which was about a week ago, it’s likely we hit roughly 15, 15 and a half second block times sometime in July, and that by the end of July we would be up to like 17 sec block times if we did nothing. Personally and have been talking with a bunch different people, it seems like 15 second is like the maximum that’s like that we can tolerate before doing something if we go to 17 then the one after is 20 and then I think is 25, and its going pretty quickly and that gets noticed a lot on the network. So if we are hitting like 17 by the end of July, the one little buffer that we have is we might be able to bundle the execution client releases with a small pushback with the difficulty bomb so if we needed like a couple of extra weeks for the merge so you can have like a mini fork that happens on sila-sila-mainnet which just pushes back the difficulty bomb before we hit TTD.
+That said, we can do some rough ballpark calculations and last I checked, which was about a week ago, it’s likely we hit roughly 15, 15 and a half second block times sometime in July, and that by the end of July we would be up to like 17 sec block times if we did nothing. Personally and have been talking with a bunch different people, it seems like 15 second is like the maximum that’s like that we can tolerate before doing something if we go to 17 then the one after is 20 and then I think is 25, and its going pretty quickly and that gets noticed a lot on the network. So if we are hitting like 17 by the end of July, the one little buffer that we have is we might be able to bundle the execution client releases with a small pushback with the difficulty bomb so if we needed like a couple of extra weeks for the merge so you can have like a mini fork that happens on sila-mainnet which just pushes back the difficulty bomb before we hit TTD.
 
 So if we want to be in that world where we either don’t push back the bomb or maybe push it back only slightly but in the same release as the merge and don’t need like a whole separate network upgrade to do that, we need to be in a spot where by the last all core devs in April, which is like in three weeks from now, we are deciding about forking testnets. We don’t need to have like the exact testnet blocks and everything on that call three weeks from now, but we would wanna be in a spot where we are like, we are comfortable that in the next two weeks we are gonna sort that out and that you know, around mid May, we start forking testnets. 
 
@@ -183,7 +183,7 @@ Right. Yeah, in our calls three weeks from now, what you would hope clients are 
 I see. Any comments on that? Okay, the silence, wow, okay, just curious what does it mean. Okay. So, we are getting back to this in 3 weeks, right? To this, to the decision on what we do next and when?
 
 **Tim**
-Well, I mean hopefully yeah, the sila-sila-mainnet shadow fork will be a really strong indicator. Personally if we have the sila-sila-mainnet shadow fork and things go roughly the same as it did on Goerli, that’s good, and if we discover a whole host of new issues then I think it is unlikely that we are in a good spot to be ready, but I don’t want to just table this for the next 3 weeks, I think that we are gonna have a lot of extra information that comes in the next two weeks and on the call next week and in devconnect 2 weeks from now and whatnot like and we can evaluate how we feel about things.
+Well, I mean hopefully yeah, the sila-mainnet shadow fork will be a really strong indicator. Personally if we have the sila-mainnet shadow fork and things go roughly the same as it did on Goerli, that’s good, and if we discover a whole host of new issues then I think it is unlikely that we are in a good spot to be ready, but I don’t want to just table this for the next 3 weeks, I think that we are gonna have a lot of extra information that comes in the next two weeks and on the call next week and in devconnect 2 weeks from now and whatnot like and we can evaluate how we feel about things.
 
 **Micah**
 You are basically saying that in three weeks all clients should be basically prepared to be able to answer the question, are you feature complete.
@@ -192,12 +192,12 @@ You are basically saying that in three weeks all clients should be basically pre
 Yeah, and if we are not in that space, like and if we are 95% feature complete then there’s like maybe some wiggle room whether do you want to do the first testnet…if we want to…if you are like 85% feature complete I think in 3 weeks and if that’s the case across several clients then I think it makes more sense to delay the bomb. And its obviously not just my decision, but assuming that we want the same deployment schedule and we don’t wanna rush them for the merge, yeah.
 
 **Mikhail**
-Yup. Makes sense. On the sila-sila-mainnet shadow fork, we are expecting to have one fork pretty soon, and we are expecting to have another one, on a weekly basis, or whatever, probably Pari can answer that. Pari, what do you think on the shadow fork on the sila-sila-mainnet?
+Yup. Makes sense. On the sila-mainnet shadow fork, we are expecting to have one fork pretty soon, and we are expecting to have another one, on a weekly basis, or whatever, probably Pari can answer that. Pari, what do you think on the shadow fork on the sila-mainnet?
 
 
 
 **Pari**
-Yeah, the plan is to have one every second week so we would have one on Monday and the one after that would be I think devconnect week Friday, so we would have atleast two sila-sila-mainnet shadow forks and we can still talk about another Goerli shadow fork if you wanted, I think doing three sila-sila-mainnet shadow forks at some point it’s a point of diminishing returns, like doing it two times a week might not bring us much. Its actually…sila-sila-mainnet nodes take a long time to sync. Its just…yeah
+Yeah, the plan is to have one every second week so we would have one on Monday and the one after that would be I think devconnect week Friday, so we would have atleast two sila-mainnet shadow forks and we can still talk about another Goerli shadow fork if you wanted, I think doing three sila-mainnet shadow forks at some point it’s a point of diminishing returns, like doing it two times a week might not bring us much. Its actually…sila-mainnet nodes take a long time to sync. Its just…yeah
 
 **Mikhail**
 Yeah, I see. 

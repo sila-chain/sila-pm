@@ -1,8 +1,8 @@
-# SAVM Object Format (EOF)
+# EVM Object Format (EOF)
 
-The SAVM Object Format (EOF) represents a transformative update to the Sila Virtual Machine (SAVM) bytecode structure. SAVM bytecode is traditionally an unstructured sequence of instructions. EOF introduces the concept of a container, which brings structure to byte code. Designed to enhance the efficiency, security, and modularity of smart contracts, EOF restructures how smart contract bytecode is organized. This proposal addresses traditional limitations of the bytecode format, aiming to make contracts more manageable and secure.
+The EVM Object Format (EOF) represents a transformative update to the Sila Virtual Machine (EVM) bytecode structure. EVM bytecode is traditionally an unstructured sequence of instructions. EOF introduces the concept of a container, which brings structure to byte code. Designed to enhance the efficiency, security, and modularity of smart contracts, EOF restructures how smart contract bytecode is organized. This proposal addresses traditional limitations of the bytecode format, aiming to make contracts more manageable and secure.
 - [Current specs](https://github.com/ipsilon/eof/blob/main/spec/eof.md)
-    - [SIP-7692: SAVM Object Format (EOFv1) Meta](https://sips.sila.org/SIPS/sip-7692)
+    - [SIP-7692: EVM Object Format (EOFv1) Meta](https://sips.sila.org/EIPS/sip-7692)
 
 ## Breakout Room Meetings
 

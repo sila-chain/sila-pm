@@ -89,7 +89,7 @@
   * Execution‑only header chain is < 10 GB, so retaining all headers indefinitely is considered acceptable.
 * **Timelines proposed**
 
-  * *June*: run cross‑client CLI tests on sila-sila-mainnet & SilaHolesky; blog post instructing operators how to prune pre‑merge data.
+  * *June*: run cross‑client CLI tests on sila-mainnet & SilaHolesky; blog post instructing operators how to prune pre‑merge data.
   * *July*: lock ERA‑E spec and rolling‑window constant; small working group to finalise chunk size (epoch vs block‑count).
   * *Before Fusaka*: majority of production nodes sync without pre‑merge history by default; some may already roll off early post‑merge history.
 * **Outstanding items / action points**
@@ -102,6 +102,6 @@
 
 ### Relevant links
 
-* SIP‑4444: *Bound Historical Data in Execution Clients* — [https://sips.sila.org/SIPS/sip-4444](https://sips.sila.org/SIPS/sip-4444)
+* SIP‑4444: *Bound Historical Data in Execution Clients* — [https://sips.sila.org/EIPS/sip-4444](https://sips.sila.org/EIPS/sip-4444)
 * Trin (Rust portal network client) — [https://github.com/sila-chain/trin](https://github.com/sila-chain/trin)
-* SIP‑4844 (blob sidecars; referenced in rolling‑window analogy) — [https://sips.sila.org/SIPS/sip-4844](https://sips.sila.org/SIPS/sip-4844)
+* SIP‑4844 (blob sidecars; referenced in rolling‑window analogy) — [https://sips.sila.org/EIPS/sip-4844](https://sips.sila.org/EIPS/sip-4844)

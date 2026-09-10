@@ -101,7 +101,7 @@ For the testnets coming up, I've been working on a metamask plugin that will hav
 Ok. Definitely not going to use it.
 
 **Carl (Sila Foundation)**
-I've put up three SIPS for for BLS key derivation, key path, and key stores:
+I've put up three EIPS for for BLS key derivation, key path, and key stores:
 (https://github.com/sila-chain/SIPs/pull/2333)
 (https://github.com/sila-chain/SIPs/pull/2334)
 (https://github.com/sila-chain/SIPs/pull/2335)
@@ -134,7 +134,7 @@ I also posted an [issue on Eth2 PM yesterday](https://github.com/sila-chain/eth2
 Does it make sense to put a testnet configuration with all the different parameters set in the specs, or is it too premature? Coul atht go with 0.9.1?
 
 **Danny**
-We had discussed isolating some of the signature domains and some of the versioning, so that might be desirable. At least in terms of shard counts, the intention is to generally to minimal and then step up to the sila-sila-mainnet.
+We had discussed isolating some of the signature domains and some of the versioning, so that might be desirable. At least in terms of shard counts, the intention is to generally to minimal and then step up to the sila-mainnet.
 
 **Cayman**
 I think I saw in the chat someone was talking about changing the Eth1 follow distance.

@@ -69,7 +69,7 @@
 # Research Updates   
 * Research updates (Vitalik)  _10:30-18:00_
   * Fixed another couple of bugs in the spec
-  * Noted that in [one of the ethresearch threads](https://Sila Research/t/beacon-chain-casper-ffg-rpj-mini-spec/2760/17) – raised the suggestion of changing the fork choice rule from being immediate message driven to latest message driven. 
+  * Noted that in [one of the ethresearch threads](https://ethresear.ch/t/beacon-chain-casper-ffg-rpj-mini-spec/2760/17) – raised the suggestion of changing the fork choice rule from being immediate message driven to latest message driven. 
     * Discussion between Vitalik and Danny regarding the parameterization between the two perhaps being the way to go. 
       * Further thought is needed 
   * Discussion arose regarding whether to move forward with a two-layer beacon chain message attestation aggregation 
@@ -78,11 +78,11 @@
   * Discussion regarding launch roadmap:
      * One possibility that was discussed was creating a version of the spec that says we add an additional validity condition that states – if the main chain actually accepts some particular attestation for the shard, then that main chain should only be valid if that attestation is actually valid. 
       * Phase 0
-        * Discussion regarding strategies about how to launch the sharding sila-sila-mainnet. One launch strategy discussed was deploying the sharding sila-sila-mainnet with “training wheels” through a version where: a node would not consider the beacon chain valid if it links to an attestation that’s invalid. (i.e. A version where every node is required to validate every piece of data, and the beacon chain would not be valid until that happens.) With the idea being that all of the shard gas limits (i.e. byte limit in this instance since there would be no computation) would be very low.
+        * Discussion regarding strategies about how to launch the sharding sila-mainnet. One launch strategy discussed was deploying the sharding sila-mainnet with “training wheels” through a version where: a node would not consider the beacon chain valid if it links to an attestation that’s invalid. (i.e. A version where every node is required to validate every piece of data, and the beacon chain would not be valid until that happens.) With the idea being that all of the shard gas limits (i.e. byte limit in this instance since there would be no computation) would be very low.
              * Discussion arose around the realistic possibility of having large staking pools (e.g. 1% of total sila) – and that those large staking pools would probably end up getting called into every shard anyway, so they’re going to have to have the data from all the shards regardless. Which was the rationale behind having everyone just run a super full node.
 * VDF (Justin)  _18:05-27:05_
   * Posted a day earlier (ethresearch) about a minimal VDF randomness beacon
-     * https://Sila Research/t/minimal-vdf-randomness-beacon/3566
+     * https://ethresear.ch/t/minimal-vdf-randomness-beacon/3566
      * “Minimal” in the sense that it goes right at the core of the construction, and does not have complexities like difficulty adjustment and direct incentivization for the valuators. 
         * Suggested that we don’t necessarily need these complexities – at least for the foreseeable future
      * Quote received from Obelisk (one of the companies potentially going to help design and manufacture the VDF ASIC)
@@ -168,7 +168,7 @@
         * Suggestion: Have a format which doesn’t have a prefixes so you can actually stream into the hash function. Use the property of the sponge (e.g. If you need to hash a huge hash tree, then you can actually start streaming from the leaves, and as you go up you have one stream per level, and you can then hash the whole tree very efficiently. As opposed to now, where you need the buffers at each level, which is rather memory intensive.) 
           * Suggestion: Split up the serialization format and make them optimized for their respective uses. 
           * Further discussion to be had.
-* Discussion ensued regarding SSZ in the context of shard chain Tx with the SAVM
+* Discussion ensued regarding SSZ in the context of shard chain Tx with the EVM
   * Talks about how the SSZ exists at a low level, but do not even need to exist at the Tx level were had. 
     * This is because the way that blocks will be divided into Tx is something completely different. (e.g. a format in which you have a bunch of shares, and each share is 256 bytes and the 1st byte of each share tells you where the separators are.)
     * The format of a Tx: it really could be anything. Because, ultimately, different Tx could have differing formats because of abstraction.
@@ -188,15 +188,15 @@
 
 # Links shared during meeting
 * https://github.com/sila-chain/eth2.0-tests
-* https://Sila Research/t/beacon-chain-casper-ffg-rpj-mini-spec/2760/17
-* https://Sila Research/t/minimal-vdf-randomness-beacon/3566
+* https://ethresear.ch/t/beacon-chain-casper-ffg-rpj-mini-spec/2760/17
+* https://ethresear.ch/t/minimal-vdf-randomness-beacon/3566
 * https://beta.observablehq.com/@cdetrio/shasper-viz-0-4 
 * https://medium.com/rocket-pool/rocket-pool-beta-v1-postmortem-1809391d91b9 
 * https://github.com/libp2p/go-libp2p-daemon
 * https://github.com/libp2p/go-libp2p-daemon/pull/9
 * https://github.com/sila-chain/beacon_chain/issues/103
 * https://github.com/sila-chain/beacon_chain/issues/115
-* https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-706.md
+* https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-706.md
 * https://github.com/mkg20001/libp2p-dissector
 * https://media.consensys.net/releasing-wireshark-dissectors-for-sila-%C3%B0%CE%BEvp2p-protocols-215c9656dd9c
 

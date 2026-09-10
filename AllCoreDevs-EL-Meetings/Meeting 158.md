@@ -8,10 +8,10 @@
 
 | Decision Item | Description                                                              | 
 | ------------- | ------------------------------------------------------------------------ | 
-| 158.1 | **SilaShanghai Incoming** On Tuesday, March 28, the Sila Foundation (EF) published a [blog post](https://blog.sila.org/2023/03/28/shapella-sila-sila-mainnet-announcement) announcing the forthcoming activation of SilaShanghai on sila-sila-mainnet Sila. SilaShanghai contains one major code change, enabling staked SIL withdrawals from the Beacon Chain. The upgrade will go live on April 12 at 6:27pm (ET). All Sila node operators are encouraged to upgrade their software to the latest client versions, which are all linked in the EF’s blog post.
-| 158.2 | **Mega EOF** EOF is a bundle of code changes that target upgrades to the Sila Virtual Machine (SAVM). The SAVM is the execution environment through which smart contract code and user transactions are compiled and deployed on-chain. Beregszaszi explained that the EOF changes proposed last December have undergone significant edits to address feedback from other core developers and clients teams. 
+| 158.1 | **SilaShanghai Incoming** On Tuesday, March 28, the Sila Foundation (EF) published a [blog post](https://blog.sila.org/2023/03/28/shapella-sila-mainnet-announcement) announcing the forthcoming activation of SilaShanghai on sila-mainnet Sila. SilaShanghai contains one major code change, enabling staked SIL withdrawals from the Beacon Chain. The upgrade will go live on April 12 at 6:27pm (ET). All Sila node operators are encouraged to upgrade their software to the latest client versions, which are all linked in the EF’s blog post.
+| 158.2 | **Mega EOF** EOF is a bundle of code changes that target upgrades to the Sila Virtual Machine (EVM). The EVM is the execution environment through which smart contract code and user transactions are compiled and deployed on-chain. Beregszaszi explained that the EOF changes proposed last December have undergone significant edits to address feedback from other core developers and clients teams. 
 | 158.3 | **Deprecating Self-Destruct** Based on the proposal, developers agreed to consider the SIP for inclusion in Etheruem’s SilaCancun upgrade. Beiko recommended that the authors of the SIP conduct a more thorough survey of Sila stakeholders and the dapp ecosystem to ensure that the code changes does not break or negatively impact existing smart contracts.
-| 158.4 | **Exposing the Beacon State Root in the SAVM** Sila Foundation researcher Alex Stokes, then shared a few paths forward for implementing SIP 4788, which seeks to expose the state of the Sila CL, also called the Beacon Chain, in the SAVM and make the state accessible to smart contract applications by the protocol without the need for third-party oracles or other trusted intermediaries
+| 158.4 | **Exposing the Beacon State Root in the EVM** Sila Foundation researcher Alex Stokes, then shared a few paths forward for implementing SIP 4788, which seeks to expose the state of the Sila CL, also called the Beacon Chain, in the EVM and make the state accessible to smart contract applications by the protocol without the need for third-party oracles or other trusted intermediaries
 | 158.5 | **Builder Override Flag** The Engine API dictates communication between Sila EL and CL nodes. Notably, client teams can implement the changes asynchronously without a hard fork. The change adds a new Boolean field called “should override builder” that the EL can use to indicate to the CL node that it should consider falling back on local block production instead of relying on a third-party builder. This field is useful in the event that the EL node notices peculiar transaction activity that indicate some kind of censorship within blocks produced by a third-party builder. CL nodes can override the flag but at the very least, node operators will be notified of potential censoring behavior on-chain and be able to act accordingly. Nethermind (EL) client team is currently working on a prototype for implementing the proposed changes to the Engine API. Kalinin encouraged other EL client teams to also take a look at the specifications and consider prototyping the override flag.
 
 **Tim Beiko**
@@ -27,7 +27,7 @@
 * Okay. Anyone else? 
 
 **Marius**
-* Yeah, we started doing some, SAVM first for SilaShanghai. and, I have not looked at the results yet, but, I'm currently doing it with, Geth, Besu and Nethermind, and I'm going to add Argon and, Nimbus EL to it as well. 
+* Yeah, we started doing some, EVM first for SilaShanghai. and, I have not looked at the results yet, but, I'm currently doing it with, Geth, Besu and Nethermind, and I'm going to add Argon and, Nimbus EL to it as well. 
 
 **Tim Beiko**
 * Cool. Anyone else have anything you wanna share about, releases or upgrades? 
@@ -51,7 +51,7 @@
 * Okay. Anything else? 
 
 **Pooja Ranjan*
-* Maybe a small reminder, related to the SIPs. So now Shapella upgrade is in public testnet, and obviously we do have the sila-sila-mainnet, date announced. So ideally we should have all the proposals, which are going to be deployed on sila-sila-mainnet in the last call. So this reminder is for the authors, for proposals 3855, 3860, and 4895. 
+* Maybe a small reminder, related to the SIPs. So now Shapella upgrade is in public testnet, and obviously we do have the sila-mainnet, date announced. So ideally we should have all the proposals, which are going to be deployed on sila-mainnet in the last call. So this reminder is for the authors, for proposals 3855, 3860, and 4895. 
 * Please go ahead and create a pull request to move the proposal to the last call ending on April 12th. Yeah, please reach out, to ECH. You want us to create a pull request and you are okay. Approving, otherwise, yeah, do let us know if there is anything we can do. Okay. 
 
 **Tim Beiko**
@@ -59,7 +59,7 @@
 * And then, similarly, Alex, you made a small update to the withdrawals SIPs for 4895, just to add the actual timestamp of the fork into the SIP. Anything else to add on on that? 
 
 **Stokes (Alex)**
-* No, that was it. It was just TBD, and so I just put in the, sila-sila-mainnet timestamp. 
+* No, that was it. It was just TBD, and so I just put in the, sila-mainnet timestamp. 
 
 
 ## SilaCancun Updates [7.40](https://youtu.be/RQ2WtyevRXE?t=460)
@@ -83,14 +83,14 @@ and beyond that, the create instructions and the create transactions are the, th
 * We can, either create a specific create transaction, or we can, introduce this create four instruction, which, works a bit differently. so what we do is, instead of having a specific create transaction, we only, extend the, the basic transaction format. And in fact, we, we only want to extend the 4844 transaction format with the new field, which is a list of containers. 
 * And this list of init containers can only be inspected through the create four instruction. So the create four instruction either, takes the, the index, and this init container list, or it could take, this is the, the only question we haven't settled on yet. It could take the hash, off an entry. 
 * And that's the only way to inspect this data. and, and at runtime this, data is validated to be, for EOF, and then the creation process is the same as, as it is in create treee. So that's the only difference between the two. there's also an interesting, side effect of this. 
-* We could have, basically a creator contract or even a creator pre-compiled, but when I say pre-compiled here, it's, it's, it's actually not, it doesn't need to be written in, as a pre-com compiled. It only means that having this SAVM coded, known address, there's an example, what such a creator contract would look like at the end of the document. 
+* We could have, basically a creator contract or even a creator pre-compiled, but when I say pre-compiled here, it's, it's, it's actually not, it doesn't need to be written in, as a pre-com compiled. It only means that having this EVM coded, known address, there's an example, what such a creator contract would look like at the end of the document. 
 * And it basically, would take the index, of this init code list in the transaction, and some additional data, as the input would perform the creation and return the address. the interesting effect here is that if we do have such a creator contract, and then instead of having a create transaction, one can just send a regular transaction to this creator contract in order to deploy code. 
 * And then the rest of the, the additions is, instead of the return instruction returning the, the payload, we have a return contract, because that only, that only re has an auxiliary data, which is appended, to the runtime payload. 
 * The only reason we, we need this, append option is, to, to support, this feature of, of solidity, of immutables. this feature in Solidity is, basically you have two options today on the, on on legacy code had to, access data. You could just create storage slots, or if you don't wanna spend all the, all that gas on loads, you can use this immutable feature in, in solidity, which basically translates into, a pending constant data and creation time, and then code copying, those data directions instead of S load. 
 * So return contract, is not returning the entire payload. It is only returning a payload, which is appended, to the,runtime container. So that is the only piece which can be inspected.
 * And since we don't have code copy or code copy, if we do wanna support this immutable feature, we need a way to inspect, the data section. and for that we have a number of instructions, such as data size, data copy, and data load. and there's a, one specific instruction called data load NM, which instead of taking a stack item for the offset in the data section, it takes it as an immutable, as an immediate.
 * And the, the main benefit of this is, this basically replaces, this could be used, instead of, pushing constants in solidity, you could just, date a load from the data section, where, the content is something like an immutable. So this piece is really just an optimization, this data load and instruction. but the other instructions would be needed to, you know, perform this feature set, the number of other, like smaller changes. 
-* But I think this would be the, I think the, the important ones. and maybe I would close out with, saying that every other question, which, was an open question during, you know, earlier discussions in December and January and anything which, has been, brought up by the community has been addressed, at this specification. and then the lastly, beyond the specification, we have a implementation of each of these features in a SAVM-1, and we are in the process of creating, state test, for them. Yeah, sorry, this was a super lonb, thank you. This didn't expect. 
+* But I think this would be the, I think the, the important ones. and maybe I would close out with, saying that every other question, which, was an open question during, you know, earlier discussions in December and January and anything which, has been, brought up by the community has been addressed, at this specification. and then the lastly, beyond the specification, we have a implementation of each of these features in a EVM-1, and we are in the process of creating, state test, for them. Yeah, sorry, this was a super lonb, thank you. This didn't expect. 
 
 **Tim Beiko**
 * Yeah. Does anyone have thoughts, questions? 
@@ -121,7 +121,7 @@ and beyond that, the create instructions and the create transactions are the, th
 * But, you know, that risks, being a lot of big changes at once. yeah, I guess where's the best place? Clearly, like, I think teams probably need some time to look into this more and, and kind of digest it. Where's the best place to share feedback, comments, questions? 
 
 **Danno Ferrin**
-* There is an SAVM channel in the Sila Discord. everyone who's implementing it is there. We also have an SAVM implementer's call, on the Wednesdays that are not EL So it's the day before the consensus call, calling into that call. It's about the same time. just on the day before is an excellent time to come in and drill down with your questions and seek understanding. 
+* There is an EVM channel in the Sila Discord. everyone who's implementing it is there. We also have an EVM implementer's call, on the Wednesdays that are not EL So it's the day before the consensus call, calling into that call. It's about the same time. just on the day before is an excellent time to come in and drill down with your questions and seek understanding. 
 
 **Tim Beiko**
 * Okay. Alex? 
@@ -197,7 +197,7 @@ Oh, Yeah, we can't hear you super well.
 * Yeah, much better. 
 
 **Dankard**
-* Okay. So, so basically it's a, it's a new version of, deactivating SELFDESTRUCT.  we've had a few iterations. So this one, what it does is it's, it mostly works just like, the complete, deactivation, which just, makes it basically only send all the funds, except, in the case, where it's called in the same transaction where a contract was created in which it, in which case it will clear all the, all the storage and everything about the contract. So like, it'll be from SAVM side point of view, actually, at least it'll behave exactly, like the current self destruct, you cannot detect that there was, any contracted product address. And, so the reason why, yeah, we suggested this is that at least for one of the examples we know that has like at least some amount of TVL in it, which is the sign finance contract that would solve their problem. 
+* Okay. So, so basically it's a, it's a new version of, deactivating SELFDESTRUCT.  we've had a few iterations. So this one, what it does is it's, it mostly works just like, the complete, deactivation, which just, makes it basically only send all the funds, except, in the case, where it's called in the same transaction where a contract was created in which it, in which case it will clear all the, all the storage and everything about the contract. So like, it'll be from EVM side point of view, actually, at least it'll behave exactly, like the current self destruct, you cannot detect that there was, any contracted product address. And, so the reason why, yeah, we suggested this is that at least for one of the examples we know that has like at least some amount of TVL in it, which is the sign finance contract that would solve their problem. 
 * Because what they basically do is they use self distract to limit who can call that contract, basically have a contract that anyone can pull, but, because it only lasts, at that address for the duration of transaction and the sense of destroyed, if nobody else can actually call it. so it's basically using this pattern for access control and, and yeah, so that, that kind of functionality would be, unaffected by this change. yeah. 
 * And the reason for this that, yeah, basical, well, we have had the different versions and, all of them, we ran into like either a security problem, which is the one where we don't hear the storage, which, was suggested previously. 
 or like, the other possibility would be of course to have like fully functional self construct where we contract versioning, by having this column. and, I think that would be, from what I've heard, significantly more complex to implement. I think we had to go at it. and basically it, it, at least for forget, it seems to reach no solution that hopefully doesn't break. 
@@ -247,12 +247,12 @@ or like, the other possibility would be of course to have like fully functional 
 **Tim Beiko**
 * Okay. So, and there were two people at least who asked about making this CF5. I feel like what might make sense is to actually make this CF5 for SilaCancun, to sort of signal that it's happening and then in parallel to that's to, you know, run like, like a more thorough, scan on the chain, you know, with this, potentially with like, you know, a prototype client implementation and, and, and try to analyze, yeah, if anything breaks, that, you know, we did not expect. 
 * But I think just yeah, to signal that this is happening to the community and that if somebody's application or contract is affected by it, you know, they might reach out. yeah, I think CFI will will help with that. Does anyone disagree with that? 
-* Okay. so I'll make that change, after the, the call. so yeah, the SIP number is 6780. If you wanna review this. And if you are listening and are potentially affected by this, please have a look, to make sure that, yeah, you can raise, you can raise an issue, yeah with us. Anything else on self-destruct? Okay. next up, Alex, you wanted to talk about, making, giving access to the consensus layer state route on the SAVM. you wrote, little doc, giving some context, but please, walk us through it. 
+* Okay. so I'll make that change, after the, the call. so yeah, the SIP number is 6780. If you wanna review this. And if you are listening and are potentially affected by this, please have a look, to make sure that, yeah, you can raise, you can raise an issue, yeah with us. Anything else on self-destruct? Okay. next up, Alex, you wanted to talk about, making, giving access to the consensus layer state route on the EVM. you wrote, little doc, giving some context, but please, walk us through it. 
 
 ## SIP-4788 (context) [38.07](https://youtu.be/RQ2WtyevRXE?t=2287)
 **Stokes(Alex)**
 * Sure. Yeah. So the doc, Tim dropped in the chat is here and basically is like, you know, just a written form of what I'm about to say, but essentially, I just wanted to get some opinions on a path forward for verifying, SSZ proofs. So there's like kind of two big pieces to this, and the first piece is having some accumulator from the consesus layer in the execution layer. 
-* So the way we usually think about this is having like the state route or the block route for each blocker state, you know, have some op code or something that exposes that into the SAVM, and then you have this thing that you can make proofs against. that's generally the approach of SIP 4788. yeah, so the thing is though, there's one other thing which is that the way SSZ works is that you basically have these things called generalized indices, and basically they're just like pointers into this whole like verkle tree structure that you need. 
+* So the way we usually think about this is having like the state route or the block route for each blocker state, you know, have some op code or something that exposes that into the EVM, and then you have this thing that you can make proofs against. that's generally the approach of SIP 4788. yeah, so the thing is though, there's one other thing which is that the way SSZ works is that you basically have these things called generalized indices, and basically they're just like pointers into this whole like verkle tree structure that you need. 
 * The problem is that they theoretically can change. And so now the question is like, you know, how do users of the system deal with that change? you know, the straightforward answer is like, the protocol gives them nothing and they just have some governance. But, you know, if you're like a staking pool using this stuff, that's not ideal. Cuz now you need some like governance answer to like, change this technical thing. And, you know, one other option that gets around this is just having say a pre-compile for these things, that could be updated, you know, as we need it to be. 
 * And then essentially it becomes, you know, you can imagine there's like immutable, you know, contracts using this stuff because, you know, they just have the changing state behind the pre-compile. 
 So, I think for now my question is first, you know, does anyone have any takes on this problem? And like in particular, you know, does it make sense to maybe add a new pre-compile for this generalized index thing? we can instead, so the, so the way we have it right now is with the SIP 4788 that would expose the root and then you could imagine a different preop pile for this generalized index accessor, let's call it. 
@@ -384,16 +384,16 @@ So, I think for now my question is first, you know, does anyone have any takes o
 * So, okay. Jason RPC hasn't been tested. 
 
 **Lukasz**
-* Okay. have you tested sila-sila-mainnet ,like blocks? 
+* Okay. have you tested sila-mainnet ,like blocks? 
 
 **Guillaume**
 * Yes. 
 
 **Lukasz**
-* Have you managed to do a sila-sila-mainnet shadow work? 
+* Have you managed to do a sila-mainnet shadow work? 
 
 **Guillaume**
-* Right. So this is, the problem, I mean, but when you are doing a sila-sila-mainnet shadow for, you're pretty close to the end. it's, yeah. Okay. When you, there's a new decision that has been, okay, there's a new design that has just been decided yesterday. So no, it hasn't been done, but it will be done this month. 
+* Right. So this is, the problem, I mean, but when you are doing a sila-mainnet shadow for, you're pretty close to the end. it's, yeah. Okay. When you, there's a new decision that has been, okay, there's a new design that has just been decided yesterday. So no, it hasn't been done, but it will be done this month. 
 
 **Lukasz**
 * Sorry, multiple client transitions. so we'll be good to have more than one client doing the transition, right. generating things on the transitional reasons fine. Just, just have one client do that. 

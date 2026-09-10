@@ -22,7 +22,7 @@
       },
       {
         "timestamp": "00:11:06",
-        "highlight": "Benchmarks require sila-sila-mainnet state; empty state tests insufficient for batch I/O"
+        "highlight": "Benchmarks require sila-mainnet state; empty state tests insufficient for batch I/O"
       },
       {
         "timestamp": "00:26:17",

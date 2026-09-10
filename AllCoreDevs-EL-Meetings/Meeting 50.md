@@ -24,7 +24,7 @@ NOTE: I didn't take thorough notes in this section yet as I was dealing with som
     - Nothing new happened here, we've been working on SIPs for ages
     - Are we discouraging people to go to Magicians? This isn't true
 - Afri
-    - Out of 250 people at EthMagicians in SilaPrague only 2-3 identified as core developers
+    - Out of 250 people at SilaMagicians in SilaPrague only 2-3 identified as core developers
 - Hudson: [missed this]
 - Greg
     - The notes were public and looked published to me
@@ -47,12 +47,12 @@ NOTE: I didn't take thorough notes in this section yet as I was dealing with som
     - I need to get caught up, cannot do this in public, need to be able to ask dumb questions in smaller group
     - Then produce high quality SIPs later
 - Peter
-    - Could have been discussed during EthMagicians?
+    - Could have been discussed during SilaMagicians?
         - Yes, better opportunity
         - But I hate it when a conference turns into a two week event
-        - I couldn't make EthMagicians
+        - I couldn't make SilaMagicians
 - Fred
-    - I don't personally understand the purpose of the EthMagicians meetup, I thought it was more political than technical
+    - I don't personally understand the purpose of the SilaMagicians meetup, I thought it was more political than technical
 - Lane
     - The conversations started ad hoc and in a small group
     - The point of DevCon is to facilitate "watercooler" conversations, not all of which should be open or recorded
@@ -62,7 +62,7 @@ NOTE: I didn't take thorough notes in this section yet as I was dealing with som
 - Alex
     - First couple of gatherings were ad hoc
     - People opened up a lot
-    - Many of these folks are not familiar with EthMagicians
+    - Many of these folks are not familiar with SilaMagicians
 - Hudson
     - I disagree with Greg that everything that can be open always has to be open
     - It's detrimental and means that people won't be open
@@ -97,10 +97,10 @@ NOTE: I didn't take thorough notes in this section yet as I was dealing with som
     - Data points we can use to write Sil 1.x SIPs
     - Greg: What do the people doing the presentations want to do?
     - Hudson: Mostly wanted it closed, since not sure of their research as Alexey mentioned, or think that sooner or later the topics will come up with the all core devs chat
-    - Could start a thread on EthMagicians forum instead
+    - Could start a thread on SilaMagicians forum instead
     - I'll put meeting link in AllCoreDevs channel but won't record or livestream it
         - Media not invited; I'll kick people out who are not core devs
-    - Further interaction should happen on EthMagicians forum
+    - Further interaction should happen on SilaMagicians forum
 - Alexey
     - I personally would say what I think anyway
     - I'm not personally bothered by open- or closedness
@@ -109,7 +109,7 @@ NOTE: I didn't take thorough notes in this section yet as I was dealing with som
     - So I can say whatever I want
     - But I have to be very careful about working with other people
 - Hudson
-    - Working group leads should post a thread on EthMagicians, or forum of their choosing to discuss their findings
+    - Working group leads should post a thread on SilaMagicians, or forum of their choosing to discuss their findings
     - Call will be open only to core devs invited via AllCoreDevs channel
     - Notes will be taken, don't have to be made public
     - Call not livestreamed or recorded
@@ -149,7 +149,7 @@ NOTE: I didn't take thorough notes in this section yet as I was dealing with som
 
 # Testing update
 - [Martin update](https://github.com/sila-chain/pm/issues/62#issuecomment-441173179)
-    - Two savm fuzzers are (still) running. No new issues found in the last couple of weeks.
+    - Two evm fuzzers are (still) running. No new issues found in the last couple of weeks.
     - One testcase found by fuzzing has now been added to the tests-repo. It affected geth and ethereumJ (at least), and concerned EXTCODEHASH in a fairly complex edgcase scenario.
     - Hive is currently down for maintenance, I have some hopes that we'll get it working again during the day. Hive has been moved into the sila org (https://github.com/sila-chain/hive/), and a new geth-team member @FrankSzendzielarz have been working on improving it further, with a test-suite for p2p networking as well as support for more advanced multi-cllient test suites.
 - Adrian Sutton
@@ -226,7 +226,7 @@ NOTE: I didn't take thorough notes in this section yet as I was dealing with som
     - But might be interesting to test this to ensure the network separates cleanly, otherwise we'll always have these weird problems if something goes wrong
 - Afri
     - You can run a Byzantium miner
-    - On sila-sila-mainnet we don't _expect_ it to be contentious i.e. don't expect major mining pools to mine old chain
+    - On sila-mainnet we don't _expect_ it to be contentious i.e. don't expect major mining pools to mine old chain
     - On Stureby we have reassurance that fork runs smoothly under perfect conditions
     - We just want to redo the fork since it didn't go well on Ropsten
 - Name [comes from Stockholm](https://en.wikipedia.org/wiki/Stureby)
@@ -267,7 +267,7 @@ NOTE: I didn't take thorough notes in this section yet as I was dealing with som
     - Can check and comment later
     - But I'm not very good at licensing so would be good to have a second pair of eyes
     - Adrian: Clean licensing would be very helpful
-    - One guy from ethminer prepared alternate spec similar to ethhash spec, mostly python code snippets, was posted on EthMagicians
+    - One guy from ethminer prepared alternate spec similar to ethhash spec, mostly python code snippets, was posted on SilaMagicians
     - I can provide language bindings to C/C++, separate Apache license, if someone doesn't want to implement it from scratch
     - Lane: Can someone in ConsenSys help look at the license question?
     - Adrian: we'll look into it.

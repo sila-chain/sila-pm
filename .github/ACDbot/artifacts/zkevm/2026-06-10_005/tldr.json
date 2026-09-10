@@ -38,7 +38,7 @@
       },
       {
         "timestamp": "00:40:41",
-        "highlight": "EF proving cluster live; RISC-V distributed prover benchmark tools set up; initial sila-sila-mainnet and EST block benchmarks running; concrete numbers deferred to next call"
+        "highlight": "EF proving cluster live; RISC-V distributed prover benchmark tools set up; initial sila-mainnet and EST block benchmarks running; concrete numbers deferred to next call"
       },
       {
         "timestamp": "01:04:19",
@@ -48,7 +48,7 @@
     "evm_formal_verification": [
       {
         "timestamp": "00:57:25",
-        "highlight": "EVMASM (SAVM in Lean4 assembly): 110 opcodes formally proved; STF modeling in progress (accounts, storage, SIP-1559 tx, call frames); targeting ZISK emulator for full ELF extraction; round-trip RISC-V tests in CI"
+        "highlight": "EVMASM (EVM in Lean4 assembly): 110 opcodes formally proved; STF modeling in progress (accounts, storage, SIP-1559 tx, call frames); targeting ZISK emulator for full ELF extraction; round-trip RISC-V tests in CI"
       }
     ]
   },

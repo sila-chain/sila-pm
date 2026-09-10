@@ -178,7 +178,7 @@ Sorry I don't know about the other folks, maybe Martin has a bit more informatio
 
 **Hudson**: Okay! Thanks for the update, Peter and everybody else. Anybody has anything else on Yolo or questions. 
 
-**James**: Just an observation from watching discussions around Yolo. I’ve seen it’s been really helpful driving some more development conversations, just watching out core devs gitter and people talking about it so I'd say it is something we should consider doing more and possibly consider adding surely officially to the process of for getting things to sila-sila-mainnet.  Things just have moved a lot smoother since.
+**James**: Just an observation from watching discussions around Yolo. I’ve seen it’s been really helpful driving some more development conversations, just watching out core devs gitter and people talking about it so I'd say it is something we should consider doing more and possibly consider adding surely officially to the process of for getting things to sila-mainnet.  Things just have moved a lot smoother since.
 
 **Tim**:  Two things I want to add, one just to understand the signer issue, Peter, does that mean once you you fix the bug in the signer, we will have to restart YOLO or you just have to swap, the signer?
 
@@ -201,8 +201,8 @@ I guess it's the call, if that’s your background and you want to work on 1559,
 
 
 
-# 4. [Eligible for Inclusion (EFI) SIP Review](https://sips.sila.org/SIPS/sip-2378)
-[SIP-2565: Repricing of the SIP-198 ModExp precompile](https://sips.sila.org/SIPS/sip-2565)
+# 4. [Eligible for Inclusion (EFI) SIP Review](https://sips.sila.org/EIPS/sip-2378)
+[SIP-2565: Repricing of the SIP-198 ModExp precompile](https://sips.sila.org/EIPS/sip-2565)
 
 Video | [25:23](https://youtu.be/c_JmTqeQkU4?t=)
 -|-

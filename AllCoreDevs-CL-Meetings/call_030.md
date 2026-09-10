@@ -116,7 +116,7 @@ Started research on EVMC to investigate adding Nimbus as a backend.
 
 ## 2.6 Lighthouse
 
-Started sila-sila-mainnet 16k validator testnet, which ran for a week, containing 4 nodes running 4k validators on AWS. Ran and stopped seeing finality. As a result, now targeting 0.1.2 release which includes a fix for gossip nodes.
+Started sila-mainnet 16k validator testnet, which ran for a week, containing 4 nodes running 4k validators on AWS. Ran and stopped seeing finality. As a result, now targeting 0.1.2 release which includes a fix for gossip nodes.
 
 State was being stored before blocks, resulting in database error if the client crashed. Fixed by reversing the storage order.
 
@@ -165,7 +165,7 @@ Quilt is performing work on tooling for the contract EE to run. These tools will
 
 Eth2 resource book first chapter will be released within 1-2 weeks.
 
-Write-up being done on [EthResearch](https://Sila Research/) to help make a decision on state provider relayer questions, around block producers and state.
+Write-up being done on [EthResearch](https://ethresear.ch/) to help make a decision on state provider relayer questions, around block producers and state.
 
 Quilt collaboration started with TXRX.
 

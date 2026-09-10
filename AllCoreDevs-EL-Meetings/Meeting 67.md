@@ -67,7 +67,7 @@ Obviously, it would be great to have the status update from Geth and Parity, so 
 **Tim**: Okay until the second the second part of this agenda item was the last call for any SIPs that want to be considered for tentatively accepted section. So in practice this means it's very unlikely for the October fork but possibly for the January part. Anything that has been proposed for Istanbulbut  that hasn't been accepted yet. Does anyone has opinion or suggestions here?
 
 
-**Casey**: Yeah, a few of them in there that I'm interested in, we're interested  Ewasm team. Unfortunately neither Pawel nor Alex could make the call but we'd like to see partical gas cost 2045. We've been to the tentatively accepted category.  I can elaborate on why, in some ways  it carries the torch for 615. There's a call a few months ago and during the 615 discussion people asks for benchmark to show what kind of speed improvement could  be expected and so it turns out two speed improvements are possible even without introducing subroutines and changing how jumps work. And we've always benchmarks showing speed ups that are on the table. So from Ewasm team's perspective also this particle  gas cost, I would argue, it's alternative to introducing Ewasm. One of the big potential benefits of Ewasm is to speed up. Well, it turns out that , if you just optimize SAVM and  the client and which will be a lot easier and having much sooner than integrating Ewasm. So,  I think it's fair to say that reduce in gas costs was the main part of the Ewasm chain. So we're definitely interested in that one.
+**Casey**: Yeah, a few of them in there that I'm interested in, we're interested  Ewasm team. Unfortunately neither Pawel nor Alex could make the call but we'd like to see partical gas cost 2045. We've been to the tentatively accepted category.  I can elaborate on why, in some ways  it carries the torch for 615. There's a call a few months ago and during the 615 discussion people asks for benchmark to show what kind of speed improvement could  be expected and so it turns out two speed improvements are possible even without introducing subroutines and changing how jumps work. And we've always benchmarks showing speed ups that are on the table. So from Ewasm team's perspective also this particle  gas cost, I would argue, it's alternative to introducing Ewasm. One of the big potential benefits of Ewasm is to speed up. Well, it turns out that , if you just optimize EVM and  the client and which will be a lot easier and having much sooner than integrating Ewasm. So,  I think it's fair to say that reduce in gas costs was the main part of the Ewasm chain. So we're definitely interested in that one.
 
 **Danny**: So one of the things I would like to see what that is a possible schedule . We have particle gas cost, what would be the proposed gas cost for all for the operations? I think that would give us a better scope for how impactful it would be. 
 
@@ -95,7 +95,7 @@ Obviously, it would be great to have the status update from Geth and Parity, so 
 
 **Tim**: Do we want to agree to move 2046 to tentatively accepted, does anyone disagree with that? 
 
-**Tomasz**: I just like to ask, if we measured how would the combined results of the  implementation and the reduce static call affect the performance of the SAVM, the precompiles? Because we'll be going down from 1200 to something like 190.
+**Tomasz**: I just like to ask, if we measured how would the combined results of the  implementation and the reduce static call affect the performance of the EVM, the precompiles? Because we'll be going down from 1200 to something like 190.
 
 
 **Danno**: Good point, that needs follow up. Technically, it's simple SIP. 
@@ -108,14 +108,14 @@ Obviously, it would be great to have the status update from Geth and Parity, so 
 
 **Casey**: I mean , there's a pretty good benchmark system, a couple of them actually. The one for pricing precompile. And both were done by Martin Swende where it gets complicated with this 2046. The Benchmark scripts benchmarks the precompiles themselves but not really considering calling them from other contracts. The SIP explains that it's just reducing the cost back from when it was raised, when the cost of call was raised. The cost of call was raised because when you call another contract, there's just latency. When you call the precompile,  there is no disk latency so it doesn't make sencse to charge the same for precompile as it charge to call a contract. But benchmarks of calling contract for calling precompiles, I don't think that's been done yet.
 
-**Tomasz**: Rick I generally thing that's just analyzing the existing contract when I'm bringing gas down maybe it's not the most important thing. We could explore any security issues, but performance wise, I think we should be much worried bringing the gas much down. And someone posting the contract with the SAVM, the same thing and if it's under priced, it caused the trouble us in the past.
+**Tomasz**: Rick I generally thing that's just analyzing the existing contract when I'm bringing gas down maybe it's not the most important thing. We could explore any security issues, but performance wise, I think we should be much worried bringing the gas much down. And someone posting the contract with the EVM, the same thing and if it's under priced, it caused the trouble us in the past.
 
 **Rick**: yeah, I'm just security focused, generally speaking. So I completely agree with what you're saying in terms of what the engineering exercise should be but the approval process should include. We should be able to literally analyze all the existing contracts on chain and say that this isn't going to cause any of them to become a DOS factor. I am not trying to make extra work for people it just seems like we've already run into this problem once and it's in something that's like very well understood to be a hard thing to take into it. Since,  we spend so much time , I think its important to improve gas, so why not just run some tests to make that process formalize, to make that process better. yeah I agree with the engineering effort.
 
 
 **Tomsaz**: I think we have amazing work from Martin Swende on particular opcodes on the pricing, current pricing and the relations to the actual call. But we don't have the same tuning for finalizing contract at least not posted as a researcher report showing the results. The other thing is I wonder if the precompiles were always analyzed  with the cost of all something that I assumed or the precompiles were analyzed as the independent thing. That's why I was asking about the SIP 1108 in combination with 2046 if it's still safe?
 
-**Alex V**: As far as I know at least the existing  1108 was benchmarked only one based on codes without anything touching on the SAVM. 
+**Alex V**: As far as I know at least the existing  1108 was benchmarked only one based on codes without anything touching on the EVM. 
 
 **Tim**: So based on this discussion do we want to move any of the gas cost SIPs into tentatively accepted, kind of dependent on those types of benchmarks? Unfortunately Martin's not on the call and it doesn't seem like they are the champions for both of the SIPs  are either. Or do we want to go over to specific SIPs and discuss those on a case-by-case basis, perhaps move them in or out?
 
@@ -164,7 +164,7 @@ Just in order **663** ?
 
 **Tim**: Next one on the list was **1350** to specify the address range for precompile / system contract.
 
-**Danno**: This is when we're not sure if there's any savm impact on it?Hasn't been much discussion on the EthMagician thread about it.
+**Danno**: This is when we're not sure if there's any evm impact on it?Hasn't been much discussion on the EthMagician thread about it.
 
 **Tim**: I don't recall much discussion on the core dev call about it either. At the very least kind of in the handful of calls. Does anyone feel strongly that this should be in for Istanbul and if not should we just reject it from Istanbul and leave it as a consideration for another upgrade , if anyone comes on a future call and advocates for it?
 
@@ -190,7 +190,7 @@ Okay and then just to be numerically consistent, the next one would be SIP 1559 
 
 **James**: Yeah it's okay to do that, that one last.
 
-**Tim**: Sure, so then the next one would be **SIP 1985** State limits for certain SAVM parameters.
+**Tim**: Sure, so then the next one would be **SIP 1985** State limits for certain EVM parameters.
 
 Does anyone feel it should be pushed in otherwise default is dropped from Istanbul?
 
@@ -208,7 +208,7 @@ Does anyone feel it should be pushed in otherwise default is dropped from Istanb
 
 **Danno** Reference tests with extreme numbers that shows breakage is probably I would want to see how the clients acts when presented with the valuse outside the ranges.
 
-**Tomasz**: Yes, this will be important and also what Martin mentioned is the question of whether we look at it only from the SAVM perspective or also from outside of the SAVM perspective. Because it affects how we define what the transaction is constructed or not in the same for probably a few other items within the domain. Like probably non block headers, but this is the idea , right? So, do we only change the way we look at gas in SAVM inside or when we deserialize and accept RLP or not?
+**Tomasz**: Yes, this will be important and also what Martin mentioned is the question of whether we look at it only from the EVM perspective or also from outside of the EVM perspective. Because it affects how we define what the transaction is constructed or not in the same for probably a few other items within the domain. Like probably non block headers, but this is the idea , right? So, do we only change the way we look at gas in EVM inside or when we deserialize and accept RLP or not?
 
 **Danno**: I think the reference test can handle will it accept RLP of block headers and transactions. So, I think that's really what we need is unit tests, this is reference tests, what we need out of it.
 
@@ -448,7 +448,7 @@ The next step on the agenda is just updates form and working groups testing clie
 
 **Tomasz**: For tentatively SIPs we know exactly there are some actions required. For ProgPOW we need audit. For 1962, we are waiting for the review of a correctness. I've seen some discussions on all core devs. For some others, we wait only for benchmarks or gas repricing.
 
-**Casey**: My understanding is that the ones that are currently in tentatively accepted would still need to move to accepted and that would start happening either after testnet activation or October sila-sila-mainnet fork. Then that's when the discussion begins to move SIPs from the tentatively accepted lists up to be accepted list. That's what how I would expect it to go.
+**Casey**: My understanding is that the ones that are currently in tentatively accepted would still need to move to accepted and that would start happening either after testnet activation or October sila-mainnet fork. Then that's when the discussion begins to move SIPs from the tentatively accepted lists up to be accepted list. That's what how I would expect it to go.
 
 **James**:  the big the big question there is if it's part of the October or the January one and then that will be kind of decided by those things. I think it's also important to say for people who are listening to this from the outside that saying that it's in now doesn't mean that there isn't going to be something that comes up through testing that we have to kick an SIP  out due to something we don't understand yet. So it isn't like  we're going to do everything where we are locked into all of these being in. **These are the yeses and everyone should move forward that these are the ones until we find out a reason for them, not to be**. 
 

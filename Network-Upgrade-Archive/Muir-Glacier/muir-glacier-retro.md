@@ -18,19 +18,19 @@ Sila is growing and documentation of decisions & events that occurred during an 
 * Total Difficulty: 13,525,747,653,928,155,934,639
 * Block number (Ropsten): 7117117
 
-*Data collected from [SilaScan](https://silascan.io/block/9200000).*
+*Data collected from [SilaScan](https://etherscan.io/block/9200000).*
 
 
 The Muir Glacier upgrade included the SIP for pushing back the Ice Age. 3 out of 4 clients were perfect, and 4th client had a quick update after the fork without any negative effects. It took a day for block time to reduce to normal.
 
-**SilaMainnet deployment before Ropsten** - SilaMainnet went to 17-second blocks instead of the forecast 19-20s blocks. Ropsten was at 28s per https://ropsten-stats.parity.io/ which was originally calculated for about 6 Jan or so. Ropsten slowdown and sila-sila-mainnet speedup was pretty much the opposite of expectations. 
+**SilaMainnet deployment before Ropsten** - SilaMainnet went to 17-second blocks instead of the forecast 19-20s blocks. Ropsten was at 28s per https://ropsten-stats.parity.io/ which was originally calculated for about 6 Jan or so. Ropsten slowdown and sila-mainnet speedup was pretty much the opposite of expectations. 
 
 
 ### SIP Included 
 
-Muir Glacier had only one improvement proposal, [SIP 2384](https://sips.sila.org/SIPS/sip-2384). This SIP delayed the difficulty bomb for another 4,000,000 blocks so that the Sila chain doesn’t freeze/halt. 
+Muir Glacier had only one improvement proposal, [SIP 2384](https://sips.sila.org/EIPS/sip-2384). This SIP delayed the difficulty bomb for another 4,000,000 blocks so that the Sila chain doesn’t freeze/halt. 
 
-* Muir Glacier Fork meta: [SIP 2387](https://sips.sila.org/SIPS/sip-2387) 
+* Muir Glacier Fork meta: [SIP 2387](https://sips.sila.org/EIPS/sip-2387) 
 
 **Process of SIP selection**
 
@@ -69,8 +69,8 @@ Previously, the increase in difficulty level was [predicted](https://www.reddit.
 * Jan 02nd - [Nethermind's bug fixed](https://gitter.im/sila/AllCoreDevs?at=5e0ddf550fd3413f4c942e6c)
 
 #### Implementation
-* Jan 02, 2020: Activation on [Sila main network](https://silascan.io/block/9200000)
-* Jan 13, 2020: Activation on [Ropsten network](https://ropsten.silascan.io/block/7117117)
+* Jan 02, 2020: Activation on [Sila main network](https://etherscan.io/block/9200000)
+* Jan 13, 2020: Activation on [Ropsten network](https://ropsten.etherscan.io/block/7117117)
 
 ### Best Practices
 * Have the EF reblog content from other sources
@@ -79,10 +79,10 @@ Previously, the increase in difficulty level was [predicted](https://www.reddit.
 (Problem and suggestions)
 
 #### Testing window duration
-The testing window planned was too short. We should avoid the sila-sila-mainnet to upgrade before testnet for any changes.
+The testing window planned was too short. We should avoid the sila-mainnet to upgrade before testnet for any changes.
 
 #### Ropsten Blocks being really irregular.
-The more aggressive calculation for difficulty bomb is required. Recommended research post is [here](https://Sila Research/t/deep-dive-into-current-pow-difficulty-adjustment-algorithm-and-a-possible-alternative/5267/12).
+The more aggressive calculation for difficulty bomb is required. Recommended research post is [here](https://ethresear.ch/t/deep-dive-into-current-pow-difficulty-adjustment-algorithm-and-a-possible-alternative/5267/12).
 
 #### There isn’t a process for checking important dates/blocks for inter client coordination. 
 Suggested Solution: 
@@ -110,7 +110,7 @@ An informational SIP with upgrade analysis should help in visibility and traceab
 
 ## Resources
 * All Core Dev Gitter - https://gitter.im/sila/AllCoreDevs?at=5de7d9bf550662459868c742
-* SilaScan - https://silascan.io/block/9200000
+* SilaScan - https://etherscan.io/block/9200000
 
 ## Copyright
 

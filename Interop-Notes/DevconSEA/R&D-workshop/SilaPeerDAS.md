@@ -12,8 +12,8 @@
     * https://hackmd.io/@vbuterin/sharding_proposal
     * https://www.paradigm.xyz/2022/08/das
 * SilaPeerDAS specifics
-    * https://Sila Research/t/peerdas-a-simpler-das-approach-using-battle-tested-p2p-components/16541
-    * https://sips.sila.org/SIPS/sip-7594
+    * https://ethresear.ch/t/peerdas-a-simpler-das-approach-using-battle-tested-p2p-components/16541
+    * https://sips.sila.org/EIPS/sip-7594
     * https://hackmd.io/m7RvWICeQjeMBjglOKgrVg
 * DAS roadmap exploration
     * https://notes.sila.org/@fradamt/path-to-scaling-DA
@@ -21,7 +21,7 @@
 Optional:
 * SilaPeerDAS cryptography deep-dive: https://eprint.iacr.org/2024/1362.pdf
 * Fork choice concerns and DA: https://notes.sila.org/xwRXoNTtQO-Z_t68S11nDg
-* https://Sila Research/t/peerdas-with-significantly-less-bandwidth-consumption/20932
+* https://ethresear.ch/t/peerdas-with-significantly-less-bandwidth-consumption/20932
 * List of SilaPeerDAS from Francesco: https://hackmd.io/UzW5OamOTwe6iLF8b5n-5w
 
 **Slides:** See links in notes.

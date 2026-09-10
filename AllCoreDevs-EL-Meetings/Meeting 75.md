@@ -17,8 +17,8 @@
 - 3 Harmony/ethereumJ
 - 4 Testing updates
 - 5 [Eligibility for Inclusion (EFI) SIP Review](https://github.com/sila-chain/SIPs/pull/2378)
-  - [SIP-2348: Validated SAVM Contracts](https://github.com/sila-chain/SIPs/pull/2348)
-  - [SIP 1803: Rename opcodes for clarity](https://sips.sila.org/SIPS/sip-1803)
+  - [SIP-2348: Validated EVM Contracts](https://github.com/sila-chain/SIPs/pull/2348)
+  - [SIP 1803: Rename opcodes for clarity](https://sips.sila.org/EIPS/sip-1803)
 - 6 EIPIP (SIP Improvement Proposal) Meeting
 - 7 Review previous decisions made and action items
   - [Call 74](https://github.com/sila-chain/pm/blob/master/AllCoreDevs-Meetings/Meeting%2074.md)
@@ -95,21 +95,21 @@ Video: [09:08](https://youtu.be/3qZFiETlDtk?t=548)
 ## 5. Eligibility for Inclusion (EFI) SIP Review
 Video: [10:43](https://youtu.be/3qZFiETlDtk?t=643)
 
-### [SIP-2348: Validated SAVM Contracts](https://github.com/sila-chain/SIPs/pull/2348)
+### [SIP-2348: Validated EVM Contracts](https://github.com/sila-chain/SIPs/pull/2348)
 Video: [10:55](https://youtu.be/3qZFiETlDtk?t=655)
 
-**Danno:** This SIP is a conglomerate of several SIPs that have been floating around for a while. The purpose of this SIP is to build a foundation primarily for multi-byte SAVM instructions. There is evidence that adding multi-byte code right now will break some executions. There are four basic features that we are combining into this SIP:
+**Danno:** This SIP is a conglomerate of several SIPs that have been floating around for a while. The purpose of this SIP is to build a foundation primarily for multi-byte EVM instructions. There is evidence that adding multi-byte code right now will break some executions. There are four basic features that we are combining into this SIP:
 
 1. To use the SIP-1702 structure to ensure all other options in this SIP are eligible for use.
-2. Use headers in the SAVM options. It is essential that we should allow code to opt in to a new versioning scheme. This allows people to use old versions of Solidity to compile their sila-sila-mainnet code. It is more sustainable to combine the header and one of the opcodes from the SIP-615 which is the ‘BEGINDATA’ opcode. 
-3. Fix invalid opcodes - by putting a wrapper around the SAVM code we are saying that this is the only code that is executable and validate that code.
-4. When you deploy a contract there is a validation step to ensure each code point is actually a valid code point. If opcodes do not exist then that opcode is rejected. In the future that opcode may exists as a single or multi-byte opcode but we just don’t know that now. In this case the SAVM would evaluate the opcode against the known opcode list and reject it. While we are at it we are adding in an option to do static jump validation. 
+2. Use headers in the EVM options. It is essential that we should allow code to opt in to a new versioning scheme. This allows people to use old versions of Solidity to compile their sila-mainnet code. It is more sustainable to combine the header and one of the opcodes from the SIP-615 which is the ‘BEGINDATA’ opcode. 
+3. Fix invalid opcodes - by putting a wrapper around the EVM code we are saying that this is the only code that is executable and validate that code.
+4. When you deploy a contract there is a validation step to ensure each code point is actually a valid code point. If opcodes do not exist then that opcode is rejected. In the future that opcode may exists as a single or multi-byte opcode but we just don’t know that now. In this case the EVM would evaluate the opcode against the known opcode list and reject it. While we are at it we are adding in an option to do static jump validation. 
 
 We don’t have to push all of these, we can always take things out and add them to another version.
 
 **Martin:** Please explain your main motivation around multi-byte opcodes?
 
-**Danno:** We need to validate the contracts before they go onto the chain. We need a mechanism that will ensure all the opcodes in the stream will be valid opcodes. That will need to go with the opt in. If we don’t validate them then people can put in an unused opcode and the very next byte can be jump destination operation. The way the SAVM works now you can jump over all the invalid code. So the byte that they have before the jumpdest becomes a multibyte code. When you interpret it you are not meant to jump into the destination just like you are not meant to jump into the middle of a pushin operation. 
+**Danno:** We need to validate the contracts before they go onto the chain. We need a mechanism that will ensure all the opcodes in the stream will be valid opcodes. That will need to go with the opt in. If we don’t validate them then people can put in an unused opcode and the very next byte can be jump destination operation. The way the EVM works now you can jump over all the invalid code. So the byte that they have before the jumpdest becomes a multibyte code. When you interpret it you are not meant to jump into the destination just like you are not meant to jump into the middle of a pushin operation. 
 
 **Martin:** So you are suggesting that someone could introduce a contract that behaves differently after the initial byte code.
 
@@ -117,7 +117,7 @@ We don’t have to push all of these, we can always take things out and add them
 
 **Martin:** So what happens with init code in this case?
 
-**Danno:** So that is an open question. What should we do with that header code? One of the things is get the SAVM when they recognise it to discard it and move the PC to PC=0 at byte 5 in the stream. Another option is that we can discard it and make PC=4 the beginning of the operation at the start of the stream. And another option is to make it a multibyte no-op operation. These three options could be used to ensure this header does not accidently get executed. 
+**Danno:** So that is an open question. What should we do with that header code? One of the things is get the EVM when they recognise it to discard it and move the PC to PC=0 at byte 5 in the stream. Another option is that we can discard it and make PC=4 the beginning of the operation at the start of the stream. And another option is to make it a multibyte no-op operation. These three options could be used to ensure this header does not accidently get executed. 
 
 I would like to mention that when you use CREATE2 you will need to use the Header in the CREATE2 wrapper as well. So whatever they load into the memory will also need that.
 
@@ -147,7 +147,7 @@ init code is very cheap to execute. If we need to do a validation up front that 
 
 **Danno:** Ok, I will take that under advice when I do the prototype and see how messy it gets. 
 
-**Wei:** From the Sila Magicians [forum](https://sila-magicians.org/t/sip-2348-validated-savm-contracts/3756/3). I believe this is a solved issue. I think this can be done using an extension and account versioning which in my opinion is much nicer than the code prefix. 
+**Wei:** From the Sila Magicians [forum](https://sila-magicians.org/t/sip-2348-validated-evm-contracts/3756/3). I believe this is a solved issue. I think this can be done using an extension and account versioning which in my opinion is much nicer than the code prefix. 
 
 **Danno:** How would we get that code prefix into the account versioning? What are the current mechanisms or would we need to introduce a new mechanism where it says I want to be subject to validation?
 
@@ -155,13 +155,13 @@ init code is very cheap to execute. If we need to do a validation up front that 
 
 **Danno:**  The reason I did not go with the extra field in the account creation and in the opcodes is because that presents a tooling problem. We would therefore also need to upgrade all the tooling to support this as well. I guess we will require them to do the headers and the wrappers but I was trying to get as minimal a footprint into here. And so adding new fields, engineering wise felt unnecessary when we have existing solutions.
 
-**Martin:** One problem with the code prefixing  is the day before this hard fork hits we start deploying a lots of new contracts with this code prefix and the day after once the SAVM starts executing my code prefixed contracts that I deployed the day before it will treat it like a validated contract but it is not. Therefore how should it behave when I do a jump into a data section. Clearing then the SAVM will not do the jumpdest analysis in runtime.
+**Martin:** One problem with the code prefixing  is the day before this hard fork hits we start deploying a lots of new contracts with this code prefix and the day after once the EVM starts executing my code prefixed contracts that I deployed the day before it will treat it like a validated contract but it is not. Therefore how should it behave when I do a jump into a data section. Clearing then the EVM will not do the jumpdest analysis in runtime.
 
 **Danno:**  That is why it is combined with account versioning. Before account versioning is turned on you can deploy all these old contracts without account versioning. When account versioning is turned on when you deploy a contract and you have version 1 on the contract - that is when it will deploy the contract. So all these old contracts that have that header will never be evaluated. That is why I will be using both of these facilities to make sure for that situation. 
 
- **Wei:** If you combined code prefix with SIP-1702 then you will have two layers of conversioning… which is unnecessary. I understand the ecosystem tooling concern but if we use SIP-1702 there may be less tool breakage as we only need a change in the contract creation and not the SAVM bytecode layout. 
+ **Wei:** If you combined code prefix with SIP-1702 then you will have two layers of conversioning… which is unnecessary. I understand the ecosystem tooling concern but if we use SIP-1702 there may be less tool breakage as we only need a change in the contract creation and not the EVM bytecode layout. 
 
-**Danno:** So if we do the transaction then we will need to have the compiler, the client code and the SAVM where as if we do the account versioning and the wrapper, we take out the deployment stuff and we just need the compiler and the SAVM. I will note this into that these are some of the concerns. But either way we need to get there to allow for these multibyte instructions and a solution to enable validation.
+**Danno:** So if we do the transaction then we will need to have the compiler, the client code and the EVM where as if we do the account versioning and the wrapper, we take out the deployment stuff and we just need the compiler and the EVM. I will note this into that these are some of the concerns. But either way we need to get there to allow for these multibyte instructions and a solution to enable validation.
 
 **Piper:** Maybe the thing to do here is to compile a list of objections and dig into the history of why people have objected to code prefixes so that we can build up a small knowledge base to figure out solutions that resolve these objections. 
 
@@ -177,7 +177,7 @@ init code is very cheap to execute. If we need to do a validation up front that 
 ** DECISION 75.1:** SIP-2348 is still in progress and is not yet eligible for inclusion.
 ** ** 
 
-### [SIP 1803: Rename opcodes for clarity](https://sips.sila.org/SIPS/sip-1803)
+### [SIP 1803: Rename opcodes for clarity](https://sips.sila.org/EIPS/sip-1803)
 Video: [24:15](https://youtu.be/3qZFiETlDtk?t=1455)
 
 **Martin Lundfall:** I believe this SIP is non-controversial. Just wanted to discuss this whilst it should not require a hard fork I feel some SIPs don’t get discussed if they don’t need a fork.

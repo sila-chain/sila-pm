@@ -27,7 +27,7 @@ I can give a quick recap of devnet 9. So devnet 9 is now running for six days. W
 Yes today I performed a spamming experiment like with sending large amount of six block transactions to the theet 9 and in Nethermind we had a back with block building like we were doing too many reads from theb like unnecessary ones. It's already fixed and right now we are building blocks perfectly fine, and yes this experiment with spamming is not finished, like it's about five SK transactions to be sent more so we will see if there will be some more issues. 
 
 **Marius**
-So I also did some like manual transaction work for all of the SIPs so I sent some transactions to called the pre-compile, some transactions for the blob P up code 1155 5656 75 15 so all of the everything that is kind of within the SAVM, so all of those transactions should be on devnet 9.
+So I also did some like manual transaction work for all of the SIPs so I sent some transactions to called the pre-compile, some transactions for the blob P up code 1155 5656 75 15 so all of the everything that is kind of within the EVM, so all of those transactions should be on devnet 9.
 
 So yeah, if you can sync devnet 9, then you should be able to like, it kind of verifies that you have all of these features enabled in it. 
 
@@ -232,7 +232,7 @@ Yeah go on.
 So Hive is using beacon GL validator setup everywhere so is this something else that we are talking about or?
 
  **Danny**
-Well it's mixing the two, it's mixing two so there's a common API between the two, so I could have Teku be an lighthouse validator and some people presumably do so on sila-sila-mainnet, at least. 
+Well it's mixing the two, it's mixing two so there's a common API between the two, so I could have Teku be an lighthouse validator and some people presumably do so on sila-mainnet, at least. 
 
 **Paritosh**
 In the past we haven't really tested that on devnets, but if there was an issue, it usually spills out when we fork the first testnet because there's like yeah but there's also like a million different combinations you can run everything in, so there's only so much you can test.

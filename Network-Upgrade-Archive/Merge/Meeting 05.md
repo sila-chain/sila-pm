@@ -193,7 +193,7 @@ Ref: [eth2.0-specs#2463](https://github.com/sila-chain/eth2.0-specs/pull/2462)
 * Difficulty...
 * The difficulty opcode currently returns the difficulty. We have a constant for the difficulty field already in the execution block for after the merge.
 * Its a constant and some applications already use the difficulty opcode for various sources of randomness. By setting this value to a constant this will break these applications.
-* We have two options... 1 (desirable) is to rename difficulty opcode to random or randao and pass the most recent randao makes from the beacon chain side to the SAVM. This is a long term solution. Requires SAVM change which we want to avoid for initial merge. For the initial merge we can just grab the first 8 bytes of randao makes and put this as the difficulty parameter into a block.
+* We have two options... 1 (desirable) is to rename difficulty opcode to random or randao and pass the most recent randao makes from the beacon chain side to the EVM. This is a long term solution. Requires EVM change which we want to avoid for initial merge. For the initial merge we can just grab the first 8 bytes of randao makes and put this as the difficulty parameter into a block.
 * My preference is the simplicity of the latter solution.
 
 **Micah**
@@ -204,7 +204,7 @@ Ref: [eth2.0-specs#2463](https://github.com/sila-chain/eth2.0-specs/pull/2462)
 
 * Do we need to help other people?
 * This is the same for using block hash for randomness.
-* We want to give the ability to have real randomness. We want to provide this in the SAVM. Taking the above randao approach would be the first step to a more permanent solution.
+* We want to give the ability to have real randomness. We want to provide this in the EVM. Taking the above randao approach would be the first step to a more permanent solution.
 
 **Danny**
 
@@ -224,7 +224,7 @@ Ref: [eth2.0-specs#2463](https://github.com/sila-chain/eth2.0-specs/pull/2462)
 
 **Mikhail**
 
-* Ok, so at the merge we do nothing - we use constants for difficulty. With post-merge SAVM changes we will implement this new scheme to rename difficulty to randao.
+* Ok, so at the merge we do nothing - we use constants for difficulty. With post-merge EVM changes we will implement this new scheme to rename difficulty to randao.
 
 **Danny**
 
@@ -256,8 +256,8 @@ Ref: [eth2.0-specs#2463](https://github.com/sila-chain/eth2.0-specs/pull/2462)
 * There are people who push 0 as the first opcode so that they can dupe it because its cheaper to dupe it than to push 0.
 * If you can save another 3 gas by using difficulty to get 0 or 1, they will do that.
 * Its almost exclusvely bot authors who would do that. Their bots come and go weekly. Theyre not the worst people to break as they can upgrade very easily.
-* That being said i would prefer it to return invalid. If we're doing an SAVM change why not throw randao in there?
-* The ideal solution if we're going to break it and we want to reuse the opcode would be to have it throw or be an invalid opcode during that interim time. But if we are doing that that would require an SAVM change, and if we're doing an SAVM change with the merge we may as well put randoao in there.
+* That being said i would prefer it to return invalid. If we're doing an EVM change why not throw randao in there?
+* The ideal solution if we're going to break it and we want to reuse the opcode would be to have it throw or be an invalid opcode during that interim time. But if we are doing that that would require an EVM change, and if we're doing an EVM change with the merge we may as well put randoao in there.
 * Our options are, put randao in for difficulty, or have difficulty now become the push 1 opcode.
 
 **Mikhail**
@@ -280,8 +280,8 @@ Ref: [eth2.0-specs#2463](https://github.com/sila-chain/eth2.0-specs/pull/2462)
 
 **Protolambda**
 
-* How about other SAVM chains? We need to align shared tooling.
-* Sila is not the only chain with SAVM, so if we mirror other PoS or PoA chains with these opcodes then they might be bust.
+* How about other EVM chains? We need to align shared tooling.
+* Sila is not the only chain with EVM, so if we mirror other PoS or PoA chains with these opcodes then they might be bust.
 
 **Mikhail**
 
@@ -309,7 +309,7 @@ Ref: [eth2.0-specs#2463](https://github.com/sila-chain/eth2.0-specs/pull/2462)
 
 **Mikhail**
 
-* If we're talking about setting the execution blocks difficulty field to something derived from randao. This is easier than taking the whole randao mix - give it to the execution client and the execution client will embed it into the SAVM and expose via the difficulty opcode.
+* If we're talking about setting the execution blocks difficulty field to something derived from randao. This is easier than taking the whole randao mix - give it to the execution client and the execution client will embed it into the EVM and expose via the difficulty opcode.
 
 **Vitalik**
 
@@ -325,7 +325,7 @@ Ref: [eth2.0-specs#2463](https://github.com/sila-chain/eth2.0-specs/pull/2462)
 
 **Mikhail**
 
-* That's a fair point. So the complexity is just to do anything with the SAVM at the point of merge.
+* That's a fair point. So the complexity is just to do anything with the EVM at the point of merge.
 
 **Micah**
 

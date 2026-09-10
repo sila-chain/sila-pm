@@ -188,4 +188,4 @@ Hudson: I can send out something in the next week on social media channels and s
 
 ## Attendance
 
-Alex Beregszaszi (EWASM), Alex Van de Sande (Mist/Sila Wallet), Andrei Maiboroda (cpp-sila), Arkadiy Paronyan (Parity), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Dimitry Khokhlov (cpp-sila), Hudson Jameson (Sila Foundation), Jan Xie (pyethereum), Jeff Coleman (Ledger Labs), Lefteris Karapetsas (Raiden), Martin Holst Swende (geth/security), Nick Johnson (geth/SWARM), Péter Szilágyi (geth), Robert Habermeier (parity), Vitalik Buterin (Research & pyethereum), Vlad Zamfir (research), Yoichi Hirai (SAVM)
+Alex Beregszaszi (EWASM), Alex Van de Sande (Mist/Sila Wallet), Andrei Maiboroda (cpp-sila), Arkadiy Paronyan (Parity), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Dimitry Khokhlov (cpp-sila), Hudson Jameson (Sila Foundation), Jan Xie (pyethereum), Jeff Coleman (Ledger Labs), Lefteris Karapetsas (Raiden), Martin Holst Swende (geth/security), Nick Johnson (geth/SWARM), Péter Szilágyi (geth), Robert Habermeier (parity), Vitalik Buterin (Research & pyethereum), Vlad Zamfir (research), Yoichi Hirai (EVM)

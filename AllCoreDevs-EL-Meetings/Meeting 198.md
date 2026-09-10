@@ -23,7 +23,7 @@
  
 ### 198.1 | Pectra Contract Audit RFP ([:60](https://www.youtube.com/live/YQwdKE0d8LI?t=61s))
 
-**Tim**: Welcome everyone to ACDE #198. A bunch of pectra related things today then some SIP updates and new SIPS to talk about. 
+**Tim**: Welcome everyone to ACDE #198. A bunch of pectra related things today then some SIP updates and new EIPS to talk about. 
 Then if we have time there's a couple more CL-related topics that were also put on the agenda. 
 Before we get started, we have this request out for audits for the Petra system contract so
 the proposals are closing tomorrow. If there's anyone who still wants to submit their proposal, this is your last day (today and tomorrow) to do so.
@@ -211,7 +211,7 @@ Tim: I'm happy with that. Anyone have any objection here?
 
 As we start talking about devnet-5, there was this idea brought up a couple weeks ago that we'd want to do like a longer-lived Pectra testnet. 
 I don't know if we want this to be devnet-5 or maybe it'll be what would be devnet-6. 
-We can see how this evolves, but there is a thread on EthMagicians to try and set a name for it, so I think in the next couple weeks, once we finalize the spec for devnet-5 and decide whether or not we want to make this the long live testnet, we should find a name for it. 
+We can see how this evolves, but there is a thread on SilaMagicians to try and set a name for it, so I think in the next couple weeks, once we finalize the spec for devnet-5 and decide whether or not we want to make this the long live testnet, we should find a name for it. 
 Please visit this thread, but I don't know if there's any other thoughts comments on that.
 
 **Barnabus**: Ideally, we also want client teams to make a release for this, so the public can easily sync up this chain. I'm not sure if this is reasonable, but I think it would be nice to have.
@@ -261,7 +261,7 @@ Slot time one, although it was like the first proposal, it is kind of a CL thing
 Let's just open this up and be mindful that there's these two proposals that are somewhat related.
 Giulio, do you want to start with yours? 
 
-**Giulio**: First just to give an introduction to what this SIP does: it's basically just another strategy to adjust the gas limiting client. It doesn't add any hard fork, it just makes it so that with certain parameters you can set your proposed gas limit to increase over time with a cap at some point. The reason why I wrote this was first of all to address some of the problems that were with the the slot time reduction and also because one of the main issues that most people have with increasing gas limit is the uncertainty of potential bugs coming up due to the increase. An example of this is the 413 status code incident, which if we increase the gas limit to 40 million, we would probably have had issue in the chain because then the blocks would have been too big on for sila-sila-mainnet. This type of issue is something that you cannot really predict either, so this SIP mostly tries to decrease the risk related to the actions of increasing the gas limit. It doesn't really help to scale anything, but it does reduce the risk significantly compared to a fixed gas limit strategy, which is now employed by clients. It also addresses some problems that slot time reduction has. For example, the fact that it has to go through the CL and doesn't have a hard fork, it's also simpler. 
+**Giulio**: First just to give an introduction to what this SIP does: it's basically just another strategy to adjust the gas limiting client. It doesn't add any hard fork, it just makes it so that with certain parameters you can set your proposed gas limit to increase over time with a cap at some point. The reason why I wrote this was first of all to address some of the problems that were with the the slot time reduction and also because one of the main issues that most people have with increasing gas limit is the uncertainty of potential bugs coming up due to the increase. An example of this is the 413 status code incident, which if we increase the gas limit to 40 million, we would probably have had issue in the chain because then the blocks would have been too big on for sila-mainnet. This type of issue is something that you cannot really predict either, so this SIP mostly tries to decrease the risk related to the actions of increasing the gas limit. It doesn't really help to scale anything, but it does reduce the risk significantly compared to a fixed gas limit strategy, which is now employed by clients. It also addresses some problems that slot time reduction has. For example, the fact that it has to go through the CL and doesn't have a hard fork, it's also simpler. 
 
 I think that the drawbacks can be discussed when the other SIP will be discussed.
 
@@ -307,7 +307,7 @@ This just make sure that every client returns the same number on every client du
 
 **Tim**: I think one one thing about this proposal as well is that a lot of the concerns around blob increases is that we have to wait for another hard fork, which will take six months or more.
 You could imagine doing something like this right after Pectra. If we actually think that we are bandwidth constrained in the next couple months and we want to maintain our focus on shipping
-Pectra, or even when we put out the sila-sila-mainnet client releases at this point we expect clients to be effectively done with the Pectra work, this is something we could literally ship the week after that.
+Pectra, or even when we put out the sila-mainnet client releases at this point we expect clients to be effectively done with the Pectra work, this is something we could literally ship the week after that.
 
 **Giulio**: Another thing is that, again, this is not really that big of a change. But I saw that Stokes said that it's actually riskier. I don't know what he means by that though.
 
@@ -326,7 +326,7 @@ the way that we currently have of increasing the gas limit. If we decided as a c
 **Giulio**: I also would like to have a stronger response. For now, I have just heard from Geth and Nethermind. Nethermind seems to be okay with raising the gas limit.
 Geth seems to say what lightclient said. But other clients, like Besu, I'd like to hear their opinion too.
 
-**Ameziane**: As I shared on on Discord, we have these two SIPs decreasing slot time and increasing block size. As I said on Discord, decreasing block time seems more CL concern because currently from the metrics I've gathered, we have 5% of the block that arrive after 3 seconds. So we could have attestations missing and maybe block reorgs, so this is more on the CL side and if we're going to keep the 4 second window on the EL side or we're going to review it related to this 8 second. On increasing the block size, there are different areas we need to check here. In terms of block processing, there is no issue. On Besu side, we have a few SAVM or precompiles that are slower than other clients that we are currently addressing, but this is on a per second basis.
+**Ameziane**: As I shared on on Discord, we have these two SIPs decreasing slot time and increasing block size. As I said on Discord, decreasing block time seems more CL concern because currently from the metrics I've gathered, we have 5% of the block that arrive after 3 seconds. So we could have attestations missing and maybe block reorgs, so this is more on the CL side and if we're going to keep the 4 second window on the EL side or we're going to review it related to this 8 second. On increasing the block size, there are different areas we need to check here. In terms of block processing, there is no issue. On Besu side, we have a few EVM or precompiles that are slower than other clients that we are currently addressing, but this is on a per second basis.
 
 In terms of bandwidth, solo staker requirements, storage-- I believe we need more testing to know how it's going to behave. My first feeling is to say we are for increasing block size because this is something we already have on L2s. Not exactly on the block size but we have similar configuration on L2s that work very fine, even if it is less decentralized.
 
@@ -342,7 +342,7 @@ So maybe, 'yes,' but for more testing. As I said in the discussions, in a gradua
 
 **Giulio**: Sorry, I was reading the chat. Barnabus said that there is more bandwidth, but in reality the block bandwidth is very low, it's like 70 kilobytes per block and a blob is like 128 kilobytes, so if you increase the block size by 50%, you have like a quarter of a blob. It's really not like a bottleneck on the bandwidth. It's not going to be significant. 
 
-**Potuz**: It's true that the decrease of the slot time is better discussed in the CL meeting. There are a lot of problems on the CL if we were to adopt something like this, it's not trivial at all. But there's one component that is on the EL, which is does it break contracts or not? There's currently, you could you have a linear relation between block height and time stamp. We would break that. This is a breakage at the SAVM level so this is something that you guys should discuss.
+**Potuz**: It's true that the decrease of the slot time is better discussed in the CL meeting. There are a lot of problems on the CL if we were to adopt something like this, it's not trivial at all. But there's one component that is on the EL, which is does it break contracts or not? There's currently, you could you have a linear relation between block height and time stamp. We would break that. This is a breakage at the EVM level so this is something that you guys should discuss.
 
 **Marius**: We didn't have that relationship before the merge.
 

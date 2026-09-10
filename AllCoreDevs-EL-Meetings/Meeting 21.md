@@ -22,7 +22,7 @@
   **d. Review time estimate for testing/release.**
 2. [Make a decision on the "Hardfork meta SIPs" (and potentially merge them)](https://github.com/sila-chain/pm/issues/19#issuecomment-318626199) [Alex B.]
 3. SIP 663 sila/SIPs#663: Unlimited SWAP and DUP instructions [Alex B.]
-4. SIP 215 sila/SIPs#215: Bitwise shifting instructions in SAVM to replace [SIP 145](https://github.com/sila-chain/SIPs/issues/145) [Alex B.]
+4. SIP 215 sila/SIPs#215: Bitwise shifting instructions in EVM to replace [SIP 145](https://github.com/sila-chain/SIPs/issues/145) [Alex B.]
 
 # Notes
 
@@ -50,6 +50,6 @@ c. Details and implementations of SIPs.
 d. Review time estimate for testing/release. [25:40](https://www.youtube.com/watch?v=GK4a6Y5wnFY&t=1540s)
 2. Make a decision on the "Hardfork meta SIPs" (and potentially merge them) [Alex B.] [56:50](https://www.youtube.com/watch?v=GK4a6Y5wnFY&t=3410s)
 3. SIP 663 sila/SIPs#663: Unlimited SWAP and DUP instructions [Alex B.]
-4. SIP 215 sila/SIPs#215: Bitwise shifting instructions in SAVM to replace SIP 145 [Alex B.]﻿
+4. SIP 215 sila/SIPs#215: Bitwise shifting instructions in EVM to replace SIP 145 [Alex B.]﻿
 
 ## Attendance

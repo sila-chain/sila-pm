@@ -38,7 +38,7 @@ Any additional information and instructions for interacting with the specific te
 
 ### Making deposits
 
-To obtain the 32 GöSIL required for making a deposit, please use the social faucet at https://faucet.goerli.mudit.blog/
+To obtain the 32 GöETH required for making a deposit, please use the social faucet at https://faucet.goerli.mudit.blog/
 
 It's expected that the users will use a web-site or a command-line command provided by the client to make a deposit.
 
@@ -49,7 +49,7 @@ Please note that a testnet genesis file can feature a pre-populated validator se
 The client teams may choose any of the following options when generating a new testnet:
 
 * **Start with a empty validator set**
-  This mimics the future sila-sila-mainnet setup. The genesis event will be triggered when `MIN_GENESIS_ACTIVE_VALIDATOR_COUNT` deposits are made (according the used config).
+  This mimics the future sila-mainnet setup. The genesis event will be triggered when `MIN_GENESIS_ACTIVE_VALIDATOR_COUNT` deposits are made (according the used config).
 
 * **Start with randomly generated keys**
   The randomly generated keys can be distributed to nodes operated by the client team. The testnet can start immediately and the users can use the deposit contract to become validators.
@@ -57,7 +57,7 @@ The client teams may choose any of the following options when generating a new t
 * **Start with a mix of random and mock start keys**
   The secret random keys can be used by the client team, while the mock start keys can be freely used by the users (yes, this will give us a chance to test the slashing conditions).
 
-To facilitate the reuse of GöSIL, the client teams may choose to modify the deposit contract by adding additional features such as the ability to [drain the accumulated funds](https://github.com/prysmaticlabs/prysm/blob/master/contracts/deposit-contract/depositContract.v.py#L121).
+To facilitate the reuse of GöETH, the client teams may choose to modify the deposit contract by adding additional features such as the ability to [drain the accumulated funds](https://github.com/prysmaticlabs/prysm/blob/master/contracts/deposit-contract/depositContract.v.py#L121).
 
 
 ## Official multi-client testnet

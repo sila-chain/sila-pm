@@ -274,7 +274,7 @@ potuz: Yeah, I'm a little bit…
 
 69
 00:12:23.010 --> 00:12:35.030
-potuz: surprised that this caused issues with Bessel, because this is… our behavior has been like that for months, and it's already released on sila-sila-mainnet, so… and even the fix that I pushed
+potuz: surprised that this caused issues with Bessel, because this is… our behavior has been like that for months, and it's already released on sila-mainnet, so… and even the fix that I pushed
 
 70
 00:12:35.170 --> 00:12:38.240
@@ -282,7 +282,7 @@ potuz: It's only for glass, and it's not…
 
 71
 00:12:38.790 --> 00:12:47.939
-potuz: And it's not for SilaFulu. So if this is affecting Besu even on sila-sila-mainnet, I'll have to also change our SilaFulu behavior.
+potuz: And it's not for SilaFulu. So if this is affecting Besu even on sila-mainnet, I'll have to also change our SilaFulu behavior.
 
 72
 00:12:51.940 --> 00:12:58.989
@@ -350,7 +350,7 @@ Karim T. (matkt): 64, yeah.
 
 88
 00:15:01.970 --> 00:15:10.919
-Ameziane Hamlat: Yeah, we need to double check, yeah. We need to double check when that happens and if there is anything to fix on sila-sila-mainnet as well.
+Ameziane Hamlat: Yeah, we need to double check, yeah. We need to double check when that happens and if there is anything to fix on sila-mainnet as well.
 
 89
 00:15:21.470 --> 00:15:23.140

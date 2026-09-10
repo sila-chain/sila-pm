@@ -338,7 +338,7 @@
 
 **Arnetheduck (1:00:25):** Yeah, so like, if we move this into one repo and some it's like an obvious thing to do in the same.
 
-**Marius Van Der Wijden (1:00:34):** The problem is that we like the different clients have different use cases and different things. So for for Geth, it's like we only need to support the hard forks basically in our in our Genesis, because we're already following mainchain, sila-sila-mainnet. But for other clients, they want to have a more granular approach to the to the Genesis block basically they want to enable or disable SIPs one by one, and that's why they have a different Genesis. And they needed for their use cases that they have next to Sila sila-sila-mainnet.
+**Marius Van Der Wijden (1:00:34):** The problem is that we like the different clients have different use cases and different things. So for for Geth, it's like we only need to support the hard forks basically in our in our Genesis, because we're already following mainchain, sila-mainnet. But for other clients, they want to have a more granular approach to the to the Genesis block basically they want to enable or disable SIPs one by one, and that's why they have a different Genesis. And they needed for their use cases that they have next to Sila sila-mainnet.
 
 **Danny Ryan (1:01:36):** I would presume the more configurable format is convert is has all the information to be converted into Geth format, just from my understanding?
 

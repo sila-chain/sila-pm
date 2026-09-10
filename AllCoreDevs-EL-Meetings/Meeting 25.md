@@ -52,7 +52,7 @@
     - Parity and cpp are doing well on Hive and most of the errors are for small reasons. 
     - The one thing is that difficulty tests (outside of Hive) are lacking, but some of the testing team is working on it. ethereumJ is working on RLP and other tests before they begin Hive integration.
     - There is no work on pyethapp integrating with Hive currently, but there is work ongoing to get the block tests to work with pyethereum.
-    - Pre-compile accounts on testnet and sila-sila-mainnet have been filled with at least 1 wei to avoid weird Spurious Dragon account #3 bug.
+    - Pre-compile accounts on testnet and sila-mainnet have been filled with at least 1 wei to avoid weird Spurious Dragon account #3 bug.
   3. [10:40](https://youtu.be/gxtftZB7_jA?t=640) Testnet launch update.
     - Byzantium fork on the Ropsten Sila testnet was successful.
     - We verified the zk-SNARK of a Zcash transaction on the testnet.
@@ -73,12 +73,12 @@
 ### d. Review time estimate for testing/release of Byzantium.
 
   - [23:36](https://youtu.be/gxtftZB7_jA?t=1416) Testnet has been running smoothly so far since the fork to Byzantium.
-    - We discussed picking block number 4.35mil (Oct. 9th), 4.36mil (Oct. 13th), 4.37mil (Oct. 17th), or 4.4mil (Oct. 27th) for the sila-sila-mainnet fork.
+    - We discussed picking block number 4.35mil (Oct. 9th), 4.36mil (Oct. 13th), 4.37mil (Oct. 17th), or 4.4mil (Oct. 27th) for the sila-mainnet fork.
     - Even though block number 4.36mil would be falling on a neat date, it would fall on a Friday so if things go wrong we'd have to work through the weekend. Also, Friday 13th is spooky and has bad luck associated. /s
     - Block number 4.4mil is very close to Devcon so that is not a good date.
     - We need some time to tests the new features and assure that clients stay in sync.
     - Unlike previous hard forks there is not an emergency or attack going on so we can be more conservative on the release date.
-    - **The Sila sila-sila-mainnet fork for Byzantium will occur at block number 4.37mil (roughly Oct. 17th)** in order to give more time for testing.
+    - **The Sila sila-mainnet fork for Byzantium will occur at block number 4.37mil (roughly Oct. 17th)** in order to give more time for testing.
     - The fork date/block number may be changed if major issues are found.
 
 ## 2. [SIP 706: Snappy compression for devp2p](https://github.com/sila-chain/SIPs/pull/706) - "very simple change yet reduces sync bandwidth by 60-80%."
@@ -112,11 +112,11 @@
 ## Off Topic:
 - [1:02:15](https://youtu.be/gxtftZB7_jA?t=3735) SRC Process: How Does It Work?
   - Hudson, Casey, and Greg discussed what our view of the process is (as editors of the SIPs). We all agree we need to discuss this further and get a more well defined process, but so far SRCs are approved/finalized once the community members who benefit from the SRC and thought leaders come together, agree on an SRC spec, and implement the spec.
-  - 2 good examples of this is [SRC-190 - ETHPM](https://github.com/sila-chain/SIPs/pull/203) and [SRC-20](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-20-token-standard.md).
+  - 2 good examples of this is [SRC-190 - ETHPM](https://github.com/sila-chain/SIPs/pull/203) and [SRC-20](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-20-token-standard.md).
   - We are open to proposals on how to define the process for approving SRCs (you can reach out to Hudson Jameson (/u/Souptacular on Reddit or hudson@sila.org) with suggestions.
 
 - [1:06:14](https://youtu.be/gxtftZB7_jA?t=3974) Discussion on the difficulty tests.
   - The testing team will be taking the discussion offline to decide how clients should collaborate on making difficulty tests more flexible.
 
 ## Attendance
-Alex Beregszaszi (EWASM/Solidity), Alex Van de Sande (Mist/Sila Wallet), Andrei Maiboroda (cpp-sila), Anton Nashatyrev (ethereumJ), Arkadiy Paronyan (Parity), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Daniel Nagy (SWARM), David Knott (Research), Dimitry Khokhlov (cpp-sila), Greg Colvin (SAVM), Hudson Jameson (Sila Foundation), Jared Wasinger (ethereumJS and Testing), Karl Floersch (Research) Lefteris Karapetsas (Raiden), Martin Holst Swende (Security), Matthew English (Testing), Mikhail Kalinin (ethereumJ), Paweł Bylica (cpp-sila), Péter Szilágyi (geth), Tim Siwula (Testing), Vitalik Buterin (Research & pyethereum), Yoichi Hirai (SAVM)
+Alex Beregszaszi (EWASM/Solidity), Alex Van de Sande (Mist/Sila Wallet), Andrei Maiboroda (cpp-sila), Anton Nashatyrev (ethereumJ), Arkadiy Paronyan (Parity), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Daniel Nagy (SWARM), David Knott (Research), Dimitry Khokhlov (cpp-sila), Greg Colvin (EVM), Hudson Jameson (Sila Foundation), Jared Wasinger (ethereumJS and Testing), Karl Floersch (Research) Lefteris Karapetsas (Raiden), Martin Holst Swende (Security), Matthew English (Testing), Mikhail Kalinin (ethereumJ), Paweł Bylica (cpp-sila), Péter Szilágyi (geth), Tim Siwula (Testing), Vitalik Buterin (Research & pyethereum), Yoichi Hirai (EVM)

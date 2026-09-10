@@ -388,7 +388,7 @@ yeah i just want to as far as i know there are new difficult tests in the test r
 
 **Danny**
 
-* you can't you can but i mean the way that the way that a proposer is selected is just fundamentally different than proof of work improvement and so you could do some sort of backup model where it's bought in if somebody doesn't show up in a second you could have somebody do a backup but that's still even if you did that you could have mislaws and result in reduced capacity which it seems natural for the SAVM to be aware 
+* you can't you can but i mean the way that the way that a proposer is selected is just fundamentally different than proof of work improvement and so you could do some sort of backup model where it's bought in if somebody doesn't show up in a second you could have somebody do a backup but that's still even if you did that you could have mislaws and result in reduced capacity which it seems natural for the EVM to be aware 
 
 **Ansgar**
 
@@ -447,7 +447,7 @@ yeah i just want to as far as i know there are new difficult tests in the test r
 
 **Danny**
 
-* just to speak to that there's always additional things you could probably do in the consensus layer to try to avoid missed slots but there is just a stronger notion of time and there is a notion of something not happening during the time even if you do shore it up in some ways and so there is this notion of like you can have missed slots and i don't think that's going to go away and thus the savm can either react to that or not with respect to its capacity.
+* just to speak to that there's always additional things you could probably do in the consensus layer to try to avoid missed slots but there is just a stronger notion of time and there is a notion of something not happening during the time even if you do shore it up in some ways and so there is this notion of like you can have missed slots and i don't think that's going to go away and thus the evm can either react to that or not with respect to its capacity.
 * so there are certainly concerns like this compensator and you probably want to make sure that try to make sure that slots aren't missed or there's recovery in the case of slots being missed but the thoughts will always be able to be missed 
 
 **Tim**
@@ -458,7 +458,7 @@ yeah i just want to as far as i know there are new difficult tests in the test r
 
 **Danny**
 
-* i'd definitely suggest this coming week i do think that this if we do anything to the savm that this is the thing to do with the merge. i do think that 10 of block proposals going offline because of some reason or other is like totally something that could happen and having reducing the incentive for that to be happened from from an attacker and reducing the impact that has on the execution layer and on capacity i think it's very nice to have and if it's going to happen then we need to really make a decision 
+* i'd definitely suggest this coming week i do think that this if we do anything to the evm that this is the thing to do with the merge. i do think that 10 of block proposals going offline because of some reason or other is like totally something that could happen and having reducing the incentive for that to be happened from from an attacker and reducing the impact that has on the execution layer and on capacity i think it's very nice to have and if it's going to happen then we need to really make a decision 
 
 **Ansgar**
 

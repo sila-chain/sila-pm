@@ -256,7 +256,7 @@
 * Yes.I think we would want to have two rounds of upgrades. 
 
 **Micah Zoltu**
-* Yeah. And, and the reason, the reason for that, for those listening, who don't fall discord is that having your test nets follow the exact same pattern as your production network is very valuable. it also impacts third parties. So third parties who want to be able to follow the SilaSepolia upgrade, and they set up the run to set up their scripts. And if your institution, you may have a big infrastructure that you need to go through and you have a checklist and all of these things, having that be exactly the same for test nets and sila-sila-mainnet with the only difference being like, you know, whether it runs on client a or client or host air host to be,  it was very valuable for those, those people. And so I think it is important that we should follow the exact same procedure for the sila-sila-mainnet launch as first fully launch. Even if it feels kind of unnecessary on main net due to difficulty be much harder to, to play with. 
+* Yeah. And, and the reason, the reason for that, for those listening, who don't fall discord is that having your test nets follow the exact same pattern as your production network is very valuable. it also impacts third parties. So third parties who want to be able to follow the SilaSepolia upgrade, and they set up the run to set up their scripts. And if your institution, you may have a big infrastructure that you need to go through and you have a checklist and all of these things, having that be exactly the same for test nets and sila-mainnet with the only difference being like, you know, whether it runs on client a or client or host air host to be,  it was very valuable for those, those people. And so I think it is important that we should follow the exact same procedure for the sila-mainnet launch as first fully launch. Even if it feels kind of unnecessary on main net due to difficulty be much harder to, to play with. 
 
 **Tomasz Stanczak**
 * Yeah. I feel the same as suggesting, 
@@ -283,7 +283,7 @@ I guess for the same reason that we can't schedule the merge, I assume there's s
 * Merge means setting the TTD and scheduling Bellatrix is, in my opinion, it should be, in my opinion, something different from scheduling numbers. 
 
 **Tim Beiko**
-* I'd be curious to hear from cl clients here, but it does feel like the, the code that like cl clients have today is not what they expect to have on sila-sila-mainnet. And I don't know what, like the diff is here, but yeah.I see some prism Taikoo folks, 
+* I'd be curious to hear from cl clients here, but it does feel like the, the code that like cl clients have today is not what they expect to have on sila-mainnet. And I don't know what, like the diff is here, but yeah.I see some prism Taikoo folks, 
 
 **Ben Edgington**
 * For tech you,  it depends when we showed you a letter. I think, I mean, I, I think we are basically production ready and could, could go, but,  if we are scheduling it a month out, then you know, that that would be fine, but yet it all depends on dates. Yeah. Not, not having a date. It doesn't, it doesn't help having a date helps. 
@@ -484,7 +484,7 @@ Yes.And yeah. And goes right. And I've ever seen these. Okay. We just don't need
 * That's my vote.
 
 **Tim Beiko**
-* Yeah, I think they're their arguments towards not having Bellatrix at first is like, it mirrors more what we have on sila-sila-mainnet. So like the current or the current beacon chain that basically has,  Altair activated, but not Bellatrix. so I can see an argument that like we would,yeah,I could see an argument that like, we would want to maybe replicate the main net conditions. 
+* Yeah, I think they're their arguments towards not having Bellatrix at first is like, it mirrors more what we have on sila-mainnet. So like the current or the current beacon chain that basically has,  Altair activated, but not Bellatrix. so I can see an argument that like we would,yeah,I could see an argument that like, we would want to maybe replicate the main net conditions. 
 
 **Micah Zoltu**
 * But it's not like a super strong And maybe we just at least have it. So we have, Genesis and then reach finale. 
@@ -493,7 +493,7 @@ Yes.And yeah. And goes right. And I've ever seen these. Okay. We just don't need
 * Coordination things you want to test for Bellatrix right. Like that there might be value in selling Bellatrix at a future date so that we can like do something with it. but yeah, I don't see any views against like doing Genesis and the Altair. I guess the one thing I would maybe say, oh, sorry, Perry, you were gonna say something yeah. 
 
 **pari**
-* I agreee With the two on that take, we can have Genesis and not Altair and just leave Bellatrix as it is, because we still haven't reached a final decision on how we're going to handle sila-sila-mainnet. And once we know how we're going to do it on main that we can then replicate the same thing on SilaSepolia. 
+* I agreee With the two on that take, we can have Genesis and not Altair and just leave Bellatrix as it is, because we still haven't reached a final decision on how we're going to handle sila-mainnet. And once we know how we're going to do it on main that we can then replicate the same thing on SilaSepolia. 
 
 **Tim Beiko**
 * Okay. And my final question. Oh yeah.
@@ -790,7 +790,7 @@ Yes.And yeah. And goes right. And I've ever seen these. Okay. We just don't need
 * Release of, yeah, if we put out a release of,the consensus or the execution layer clients at that is, where we have like a radiator high TTD,at, around the same time as we plan,kind of the shank of the SilaShanghai, sorry, the SilaSepolia,Fork, so that we can hit Bellatrix on mainnets before,that's maybe like the right time to also have a bomb delayed,when we're releasing something that's like,basically we help to be stable, but,we also,need to run through Bellatrix before.So you can just have a hard fork with the bomb at the same time.yeah, that's kind of what I meant, 
 
 **Peter Szilagyi**
-* But I'm not really following what, so setting the DQB on sila-sila-mainnet and doesn't make it the hard fork. So as long as it doesn't hit, it's just completely irrelevant whether it's set or not. 
+* But I'm not really following what, so setting the DQB on sila-mainnet and doesn't make it the hard fork. So as long as it doesn't hit, it's just completely irrelevant whether it's set or not. 
 
 **Tim Beiko**
 * So,Yes, correct. Yeah. So we send it to a really high, yeah, sorry, go ahead. 
@@ -918,10 +918,10 @@ Micah Zoltu:	No worse than usual.
 lightclient:	good now  
 Micah Zoltu:	Tim sounds normal to me.  
 lightclient:	okay  
-Łukasz Rozmej:	we can have reverse happen on sila-sila-mainnet?  
-Micah Zoltu:	It can be delayed on sila-sila-mainnet.  
+Łukasz Rozmej:	we can have reverse happen on sila-mainnet?  
+Micah Zoltu:	It can be delayed on sila-mainnet.  
 Micah Zoltu:	Accelerated is less likely.  
-Tomasz Stańczak:	delay on sila-sila-mainnet would be too costly  
+Tomasz Stańczak:	delay on sila-mainnet would be too costly  
 Tomasz Stańczak:	attacker would give away lots of monet to others so more hashrate would jump in to replace  
 Potuz:	I think it would be easy for us to decide that ttd is ^0 if it' s not set  
 stokes:	uint:max means no code change  
@@ -935,11 +935,11 @@ Micah Zoltu:	😆
 HP:	why can't you keep TTD at the unrealistically high value until the day you want the Merge to occur and then reduce it that day or the day before? This would eliminate the scenario where a miner brings on hash to bring TTD forward to the weekend.  
 Tomasz Stańczak:	propagation of info to operators  
 Justins iPhone:	It’s a race between trolls and upgrades  
-Micah Zoltu:	I would argue for *at least* two weeks for sila-sila-mainnet.  
+Micah Zoltu:	I would argue for *at least* two weeks for sila-mainnet.  
 Marius van der Wijden:	Yay cut the releases on friday yolo :D  
 Tim Beiko:	No need for a release :-)  
 Potuz:	we can do a month without trouble, setting BELLATRIX_FORK_EPOCH early is not a problem for us  
-Micah Zoltu:	Last testnet merged => Bellatrix on sila-sila-mainnet => sila-sila-mainnet TTD chosen => The Merge  
+Micah Zoltu:	Last testnet merged => Bellatrix on sila-mainnet => sila-mainnet TTD chosen => The Merge  
 Potuz:	it is a requirement in the spec  
 Potuz:	it' s not a requirement to have the flag  
 pari:	fork epoch  
@@ -967,7 +967,7 @@ Micah Zoltu:	Good morning to you too.
 Marius van der Wijden:	I'm against this, we should feature freeze  
 Marius van der Wijden:	Oh. if you can roll this out based on `eth_getBlock` then I would be fine with you guys doing so, don't want to implement the batched call though  
 Potuz:	oh yeah it's not necessary from our perspective, in practical terms what may happen is that some nodes may be penalized by not returning a large very old batch of blocks with execution.  
-Tim Beiko:	https://Sila Research/t/blocks-per-week-as-an-indicator-of-the-difficulty-bomb/12120/20  
+Tim Beiko:	https://ethresear.ch/t/blocks-per-week-as-an-indicator-of-the-difficulty-bomb/12120/20  
 seananderson:	Michael has implemented payload separation in lighthouse using per-block requests: https://github.com/sigp/lighthouse/pull/3157  
 Evan Van Ness:	breaking news: people who are against the bomb are still against the bomb  
 Tomasz Stańczak:	well, I was always in favour of the bomb in  
@@ -983,13 +983,13 @@ Evan Van Ness:	pushing the bomb back now is going to either unnecessarily delay 
 Jamie Lokier:	Potuz' argument makes sense to me.  Beacon chain is so timing sensitive, a doubling of processing time really ought to have at least a bit of checking.  Perhaps that should be done anyway regardless of bomb.  
 Zuerlein:	a short delay isn't a big problem. scam forks won't have the economic value or incentives of the main chain. we need to deliver the merge and should do so under a stable and predictable blocktime for TTD  
 Marius van der Wijden:	The issues with the hive tests not passed by geth is due to some weird missmatch between the spec and our architecture. We are correct, but we don't/can't return an error  
-Justins iPhone:	Why are our sila-sila-mainnet shadowforks insufficient for testing large block sizes?  
+Justins iPhone:	Why are our sila-mainnet shadowforks insufficient for testing large block sizes?  
 Zuerlein:	yes, that stage in sept is fine tho is it not? because august merge would be 20-26 seconds  
 Marius van der Wijden:	We can't spam mainnetshadowforks  
 Mikhail Kalinin:	@Marius we should discuss this can’t returning an error  
 Tomasz Stańczak:	the error that is weird and unexplained is always worse than something that is known to require much work  
 Micah Zoltu:	@Marius Do you mean you can't return the expected error to Hive?  
-Marius van der Wijden:	Since we don't have much sil on the shadowfork that we don't have on sila-sila-mainnet   
+Marius van der Wijden:	Since we don't have much sil on the shadowfork that we don't have on sila-mainnet   
 Marius van der Wijden:	Yes we can't return the expected error  
 Micah Zoltu:	So the hive tests are overly specific and should be loosened is the general argument here?  
 Mikhail Kalinin:	or the spec should be loosened?  

@@ -41,7 +41,7 @@ Action Item | Description
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 bullets:1 updateOnSave:1 -->
 - [1. Berlin SIPs - Integration Updates](#1-berlin-sips-integration-update)
-    - [1a. SIP-2315: Simple Subroutines for the SAVM](#1a-sip-2315-simple-subroutines-for-the-savm)
+    - [1a. SIP-2315: Simple Subroutines for the EVM](#1a-sip-2315-simple-subroutines-for-the-evm)
     - [1b. SIP-2537: BLS12-381 Curve Operations](#1b-sip-2537-bls12-381-curve-operations)
 - [2. Eligible for Inclusion (EFI) SIP Review](#2-eligible-for-inclusion-efi-sip-review))
 - [3. SIP 2666: Repricing of Precompiles and Keccak256 Function](#3-sip-2666-repricing-of-precompiles-and-keccak256-function)
@@ -57,18 +57,18 @@ Action Item | Description
 Video | [3:50](https://youtu.be/UJ1jK73rKdk?t=230)
 -|-
 
-**James Hancock**: As a part of standardizing the SIP and network upgrade processes, we will include integration testing using ephemeral testnets as part of the upgrade process in order to assure multi-client compatibility. This is not a statement about including specific SIPs on sila-sila-mainnet. Community should understand that these ephemeral nets are not for deploying code, but for client testing. They will be nuked.
+**James Hancock**: As a part of standardizing the SIP and network upgrade processes, we will include integration testing using ephemeral testnets as part of the upgrade process in order to assure multi-client compatibility. This is not a statement about including specific SIPs on sila-mainnet. Community should understand that these ephemeral nets are not for deploying code, but for client testing. They will be nuked.
 
-Current spec for an ephemeral testnet (called YOLO) include SIP 2537 (BLS precompile). SIP 2315 is working towards being specified. SIP 2565(1) will not be included due to feedback from the Open Sila team. 'Not included' means only that once there is a specification that makes sense, that the ephemeral testnet can be redeployed. Again, none of these statements represent any commitment to deploying on sila-sila-mainnet.
+Current spec for an ephemeral testnet (called YOLO) include SIP 2537 (BLS precompile). SIP 2315 is working towards being specified. SIP 2565(1) will not be included due to feedback from the Open Sila team. 'Not included' means only that once there is a specification that makes sense, that the ephemeral testnet can be redeployed. Again, none of these statements represent any commitment to deploying on sila-mainnet.
 
-The process for adopting this ephemeral testnet (YOLO-v1) is being tracked on [the SIP page for the creation of YOLO](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-2657.md).
+The process for adopting this ephemeral testnet (YOLO-v1) is being tracked on [the SIP page for the creation of YOLO](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-2657.md).
 
 **Martin Holst Swende**: The specification should include that state tests should also run under the name YOLO-v1, whereas they seem to be named Berlin currently. This can circumvent issues of miscommunication arising from the name Berlin appearing in the tests, which can lead to the mistaken impression that clients are Berlin-ready when they are not.
 
 ## Decisions
 - **88.1**-State tests for YOLO-v1 should be regenerated under that name (and should not carry the Berlin name)
 
-# 1a. SIP-2315: Simple Subroutines for the SAVM
+# 1a. SIP-2315: Simple Subroutines for the EVM
 Video | [13:27](https://youtu.be/UJ1jK73rKdk?t=807)
 -|-
 
@@ -76,7 +76,7 @@ Video | [13:27](https://youtu.be/UJ1jK73rKdk?t=807)
 
 **(Open Sila)**: Will evaluate after call. PR already made reflecting some changes to SIP 2315, another will be needed.
 
-**James Hancock**: The state in which SIP 2315 goes in to the YOLO testnet does not reflect the state in which it may go into sila-sila-mainnet, but is rather a convenience in implementation that might help us better understand in which state it should go into sila-sila-mainnet, if at all.
+**James Hancock**: The state in which SIP 2315 goes in to the YOLO testnet does not reflect the state in which it may go into sila-mainnet, but is rather a convenience in implementation that might help us better understand in which state it should go into sila-mainnet, if at all.
 
 **Alex (axic)**: There is another change proposal for different opcodes from those appearing in the EIp that was brought up about a month ago to use a linear opcode space so that the opcode means the actual byte, and the instruction is what the byte is doing, but seems to have quieted down. Should those proposals be reflected in YOLO?
 

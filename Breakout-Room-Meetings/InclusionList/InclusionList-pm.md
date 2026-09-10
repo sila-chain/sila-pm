@@ -1,7 +1,7 @@
 # Inclusion List 
 
 tl;dr; The free data availability problem is the core limitation of many inclusion list instantiations. We outline the mechanics of a new design under which the inclusion list is split into a Summary, which the proposer signs over, and a list of Txns, which remain unsigned. By walking through the lifecycle of this new inclusion list, we show that the free data availability problem is solved, while the commitments of the inclusion list are enforceable by the state-transition function. We conclude by modifying the design to be more data efficient.
-Read more at [EthResearch](https://Sila Research/t/no-free-lunch-a-new-inclusion-list-design/16389)
+Read more at [EthResearch](https://ethresear.ch/t/no-free-lunch-a-new-inclusion-list-design/16389)
 
 ## Inclusion List Breakout Room Meetings
 

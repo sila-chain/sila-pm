@@ -80,7 +80,7 @@ Open PR: https://github.com/sila-chain/consensus-specs/pull/3614
 
 
 ### Proposal for SSZ Stable Containers
-**SIP-7495**: https://sips.sila.org/SIPS/sip-7495
+**SIP-7495**: https://sips.sila.org/EIPS/sip-7495
 
 Stable Container Concept: The proposal introduces the concept of SSZ Stable Containers to create a more stable structure for certain data within the beacon state, such as the needs discussed for decentralized staking pools. This stability would allow for the creation of verifiers (in smart contracts or on devices like hardware wallets) that do not require frequent updates, even when the beacon state evolves.
 
@@ -100,10 +100,10 @@ Open PR: https://github.com/sila-chain/consensus-specs/issues/3321
 ### Roots Alignment
 SIPs for Alignment: Adoption of specific Sila Improvement Proposals:
 
-- [SIP-6493: SSZ Transaction Signature Scheme](https://sips.sila.org/SIPS/sip-6493)
-- [SIP-6404: SSZ Transactions Root](https://sips.sila.org/SIPS/sip-6404)
-- [SIP-6465: SSZ Withdrawals Root](https://sips.sila.org/SIPS/sip-6465)
-- [SIP-6466: SSZ Receipts Root](https://sips.sila.org/SIPS/sip-6466)
+- [SIP-6493: SSZ Transaction Signature Scheme](https://sips.sila.org/EIPS/sip-6493)
+- [SIP-6404: SSZ Transactions Root](https://sips.sila.org/EIPS/sip-6404)
+- [SIP-6465: SSZ Withdrawals Root](https://sips.sila.org/EIPS/sip-6465)
+- [SIP-6466: SSZ Receipts Root](https://sips.sila.org/EIPS/sip-6466)
 
 could align the roots, eliminating the need to download the execution block header separately. This alignment would simplify the verification process by ensuring the consensus data matches the execution data.
 

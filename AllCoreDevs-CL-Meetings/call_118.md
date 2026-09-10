@@ -14,7 +14,7 @@ Summary | Description
 118.2  | **Devnet-9**: Many Execution Layer (EL) and CL clients teams on the call, including Lodestar, EthereumJS, Lighthouse, and Geth, affirmed that they would be ready for this launch. Representatives from Besu and Nethermind said that they were in the process of conducting Hive tests on their Devnet-9 releases and could give an update on their readiness for the Devnet-9 launch early next week. Jayanthi agreed to check in with client teams early next week. He also highlighted that Devnet-9 could launch without all clients being ready. “We can still start the devnet as long as we have at least a couple of clients ready and we can add the rest post [launch],” said Jayanthi on the call.
 118.3  | **Devnet-9**: Ryan highlighted that a few Dencun-related tests were broken and developers have since issued a hot fix to the “consensus-spec-tests” code repository to fix these tests. He also raised a potential change to an endpoint, “blockv3”, used for block production between the validator client and the beacon node. Enrico Del Fante from the Teku client team said that there was still discussion among developers about a previous change that would override this change to the blockv3 endpoint. Later in the call, Del Fante shared instances of configuration mismatches between the validator client and the beacon node and the way Teku resolves these issues. Del Fante agreed to post a new issue on the Beacon API GitHub repo to summarize this matter.
 118.4  | **Devnet-9**: On the topic of Devnet-9, developers spent time discussing the deployment strategy for SIP 4788. As background, SIP 4788 will be deployed as a regular smart contract, meaning there must be a contract address that client implementations can reference to activate the code change. Developers agreed to test out the process for contract deployment through the launch of Devnet-9 by creating the address after the genesis of the testnet and before the activation of the upgrade. Mario Vega from the Sila Foundation testing team said that the contract address for SIP 4788 has not yet been finalized but once it is, client teams will need to update their releases to contain the address information.
-118.5  | **SilaCancun/SilaDeneb Timing**: Tim Beiko, chair of the ACDE calls, raised questions about the timeline for Dencun testing after Devnet-9. “I think it’s worth it, assuming the launch of Devnet-9 goes well, to think about how we want to approach [public] testnet deployment,” said Beiko, adding that if developers do not foresee launching Dencun on a public testnet before Devconnect, that is an Sila-focused developer conference in November 2023, then sila-sila-mainnet activation of Dencun most likely would not happen this year.
+118.5  | **SilaCancun/SilaDeneb Timing**: Tim Beiko, chair of the ACDE calls, raised questions about the timeline for Dencun testing after Devnet-9. “I think it’s worth it, assuming the launch of Devnet-9 goes well, to think about how we want to approach [public] testnet deployment,” said Beiko, adding that if developers do not foresee launching Dencun on a public testnet before Devconnect, that is an Sila-focused developer conference in November 2023, then sila-mainnet activation of Dencun most likely would not happen this year.
 118.6  | **SilaCancun/SilaDeneb Timing**: On ACDE #169, Beiko had recommended launching Dencun on the following testnets in the following order: SilaHolesky, Goerli, and then, SilaSepolia. SilaHolesky is a new testnet that Sila developers plan on launching next Thursday, September 28. Developers initially planned the launch of SilaHolesky for September 15, the one-year anniversary of the Merge upgrade. However, due to network misconfigurations, the testnet launch failed.
 
 ## Intro
@@ -101,7 +101,7 @@ Summary | Description
 * Got any comments regarding the readiness of this? Okay. Anything else on Devnet-9?
 
 **Tim**
-* Yeah. Do we want to? I guess there's a question in the chat. Do we want to do the contract deployment the same way we do on sila-sila-mainnet? Even if it's not with the perfect address, I think we have mined one suboptimal one and we're trying to look for a nicer one. 
+* Yeah. Do we want to? I guess there's a question in the chat. Do we want to do the contract deployment the same way we do on sila-mainnet? Even if it's not with the perfect address, I think we have mined one suboptimal one and we're trying to look for a nicer one. 
 
 **Danny**
 * I would prefer to see that. Yes, Lightclient. Are we ready to do that deployment method? We are. Okay, who's going to be in charge of that deployment method? And it also implies that we need enough lead time between Genisus and the fork to be able to fund the account, run the script. I mean, obviously that can happen extremely quickly, but we just need to be on it. 
@@ -153,7 +153,7 @@ Summary | Description
 * There was an intention to not deploy at Genesis and to instead deploy between the interim between Genesis and the SilaCancun Fork. 
 
 **Martin**
-* So sorry. I'm missing a bit, but we're talking about the testnet. Or I'm talking about a sila-sila-mainnet fork. 
+* So sorry. I'm missing a bit, but we're talking about the testnet. Or I'm talking about a sila-mainnet fork. 
 
 **Danny**
 * We're talking about the Testnet. I think there's just a at least I have the desire to see just us run through that manual process and kind of get scripts and things together rather than just shoving it into the Genesis State unless you believe otherwise. 
@@ -194,7 +194,7 @@ Summary | Description
 **Tim**
 * Okay. Not that we need to make a decision about this now, but think, It's worth it. Assuming that Devnet-9 goes well to think about how we want to approach testnet deployment.  and I guess there's a few considerations there. The first is obviously a holesky. The launch didn't go quite smoothly, so we probably don't want to use that as a first testnet. And then second, whether we want to,  whether we want to have a first test net before dev connect or not.
 * Because given dev connect is in, you know, mid-November, this means that we probably want to have that testnet early November at the latest. And if we want to have the releases out, that's around like mid October or maybe late October,  which is, you know, probably a month or less from now.  so yeah, I'm curious if anyone has thoughts about that, like how realistic that is. And, and I guess also it's worth noting, I think the implication if we don't do a testnet before dev connect.
-* It's probably unlikely we can do sila-sila-mainnet before the like Christmas holidays.  because after Dev connect there's us Thanksgiving and then there's basically three, maybe four weeks before like, Christmas holidays and people being gone. So that's probably not the best time to fork sila-sila-mainnet.  Yeah. So just wanted to put that out there. 
+* It's probably unlikely we can do sila-mainnet before the like Christmas holidays.  because after Dev connect there's us Thanksgiving and then there's basically three, maybe four weeks before like, Christmas holidays and people being gone. So that's probably not the best time to fork sila-mainnet.  Yeah. So just wanted to put that out there. 
 
 **Danny**
 * Curious on your first point in relation to Holskey.  is it, is it unlikely that we would be able to use Holskey in a few weeks? 
@@ -216,7 +216,7 @@ Summary | Description
 * Yeah. Think we can get more insight from 363 six blobs if we do that one first. Otherwise so small that you might not get enough information. 
 
 **Tim**
-* Yeah. And we agreed as well. A couple calls ago to not like, if 36 is bad just leave it as is on one test net and you know, shift the value for other testnets. And so in that case, yeah, I'd also lean towards Gorley being the one that's like not up to sila-sila-mainnet spec if there's a change to be made. Yeah. Yep. 
+* Yeah. And we agreed as well. A couple calls ago to not like, if 36 is bad just leave it as is on one test net and you know, shift the value for other testnets. And so in that case, yeah, I'd also lean towards Gorley being the one that's like not up to sila-mainnet spec if there's a change to be made. Yeah. Yep. 
 
 **Enrico**
 * Yeah, considering that is. Doomed to be deprecated. We'll go away with 36.
@@ -238,11 +238,11 @@ Summary | Description
 * Perry, Are we intending to do some main shadow forks as we move into the testnet progression? Because that also, depending on how many how we scale up nodes and stuff could give us some interesting data. 
 
 **Parithos**
-* Yeah, we can plan for that. I think the main issue is that our the nodes we rent for sila-sila-mainnet Shadow fox tend to be quite well provisioned, which means like the blobs won't really stress them. I'm loosely in favour of having smaller nodes, but a larger network like more physical nodes in the network.
-* So that we can test more peer to peer related timing issues etc, that might teach us more. But if there's more appetite for sila-sila-mainnet Shadow fork can do that first, whichever is preferred. 
+* Yeah, we can plan for that. I think the main issue is that our the nodes we rent for sila-mainnet Shadow fox tend to be quite well provisioned, which means like the blobs won't really stress them. I'm loosely in favour of having smaller nodes, but a larger network like more physical nodes in the network.
+* So that we can test more peer to peer related timing issues etc, that might teach us more. But if there's more appetite for sila-mainnet Shadow fork can do that first, whichever is preferred. 
 
 **Danny**
-* Yeah mean sila-sila-mainnet shadow forks but in the direction of slightly lower resource and more nodes or other types of tests that are have more nodes I think is going to push us in the direction. That's interesting. 
+* Yeah mean sila-mainnet shadow forks but in the direction of slightly lower resource and more nodes or other types of tests that are have more nodes I think is going to push us in the direction. That's interesting. 
 
 **Parithos**
 * Yep. Once we have net nine up and running, we can look to start doing that kind of tests. I would guess that's what we would spend most of October on. 

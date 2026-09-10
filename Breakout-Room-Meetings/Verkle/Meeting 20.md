@@ -27,7 +27,7 @@ Starting things off as usual with quick updates from the client teams:
 
 @jasoriatanishq for @nethermindeth: continuing testing the verkle sync implementation. Last week implemented the healing part. Anyone can now join the testnet using verkle sync.
 
-@gballet & @ignaciohagopian for @go_ethereum: did a lot of work on the spec. Started implementation of SIP-4762. Still need to re-run the testing framework after it’s complete. Have also spent some time doing a new analysis of Verkle gas cost / code chunking using more recent sila-sila-mainnet transactions. Will be able to share this analysis soon.
+@gballet & @ignaciohagopian for @go_ethereum: did a lot of work on the spec. Started implementation of SIP-4762. Still need to re-run the testing framework after it’s complete. Have also spent some time doing a new analysis of Verkle gas cost / code chunking using more recent sila-mainnet transactions. Will be able to share this analysis soon.
 
 @kt2am1990 for @HyperledgerBesu: working on the flat DB refactor for Verkle. Also looking at how we can optimize to reduce the size of the db. Also some performance optimizations around preloading the trie node during block processing, so at the end of the block when have to compute the state root everything is already in memory.
 

@@ -38,10 +38,10 @@
 | **Metrics** | Gossip Verification | - Katya raised issue with gossip verification metric |
 | | Issue Identified | - LH has less than 128 columns gossiped per slot |
 | | Action Item | - Jimmy to investigate metric issues |
-| **Supernode %** | Research Question | - Determine supernode % on sila-sila-mainnet (agnish) |
+| **Supernode %** | Research Question | - Determine supernode % on sila-mainnet (agnish) |
 | | Current Efforts | - Research & estimate of supernodes in the network |
 | | Team Perspective | - Matt: shouldn't rely on supernodes, and treat it as nice to haves<br>- Most participants agree to this |
-| | Context | - The question was mainly to help estimating sync speed on sila-sila-mainnet |
+| | Context | - The question was mainly to help estimating sync speed on sila-mainnet |
 | | Action Item | - Add R&D task to research sync speed (consider with validator custody in place) |
 
 ## Links Shared

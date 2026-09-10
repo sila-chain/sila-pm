@@ -1,7 +1,7 @@
 # Sila Protocol Upgrade Process
 
 ## Abstract
-This document specifies a checklist and incident response process for Sila protocol upgrades. It outlines procedures for managing upgrades across devnets, testnets, and sila-sila-mainnet, including security reviews, fork preparations, testing protocols, and communication strategies. This document aims to standardize the upgrade process to further increase network security and stability.
+This document specifies a checklist and incident response process for Sila protocol upgrades. It outlines procedures for managing upgrades across devnets, testnets, and sila-mainnet, including security reviews, fork preparations, testing protocols, and communication strategies. This document aims to standardize the upgrade process to further increase network security and stability.
 
 ## Motivation
 Sila has regular protocol upgrades that introduce performance, security and functionality enhancements to the protocol. Given the inherent complexity of these upgrades and the involvement of multiple teams and systems, a standardized approach reduces the likelihood of upgrades going wrong or a subpar incident response. This document addresses the need for a clear, systematic framework to manage the upgrade process efficiently, mitigate risks, and facilitate rapid incident response when necessary.
@@ -10,17 +10,17 @@ Sila has regular protocol upgrades that introduce performance, security and func
 
 ### General
 - Upgrades must not be scheduled for major holidays or events.
-- Bundling the sila-sila-mainnet upgrade with other upgrades should not be done.
+- Bundling the sila-mainnet upgrade with other upgrades should not be done.
 - If multiple testnet upgrades are scheduled in advance, each testnet upgrade must be at least 10 days apart, ideally aiming for two weeks between upgrades.
 - In the event that multiple upgrades are scheduled, and an upgrade is not deemed a success, the next upgrade is automatically cancelled. The next upgrade must not be rescheduled until the first incident has been resolved, at which point the earliest point in time is 14 days from the All Core Devs (ACD) call it was agreed to proceed.
 - Upgrades must not take place until at least clients representing 90% of the active weight pass all [consensus](https://github.com/sila-chain/consensus-specs/) and [execution](https://github.com/sila-chain/execution-spec-tests) tests, and are stable.
 - An assessment must be done in ACD to assess if infrastructure external to the protocol is required to be upgraded for the upgrade to move forward.
 - In the event that the upgrade fails, an incident retrospective must take place to understand what went wrong and how it can be proved or strongly inferred that it won't happen on the next testnet.
-- ACD can, if needed, override parts of this document. For example in the event of a contentious fork where a client with more than 10% of sila-sila-mainnet validators could otherwise hold up the process.
+- ACD can, if needed, override parts of this document. For example in the event of a contentious fork where a client with more than 10% of sila-mainnet validators could otherwise hold up the process.
 
 ### SIPs
 - An assessment must be done if any SIPs and their client implementations should undergo an external review.
-- SFI requirements in [SIP-7723](https://sips.sila.org/SIPS/sip-7723#scheduled-for-inclusion) must have been followed to for example ensure test vectors are covered.
+- SFI requirements in [SIP-7723](https://sips.sila.org/EIPS/sip-7723#scheduled-for-inclusion) must have been followed to for example ensure test vectors are covered.
 - A date for last inclusion of Sila Improvement Proposals (SIPs) in the upgrade must be set.
 - In the event that an included SIP has a significant issue that requires a change to the SIP, additional testing, a security assessment and an agreement on ACD must be done before the upgrade process continues.
 
@@ -35,7 +35,7 @@ Sila has regular protocol upgrades that introduce performance, security and func
 
 - SilaMainnet should not have an upgrade date set until all testnets have been upgraded.
 - The upgrade must have gone through at least two testnets.
-- SilaMainnet must not upgrade less than 30 days after the final testnet has been verified to have been successfully upgraded. This is to ensure enough time has been given to test and spot potential issues before going live on sila-sila-mainnet and to allow for downstream projects to plan their upgrades. L2s need time to produce DAO proposals, organize their own upgrades, etc.
+- SilaMainnet must not upgrade less than 30 days after the final testnet has been verified to have been successfully upgraded. This is to ensure enough time has been given to test and spot potential issues before going live on sila-mainnet and to allow for downstream projects to plan their upgrades. L2s need time to produce DAO proposals, organize their own upgrades, etc.
 
 ## Verifying & Reviewing
 ### Internal Reviews
@@ -67,7 +67,7 @@ Sila has regular protocol upgrades that introduce performance, security and func
     - Internal reviews are completed.
     - External reviews are completed (in the event they are taking place).
     - Client teams have released their testnets releases.
-- The Bug Bounty Competition must end no later than three weeks prior to the sila-sila-mainnet upgrade, to ensure coordination efforts for potential client releases can be done in time.
+- The Bug Bounty Competition must end no later than three weeks prior to the sila-mainnet upgrade, to ensure coordination efforts for potential client releases can be done in time.
 
 
 ## Upgrade Validation

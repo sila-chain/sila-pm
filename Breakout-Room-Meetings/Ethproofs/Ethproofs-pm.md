@@ -12,6 +12,6 @@ Ethproofs is an open-source public good. Ethproofs is a benchmarking platform fo
 |6| TBD | formal verification | Agenda | Recording | Notes |
 |5| TBD | ISA Debate: or not to RISC-V? | Agenda | Recording | Notes |
 |4| TBD | ISA Debate: to RISC-V? | Agenda | Recording | Notes |
-|3| TBD | gigagas L1 SAVM | Agenda | Recording | Notes |
+|3| TBD | gigagas L1 EVM | Agenda | Recording | Notes |
 |2| May 23, 2025 | Provers | Agenda | Recording | Notes |
 |1| Apr 25, 2025 | zkVMs | [Agenda](https://github.com/sila-chain/pm/issues/1449) | [Recording](https://youtu.be/4E-yaX-F7Qw) | Notes |

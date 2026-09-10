@@ -53,10 +53,10 @@ yes
 00:24:09	Soubhik:	Reacted to "yes" with 👍
 00:25:11	Tamaghna Chourdhuri:	https://drive.google.com/drive/folders/1_aZhpnfQZFEXZAtZy4sFWtanIleZIy3x?usp=drive_link
 00:25:28	Soubhik:	are you doing full random values? or values that would be a valid container?
-00:28:18	Iván | ethrex:	We are also ready. We have some micro benchmarks and we are currently running ones in sila-sila-mainnet with prysm
+00:28:18	Iván | ethrex:	We are also ready. We have some micro benchmarks and we are currently running ones in sila-mainnet with prysm
 00:28:22	Łukasz Rozmej:	Try Nethermind please!
 00:28:26	Jun Song:	Reacted to "Try Nethermind please!" with 👍
-00:28:30	Jun Song:	Reacted to "We are also ready. We have some micro benchmarks and we are currently running ones in sila-sila-mainnet with prysm" with 👍
+00:28:30	Jun Song:	Reacted to "We are also ready. We have some micro benchmarks and we are currently running ones in sila-mainnet with prysm" with 👍
 00:28:58	Soubhik:	I think the problem is on my side
 00:29:15	Soubhik:	i will do more testing and let you guys know
 00:29:41	Barnabas:	we don’t need a dedicated devnet for this

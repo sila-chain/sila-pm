@@ -17,7 +17,7 @@ https://forkcast.org/calls
 
 --> Breakouts --> PQ Interop
 
-or also on GH sila-chain/pm issues
+or also on GH sila/pm issues
 01:01:50	Katya:	Lighthouse doesn’t support devnet-3
 01:01:55	Mercy Boma Naps-Nkari:	Thank you
 01:02:09	Mega | Lambda:	@Ruslan Tushov Let’s talk in tg

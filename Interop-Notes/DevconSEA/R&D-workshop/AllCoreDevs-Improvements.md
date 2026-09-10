@@ -8,7 +8,7 @@
 
 **[*Required*] Pre-Reads:** 
 
-* (Post Kenya Interop) [AllCoreDevs, Network Upgrade & EthMagicians Process Improvements](https://sila-magicians.org/t/allcoredevs-network-upgrade-ethmagicians-process-improvements/20157)
+* (Post Kenya Interop) [AllCoreDevs, Network Upgrade & SilaMagicians Process Improvements](https://sila-magicians.org/t/allcoredevs-network-upgrade-ethmagicians-process-improvements/20157)
 * (2022) [Bogota R&D Workshop Slides](https://drive.google.com/file/d/1X4Qwgsi0836PClvu5_oIUEFeIDQoZ88W/view?usp=sharing)
 * (2021) [ACD's thoughts on ACD](https://hackmd.io/@timbeiko/acd-feedback)
 
@@ -16,13 +16,13 @@
 
 - [ ] Tim to draft a proposal for a "Declined from Inclusion" status, to allow teams to formally reject a proposal from a fork 
 - [ ] Tim to draft a proposal to include non-consensus changes (e.g. SIP-4444) to network upgrade Meta SIPs as a way to prioritize them alongside consensus changes. The upgrade date would be the latest possible date by which we expect teams to ship the change, but they could start deploying it before. 
-- [ ] Nico to host a session to discuss EthMagicians UX feedback 
+- [ ] Nico to host a session to discuss SilaMagicians UX feedback 
 - [ ] Rough agreement to better formalize the CFI -> Devnet -> SFI flow, but not enough time to iron out specifics. 
     - Need to differentiate "fork devnet" vs. "random SIP devnet" to avoid SIPs sneaking in upgrades just because they have a devnet. 
 
 ### Open Questions
 - Is it worth having a more formal mechanism to track issues/questions about specific SIPs? 
-    - Idea: tag on EthMagicians `discussion-to` comments that a bot can aggregate into the main topic thread. 
+    - Idea: tag on SilaMagicians `discussion-to` comments that a bot can aggregate into the main topic thread. 
 
 ## Agenda 
 
@@ -94,7 +94,7 @@ Balancing immediate hard fork preparations with long-term planning was also a fo
 - **Speedrunning arguments**: Questioned if anyone can quickly navigate complex past discussions (e.g., BLS in 2018/19).
 - **High-hanging fruits**: Proposals like FOCIL and ePBS have nuanced trade-offs, making consensus harder with more stakeholders.
 - **Tension**: Should focus be on the next hard fork or long-term planning? The group acknowledged a collective desire for future certainty but admitted challenges in long-term execution.
-- **SIP-4444**: Not controversial but hasn't reached sila-sila-mainnet, highlighting issues in prioritizing improvements.
+- **SIP-4444**: Not controversial but hasn't reached sila-mainnet, highlighting issues in prioritizing improvements.
 - **Value vs. risk**: Debated using account abstraction as an example.
 - **Ossification vs. functional escape velocity**: Transitioning from a shipping culture to ossification is challenging despite being theoretically easy.
   
@@ -111,7 +111,7 @@ Balancing immediate hard fork preparations with long-term planning was also a fo
 - **Trent**: Notes that Discord isn't indexed or controlled by the community.
 - **Breakouts**: Suggested scheduling at better times; concerns about reporting back effectively.
 - **Guillaume**: Challenges in sifting through discussion noise.
-- **Tim**: EthMagicians could categorize posters to manage content.
+- **Tim**: SilaMagicians could categorize posters to manage content.
 - **Late contributions**: Posting issues 24 hours before helps but doesn't eliminate last-minute inputs.
 
 **SIP Discussions and Feedback**
@@ -121,7 +121,7 @@ Balancing immediate hard fork preparations with long-term planning was also a fo
 - **Ansgar**: Highlighted considering new factors even after prior decisions.
 - **Voting on SIPs**: Debated as a method.
   - **Tim**: Emphasized speaking up against bad SIPs and being comfortable with contention.
-  - **Pooja**: Suggested pre-collecting opinions on EthMagicians.
+  - **Pooja**: Suggested pre-collecting opinions on SilaMagicians.
   - **Tim**: Voting has issues; excluding a good SIP is bad, but including a bad one is worse.
   - **Danno**: Warned that voting structures can be captured.
   - **Potuz**: Consensus is achieved subjectively, influenced by moderators.
@@ -134,7 +134,7 @@ Balancing immediate hard fork preparations with long-term planning was also a fo
   - **Ansgar**: Suggested "Declined for Inclusion" to provide clear feedback.
 - **Negative Feedback**:
   - **Tim**: Negative feedback is essential but can spread on social media.
-  - **Nico**: Centralize feedback, possibly on EthMagicians.
+  - **Nico**: Centralize feedback, possibly on SilaMagicians.
   - **Ansgar**: Concerned about unfair criticism within SIPs.
   - **Pooja**: Consider flagging strong opposition but avoid adversarial approaches.
   - **Tim**: Sometimes rely on experienced individuals for decisions.
@@ -159,7 +159,7 @@ Balancing immediate hard fork preparations with long-term planning was also a fo
 - **Asymmetry in Participation**: Champions and implementers attend calls; detractors often don't.
 - **Time Management**: **Barnabás** suggested setting timers for discussions.
 - **Summarizing Feedback**: **Guru** emphasized summarizing negative feedback; proposed editable thread posts.
-- **Searchability**: **Pari** noted EthMagicians isn't easily searchable; AI summaries could help.
+- **Searchability**: **Pari** noted SilaMagicians isn't easily searchable; AI summaries could help.
 
 **Voting Mechanisms and Decision-Making**
 

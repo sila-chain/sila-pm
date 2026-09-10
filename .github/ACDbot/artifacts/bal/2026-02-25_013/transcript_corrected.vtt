@@ -106,11 +106,11 @@ Karim T. (matkt): We didn't see a lot of differences, because,
 
 27
 00:08:11.290 --> 00:08:13.560
-Karim T. (matkt): It's not similar to sila-sila-mainnet, so…
+Karim T. (matkt): It's not similar to sila-mainnet, so…
 
 28
 00:08:13.730 --> 00:08:18.009
-Karim T. (matkt): We are mainly working for the Shadow Fork of sila-sila-mainnet to have really good numbers.
+Karim T. (matkt): We are mainly working for the Shadow Fork of sila-mainnet to have really good numbers.
 
 29
 00:08:20.460 --> 00:08:36.530
@@ -162,7 +162,7 @@ Toni Wahrstätter: I would then pass the word. I see Jochman has your… has his
 
 41
 00:10:29.990 --> 00:10:47.649
-jochem-brouwer: Yes, so, for the benchmarks, we are writing these benchmarks, and as you said, we indeed need to run these on top of, like, states, like, sila-sila-mainnet state or roadnet state. The problem is that we have to fill these tests, and for this, we have this testing endpoint, this new testing RPC endpoint, and that
+jochem-brouwer: Yes, so, for the benchmarks, we are writing these benchmarks, and as you said, we indeed need to run these on top of, like, states, like, sila-mainnet state or roadnet state. The problem is that we have to fill these tests, and for this, we have this testing endpoint, this new testing RPC endpoint, and that
 
 42
 00:10:47.680 --> 00:10:52.060

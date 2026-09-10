@@ -28,7 +28,7 @@
 
 **Action Item 83.1:** A bounty for the pre-requisite benchmarking required for EIP2046 (Hudson)
 
-# 1. [Eligibility for Inclusion (EFI) SIP Review](https://sips.sila.org/SIPS/sip-2378)
+# 1. [Eligibility for Inclusion (EFI) SIP Review](https://sips.sila.org/EIPS/sip-2378)
 
 **Hudson:** James, Should we start with the SIP Reviews?
 
@@ -39,7 +39,7 @@
 
 **James:** Any updates on Hash to curve?
 
-**Alex V:** The PR was updated with some information. So, hash to curve: there are two parts, One is hashing to the filled element which can be done in SAVM. And this part has more than one choice, i.e. you can use different has functions if you want. So, we won't implement this in pre-compile. We will just leave it as a functionality in pre-compile. Just 20 lines of code.
+**Alex V:** The PR was updated with some information. So, hash to curve: there are two parts, One is hashing to the filled element which can be done in EVM. And this part has more than one choice, i.e. you can use different has functions if you want. So, we won't implement this in pre-compile. We will just leave it as a functionality in pre-compile. Just 20 lines of code.
 
 * Second part is the mapping with the filled element, into the curve point which is non-trivial and expensive. And this is specified  as a pre-compile. 
 
@@ -59,7 +59,7 @@
 
 **Greg:** Getting it implemented is the step, you need for people to look at it carefully. 
 
-* SIP-2315 has some discussion on the sil magician [link](https://sila-magicians.org/t/sip-2315-simple-subroutines-for-the-savm/3941). This has been implemented in geth. Still some minor improvements to be made. You can follow that discussion on the @EthMagicians link above
+* SIP-2315 has some discussion on the sil magician [link](https://sila-magicians.org/t/sip-2315-simple-subroutines-for-the-evm/3941). This has been implemented in geth. Still some minor improvements to be made. You can follow that discussion on the @SilaMagicians link above
 
 # SIP - 2456
 
@@ -157,7 +157,7 @@ This SIP is for adding the following OPCodes
 2.  Call Gas Limit
 3.  Transaction gas refund
 
--  **Alex**: Current Situation in SAVM 
+-  **Alex**: Current Situation in EVM 
 
    -  There is an OPCode for gas limit that returns block gas limit and not a transaction/call gas limit
    -  Out of all the parameters a transaction has, only gas limit is not available for a smart contract to use - which creates some limitations
@@ -176,9 +176,9 @@ This SIP is for adding the following OPCodes
    -  Right, and that is why the proposal is of a gas limit of the entire transaction and the current call frame
    -  Happy to receive any input on the implementation
 
--  **Feedback (reaction)**: a previous UNGAS proposal, proposed to completely hide this information from the SAVM. Having worked with gas limits, realised that introspection tools of the SAVM in terms of gas, or the ability of a smart contract to observe the internals of the SAVM looks like a cool feature, but inevitably leads to the call that will be broken when we try to do anything with the gas schedules. In the same way, there is an opinion that the Chain ID OPCode might actually be bad, because it allows contracts to introspect the chain id and they start building the code assuming the chain id and basically that code becomes unforkable.
+-  **Feedback (reaction)**: a previous UNGAS proposal, proposed to completely hide this information from the EVM. Having worked with gas limits, realised that introspection tools of the EVM in terms of gas, or the ability of a smart contract to observe the internals of the EVM looks like a cool feature, but inevitably leads to the call that will be broken when we try to do anything with the gas schedules. In the same way, there is an opinion that the Chain ID OPCode might actually be bad, because it allows contracts to introspect the chain id and they start building the code assuming the chain id and basically that code becomes unforkable.
 
--  **Comment on the previous feedback**: Gas abstraction is actually a leaky abstraction. It is inherently impossible to entirely hide everything related to Gas from the SAVM because after all, we can check the balance and figure out the fees of the transaction, and figure out the gas used from the transaction even if we had the UNGAS proposal.  Essentially, we need to preserve the backward compatibility. Biggest offender is the Gas parameter in all these call uncles. If we don't do UNGAS, and do a part of what the UNGAS proposes, should be sufficient. And if entirely hiding the gas information from the SAVM is impossible then introducing something above the gas limit is a possible way to go.
+-  **Comment on the previous feedback**: Gas abstraction is actually a leaky abstraction. It is inherently impossible to entirely hide everything related to Gas from the EVM because after all, we can check the balance and figure out the fees of the transaction, and figure out the gas used from the transaction even if we had the UNGAS proposal.  Essentially, we need to preserve the backward compatibility. Biggest offender is the Gas parameter in all these call uncles. If we don't do UNGAS, and do a part of what the UNGAS proposes, should be sufficient. And if entirely hiding the gas information from the EVM is impossible then introducing something above the gas limit is a possible way to go.
 
 -  **Comment on the proposed OPCode - Call Gas Limit**: 
 
@@ -186,7 +186,7 @@ This SIP is for adding the following OPCodes
    -  The issue in its entirety is quite complex
    -  No implementation/concept of gas limit of current execution field
    -  It is possible to implement this OPCode in different ways with different values to give the same results - therefore useful to be more detailed
-   -  How exactly should the SAVM extract this Call Gas Limit information
+   -  How exactly should the EVM extract this Call Gas Limit information
 
 -  **Comment on the proposed OPCode - Tx Gas Refund**:
 
@@ -219,7 +219,7 @@ This SIP is for adding the following OPCodes
 
 -  **Feedback**: If it were implemented, these would be brittle solutions. There are workarounds, eg, setting out storage slots and be paid later for these storage slots and either paid/refunded based on the storage slot and the successful transaction - these are tricks but makes the whole thing implementable instead of increasing complexity.
 
--  **Follow up feedback on the previous one**: Not that the proposed OPCodes are useless, but these involve quite a high effort cost to implement. These instructions - specifically the last two (Call gas limit and Transaction gas refund), are described in the yellow paper but they are not accessible from the SAVM atm. So if we want to modify the SAVM we can do it, because we know they are inaccessible, however if we have those OPCodes in place, it will be hard for us to do something about refunds - like change the logic. It is like putting shackles on our future ability to fix certain things in the SAVM. 
+-  **Follow up feedback on the previous one**: Not that the proposed OPCodes are useless, but these involve quite a high effort cost to implement. These instructions - specifically the last two (Call gas limit and Transaction gas refund), are described in the yellow paper but they are not accessible from the EVM atm. So if we want to modify the EVM we can do it, because we know they are inaccessible, however if we have those OPCodes in place, it will be hard for us to do something about refunds - like change the logic. It is like putting shackles on our future ability to fix certain things in the EVM. 
 
 -  **Critique** for Transaction Gas Limit OPCode: 
 
@@ -272,7 +272,7 @@ Proposes reduced gas cost (from 700 to 40) for static calls (`staticcall`) made 
    -  BLAKE2b function should and must be faster and cheaper than keccak, and its not, only because its a precompile call
    -  Cannot be used apart from very specific use cases eg., verifying PoW.
 -  **Clarifying question** (Hudson): Current benchmarking being done eg., for the BLS curves are potentially mispriced because of the fact that a constant 700 gas cost is taken into account for all precompiles?
-   -  No. Actually, the way benchmarks are implemented is that the raw data is used without giving attention to this precompile cost because it is inherent to the SAVM.
+   -  No. Actually, the way benchmarks are implemented is that the raw data is used without giving attention to this precompile cost because it is inherent to the EVM.
    -  Possibly, all precompile calls are priced in this way, including BLS
    -  Usually, the cost of the precompile should not, and does not include 700 in any form
    -  Therefore, its just the benchmarking and gas price of the current precompiles, and the execution time for a given input - like what is the cost of the execution time
@@ -316,7 +316,7 @@ Five pre-SIPs to go through.
 
 All five proposed by **John Adler**, these are:
 
-1. Transaction `postdata` (SIP 2242): A new field in transactions that cannot be read by the SAVM
+1. Transaction `postdata` (SIP 2242): A new field in transactions that cannot be read by the EVM
 2. Execution over transaction postdata with precompiles - enabling multi-threaded data availability processing
 3. New precompiles for Merklization and Merkle branch verification
 4. Calldata gas cost reduction to 1-2 gas per byte
@@ -359,7 +359,7 @@ Request for questions/crtiques on the proposals:
    -  additionally, (to be taken offline), how this SIP is does help optimistic roll-ups. And, for multi-threaded processing, we're again making assumptions on the kind machines we expect the nodes to run
 -  **Alex**
    -  Wouldnt a better and more usable solution be not just copy all the calldata to memory but instead map it to some chunks of memory and not pay for this allocation. so you can read it from the memory
-      -  **James**: That is a good suggestion. But, the main motivation of having such data that is untouched by the SAVM was to have that data, do a bunch of computation and completely evict it from memory. For things like doing pre-process transactions that have post data, and eventually discard the post-data from RAM
+      -  **James**: That is a good suggestion. But, the main motivation of having such data that is untouched by the EVM was to have that data, do a bunch of computation and completely evict it from memory. For things like doing pre-process transactions that have post data, and eventually discard the post-data from RAM
 -  **James**
    -  suggestion to look into Stateless Sila
 -  **Final comments**:
@@ -424,11 +424,11 @@ Tracking EFI: https://github.com/orgs/sila/projects/5
 
 SIP 2515: https://sila-magicians.org/t/sip-2515-replace-the-difficulty-bomb-with-a-difficulty-freeze/3995
 
-SIP 2456: https://github.com/shemnon/SIPs/blob/d771a0d82de6975bdd0b395b35fa6675fcb0fade/SIPS/sip-2456.md
+SIP 2456: https://github.com/shemnon/SIPs/blob/d771a0d82de6975bdd0b395b35fa6675fcb0fade/EIPS/sip-2456.md
 
 https://twitter.com/GuidoVranken/status/1236666223880024065?s=20
 
-Tim: It is EFI: https://sips.sila.org/SIPS/sip-2378
+Tim: It is EFI: https://sips.sila.org/EIPS/sip-2378
 
 Hudson: Can someone (maybe a cat herder on the call) look up the notes for 1962 in the PM repo and see when it went into EFI? I can't find it: https://github.com/sila-chain/pm/search?p=1&q=1962&unscoped_q=1962
 
@@ -443,7 +443,7 @@ Please share your perspectives if you have a few minutes, will be very helpfulâ€
 
 Alex F.: forshtat1@gmail.com
 
-SIP 2046: https://sips.sila.org/SIPS/sip-2046
+SIP 2046: https://sips.sila.org/EIPS/sip-2046
 
 Pooja: FYI: DECISIONS 81.4: There is no way can to confirm the SIP 1962 is going in, clients have serious concerns implementing. They may coordinate something in SIL SilaParis.
 

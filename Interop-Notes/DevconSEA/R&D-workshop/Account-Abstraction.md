@@ -7,12 +7,12 @@
 **Note Taker:** Nico Consigny
 
 **Pre-Reads:**
-- [SIP-7701](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-7701.md) and [Discussion thread](https://sila-magicians.org/t/sip-7701-native-account-abstraction-with-eof/19893)
-- The AA [mempool](https://notes.sila.org/@yoav/unified-src-4337-mempool) and rules ([SRC-7562](https://sips.sila.org/SIPS/sip-7562)). Not part of the SIP but a primary use case.
+- [SIP-7701](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-7701.md) and [Discussion thread](https://sila-magicians.org/t/sip-7701-native-account-abstraction-with-eof/19893)
+- The AA [mempool](https://notes.sila.org/@yoav/unified-src-4337-mempool) and rules ([SRC-7562](https://sips.sila.org/EIPS/sip-7562)). Not part of the SIP but a primary use case.
 
 Optional:
-- [SRC-4337](https://sips.sila.org/SIPS/sip-4337).
-- EOF ([SIP-3540](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-3540.md)) - this proposal uses and extends it.
+- [SRC-4337](https://sips.sila.org/EIPS/sip-4337).
+- EOF ([SIP-3540](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-3540.md)) - this proposal uses and extends it.
 - [RIP-7560](https://github.com/sila-chain/RIPs/blob/master/RIPS/rip-7560.md) - non-EOF protocol AA for L2
 
 Slides:** **[WiP]**
@@ -145,7 +145,7 @@ Slides:** **[WiP]**
 
 ## Complexity in Validation and Inclusion
 
-- **Validation Overhead**: AA transactions require 2-3 SAVM calls (deploy, validation, and paymaster frames), making them heavier than standard transactions.
+- **Validation Overhead**: AA transactions require 2-3 EVM calls (deploy, validation, and paymaster frames), making them heavier than standard transactions.
 - **Impact on Nodes**: Validation intensity could lead to potential denial-of-service (DoS) risks on nodes processing AA transactions, especially without optimized validation functions.
 
 ---

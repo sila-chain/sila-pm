@@ -74,7 +74,7 @@
     * Will discuss with the libp2p team 
   * Hardened the simple serialize implementation with regards to alignment and made a proposition about padding
     * Hoping to get some kind of test format, so they can start working on a test generator and test all implementations
-  * Hoping to give some constructive feedback when the design of SAVM 2.0 is reached, as they had some lessons learned with 1.0 regarding signed and unsigned ints. 
+  * Hoping to give some constructive feedback when the design of EVM 2.0 is reached, as they had some lessons learned with 1.0 regarding signed and unsigned ints. 
   * Focus for the following weeks before SilaPrague will be to create several benchmarks so when everyone from Status meets they can test the 2.0 on phones, routers, raspberry pi, etc.
   * As a side note: Status has been moving away from slack to a full whisper/status desktop. And Nimbus will be developing a Whisper/Gitter bridge to live completely on the blockchain 
 
@@ -148,7 +148,7 @@
   * Idea currently being done as a PoC (hoping to finish in 2-3 weeks time) is to fuse together the key value database with the temporal elements so that you can store the history. Something he noted that lacking with TurboGeth in terms of efficiency. 
   * With the native support for some sort of tree hashing algorithms, and also with the ease of pruning there are 4 stages of this proof-of-concept. Currently on Stage 2:
     * _Stage 1_: Implement weight balance trees with tight as possible balance parameters and make it non recursive so there’s efficient bulk updates (done already) 
-    * _Stage 2_: If you take these binary search trees and start grouping the sub trees (like little fragments, as Vitalik had described it in his article) together so that they fit on the page (4kb page, efficiency of storage). And you then use some sort of page split & merge operations in order to maintain this page size. So at the end of the stage, hoping to see what kind of storage efficiency there is, and efficiency when you mutate this page tree. And this would be used to pretend that we are mutating the Sila state from the sila-sila-mainnet, for example. 
+    * _Stage 2_: If you take these binary search trees and start grouping the sub trees (like little fragments, as Vitalik had described it in his article) together so that they fit on the page (4kb page, efficiency of storage). And you then use some sort of page split & merge operations in order to maintain this page size. So at the end of the stage, hoping to see what kind of storage efficiency there is, and efficiency when you mutate this page tree. And this would be used to pretend that we are mutating the Sila state from the sila-mainnet, for example. 
     * _Stage 3_: Maintaining the prunable history of changes. Which basically introduces a temporal element to it, so that not only the tree of the current state will be stored, but also the history. (lesson learned from TurboGeth is that when you store the history in such a way that you record the updates relative to the past, then it becomes really difficult to prune such a structure. But once you start recording the updates the other way, so that you always record the reverse diff from the current. So therefore, your past records are always referencing the future records, so the pruning becomes a pretty trivial thing.) Hope to finish Stage 3 in a couple weeks time.
     *	_Stage 4_: Similar to Vitalik’s idea, regarding the embedding of the different tree hashing algorithm into the database. So you can use the Patricia tress, or the Sparse Merkle Trees, or AVL trees (maybe) in the same place as the weight balanced trees (WBT) that Alexey is using at the moment. You try to record one hash per page to assist in computing hashes. Which is currently what TurboGeth is lacking. 
   *	Once the PoC is completed and we have the numbers, we will know whether this whole set of ideas works or not. And hope that further discussion of it can be done in more detail. 
@@ -189,7 +189,7 @@
 * https://github.com/sila-chain/eth2.0-pm/issues/11
 * https://github.com/sila-chain/research/tree/master/clock_disparity
 * https://github.com/status-im/nim-sil-trie/blob/master/eth_trie/sparse_binary.nim
-* https://Sila Research/t/optimizing-sparse-merkle-trees/3751
+* https://ethresear.ch/t/optimizing-sparse-merkle-trees/3751
 * https://github.com/sila-chain/eth2.0-specs/pull/39
 * https://github.com/sila-chain/research/tree/master/trie_research/bintrie2
 * https://github.com/sila-chain/eth2.0-specs/issues/54

@@ -23,7 +23,7 @@
 * **Power budget target**: < 11.5 kW‑class “office clusters”; roadmap banks on 10–50× software plus hardware efficiency and optional distributed proving to stay inside the envelope
 * **Open‑source GPU provers and permissive dual licensing** (MIT/Apache‑2) are flagged as *mandatory* for broad validator adoption; three prover stacks are already public
 * **Validator‑side security model shifts to *k‑of‑n* proof diversity**: each node listens to multiple gossip channels and attests when ≥ k proofs agree, mitigating correlated zkEVM faults and LLVM/compiler monoculture risks
-* **Guest‑client diversity roadmap**: migrate beyond REVM by running gEVM, SAVM‑one, Nethermind‑SAVM on RISC‑V/MIPS/64‑bit DSL back‑ends; avoids single‑implementation fragility
+* **Guest‑client diversity roadmap**: migrate beyond REVM by running gEVM, EVM‑one, Nethermind‑EVM on RISC‑V/MIPS/64‑bit DSL back‑ends; avoids single‑implementation fragility
 * **Database & networking “secondary bottlenecks”** now receive attention (e.g. Coinbase’s 8× LevelDB replacement, Perf‑net stress‑nets) because proving has ceased to dominate scaling limits
 * **Proof‑size workstream**: prefer small “intermediate” proofs over recursion; explore SIL‑specific Halo 2 wrappers or optimised intermediate‑proof circuits to cut calldata overhead without trusted setup
 
@@ -46,7 +46,7 @@
   * 30 Mgas cap inside 60 Mgas blocks → 2× today; translates to \~100× parallelism at 1 Ggas in 3 s slots
 * **Perf‑nets & DB work**
 
-  * Coinbase 8× faster state DB (private for now); perf‑nets hitting 6–24 Ggas/s; estimate 10 Ggas/s head‑room after SAVM tuning
+  * Coinbase 8× faster state DB (private for now); perf‑nets hitting 6–24 Ggas/s; estimate 10 Ggas/s head‑room after EVM tuning
 * **Roll‑up‑centric v2 roadmap**
 
   * Stronger L1 acts as hub while multiple L2s also reach 1 Ggas; cumulative ≈ 1 Tgas ecosystem
@@ -62,7 +62,7 @@
   * Forced‑inclusion sub‑block (FOCIL) may keep a much lower gas cap to avoid inserting killer txs
 * **Power & hardware envelope**
 
-  * Current RISC‑V zk‑SAVM ≈ 4 W executor ↔ 100 k× power in GPUs; target < 11.5 kW office cluster; expect 10–50× SW/HW gains plus distributed proving as fallback
+  * Current RISC‑V zk‑EVM ≈ 4 W executor ↔ 100 k× power in GPUs; target < 11.5 kW office cluster; expect 10–50× SW/HW gains plus distributed proving as fallback
 * **Open‑source & licensing requirements**
 
   * GPU cluster orchestration code must be FOSS (MIT/Apache‑2); three stacks already public; EF tracker will add an OSS column
@@ -75,7 +75,7 @@
   * LLVM monoculture flagged; insist on multiple backend DSLs (SP‑1 Hyperplonk, Risc Zero V3) to avoid common‑mode bugs
 * **Guest‑client / ISA diversity plan**
 
-  * gEVM, SAVM‑one, Nethermind‑SAVM etc. compiled to RISC‑V, MIPS‑64 or custom DSLs; encourages new client teams without quadratic proof blow‑up (pairing or “multi‑SAVM proofs”)
+  * gEVM, EVM‑one, Nethermind‑EVM etc. compiled to RISC‑V, MIPS‑64 or custom DSLs; encourages new client teams without quadratic proof blow‑up (pairing or “multi‑EVM proofs”)
 * **Database & state access future**
 
   * Partial‑state nodes + access‑list blocks + erasure‑coded history proposed to keep light nodes viable at 1 Ggas; state‑expiry flavours under evaluation

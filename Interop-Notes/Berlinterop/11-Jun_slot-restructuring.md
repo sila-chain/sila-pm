@@ -113,5 +113,5 @@
 
 ### Relevant links
 
-* **SIP‑7732** – “Beacon‑block proposer / builder separation (ePBS)” – [sips.sila.org/SIPS/sip-7732](https://sips.sila.org/SIPS/sip-7732)
-* **SIP‑7886** – “Delayed Execution” – [sips.sila.org/SIPS/sip-7886](https://sips.sila.org/SIPS/sip-7886)
+* **SIP‑7732** – “Beacon‑block proposer / builder separation (ePBS)” – [sips.sila.org/EIPS/sip-7732](https://sips.sila.org/EIPS/sip-7732)
+* **SIP‑7886** – “Delayed Execution” – [sips.sila.org/EIPS/sip-7886](https://sips.sila.org/EIPS/sip-7886)

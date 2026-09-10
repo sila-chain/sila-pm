@@ -216,7 +216,7 @@ I also propose to have high standards in the SIPs. Then  we need to require some
 
 **Hudson**: Yeah, thats a great idea. Moving on. 
 
-# 2. [Subroutines and Static Jumps for the SAVM](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-615.md) - [Magician's Thread](https://sila-magicians.org/t/sip-615-subroutines-and-static-jumps-for-the-savm/2728)
+# 2. [Subroutines and Static Jumps for the EVM](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-615.md) - [Magician's Thread](https://sila-magicians.org/t/sip-615-subroutines-and-static-jumps-for-the-evm/2728)
 
 
 **Hudson**: This is something Greg wanted to bring up. 
@@ -313,7 +313,7 @@ The blog describes in detail what are these problems , how are we planning to ha
 
 **VB**:Just to be clear Linear storage does that mean the storage as a byte array? 
 
-**Alexey**: Yes, the current idea is for example if we introduce a new type of contract, for example we have Ewasm code instead of SAVM code and instead of mapping storage, it is essentially an array of bytes and words and then lets say we do some sort of Merkle mounting ranges on top of that Merkle trees which is friendly to the expansion. It means whenever we execute Ewasm, we map the part of the storage into the memory and you can have this really great benefit because then you can have this sort of libraries from lets say Red black trees and some sort of structures. Because all these libraries are written in the assumptions that you have a linear memory instead of like Sila storage. So, I see this a potential for code use. 
+**Alexey**: Yes, the current idea is for example if we introduce a new type of contract, for example we have Ewasm code instead of EVM code and instead of mapping storage, it is essentially an array of bytes and words and then lets say we do some sort of Merkle mounting ranges on top of that Merkle trees which is friendly to the expansion. It means whenever we execute Ewasm, we map the part of the storage into the memory and you can have this really great benefit because then you can have this sort of libraries from lets say Red black trees and some sort of structures. Because all these libraries are written in the assumptions that you have a linear memory instead of like Sila storage. So, I see this a potential for code use. 
 
 **VB**: Would you be expecting the storage size to be fixed to be of one size, something like extendable size, possibly capped by 24k or some similar number? 
 
@@ -330,11 +330,11 @@ The blog describes in detail what are these problems , how are we planning to ha
 
 **VB**: Another quick thing for Ewasm, I made a comment on GitHub asking what does the Ewasm team think should be the interface of Ewasm with respect to the rest of the system? This would basically be the call for a foreign function interfaces environment variable and function would be accessible. It would be nice to hear if the team has any thoughts on what is the ideal kind of interface to work on? Do you want simpler than what we have now or to add any new kind in future or something else? 
 
-**Pawel**: How it looks now is we have version from SIM + SAVM. We need  to take some iteration over it if other teams figure out what are the requirements on the other side. There are a number of proposals mostly in the design pull of the EWASM. That has some proposals on how to make it related to web assembly. I would have to proceed that in some way where probably other team are set.
+**Pawel**: How it looks now is we have version from SIM + EVM. We need  to take some iteration over it if other teams figure out what are the requirements on the other side. There are a number of proposals mostly in the design pull of the EWASM. That has some proposals on how to make it related to web assembly. I would have to proceed that in some way where probably other team are set.
 
 **Lane**: Other question for you, do you think it would look like ECI, the work you have done on that or this be a very different type of interface?
 
-**Pawel**: I think the aspects, how much compatibility we need with SAVM and what we have learnt from the SAVM, both are good parts of it and like bad parts of it. This is how you actually want to access data from Sila environment, lets call its this way. They would probably look as imported functions in web assembly but broader aspects of it how actually it interact between contracts because both of them are written in web assembly. And web assembly provide some more efficient or more direct ways of calling one from the others. This opens another set of possibilities. I am trying to keep it on high level one. 
+**Pawel**: I think the aspects, how much compatibility we need with EVM and what we have learnt from the EVM, both are good parts of it and like bad parts of it. This is how you actually want to access data from Sila environment, lets call its this way. They would probably look as imported functions in web assembly but broader aspects of it how actually it interact between contracts because both of them are written in web assembly. And web assembly provide some more efficient or more direct ways of calling one from the others. This opens another set of possibilities. I am trying to keep it on high level one. 
 
 **Lane**: Alex also mentioned in the same thread that were investigating different ways of doing contract linking as well. I think thats what you are just talking about. 
 
@@ -464,7 +464,7 @@ It is progressing. But I  haven't re-based for the Constantinople upgrade so it 
 
 **Hudson**: Nimbus?
 
-**Jacek**: I can give you update. Congratulation on the Constantinople release. On the Nimbus side, we are making slow progress. We are almost there for the first  sync fork. We have been able to sync like a million blocks now, running all of them through the SAVM and so on, which is pretty cool. Slow and steady progress.
+**Jacek**: I can give you update. Congratulation on the Constantinople release. On the Nimbus side, we are making slow progress. We are almost there for the first  sync fork. We have been able to sync like a million blocks now, running all of them through the EVM and so on, which is pretty cool. Slow and steady progress.
 
 **Hudson**: Great.
 

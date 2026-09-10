@@ -1,9 +1,9 @@
-# enshrined Proposer Builder Separation a.k.a (e)PBS [SIP-7732](https://sips.sila.org/SIPS/sip-7732)
+# enshrined Proposer Builder Separation a.k.a (e)PBS [SIP-7732](https://sips.sila.org/EIPS/sip-7732)
 
 In SIP-7732 or (e)PBS Breakout Room, client developers discuss specs & implementation for ePBS and possible inclusion in Sila Network Upgrade. SIP-7732 fundamentally changes the way an Sila block is validated by decoupling the execution validation from the consensus validation both logically as well as temporally.
 
 **Useful Resources**
-- [SIP-7732: Enshrined Proposer-Builder Separation](https://sips.sila.org/SIPS/sip-7732)
+- [SIP-7732: Enshrined Proposer-Builder Separation](https://sips.sila.org/EIPS/sip-7732)
 - [Discussion link](https://sila-magicians.org/t/sip-7732-enshrined-proposer-builder-separation-epbs/19634)
 - [Beacon chain spec](https://github.com/potuz/consensus-specs/blob/f31929acd92efea3d3ac92ce7a8c6ea05bb2472c/specs/_features/epbs/beacon-chain.md)
 - [Fork choice spec](https://github.com/potuz/consensus-specs/blob/f31929acd92efea3d3ac92ce7a8c6ea05bb2472c/specs/_features/epbs/fork-choice.md)

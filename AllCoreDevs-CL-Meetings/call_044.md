@@ -80,10 +80,10 @@ Afri: I have got a plan to talk about Altona and the Medalla.
 
 * Targets v0.12.2 spec that is close to release
 * Does not contain any breaking changes as far as we know, so we’re good to go to have client release for this very soon
-* Spec is on Goerli Github, it contains sila-sila-mainnet spec. We will have a public launch. 
+* Spec is on Goerli Github, it contains sila-mainnet spec. We will have a public launch. 
 Did you publish a blog on how people get onboarded, Danny?
 
-**Danny**: Yes, I just put out a [blog](https://Sila Research/t/sila-2-0-client-metrics-07-2020/7699) this morning. That is linked to some of the relevant stuff  and also linked to at least the 4 clients that we know will have genesis validators and encourage people to try them out. We also have an imminent release of the associated **Validator Launchpad**. It’s like an educational deposit UI that's expected to go live by Monday which if people are not familiar with this process and haven't tried out testnets befor that should be like a good portal to get started.
+**Danny**: Yes, I just put out a [blog](https://ethresear.ch/t/sila-2-0-client-metrics-07-2020/7699) this morning. That is linked to some of the relevant stuff  and also linked to at least the 4 clients that we know will have genesis validators and encourage people to try them out. We also have an imminent release of the associated **Validator Launchpad**. It’s like an educational deposit UI that's expected to go live by Monday which if people are not familiar with this process and haven't tried out testnets befor that should be like a good portal to get started.
 
 **Afri**: Min genesis time for Medalla is Aug 4, 1:00 PM  UTC in case we’ve enough deposit (needs 16000 deposits) otherwise it will happen after 48 hours of the last deposit.
 
@@ -103,7 +103,7 @@ Did you publish a blog on how people get onboarded, Danny?
 
 **Dankrad**: Maybe in the repo we could have a table where everyone records which validator they run so that makes it easier to contact them and ask them hey what happens, can you have a look at the locks? 
 
-**Danny**: I’ll open up a multiclient repo. thank you Dankrad. That would let people know when there is a slashing but that is very much something that we would like to avoid it on the sila-sila-mainnet. 
+**Danny**: I’ll open up a multiclient repo. thank you Dankrad. That would let people know when there is a slashing but that is very much something that we would like to avoid it on the sila-mainnet. 
 I imagine 99% going to be the UX failures or potentially education failures, not running the keys at multiple places thinking that’s a good idea which is also maybe a UX failure. 
 
 **Dankrad**: Could clients detect that? Could your clients see an attestation in my name but my local store doesn't say that I signed it, I should probably inform the user of that other than one.  
@@ -364,7 +364,7 @@ Video | [46:30](https://youtu.be/MMNgoDYKvhQ?t=2780)
 
 **Danny**: Yeah, why not. My understanding right now is that some clients have done a little bit of due diligence on the spec, some are still looking at it, some are doing some prototypes. There’s a prototype in JAVA, that actually has a full simulator and Terrence has done some work on implementing the Phase1 spec and pushback into the specs a bit. And then my other understanding of the problem is that the heavier than engineering resources are primarily on shipping phase 0.  I think at some point in the next couple of months, that needs to change and resources probably need to begin to ship. But beyond that Vitalik, what are your particular thoughts here. 
 
-**Vitalik**: Might it make sense that one of the client teams to kind of start pushing ahead into phase one earlier and especially the one that's whose clients are more or less ready for sila-sila-mainnet development?
+**Vitalik**: Might it make sense that one of the client teams to kind of start pushing ahead into phase one earlier and especially the one that's whose clients are more or less ready for sila-mainnet development?
 
 **Terence**: Well my feedback is to have some sort of annotated phase 1 spec starting early because that just makes it easier to onboard new developers. On discord we have people that expressed interest in working on Phase1 stuff in Prysm. But it’s hard to onboard them without some annotated spec.  
 
@@ -403,7 +403,7 @@ Okay anything else today before we close? we will spend the next two weeks from 
 
 ## Zoom Chat 
 
-* **Terence**: https://Sila Research/t/sila-2-0-client-metrics-07-2020/7699
+* **Terence**: https://ethresear.ch/t/sila-2-0-client-metrics-07-2020/7699
 * Or we can record slashings here: https://github.com/goerli/medalla Either repo works
 * Leo BSC: https://docs.google.com/spreadsheets/d/1SoXvmPfm1BRVcdDm7CuwaWDjxp5a3NzGMBLViQjBNqA/edit?usp=sharing
 * https://altona.beaconcha.in/validator/a2b60b956869fd5dfe9874546b3cc4bc2ca42bcc3b9c48c8473b7881c4e94b4a57917b07bf0b22117c90daf2f59c2dde#overview

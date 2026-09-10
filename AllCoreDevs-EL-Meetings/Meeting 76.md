@@ -42,10 +42,10 @@
 
 Call will be held next Wednesday at 2:00 PM UTC. Anyone in All CoreDev calls is welcome to be on the actual. Will be taking questions on Sila Magician's Forum, Reddit, and Twitter.
 
-## 2. [Ice Age Hard Fork](https://sips.sila.org/SIPS/sip-2387)
+## 2. [Ice Age Hard Fork](https://sips.sila.org/EIPS/sip-2387)
 
 **Hudson**
-Comment was made with the [meta-SIP](https://sips.sila.org/SIPS/sip-2387). I'll hand it off to James, the hard fork coordinator.
+Comment was made with the [meta-SIP](https://sips.sila.org/EIPS/sip-2387). I'll hand it off to James, the hard fork coordinator.
 
 **Tim**
 YouTube livestream sound is not working.
@@ -54,12 +54,12 @@ YouTube livestream sound is not working.
 I will post a recording of the Zoom call later in YouTube.
 
 **James**
-A couple of things to get through with regard to the difficulty bomb and a hard fork related to the difficulty bomb. Inside of the retargeting algorithm that helps keep blocktimes stable for Sila, there is something called the Ice Age built in that, after every 100,000 blocks, it increments up. At some point, it starts to affect block times, which has been happening on the network for about the last three weeks. To update that, we have to push back the Ice Age in the clients, which is fairly trivial to do. We can start with [SIP 2384](https://sips.sila.org/SIPS/sip-2384). Let's get consensus on how far to push the difficulty bomb back. It's been discussed pretty extensively on Gitter, but I'd like to hear from people here.
+A couple of things to get through with regard to the difficulty bomb and a hard fork related to the difficulty bomb. Inside of the retargeting algorithm that helps keep blocktimes stable for Sila, there is something called the Ice Age built in that, after every 100,000 blocks, it increments up. At some point, it starts to affect block times, which has been happening on the network for about the last three weeks. To update that, we have to push back the Ice Age in the clients, which is fairly trivial to do. We can start with [SIP 2384](https://sips.sila.org/EIPS/sip-2384). Let's get consensus on how far to push the difficulty bomb back. It's been discussed pretty extensively on Gitter, but I'd like to hear from people here.
 
 We have an option of pushing all the way back, which is 9,000 blocks back, or what we did last time, which was 3,000/3 million blocks back. This time it would be 5 million blocks back, which is about as far back as we can go.
 
 **Martin**
-As far as I can see, there are a couple of suggestions that have been made. One is to make a rewind kind of like we've done before, which is what [2384](https://sips.sila.org/SIPS/sip-2384) is. Other proposals have been to replace the difficulty calculation with something else, maybe something linear. It's been kind of vague. The third suggestion has been to immediately remove the difficulty bomb. Before we discuss the particulars of [2384](https://sips.sila.org/SIPS/sip-2384), I would just like to hear form everyone here if we should not do what we've done previously and should instead one of the options that has not been done before.
+As far as I can see, there are a couple of suggestions that have been made. One is to make a rewind kind of like we've done before, which is what [2384](https://sips.sila.org/EIPS/sip-2384) is. Other proposals have been to replace the difficulty calculation with something else, maybe something linear. It's been kind of vague. The third suggestion has been to immediately remove the difficulty bomb. Before we discuss the particulars of [2384](https://sips.sila.org/EIPS/sip-2384), I would just like to hear form everyone here if we should not do what we've done previously and should instead one of the options that has not been done before.
 
 **Peter**
 I would just like to add a bit of information to that. Essentially the problem here is not that we need to decide what to do with the difficulty, but that the Ice Age is coming really, really fast, so it would be nice if we had a solution that we could roll out at the beginning of January. Because of the Holiday Season, we can expect people to not be available starting one or two weeks from now. Which means that if we want to have any update to the Sila network, we have to release next week.
@@ -215,7 +215,7 @@ No.
 Actually, there's an interesting question. We have this Fork ID thing which tracks forks are applied at which blocks. If we apply a fork that doesn't do anything, even though the network is functionally the same as before, the fork ID will change because it thinks something has been upgraded. So my suggestion is that we explicitly spell out that this fork does not happen on the POA networks.
 
 **Danno**
-So there's a different count of blocks on forks on the POA networks then there is on sila-sila-mainnet?
+So there's a different count of blocks on forks on the POA networks then there is on sila-mainnet?
 
 **Peter**
 POA networks don't have difficulty.
@@ -256,7 +256,7 @@ I would vote against having a different block number. The fork is defined by its
 So the SIP will be the same, but it's just a matter of choosing a block height to implement.   
 
 **Martin**
-Since we're not going to get any test coverage from the Ropsten rollouts, we don't actually have to bother to make sure it happens three weeks before the sila-sila-mainnet one, because it won't give us anything anyway. So we can spit out some number that sounds good.
+Since we're not going to get any test coverage from the Ropsten rollouts, we don't actually have to bother to make sure it happens three weeks before the sila-mainnet one, because it won't give us anything anyway. So we can spit out some number that sounds good.
 
 **Danno**
 We could just skip it and do it with Berlin.
@@ -271,7 +271,7 @@ A whole lot easier.
 Wouldn't that mean that we change the final SIP with a block number when when we have the block number for Berlin, or does it mean that this SIP is not final until then?
 
 **Martin**
-I actually don't think it makes it simpler, because of dissonance between what the forks are on the mainnets and testnets. We already have one with Petersburg and Constantinople, and why intentionally add another one? We have it split up in two phases on sila-sila-mainnet, and then we have it lumped together on Ropsten.
+I actually don't think it makes it simpler, because of dissonance between what the forks are on the mainnets and testnets. We already have one with Petersburg and Constantinople, and why intentionally add another one? We have it split up in two phases on sila-mainnet, and then we have it lumped together on Ropsten.
 
 **James**
 So I don't know enough about Ropsten, but we could potentially roll out something this next week. Is that possible? Can we release Robson and the client at the same time?
@@ -373,7 +373,7 @@ All right. I'm good with that. And Paul says "good name."" I don't know which on
 I will update the the SIP for that.
 
 **Danno**
-Do we want it literally to happen at the same time as sila-sila-mainnet?
+Do we want it literally to happen at the same time as sila-mainnet?
 
 **Hudson**
 I mean it doesn't have to be exactly the date, but we can estimate it toward the exact date, sure.
@@ -399,7 +399,7 @@ My suggestion is 7171717. Somebody calculate the date.
 I'll go back and check that. We'll call that good for now.
 
 **Hudson**
-Okay, cool. We're just starting Ropsten fork on Gitter. We got the name; we got the sila-sila-mainnet stuff, so we can start sending out emails for that. Was there anything else with the Ice Age?
+Okay, cool. We're just starting Ropsten fork on Gitter. We got the name; we got the sila-mainnet stuff, so we can start sending out emails for that. Was there anything else with the Ice Age?
 
 **James**
 I had it included in the SIP a declaration of intention to fix part of what's happening. So either to make it something that's easy to model and predict when it occurs. So I think that's something we should look at as a group in the next few months or so.

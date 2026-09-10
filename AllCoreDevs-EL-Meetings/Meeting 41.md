@@ -10,7 +10,7 @@
 * Research Updates
 * Client Updates
 * Constantinople hard fork timing and what to include (continuing conversation from last call).
-    a. SIP 145: Bitwise shifting instructions in SAVM: pretty well-formed, but not 100% implemented or tested.
+    a. SIP 145: Bitwise shifting instructions in EVM: pretty well-formed, but not 100% implemented or tested.
     b. SIP 210: Blockhash refactoring.
     c. EIP859: account abstraction.
     d. SIP 1052: EXTCODEHASH Opcode.

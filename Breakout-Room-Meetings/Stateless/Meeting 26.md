@@ -16,7 +16,7 @@ ignaciohagopian and gballet for go_ethereum: added around 30 new tests in the ex
 
 jasoriatanishq for nethermindeth: testing and debugging latest hive tests. Also have been progressing on the Nethermind implementation of the transition.
 
-lu-pinto and kt2am1990 for HyperledgerBesu: Working on gas costs. Currently 2 tests are failing (regarding self-destruct). Also all of the BLOCKHASH tests are failing because the logic for pulling out the BLOCKHASH from the system contract is not yet implemented, but that’s up next. Have also completed some optimizations on the rust-verkle crypto library. And now have a working version of the flatDB based on stem. Next step here is to generate the preimage to be able to run this flatDB with sila-sila-mainnet blocks and compare performance. Lastly, continuing to work on integrating the Constantine crypto library into Besu.
+lu-pinto and kt2am1990 for HyperledgerBesu: Working on gas costs. Currently 2 tests are failing (regarding self-destruct). Also all of the BLOCKHASH tests are failing because the logic for pulling out the BLOCKHASH from the system contract is not yet implemented, but that’s up next. Have also completed some optimizations on the rust-verkle crypto library. And now have a working version of the flatDB based on stem. Next step here is to generate the preimage to be able to run this flatDB with sila-mainnet blocks and compare performance. Lastly, continuing to work on integrating the Constantine crypto library into Besu.
 
 ## 2. Circle STARKs seminar
 

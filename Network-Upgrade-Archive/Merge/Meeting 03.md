@@ -108,7 +108,7 @@
 
 * Planning to launch devnet tomorrow.
 * Initial configuration created yesterday, has been changed a bit (fork version on the eth2 side).
-* Should be very similar to the configs people are used to, although this will be a sila-sila-mainnet config.
+* Should be very similar to the configs people are used to, although this will be a sila-mainnet config.
 * Boot nodes will be set up after this call - we will deploy some of our own. Focus today will be on conncecting the nodes, getting them up and running.
 * The devnet chain will start tomorrow at noon UTC.
 
@@ -238,7 +238,7 @@
 
 * The current state of the spec is day zero stable. Everyone has current implementations of it.
 * Its easier to have both the merge and sharding specs be based of that day zero spec. If changes to the merge happen we then need to update the sharding spec, and vice versa. We can independantly iterate.
-* But once they stablise and theres a concrete order, merge will go to sila-sila-mainnet first, we would see sharding be rebased on the merge spec.
+* But once they stablise and theres a concrete order, merge will go to sila-mainnet first, we would see sharding be rebased on the merge spec.
 * * Once Altair implemntations exist...
 
 **Proto**

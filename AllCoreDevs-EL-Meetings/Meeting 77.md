@@ -53,7 +53,7 @@
 **Hudson**: Let's talk about the Istanbul update that happened about a week and a day ago. Is there any update from anybody? It looks like it went well.  We had Community call that I thought went really well during it. According to Ethernode website 97% nodes are updated. Anyone else have Istanbul update?
 
 
-# 2. [Muir Glacier Updates](https://sips.sila.org/SIPS/sip-2387)
+# 2. [Muir Glacier Updates](https://sips.sila.org/EIPS/sip-2387)
 
 **Hudson**: Okay so now we're at Muir Glacier. It is in last call and we're going to change that to final. The review ended yesterday and no one raised any concerns that I'm able to see in the magician's at least. I'm guessing they wouldn't have left it there as a PR.
 
@@ -122,7 +122,7 @@ All right, Nethermind?
 
 **Peter**: sorry just to confirm, these versions also have the Ropsten thing configured, right?
 
-**Tomasz**: Yes, Ropsten block number and all the test passing and the sila-sila-mainnet block numbers.
+**Tomasz**: Yes, Ropsten block number and all the test passing and the sila-mainnet block numbers.
 
 **Peter**:Okay, Thank you.
 
@@ -132,7 +132,7 @@ All right, Nethermind?
 
 **Hudson**: The beginning of next week, we can do a blog and that still gives us three weeks roughly, a little less maybe. Then we have everybody, who am I missing, as far as a client? Sorry, Besu ?
 
-**Danno**: [Besu 1.3.6](https://github.com/hyperledger/besu/releases/1.3.6) we have on Ropsten and sila-sila-mainnet and we also pass the reference test.
+**Danno**: [Besu 1.3.6](https://github.com/hyperledger/besu/releases/1.3.6) we have on Ropsten and sila-mainnet and we also pass the reference test.
 
 **Hudson**: Okay, perfect. Am I missing anybody, else? 
 
@@ -148,7 +148,7 @@ All right, Nethermind?
 
 **Peter**: Well, honestly I suggest that before New Year's Eve everybody should really update. If the block numbers were consistent with the current speed that it'll actually land on New Year's Eve.
 
-**Tim**: [SilaScan](https://silascan.io/block/countdown/9200000) is showing the 30th now. I'm not sure how they did their calculations but yeah so it's like New Year's Eve or before.
+**Tim**: [SilaScan](https://etherscan.io/block/countdown/9200000) is showing the 30th now. I'm not sure how they did their calculations but yeah so it's like New Year's Eve or before.
 
 **Pooja**: So, can we put a tentative date as like 30th of December?
 
@@ -210,7 +210,7 @@ Any questions?
 
 **Rick**: The base fee target the half-full block. We set up an initial value that in the original SIP, took a snapshot of time but the gas price at the time, that is deployed and so basically the idea is that initial price is set and then it can only vary so much per block and the target price is determined by taking some average number of blocks. These are the sort of questions where I thought they were very difficult to answer and  this attack that you pointed out we've sort of this sketch solution but I felt like giving the importance of the change we needed a lot more engagements actually answer a question.
 
-**Peter**: There's another question. If I get it correctly, the idea would be the gas tries to keep blocks half-full. If blocks are getting fuller than the gas prices go up. The question is **how does this relate to the dynamic block sizes?** On Sila sila-sila-mainnet we kind of have it fixed at a million currently, but in theory, it should have been Dynamic. so if we add this, how will it do values in the place? because as the blocks are getting fuller the miners in theory will push the block size up which would make transactions cheaper and your proposal is doing the exact opposite. If we were to remove the limit on sila-sila-mainnet, this artificial 10 mil gas cap, then what would happen? 
+**Peter**: There's another question. If I get it correctly, the idea would be the gas tries to keep blocks half-full. If blocks are getting fuller than the gas prices go up. The question is **how does this relate to the dynamic block sizes?** On Sila sila-mainnet we kind of have it fixed at a million currently, but in theory, it should have been Dynamic. so if we add this, how will it do values in the place? because as the blocks are getting fuller the miners in theory will push the block size up which would make transactions cheaper and your proposal is doing the exact opposite. If we were to remove the limit on sila-mainnet, this artificial 10 mil gas cap, then what would happen? 
 
 **Rich**: I'm thinking about that. How do we decide what the criteria is for changing it? 
 
@@ -260,13 +260,13 @@ Any questions?
 
 **Hudson**: Was there anyone else with comments? Anything to add at the end of Rick ? It's best to reach out to you on Sila magicians I'm guessing, was there any other outlets that you wanted to bring up as far as how to address this or contribute?
 
-**Rick**: we can keep these conversation at Sil Magician, that would be great. I don't know what the convention is around PRs. I think the code size is relatively small obviously the impact is very large. when I say PRs, they mean I don't know if they want to help, people want to interact with, if they do just ping me in the gitter. [link](https://github.com/matter-labs/eip1962/tree/uint) is already provided. but If people have a hard time finding it or whatever we can sort of engage in the GitHub and EthMagicians.
+**Rick**: we can keep these conversation at Sil Magician, that would be great. I don't know what the convention is around PRs. I think the code size is relatively small obviously the impact is very large. when I say PRs, they mean I don't know if they want to help, people want to interact with, if they do just ping me in the gitter. [link](https://github.com/matter-labs/eip1962/tree/uint) is already provided. but If people have a hard time finding it or whatever we can sort of engage in the GitHub and SilaMagicians.
 
 **Hudson**: Awesome and just to extend my support on this, you can reach out on telegram, if you do have any questions about the SIP process or the process of getting this through for more potentially rapid discussion, I'm happy to talk to you about that.
 
 **Rick**: Great thank you !
 
-## [SIP-1962](https://sips.sila.org/SIPS/sip-1962)
+## [SIP-1962](https://sips.sila.org/EIPS/sip-1962)
 
 **Hudson**: The next one that's eligible for inclusion SIP review is 1962. 
 
@@ -287,7 +287,7 @@ Any questions?
 
 **Alex V**: Well there are two, one is which is my main working repository, which I use for, right now for task schedule estimation and as one is also in Matter Labs GitHub emphasis in C++ implementation which also is SIP 1962-CPP, I think. I know such people from EY as in Earnst Young were interested in trying to make an alternative one. I talked to them 3 weeks ago but they looked at the specs set of explicit formula which were also published quite a long ago on the GitHub.  but I didn't hear anything from them yet, so I would consider it for a first two implementation, it will be those two and they will be tested this way for correspondence with each other. There are two implementation  done by Matter labs. it's not kind of very much independent. I would argue that it's much easier to use just one because it lifts a lot of questions for a consensus result but it's kind of still the difference  between those two will be very small. SO, it's still  easier-to-use just one, even so while to be able to be tested for difference.
 
-**Martin**: Right, but the core problem being here that this is extremely complex stuff. This is basically an SAVM for complex cryptography.  I totally agree that it would be a lot simpler to just have one reference implementation. Because then you wouldn't actually need to specify everything in, just consensus by reference implementation. It feels kind of dangerous.
+**Martin**: Right, but the core problem being here that this is extremely complex stuff. This is basically an EVM for complex cryptography.  I totally agree that it would be a lot simpler to just have one reference implementation. Because then you wouldn't actually need to specify everything in, just consensus by reference implementation. It feels kind of dangerous.
 
 **Alex V.**: My argument is not that I want want to have separate implantation. I would want to have separate implementation but right now these two implementations that will be available in any form production ready. They will be both done by us and will be both done by the same set of public documents specs, the difference between them is so small, most likely. I mean there are different languages but the difference which one would expect will be small. Unless, it will be in next one the next one I need for this period of time, there is no next one and pretty much independent one. It's less risk to use one which will not crash, anyway give consistent results and then try to use two which are very much similar.
 
@@ -309,9 +309,9 @@ Any questions?
 
 **Danno**: But from a design perspective, the first thing you do is jump into a switch, maybe that's an indication that should just factor those out as independent functions. yes there's a lot of reuse  behind the scenes but why do we need to hide it behind a switch?
 
-**Peter**: So an implementation wise, I also wanted to highlight that it's completely fine to have one single function implementation wise within the SAVM that does a big huge switch and calculate everything the way that's cleanest. The reason people are suggesting the 24 or however many pre-compiles is because, the SAVM is kind of old of all the other operations are structured in one way and if we were to have 24 pre-compiles, then yes maybe behind the scenes those 24 pre-compiles will just call the exact same single function. But, it would avoid introducing an extra encoding idea or concept into the SAVM code itself. Currently , you can just say that you want to be on 256 multiplication, call this pre-compile, these are the parameters done whereas here, all of a sudden you also have to specify that not only do I want to call this pre-compile but I want to call something within this pre-compile. The question is that **is there a particularly good reason to add this extra complexity in the SAVM level** because  of course we can make it generic and make a single big switch statement within the SAVM implantation. But the SAVM call level is their reason to have this extra complexity. 
+**Peter**: So an implementation wise, I also wanted to highlight that it's completely fine to have one single function implementation wise within the EVM that does a big huge switch and calculate everything the way that's cleanest. The reason people are suggesting the 24 or however many pre-compiles is because, the EVM is kind of old of all the other operations are structured in one way and if we were to have 24 pre-compiles, then yes maybe behind the scenes those 24 pre-compiles will just call the exact same single function. But, it would avoid introducing an extra encoding idea or concept into the EVM code itself. Currently , you can just say that you want to be on 256 multiplication, call this pre-compile, these are the parameters done whereas here, all of a sudden you also have to specify that not only do I want to call this pre-compile but I want to call something within this pre-compile. The question is that **is there a particularly good reason to add this extra complexity in the EVM level** because  of course we can make it generic and make a single big switch statement within the EVM implantation. But the EVM call level is their reason to have this extra complexity. 
 
-**Alex V**: First of all I should know that such switch statement would anyway if happen at the level of SAVM. But inside of the implementation because well at least how it's done right now. In the pre-compile implementation, just takes a set of bytes as input, internally parses it. I was  expecting this will be the way how data is passed from SAVM pre-compile. This is very minor issue. The reason why I didn't want to put it initially is it. Just as a solid example, in any of those calls even if they will be 20 of those, the first parameter will  always be the same as his parameter will specify the modulus of the finite field over which one would want to work and define the curve. Even if they're 20 of those  independently, still have to specify those parameters which are very similar for each of those calls. This is not a huge statement anymore those independent calls. That's why I decided that it's kind of backward the same way if you have a similarity in the way how you call each of those. Then most like you don't want to separate them from just logical perspective. I don't have any argument that we should do one way or another strictly. If you want 20 separate functions, perfectly fine with this. I just described why I didn't put it initially.
+**Alex V**: First of all I should know that such switch statement would anyway if happen at the level of EVM. But inside of the implementation because well at least how it's done right now. In the pre-compile implementation, just takes a set of bytes as input, internally parses it. I was  expecting this will be the way how data is passed from EVM pre-compile. This is very minor issue. The reason why I didn't want to put it initially is it. Just as a solid example, in any of those calls even if they will be 20 of those, the first parameter will  always be the same as his parameter will specify the modulus of the finite field over which one would want to work and define the curve. Even if they're 20 of those  independently, still have to specify those parameters which are very similar for each of those calls. This is not a huge statement anymore those independent calls. That's why I decided that it's kind of backward the same way if you have a similarity in the way how you call each of those. Then most like you don't want to separate them from just logical perspective. I don't have any argument that we should do one way or another strictly. If you want 20 separate functions, perfectly fine with this. I just described why I didn't put it initially.
 
 **Peter**: So for me, having an extra ABI extraction layer just to have one single modulus. I don't care if funny function calls that have the same first parameter and you have to set so. What **I'm trying to vote against is adding extra ABI complexity just to hide something a bit further down the stack**.
 
@@ -331,18 +331,18 @@ Any questions?
 
 **Martin**: Great!
 
-**Alex B**: Just one more comment regarding the cost you mentioned, I think they're too important costs will from the developer / SAVM side. One the cost of preparing the message for a pre-compile, because we want to keep that cost low and  second the actual cost of the call the data sent to call I think they're the cost on the pre-compile side decoding any of these is negligible because we are creating the free compile in the first place because you think it's cheaper to do calculations on the client as opposed on SAVM. SO, we want to keep the cost for the contracts, the lowest possible.
+**Alex B**: Just one more comment regarding the cost you mentioned, I think they're too important costs will from the developer / EVM side. One the cost of preparing the message for a pre-compile, because we want to keep that cost low and  second the actual cost of the call the data sent to call I think they're the cost on the pre-compile side decoding any of these is negligible because we are creating the free compile in the first place because you think it's cheaper to do calculations on the client as opposed on EVM. SO, we want to keep the cost for the contracts, the lowest possible.
 
-**Alex V**: For this part, if one would want to call this pre-compile to do the same set up operations over the SAVM curve, obviously there will be some overhead in terms of message being prepared in memory because, one, will have to specify more parameters. After this part which I measure for  a gas cost right now. The second part which involve parsing which is negligible and then actually also arithmetic which is also required.  mostly because I don't have a way to affect how expensive is it cost of memory chunk in SAVM. 
+**Alex V**: For this part, if one would want to call this pre-compile to do the same set up operations over the EVM curve, obviously there will be some overhead in terms of message being prepared in memory because, one, will have to specify more parameters. After this part which I measure for  a gas cost right now. The second part which involve parsing which is negligible and then actually also arithmetic which is also required.  mostly because I don't have a way to affect how expensive is it cost of memory chunk in EVM. 
 This will go substantially down, the call for pre-compile which will involve more arithmetic operations. 
 
-**Peter**: To give an example, Axic was referring to- You're sayin that in your current ABI coding, you've 2 bytes that switch on various internal things.  It could actually happened that just setting constructing a memory that 2 bytes in the SAVM will be a lot more expensive than just to have the pre-compile and just to call it. Maybe instead of using 2 bytes, using two 256-bit integers. so these bytes shifting operations are kind of expensive in the SAVM an can be surprising too. Actually, what I am getting at is that if you pick an encoding that is as tight as possible that might actually cost more than picking a looser one.
+**Peter**: To give an example, Axic was referring to- You're sayin that in your current ABI coding, you've 2 bytes that switch on various internal things.  It could actually happened that just setting constructing a memory that 2 bytes in the EVM will be a lot more expensive than just to have the pre-compile and just to call it. Maybe instead of using 2 bytes, using two 256-bit integers. so these bytes shifting operations are kind of expensive in the EVM an can be surprising too. Actually, what I am getting at is that if you pick an encoding that is as tight as possible that might actually cost more than picking a looser one.
 
 **Alex V**: Well this part I didn't estimate. Reasons for having to custom ABI section is a little bit simplifying my own work because the way one scaler is encoded. they're just basically large integers. There is one byte  which tells how many bytes is after it encode this number. There is another limitation that the top byte should be meaningful. So, it's not zero. This is  kind of very simple set of checks which I would need to do and this will allow me to quickly estimate over how large numbers, I will have to do my arithmetic. Which is also beneficial to do the quick gas schedule check without actually parsing the full set of bytes and then checking again how many bits I actually have there if I have  the redundant encoding by using fixed chunks of 32 bytes. This was another reason to do the custom ABI. It is not an answer, it's just another piece of work. 
 
 **Peter**: I guess we could always just check and see. If we'we have an actual contract for real use case then maybe it'll probably be a lot easier to just check that okay it's lot easier to encode with your ABI Axic's ABI or just a dumb  binary encoding, which would be preferable. Probably something we can try out if we have actually live codes to play with.
 
-**Axic**: Probably my main message is that we definitely should have actual SAVM implementations of contract using the pre-compile or any other pre-compile which is proposed because otherwise we're going to end up with a situation like with Blake2 where the design had no input from how you would actually use it from within the SAVM and it ended up being sub-optimal in some cases. I think that applies even more to this pre-compile because it's it's like more complex . so my advice is that we should have actual examples probably written in solidity and maybe also some in using a line assembly and that should be one of those mean drivers for the design of the the ABI or how to interact with the pre-compile.
+**Axic**: Probably my main message is that we definitely should have actual EVM implementations of contract using the pre-compile or any other pre-compile which is proposed because otherwise we're going to end up with a situation like with Blake2 where the design had no input from how you would actually use it from within the EVM and it ended up being sub-optimal in some cases. I think that applies even more to this pre-compile because it's it's like more complex . so my advice is that we should have actual examples probably written in solidity and maybe also some in using a line assembly and that should be one of those mean drivers for the design of the the ABI or how to interact with the pre-compile.
 
 **Alex V**: yeah well it is a recent example of such code already and I will just link it together so it doesn't get lost. 
 
@@ -369,7 +369,7 @@ There are two document -  one is about basically the ABI and the verification of
 
 **Alex**: Sure, I apologize for delay with over stuff. 
 
-## [SIP-1057](https://sips.sila.org/SIPS/sip-1057)
+## [SIP-1057](https://sips.sila.org/EIPS/sip-1057)
 
 **Hudson**: I think we're nearly done here let me go back to the agenda. We have one more EFI basically that EFI is not truly a new SIP that were discussing it's kind of just a formality that we need to all agree on for putting SIP 1057 programmatic proof of work and to EFI because it was already accepted and other ACD decisions back to basically a year ago, multiple times. So is anyone opposed to adding ProgPOW to the list of the EFI, granted that we before any of this process was discussed we made a decision on it? It kind of seemed like a like at least James and I it seems like a like a something that we would need to do just for procedural reasons so if anyone does have a comment on that feel free to talk to the gitter or bring it up here.
 
@@ -383,9 +383,9 @@ There are two document -  one is about basically the ABI and the verification of
 
 * [Call 76](https://github.com/sila-chain/pm/pull/141/files#diff-f4372da277e245afa9faab2d0e51df8d)
 
-**Hudson**: 76 is done, I merged it today. Because, there was a few corrections that need to be made. It's have the decision, so SIP 2348 was listed as accepted and Final that is the validated SAVM contracts. Let me go to it to make sure we're on the same page. 
+**Hudson**: 76 is done, I merged it today. Because, there was a few corrections that need to be made. It's have the decision, so SIP 2348 was listed as accepted and Final that is the validated EVM contracts. Let me go to it to make sure we're on the same page. 
 
-**Danno**: I haven't done any updates on validated SAVM contract. I was going to wait until the new year to I have another round of discussions on ACD. 
+**Danno**: I haven't done any updates on validated EVM contract. I was going to wait until the new year to I have another round of discussions on ACD. 
 
 **Hudson**: I wonder why we have it as final, is that mistake?
 
@@ -451,6 +451,6 @@ Will be decided on Gitter, if there is any change.
 
 * Muir Glacier discussion: https://sila-magicians.org/t/sip-2384-difficulty-bomb-delay/3793/15
 * link to code: https://github.com/matter-labs/eip1962/tree/uint
-* 1962: https://sips.sila.org/SIPS/sip-1962
+* 1962: https://sips.sila.org/EIPS/sip-1962
 * There is also an EVMC binding here: https://github.com/axic/eip1962-evmc
-* https://silascan.io/block/countdown/9200000
+* https://etherscan.io/block/countdown/9200000

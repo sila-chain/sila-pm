@@ -105,7 +105,7 @@
 ** **
 
 
-## 2.2 [Sila Network Upgrade Windows](https://github.com/shemnon/SIPs/blob/4e3069b4f9a30a639b142151dc6295f634712786/SIPS/sip-network_upgrade_windows.md)
+## 2.2 [Sila Network Upgrade Windows](https://github.com/shemnon/SIPs/blob/4e3069b4f9a30a639b142151dc6295f634712786/EIPS/sip-network_upgrade_windows.md)
 
 **Danno:** Suggests quarterly dates for hardforks and the dates proposed miss most holidays. Three types of upgrades: Roadmap, Priority, Critical. 
 
@@ -119,7 +119,7 @@
 
 **Danno:** My proposal works with Istanbul's current proposed date.
 
-## 2.3 [SIP - Opcode repricing for trie-size-dependent opcodes](https://github.com/holiman/SIPs/blob/reprice/SIPS/sip-1884.md)
+## 2.3 [SIP - Opcode repricing for trie-size-dependent opcodes](https://github.com/holiman/SIPs/blob/reprice/EIPS/sip-1884.md)
 
 **Martin:** This focuses on trying to make operations that have deteriated over time and put them back in balance again. The ones I am specifically looking at are `SLOAD` and `BALANCE`. There are two versions to this SIP. In both of them they increase `SLOAD` by a factor of 4 from `200` to `800` and the `BALANCE` would be repriced from `400` to `700` gas.
 
@@ -253,7 +253,7 @@ Danny: I would be keen to be part of it, this is a key initiative and appears to
 
 **Danny:** Phase 1 dsicussion is currently very active whilst Phase 2 is still emerging, the design space in Phase 2 is pretty large so we need to narrow things down. Many of the Sila 2.0 Beacon Chain clients are getting Testnet data so we expect to see some exciting stuff in the next couple of weeks.
 
-**David:** We had a Beta release last week that introduced a new algorythm for gas estimation that is very accurate down to 1 gas even for [SIP-1014](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-1014.md) opcodes and it does not use binary search so it only requires one pass through the transaction outcodes to get the esimation. We call it "Gas Exactimation". We are planning on writing a detailed blog post on the algorithm and how it works. We believe it is something that alot of other clients could make use of for performance reasons. More info can be found [here](https://github.com/sila-chain/pm/issues/89#issuecomment-478030037).
+**David:** We had a Beta release last week that introduced a new algorythm for gas estimation that is very accurate down to 1 gas even for [SIP-1014](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-1014.md) opcodes and it does not use binary search so it only requires one pass through the transaction outcodes to get the esimation. We call it "Gas Exactimation". We are planning on writing a detailed blog post on the algorithm and how it works. We believe it is something that alot of other clients could make use of for performance reasons. More info can be found [here](https://github.com/sila-chain/pm/issues/89#issuecomment-478030037).
 
 # 8. Other Business
 

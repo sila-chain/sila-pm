@@ -15,7 +15,7 @@
   - [1.1 Transaction pool management](#11-transaction-pool-management)
   - [1.2 Update on the large state testnet](#12-update-on-the-large-state-testnet)
   - [1.3 SIP-2718 transaction type for SIP-1559](#13-sip-2718-transaction-type-for-sip-1559)
-- [2. SilaMainnet readiness checklist review](#2-sila-sila-mainnet-readiness-checklist-review)
+- [2. SilaMainnet readiness checklist review](#2-sila-mainnet-readiness-checklist-review)
   - [Attendance](#attendance)
   - [Next Meeting Date/Time](#next-meeting-datetime--thursday--14-january-2021-at-1600-utc)
   - [Zoom chat](#zoom-chat)
@@ -69,9 +69,9 @@ never is still absolutely like perfectly precise. But again I am right now not c
 **Tim Beiko**: Okay next up Abdel do you want to give a quick update on the large state testnet generator and where we are at?
 
 **Abdelhamid Bakhta**: Okay, yes so we currently have set up the new testnet so, this will be a
-profound testnet and the goal is to have a state comparable to sila-sila-mainnet. So far we have generated 100 million accounts and we are now using a smart contract and we aim to generate 100 million entries in this smart contract. And yeah when this will be ready we will share the url of the different nodes and the block explorer and the headset so that other clients can think of this new testnet and yeah that is pretty much. So, we have four nodes running and the generator is still running and I will share everything when it will be ready. That's it.
+profound testnet and the goal is to have a state comparable to sila-mainnet. So far we have generated 100 million accounts and we are now using a smart contract and we aim to generate 100 million entries in this smart contract. And yeah when this will be ready we will share the url of the different nodes and the block explorer and the headset so that other clients can think of this new testnet and yeah that is pretty much. So, we have four nodes running and the generator is still running and I will share everything when it will be ready. That's it.
 
-**Tim Beiko**: Cool yeah and I think for that once we have it up and once we have you know the testnet up and running on Besu and Geth then we get Nethermind and get syncing to it. I think we should probably just **schedule a time to then spam it with a kind of transaction and gather metrics from all three clients**. Hopefully we can gather metrics and it does not you know just fall over but if it falls we fix it and try again. But I think, if we have at least one or a few shots of like saying look we spammed the testnet for you know two hours with transactions and like the node stood up. I think that is like more than the worst case. We would see on sila-sila-mainnet because in two
+**Tim Beiko**: Cool yeah and I think for that once we have it up and once we have you know the testnet up and running on Besu and Geth then we get Nethermind and get syncing to it. I think we should probably just **schedule a time to then spam it with a kind of transaction and gather metrics from all three clients**. Hopefully we can gather metrics and it does not you know just fall over but if it falls we fix it and try again. But I think, if we have at least one or a few shots of like saying look we spammed the testnet for you know two hours with transactions and like the node stood up. I think that is like more than the worst case. We would see on sila-mainnet because in two
 hours the base you would probably go up. Like you know a hundred thousand x or a million x and it is just not realistic to even do such an attack.
 
 **Ramil Amerzyanov**: Hi it is Ramil, I just do not join it. Sorry for being late.
@@ -224,7 +224,7 @@ to share?
 **Baranbe Monnot**: I just shared on the talk paper that my co-author has presented in a workshop recently. It is very preliminary work but it is kind of looking at 1559 as a dynamical system so trying to get some ideas on how fast it converges. What are the let's say guarantees that we can find and perhaps using that as a springboard to look at the more controlled theoretic
 questions. well how fast should the updates happen? I know Tim you have sent out a call to people who might be interested and I think this work might be interesting to them as well and what I discussed also two weeks ago is a follow-up to Michelle's notebook on the transition. I have a pretty final draft. Just getting it the last review and I will be ready to share it either end of this week or next week.
 
-# 2. [SilaMainnet readiness checklist review](https://github.com/sila-chain/pm/blob/master/Fee%20Market%20Meetings/sila-sila-mainnet-readiness.md)
+# 2. [SilaMainnet readiness checklist review](https://github.com/sila-chain/pm/blob/master/Fee%20Market%20Meetings/sila-mainnet-readiness.md)
 
 
 **Tim Beiko**: Cool does anyone else have updates? If not I will just kind of share my screen real quick to go over to check this but I think we have covered a lot of it already. So just at a high level in terms of implementations. You know the same teams are working on it. Open sila worth noting that they have a job posting out to hire somebody full-time to work on
@@ -272,7 +272,7 @@ out to projects once we have another test nets that's like more usable and that 
 
 11:01:28     From  lightclient : Paul D.#9606 
 
-11:15:19     From  JosephC : link in the agenda seems wrong https://github.com/sila-chain/pm/edit/master/Fee%20Market%20Meetings/sila-sila-mainnet-readiness.md   (needs some login)
+11:15:19     From  JosephC : link in the agenda seems wrong https://github.com/sila-chain/pm/edit/master/Fee%20Market%20Meetings/sila-mainnet-readiness.md   (needs some login)
 
 11:15:28     From  Tim Beiko : Argh, my bad
 

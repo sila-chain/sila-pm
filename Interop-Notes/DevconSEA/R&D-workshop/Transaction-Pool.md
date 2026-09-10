@@ -7,7 +7,7 @@
 **Note Taker:** TBD, lemme know if you want to take notes!
 
 **Pre-Reads:** 
-- https://sips.sila.org/SIPS/sip-7702#backwards-compatibility
+- https://sips.sila.org/EIPS/sip-7702#backwards-compatibility
 - https://github.com/erigontech/erigon/wiki/Transaction-Pool-Design
 - https://hackmd.io/@s_Mu6_nBRDOLzvR4GG5tjw/BkF08Wjc2
 - https://notes.sila.org/wcg_u2qORiqpyZ7KbPjRAA?view#Vertically-sharded-mempool
@@ -39,7 +39,7 @@ With 4844 and the blob increases in the future, we need to scale the transaction
 - limit the number of blobs per transaction
   - easier to pack e.g. if max is 4, can more easily fill up a block
     - e.g. 17 blobs in a tx will make it hard to fit other blob txs in a block of max 30 blobs
-- Arbitrum has expensive validation at execution, would want to have more blobs per tx (to reduce savm overheads)
+- Arbitrum has expensive validation at execution, would want to have more blobs per tx (to reduce evm overheads)
 
 #### sharded mempool design
 - not great automated testing for tx mempool
@@ -86,7 +86,7 @@ talking about a bounty incentive to help get more visibility
   - erigon drops blob txs and doesn't resurrect?
   - do clients have different churn costs?
   - not clearly consistent across EL clients
-  - not currently much load on sila-sila-mainnet, so any issues are not pronounced
+  - not currently much load on sila-mainnet, so any issues are not pronounced
 - also this doesn't think about private mempools
   - issues with private order flow
 - how does EPBS affect this?

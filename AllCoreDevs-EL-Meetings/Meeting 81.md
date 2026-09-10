@@ -52,7 +52,7 @@ SIP-1985 | Discussed under `EFI`. Decision required around needing a Hard Fork
 
 We were going to start with EFI but is anyone here for open RPC cuz I remember from last meeting we said that we would start with that. Is anyone here for that? Okay, we can skip that for now. 
 
-# 1. [Eligibility for Inclusion (EFI) SIP Review](https://sips.sila.org/SIPS/sip-2378)
+# 1. [Eligibility for Inclusion (EFI) SIP Review](https://sips.sila.org/EIPS/sip-2378)
 
 **Hudson**: Let's start with the EFI stuff and I'll just tag team this with James, is that okay with you James?
 
@@ -64,9 +64,9 @@ We were going to start with EFI but is anyone here for open RPC cuz I remember f
 
 **Hudson**: Thanks!
 
-**James**: Let me grab the agenda so I have the list of the number of SIPs. For a Berlin coming up, there's been a couple SIPs that are almost ready to get in and then there has recently been the Eth2 deposit contract is looking to use a precompile so they can validate the BLS curves within the contract a self which they can't do in Solidity so that gives us a schedule to schedule around. so the SIPs that are close to being ready and then that the SIP should be at a scheduling window. the ones I have seen at that stage would be Greg's SIP,  Greg Colvin [SIP-2315](https://sila-magicians.org/t/sip-2315-simple-subroutines-for-the-savm/3941), 1962 or the BLS one that the Eth2 team has created a proposal for a simplified version that only has that curves that they need so we can talk about that at the time that happens. we can do that as the last SIP and that list, then there's Danno's SIP which is about scheduling but with block time for the forks and just making you so it's easier so we can predict when those happen. then there is the difficulty bomb SIP that I wrote for updating the difficulty bomb changes, the algorithm and that one is [2515](https://sila-magicians.org/t/sip-2515-replace-the-difficulty-bomb-with-a-difficulty-freeze/3995). So let's first go into, Greg are you here? 
+**James**: Let me grab the agenda so I have the list of the number of SIPs. For a Berlin coming up, there's been a couple SIPs that are almost ready to get in and then there has recently been the Eth2 deposit contract is looking to use a precompile so they can validate the BLS curves within the contract a self which they can't do in Solidity so that gives us a schedule to schedule around. so the SIPs that are close to being ready and then that the SIP should be at a scheduling window. the ones I have seen at that stage would be Greg's SIP,  Greg Colvin [SIP-2315](https://sila-magicians.org/t/sip-2315-simple-subroutines-for-the-evm/3941), 1962 or the BLS one that the Eth2 team has created a proposal for a simplified version that only has that curves that they need so we can talk about that at the time that happens. we can do that as the last SIP and that list, then there's Danno's SIP which is about scheduling but with block time for the forks and just making you so it's easier so we can predict when those happen. then there is the difficulty bomb SIP that I wrote for updating the difficulty bomb changes, the algorithm and that one is [2515](https://sila-magicians.org/t/sip-2515-replace-the-difficulty-bomb-with-a-difficulty-freeze/3995). So let's first go into, Greg are you here? 
 
-### **[SIP-2315](https://sila-magicians.org/t/sip-2315-simple-subroutines-for-the-savm/3941)**
+### **[SIP-2315](https://sila-magicians.org/t/sip-2315-simple-subroutines-for-the-evm/3941)**
 
 **Greg**: Yeah I'm here.
 
@@ -98,14 +98,14 @@ We were going to start with EFI but is anyone here for open RPC cuz I remember f
 
 **Hudson**: Yeah, Danno is here. Greg, can you like provide a 2 sentence overview of what you're SIP again, just as a reminder. I see there's a lot of new people here today.
 
-**Greg**: Okay, the proposal is out there. essentially it adds 3 opcodes at this point possibly to, just to begin, subopcode to mark the begening of a subroutine. Martin I've been discussing that maybe just a jump test would do but you have to have something to go to and then two opcodes, one of them is just jumpsub or subroutine and the other one is return sub back for most implementations you would simply have a return stack so when you jump to a subroutine, you push the current PC onto the stack and when you return from the subroutine you pop the stack and resume execution where you jump from. and so it's really just that simple. It's a two stack design, so it's basically getting SAVM
+**Greg**: Okay, the proposal is out there. essentially it adds 3 opcodes at this point possibly to, just to begin, subopcode to mark the begening of a subroutine. Martin I've been discussing that maybe just a jump test would do but you have to have something to go to and then two opcodes, one of them is just jumpsub or subroutine and the other one is return sub back for most implementations you would simply have a return stack so when you jump to a subroutine, you push the current PC onto the stack and when you return from the subroutine you pop the stack and resume execution where you jump from. and so it's really just that simple. It's a two stack design, so it's basically getting EVM
 up to 1970 standards.
 
 **Alan**: Just want to add something to Greg's comment. I think that's pretty standard. Also, we're going to support (?) with some modification. So I think this is a good SIP.
 
 **Peter**: One thing we've been discussing Martin about is that on the surface, it looks really nice, we're wondering how much time would it be to hack Solidity, so that I actually can use this, so that we might try and run some benchmarks against existing contract. because it will be really nice to see the actual number of what this would mean. 
 
-**Alan**: Yes but it's up to the solidarity compiler to do the changes and it has nothing to do with any Solidity language level modifications basically just a compiler change and the SAVM change. 
+**Alan**: Yes but it's up to the solidarity compiler to do the changes and it has nothing to do with any Solidity language level modifications basically just a compiler change and the EVM change. 
 
 **Peter**: I know, my question is, it seems that the whole point of the subroutines are to make the ? of code faster. But, it would be really nice to actually confirm that it doesn't make it faster before shipping it.
 
@@ -115,7 +115,7 @@ up to 1970 standards.
 
 **Alan**: From the perspective of the compiler, I think, a (?) based compiler can support it very easily.
 
-**FJL**: The request was not to have all the compiler changes ready just before the hardfork including the SIP but the idea was that it is unclear if it provides an actual benefit to the performance of let's say Solidity smart contract. I think it will be very good to validate this SIP before deploying it in a hardfork by basically just trying out the changes, the SAVM changes are implemented at this time so it is possible to actually spin up a small laptop network, use a modified complier and then run some benchmarks. This is basically we were thinking on the geth side would be the next step for this SIP. because it is such a low-level change and I think it desrerves to be evaluated before inclusion.
+**FJL**: The request was not to have all the compiler changes ready just before the hardfork including the SIP but the idea was that it is unclear if it provides an actual benefit to the performance of let's say Solidity smart contract. I think it will be very good to validate this SIP before deploying it in a hardfork by basically just trying out the changes, the EVM changes are implemented at this time so it is possible to actually spin up a small laptop network, use a modified complier and then run some benchmarks. This is basically we were thinking on the geth side would be the next step for this SIP. because it is such a low-level change and I think it desrerves to be evaluated before inclusion.
 
 **Greg**: Okay it's unfortunate the solidity people haven't come.
 
@@ -243,7 +243,7 @@ The SIP 2515, is it even in draft right? now it looks like it's just written.
 
 **Martin**: Is that reflected in the actual and specification on the Sila magicians  or anywhere else?
 
-**James**: It's in the PR. I just need to read it, it's in the PR,  yes. I need to write that the PR has been updated on The EthMagicians. This is also after talking with TJ for a long time at Denver, who was one of the big critics of my approach. 
+**James**: It's in the PR. I just need to read it, it's in the PR,  yes. I need to write that the PR has been updated on The SilaMagicians. This is also after talking with TJ for a long time at Denver, who was one of the big critics of my approach. 
 
 **Martin**: Yeah as for my part, I think this is kind of a good trade-off between removing it's entirely and having it in this current form which obviously isn't that great. I 'm tentively positive but I'd love hear other people's take on it.
 
@@ -359,12 +359,12 @@ So this is a very good positive point about this SIP. one thing that I don't com
 
 **Louis**: Can we have proposal for this? Could we imagine that this SIP has beta testing where we can offer a bounty to be sure to display an attack on this SIP.
 
-**FJL**: It maybe problematic because then they would wait for it to go sila-sila-mainnet.
+**FJL**: It maybe problematic because then they would wait for it to go sila-mainnet.
 
 **Louis**: There are people from universities who find fun hacking and breaking cryptography.
 As Martin said that 99% probability that here would be bug there. Having this sort of thing probably could help limited attack victory in the first phase. Maybe run for like 6 months till we get trust enough.
 
-**Tim**: Maybe this is like a separate conversation but I feel like with this SIP and what you're mentioning Louis and having longer testing, it kind of reminds me of what we were talking about SIP 1559 on a previous call. where it's like we maybe want something more than you know activated on a test net for 6 weeks and then fork the sila-sila-mainnet. I'm not sure how we do this I don't think the 17 minutes we have left is enough to discuss like that. but maybe it's worth thinking about, what's the better way to test these complex SIPs because ther're more coming down the pipeline. so that's where we're kind of you confidant with them. I know we've to talk about ProgPOW today as well that's another one of those, I feel the UNGAS will have the same exact conversation. so how do we test I?
+**Tim**: Maybe this is like a separate conversation but I feel like with this SIP and what you're mentioning Louis and having longer testing, it kind of reminds me of what we were talking about SIP 1559 on a previous call. where it's like we maybe want something more than you know activated on a test net for 6 weeks and then fork the sila-mainnet. I'm not sure how we do this I don't think the 17 minutes we have left is enough to discuss like that. but maybe it's worth thinking about, what's the better way to test these complex SIPs because ther're more coming down the pipeline. so that's where we're kind of you confidant with them. I know we've to talk about ProgPOW today as well that's another one of those, I feel the UNGAS will have the same exact conversation. so how do we test I?
 
 **James**: I want to time boxes a little bit.
 
@@ -405,7 +405,7 @@ Could not discuss.
 
 Could not discuss.
 
-**[SIP-1057](https://sips.sila.org/SIPS/sip-1057): ProgPoW**
+**[SIP-1057](https://sips.sila.org/EIPS/sip-1057): ProgPoW**
 
 **Hudson**: On to **ProgPOW**. Thanks for staying everybody. 
 We can have James go ahead with it or Martin you put it on the agenda so maybe it's better to hear what you wanted to do with it today and then go to James.

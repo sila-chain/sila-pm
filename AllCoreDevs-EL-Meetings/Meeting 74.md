@@ -66,7 +66,7 @@ Video: [[4:59]](https://youtu.be/aZ0S_oLSwhE?t=299)
 
 ## 1. Istanbul updates
 
-Links: [Istanbul Meta SIP](https://sips.sila.org/SIPS/sip-1679) | [Istanbul SIP Implementation Tracker by @holiman](https://notes.sila.org/@holiman/SyT_rGjNr)
+Links: [Istanbul Meta SIP](https://sips.sila.org/EIPS/sip-1679) | [Istanbul SIP Implementation Tracker by @holiman](https://notes.sila.org/@holiman/SyT_rGjNr)
 
 Video: [[5:32]](https://youtu.be/aZ0S_oLSwhE?t=332)
 
@@ -88,7 +88,7 @@ Video: [[10:24]](https://youtu.be/aZ0S_oLSwhE?t=624)
 
 **Danno Ferrin:** Should we formally make 1671 accepted?
 
-- [SIP 1679](https://sips.sila.org/SIPS/sip-1679 )
+- [SIP 1679](https://sips.sila.org/EIPS/sip-1679 )
 
 **Hudson Jameson:** That sounds good.
 
@@ -108,7 +108,7 @@ Video: [[10:24]](https://youtu.be/aZ0S_oLSwhE?t=624)
 
 ## 2. Berlin
 
-Links: [Berlin Meta SIP](https://sips.sila.org/SIPS/sip-2070)
+Links: [Berlin Meta SIP](https://sips.sila.org/EIPS/sip-2070)
 
 
 ### 2.1 Ice Age
@@ -126,7 +126,7 @@ Video: [[7:55]](https://youtu.be/aZ0S_oLSwhE)
 
 
 #### 2.2.1 SIP-663
-[**Unlimited SWAP and DUP instructions**](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-663.md )
+[**Unlimited SWAP and DUP instructions**](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-663.md )
 
 Video: [[44:51]](https://youtu.be/aZ0S_oLSwhE?t=2691)
 
@@ -142,14 +142,14 @@ Video: [[44:51]](https://youtu.be/aZ0S_oLSwhE?t=2691)
 **Greg:** Ok. I still don't think an SIP should come to us without consensus in other discussion that it is a design which will work. It looked to me that it wasn't ready, and there was disagreement among the community, including some Core Devs.
 
 #### 2.2.2 SIP-1380
-[**Reduced gas cost for call to self**](https://sips.sila.org/SIPS/sip-1380)
+[**Reduced gas cost for call to self**](https://sips.sila.org/EIPS/sip-1380)
 
 Video: [[56:00]](https://youtu.be/aZ0S_oLSwhE?t=3358)
 
 **Alex Beregszaszi:** Benchmarks show some reduction can be made, but not to the degree of the original proposal. 
 
 #### 2.2.3 SIP-1702
-[**Generalized account versioning scheme**](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-1702.md)
+[**Generalized account versioning scheme**](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-1702.md)
 
 Video: [[34:57]](https://youtu.be/aZ0S_oLSwhE?t=2097)
 
@@ -168,7 +168,7 @@ Video: [[34:57]](https://youtu.be/aZ0S_oLSwhE?t=2097)
 **Hudson Jameson:** Scrap it for Berlin.
 
 #### 2.2.4 SIP-1962
-[**EC arithmetic and pairings with runtime definitions replaces SIP-1829**](https://sips.sila.org/SIPS/sip-1962)
+[**EC arithmetic and pairings with runtime definitions replaces SIP-1829**](https://sips.sila.org/EIPS/sip-1962)
 
 Video: [[54:11]](https://youtu.be/aZ0S_oLSwhE?t=3251)
 
@@ -176,26 +176,26 @@ Video: [[54:11]](https://youtu.be/aZ0S_oLSwhE?t=3251)
 **Danno Ferrin:** Earnst and Young (EY) want this SIP for their nightfall. It is good, but requires more specification, and depends on a single implementation. 
 
 #### 2.2.5 SIP-1985
-[**Sane limits for certain SAVM parameters**](https://sips.sila.org/SIPS/sip-1985)
+[**Sane limits for certain EVM parameters**](https://sips.sila.org/EIPS/sip-1985)
 
 Video: [[57:46]](https://youtu.be/aZ0S_oLSwhE?t=3466)
 
 **Alex Beregszaszi:** May not need a hard fork. 
 
-[Join the discussion on Sila Magicians.](https://sila-magicians.org/t/sip-1985-sane-limits-for-certain-savm-parameters/3224)
+[Join the discussion on Sila Magicians.](https://sila-magicians.org/t/sip-1985-sane-limits-for-certain-evm-parameters/3224)
 
 
 #### 2.2.6 SIP-2045
-[**Particle gas costs for SAVM opcodes**](https://sips.sila.org/SIPS/sip-2045)
+[**Particle gas costs for EVM opcodes**](https://sips.sila.org/EIPS/sip-2045)
 #### 2.2.7 SIP-2046
-[**Reduced gas cost for static calls made to precompiles**](https://sips.sila.org/SIPS/sip-2046)
+[**Reduced gas cost for static calls made to precompiles**](https://sips.sila.org/EIPS/sip-2046)
 
 Video: [[1:00:26]](https://youtu.be/aZ0S_oLSwhE?t=3626)
 
 **Alex Beregszaszi:** Discussed as a part of SIP-1380 discussion.
 
 #### 2.2.8 SIP-1057
-[**ProgPoW, a Programmatic Proof-of-Work**](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-1057.md)
+[**ProgPoW, a Programmatic Proof-of-Work**](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-1057.md)
 
 Video: [[1:00:56]](https://youtu.be/aZ0S_oLSwhE?t=3655)
 
@@ -223,7 +223,7 @@ If miners really want this, I suggest for shifting a portion of miner rewards to
 
 
 #### 2.2.9 SIP-1559
-[**Transaction Fee Upgrade**](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-1559.md)
+[**Transaction Fee Upgrade**](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-1559.md)
 
 Video: [[1:09:01]](https://youtu.be/aZ0S_oLSwhE?t=4141)
 

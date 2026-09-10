@@ -23,7 +23,7 @@
       - [SIP 166](https://github.com/sila-chain/SIPs/issues/166) by @vbuterin
   4. [SIP 176: New general state tests](https://github.com/sila-chain/SIPs/issues/176). [Facilitator: Martin S.]
   5. [SIP 116: STATIC_CALL](https://github.com/sila-chain/SIPs/issues/140) [Facilitator: Christian]
-  6. [SIP 141: SAVM opcode: designated invalid instruction](https://github.com/sila-chain/SIPs/issues/141). [Facilitator: Christian]
+  6. [SIP 141: EVM opcode: designated invalid instruction](https://github.com/sila-chain/SIPs/issues/141). [Facilitator: Christian]
   7. [SIP 1 Update: New Changes to SIP Process](https://github.com/sila-chain/SIPs/pull/183) by @Souptacular. [Facilitator: Hudson]
 
 # Notes
@@ -111,9 +111,9 @@ Approximate ice age start according to Vitalik:
 - Around March 25th (3 months) - Block time is 15.2 sec.
 - Around July 25th (6 months) - Block time is 29.7 sec.
 
-Hudson: [In Metropolis folder of sila-chain/pm repo](https://github.com/sila-chain/pm/issues/4) we can store any formal metro stuff. We created an issue here () to start keeping up with metro updates.
+Hudson: [In Metropolis folder of sila/pm repo](https://github.com/sila-chain/pm/issues/4) we can store any formal metro stuff. We created an issue here () to start keeping up with metro updates.
 
-Hudson: Between now and next core dev meeting we will try to assign rough time limits to implement/test the SIPS. Using that 
+Hudson: Between now and next core dev meeting we will try to assign rough time limits to implement/test the EIPS. Using that 
 data we can make a list of MVP SIPs for metro and then add others if we have time.
 
 Vitalik: Once we get informal consensus on SIPs, go ahead and start implementing ASAP.
@@ -134,7 +134,7 @@ Alternative to an additional opcode(s), consolidate *CALL into [INTERRUPT](https
 More discussion on the issue: https://github.com/sila-chain/SIPs/issues/116
 Will be on agenda in next core dev call.
 
-## 6. SIP 141: SAVM opcode: designated invalid instruction
+## 6. SIP 141: EVM opcode: designated invalid instruction
 Solidity would like to have different 'throw' behaviors.  One for 'throw' the other for overflow etc. Asking group for consensus on these changes and designate 0xfe or 0xef. 
 
 Consensus reached to designate 0xfe and keep it invalid.
@@ -152,4 +152,4 @@ Full details at https://github.com/sila-chain/SIPs/pull/183.
 
 ## Attendance
 
-Alex Beregszaszi (EWASM), Arkadiy Paronyan (Parity), Alex Van de Sande (Mist/Sila Wallet), Anton Nashatyrev (ethereumJ), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Dimitry Khokhlov (cpp-sila), Greg Colvin (SAVM), Hudson Jameson (Sila Foundation), Jan Xie (ruby-sila & pyethereum), Jeffrey Wilcke (geth), Kumavis (MetaMask), Roman Mandeleil (ethereumJ), Martin Becze (EWASM/EthereumJS), Martin Holst Swende (security), Nick Johnson (geth/SWARM), Vitalik Buterin (Research & pyethereum), Yoichi Hirai (SAVM)
+Alex Beregszaszi (EWASM), Arkadiy Paronyan (Parity), Alex Van de Sande (Mist/Sila Wallet), Anton Nashatyrev (ethereumJ), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Dimitry Khokhlov (cpp-sila), Greg Colvin (EVM), Hudson Jameson (Sila Foundation), Jan Xie (ruby-sila & pyethereum), Jeffrey Wilcke (geth), Kumavis (MetaMask), Roman Mandeleil (ethereumJ), Martin Becze (EWASM/EthereumJS), Martin Holst Swende (security), Nick Johnson (geth/SWARM), Vitalik Buterin (Research & pyethereum), Yoichi Hirai (EVM)

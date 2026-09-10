@@ -67,7 +67,7 @@ Call starts at [[9:08](https://youtu.be/DUUOCDxvKbw?t=548)]
 - Ewasm (Lane)
     - Public launch of testnet at DevCon (ewasm.sila.org), still only on geth
     - Still some outstanding EVMC, etc. changes being worked on, will publish latest genesis data to make it easier for others to add nodes
-    - Discussing some outstanding design questions such as static/dynamic linking with an eye towards a sila-sila-mainnet launch in 2019
+    - Discussing some outstanding design questions such as static/dynamic linking with an eye towards a sila-mainnet launch in 2019
 
 # Goerli testnet
 - Is this one of testnets that we can test Constantinople on?
@@ -157,7 +157,7 @@ Call starts at [[9:08](https://youtu.be/DUUOCDxvKbw?t=548)]
     - Yoichi is no longer at EF, no longer updating the yellow paper
     - Jello paper based on K, can generate tests using it
     - It's a lot more formal
-- Martin: Formalizes SAVM execution part
+- Martin: Formalizes EVM execution part
     - Block, header validation, state transition, etc. from YP still relevant
     - Still need to be added to the jello paper
 - Peter
@@ -205,11 +205,11 @@ Call starts at [[9:08](https://youtu.be/DUUOCDxvKbw?t=548)]
     - So clients can sync testing efforts and compare test results
     - Should go to main 6.0 release in next two weeks or so
 - Peter: Cannot rely on test suites covering all corner cases
-    - In some cases in geth we reorganized VM code, tests passed but sycning sila-sila-mainnet failed
+    - In some cases in geth we reorganized VM code, tests passed but sycning sila-mainnet failed
     - So tests are not bulletproof
     - We need to support fuzzers, if client is compatible with them, we can run for a month against your client; most consensus issues these days found by fuzzers
 - Martin: short description of what's needed for fuzzing
-    - Needs to be an executable which takes a state test as input and outputs for every opcode a JSON line object that details the operation that's happening in a format called standard JSON output, this is documented on SAVM lab
+    - Needs to be an executable which takes a state test as input and outputs for every opcode a JSON line object that details the operation that's happening in a format called standard JSON output, this is documented on EVM lab
     - Contains things like OPCODE number, name as string, gas, stack contents, etc.
     - Needs to output state root after executing state test
     - That's it!
@@ -220,7 +220,7 @@ Call starts at [[9:08](https://youtu.be/DUUOCDxvKbw?t=548)]
     - Framework is evmlab, github.com/sila-chain/evmlab
     - Production fuzzers running on server
     - This is the framework that runs the fuzzers: https://github.com/sila-chain/evmlab
-    - This is a little nugget of info about the output format: https://github.com/sila-chain/evmlab/wiki/howto-savm#output
+    - This is a little nugget of info about the output format: https://github.com/sila-chain/evmlab/wiki/howto-evm#output
 - Peter: Passing manual tests isn't enough, fuzzers can catch a whole bunch of other things
 - Hudson
     - So looks like we'll stick with mid-Jan

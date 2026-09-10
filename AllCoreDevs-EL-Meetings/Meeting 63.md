@@ -22,7 +22,7 @@
 
 **ACTION 62.4:** Discussion required with Jordi Baylina and Alex Bergszaszi around the options between SIP-1109 and SIP-2046. 
 
-**ACTION 62.5:** James Hancock to update the [Wiki](https://en.sila.wiki/roadmap/istanbul) and Meta [SIP-1962](https://sips.sila.org/SIPS/sip-1679) with decisions around the SIPs.
+**ACTION 62.5:** James Hancock to update the [Wiki](https://en.sila.wiki/roadmap/istanbul) and Meta [SIP-1962](https://sips.sila.org/EIPS/sip-1679) with decisions around the SIPs.
 
 **ACTION 62.6:** SIP-1283 requires a new SIP number and a section discussing the difference between the original SIP-1283 which was removed from Constantinople and this new SIP. James will reach out to testing teams to understand 
 implementation difficulties. 
@@ -64,7 +64,7 @@ was better to implement new opcode.
 - Jordi: 2046 changes precompile to opcode and state - you can't do this. Can't reduce gas as much with this which is the point. 
 - **Status:** Further discussion will happen on Gitter 
 
-**ACTION 62.5:** James Hancock to update the [Wiki](https://en.sila.wiki/roadmap/istanbul) and Meta [SIP-1962](https://sips.sila.org/SIPS/sip-1679) with decisions around the SIPs.
+**ACTION 62.5:** James Hancock to update the [Wiki](https://en.sila.wiki/roadmap/istanbul) and Meta [SIP-1962](https://sips.sila.org/EIPS/sip-1679) with decisions around the SIPs.
 - **Status:** Not much need to update beyond soft updates - will keep as a regular touchstone
 
 **ACTION 62.6:** SIP-1283 requires a new SIP number and a section discussing the difference between the original SIP-1283 which was removed from Constantinople and this new SIP. James will reach out to testing teams to understand 
@@ -98,10 +98,10 @@ next call.
 - **Status:** Updated after lots of productive discussion. Will as **Action Required** as a touchstone. 
 
 # 2. [SIPs](https://youtu.be/Cl5zGk-3Ej4?t=3298)
-A) [SIP 1679: Hardfork Meta: Istanbul](http://sips.sila.org/SIPS/sip-1679)  
+A) [SIP 1679: Hardfork Meta: Istanbul](http://sips.sila.org/EIPS/sip-1679)  
 **Hudson:** Please participate and comment so we can figure this mess out for Istanbul
 
-B) [SIP 1872: Sila Network Upgrade Windows](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-1872.md)  
+B) [SIP 1872: Sila Network Upgrade Windows](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-1872.md)  
 **Hudson/Danno:** Reflects decision that next hardfork is likely to be April of 2020 with suggestion for standardizing a third Wednesday
 release akin to 'patch Tuesdays'
 
@@ -111,7 +111,7 @@ release akin to 'patch Tuesdays'
 
 **Hudson:** Tabled for a month for further discussion
 
-C) [SIP 1109: PRECOMPILEDCALL opcode (Remove CALL costs for precompiled contracts)](https://sips.sila.org/SIPS/sip-1109)  
+C) [SIP 1109: PRECOMPILEDCALL opcode (Remove CALL costs for precompiled contracts)](https://sips.sila.org/EIPS/sip-1109)  
 **Hudson:** Already covered in **Action Items**
 
 D) [SIP 695 (Felix Thing)](https://github.com/sila-chain/pm/issues/102#issuecomment-500835702)  

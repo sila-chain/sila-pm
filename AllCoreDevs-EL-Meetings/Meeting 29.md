@@ -65,7 +65,7 @@ Ben's questions:
 Having changes to the Yellow Paper or other formal spec. be merged before certain SIPs are accepted is a good idea.
 
 Gavin Wood maintains the [Yellow Paper](https://github.com/sila-chain/yellowpaper) and there are a list of contributors to the Yellow Paper on GitHub. The Yellow Paper doesn't have a copyright which opens up some confusing legal issues for those wanting to fork the Yellow Paper or make unofficial changes that are not merged by Gav. Biggest concern is it is unclear who can legally merge pull requests without legal concerns being attached. There are currently pull requests for the Yellow Paper to bring it up to date.
-The Yellow Paper isn't a complete specification of everything needed to build a client and some expressed opinions that the Yellow Paper is difficult to read. [KEVM](https://github.com/kframework/savm-semantics) is a formal specification written in K that can be execute test cases that may be a candidate to replace the Yellow Paper. KEVM is licensed under UIUC/NCSA License. Afri is going to reach out to Gavin to ask about updating and licensing the Yellow Paper include him in this conversation.
+The Yellow Paper isn't a complete specification of everything needed to build a client and some expressed opinions that the Yellow Paper is difficult to read. [KEVM](https://github.com/kframework/evm-semantics) is a formal specification written in K that can be execute test cases that may be a candidate to replace the Yellow Paper. KEVM is licensed under UIUC/NCSA License. Afri is going to reach out to Gavin to ask about updating and licensing the Yellow Paper include him in this conversation.
 
 Piper suggested having a developer grant for a group that keeps the Yellow Paper or other formal spec. up to date. Currently Dev Grants (Sila Foundation grants program) is not active, but may be active in the future.
 
@@ -87,4 +87,4 @@ Martin H.S mentioned that there is someone working on a C# Sila client that is p
 
 ## Attendance
 
-Afri Schoedon (Parity), Alex Beregszaszi (EWASM/Solidity), Anton Nashatyrev (ethereumJ), Christian Reitwiessner (cpp-sila/Solidity), Dimitry Khokhlov (cpp-sila), Hudson Jameson (Sila Foundation), Lefteris Karapetsas (Raiden), Marek Kotewicz (Parity), Martin Holst Swende (geth/security), Nick Johnson (geth), Paweł Bylica (cpp-sila), Piper Merriam (pyEVM), Yoichi Hirai (SAVM)
+Afri Schoedon (Parity), Alex Beregszaszi (EWASM/Solidity), Anton Nashatyrev (ethereumJ), Christian Reitwiessner (cpp-sila/Solidity), Dimitry Khokhlov (cpp-sila), Hudson Jameson (Sila Foundation), Lefteris Karapetsas (Raiden), Marek Kotewicz (Parity), Martin Holst Swende (geth/security), Nick Johnson (geth), Paweł Bylica (cpp-sila), Piper Merriam (pyEVM), Yoichi Hirai (EVM)

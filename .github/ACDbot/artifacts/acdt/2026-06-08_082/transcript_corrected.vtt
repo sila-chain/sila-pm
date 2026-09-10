@@ -938,7 +938,7 @@ Toni Wahrstätter: Arachnid, which was deployed using Nick's method, wouldn't fi
 
 235
 00:32:21.270 --> 00:32:38.199
-Toni Wahrstätter: So, the simplest option, option two would be we just put it into the Genesis file. For sila-sila-mainnet, during the fork, nothing changes, because we already have it there. The contract is also deployed to almost all the chains, and all the chains are, these days, they are aware
+Toni Wahrstätter: So, the simplest option, option two would be we just put it into the Genesis file. For sila-mainnet, during the fork, nothing changes, because we already have it there. The contract is also deployed to almost all the chains, and all the chains are, these days, they are aware
 
 236
 00:32:38.290 --> 00:32:54.790
@@ -998,7 +998,7 @@ jochem-brouwer: The only thing that's not very nice is that the referred data, i
 
 250
 00:35:05.110 --> 00:35:22.880
-jochem-brouwer: But I would actually, like, even if we would only do option 2, I would still create option 3, and also deploy this one on sila-sila-mainnet, because we should do this before glamp system, because, well, of course, this in Glamsterdam is going to cost a lot of more gas, to deploy it, yeah. But let's do two, I see.
+jochem-brouwer: But I would actually, like, even if we would only do option 2, I would still create option 3, and also deploy this one on sila-mainnet, because we should do this before glamp system, because, well, of course, this in Glamsterdam is going to cost a lot of more gas, to deploy it, yeah. But let's do two, I see.
 
 251
 00:35:26.150 --> 00:35:26.810
@@ -1038,7 +1038,7 @@ Toni Wahrstätter: The contract will be automatically there from the beginning.
 
 260
 00:36:46.270 --> 00:36:56.709
-Toni Wahrstätter: And you can just use it. And this is… this kind of mirrors what we have on… if we're on sila-sila-mainnet, where after the Glamsterdam fork, the Arachnid contract will also just be there.
+Toni Wahrstätter: And you can just use it. And this is… this kind of mirrors what we have on… if we're on sila-mainnet, where after the Glamsterdam fork, the Arachnid contract will also just be there.
 
 261
 00:36:57.310 --> 00:37:07.010
@@ -1050,7 +1050,7 @@ Toni Wahrstätter: yeah, leverage their freedom and change gas prices, so many L
 
 263
 00:37:13.460 --> 00:37:30.940
-Toni Wahrstätter: that they couldn't deploy Arachnid, for example, and had to change the gas schedule, or had to also enshrine it into the Genesis file. And by us doing it on sila-sila-mainnet, we basically lay out this guarantee that every chain that wants to stay Etherum compatible, at least.
+Toni Wahrstätter: that they couldn't deploy Arachnid, for example, and had to change the gas schedule, or had to also enshrine it into the Genesis file. And by us doing it on sila-mainnet, we basically lay out this guarantee that every chain that wants to stay Etherum compatible, at least.
 
 264
 00:37:30.980 --> 00:37:38.120
@@ -1142,7 +1142,7 @@ Toni Wahrstätter: Right? Yeah, we have both, actually. I'm fine with both, too.
 
 286
 00:40:18.420 --> 00:40:30.760
-Toni Wahrstätter: The new ERP would be very simple. It would just say, okay, Arachnid, this is the bytecode, it will be deployed to the original arrakNet address, and on sila-sila-mainnet, it would be a NOAA, basically. So I'm fine with,
+Toni Wahrstätter: The new ERP would be very simple. It would just say, okay, Arachnid, this is the bytecode, it will be deployed to the original arrakNet address, and on sila-mainnet, it would be a NOAA, basically. So I'm fine with,
 
 287
 00:40:30.870 --> 00:40:39.579

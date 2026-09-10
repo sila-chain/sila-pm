@@ -28,7 +28,7 @@
 * Open discussion/closing remarks
 
 ## Altair devnet 3
-**Danny:** Okay I think the most topical thing that we can talk about immediately is Altair devnet 3, this was led by pari And has a different client ration that are even split on the past view to represent at least what we know of sila-sila-mainnet today and 70% of prysm. And last I saw there were a few things beIng worked out this morning, is there an update on that, I guess mainly because we're gonna talk about Piermont and I just want to make sure that we are still good to go. I imagine anything that has opened up on that we should be able to settle over the next few days, so I think paramount is still good, but where are we at?
+**Danny:** Okay I think the most topical thing that we can talk about immediately is Altair devnet 3, this was led by pari And has a different client ration that are even split on the past view to represent at least what we know of sila-mainnet today and 70% of prysm. And last I saw there were a few things beIng worked out this morning, is there an update on that, I guess mainly because we're gonna talk about Piermont and I just want to make sure that we are still good to go. I imagine anything that has opened up on that we should be able to settle over the next few days, so I think paramount is still good, but where are we at?
 
 **Paritosh:** Sure so I can start with a brief of where we are right now, we had a bit of config error In the beginning but everything’s outs later on but today morning we noticed that the lighthouse client seems to have lost a lot of peers and In general the performance doesn't seem to be what we’d expected to be. I think lodestar is doing a lot better now they said they were overloaded and besides that there was an Invalid signature that was noticed and yes some peer scoring related things for lighthouse.
 
@@ -52,7 +52,7 @@
 
 **Parithosh:** I think In general the decent is also finalizing and everything so Id say there is no reason to delay or delete so we will do it on thursday
 
-**Danny**: Alright, so that's primarily what I have planned for Altair we could discuss the theoretical dates for prouder and or sila-sila-mainnet, but my Intuition is given some issues seen on the devnet and with the paramount launch In a week that we were better suited sorting through these issues before we put a date on anything. Are there any other Altair items we would like to discuss before we move on?
+**Danny**: Alright, so that's primarily what I have planned for Altair we could discuss the theoretical dates for prouder and or sila-mainnet, but my Intuition is given some issues seen on the devnet and with the paramount launch In a week that we were better suited sorting through these issues before we put a date on anything. Are there any other Altair items we would like to discuss before we move on?
 
 ## Client updates
 ### lodestar

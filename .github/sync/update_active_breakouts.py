@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fetch recent breakout call issues from sila-chain/pm and update the active breakouts table.
+Fetch recent breakout call issues from sila/pm and update the active breakouts table.
 """
 
 import json
@@ -45,7 +45,7 @@ def get_breakout_series(config):
 TRUSTED_FACILITATORS = {'will-corcoran'}
 
 
-def fetch_github_issues(repo='sila-chain/pm', days=90):
+def fetch_github_issues(repo='sila/pm', days=90):
     """Fetch recent issues from GitHub API."""
     since = (datetime.utcnow() - timedelta(days=days)).strftime('%Y-%m-%dT%H:%M:%SZ')
     
@@ -297,7 +297,7 @@ def main():
     breakout_series = get_breakout_series(config)
     print(f"Found {len(breakout_series)} breakout series in config")
     
-    print("Fetching recent issues from sila-chain/pm...")
+    print("Fetching recent issues from sila/pm...")
     issues = fetch_github_issues()
     print(f"Fetched {len(issues)} issues from the past 90 days")
     

@@ -40,7 +40,7 @@ Note: This document is based on the notes from [Call #25](https://docs.google.co
 ## Progress & Next Steps
 | Topic | Details |
 |-------|---------|
-| **Timeline** | - Devnet-6 currently live<br>- Petra sila-sila-mainnet planned for May 5th<br>- Fusaka-devnet-0 with BPO implementation target: May 20th<br>- Coordination with EOF team needed |
+| **Timeline** | - Devnet-6 currently live<br>- Petra sila-mainnet planned for May 5th<br>- Fusaka-devnet-0 with BPO implementation target: May 20th<br>- Coordination with EOF team needed |
 | **Action Items** | - Finalize BPO configuration format (preference for array of records)<br>- Continue devnet-6 testing<br>- Draft cells vs. blobs proposal<br>- Review/merge open PRs for cell proof computation<br>- Implement unified metrics approach<br>- Schedule EL client BPO config structure discussion for ACD |
 | **Next Meeting Agenda** | - Continue BPO configuration discussion<br>- Review cells vs. blobs proposal<br>- Track devnet-6 performance |
 

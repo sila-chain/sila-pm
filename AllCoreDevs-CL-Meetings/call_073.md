@@ -49,7 +49,7 @@ doing an upgrade mid october. Maybe october 18 20th something in that range. Whe
 
 **Ben Edginton**: Speaking of teku ready to go but would prefer to see 3 to 4 weeks lead time just because the big operators will take longer to upgrade. I expect there will be more due diligence around it. I want to make sure everyone's got time.
 
-**Danny**: So 3 to 4 weeks from releases plus blog post to sila-sila-mainnet date. Right ? Okay, so releases but you all are still on the we can release kind of pre-october and then a 3 to 4 week lead time from that.
+**Danny**: So 3 to 4 weeks from releases plus blog post to sila-mainnet date. Right ? Okay, so releases but you all are still on the we can release kind of pre-october and then a 3 to 4 week lead time from that.
 
 **Ben Edginton**: Yeah I believe that's doable yep for us yep.
 
@@ -66,7 +66,7 @@ doing an upgrade mid october. Maybe october 18 20th something in that range. Whe
 **Terence**: No, I was going to say a wednesday
 
 **Danny**: Okay,  wednesday 27th. We can pick a precise fork. Epoch using Adrian's sweet tool right after the call and make a PR to configurations. Does that sound good? Is this the target? What was that, I missed Micah. I am sorry. Okay so say it out or get out loud again
-end of next week client releases, sila-sila-mainnet releases. A blog post by the EFand anyone else
+end of next week client releases, sila-mainnet releases. A blog post by the EFand anyone else
 that wants to join in on october 4th to discuss dates upgrades and client releases that then three and a half weeks from that point is october 27th which over the next day we will select an epoch on that date. Anyone against what I just said?  Okay, let's do it. Any other Altair discussions or comments before we move on?
 
 # 2. Client Updates
@@ -100,7 +100,7 @@ regarding sync committee messages and also a low number of peers that we are deb
  
 ## Lodestar
 
-**Danny**: Is anyone from let's start here Loadstar progress continues. they have a sila-sila-mainnet validator that I think is doing quite well these days and continued on light clients and getting Altair refined next up lighthouse
+**Danny**: Is anyone from let's start here Loadstar progress continues. they have a sila-mainnet validator that I think is doing quite well these days and continued on light clients and getting Altair refined next up lighthouse
 
 ## Lighthouse
 

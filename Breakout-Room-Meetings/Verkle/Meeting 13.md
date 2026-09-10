@@ -81,7 +81,7 @@ Last up: Gajinder shared an overview and updates on a potential Verkle implement
 
 For context, the blockhash opcode allows for querying the hash of the past 256 blocks. But this would not be possible today with a stateless client without a new solution here, since stateless clients would not have any way to grab the most recent 256 blocks.
 
-The current proposal is to store the previous 256 block hashes as storage slots of a system contract to allow for stateless execution (i.e. perpetual history).. See https://github.com/sila-chain/SIPs/pull/8166. This is based in part on SIP-210: https://sips.sila.org/SIPS/sip-210.
+The current proposal is to store the previous 256 block hashes as storage slots of a system contract to allow for stateless execution (i.e. perpetual history).. See https://github.com/sila-chain/SIPs/pull/8166. This is based in part on SIP-210: https://sips.sila.org/EIPS/sip-210.
 
 The first part of the discussion was around whether this type of perpetual history is the right approach, or if it is better to use a ring buffer approach (see SIP-4788). Decision: folks on the call favored the ring buffer approach (size 256, to keep the behavior of blockhash). cc 
 @ralexstokes

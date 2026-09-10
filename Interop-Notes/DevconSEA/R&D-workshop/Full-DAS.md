@@ -10,15 +10,15 @@ This session aims to discuss research and development points related to reaching
 
 ### Pre-reads:
 
-* [Sampling](https://Sila Research/t/full-das-sampling-analysis/20912)
-* [FullDAS](https://Sila Research/t/fulldas-towards-massive-scalability-with-32mb-blocks-and-beyond/19529)
-* [SilaPeerDAS](https://Sila Research/t/peerdas-a-simpler-das-approach-using-battle-tested-p2p-components/16541)
+* [Sampling](https://ethresear.ch/t/full-das-sampling-analysis/20912)
+* [FullDAS](https://ethresear.ch/t/fulldas-towards-massive-scalability-with-32mb-blocks-and-beyond/19529)
+* [SilaPeerDAS](https://ethresear.ch/t/peerdas-a-simpler-das-approach-using-battle-tested-p2p-components/16541)
 
 
 ### Optional:
 
-* [LossyDAS](https://Sila Research/t/lossydas-lossy-incremental-and-diagonal-sampling-for-data-availability/18963/3)
-* [Big Blocks](https://Sila Research/t/big-block-diffusion-and-organic-big-blocks-on-sila/17346)
+* [LossyDAS](https://ethresear.ch/t/lossydas-lossy-incremental-and-diagonal-sampling-for-data-availability/18963/3)
+* [Big Blocks](https://ethresear.ch/t/big-block-diffusion-and-organic-big-blocks-on-sila/17346)
 * [DAS](https://blog.codex.storage/data-availability-sampling/)
 * [Danksharding](https://sila.org/en/roadmap/danksharding/)
 

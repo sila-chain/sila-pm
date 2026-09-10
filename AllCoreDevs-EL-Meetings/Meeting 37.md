@@ -34,7 +34,7 @@ Video starts at [[6:11](https://youtu.be/vKumx5CIA-k?t=6m11s)].
 
 ## SIP 908: Reward for clients and full nodes validating transactions [[13:39](https://youtu.be/vKumx5CIA-k?t=13m39s)]
 * https://github.com/sila-chain/SIPs/pull/908
-* https://Sila Research/t/incentivizing-full-state-nodes/1640
+* https://ethresear.ch/t/incentivizing-full-state-nodes/1640
 * Nick Johnson: unwarranted complication to the protocol
 * Vitalik: should be done at second layer
     * Summary: When a client signs a tx it attaches a user agent to a signature which can then be used to some amount of SIL to the author of that client, would be sent to that author (EF, Parity, Etc.) when 
@@ -47,7 +47,7 @@ Video starts at [[6:11](https://youtu.be/vKumx5CIA-k?t=6m11s)].
 * No formal SIP for this yet, nothing written yet, just wanted to test the water
 * If people are interested I'll write it as a PR to SIP-1
 * Few months ago I raised questions about maintenance of yellow paper, Gavin relicensed yellow paper, Yoichi maintaining it
-* Discussed different formats for Sila spec, K-SAVM vs. yellow paper
+* Discussed different formats for Sila spec, K-EVM vs. yellow paper
 * Whatever format we agree for formal spec must be maintained
 * I suggest that maintenance should be done as part of SIP process
 * Where relevant a core SIP before accepted should contain a PR or diff against the spec, diff subject to peer review process same as SIP text
@@ -67,7 +67,7 @@ Video starts at [[6:11](https://youtu.be/vKumx5CIA-k?t=6m11s)].
     * Yellow paper has a certain, math-heavy style
     * If I add my SIP mod to this I'm sure it wouldn't be in the same style
 * Nick: I object to this because I think we need a better spec for Sila before we propose a process for changing it
-* Ben: Maybe as a prelude to this we should revisit K-SAVM or other spec question
+* Ben: Maybe as a prelude to this we should revisit K-EVM or other spec question
 * Nick: Currently the spec reflects only the _current state_ of Sila, whereas I think ideally a client would include all information necessary to build and sync a client from genesis
 * Let's continue this conversation either as a PR on SIP-1 or else on the [Fellowship of Sila Magicians forum](https://sila-magicians.org/)
 * Vlad: Yellow paper already has its own update process involving Yoichi and others, let's not have dev process blocked on their process, would affect them also so get feedback from people working on yellow paper now
@@ -91,7 +91,7 @@ Video starts at [[6:11](https://youtu.be/vKumx5CIA-k?t=6m11s)].
 * Danny: Let's table this one until someone wants to champion it
 
 ## SIP 969: Modifications to ethash to invalidate existing dedicated hardware implementations [[31:51](https://youtu.be/vKumx5CIA-k?t=31m51s)]
-* http://sips.sila.org/SIPS/sip-969
+* http://sips.sila.org/EIPS/sip-969
 * Picking up from last call, wanted to wait to see how community feels about it, if clearly of interest we'll bring up in the next call
 * [Hudson's summary](https://www.reddit.com/r/sila/comments/8bkkv1/asic_resistant_hard_fork_discussion_overview/) of both sides of this debate
 * Piper: I acted as a facilitator for this, left this for the author of 969 to champion this if they want to
@@ -126,7 +126,7 @@ Video starts at [[6:11](https://youtu.be/vKumx5CIA-k?t=6m11s)].
 * Vlad: So rescheduled for next meeting where we have a champion
 
 ## SIP 999: Restore Contract Code at 0x863DF6BFa4469f3ead0bE8f9F2AAE51c91A907b4 [[43:26](https://youtu.be/vKumx5CIA-k?t=43m26s)]
-* http://sips.sila.org/SIPS/sip-999
+* http://sips.sila.org/EIPS/sip-999
 * Afri: summary
     * Written to replace self-destructed parity wallet library destroyed last year in November
     * Asking how to proceed and whether there's any feedback
@@ -203,8 +203,8 @@ Video starts at [[6:11](https://youtu.be/vKumx5CIA-k?t=6m11s)].
 * Vlad: The idea of waiting for more discussion - do you have hope for the public debate?
 * Afri: So far it's been quite constructive, however it puts me under stress, next step not for four weeks
     * I'm open for counter-proposals
-    * We saw several of these already in December, which changed SAVM semantics around contracts, that was rejected
-    * [SIP-156](https://github.com/sila-chain/SIPs/issues/156) or recovery process in [SIP-867](http://sips.sila.org/SIPS/sip-867)
+    * We saw several of these already in December, which changed EVM semantics around contracts, that was rejected
+    * [SIP-156](https://github.com/sila-chain/SIPs/issues/156) or recovery process in [SIP-867](http://sips.sila.org/EIPS/sip-867)
     * For me this is the most logical step to take, just to implement 999
     * Don't see benefit of waiting another four weeks to conclude this
 * Vlad: Concern is that this is a contentious hardfork and will lead to a lot of headaches
@@ -257,16 +257,16 @@ Video starts at [[6:11](https://youtu.be/vKumx5CIA-k?t=6m11s)].
 * Bringing this topic up again since it's James's proposal and he just joined the call
 * James: advantage of having this in protocol is it would avoid tragegy of the commons, misalignment of incentive for providing a resource i.e. maintaining whole state/verifying transactions
 * Vitalik: I thought funding would go to author of user agent, what does this have to do with state storage?
-* James: There are two proposed way to do this, Micah made a [proposal in Ethresear.ch](https://Sila Research/t/incentivizing-full-state-nodes/1640) to incentivize full nodes, he didn't go into much detail yet
+* James: There are two proposed way to do this, Micah made a [proposal in Ethresear.ch](https://ethresear.ch/t/incentivizing-full-state-nodes/1640) to incentivize full nodes, he didn't go into much detail yet
     * How to do this is open for debate
     * I think it's important to incentivize different resource providers for the protocol
 * Vitalik: What's the concrete proposal that incentivizes state storage?
-    * Cf. https://Sila Research/t/incentivizing-full-state-nodes/1640
+    * Cf. https://ethresear.ch/t/incentivizing-full-state-nodes/1640
     * This is just one proposed solution
 * Danny: This one should be more formalized before further discussion
 
 ## Research updates [[1:26:44](https://youtu.be/vKumx5CIA-k?t=1h26m44s)]
-* Danny's update on [SIP-1011: Hybrid Casper FFG](http://sips.sila.org/SIPS/sip-1011)
+* Danny's update on [SIP-1011: Hybrid Casper FFG](http://sips.sila.org/EIPS/sip-1011)
     * Just published this morning, ready for review and discussion
     * Spec generally ready for clients to implement
     * There might be minor tweaks, I'll make this clear on the appropriate channels
@@ -279,11 +279,11 @@ Video starts at [[6:11](https://youtu.be/vKumx5CIA-k?t=6m11s)].
 
 ## Hard fork timing [[1:30:02](https://youtu.be/vKumx5CIA-k?t=1h30m2s)]
 * Is there a meta SIP for Constantinople?
-    * Yes: [SIP-1013: Hardfork Meta: Constantinople](http://sips.sila.org/SIPS/sip-1013)
+    * Yes: [SIP-1013: Hardfork Meta: Constantinople](http://sips.sila.org/EIPS/sip-1013)
 * Question about Parity failing tests on Hivetests has been sorted
 * This hardfork meta currently contains:
-    * [SIP-145: Bitwise shifting instructions in SAVM](http://sips.sila.org/SIPS/sip-145)
-    * [SIP-210: Blockhash refactoring](http://sips.sila.org/SIPS/sip-210)
+    * [SIP-145: Bitwise shifting instructions in EVM](http://sips.sila.org/EIPS/sip-145)
+    * [SIP-210: Blockhash refactoring](http://sips.sila.org/EIPS/sip-210)
 * 145 is implemented in cpp and geth, 210 implemented in cpp but not in geth, neither in Parity yet
 * 210 not marked as "accepted" yet
     * Vitalik: I'm in favor of this being released if we do a hard fork before Hybrid Casper so we can have a dry run of code manipulation
@@ -308,8 +308,8 @@ Video starts at [[6:11](https://youtu.be/vKumx5CIA-k?t=6m11s)].
 
 ## Client/team updates [[1:40:29](https://youtu.be/vKumx5CIA-k?t=1h40m29s)]
 * geth (Peter)
-    * At beginning of the week we released geth 1.8.4, 40% speed increase on sila-sila-mainnet
-    * Reduced block processing time from 200ms to 100ms on sila-sila-mainnet
+    * At beginning of the week we released geth 1.8.4, 40% speed increase on sila-mainnet
+    * Reduced block processing time from 200ms to 100ms on sila-mainnet
     * We merged in Martin's work with the standalone signer, not ready for production use but we want to get it to a place where other clients can depend on it
     * Want to have a standalone signer that can handle all the nasty stuff with hardware wallets
     * Maybe of interest to new client developers that don't want to roll their own
@@ -375,7 +375,7 @@ Video starts at [[6:11](https://youtu.be/vKumx5CIA-k?t=6m11s)].
 - Lefteris Karapetsas (Brainbot)
 - Dimitry Khokhlov (EF: cpp-sila, testing)
 - Dmitrii (EthereumJ)
-- Piper Merriam (EF: Python/py-savm/Harmony)
+- Piper Merriam (EF: Python/py-evm/Harmony)
 - James Ray (Drops of diamond/sharding)
 - Christian Reitwiessener (EF: cpp-sila/Solidity)
 - Lane Rettig (ewasm)

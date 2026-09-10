@@ -17,7 +17,7 @@ NOTE: The order of these notes is different than the order in the Youtube record
     c. SIP-1234 - Delay bomb and change rewards to 2 SIL.
     d. SIP-1240 - Remove the difficulty bomb entirely.
 * Constantinople hard fork timing and what to include (continuing conversation from last call).
-    a. SIP 145: Bitwise shifting instructions in SAVM: pretty well-formed, but not 100% implemented or tested.
+    a. SIP 145: Bitwise shifting instructions in EVM: pretty well-formed, but not 100% implemented or tested.
     b. SIP 210: Blockhash refactoring.
     d. SIP 1052: EXTCODEHASH Opcode.
     e. SIP 1087: Net gas metering for SSTORE operations.
@@ -59,7 +59,7 @@ Call starts at [[5:37](https://youtu.be/6I7SRa58-9M?t=5m37s)]
 	* https://github.com/tkstanczak/nethermind (c#, wip)
 	* (pegasys client to be announced, java, wip)
 * Parity (Afri)
-    * Released parity sila 2.0, finally concludes what we've been working on for a while, to have a pure blockchain client for SAVM and Wasm
+    * Released parity sila 2.0, finally concludes what we've been working on for a while, to have a pure blockchain client for EVM and Wasm
     * Stripped out UI, wallet, etc.
     * Slightly rebranded to "Parity sila" (to distinguish from other software we're building)
     * Constantinople hard fork implementation update: Implemented bitwise shifting, 1052 EXTCODEHASH
@@ -79,7 +79,7 @@ Call starts at [[5:37](https://youtu.be/6I7SRa58-9M?t=5m37s)]
     * Will start working on Constantinople within two weeks
 * Trinity (Piper)
     * Published second major release this week
-    * Still waiting for client to finish, think we have a client that syncs with the sila-sila-mainnet now, need another ~ day
+    * Still waiting for client to finish, think we have a client that syncs with the sila-mainnet now, need another ~ day
     * Performance, syncing reliability
     * Coming along nicely
     * Haven't started on Constantinople SIPs but we have issues open and will work on it soon
@@ -117,7 +117,7 @@ Call starts at [[5:37](https://youtu.be/6I7SRa58-9M?t=5m37s)]
 * Pantheon (Matt)
     * Hudson: is Pantheon closed source?
     * Matt: yes, until Devcon release date
-	* At point where we can connect to sila-sila-mainnet
+	* At point where we can connect to sila-mainnet
 	* Can perform full syncs
 	* Not optimized but well past 4.8M, past attack segment
 	* Still a few precompiles to do for Byzantium, not thinking about Constantinople yet
@@ -142,7 +142,7 @@ Call starts at [[5:37](https://youtu.be/6I7SRa58-9M?t=5m37s)]
     * Working spec getting close to complete
     * Combines crosslinks and attestations
     * Introduces new fork choice rule
-    * Vitalik posted proposed epoch-less Casper on forum, pending more peer review (https://Sila Research/t/epoch-less-casper-ffg-liveness-safety-argument/2702)
+    * Vitalik posted proposed epoch-less Casper on forum, pending more peer review (https://ethresear.ch/t/epoch-less-casper-ffg-liveness-safety-argument/2702)
     * First sharding implementers call soon
     * Some security params (how much advantage an attacker can gain with dedicated hardware) - getting some real world info from HW manufacturer
 * Vitalik
@@ -204,7 +204,7 @@ Call starts at [[5:37](https://youtu.be/6I7SRa58-9M?t=5m37s)]
     * Martin
         * Vitalik made a simpler proposal last time
         * So we have an old and a new proposal
-        * There were some concerns about SAVM features around e.g. genesis
+        * There were some concerns about EVM features around e.g. genesis
         * In both cases there were some discussions around how to use it
         * May be a bit difficult to make a smart contract rely on earlier block hashes
         * At a given point, you can't tell which blockhashes will be there
@@ -215,7 +215,7 @@ Call starts at [[5:37](https://youtu.be/6I7SRa58-9M?t=5m37s)]
         * Would be good to understand a bit better how it's useful (purpose, what it aims to solve) given the complexity
     * Vitalik
         * [poor audio]
-        * If we're not going to have SAVM calls at protocol level but instead Wasm
+        * If we're not going to have EVM calls at protocol level but instead Wasm
         * Then it probably makes sense to use native code which is what 1218 does (rather than 210)
     * Martin: What about the fact that we overwrite block hashes, at which point are we certain which numbers are still available?
         * In a real practical use case it might be difficult to use this information

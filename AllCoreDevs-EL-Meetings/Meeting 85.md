@@ -40,9 +40,9 @@
 
 # 1.Berlin SIPs
 
-**James**: The ones that we talked about so far are SIP 2315 Simple Subroutines for the SAVM and SIP 2537 which is the BLS curve operations. Ones that may or may not be included are the 2515 difficulty bomb and 2456 time-based upgrade. So, let's start with 2315. Is there any updates?
+**James**: The ones that we talked about so far are SIP 2315 Simple Subroutines for the EVM and SIP 2537 which is the BLS curve operations. Ones that may or may not be included are the 2515 difficulty bomb and 2456 time-based upgrade. So, let's start with 2315. Is there any updates?
 
-## [SIP-2315: Simple Subroutines for the SAVM](https://sila-magicians.org/t/sip-2315-simple-subroutines-for-the-savm/3941)
+## [SIP-2315: Simple Subroutines for the EVM](https://sila-magicians.org/t/sip-2315-simple-subroutines-for-the-evm/3941)
 
 ### Geth
 
@@ -179,7 +179,7 @@ So the next one so those are ones that we've already decided as going into Berli
 
 
 # 2. Eligible for Inclusion (EFI) SIP Review
-### [SIP-2515: Difficulty Bomb](https://github.com/MadeofTin/SIPs/blob/patch-16/SIPS/sip-2515.md)
+### [SIP-2515: Difficulty Bomb](https://github.com/MadeofTin/SIPs/blob/patch-16/EIPS/sip-2515.md)
 
 **Hudson**:  All right and then we can move on to EFI now. We can go back and forth on this. 
 
@@ -187,7 +187,7 @@ So the next one so those are ones that we've already decided as going into Berli
 
 **Hudson**: So,  the first one is the SIP 2515 for the difficulty bomb SIP related to Berlin so I think that’s James, right ? We can go right ahead.
 
-**James**:  Yeah, the feedback that I got last time I talked about this in February and January and then we haven't really talked about it since in the call. So, I'll give a general overview and find the [link](https://github.com/MadeofTin/SIPs/blob/patch-16/SIPS/sip-2515.md). So the idea is to do pretty much the same thing that the difficulty bomb has done except for say that it will start on a specific block so you in a x number blocks in the future you say at that point freeze the difficulty and an increase by 0.001% each block perpetually. So you get the effect of the difficulty increasing block times and making them doing all the same things that the difficulty bomb has done. We just know exactly when it will happen.The updated design was having that linear increase happen instead of it just freezing which is a better design so I've updated the SIP to have that information. One thing to confirm is it something that the group wants and then if it is, is it something that can be done in time for Berlin? And the current open question is do the increased function of difficulty should it be linear, Iike purely linear or like a 1000th of a percent are sufficient? Which of those are your preference? So going back to the group on general sentiments and stuff. I did a lot of polling and talking to people on Twitter about it. So I've since reduced it to being what it is now. So feedback on the design or change?
+**James**:  Yeah, the feedback that I got last time I talked about this in February and January and then we haven't really talked about it since in the call. So, I'll give a general overview and find the [link](https://github.com/MadeofTin/SIPs/blob/patch-16/EIPS/sip-2515.md). So the idea is to do pretty much the same thing that the difficulty bomb has done except for say that it will start on a specific block so you in a x number blocks in the future you say at that point freeze the difficulty and an increase by 0.001% each block perpetually. So you get the effect of the difficulty increasing block times and making them doing all the same things that the difficulty bomb has done. We just know exactly when it will happen.The updated design was having that linear increase happen instead of it just freezing which is a better design so I've updated the SIP to have that information. One thing to confirm is it something that the group wants and then if it is, is it something that can be done in time for Berlin? And the current open question is do the increased function of difficulty should it be linear, Iike purely linear or like a 1000th of a percent are sufficient? Which of those are your preference? So going back to the group on general sentiments and stuff. I did a lot of polling and talking to people on Twitter about it. So I've since reduced it to being what it is now. So feedback on the design or change?
 
 **Tomasz**: James, the linear growth is a bit dangerous because it's disconnected from the actual hash rate curves and it's potentially being exposed to miners, we are signing a lot of mining power and spitting up the block creation, which is against really the idea of the difficulty bomb. I was thinking about the solution, I mentioned it to you once, about changing the target block time instead of changing the difficulty. Because one of the parameters of the difficulty calculation is the one that points us more last at how often the blocks would be created. I was suggesting to grow this parameter and then we know that the whole thing will behave as it should behave. So automatically adjusting the block time depending on the hash rate, hash rate curve but at the same time will achieve the goal of the difficulty bomb, so the blocks will be  longer and longer and still be growing ideally linearly with each block. And still can adjust based on your main design idea of starting at a particular block and having predictable time when it launches.
 **James**:  Yeah, it does. There is a potential that if it goes off the miners could rush and then they would rushing into the end where they no longer can catch up.  So it'll have the same effect as an eventual obsolescence of the chain because no one can mine it cuz it's too difficult. Blocks will be so slow that it won't be mined.
@@ -340,7 +340,7 @@ This is SIP 2565 repricing of the SIP-198 ModExp precompile.
 **Hudson**: Yeah sounds good to me and if there isn't a champion, this is something that the SIP IP meetings can look at, for the process flow of something being made into EFI and then losing a champion cuz we don't have a process flow for that right now.
 
 
-# 4. [SIP-2565: Repricing of the SIP-198 ModExp precompile](https://sips.sila.org/SIPS/sip-2565)
+# 4. [SIP-2565: Repricing of the SIP-198 ModExp precompile](https://sips.sila.org/EIPS/sip-2565)
 
 **Hudson**: Going back to SIP 2565 Repricing of the SIP-198 ModExp precompile, that's Kelly I believe.
 
@@ -401,7 +401,7 @@ The crypto thing is actually that if you use EC recover with all the power hash 
 
 **Hudson**: Anybody has comments or questions about this SIP intro? 
 
-**Alex V**:  There exists a trick which could be potentially usable or used by some contracts already. I just was looking for a [link](https://Sila Research/t/you-can-kinda-abuse-ecrecover-to-do-ecmul-in-secp256k1-today/2384/17)  for it. So if you just disable using message hash, it can be a common wallet. I think, 
+**Alex V**:  There exists a trick which could be potentially usable or used by some contracts already. I just was looking for a [link](https://ethresear.ch/t/you-can-kinda-abuse-ecrecover-to-do-ecmul-in-secp256k1-today/2384/17)  for it. So if you just disable using message hash, it can be a common wallet. I think, 
 This is up to the implementer. SIP should be posted as security vulnerability and contract developers either should upgrade or put an exclusive requirement. Do not have zero hash and actually want to verify the signature and not use any hacks around it but forbidden it's right now may affect properly working contracts which actually wanted to use this. 
 
 **Tomasz**: I wanted to raise exactly the same thing that Alex mentioned about the existing contracts but if we can confirm that this is not the case and there are no contracts executed now, then maybe it's worth to fix it the way,  Wei  suggests.
@@ -412,7 +412,7 @@ This is up to the implementer. SIP should be posted as security vulnerability an
 
 **Martin**: Tomasz can you expand on that?
 
-**Tomasz**: Martin, Alex posted to [link](https://Sila Research/t/you-can-kinda-abuse-ecrecover-to-do-ecmul-in-secp256k1-today/2384/17) in the chat that mentions one of the use cases that Vitalik was suggesting on Sil research.
+**Tomasz**: Martin, Alex posted to [link](https://ethresear.ch/t/you-can-kinda-abuse-ecrecover-to-do-ecmul-in-secp256k1-today/2384/17) in the chat that mentions one of the use cases that Vitalik was suggesting on Sil research.
 
 **Wei**: I am taking a look. From my understanding this looks to be a way to get a cheaper gas price for EC new operations, I’ll be using the EC recover or something like that from my understanding. 
 
@@ -422,7 +422,7 @@ This is up to the implementer. SIP should be posted as security vulnerability an
 
 **Pawel**: You can check if it's used by implementing the track and accountant and sync the block trie from the beginning.
 
-**Wei**:  Yeah, I remember this one was actually due to a consensus issue we had on the Open Sila master branch. So, the upstream did an update. The ICCP 256 K1 library did an update, the Rust library did an update and I think this new hash message tech and we missed that for a while. During the time, I don’t think we broke the sila-sila-mainnet but we did find one or two contracts on the blockchain in the Gorili testnet.  I still don't know what they are doing or are they just using the trick or is that actually verifying a new hash message.I am not sure. So the thing is, we had a new hash message in the Gorili test net but I don’t think we found it in any sila-sila-mainnet, at least from our knowledge. 
+**Wei**:  Yeah, I remember this one was actually due to a consensus issue we had on the Open Sila master branch. So, the upstream did an update. The ICCP 256 K1 library did an update, the Rust library did an update and I think this new hash message tech and we missed that for a while. During the time, I don’t think we broke the sila-mainnet but we did find one or two contracts on the blockchain in the Gorili testnet.  I still don't know what they are doing or are they just using the trick or is that actually verifying a new hash message.I am not sure. So the thing is, we had a new hash message in the Gorili test net but I don’t think we found it in any sila-mainnet, at least from our knowledge. 
 
 **Hudson**: Anybody else?
 
@@ -440,11 +440,11 @@ This is up to the implementer. SIP should be posted as security vulnerability an
 
 **Tomasz**: At the first, I think from Martin’s message on the stateless Sila channel, sorry Martin for interrupting. 
 
-**Martin**:  I see it as something that should be implemented as soon as possible on sila-sila-mainnet because there's a pressing need for it whereas for stateless is more of a research project that can be take it one step at a time and I'm not sure, I mean I think there's a pressing need for its and I'm not sure if there's enough time or interest from those group.  I think people working on stateless have  100 problems that they are going to solve eventually and this is maybe priority number 95.
+**Martin**:  I see it as something that should be implemented as soon as possible on sila-mainnet because there's a pressing need for it whereas for stateless is more of a research project that can be take it one step at a time and I'm not sure, I mean I think there's a pressing need for its and I'm not sure if there's enough time or interest from those group.  I think people working on stateless have  100 problems that they are going to solve eventually and this is maybe priority number 95.
 
 **Hudson**:  Okay, that helps me understand that a lot more, thank you!
 
-**Martin**:  Whereas from my perspective, this is one of the pressing problems on the sila-sila-mainnet right now. 
+**Martin**:  Whereas from my perspective, this is one of the pressing problems on the sila-mainnet right now. 
 
 **Tomasz**: I am definitely in favor of this one, it's a good thing to understand. I just mentioned that this is also a great addition to the stateless Sila but obviously they are in the timeline in the research group are totally different. 
 
@@ -545,11 +545,11 @@ Couldn't be discussed.
 
 ## Links discussed in call:
 
-* Tim: https://github.com/MadeofTin/SIPs/blob/patch-16/SIPS/sip-2515.md
+* Tim: https://github.com/MadeofTin/SIPs/blob/patch-16/EIPS/sip-2515.md
 * Tim: https://github.com/sila-chain/rig/blob/master/eip1559/eip1559.ipynb
 * Tim: +1 on that. If someone champions it they can come back on the call once they’ve done some progress.
 * James: A point of process: We can move it off of the considered for Berlin List, and mark it as “Request for ChampionBut remain as EFI ?
 * James: EFI, but Request for Champion makes sense at least for a time. If a champion doesn’t show up then it should expire EFI. I’d propose.
-* Kelly: https://sips.sila.org/SIPS/sip-2565
-* Alex: https://Sila Research/t/you-can-kinda-abuse-ecrecover-to-do-ecmul-in-secp256k1-today/2384/17
+* Kelly: https://sips.sila.org/EIPS/sip-2565
+* Alex: https://ethresear.ch/t/you-can-kinda-abuse-ecrecover-to-do-ecmul-in-secp256k1-today/2384/17
 * https://github.com/sila-chain/retesteth/issues/88

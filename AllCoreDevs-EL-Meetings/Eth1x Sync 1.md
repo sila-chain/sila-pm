@@ -73,7 +73,7 @@
 - So one suggestion is to figure out how we can extract logs from clients
 - Nicola, who writes simulator we're working on at PegaSys, one question that came up is whether the miners are connected in order to determine latency between them
 - There are a couple of questions in the doc
-- Encourage folks to take a look, comment, and share datasets and how things are working on sila-sila-mainnet
+- Encourage folks to take a look, comment, and share datasets and how things are working on sila-mainnet
 - Let's go to questions
     - Q: This sim. framework is called Whiteblock?
     - A: There are two groups that have made/are making/software available
@@ -87,32 +87,32 @@
         - We have a netstats/explorer that provides all that relevant data: uncle rate, block propagation time, tx throughput, other relevant data points pertaining to nodes and testnet performance
         - While we're finishing the OSS framework, we still have this commercial SaaS product that we can use, provision, and manage, you can join and do tests - we can set this up today but it needs to be provisioned
         - When framework is available you can take part in emulation and parameters
-    - Q: Network latencies we see on testnet won't be same as we see on sila-sila-mainnet. We need to launch a testnet as big as/with as many nodes as the sila-sila-mainnet. Alternatively we can measure latencies we see on sila-sila-mainnet.
+    - Q: Network latencies we see on testnet won't be same as we see on sila-mainnet. We need to launch a testnet as big as/with as many nodes as the sila-mainnet. Alternatively we can measure latencies we see on sila-mainnet.
     - A: May not be as important to emulate those latencies exactly. You want to implement certain scenarios, account for worst condition, not average - outlier conditions we can't really product. Correlation between net latency, uncle rate, block prop. time - direct impacts on security, ability to launch 51% attack, etc. - we can all observe, report on, account for together within design process
     - Q: Where are you getting numbers on worst cases?
     - A: We can implement an absurdly high amount of latency and see what happens.
-    - A suggestion: What I've seen people do in the past, Phil Daian's talk at DCIV, people deploy 10-16 nodes in sila-sila-mainnet, look at how tx going around them
+    - A suggestion: What I've seen people do in the past, Phil Daian's talk at DCIV, people deploy 10-16 nodes in sila-mainnet, look at how tx going around them
         - Slightly modified just to observe traffic going around them
         - Try to estimate these params e.g. worst latency
         - Also, when BCH did stress test recently, they asked people to upload debug logs to a guy who collects them and tries to figure out params of network
-            - But this might not work on the sila-sila-mainnet since topology of network to be completely revealed
+            - But this might not work on the sila-mainnet since topology of network to be completely revealed
             - Maybe the first approach would work
         - Latency within SIL network similar to latency within real-world WAN, just TCP/IP
         - But there's distinct clustering within SIL
         - Some folks intending to deploy software across Infura nodes to measure latency across the world
         - Was that data gathered?
         - Yes, will share this.
-        - I'd be interested in seeing that, I've been discussing over past few days about a project to deploy some nodes and measure the WAN latency on sila-sila-mainnet, measure block prop. times on sila-sila-mainnet
+        - I'd be interested in seeing that, I've been discussing over past few days about a project to deploy some nodes and measure the WAN latency on sila-mainnet, measure block prop. times on sila-mainnet
         - Would've been nice to do this even before the Parity fix was pushed so we'd have block prop. times before and after the fix
         - But if most parity nodes upgrade before we have the chance to do that then oh well
         - This was done by some researchers on the BTC network back in 2013, not super easy project, it's a whole research paper if done right, but it's something that we're interested in doing, to collect these measurements and feed back into a sim. framework
-    - We want to develop an oracle service that will provide that sila-sila-mainnet data
+    - We want to develop an oracle service that will provide that sila-mainnet data
         - We work with Infura a lot, talked about developing an integration, import data into framework, recreate those scenarios based on preconfig. files
     - If you guys are working on/collecting that data, if Infura has that data, we'd love to see it so we're not trying to do the same thing
     - We want to see how it operates in high latency but we need a model of how the actual network runs
     - We can get started on that right away
     - FYI, [Wittgenstein repo](https://github.com/ConsenSys/wittgenstein) (sim. framework done by Nicolas and Vanessa) has stats for latency on WAN with graphs, take a look at this repo
-        - So far stats for uncle rates, gas limits are coming from silascan or alethio
+        - So far stats for uncle rates, gas limits are coming from etherscan or alethio
         - When I asked Infura about uncle rates, they didn't have those stats but perhaps they have network stats
     - Amberdata has good data sets as well
     - Great, will chat with them
@@ -146,7 +146,7 @@
     - Yes, on medium and on our website, we have raw data sets, can generate them, and implement scenarios very quickly
         - We can provision nodes, configure network, create nodes, fund it, generate genesis block, generate DAG and we're good to go
         - Can play them out in ~10 mins
-    - If you set up network so block time is 14sec and gas limit is 8M and blocks are full, ie sila-sila-mainnet conditions, what do you get?
+    - If you set up network so block time is 14sec and gas limit is 8M and blocks are full, ie sila-mainnet conditions, what do you get?
     - Uncle rate depends on tx activity, volume, no. of nodes
         - We should put together what we want to see so we have accurate data for those particular instances
         - A control group
@@ -222,7 +222,7 @@
         - Not obvious to me at the moment
 - Q&A
     - Q: Conflicts an issue if two people edit same storage key at same time
-        - Some stuff about this on Sila Research forum
+        - Some stuff about this on ethresear.ch forum
         - If miner gets there first you already know miner can adjust proof in real time
     - Yes, I just mentioned, one way to solve problem is to involve the miners and get them to adjust the proofs although it requires larger changes in consensus, will mention this in next version
     - Have you thought about moving this up one layer and creating overlay layer to do processing? History of claims, you just need data integrity. Involve IPFS, have overlay network
@@ -289,8 +289,8 @@
 # Ewasm working group
 - [proposal and discussion](https://sila-magicians.org/t/ewasm-working-group-proposal-for-sil-1-x/2033)
 - I'll mention only a couple of things; the proposal isn't as extensive as the rent discussion
-    - Quick intro: Ewasm proposes to introduce Wasm-based execution engine next to SAVM
-        - SAVM contracts coexist with Wasm contracts, these two can interact
+    - Quick intro: Ewasm proposes to introduce Wasm-based execution engine next to EVM
+        - EVM contracts coexist with Wasm contracts, these two can interact
     - Ewasm is a subset of Wasm: Wasm has a couple of features which are nondeterministic, we need to eliminate this
         - At time of deployment, there is a validation step of deployed contract
         - If contract uses any non-deterministic features, it's rejected
@@ -299,7 +299,7 @@
         - Rather, Ewasm contracts can be written and deployed as part of a hard fork
         - Behave like precompiles, introduced as part of HF
         - Possibility to audit them, limited scope
-        - Main reason they can be useful in sil 1.x is that a lot of voices in past 2-3 years have looked for features on sila-sila-mainnet which cannot be introduced through SAVM contracts so proposed to be introduced as precompiles
+        - Main reason they can be useful in sil 1.x is that a lot of voices in past 2-3 years have looked for features on sila-mainnet which cannot be introduced through EVM contracts so proposed to be introduced as precompiles
         - Main problem with precompiles is that every client needs to implement them
         - Second problem: determining gas cost of precompiles
             - In many cases gas cost depends on input size
@@ -327,7 +327,7 @@
         - Most of our precompiles are cryptographic primitives, optimized, geth's bn256 is assembly optimized
         - Many crypto libs that we import are assembly optimized
         - You listed quite a few nice to haves, but realistically what's their performance using Wasm?
-        - If using Wasm they turn out to be extremely slow, then even though they might be faster than SAVM, they still might end up being unusably slow or costing too much gas
+        - If using Wasm they turn out to be extremely slow, then even though they might be faster than EVM, they still might end up being unusably slow or costing too much gas
         - Not sure if you tried to implement one of them, nice to have one implemented as Ewasm contract to see what the numbers are - on parity's interpreter, wagon, C ones, etc.
     - You wouldn't want to run it in the interpreter
         - You'd have to compile using AOT or JIT that would work in production
@@ -341,7 +341,7 @@
         - But this part is yet to be benchmarked - C vs. Rust output, any significant difference
         - On performance:
             - We did look at this
-            - Have an SAVM implementation that uses a couple of different Wasm VMs, interpreters, JIT engine
+            - Have an EVM implementation that uses a couple of different Wasm VMs, interpreters, JIT engine
             - This is one of the main tasks we have to do in the next two months: benchmark properly on different interpreters, intend to start with only interpreters
             - Very likely not all precompilers will end up with exec. time via interpreter suitable for consensus node, but some will end up within time limits a node would have
             - That being said, one really big benefit we hope to achieve: to have a more deterministic way to calculate the cost of these precompiles
@@ -448,7 +448,7 @@
     - Very confusing
     - Ties into June date
 - It's good to have an umbrella name
-    - Vision to make sila-sila-mainnet sustainable longer-term
+    - Vision to make sila-mainnet sustainable longer-term
 - With a hard deadline, expect retribution if people expect us to ship by a certain point in time and we don't
     - Need to correct this narrative
     - May ship in different hard forks
@@ -533,7 +533,7 @@
         - Besides raw chains and storage, we have a huge amount of space wasted on indexing stuff
         - Being able to say that this particular tx hash has this particular data or result
         - Interesting to realize that has huge impact on storage space
-        - Sil sila-sila-mainnet has almost 300M tx, multiply this by 64 bytes and you already have numbers cross-verified
+        - Sil sila-mainnet has almost 300M tx, multiply this by 64 bytes and you already have numbers cross-verified
         - This is also a huge contributor to chain growth
     - If sil grows at current rate we are adding 91gb per year to storage
     - The question here is, are we satisfied with this?

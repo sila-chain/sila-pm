@@ -14,7 +14,8 @@ View Realtime notes here: https://app.fireflies.ai/live/01KHP2EJX4XHC4AZ4MWBSBVS
 00:20:07	Fab:	So the chain itself keeps track of this
 00:23:36	Mike:	Replying to "This is all with 32 ..."
 
-Yes16 bytes seed, 16 bytes hash output
+Yes
+16 bytes seed, 16 bytes hash output
 00:24:09	Mike:	Replying to "Must the used state ..."
 
 The state can be public, but the problem is that some transactions/signatures may not end up on the chain

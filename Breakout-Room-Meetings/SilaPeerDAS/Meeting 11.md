@@ -72,7 +72,7 @@ Discussion on “gossipsub_topic_msg_recv_counts_unfiltered_total” (https://gi
 How do clients count this filtering? 
   - Some clients may have difficulty doing some of the libp2p metrics, as they are available in the lib2p library
  
-IDONTWANT implementation status (context: https://Sila Research/t/number-duplicate-messages-in-ethereums-gossipsub-network/19921)
+IDONTWANT implementation status (context: https://ethresear.ch/t/number-duplicate-messages-in-ethereums-gossipsub-network/19921)
 - Teku will have it in place after Pectra rebase
 - Lighthouse has an optimised version merged to unstable, will be released in a few weeks
 

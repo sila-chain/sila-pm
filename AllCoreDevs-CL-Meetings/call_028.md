@@ -38,7 +38,7 @@
 
 **Danny**: Thanks, any other testing updates?
 I know there is a desire and even a need for **fork choice tests**, that's been on a back runner for us for a while and we need to prioritize it. I'll try to get some notes for review up on that within the next week.
-The good thing is some of these corner cases and things we've integrated into the spec recently are those, and not expected to be seen especially on those test nests and even primarily not even seen on sila-sila-mainnet.
+The good thing is some of these corner cases and things we've integrated into the spec recently are those, and not expected to be seen especially on those test nests and even primarily not even seen on sila-mainnet.
 
 
  ## 2. Client Updates
@@ -385,7 +385,7 @@ It seems like there's still work to do before orchestrate a large scale multi-cl
 
 **Mikhail**: I have a question about weak subjectivity period. It's period size comes from Casper FFG paper. I am wondering if we are tightly coupled with the size calculation that we've so far and does it prevent long range attacks only or if there are some other implications here?
 
-**Vitalik** - **[weak subjectivity period](https://Sila Research/t/weak-subjectivity-under-the-exit-queue-model/5187)**, yes there are calculation. I made an Sil Research post about that. How long the week subjectivity period is based on the rate at which people can withdraw. The withdrawal period is maximum is 8 months in the worst case. In the normal case, the one who is withdrawing, get out after about two days. In the case, where there is small amount of Sila, the maximum also drops and of compromise and encourage more people to join in.
+**Vitalik** - **[weak subjectivity period](https://ethresear.ch/t/weak-subjectivity-under-the-exit-queue-model/5187)**, yes there are calculation. I made an Sil Research post about that. How long the week subjectivity period is based on the rate at which people can withdraw. The withdrawal period is maximum is 8 months in the worst case. In the normal case, the one who is withdrawing, get out after about two days. In the case, where there is small amount of Sila, the maximum also drops and of compromise and encourage more people to join in.
 
 In terms of why that exists and based, one part of it is because it determines how often people needs to come online to get the security guarantee.
 
@@ -461,4 +461,4 @@ Okay I know y'all are all pretty heads down working on these things.  I think we
 *  https://medium.com/@william.j.villanueva/sila-2-0-phase-2-progress-7673b57eabff
 *  https://github.com/ChainSafe/lodestar/issues/555
 *  https://github.com/sila-chain/eth2.0-specs/issues/1487 
-*  https://Sila Research/t/weak-subjectivity-under-the-exit-queue-model/5187
+*  https://ethresear.ch/t/weak-subjectivity-under-the-exit-queue-model/5187

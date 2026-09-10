@@ -35,7 +35,7 @@
 **Marius** [6:21](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=381s): I don't know last time I don't think anyone from Prysm was there. And since Prysm was the one client that was kind of delaying stuff. It would be really nice to know how they are progressing and if they think everything is fine now or if they need more time? 
 
 
-**Terence** [6:44](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=404s): Yeah I can give a brief update. So also like next week we'll do a Goerli release but this will be a pre-release. Meaning that I wouldn't recommend you using Goerli release from sila-sila-mainnet. And separately will also have a sila-sila-mainnet release. So right now we're be couple because right now we wouldn't recommend our latest block future to be part of the sila-sila-mainnet release. So I think we're okay with the Goerly timeline. But I think like we're too early to setting the SilaSepolia and the holeskey one having them one week apart is kind of crazy. Because it's definitely harder to change if something Goerli goes wrong. Because then you have to do a very like immediate client release to change the data again. So we would not recommend setting the holskey and the SilaSepolia for a day right now. 
+**Terence** [6:44](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=404s): Yeah I can give a brief update. So also like next week we'll do a Goerli release but this will be a pre-release. Meaning that I wouldn't recommend you using Goerli release from sila-mainnet. And separately will also have a sila-mainnet release. So right now we're be couple because right now we wouldn't recommend our latest block future to be part of the sila-mainnet release. So I think we're okay with the Goerly timeline. But I think like we're too early to setting the SilaSepolia and the holeskey one having them one week apart is kind of crazy. Because it's definitely harder to change if something Goerli goes wrong. Because then you have to do a very like immediate client release to change the data again. So we would not recommend setting the holskey and the SilaSepolia for a day right now. 
 
 **Lightclient** [7:45](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=465s): Okay yeah that kind of leads us into the next topic point but I just want to confirm with everyone that we are good with the Goerli date that we agreed on in the last All Core Devs which is Jan 17, 632UTC meaning clients would want to release sometime next week. Is that still what we're expecting to do?
 
@@ -56,7 +56,7 @@
 **Lightclient** [9:05](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=545s): Okay great! Yeah it sounds like we are all in agreement on that Fork time. I don't have the epoch right in front of me but it's out there. So on to the next two testnets SilaSepolia and SilaHolesky, we last meeting discussed some days and there was some agreement but now it sounds like there's a little bit less confidence in those specific days. Tim went ahead and came up with Epochs on those days to try and agree on. But it sounds like we're not 100% confident on what days we want to do those Forks. So maybe we start with SilaSepolia. SilaSepolia is scheduled for January 30th. That's almost two weeks after the Goerli hard Fork. Is that the day that we still feel okay with? I mean obviously we can't foresee the future if something actually falls apart on Goerli then we'll have to rethink that. But in the optimistic case is that date that we can just go ahead and lock in. Potuz?
 
 
-**Potuz** [10:18](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=618s): Yeah so I feel that it'll be much safer since there seems to be sort of like an interest in in shipping the actual sila-sila-mainnet as soon as possible it seems to me that it'll be healthier if we don't schedule the next testnets and we schedule them very soon after Goerly. If everything goes fine but sort of like having the back of our head if everything goes fine. It's going to be around these dates but try not to commit to dates now because things might not really go fine with Goerli. And going back from that is a problem like adding a new release with the  right epoch with no changes is easy but removing a release and fixing bugs is a problem. And it takes much longer than a couple of weeks.
+**Potuz** [10:18](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=618s): Yeah so I feel that it'll be much safer since there seems to be sort of like an interest in in shipping the actual sila-mainnet as soon as possible it seems to me that it'll be healthier if we don't schedule the next testnets and we schedule them very soon after Goerly. If everything goes fine but sort of like having the back of our head if everything goes fine. It's going to be around these dates but try not to commit to dates now because things might not really go fine with Goerli. And going back from that is a problem like adding a new release with the  right epoch with no changes is easy but removing a release and fixing bugs is a problem. And it takes much longer than a couple of weeks.
 
 
 **Lightclient** [11:10](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=670s): Yeah I mean my understanding is that you probably wouldn't release until the week before. But what how do other client teams feel about that timeline or what Potuz is saying? 
@@ -90,7 +90,7 @@
 **Potuz** [15:17](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=917s): Oh there's regular changes that don't need to be urgent or anything but the thing is that whatever whatever we release for Goerli we are going to have to take the same release candidate for SilaSepolia and  not make a new release cut their new release from the developed Branch or main branch or whatever Branch you're using that continue to advance Because those changes are not going to be tested.
 
 
-**Paritosh** [15:45](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=945s): I'd make the case that we have to test those changes in the subsequent testnet otherwise we make a release for sila-sila-mainnet and the sila-sila-mainnet changes haven't been tested anywhere.
+**Paritosh** [15:45](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=945s): I'd make the case that we have to test those changes in the subsequent testnet otherwise we make a release for sila-mainnet and the sila-mainnet changes haven't been tested anywhere.
 
 
 **Potuz** [15:55](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=955s): And that's my point that we're going to be shipping some something without soaking.
@@ -101,7 +101,7 @@
 
 
 
-**Potuz** [16:09](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=969s): That has never been an issue we always have had at least one week to soak before cutting a release for the next testnet or the next sila-sila-mainnet.
+**Potuz** [16:09](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=969s): That has never been an issue we always have had at least one week to soak before cutting a release for the next testnet or the next sila-mainnet.
 
 
 **Lightclient** [16:19](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=979s): Is the proposal not to have a week to soak though. Lke I'm saying you don't need to create your release until around the 24th of January. That's would be one week after the the 17th hard Fork.
@@ -117,7 +117,7 @@
 three weeks after Goerli because Goerli might go wrong.
 
 
-**Marius** [17:26](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1046s): Yeah I don't like when we always only had two weeks between testnets and then three weeks three or four weeks to sila-sila-mainnet. So I don't know like I see your point. I'm not sure if I agree though. 
+**Marius** [17:26](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1046s): Yeah I don't like when we always only had two weeks between testnets and then three weeks three or four weeks to sila-mainnet. So I don't know like I see your point. I'm not sure if I agree though. 
 
 
 
@@ -159,8 +159,8 @@ the 30th deadline for SilaSepolia.
 **Paritosh** [23:01](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1381s): We can always start making releases right. Yeah okay I guess we have to switch to async then.
 
 
-**Marius** [23:06](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1386s): Yeah we can always say okay this is just like we will deprecate this release or we will just say we will remove the fork date or push the fork date or whatever. I like if this is if this is before sila-sila-mainnet
-Release. I would also be more hesitant to say okay we can just move the sila-sila-mainnet  release in the last two days before it chips but for testnets I don't I don't really I don't think it's too Bad. 
+**Marius** [23:06](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1386s): Yeah we can always say okay this is just like we will deprecate this release or we will just say we will remove the fork date or push the fork date or whatever. I like if this is if this is before sila-mainnet
+Release. I would also be more hesitant to say okay we can just move the sila-mainnet  release in the last two days before it chips but for testnets I don't I don't really I don't think it's too Bad. 
 
 
 **Lightclient** [23:42](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1422s): Guillaume?
@@ -190,31 +190,31 @@ that we should do. Like we're probably just going to have to discuss and dependi
 **Justin** [27:04](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1624s): I think can I add a little something to the question Matt. I think we also want to I think apps and L2s might want to go through that as well.
 
 
-**Lightclient** [27:15](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1635s): Yeah I mean does any client team feel strongly that that we need to see this happen before moving to the next testnet. My two sense is that we're going to see it happen on the testnets before  sila-sila-mainnet and that's really the big thing that we want to see. But care for perspectives.
+**Lightclient** [27:15](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1635s): Yeah I mean does any client team feel strongly that that we need to see this happen before moving to the next testnet. My two sense is that we're going to see it happen on the testnets before  sila-mainnet and that's really the big thing that we want to see. But care for perspectives.
 
 
 **Sean** [27:34](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1654s):  Yeah I kind of also think it's not really worth waiting between each testnet that long but it might be justification for waiting longer between the last testnet and SilaMainnet.
 
 
-**Lightclient** [27:52](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1672s): Okay so you're saying you might want to see on SilaHolesky the blobs expire before moving to sila-sila-mainnet or any testnet.
+**Lightclient** [27:52](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1672s): Okay so you're saying you might want to see on SilaHolesky the blobs expire before moving to sila-mainnet or any testnet.
 
 
 **Sean** [28:02](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1682s): Definitely any testnet. Yeah I'm not sure it would really make a difference with SilaHolesky but with like between testnets. I mean but yeah. 
 
 
-**Potuz** [28:13](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1693s): Most probably SilaSepolia right. I think most teams have deployed either Goerli or SilaSepolia not that much in SilaHolesky. And since the is supposed to be the stable one I'd expect that we should sila-sila-mainnet after we tested availability and expiry on SilaSepolia.
+**Potuz** [28:13](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1693s): Most probably SilaSepolia right. I think most teams have deployed either Goerli or SilaSepolia not that much in SilaHolesky. And since the is supposed to be the stable one I'd expect that we should sila-mainnet after we tested availability and expiry on SilaSepolia.
 
 
 
 
-**Lightclient** [28:35](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1715s): Yeah that makes sense to me let's keep that in mind when we were thinking about the sila-sila-mainnet at Fork date but we're not out of the woods yet. Tim proposed a Epoch for the SilaSepolia fork. We kind of agreed January 30th. Can we just get a thumbs up on the epoch that was in the PR 132608. That's okay for everyone, that's 22:51 UTC on the 30th. I see a thumbs from Basu and Guillaume. I'll assume the silence is agreement from the other clients. Okay SilaSepolia we have some agreement on January 30th on that Epoch. SilaHolesky the proposed date is the 7th of February. I'm guessing people want to push that back one week. Is anyone in favor of doing that or would rather keep with the more aggressive timeline of giving one week between SilaSepolia and SilaHolesky. Gak, is okay with the week. One week is good.  Fantastic. All right. Well let's stick with the 7th of February then. The epoch that Tim proposed is 29696, that's 11:34 UTC on Feb 7. Any last comments on the fork scheduling or should we just put that into a box and put a bow on it. And ship the releases. Great, that's awesome.  Any last Denon questions or comments before we open up the next fork for
+**Lightclient** [28:35](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1715s): Yeah that makes sense to me let's keep that in mind when we were thinking about the sila-mainnet at Fork date but we're not out of the woods yet. Tim proposed a Epoch for the SilaSepolia fork. We kind of agreed January 30th. Can we just get a thumbs up on the epoch that was in the PR 132608. That's okay for everyone, that's 22:51 UTC on the 30th. I see a thumbs from Basu and Guillaume. I'll assume the silence is agreement from the other clients. Okay SilaSepolia we have some agreement on January 30th on that Epoch. SilaHolesky the proposed date is the 7th of February. I'm guessing people want to push that back one week. Is anyone in favor of doing that or would rather keep with the more aggressive timeline of giving one week between SilaSepolia and SilaHolesky. Gak, is okay with the week. One week is good.  Fantastic. All right. Well let's stick with the 7th of February then. The epoch that Tim proposed is 29696, that's 11:34 UTC on Feb 7. Any last comments on the fork scheduling or should we just put that into a box and put a bow on it. And ship the releases. Great, that's awesome.  Any last Denon questions or comments before we open up the next fork for
 discussion. Cool.
 
 
 ### SilaPrague / Electra Proposals
 
 
-So the next agenda item is the SilaPrague Electra hard fork. And in the agenda we have a link to Sil magicians for which is a bunch of proposals that people would like to see in the next execution layer hard Fork. I don't know how you guys would like to go through this but I think it might be useful to answer the question of what is our vision for the next hard fork in the first place before we just rattle off 10 or 20 SIP proposals. So I know that there's been a lot of discussion about should we do Verkle in this next fork or should we have a smaller fork with some of these SIPS that people are really requesting right now. Do any client teams have a perspective on a smaller SAVM Fork this year or do teams feel that we should really lean into Verkle and make that the main priority and not ship another Fork until Verkle is ready. 
+So the next agenda item is the SilaPrague Electra hard fork. And in the agenda we have a link to Sil magicians for which is a bunch of proposals that people would like to see in the next execution layer hard Fork. I don't know how you guys would like to go through this but I think it might be useful to answer the question of what is our vision for the next hard fork in the first place before we just rattle off 10 or 20 SIP proposals. So I know that there's been a lot of discussion about should we do Verkle in this next fork or should we have a smaller fork with some of these EIPS that people are really requesting right now. Do any client teams have a perspective on a smaller EVM Fork this year or do teams feel that we should really lean into Verkle and make that the main priority and not ship another Fork until Verkle is ready. 
 
 
 **Marius** [32:44](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=1964s): So my personal opinion is that we should focus on Verkle and not ship anything between in because just the just the scheduling and the discussions will take up so much time because everyone like if we start opening this kind of worms then everyone will start lobbying and pushing for the SIPs to go through. Two small caveats with this. One is that I would like to have a get a more concrete overview of the progress of Verkle and second thing that I think we should also take into consideration is what's happening on the Consensus Layer. I went through all the SIPs that were proposed and there are some that I would like to see on the Execution Layer eventually but there are none that I would say this is high priority super urgent. But I think there might be some on the Consensus Layer. So I think it's important for the Consensus Layer forks to discuss whether it would make sense for them to have a hard fork with those changes. And if that can be done without involvement of the EL or whether it needs involvement of the EL and we would need to do a joint hard fork anyway. And then I would be okay with having a smaller hard for so highest priority is Verkle definitely and we should push for it but with these two caveats.  
@@ -365,7 +365,7 @@ would say they as ready as they are for EOF IE everything every like when it wil
 **Gary Schulte** [1:01:13](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=3673s): We yet to fully join the test net right now. So we'll have better numbers on it as we get join the testnet but I don't think we've noticed you like showstopping performance issues yet. 
 
 
-**Lukasz** [1:01:30](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=3690s): Okay testnet is quite small so not at least. I think it is I'm not sure if it will scale to sila-sila-mainnet levels without proper sila-sila-mainnet testing like importing the whole main net into Verkle. It's really hard to say if the performance is there in my opinion.
+**Lukasz** [1:01:30](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=3690s): Okay testnet is quite small so not at least. I think it is I'm not sure if it will scale to sila-mainnet levels without proper sila-mainnet testing like importing the whole main net into Verkle. It's really hard to say if the performance is there in my opinion.
 
 
 **Gary Schulte** [1:01:50](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=3710s): Yeah that's fair. Has have we have other clients has geth tried to import main net into the
@@ -404,7 +404,7 @@ Fork.
 So I think maybe the best way to do it is just to go down the list of proposals in the Sil magicians thread. And if there's a person on the call who feels that they can spend 30 seconds to two minutes summarizing and trying to create some momentum behind it that could be useful. So the first one is 2537. Is anyone on the call here who wants to try to motivate a 2537 SIP in the next future Fork.
 
 
-**Stokes** [1:07:20](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=4040s): yeah I can I think this is pretty well accepted. I think everyone here so it's adding BLS arithmetic this is a curve we use on the Execution Layer. So it unlocks a lot of staking use cases inside the SAVM making staking poles more trustless. It also helps a lot with Zero knowledge cryptography. So if any of these snark applications want to use this curve in SAVM it unlocks them and then also that directly extends to ZK RPS as well. So yeah this one should definitely go in my opinion and would unlock many use cases.
+**Stokes** [1:07:20](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=4040s): yeah I can I think this is pretty well accepted. I think everyone here so it's adding BLS arithmetic this is a curve we use on the Execution Layer. So it unlocks a lot of staking use cases inside the EVM making staking poles more trustless. It also helps a lot with Zero knowledge cryptography. So if any of these snark applications want to use this curve in EVM it unlocks them and then also that directly extends to ZK RPS as well. So yeah this one should definitely go in my opinion and would unlock many use cases.
 
 
 
@@ -415,7 +415,7 @@ So I think maybe the best way to do it is just to go down the list of proposals 
 **Marius** [1:08:23](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=4103s): One quick thing  I think this proposes 8 new pre- compiles or 6 new pre- compiles and most of them are not really useful for staking related stuff. I think only the verification, basically the verification is useful for that but most of the others are useful for L2 stuff as far as I understood it. But it would be really nice if we could get a document outline the need for every one of those. Why should we not just add one but why should we add like all of this five or eight or whatever pre compile.
 
 
-#### [EL] SAVM Object Format (EOF)
+#### [EL] EVM Object Format (EOF)
 
 
 **Lightclient** [1:09:15](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=4155s): Sure next on the list is EOF. Anyone on the call want to make the case for EOF.
@@ -486,7 +486,7 @@ It.
 
 
 **Ansgar** [1:18:18](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=4698s): Yeah so of course was one of the SIP. I do I'm happy that it has a second kind of win behind it now but I do I have some consensus at least that we want to voice specifically kind of in the context of layer 1. I think with kind of now Layer Two is being much more mature. It seems if there is demand for something like this it would be a much better can a let to try out in the l two context first via the IP process. Specifically I mean 3074 was always more designed as a stop Gap in between kind of EOA that we have today. And like the glory is actual obstruct in future with smart contact wallets that we'll hopefully get to in the future. And I think we are much closer to that future now. So it's there's less reason for that and I would caution that I think a lot of people that are now supporting the SIP are somewhat unaware of the complexities that it brings with it. So specifically the IP requires this kind of concept of invokers. And all the functionality would have to be standardized by invoker. So there have to be like one standard invoker for bundling one standard invoker for I don't know like time validated transactions all these kind of things. And that will take a lot long time to actually get these standards right. And while in principle they could be comp forward compatible with things like smart contract wallets and everything that would require like a very strong big
-change to the way SMS work. So basically instead of having their own bundle functionality they would have to go through the invoker for bundling and everything. So I think basically before we were to even consider this for sila-sila-mainnet. We should basically get all the takes we should. We should basically have commitments from Smart contract wall implementers that they would actually also want to use this invoker design. we would have to actually see invoker implementations already proposed as SRC's. We would have to see tooling support like say Sila JS and these people specifically for some of these invokers. I think otherwise it's just basically really naive because we would ship this feature and then not have anything that could actually use it for the next two years afterwards.
+change to the way SMS work. So basically instead of having their own bundle functionality they would have to go through the invoker for bundling and everything. So I think basically before we were to even consider this for sila-mainnet. We should basically get all the takes we should. We should basically have commitments from Smart contract wall implementers that they would actually also want to use this invoker design. we would have to actually see invoker implementations already proposed as SRC's. We would have to see tooling support like say Sila JS and these people specifically for some of these invokers. I think otherwise it's just basically really naive because we would ship this feature and then not have anything that could actually use it for the next two years afterwards.
 
 
 **Lightclient** [1:20:24](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=4824s): Thanks Ansgar. Let's go ahead and move on to the next because we're only halfway through. So the next proposed one is 3068 precompile for BN 256 # to curve algorithms. Is anyone here who
@@ -572,7 +572,7 @@ with SSZ  you need, I don't know like a lot. And so every transaction processing
 
 
 
-**Lightclient** [1:29:24](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=5364s): Thanks for that. Does anyone want to make a motivating case for 7212 the R1 precompile on  sila-sila-mainnet? 
+**Lightclient** [1:29:24](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=5364s): Thanks for that. Does anyone want to make a motivating case for 7212 the R1 precompile on  sila-mainnet? 
 
 
 **Gary** [1:29:42](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=5382s): I haven't looked super closely into this but it seems like that's going to enable a lot of account abstraction use cases secure on claves mobile devices things like that. It seems like for user experience that's something that we want to get out there. It's a as as a pre-compile goes I don't want to keep helping on Op base who has an implementation for this but we have an R1 implementation already. So it would be not terribly difficult to get that out there.
@@ -594,7 +594,7 @@ with SSZ  you need, I don't know like a lot. And so every transaction processing
 **Lightclient** [1:33:21](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=5601s): Thanks Tomasz. We're at time Charles do you have a quick comment on that SIP? 
 
 
-**Charles C** [1:33:28](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=5608s): I actually wanted to advocate for the pay opcode SIP what is this 15920  which was briefly considered for SilaCancun and wasn't rejected it was postponed for I guess it's an SAVM change. And I guess SAVM changes that touch State can be a little complicated to implement. So I want to re bring it up for inclusion in SilaPrague. 
+**Charles C** [1:33:28](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=5608s): I actually wanted to advocate for the pay opcode SIP what is this 15920  which was briefly considered for SilaCancun and wasn't rejected it was postponed for I guess it's an EVM change. And I guess EVM changes that touch State can be a little complicated to implement. So I want to re bring it up for inclusion in SilaPrague. 
 
 
 **Lightclient** [1:34:07](https://www.youtube.com/watch?v=6xgxmKfVjtA&t=5647s): All right guys we're at time Ansgar, did want to mention this SIP 7587 reserving the addresses 

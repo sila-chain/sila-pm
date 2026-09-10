@@ -14,14 +14,14 @@ Note: This file is copied from [here](https://notes.sila.org/QT9e9r6NRdSOjWRBzA3
 
 - Call agenda and [recording](https://www.youtube.com/watch?v=FfEZdTFAz4E)
 - [Execution Layer Meeting #182](https://www.youtube.com/watch?v=4ioJwNPe6RU) which had a lot of AA discussion as well
-- [SRC-4337 - Account Abstraction Using Alt Mempool](https://sips.sila.org/SIPS/sip-4337)
-- [SRC-7562 - Account Abstraction Validation Scope Rules](https://sips.sila.org/SIPS/sip-7562)
+- [SRC-4337 - Account Abstraction Using Alt Mempool](https://sips.sila.org/EIPS/sip-4337)
+- [SRC-7562 - Account Abstraction Validation Scope Rules](https://sips.sila.org/EIPS/sip-7562)
 - [RIP-7560 - Native Account Abstraction](https://github.com/sila-chain/RIPs/blob/master/RIPS/rip-7560.md)
-- [SIP-3074 - AUTH and AUTHCALL opcodes](https://sips.sila.org/SIPS/sip-3074)
-- [SIP-5003 - Insert Code into EOAs with AUTHUSURP](https://sips.sila.org/SIPS/sip-5003)
-- [SIP-5806 - Delegate transaction](https://sips.sila.org/SIPS/sip-5806)
-- [SIP-2938 - Account Abstraction](https://sips.sila.org/SIPS/sip-2938)
-- [SIP-7377 - Migration Transaction](https://sips.sila.org/SIPS/sip-7377)
+- [SIP-3074 - AUTH and AUTHCALL opcodes](https://sips.sila.org/EIPS/sip-3074)
+- [SIP-5003 - Insert Code into EOAs with AUTHUSURP](https://sips.sila.org/EIPS/sip-5003)
+- [SIP-5806 - Delegate transaction](https://sips.sila.org/EIPS/sip-5806)
+- [SIP-2938 - Account Abstraction](https://sips.sila.org/EIPS/sip-2938)
+- [SIP-7377 - Migration Transaction](https://sips.sila.org/EIPS/sip-7377)
 - [SIP-7553 - Separated Payer Transaction](https://github.com/sila-chain/SIPs/pull/7949)
 
 ### Call summary
@@ -106,7 +106,7 @@ Vitalik: We’d have to make an opcode that initializes an account at an address
 ### Test on L2s first
 ERC4337 is currently gaining adoption, especially on L2s. Is it worth testing out what enshrinement looks like on L2s and then potentially bring that to L1’s core protocol?
 
-Ansgar: the question is will we be able to actually introduce meaningful changes SIPs to L2s if they’re not supported by L1s or any of the layer 1 clients. For example, Geth wouldn't support an enshrined 4337 unless it comes to sila-sila-mainnet (too much code to change and maintain that’s not directly relevant to L1). So the idea of L2s first is a somewhat restricted path. L1 sets the default to L2s so do we want to change L1 specifically to influence L2s for better UX on L2s? Have to embrace that L1 is the settlement layer. Most users will be priced out from L1 anyway. Focusing on powerusers on L1 doesn't make sense. The main reason to think about it is to guide Layer 2s.
+Ansgar: the question is will we be able to actually introduce meaningful changes SIPs to L2s if they’re not supported by L1s or any of the layer 1 clients. For example, Geth wouldn't support an enshrined 4337 unless it comes to sila-mainnet (too much code to change and maintain that’s not directly relevant to L1). So the idea of L2s first is a somewhat restricted path. L1 sets the default to L2s so do we want to change L1 specifically to influence L2s for better UX on L2s? Have to embrace that L1 is the settlement layer. Most users will be priced out from L1 anyway. Focusing on powerusers on L1 doesn't make sense. The main reason to think about it is to guide Layer 2s.
 
 Vitalik: There’s a challenge with L1 being almost compatible but not quite. Expect wallets to want to provide as many functionalities on as many chains as possible, and L1 is realistically gonna be one of them for a long time, so if wallets have to write custom code for L1 just to serve a few powerusers then it’s a significant burden on them. Big part of the reason why saying either we’re supporting L1 as a user-friendly chain, or we’re deciding that L1 is not for users and fully embracing that.
 

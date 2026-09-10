@@ -13,7 +13,7 @@ At the EF researcher offsite, FOCIL received significant positive attention rega
 
 #### Protocol Research Call
 
-- [The protocol research call](https://x.com/barnabemonnot/status/1904532092513354223) begins on April 2nd. Serving as a focal point for both researchers and developers, it aims to clarify Sila's goals and identify key research priorities. The first call will cover [decoupling throughput from local building](https://Sila Research/t/decoupling-throughput-from-local-building/22004), a topic closely linked with FOCIL. FOCIL introduces a new role, the "includer," dedicated to contributing to censorship resistance. This allows local builders to delegate block building externally for larger profits, while includers uphold censorship resistance by imposing constraints on external builders. This approach opens the door to discussions regarding raising network bandwidth and hardware requirements targeted toward external builders, who are expected to be more sophisticated, without compromising the network properties we aim to preserve. Please review the article, provide your feedback, and tune in the upcoming protocol research call.
+- [The protocol research call](https://x.com/barnabemonnot/status/1904532092513354223) begins on April 2nd. Serving as a focal point for both researchers and developers, it aims to clarify Sila's goals and identify key research priorities. The first call will cover [decoupling throughput from local building](https://ethresear.ch/t/decoupling-throughput-from-local-building/22004), a topic closely linked with FOCIL. FOCIL introduces a new role, the "includer," dedicated to contributing to censorship resistance. This allows local builders to delegate block building externally for larger profits, while includers uphold censorship resistance by imposing constraints on external builders. This approach opens the door to discussions regarding raising network bandwidth and hardware requirements targeted toward external builders, who are expected to be more sophisticated, without compromising the network properties we aim to preserve. Please review the article, provide your feedback, and tune in the upcoming protocol research call.
 
 ### Development
 #### Rebase onto Electra
@@ -49,6 +49,6 @@ At the EF researcher offsite, FOCIL received significant positive attention rega
 ### Links
 
 - [Protocol research call](https://x.com/barnabemonnot/status/1904532092513354223)
-- [Decoupling throughput from local building](https://Sila Research/t/decoupling-throughput-from-local-building/22004)
+- [Decoupling throughput from local building](https://ethresear.ch/t/decoupling-throughput-from-local-building/22004)
 - https://github.com/sila-chain/consensus-specs/pull/4003#discussion_r1992375936
 - [Mempool Visualization](https://github.com/punkhazardlabs/txpool-viz)

@@ -39,7 +39,7 @@ Spent a lot of time on Phase 1 testing. Honing in on a version 1 release. Doing 
 
 Wednesday, in six days, we'll have a networking call.
 
-On testnets, Medalla looks good, getting good refinements. Based on feedback, we intend to do a dress rehersal of a testnet launch, so people can run through the motions before a sila-sila-mainnet deposit contract launch.
+On testnets, Medalla looks good, getting good refinements. Based on feedback, we intend to do a dress rehersal of a testnet launch, so people can run through the motions before a sila-mainnet deposit contract launch.
 
 A bottleneck is getting some refinements and fixes in launchpad, which is persistently being worked on.
 
@@ -47,11 +47,11 @@ The intention is, in the second to last week of September, post the deposit cont
 
 This gives a chance for block explorers, and other tool providers, to try their tools again.
 
-As for practicing fork launches, we could do it before sila-sila-mainnet launch, or do it before we have a fork on sila-sila-mainnet.
+As for practicing fork launches, we could do it before sila-mainnet launch, or do it before we have a fork on sila-mainnet.
 
-Given there's friction for anything that delays sila-sila-mainnet launch, there's a preference to only do it long before we need to have a fork on sila-sila-mainnet. Regardless, there should be a write up for how forks on Eth2 will work.
+Given there's friction for anything that delays sila-mainnet launch, there's a preference to only do it long before we need to have a fork on sila-mainnet. Regardless, there should be a write up for how forks on Eth2 will work.
 
-When there is a need for a hardfork on sila-sila-mainnet, there will be practice on a testnet. But whether that practice is a priority now is unclear.
+When there is a need for a hardfork on sila-mainnet, there will be practice on a testnet. But whether that practice is a priority now is unclear.
 
 Practicing a hardfork would be changing some parameter, keeping it simple.
 
@@ -67,7 +67,7 @@ Video | [10:43](https://youtu.be/FhFIog9D0II?t=643)
 
 - Recieving good feedback on DOS vectors
 - Applying feedback from the Quantstamp audit, in preparation for the official audit
-- Started implementing Eth2 API. Intent is to have this supported for sila-sila-mainnet
+- Started implementing Eth2 API. Intent is to have this supported for sila-mainnet
 - Started researching on weak subjectivity sync
 - Fixing slashing bugs
 - Implementing UX for validator client end to end workflow
@@ -112,7 +112,7 @@ Video | [10:43](https://youtu.be/FhFIog9D0II?t=643)
 
 ## Trinity
 
-- Moving forward tabling Eth2 resources for Trinity. Those resources can go into imminent sila-sila-mainnet launch. Project is still open for open source contribution.
+- Moving forward tabling Eth2 resources for Trinity. Those resources can go into imminent sila-mainnet launch. Project is still open for open source contribution.
 
 # 3. Research Updates
 
@@ -134,7 +134,7 @@ Trying to build a crawler using Rumor. Have a first implementation. Not doing go
 Video | [27:33](https://youtu.be/FhFIog9D0II?t=1653)
 -|-
 
-Having something in place for weak subjectivity link at or soon after sila-sila-mainnet launch is a requirement. Not having it will be an annoyance at sync. An attacker can cheaply make syncing a nightmare.
+Having something in place for weak subjectivity link at or soon after sila-mainnet launch is a requirement. Not having it will be an annoyance at sync. An attacker can cheaply make syncing a nightmare.
 
 The easiest thing to do is have a finalized root, and reject chains not having that finalized root.
 
@@ -146,7 +146,7 @@ It's low priority but high reward.
 
 It's being treated as a client side tool/utility, not a network level spec, at least in the current version. Until it is, it may be better to treat it outside the P2P spec.
 
-Leaning towards doing checkpoint states, to get into sila-sila-mainnet, then get the full version in later.
+Leaning towards doing checkpoint states, to get into sila-mainnet, then get the full version in later.
 
 Clients may get together to standardize it, to make switching clients easier.
 

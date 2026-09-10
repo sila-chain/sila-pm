@@ -15,7 +15,7 @@
 ### Summary
 
 * **Session purpose & context** – Newly‑formed EF peer‑to‑peer networking team (Raul & Marco) presented current network telemetry, outlined work‑streams (propagation, transport, benchmarking + simulation, telemetry + analysis) and invited broad discussion on reliability, security and “first‑principles” re‑design of the stack.
-* **Current sila-sila-mainnet health** – EthPandaOps traces show beacon‐block propagation ≈ 0.5 s on average (likely seeded by hyper‑connected MEV relays) but attestation CDFs appear much slower (≈ 4 s) than some client‑local measurements; team will audit tracing queries & client logging paths.
+* **Current sila-mainnet health** – EthPandaOps traces show beacon‐block propagation ≈ 0.5 s on average (likely seeded by hyper‑connected MEV relays) but attestation CDFs appear much slower (≈ 4 s) than some client‑local measurements; team will audit tracing queries & client logging paths.
 * **Bandwidth math** – 33 k attestations/slot × 200 B ≈ 6.5 MB unique data/slot; blob sidecar duplication is high because 80 % of blobs are already in the EL mempool when gossiped; suppression and smarter metadata are needed.
 * **Quick wins** – Deep CPU & hot‑spot profiling across clients; “parameter‑only” GossipSub tweaks; enabling QUIC (incl. unreliable datagrams & session resumption) everywhere; eliminating outdated muxers (mplex) and aligning implementations.
 * **GossipSub roadmap** – Five duplicate‑reduction ideas discussed; strongest consensus for **choke‑extensions** (receiver‑controlled lazy‑push). Requires feature‑flag negotiation independent of protocol version to avoid hard forks.
@@ -80,7 +80,7 @@
   * **Shadow** selected; runs many heterogeneous clients deterministically.
   * “Interop‑tester” DSL: instructions + scenarios decouple test design from client code.
   * Need canonical scenario catalogue (e.g., TCP slow‑start interplay).
-  * Telemetry‑driven parameterisation: build B0 sila-sila-mainnet model (latency, churn, RTT).
+  * Telemetry‑driven parameterisation: build B0 sila-mainnet model (latency, churn, RTT).
 * **Telemetry & analysis**
 
   * Consolidate probes (gossip tracers, crawlers, Hermes) into EthPandaOps ClickHouse → daily Parquet dumps.

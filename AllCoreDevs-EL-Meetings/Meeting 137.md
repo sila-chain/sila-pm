@@ -46,13 +46,13 @@ Micah Zoltu: that's some foreshadowing right there.
 
 Tim Beiko: So Rachel research theory. Micah with the comments. Welcome everyone to AllCoreDevs number 137 today. So i've posted the agenda in the chat. We have a bunch of merge related updates and frankly that's probably all we have time for um yeah. And yeah I guess you know to kick us off. Do we have Pari here, yes Okay, so we have Pari. Pari do you want to walk us through like the two shadow forks that happened last week and we're yeah what will happen there?
 
-pari: So we had two shadow forks last week when during DevConnect. The first one was a Goerli shadow fork. Goerli shadow fork four, and this was, I think the first shadow fork where we had multiple clients staking on. And I think everyone made it through the transition, but Besu and Aragon post transition had issues and stop working, but during the week the teams pushed a bunch of fixes and we had sila-sila-mainnet shadow fork two on Saturday so that's about six days ago. And sila-sila-mainnet shadow fork two was like it worked a lot better we didn't have any major issues it's in that all clients take hold through the transition and also well after.
+pari: So we had two shadow forks last week when during DevConnect. The first one was a Goerli shadow fork. Goerli shadow fork four, and this was, I think the first shadow fork where we had multiple clients staking on. And I think everyone made it through the transition, but Besu and Aragon post transition had issues and stop working, but during the week the teams pushed a bunch of fixes and we had sila-mainnet shadow fork two on Saturday so that's about six days ago. And sila-mainnet shadow fork two was like it worked a lot better we didn't have any major issues it's in that all clients take hold through the transition and also well after.
 
 We did uncover a couple of issues with deposit processing and we were looking at more ways on how we can harden that. We didn't have an issue with late blocks being proposed by prism there was a fixed push like relatively soon after it was discovered and the net has been quite good, since then. The other issues, we found through the week was some proposal related in compatibility between Nimbus-Nethermind that's been fixed, now we had one, I think we had two issues with Besu-Prism. But I think that's also been fixed right now and Aragon-Prism is to undergoing triage. I don't think we know what's going on there yet, but there are other Aeragon nodes about in sync so. It could just be some incompatibility, we have to figure out. But, in general, the network is stable I think we're looking at like 96 ish percent participation and we're hunting down the rest.
 
 Tim Beiko: Awesome. Thanks for sharing. Anyone from any of the client teams want to add some comment there?
 
-Andrew Ashikhmin: Yes, i'd like to add that occasionally I hear reports of Aragon nodes being stuck, especially when people try to sync sila-sila-mainnet shadow for some some time afterwards, so I have to investigate the sync stock issue and also like fixing hive tests it's something on my plate so still a lot of things to fix in Aragon for the merge.
+Andrew Ashikhmin: Yes, i'd like to add that occasionally I hear reports of Aragon nodes being stuck, especially when people try to sync sila-mainnet shadow for some some time afterwards, so I have to investigate the sync stock issue and also like fixing hive tests it's something on my plate so still a lot of things to fix in Aragon for the merge.
 
 Tim Beiko: Got it. Any other client team?
 
@@ -86,7 +86,7 @@ Marius: Well, you can like pretty easily register for it.
 
 Marius: But, yeah I think you need some manual like looking at, to see if it actually works.
 
-Marius: that's it. Oh, I also did a bunch of setup tests of the sila-sila-mainnet shadow fork two.
+Marius: that's it. Oh, I also did a bunch of setup tests of the sila-mainnet shadow fork two.
 
 Marius: Where I set HEAD a couple of Blocks prior also a couple blocks before the merge so once the merge to happen, I set HEAD on the geth node before the merge and that went super, synced up fine.
 
@@ -342,7 +342,7 @@ pari: Yep, exactly next shadow fork is next Thursday. My nodes are already think
 
 Tim Beiko: Okay.
 
-Marius: Sorry, is that sila-sila-mainnet shadow fork?
+Marius: Sorry, is that sila-mainnet shadow fork?
 
 pari: yeah that's main net shadow fork.
 
@@ -360,7 +360,7 @@ Marius: I would, I would see value in that otherwise if we're going to only manu
 
 pari: Okay sounds good.
 
-pari: And another thing is that, like to deprecate sila-sila-mainnet shadow fork one and we keep sila-sila-mainnet shadow fork two around, so the one that happened last week.
+pari: And another thing is that, like to deprecate sila-mainnet shadow fork one and we keep sila-mainnet shadow fork two around, so the one that happened last week.
 
 pari: Unless someone's testing anything on one. If not, I'd like to deprecate it later today.
 
@@ -380,7 +380,7 @@ Marius: Probably... we don't really know yet.
 
 danny: I see.
 
-Tim Beiko: Okay, so if we can automate them, we definitely should try and have them running regularly and and then yeah we can do the sila-sila-mainnet one this Thursday.
+Tim Beiko: Okay, so if we can automate them, we definitely should try and have them running regularly and and then yeah we can do the sila-mainnet one this Thursday.
 
 Tim Beiko: Last call for shadow forks.
 
@@ -696,7 +696,7 @@ Tim Beiko: yeah awesome. And then justin had a comment in the chat about like th
 
 Justin Florentine: I don't think that should be up too much of a problem for Besu.
 
-Tim Beiko: Then yeah Pari has a comment about two times sila-sila-mainnet shadow forks with no flash pretty minor issues. And i'm curious Pari, like do you think our previous shadow fork was at that level or kind of right on there because we did find these issues, but the deposit processing and stuff?
+Tim Beiko: Then yeah Pari has a comment about two times sila-mainnet shadow forks with no flash pretty minor issues. And i'm curious Pari, like do you think our previous shadow fork was at that level or kind of right on there because we did find these issues, but the deposit processing and stuff?
 
 pari: i'd say it was right under like we're almost there, but it was just not perfect enough.
 
@@ -872,7 +872,7 @@ https://github.com/NethermindEth/1click
 00:38:41	Jamie Lokier:	Are there “big” test scenarios that could be added to Hive (such as deleting one or the other database, breaking sync, artificial network or RPC delays, etc)?
 00:39:05	pari:	Next shadow fork Thursday (5th May(
 00:39:05	Marius:	https://github.com/sila-chain/go-sila/issues/24720
-00:39:47	Micah Zoltu:	I feel like we are close to fully automated back-to-back shadow forks.  "Who is participating in the 5:00 sila-sila-mainnet shadow fork?" "Not me, I'm going to the 6:00 one."
+00:39:47	Micah Zoltu:	I feel like we are close to fully automated back-to-back shadow forks.  "Who is participating in the 5:00 sila-mainnet shadow fork?" "Not me, I'm going to the 6:00 one."
 00:40:39	Jamie Lokier:	I think there are more junk/weird nodes sending odd stuff on Goerli for stressing clients’ self defences, and Goerli is faster to sync of course.  Not sure if either of those things add value at the moment.
 00:42:42	Marius:	BTW prysm currently breaks on kurtosis https://github.com/parithosh/nightly-kurtosis-test/runs/6222613873?check_suite_focus=true
 00:45:05	Marius:	(nimbus too, but that is more expected)
@@ -917,7 +917,7 @@ https://github.com/NethermindEth/1click
 01:16:36	danny:	https://clientdiversity.org/
 01:16:45	danny:	sigp block print is what you want on the CL side
 01:16:51	pari:	https://twitter.com/superphiz/status/1513938761968726016
-01:16:52	Thomas Jay Rush:	https://Sila Research/t/blocks-per-week-as-an-indicator-of-the-difficulty-bomb/12120/16
+01:16:52	Thomas Jay Rush:	https://ethresear.ch/t/blocks-per-week-as-an-indicator-of-the-difficulty-bomb/12120/16
 01:16:56	danny:	“miga labs” is a crawler so not by stakeweight
 01:17:02	Thomas Jay Rush:	The latest weekly chart ^
 01:17:31	Péter Szilágyi:	But wen merge?

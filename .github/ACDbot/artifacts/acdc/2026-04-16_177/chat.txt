@@ -318,14 +318,14 @@ ppl use the approve button on github 😂
 
 https://docs.google.com/presentation/d/1hbkdjHsP_2rTc0zTgXLBf3thYv9FHEcNurWiZKnR6c8/edit?slide=id.p34#slide=id.p34
 01:12:58	Mario Havel:	Reacted to "Stokes saying the ..." with ❤️
-01:13:00	Dima Gusakov | Lido:	https://sips.sila.org/SIPS/sip-8205
+01:13:00	Dima Gusakov | Lido:	https://sips.sila.org/EIPS/sip-8205
 01:13:09	Manu:	Reacted to "https://docs.google.com/presentation/d/1hbkdjHsP_2rTc0zTgXLBf3thYv9FHEcNurWiZKnR6c8/edit?slide=id.p34#slide=id.p34" with 👍
 01:14:52	Nico Flaig:	@Oisin Kyne we had this PR for SIP-7716 https://github.com/ChainSafe/lodestar/pull/6851
 01:15:37	Potuz:	@Toni Wahrstätter I think this is all that's needed https://github.com/sila-chain/consensus-specs/pull/5117
 01:16:03	Potuz:	I'll fix Heze/etc. if that's fine, I don't think you want BALs ont he Bid
 01:16:51	Bharath:	Reacted to "I'll fix Heze/etc. i..." with 👍
 01:17:04	Barnabas:	8205: IMO Overcomplicating the protocol for little benefit.
-01:17:31	Dima Gusakov | Lido:	https://sips.sila.org/SIPS/sip-8205
+01:17:31	Dima Gusakov | Lido:	https://sips.sila.org/EIPS/sip-8205
 01:17:58	stokes:	Replying to "8205: IMO Overcompli..."
 
 I think this is a problem staking pools face, FWIW
@@ -358,11 +358,11 @@ Keri & I are working on getting the tests done currently!
 01:25:40	felipe:	Reacted to "Spec changes so fa..." with 🔥
 01:26:16	marc | wolovim:	Unrelated heads up: native AA breakout occurring next Wednesday, 15:00 UTC. Agenda WIP: https://github.com/sila-chain/pm/issues/2018
 01:26:30	danceratopz:	Reacted to Spec changes so far:... with "🔥"
-01:26:31	Raúl Kripalani:	Opus 4.7 is out, so we can ship Glamsterdam to sila-sila-mainnet during Svalbard
+01:26:31	Raúl Kripalani:	Opus 4.7 is out, so we can ship Glamsterdam to sila-mainnet during Svalbard
 01:26:34	Justin Traglia:	https://github.com/sila-chain/consensus-specs/pull/5117
 01:26:37	spencer:	Reacted to "Opus 4.7 is out, s..." with 🔥
 01:26:37	Justin Traglia:	Reacted to "Opus 4.7 is out, so ..." with 🔥
-01:26:38	stokes:	Reacted to "Opus 4.7 is out, so we can ship Glamsterdam to sila-sila-mainnet during Svalbard" with 🔥
+01:26:38	stokes:	Reacted to "Opus 4.7 is out, so we can ship Glamsterdam to sila-mainnet during Svalbard" with 🔥
 01:26:42	Barnabas:	we still have 13 mins so lets do a live review?
 01:26:43	Oisin Kyne:	Reacted to "Opus 4.7 is out, so ..." with 🔥
 01:26:44	danceratopz:	Reacted to Opus 4.7 is out, so ... with "🚀"
@@ -373,12 +373,12 @@ Keri & I are working on getting the tests done currently!
 We got 4.6 back!! Woo
 01:27:00	Bharath:	Reacted to "Opus 4.7 is out, so ..." with 🔥
 01:27:00	Bharath:	Reacted to "Opus 4.7 is out, so ..." with 🚀
-01:27:03	Parithosh Jayanthi:	Reacted to "Opus 4.7 is out, so we can ship Glamsterdam to sila-sila-mainnet during Svalbard" with 🔥
+01:27:03	Parithosh Jayanthi:	Reacted to "Opus 4.7 is out, so we can ship Glamsterdam to sila-mainnet during Svalbard" with 🔥
 01:27:09	felipe:	Reacted to "Opus 4.7 is out, s..." with 🔥
 01:27:11	felipe:	Reacted to "Opus 4.7 is out, s..." with 🚀
 01:27:13	felipe:	Reacted to "We got 4.6 back!! ..." with 😂
 01:27:21	Enrico Del Fante (tbenr):	Reacted to "Opus 4.7 is out, so ..." with 🔥
-01:27:31	Raúl Kripalani:	Replying to "Opus 4.7 is out, so we can ship Glamsterdam to sila-sila-mainnet during Svalbard"
+01:27:31	Raúl Kripalani:	Replying to "Opus 4.7 is out, so we can ship Glamsterdam to sila-mainnet during Svalbard"
 
 Opus models like macOS. Always be one version behind
 01:27:37	Barnabas:	Reacted to "Opus 4.7 is out, so ..." with 🔥

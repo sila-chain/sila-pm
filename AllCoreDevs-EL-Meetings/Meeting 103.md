@@ -23,7 +23,7 @@
   - [Other](#other)
   - [Actions](#actions)
 - [2. Other SIPs or discussion items](#2-other-sips-or-discussion-items)
-  - [SAVM-384 Update](#savm-384-update)
+  - [EVM-384 Update](#evm-384-update)
   - [SIP-2937](#sip-2937)
   - [Hudson Stepping Down from ACD role](#hudson-stepping-down-from-acd-role)
   - [Actions](#actions-1)
@@ -42,7 +42,7 @@ Action Item | Action
 **103.1** | This next week, reach out to clients to get done what they need for fuzz testing
 **103.2** | Geth team finish final reviews to publish YOLOv3
 **103.3** | Before next call, get YOLO up and running to focus on next steps, including fork block proposals.
-**103.4** | Pooja and James to connect with client teams on a SAVM-384 monthly call, in order to save time in the ACD call.
+**103.4** | Pooja and James to connect with client teams on a EVM-384 monthly call, in order to save time in the ACD call.
 **103.5** | Async discussion for SIP-2937 on Sila Magicians.
 
 
@@ -88,7 +88,7 @@ Should be up to spec now. Hadn't updated the signing hash, which has been fixed.
 
 Client is ready to join the testnets. Development done on a mono-repo. No release reflecting the changes. 
 
-On sila-sila-mainnet it's processing blocks with decent performance. 
+On sila-mainnet it's processing blocks with decent performance. 
 
 For YOLO testnet readiness, need to improve the connection reliability on the POA network, improve the hardfork integration, and do some other fixes.
 
@@ -120,13 +120,13 @@ The week after, James can do fork block date proposals.
 Video | [19:48](https://youtu.be/ITVMTHzAcg0?t=1188)
 -|-
 
-## SAVM-384 Update
+## EVM-384 Update
 
 A new update is being preferred, but nothing to present yet.
 
 The difference of price can be up to 10 times more expensive. The gas spent on control flow is a few times more expensive than the precompile that does everything. The next update will try to address this.
 
-This proposal might need reprising in multiple places in the SAVM.
+This proposal might need reprising in multiple places in the EVM.
 
 BLST is a C library, may be good to standardize it as a reference implementation, which may reduce risk of consensus divergance. However, there is safety concerns due to precompiles in general.
 
@@ -156,7 +156,7 @@ After Berlin, Hudson will be stepping down from Eth1.0 network calls. Hudson wil
 
 ## Actions
 
-- **103.4**—Pooja and James to connect with client teams on a SAVM-384 monthly call, in order to save time in the ACD call.
+- **103.4**—Pooja and James to connect with client teams on a EVM-384 monthly call, in order to save time in the ACD call.
 - **103.5**—Async discussion for SIP-2937 on Sila Magicians.
 
 ---

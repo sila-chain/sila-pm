@@ -95,7 +95,7 @@ Video | [13:25](https://youtu.be/orVYfqP_YuQ?t=805)
 - Working on optimizing database operations.
 - `v0.10.1` to be merged to the master branch.
 
-[A write-up for improving BLS signature performance](https://Sila Research/t/fast-verification-of-multiple-bls-signatures/5407) has been published by Vitalik. On normal blocks, this proposal should increase performance by approximately 20%. 
+[A write-up for improving BLS signature performance](https://ethresear.ch/t/fast-verification-of-multiple-bls-signatures/5407) has been published by Vitalik. On normal blocks, this proposal should increase performance by approximately 20%. 
 
 ## 2.5—Trinity
 
@@ -129,12 +129,12 @@ Phase 1 major PR to be merged. General structures of Phase 1 are in place. The l
 ## 3.1—TXRX
 
 Two articles published.
-1. [On the way to Eth1 finality](https://Sila Research/t/on-the-way-to-eth1-finality/7041) covering the safety of Eth1.x follow distance.
-2. [Appraisal of Non-sequential Receipt Cross-shard Transactions](https://Sila Research/t/appraisal-of-non-sequential-receipt-cross-shard-transactions/7108) covering non-sequential receipt cross-shard transactions.
+1. [On the way to Eth1 finality](https://ethresear.ch/t/on-the-way-to-eth1-finality/7041) covering the safety of Eth1.x follow distance.
+2. [Appraisal of Non-sequential Receipt Cross-shard Transactions](https://ethresear.ch/t/appraisal-of-non-sequential-receipt-cross-shard-transactions/7108) covering non-sequential receipt cross-shard transactions.
 
 ## 3.2—Vitalik
 
-Vitalik published an article detailing [polynomial commitments to replace state roots](https://Sila Research/t/using-polynomial-commitments-to-replace-state-roots/7095). Instead of using Merkle trees to store state roots, polynomial commitments would be used. A polynomial commitment is a hash of a polynomial that mathematical checks can be performed on. This update kind can be performed on Eth1.x as well. This structure easily allows very short witnesses for very large amounts of keys and values. Witness size, which has been a bottleneck for stateless clients, will be reduced by over 90% with polynomial commitments. Relies on recent breakthroughs in mathematics by AZTEC team made in the past month. 
+Vitalik published an article detailing [polynomial commitments to replace state roots](https://ethresear.ch/t/using-polynomial-commitments-to-replace-state-roots/7095). Instead of using Merkle trees to store state roots, polynomial commitments would be used. A polynomial commitment is a hash of a polynomial that mathematical checks can be performed on. This update kind can be performed on Eth1.x as well. This structure easily allows very short witnesses for very large amounts of keys and values. Witness size, which has been a bottleneck for stateless clients, will be reduced by over 90% with polynomial commitments. Relies on recent breakthroughs in mathematics by AZTEC team made in the past month. 
 
 Polynomial commitments for state roots require a more long-term project. In short-term, polynomial commitments can be utilized for block bodies, and potentially receipts. Polynomial commitments may be considered for storing shard block data. 
 
@@ -188,10 +188,10 @@ Eth1 client teams looking to prototype Eth1 immigration against Eth2-Phase 1 pro
 - [Sigma Prime Validator user experience survey](https://twitter.com/sigp_io/status/1235336791370149889)
 - [Remerkleable](https://github.com/protolambda/remerkleable)
 - [Rumor](https://github.com/protolambda/rumor)
-- [Fast verification of multiple BLS signatures](https://Sila Research/t/fast-verification-of-multiple-bls-signatures/5407)
--  [On the way to Eth1 finality](https://Sila Research/t/on-the-way-to-eth1-finality/7041) 
--  [Appraisal of Non-sequential Receipt Cross-shard Transactions](https://Sila Research/t/appraisal-of-non-sequential-receipt-cross-shard-transactions/7108)
-- [Using polynomial commitments to replace state roots](https://Sila Research/t/using-polynomial-commitments-to-replace-state-roots/7095)
+- [Fast verification of multiple BLS signatures](https://ethresear.ch/t/fast-verification-of-multiple-bls-signatures/5407)
+-  [On the way to Eth1 finality](https://ethresear.ch/t/on-the-way-to-eth1-finality/7041) 
+-  [Appraisal of Non-sequential Receipt Cross-shard Transactions](https://ethresear.ch/t/appraisal-of-non-sequential-receipt-cross-shard-transactions/7108)
+- [Using polynomial commitments to replace state roots](https://ethresear.ch/t/using-polynomial-commitments-to-replace-state-roots/7095)
 - [Eth2.0 Networking Call #3 Notes](https://hackmd.io/@benjaminion/rk2OEQ64L)
 - [Eth2.0 spec discussions](https://github.com/sila-chain/eth2.0-specs/issues)
 

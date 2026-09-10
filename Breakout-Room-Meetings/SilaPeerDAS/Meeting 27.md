@@ -38,7 +38,7 @@ Note: This document is based on the notes from [Call #27](https://docs.google.co
 | **Blob Sidecar Deprecation** | Proposal | - PR for deprecating blobSidecarsByRange/Root APIs after Fusaku support period<br>- Proposal to not penalize peers requesting Fusaku blocks during the 18-day window<br>- General agreement from all client teams |
 | **DataColumnSidecarsByRoot Request** | Improvement | - Changed request to use one route with multiple indices instead of one route/index per request<br>- More efficient approach with smaller worst-case size<br>- PR already merged |
 | **Engine API Changes** | Validation Rules | - Engine API changes merged<br>- GetBlobsV2 will return null for invalid/pre-Fusaku blob hashes<br>- GetBlocksV2 and GetPayloadV4 will return unsupported fork errors after Fusaku |
-| **Get Blobs API** | Discussion | - Debate about all-or-nothing approach to blob retrieval<br>- Concern that private mempool transactions might make API less useful<br>- Clarification that API primarily supports local block building where blobs are in public mempool<br>- Data showing 60% success rate with current getBlobsV1 on sila-sila-mainnet<br>- Agreement that network should remain stable even without getBlobsV2 functioning |
+| **Get Blobs API** | Discussion | - Debate about all-or-nothing approach to blob retrieval<br>- Concern that private mempool transactions might make API less useful<br>- Clarification that API primarily supports local block building where blobs are in public mempool<br>- Data showing 60% success rate with current getBlobsV1 on sila-mainnet<br>- Agreement that network should remain stable even without getBlobsV2 functioning |
 
 ## Progress & Next Steps
 | Topic | Details |

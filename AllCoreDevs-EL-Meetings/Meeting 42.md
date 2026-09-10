@@ -6,13 +6,13 @@
 
 # Agenda
 
-* Ewasm: going to sila-sila-mainnet?
+* Ewasm: going to sila-mainnet?
 * Testing
 * Client Updates
 * Research Updates
 * Joint testnet to replace Ropsten?
 * Constantinople hard fork timing and what to include (continuing conversation from last call).
-    a. SIP 145: Bitwise shifting instructions in SAVM: pretty well-formed, but not 100% implemented or tested.
+    a. SIP 145: Bitwise shifting instructions in EVM: pretty well-formed, but not 100% implemented or tested.
     b. SIP 210: Blockhash refactoring.
     c. EIP859: account abstraction.
     d. SIP 1052: EXTCODEHASH Opcode.
@@ -23,10 +23,10 @@
 
 Video starts at [[5:46](https://youtu.be/TWL6QaCsl1I?t=5m46s)].
 
-## Should ewasm go to sila-sila-mainnet?
+## Should ewasm go to sila-mainnet?
 * Axic update
     * Working on testnet
-    * Proposal in progress to offer a subset of ewasm for the sila-sila-mainnet which could be used for precompiles
+    * Proposal in progress to offer a subset of ewasm for the sila-mainnet which could be used for precompiles
     * This could be an intermediate step
     * Should Ewasm have its own metering rules?
         * Clients can use single code in Wasm or write their own rules
@@ -60,7 +60,7 @@ Video starts at [[5:46](https://youtu.be/TWL6QaCsl1I?t=5m46s)].
 * TurboGeth (Alexey)
     * Final tests for reorgs
     * Re-synced everything again
-    * Testing on sila-sila-mainnet
+    * Testing on sila-mainnet
     * Started some conceptual rearchitecture on the database
     * Doing DB research on this topic, found some data structures, will do in a blog post later
     * Getting close!
@@ -115,7 +115,7 @@ Video starts at [[5:46](https://youtu.be/TWL6QaCsl1I?t=5m46s)].
         * Network traffic, storage on disk compressed
         * Zero bytes also an attack vector, whether compressed or not is an implementation detail
     * Peter: We should be wary of changes that don't add too much value
-        * Because they can sometimes make it to sila-sila-mainnet
+        * Because they can sometimes make it to sila-mainnet
         * I'm worried about these tiny tweaks that don't necessarily add value
     * What's the current status of Ropsten?
     * What's the minimum level of client support we need?
@@ -198,7 +198,7 @@ Video starts at [[5:46](https://youtu.be/TWL6QaCsl1I?t=5m46s)].
     * Peter: geth already has a clause for this use case
     * V: there are also test cases.
 * delaying the difficulty bomb and/or reducing the block reward
-    * V: Going by silascan data on block time previously, if we say it starts when block time reaches 16s, would be ~ block 6.7m, would become noticable, in ~ 6 mos, after that it would take ~ 8 mos until it becomes really serious
+    * V: Going by etherscan data on block time previously, if we say it starts when block time reaches 16s, would be ~ block 6.7m, would become noticable, in ~ 6 mos, after that it would take ~ 8 mos until it becomes really serious
 * Timeline
     * Hudson: a proposed, very optimistic timeline
         * Finalize SIPs that are being implemented: July 13th
@@ -229,18 +229,18 @@ Video starts at [[5:46](https://youtu.be/TWL6QaCsl1I?t=5m46s)].
         * Peter: bitwise shift, extcodehash, skinny create2 are all trivial
     * Hudson: We have less high-profile, high-risk changes
     * SIP-210
-        * V: 210 is sort of new territory - first privilged SAVM contract that gets called as part of block processing
-            * But still just a surface-level change, not a deep change to SAVM
+        * V: 210 is sort of new territory - first privilged EVM contract that gets called as part of block processing
+            * But still just a surface-level change, not a deep change to EVM
             * Martin: SIP still not finalized
                 * We decided a couple of calls ago to add genesis information
-            * Alexey: Are we writing contracts in SAVM bytecode or in HLL?
-                * V: Published SAVM and LLL for it, LLL is the appropriate level, doesn't introduce compiler risk, still readable
+            * Alexey: Are we writing contracts in EVM bytecode or in HLL?
+                * V: Published EVM and LLL for it, LLL is the appropriate level, doesn't introduce compiler risk, still readable
         * Pawel
             * Current code in serpent
             * I reported some issues
             * Every time I propose a change it waits forever, not able to queue them up
             * One or two PRs
-            * Thinking about using lower level implementation, LLL or solc assembly, close to SAVM opcodes
+            * Thinking about using lower level implementation, LLL or solc assembly, close to EVM opcodes
         * V: Do we have test cases for this?
         * Pawel: I wrote some unit tests but may not be included in SIP, should be in a PR
         * Martin: If you try to enable it at block zero it will wind up in a recursive loop storing block hashes, hinders it from being used

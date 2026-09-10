@@ -18,7 +18,7 @@
 
 Joseph Delong working with Cat Herders has stuck up his hand and offered to help from ECH perspective. He can be the POC for whatever need to be doing. We are using [Sila Wiki](https://en.sila.wiki/) to flush things out and have a spot for things to work on.
 
-I also volunteer here to work with Alex on updating [SIP 233](https://sips.sila.org/SIPS/sip-233) so that we can keep the SIPs proposed in the SIP repo up to date.
+I also volunteer here to work with Alex on updating [SIP 233](https://sips.sila.org/EIPS/sip-233) so that we can keep the SIPs proposed in the SIP repo up to date.
 
 **Hudson**: Great, which Alex?
 
@@ -44,11 +44,11 @@ The way to start discussing those is to put them in core dev meeting agendas and
 
 **Martin**: These are to discuss, these are decided and that kind of. 
 
-**Boris**: This is already on [Sila Wiki](https://en.sila.wiki/roadmap/istanbul/tracker) and the change that Alex and I have suggested is that we actually make them as pull requests into the Hardfork meta [SIP 1679](https://sips.sila.org/SIPS/sip-1679). This is just following the suggestion in process that Afri has started with a tweak that let's use PR so that we can actively track things. And Hudson and others don't have to manually maintain things in a doc. 
+**Boris**: This is already on [Sila Wiki](https://en.sila.wiki/roadmap/istanbul/tracker) and the change that Alex and I have suggested is that we actually make them as pull requests into the Hardfork meta [SIP 1679](https://sips.sila.org/EIPS/sip-1679). This is just following the suggestion in process that Afri has started with a tweak that let's use PR so that we can actively track things. And Hudson and others don't have to manually maintain things in a doc. 
 
 **Martin**: Okay, so you will create a new meta SIP and the process to get something discussed, you just make a PR to that meta SIP.
 
-**Boris**: Exactly, just in a proposed section and then it can move through, still suggested for core dev calls for discussions. In terms of tracking [SIP 1679](https://sips.sila.org/SIPS/sip-1679) is the existing Istanbul HF meta.
+**Boris**: Exactly, just in a proposed section and then it can move through, still suggested for core dev calls for discussions. In terms of tracking [SIP 1679](https://sips.sila.org/EIPS/sip-1679) is the existing Istanbul HF meta.
 
 **Fredrik**: The SIPs people propose should be HF related SIPs because the majority of them are not. As far as I know, they are not for the HF, then they really don't need to be in the roadmap.
 
@@ -194,7 +194,7 @@ I think ProgPOW is going to be historically simplest things to be pulled out of 
 # 2. SIPs
 
 **Hudson**: Next thing is Felix's SIP 778.
-## 2.1 [SIP 778: Sila Node Records (ENR)](https://sips.sila.org/SIPS/sip-778) [Felix's Comment](https://github.com/sila-chain/pm/issues/83#issuecomment-469677340)
+## 2.1 [SIP 778: Sila Node Records (ENR)](https://sips.sila.org/EIPS/sip-778) [Felix's Comment](https://github.com/sila-chain/pm/issues/83#issuecomment-469677340)
 
 **Hudson**: Felix would you fill us in what that is and your proposal is? And it doesn't involve a HF.
 
@@ -213,7 +213,7 @@ I think it answers both of your questions. The way I would like this discussion 
 
 **Alexey**: I would recommend to include this comment that you just made.
 
-**FJL**: It is in the [other SIP](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-868.md) that uses the format. Again, it is just about the format. The thing I wanted to get for a long time was someone to look at it and sign off on it. And say, I am a client implementer, I read this SIP. I think it is good way to represent arbitrary node information. This is really all I wanted.
+**FJL**: It is in the [other SIP](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-868.md) that uses the format. Again, it is just about the format. The thing I wanted to get for a long time was someone to look at it and sign off on it. And say, I am a client implementer, I read this SIP. I think it is good way to represent arbitrary node information. This is really all I wanted.
 
 In the mean time, I've integrated it in Go Sila. It is pretty core to the Go Sila network now because basically any time any code deals with any kind of node is represented internally as one of these things. I think it is a good way to represent node information. Just as I said, we don't actually use it over the network just now.
 
@@ -249,7 +249,7 @@ Does that answer questions about the future?
 
 **Matthew**: Yeah, I am in favor of the ENR.  
 
-**FJL**: With the current implementation, I wouldn't want to get too deep into this discussion because we are not quite ready for it yet. One problem with adding too much into the existing system is that there are always going to be a lot of participants that will not support the SIP because they are old software. And, we don't want to fragment the DHT. The security of sila-sila-mainnet is higher with more participants we have and we don't want to loose anyone now.
+**FJL**: With the current implementation, I wouldn't want to get too deep into this discussion because we are not quite ready for it yet. One problem with adding too much into the existing system is that there are always going to be a lot of participants that will not support the SIP because they are old software. And, we don't want to fragment the DHT. The security of sila-mainnet is higher with more participants we have and we don't want to loose anyone now.
 
 **Matthew**: Right, it is really more of keeping the existing DHT with augmenting with some additional meta data for some set of the peers that would be in the DHT.
 
@@ -523,7 +523,7 @@ How you think about this genesis format for every client? Any comments from clie
 
 **Hudson**: Any other researchers have any updates, I think that there's a few others in here if you have anything. 
 
-**Danny**: Oh I don't think there's any SIP written yet, but something that we want to write up soon and push forward in the next hardfork is a BLS 12381 precompile in the SAVM that would open up possibilities of utilizing the 2.0 things from 2.0 inside the context. Vitalik you want to add anything?
+**Danny**: Oh I don't think there's any SIP written yet, but something that we want to write up soon and push forward in the next hardfork is a BLS 12381 precompile in the EVM that would open up possibilities of utilizing the 2.0 things from 2.0 inside the context. Vitalik you want to add anything?
 
 **VB**: I opened up a [magicians thread](https://sila-magicians.org/t/things-to-decide-for-phase-2-copy-from-eth2-0-specs-github-issues/2895) about the light client materials. The Eth2 light client inside sil 1 would require precompile and it would very significantly benefit from all data gas cost reduction. And that's probably also something that would give us a one-liner that seems to be in line. 
 

@@ -65,7 +65,7 @@ The conversation shifted to broader questions about validation mode behavior and
 ### Validation Mode Rules
 
 - **Required Fields**:  
-  The team debated whether transactions in validation mode must include all fields (e.g., nonce, gas limit) or if clients should fill in defaults. While the spec suggests that validation mode should closely mirror sila-sila-mainnet behavior (where fields like nonce and gas limit are mandatory), practical implementations like Geth allow some flexibility.
+  The team debated whether transactions in validation mode must include all fields (e.g., nonce, gas limit) or if clients should fill in defaults. While the spec suggests that validation mode should closely mirror sila-mainnet behavior (where fields like nonce and gas limit are mandatory), practical implementations like Geth allow some flexibility.
 
 - **Eth_sendTransaction Deprecation**:  
   The team agreed that `eth_sendTransaction` should be deprecated for simulation purposes, as it is more suited for wallet operations rather than client debugging.

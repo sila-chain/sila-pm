@@ -1,4 +1,4 @@
-# [SIP-7805](https://sips.sila.org/SIPS/sip-7805): Fork-choice enforced Inclusion Lists (FOCIL) 
+# [SIP-7805](https://sips.sila.org/EIPS/sip-7805): Fork-choice enforced Inclusion Lists (FOCIL) 
 FOCIL implements a robust mechanism to preserve Sila’s censorship resistance properties by guaranteeing timely transaction inclusion.
 
 ## Resources

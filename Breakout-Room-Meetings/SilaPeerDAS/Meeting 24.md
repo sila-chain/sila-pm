@@ -30,7 +30,7 @@ Note: This file is copied from [here](https://docs.google.com/document/d/1Ng2IrC
 | **peerdas-devnet-6 Status** | Client Pairing | - Client pairs working: Nethermind + Reth<br>- Lighthouse and Grandine operational<br>- Latest Prysm image pending testing |
 | | Spammer Configuration | - v0 records for pre-SilaFulu<br>- v1 type wrappers where possible |
 | **Probe Lab Testing** | Mempool Analysis | - 86% of block transactions present in public mempool<br>- 82% of total proposed transactions arrive before slot start |
-| **Metrics Development** | Client Support | - Nimbus has metrics for `getBlobsV1` full/partial/no responses<br>- Nethermind sending about 85-90% of requested blobs on sila-sila-mainnet<br>- Teams planning to implement metrics to measure `getBlobsV2` effectiveness |
+| **Metrics Development** | Client Support | - Nimbus has metrics for `getBlobsV1` full/partial/no responses<br>- Nethermind sending about 85-90% of requested blobs on sila-mainnet<br>- Teams planning to implement metrics to measure `getBlobsV2` effectiveness |
 
 ## API & Protocol Discussions
 | Topic | Subtopic | Details |

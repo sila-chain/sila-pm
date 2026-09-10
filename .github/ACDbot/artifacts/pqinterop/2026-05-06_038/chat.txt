@@ -58,6 +58,6 @@ although good work
 01:10:42	Yann Vonlanthen:	I think switching to Goldfish makes sense only if it simplifies things, if you feel like it doesn’t, I wouldn’t make it a priority at all
 01:12:30	Gajinder Singh:	Replying to "I think switching to..."
 
-we wanna devnet the PQ heartbeat for sila-sila-mainnet, so that is the target we should go for in terms of consensus
+we wanna devnet the PQ heartbeat for sila-mainnet, so that is the target we should go for in terms of consensus
 01:12:36	Yann Vonlanthen:	Reacted to "we wanna devnet the ..." with 👍
 01:12:40	unnawut:	Reacted to "we wanna devnet the ..." with 👍

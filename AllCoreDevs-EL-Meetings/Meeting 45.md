@@ -12,11 +12,11 @@
 4. [Constantinople](https://github.com/sila-chain/pm/issues/53)
     a. SIP 1014 Issues
     b. [SIP 1218: Simpler blockhash refactoring](https://github.com/sila-chain/SIPs/issues/1218). Looks like we are dropping this one unless someone speaks up, like, immediately.
-    c. [SIP 1283](https://sips.sila.org/SIPS/sip-1283): 1283 is moving forward per discussions on the previous call and the core devs chat room.
+    c. [SIP 1283](https://sips.sila.org/EIPS/sip-1283): 1283 is moving forward per discussions on the previous call and the core devs chat room.
 5. Three competing SIPs to delay the difficulty bomb and reduce/maintain the block reward:
     a. [SIP-858](https://github.com/sila-chain/SIPs/pull/858) - Delay bomb and reduce block reward to 1 SIL per block.
     b. [SIP-1234](https://github.com/sila-chain/SIPs/pull/1234) - Delay bomb and reduce block reward to 2 SIL.
-    c. [SIP-1295](https://sips.sila.org/SIPS/sip-1295) - Delay bomb, keep rewards to 3 SIL, change other factors such as POW incentive structure.
+    c. [SIP-1295](https://sips.sila.org/EIPS/sip-1295) - Delay bomb, keep rewards to 3 SIL, change other factors such as POW incentive structure.
 There is renewed interest from miners to implement [ProgPoW](https://github.com/ifdefelse/ProgPOW#progpow---a-programmatic-proof-of-work).
 
 Different articles/links regarding potential issuance reduction conversation:
@@ -60,7 +60,7 @@ Call starts at []
     * Bugfixes, dev API improvements, working on Constantinople
 * Trinity (Piper)
     * One SIP away from having all Constantinople stuff done
-    * Trinity does now sync full sila-sila-mainnet and keeps up with the chain
+    * Trinity does now sync full sila-mainnet and keeps up with the chain
 * EthereumJS
     * No one present
 * PegaSys (Matt)
@@ -72,8 +72,8 @@ Call starts at []
     * 67% [??] tests passing
     * Expect to be passing all tests within three weeks
 * Jacek (Nimbus)
-    * SAVM is nearing stability
-    * Exploring using it through EVMC with geth running the chain but our SAVM
+    * EVM is nearing stability
+    * Exploring using it through EVMC with geth running the chain but our EVM
     * Working on light clients
     * Have a track going for the beacon chain
 * Ewasm (Alex)
@@ -88,7 +88,7 @@ Call starts at []
     * Work on RNG for beacon chain
     * Lots of implementations of the beacon chain
     * Spec has been tightening up
-    * Formal verification of epochless Casper, modification of FFG, can find this on https://Sila Research
+    * Formal verification of epochless Casper, modification of FFG, can find this on https://ethresear.ch
 
 # Constantinople
 * [Progress tracker](https://github.com/sila-chain/pm/issues/53)

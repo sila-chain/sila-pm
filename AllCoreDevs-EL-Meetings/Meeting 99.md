@@ -107,9 +107,9 @@ Nethermind is on their way, so 2-4 weeks is good for them.
 
 Open Sila is not participating on YOLOv2, but will be ready in 2-4 weeks for YOLOv3. 
 
-As for 2537, some consider SAVM-384 as a safter alternative for the BLS precompiles. There are still unknowns for the SAVM release date. There are also questions about how optimized SAVM-384 is for gas prices on sila-sila-mainnet. 
+As for 2537, some consider EVM-384 as a safter alternative for the BLS precompiles. There are still unknowns for the EVM release date. There are also questions about how optimized EVM-384 is for gas prices on sila-mainnet. 
 
-**Alex Vaslov**:  Has a proposal to salvage work done with 2537 while using SAVM=384. The same work, op codes, addition, subtraction, multiplication, we can migrate the precompile using these set of op codes. It can be SAVM without all the functions of SAVM. The functionality just hidden one layer down. 
+**Alex Vaslov**:  Has a proposal to salvage work done with 2537 while using EVM=384. The same work, op codes, addition, subtraction, multiplication, we can migrate the precompile using these set of op codes. It can be EVM without all the functions of EVM. The functionality just hidden one layer down. 
 
 **Martin Hoist Swende**: This proposal will capture the worst in both cases. It would reduce the concerns for consensus flaws. 
 
@@ -127,11 +127,11 @@ As for 2537, some consider SAVM-384 as a safter alternative for the BLS precompi
 
 **Axic**: In regards for BLS12 using EMV384 will be hard to achieve, there's almost a completely working implementation. It's a system to write these operations. It uses a code generation script. This way, it's easy to change how the arguments are encoded. This is almost finished, which wasn't the case when the discussion started. It is still limited to 384 bits. But the same instructions can be introduced to bigger bits, to cover more curves. 
 
-**Danny Ryan**: Given the limited amount of people who do understand these curves, putting it into SAVM might be risky, I'd be worried about the safety of putting these low level operations into SAVM. In libraries, it's hard, but experts are available to audit. 
+**Danny Ryan**: Given the limited amount of people who do understand these curves, putting it into EVM might be risky, I'd be worried about the safety of putting these low level operations into EVM. In libraries, it's hard, but experts are available to audit. 
 
-**Alex Vaslov**: Even if there is a tooling, we'd also need to worry about the safety of these tools as well. SAVM 384 is progressing. The question is, how will it perform in different clients, as we've seen different performance in Go.
+**Alex Vaslov**: Even if there is a tooling, we'd also need to worry about the safety of these tools as well. EVM 384 is progressing. The question is, how will it perform in different clients, as we've seen different performance in Go.
 
-**Axic**: SAVM 384 performance requirement has been met. Upgrading precompiles is a lengthy process. SAVM updates don't need a hardfork. With complexity, the SAVM 384 op codes in most cases are the building blocks which BLS12 implementations use internally. 
+**Axic**: EVM 384 performance requirement has been met. Upgrading precompiles is a lengthy process. EVM updates don't need a hardfork. With complexity, the EVM 384 op codes in most cases are the building blocks which BLS12 implementations use internally. 
 
 **Danny Ryan**: If these implementations are completed, do we have someone capable of audititng them?
 
@@ -153,7 +153,7 @@ As for 2537, some consider SAVM-384 as a safter alternative for the BLS precompi
 
 **Hudson Jameson**: It seems people are more on the fence on it. Martin, how do these security concerns level up to security concerns on other SIPs. 
 
-**Martin Hoist Swende**: The client implementors can't audit the SAVM code, or the test cases. So, it's a big unknown. If we implement it, there may be consensus issues, which may not be the end of the world. I have a preference for having a smaller service on the platform layer, and have people build on layer 2 (SAVM layer) as much as possible.
+**Martin Hoist Swende**: The client implementors can't audit the EVM code, or the test cases. So, it's a big unknown. If we implement it, there may be consensus issues, which may not be the end of the world. I have a preference for having a smaller service on the platform layer, and have people build on layer 2 (EVM layer) as much as possible.
 
 **James Hancock**: Say we do go ahead with it. It feels like this may take longer than 2-4 weeks to figure out. 
 
@@ -189,7 +189,7 @@ As for 2537, some consider SAVM-384 as a safter alternative for the BLS precompi
 
 **Danny Ryan**: On the longterm, yes. 
 
-**James Hancock**: I don't feel comfortable making a decision between SIP 2537 and SAVM, but will push the SIP out of Berlin because it's taking too long. It keeps holding back all the other SIPs. 
+**James Hancock**: I don't feel comfortable making a decision between SIP 2537 and EVM, but will push the SIP out of Berlin because it's taking too long. It keeps holding back all the other SIPs. 
 
 **Tomasz**: I think we should separate Berlin into 3 paths. 
 
@@ -197,7 +197,7 @@ As for 2537, some consider SAVM-384 as a safter alternative for the BLS precompi
 
 **Tomasz**: People will be pushing for additional new things. So, we may do some work in parallel. 
 
-**Hudson Jameson**: Let's not have 2537 or SAVM 384 in the next hardfork. We may do something where we split Berlin into two, as done with other hardforks. Hopefully by Berlin, we'll have a clearer way to show how people can push their SIP through the process. 
+**Hudson Jameson**: Let's not have 2537 or EVM 384 in the next hardfork. We may do something where we split Berlin into two, as done with other hardforks. Hopefully by Berlin, we'll have a clearer way to show how people can push their SIP through the process. 
 
 ### Decisions
 

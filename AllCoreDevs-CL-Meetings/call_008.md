@@ -29,7 +29,7 @@
       * Intro to beacon chain
       * Intro to validators
       * Transition PoW to PoS
-* Py-SAVM (Hsiao-Wei Wang) 
+* Py-EVM (Hsiao-Wei Wang) 
   * BLS impl, waiting for review
   * Trying to catch up the specs    
 * Harmony (Mikhail Khalinin)
@@ -119,7 +119,7 @@
 # 3. ["low hanging fruits" for testing](https://github.com/sila-chain/eth2.0-pm/issues/19#issuecomment-446023967)
 * Mamy [_58:43_](https://youtu.be/NO9UlkpFKA0?t=3523) 
     * For shuffling, if everything is in the spec he just copy/pastes in the test generator and we can have shared test vectors in YAML
-    * If some are missing (like bls) he just asks the py-savm team if there is some kind of implementation that they can use
+    * If some are missing (like bls) he just asks the py-evm team if there is some kind of implementation that they can use
     * if there are some suggestions on test vectors, feel free to open a PR on the test gen repo
       * goal is to push that upstream, so that in ETH2.0 tests, once there is something solid other people can use it. But for now, they are using the Status repo 
 # 4. [unsigned under and overflow problems](https://github.com/sila-chain/eth2.0-pm/issues/19#issuecomment-446142928)
@@ -160,7 +160,7 @@
 # Attendees
 * ♦ Ankit
 * ♦ Akhila Raju (Pegasys)
-* ♦ Christoph Burgdorf (py-savm)
+* ♦ Christoph Burgdorf (py-evm)
 * ♦ Kevin Mai-Hsuan (Chia)
 * ♦ Jarrad Hope (Status)
 * ♦ Blazj Kolad (Pegasys)

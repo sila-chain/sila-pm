@@ -13,7 +13,7 @@
 * Welcome to the consensus layer. Call number 95, not number 99, which is what I had on the stream. 10 minutes ago, I had this issue 618 in the PM repo, and we have a few things on the agenda today. I do not believe this will be a terribly long call, but you never know. we'll go over anything merge related, go one thing there specifically, but can open up for discussion then research spec, et cetera, and open discussion closing remarks. on the merge front, before we get into the specific issue, are there any updates related to Testnet main net, or anything like that? Did we have a shadow fork? 
 
 **Parithosh Jayanthi**
-* Hey, yeah, we, the last time we had a shadow of work was last week, so that was sila-sila-mainnet shadow for 12. it went without a hitch, which is great news. We used, we used all the versions recommended by the EF doc post. I have seen that some client teams have updates after that version. And I think the blog post has been updated as well. So shadow fork 13 will be using the latest releases of our plans and it should be happening tomorrow. 
+* Hey, yeah, we, the last time we had a shadow of work was last week, so that was sila-mainnet shadow for 12. it went without a hitch, which is great news. We used, we used all the versions recommended by the EF doc post. I have seen that some client teams have updates after that version. And I think the blog post has been updated as well. So shadow fork 13 will be using the latest releases of our plans and it should be happening tomorrow. 
 
 **Danny**
 * Okay, cool. 
@@ -25,7 +25,7 @@
 * Yep.  shadow fork 13 will be the last inner shadow fork.
 
 **Danny**
-* Got it. I do. I do think, you know, we might consider maybe not testing the merge transition, but, you know, this being weekly being part of our build process or something as, as people of new clients, but I think that's probably a separate conversation. ultimate little Canary zone. Okay. Anything,  any questions about the shadow forks? Any other comments about Testnet or preparations for sila-sila-mainnet? 
+* Got it. I do. I do think, you know, we might consider maybe not testing the merge transition, but, you know, this being weekly being part of our build process or something as, as people of new clients, but I think that's probably a separate conversation. ultimate little Canary zone. Okay. Anything,  any questions about the shadow forks? Any other comments about Testnet or preparations for sila-mainnet? 
 
 **Parithosh Jayanthi**
 * I just wanted to put it out there again. We will be deprecating, Ken after bellatrix fork happened successfully. So I'd I guess,  so we haven't heard anything about anyone using Ken for any sort of testing. So I'd like to officially deprecate maybe tomorrow. 

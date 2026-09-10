@@ -185,7 +185,7 @@ Video | [29:41](https://youtu.be/Riu-PqrJVH4?t=1781)
 
 **James Hancock**: Is it worth including 2046 into YOLOv2 so that we can get more numbers run?
 
-**Martin Holst Swende**: Not really, since if we only do 2046... we could do it, but we could never roll it out on sila-sila-mainnet, because we need to erase some of them (_notetaker's note_: may have misunderstood previous). I think we lower it by 606 (_notetaker's note_: may have misunderstood previous) gas.
+**Martin Holst Swende**: Not really, since if we only do 2046... we could do it, but we could never roll it out on sila-mainnet, because we need to erase some of them (_notetaker's note_: may have misunderstood previous). I think we lower it by 606 (_notetaker's note_: may have misunderstood previous) gas.
 
 **James Hancock**: So we'll put a pin in that one.
 
@@ -297,7 +297,7 @@ I do want to talk about the state size, the gas tokens, and the uncle rate, in o
 Video | [1:02:03](https://youtu.be/Riu-PqrJVH4?t=3723)
 -|-
 
-**Peter Szilagyi**: This topic was brought up around the conversation of how to get around the spam on sila-sila-mainnet, make it more deterministic, and in Geth we did implement a first in first out sort order, and if multiple transactions have the same price, they will be sorted by arrival time. We will probaly release on Monday, and we'll see if this helps the network or not.
+**Peter Szilagyi**: This topic was brought up around the conversation of how to get around the spam on sila-mainnet, make it more deterministic, and in Geth we did implement a first in first out sort order, and if multiple transactions have the same price, they will be sorted by arrival time. We will probaly release on Monday, and we'll see if this helps the network or not.
 
 **Hudson Jameson**: Are any other clients planning on doing any transaction ordering?
 

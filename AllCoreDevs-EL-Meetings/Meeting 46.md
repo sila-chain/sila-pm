@@ -57,7 +57,7 @@ Call starts at [[1:36](https://youtu.be/TafZui-DnV0?t=1m36s)]
         * We'll be ready for the fork in the next 1-2 weeks
 * Nimbus (Mamy)
     * Enabled general state tests, passing > 500
-        * Several assume gas is UINT256 even though geth and py-savm use int64
+        * Several assume gas is UINT256 even though geth and py-evm use int64
     * Started working on some precompiles
         * For cryptography, looking into more test vectors for ALTBN128 curve
     * P2P: Now have better block downloads
@@ -80,7 +80,7 @@ Call starts at [[1:36](https://youtu.be/TafZui-DnV0?t=1m36s)]
         * Made significant progress in discussing this with geth team, hopefully will make it into geth soon
         * Supports multiple engines for executing Wasm: two interpreters, one JIT
         * Allows us to focus more on benchmarking, our next big focus, to benchmark precompiles
-            * Benchmark all sila-sila-mainnet precompiles in Wasm against these three engines
+            * Benchmark all sila-mainnet precompiles in Wasm against these three engines
             * Want understanding of performance between JIT and non-JIT engine
 * EthereumJS
     * No update
@@ -123,7 +123,7 @@ Call starts at [[1:36](https://youtu.be/TafZui-DnV0?t=1m36s)]
     * Fast testing: we have a large corpus from fuzz tester that are being implemented as state tests, will check into repo later
     * Dimitry: which format are these?
         * M: ready-to-run format, not generalized
-    * Don't have lib fuzzer running but have SAVM labs fuzzer running
+    * Don't have lib fuzzer running but have EVM labs fuzzer running
         * Not switched over to Constantinople yet
         * I'm open to have fuzzer running early next week
 
@@ -147,8 +147,8 @@ Call starts at [[1:36](https://youtu.be/TafZui-DnV0?t=1m36s)]
     * Hudson: let's fork Ropsten in early October
     * Afri: block time on Ropsten is a little unstable so hard to target a specific day
     * Martin: Let's target Oct. 9 and set block number in two weeks
-    * On sila-sila-mainnet block times
-        * Average block time now steady under 15 s (https://silascan.io/chart/blocktime)
+    * On sila-mainnet block times
+        * Average block time now steady under 15 s (https://etherscan.io/chart/blocktime)
         * We have at least half a year; could theoretically be 4-5 months before increasing block time starts to bite
         * When increasing, it would double roughly every 17 days
         * So fork could be November-December and we'd be fine

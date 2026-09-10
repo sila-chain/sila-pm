@@ -69,7 +69,7 @@
     - 300gb database on external DB, made some copies of it and running data analysis
 - Aleth (Pawel)
     - Fixes and improvements to network code
-    - Probably today will have a new tool that will work as a bootnode, can be used similarly to geth bootnode, want to put somewhere on sila-sila-mainnet or testnet as alternate implementation
+    - Probably today will have a new tool that will work as a bootnode, can be used similarly to geth bootnode, want to put somewhere on sila-mainnet or testnet as alternate implementation
 - Nimbus (Jacek)
     - Been focusing on parts of VM related to DevEx, e.g. debug and tracing
     - Let us know if you have any ideas, this is a good time to discuss
@@ -102,9 +102,9 @@
         - General algorithms known
         - Being specified
     - State execution, account structures - lots of thought going into this
-    - Handful of proposals on Sila Research that V posted that we're looking for feedback on
+    - Handful of proposals on ethresear.ch that V posted that we're looking for feedback on
     - Justin and VFD alliance: increasing number of blockchains interested in adding VFDs in various ways
-    - Begun to do Beacon chain implementation in py-savm
+    - Begun to do Beacon chain implementation in py-evm
 - Justin did talk on VDFs at Devcon, video online
 - Other DevCon IV talks should be online today
 
@@ -122,7 +122,7 @@
     - I managed to implement SRC-20 contract based on these ideas
     - It actually works, can mint and transfer tokens
     - Interesting to get feel of how you'd use CREATE2
-    - Commented on issue in solidity, created thread on EthMagicians for ppl interested in creating new primitives to make it easier to work with CREATE2
+    - Commented on issue in solidity, created thread on SilaMagicians for ppl interested in creating new primitives to make it easier to work with CREATE2
     - Right now you have to copy and paste bytecode into source code
     - Linear cross-contract storage will most likely be dropped from next version of proposal
         - Priority queue too
@@ -164,9 +164,9 @@
     - A: depends how you define it, it's different, but Felix wants this ENR work to become new discovery v5
     - Problem is that it was hacked into protocol but not scalable
     - ENR approach is clear, there are a few SIPs open, quite a lot of published material
-        - https://sips.sila.org/SIPS/sip-778
-        - https://sips.sila.org/SIPS/sip-868
-        - https://sips.sila.org/SIPS/sip-1459
+        - https://sips.sila.org/EIPS/sip-778
+        - https://sips.sila.org/EIPS/sip-868
+        - https://sips.sila.org/EIPS/sip-1459
     - Danny: We are discussing using mature version of Dv5 for advertising which shards you're participating in
     - Peter: Considering putting historical state on top of that mechanism
     - Can't yet see single proposal that will work
@@ -179,8 +179,8 @@
     - Afri proposed block 7080042
     - Lane: have we always used even numbers ending in -0000 in the past?
     - Alexey: We don't think someone will start super mining to speed up the fork do we?
-    - Danny: Would be very expensive on sila-sila-mainnet
-    - Afri: very unlikely because of high difficulty of sila-sila-mainnet. Worst case scenario, if price of Sil continues dropping fast and a lot of miners stop mining then it could slow us down
+    - Danny: Would be very expensive on sila-mainnet
+    - Afri: very unlikely because of high difficulty of sila-mainnet. Worst case scenario, if price of Sil continues dropping fast and a lot of miners stop mining then it could slow us down
     - Block times have been stable recently so this is not a concern
     - Martin: We'll put block number into next release with possible commandline option to delay it
         - Only reason to change block number again would be if we find another consensus bug
@@ -189,7 +189,7 @@
     - Peter: palindromes could be hard in the future
         - Easy if block numbers still in the millions'
     - Greg: four zeroes, keep it easy
-    - Palindromes for testnet, four zeroes for sila-sila-mainnet - let's do this
+    - Palindromes for testnet, four zeroes for sila-mainnet - let's do this
     - So let's use 7080000
 - Stireby update
     - [missed a bit]
@@ -236,7 +236,7 @@
     - So we will have open meetings for now
     - Less inclination to do this for these calls
     - Not sure about in person yet - technical feasibility is different
-    - Won't have any more "Eth1x" / sila-sila-mainnet improvement calls as WG all created now
+    - Won't have any more "Eth1x" / sila-mainnet improvement calls as WG all created now
     - So we'll just keep doing what we've been doing
     - If anyone has a differing opinion speak now or speak to me privately later
 - Martin: There are WG, we will talk within them

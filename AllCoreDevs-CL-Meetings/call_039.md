@@ -187,24 +187,24 @@ Video | [26:48](https://youtu.be/7uZtEy0nNbw?t=1608)
 
 ## 4.1 EWASM
 
-- https://Sila Research/t/the-eth1x64-experiment/7195
-- https://Sila Research/t/eth1x64-variant-1-apostille/7365
+- https://ethresear.ch/t/the-eth1x64-experiment/7195
+- https://ethresear.ch/t/eth1x64-variant-1-apostille/7365
 - https://github.com/ewasm/eth1x64/blob/c09ed1bf84a72308cececa8a78fd1df30b95d1da/variant1.md
 
-This article is on designing a cross-shard protocol between Eth1 shards with trying to be non-invasive to the SAVM and dApp best practices.
+This article is on designing a cross-shard protocol between Eth1 shards with trying to be non-invasive to the EVM and dApp best practices.
 
 The first variant uses receipts generated on the descending shard and submitted on the receiving shard.
 
 The simple examples are wrapped tokens. This will allow having DAI on each shard.
 
 Then other varients are being looked into. One is yanking.
-- https://Sila Research/t/cross-shard-contract-yanking/1450
+- https://ethresear.ch/t/cross-shard-contract-yanking/1450
 
 Rich transactions can create another iteration of yanking. Will look into yanking next, or something based on Sil transfer objects.
 
 The main reason was to have a smaller scale to experiment and engage current dApp developers, preparing them for sharding.
 
-Eventually, more useful designs mean larger changes in the SAVM. If we do radical SAVM changes, we lose the benefits of existing tooling. Because of this, it may be better to switch completely to WASM.
+Eventually, more useful designs mean larger changes in the EVM. If we do radical EVM changes, we lose the benefits of existing tooling. Because of this, it may be better to switch completely to WASM.
 
 Past few months looking into new engines. These have been performing better, but are more complicated.
 
@@ -216,7 +216,7 @@ As part of benchmarking, looking at the different precompiles. Elliptic curve pr
 
 Looking into BLS 12. Reaching speeds close to native speeds, in interpreters. Looking at BLS implementation in Rust, but didn't introduce the expected speeds. Rust was 5ms, and Wasm was 500ms. Then we reached out to Wasm-Snark. They implemented support for BLS12. With optimizations on Big Integer, moved to close to 14 ms. With more optimizations, may approach 8ms, half the speed of native.
 
-We looking to replicate these findings on SAVM. Added 3 opcodes to the SAVM. Implemented 1 building block of the pairing operation, making a synthetic benchmark. With the synthetic implementation, got close to the Wasm numbers.
+We looking to replicate these findings on EVM. Added 3 opcodes to the EVM. Implemented 1 building block of the pairing operation, making a synthetic benchmark. With the synthetic implementation, got close to the Wasm numbers.
 
 May be able to get rid of the BLS12 precompiles.
 
@@ -229,7 +229,7 @@ Published a post to cryptographers to see if they can solve polynomial commitmen
 
 Looking into simplifications on proof of custody.
 
-- https://Sila Research/t/a-0-001-bit-proof-of-custody/7409
+- https://ethresear.ch/t/a-0-001-bit-proof-of-custody/7409
 
 Vitalik has a followup on dankrad's post.
 
@@ -241,7 +241,7 @@ An unsuccessful attempt to self-verified proof of custody using K commitments.
 
 Eth1-Eth2 merge research post just released.
 
-- https://Sila Research/t/the-scope-of-eth1-eth2-merger/7362
+- https://ethresear.ch/t/the-scope-of-eth1-eth2-merger/7362
 
 Working on draft Eth1-Eth2 communication protocol. Working on PSE for phase 1 as well.
 
@@ -305,10 +305,10 @@ No discussion. Next meeting in two weeks.
 
 - https://github.com/sila-chain/eth2.0-pm/issues/149
 - https://blog.sigmaprime.io/beacon-fuzz-04.html
-- https://Sila Research/t/the-eth1x64-experiment/7195
-https://Sila Research/t/eth1x64-variant-1-apostille/7365
-- https://Sila Research/t/a-0-001-bit-proof-of-custody/7409
-- https://Sila Research/t/the-scope-of-eth1-eth2-merger/7362
+- https://ethresear.ch/t/the-eth1x64-experiment/7195
+https://ethresear.ch/t/eth1x64-variant-1-apostille/7365
+- https://ethresear.ch/t/a-0-001-bit-proof-of-custody/7409
+- https://ethresear.ch/t/the-scope-of-eth1-eth2-merger/7362
 - https://github.com/sila-chain/eth2.0-specs/pull/1812
 
 

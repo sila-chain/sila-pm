@@ -42,7 +42,7 @@
 - [ ] Validator participation and block production (monitored for at least 32 epochs)
 - [ ] Verified stability of the network for 48 hours after upgrade.
 
-## [TODO] SIP-specific test cases on Sila sila-sila-mainnet
+## [TODO] SIP-specific test cases on Sila sila-mainnet
 - [ ] SIP-XXXX
     - [ ] Test Case 1
     - [ ] Test Case 2

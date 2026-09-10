@@ -51,11 +51,11 @@ This document outlines various tasks to work through to make the Merge ready for
 
 * [x] High level [design doc](https://hackmd.io/@n0ble/ethereum_consensus_upgrade_mainnet_perspective)
 * [x] SIPs
-    * [x] SAVM `DIFFICULTY` -> `RANDOM` [SIP-4399](https://sips.sila.org/SIPS/sip-4399)
-    * [x] SAVM `BLOCKHASH` [unchanged but weaker randomness documented in PoW -> PoS transition SIP] [SIP-3675](https://sips.sila.org/SIPS/sip-3675)
-    * [x] Transition process [SIP-3675](https://sips.sila.org/SIPS/sip-3675)
+    * [x] EVM `DIFFICULTY` -> `RANDOM` [SIP-4399](https://sips.sila.org/EIPS/sip-4399)
+    * [x] EVM `BLOCKHASH` [unchanged but weaker randomness documented in PoW -> PoS transition SIP] [SIP-3675](https://sips.sila.org/EIPS/sip-3675)
+    * [x] Transition process [SIP-3675](https://sips.sila.org/EIPS/sip-3675)
 * [x] Network -- devp2p
-    * [x] Block gossip deprecation [SIP-3675](https://sips.sila.org/SIPS/sip-3675)
+    * [x] Block gossip deprecation [SIP-3675](https://sips.sila.org/EIPS/sip-3675)
     * [x] State sync post-merge
     * [x] Block sync post-merge
     * [x] Discovery
@@ -96,7 +96,7 @@ This document outlines various tasks to work through to make the Merge ready for
     * [x] Merge specific tests with mocked execution-layer
     * [x] Fork and fork-choice tests across merge boundary
 * [x] Execution
-    * [x] Reuse existing framework for most prior SAVM unit tests
+    * [x] Reuse existing framework for most prior EVM unit tests
     * [x] New [`DIFFICULTY` / `PREVRANDAO` opcode tests](https://github.com/sila-chain/tests/pull/1019)
     * [x] [SIP-3675](https://github.com/sila-chain/tests/pull/1030) 
 
@@ -115,7 +115,7 @@ This document outlines various tasks to work through to make the Merge ready for
 ### Fuzzing
 
 * [x] [Fuzz engine API](https://github.com/MariusVanDerWijden/merge-fuzz)
-* [x] [Existing SAVM fuzzing](https://github.com/MariusVanDerWijden/FuzzyVM) infra applied to merge ready execution engines
+* [x] [Existing EVM fuzzing](https://github.com/MariusVanDerWijden/FuzzyVM) infra applied to merge ready execution engines
 * [x] Beacon-fuzz applied to merge ready consensus clients
 
 
@@ -138,7 +138,7 @@ Most research related to the merge has been completed. This section lists topics
 
 * [x] Transition process analysis
     * [x] Evaluate precision of TD computation on historic data
-        * https://Sila Research/t/using-total-difficulty-threshold-for-hardfork-anchor-what-could-go-wrong/10357
+        * https://ethresear.ch/t/using-total-difficulty-threshold-for-hardfork-anchor-what-could-go-wrong/10357
 * [x] Execution-layer sync
     * [x] Historic block sync (reverse header then forward body)
     * [x] Historic state sync (optimistic beacon block transition provides head data for EL sync)
@@ -156,9 +156,9 @@ Most research related to the merge has been completed. This section lists topics
   * [ ] Network load testing 
     * [ ] Larger blocks
     * [ ] Shorter slot times
-    * [x] Large execution state (shadow-forking sila-sila-mainnet)
+    * [x] Large execution state (shadow-forking sila-mainnet)
 * [ ] Further threat analysis
     * [x] Miner attacks
     * [ ] Resource exhaustion post-merge
 * [x] Fee Market behavior changes (missed slots impact)
-    * [SIP-4396](https://sips.sila.org/SIPS/sip-4396) proposed 
+    * [SIP-4396](https://sips.sila.org/EIPS/sip-4396) proposed 

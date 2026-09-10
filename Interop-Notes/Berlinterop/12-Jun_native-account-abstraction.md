@@ -14,7 +14,7 @@
 ### Summary
 
 * **SRC‑4337 adoption** proves demand for smart‑account UX, but its on‑chain bundler contract adds \~40 k‑70 k gas per transfer and incentivises private relays; native AA removes that overhead.
-* **Native AA proposal (SIP‑7701)** defines three independent roles per transaction—`sender` (smart account), optional `deployer`, optional `paymaster`—each validated by its own SAVM frame.
+* **Native AA proposal (SIP‑7701)** defines three independent roles per transaction—`sender` (smart account), optional `deployer`, optional `paymaster`—each validated by its own EVM frame.
 * **Separate per‑role gas limits** let nodes cap unpaid “validation gas”, preventing DoS while still allowing heavy proofs (e.g., post‑quantum, ZK) at market‑determined cost.
 * **New opcodes** (`TXDATA*, TXROLE, ACCEPTROLE`) expose typed transaction fields and require the contract to explicitly accept its role, blocking accidental misuse.
 * **Protocol only enforces nonce, SIL balance and paymaster balance**; all other validity conditions are deferred to contract code, preserving complete flexibility.
@@ -33,7 +33,7 @@
 * Presenter announces focus on **“native account abstraction” (SIP‑7701)** and why SRC‑4337 is not the final stop.
 * **Why AA matters**
 
-  * Transaction validity becomes arbitrary SAVM code, not hard‑coded signature/nonce/balance rules.
+  * Transaction validity becomes arbitrary EVM code, not hard‑coded signature/nonce/balance rules.
   * Enables passkeys, session keys, native multisig, post‑quantum signatures.
   * Gas abstraction: third‑party contracts subsidise gas.
   * Execution abstraction: a smart account can batch & pre‑inspect state within one tx.
@@ -121,4 +121,4 @@
 
 ### Relevant links
 
-* SRC‑4337 spec — [https://sips.sila.org/SIPS/sip-4337](https://sips.sila.org/SIPS/sip-4337)
+* SRC‑4337 spec — [https://sips.sila.org/EIPS/sip-4337](https://sips.sila.org/EIPS/sip-4337)

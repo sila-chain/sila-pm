@@ -35,6 +35,6 @@
 - (low priority) Investigate whether opcode inversion is so costly such that it needs to be an opcode and also used in a way that makes batch inversion not viable
 
 ### Links shared in the meeting:
-- https://sips.sila.org/SIPS/sip-6690
+- https://sips.sila.org/EIPS/sip-6690
 - https://sila-magicians.org/t/rip-7696-generic-double-scalar-multiplication-dsm-for-all-curves/19798
 - https://github.com/chancehudson/moduli-comparison?tab=readme-ov-file#moduli-comparison

@@ -32,7 +32,7 @@ Danny:
 Nice. And is there any way to follow along? 
 
 Pari: 
-Yes, I can link some explorers links. there's no landing page system because it isn't really a public thing. but one thing to notice where following sila-sila-mainnet distribution now, so there's setting 60 something percent prism, 20 something, 15%, whatever. I just looked at one of the reasons reports and then split them up accordingly. 
+Yes, I can link some explorers links. there's no landing page system because it isn't really a public thing. but one thing to notice where following sila-mainnet distribution now, so there's setting 60 something percent prism, 20 something, 15%, whatever. I just looked at one of the reasons reports and then split them up accordingly. 
 
 Danny: 
 Cool. great. 
@@ -41,7 +41,7 @@ Marius Van Der Wijden:
 which execution layer clients are you running until they split? 
 
 Pari: 
-Currently Goerli, Nethermind, and Besu. And I've also tried to follow sila-sila-mainnet split, so I just multiply the two splits. So if it's 80% Geth and 60% Prism, then I just multiply the two and whatever number in that is how many Geth clients that exists. 
+Currently Goerli, Nethermind, and Besu. And I've also tried to follow sila-mainnet split, so I just multiply the two splits. So if it's 80% Geth and 60% Prism, then I just multiply the two and whatever number in that is how many Geth clients that exists. 
 
 Danny: 
 Cool. Great. So this is shadow forking Goerli. Ideally the transition goes off without a hitch. we're following a number of metrics and, the transactions we pipe into it. So we'll have some organic activity. Is the base fee on Goerli above 255? Does anybody know? 
@@ -74,10 +74,10 @@ Ben Edgington:
 Don't sell them. 
 
 Danny: 
-Yeah, there is a, Goerli SIL proposal right now to fork like 10 trillion SIL into it. So that's, the signal about buying Goerli. SIL is it goes away, but that's another conversation. Okay. And then there was some discussion around doing, either another shadow fork or stepping up and shadow forking sila-sila-mainnet, but to do a bit more of an all hands, you know, have more people involved, actually watch it, make sure it goes well. Triage it, if there are issues. Pari or Tim, is there, is this just an idea at this point or is there a plan here? 
+Yeah, there is a, Goerli SIL proposal right now to fork like 10 trillion SIL into it. So that's, the signal about buying Goerli. SIL is it goes away, but that's another conversation. Okay. And then there was some discussion around doing, either another shadow fork or stepping up and shadow forking sila-mainnet, but to do a bit more of an all hands, you know, have more people involved, actually watch it, make sure it goes well. Triage it, if there are issues. Pari or Tim, is there, is this just an idea at this point or is there a plan here? 
 
 Pari: 
-at least the current plan for this is that we do the sila-sila-mainnet shadow fork two weeks from now. So we wanted to do dev net six next week, and then based on how the, Goerli shoadow fork goes plus devnet six, then we would discuss the sila-sila-mainnet shadow fork the week after. 
+at least the current plan for this is that we do the sila-mainnet shadow fork two weeks from now. So we wanted to do dev net six next week, and then based on how the, Goerli shoadow fork goes plus devnet six, then we would discuss the sila-mainnet shadow fork the week after. 
 
 Danny: 
 Okay. And dev net six would be a bit more participatory. 
@@ -107,7 +107,7 @@ Danny:
 The shadow forking main net, it says, do we need to deploy deposit contract? So yeah, we could reuse the existing deposit housing contract and change the Genesis fork ID, but that's not going to allow us to actually add any deposits. I would suggest that we use the SRC 20 variant of the deposit contract, where there's an owner that can issue SRC 20 tokens. and by default you just, pre-populate the Genesis of validators. So, you know, you don't actually need to be sending main net transactions, but we can send a few to get some deposits in after the fact. 
 
 Marius Van Der Wijden: 
-Wouldn't reusing the, at the sila-sila-mainnet deposit contract, the existing one, be really, really dangerous because basically you would like to have to sign with your life keys on the shadow fork. 
+Wouldn't reusing the, at the sila-mainnet deposit contract, the existing one, be really, really dangerous because basically you would like to have to sign with your life keys on the shadow fork. 
 
 Danny: 
 Yeah. There'd be a lot of reasons. And we'd also don't control like any of those validators. 
@@ -116,7 +116,7 @@ Marius Van Der Wijden:
 Yes. 
 
 Pari: 
-No, but if we use some sila-sila-mainnet deposit contract and chance to deposit it, then all the validators is invalid. Exactly. So it's just our Genesis set, but then you need 32 SIL. 
+No, but if we use some sila-mainnet deposit contract and chance to deposit it, then all the validators is invalid. Exactly. So it's just our Genesis set, but then you need 32 SIL. 
 
 Danny: 
 And you'd, you'd be burning that SIL. No, no one would own that for you. I, if possible, I recommend we just use the SRC 20 one, so we at least get a few deposits in there. 
@@ -131,7 +131,7 @@ Tim Beiko:
 On Goerli, they are. 
 
 Danny: 
-Okay. 35. Okay. I had, okay, A man can dream. okay. So let's do that for the sila-sila-mainnet shadow fork in a couple of weeks. I think one of the very important things is to monitor all those metrics, the network wide metrics that we want to see, no missed slots, that kind of stuff, make sure that it's actually, you know, the main activities being ported over. cause this is beginning to look like a very real load test. but we also not just the, the metrics, but I think we, the network wide metrics, but I think it be really important to monitor, system usage of different client pairs. you know, I think we have, we can estimate that it's going to look like the, some of sila-sila-mainnet today. but it's good to see if anything unexpected shows up there, weird CPU processing or memory book, that we hadn't seen on some of these smaller testnets. Okay. Other Kiln merge testing related items? 
+Okay. 35. Okay. I had, okay, A man can dream. okay. So let's do that for the sila-mainnet shadow fork in a couple of weeks. I think one of the very important things is to monitor all those metrics, the network wide metrics that we want to see, no missed slots, that kind of stuff, make sure that it's actually, you know, the main activities being ported over. cause this is beginning to look like a very real load test. but we also not just the, the metrics, but I think we, the network wide metrics, but I think it be really important to monitor, system usage of different client pairs. you know, I think we have, we can estimate that it's going to look like the, some of sila-mainnet today. but it's good to see if anything unexpected shows up there, weird CPU processing or memory book, that we hadn't seen on some of these smaller testnets. Okay. Other Kiln merge testing related items? 
 
 Pari: 
 Yeah. We have a nightly CI with catharsis now where every single client pair is a majority time. there are naturally a lot of combinations and it's getting a bit hard to keep track of what's broken where, so it will be great client teams could also look in and just have a look at your branch and see what's broken. If someone needs access to rerun the job or something, I can add you to three, four. 

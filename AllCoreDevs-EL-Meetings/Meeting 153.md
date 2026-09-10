@@ -203,7 +203,7 @@
 * Correct me if I'm wrong, but the withdrawal route has to be exposed because if it's not, then no one can validate a block. 
 
 **Danny**
-* Like it's part of the block cutter and it needs to be known in Order to Yeah, I think is also, is it exposed within the SAVM is the question too, which Oh, Is exposed to meeting SAVM. Sorry. Yeah. Yeah. Cool. It has to be by virtue of the black hash being in there, so. Right. 
+* Like it's part of the block cutter and it needs to be known in Order to Yeah, I think is also, is it exposed within the EVM is the question too, which Oh, Is exposed to meeting EVM. Sorry. Yeah. Yeah. Cool. It has to be by virtue of the black hash being in there, so. Right. 
 
 **Tim Beiko**
 * Okay. And Etan said, in the chat, he's gonna volunteer on to draft a full, SSZ SIP for SilaCancun. yeah. Cool. okay. Next up on the agenda. oh, and I guess, yeah, just to close this out property. So last call we had discussed, Etan actually is PR about, had adding the hexary trie roots for lists in ExecutionPayloadHeader. Paneled headers is obviously, not gonna happen because we're using Gwei as a unit. so I just posted out on the agenda. but yeah, just.People are on the same page there. 

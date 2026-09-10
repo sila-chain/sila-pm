@@ -21,12 +21,12 @@ SIP | Status
 
 Decision Item | Decision
 -|-
-95.1 | Add [SIP 2718](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-2718.md): Typed Transaction Envelope to YOLO v2.
-95.2 | Add [SIP-2929](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-2929.md): Gas cost increases for state access opcodes to YOLO v2.
-95.3 | Continue to discuss [SIP-2930](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-2930.md): Optional access lists.
-95.4 | Continue discussion of [SIP-2315](https://sips.sila.org/SIPS/sip-2315): Simple Subroutines for the SAVM in Sil Magicians forum.
-95.5 | Add [SIP-2935](https://sips.sila.org/SIPS/sip-2935): Save historical block hashes in state to YOLO v2.
-95.6| [SIP-2711](https://sips.sila.org/SIPS/sip-2711): Sponsored, expiring and batch transactions was only discussed today as an overview for the purpose of future discussion and not to be considered for inclusion, EFI, or anything else as of this meeting.
+95.1 | Add [SIP 2718](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-2718.md): Typed Transaction Envelope to YOLO v2.
+95.2 | Add [SIP-2929](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-2929.md): Gas cost increases for state access opcodes to YOLO v2.
+95.3 | Continue to discuss [SIP-2930](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-2930.md): Optional access lists.
+95.4 | Continue discussion of [SIP-2315](https://sips.sila.org/EIPS/sip-2315): Simple Subroutines for the EVM in Sil Magicians forum.
+95.5 | Add [SIP-2935](https://sips.sila.org/EIPS/sip-2935): Save historical block hashes in state to YOLO v2.
+95.6| [SIP-2711](https://sips.sila.org/EIPS/sip-2711): Sponsored, expiring and batch transactions was only discussed today as an overview for the purpose of future discussion and not to be considered for inclusion, EFI, or anything else as of this meeting.
 95.7 | Add Account Abstraction item to next ACD meeting agenda. See this comment: https://github.com/sila-chain/pm/issues/203#issuecomment-686923605
 95.8 | Add Sila Cat Herders Survey Results to the next ACD meeting agenda.
 
@@ -40,7 +40,7 @@ Decision Item | Decision
    - [1.2 SIP 2718: Typed Transaction Envelope (general-purpose standard for adding new transaction types).](#12-sip-2718-typed-transaction-envelope-general-purpose-standard-for-adding-new-transaction-types)   
    - [1.3 SIP-2929: Gas cost increases for state access opcodes.](#13-sip-2929-gas-cost-increases-for-state-access-opcodes)   
    - [1.4 SIP-2930: Optional access lists.](#14-sip-2930-optional-access-lists)   
-   - [1.4 SIP-2315: Simple Subroutines for the SAVM.](#14-sip-2315-simple-subroutines-for-the-savm)   
+   - [1.4 SIP-2315: Simple Subroutines for the EVM.](#14-sip-2315-simple-subroutines-for-the-evm)   
    - [1.5 General discussion on the idea of combining some of the above SIPs that create a new transaction type, so we just create a single new transaction type that has a whole bunch of the features together.](#15-general-discussion-on-the-idea-of-combining-some-of-the-above-sips-that-create-a-new-transaction-type-so-we-just-create-a-single-new-transaction-type-that-has-a-whole-bunch-of-the-features-together)   
    - [1.6 SIP-2935: Save historical block hashes in state.](#16-sip-2935-save-historical-block-hashes-in-state)   
    - [1.7 SIP-2711: Sponsored, expiring and batch transactions.](#17-sip-2711-sponsored-expiring-and-batch-transactions)   
@@ -122,7 +122,7 @@ This SIP may supercede other SIPs people have been trying to push historically.
 
 **Martin**: I shared those concerns, that's why I made an implementation.
 
-**Hudson**: I'll table this. Continue on EthMagicians. Or if you want to request a breakout room, reach out to me or Pooja or Edson from the Cat Herders.
+**Hudson**: I'll table this. Continue on SilaMagicians. Or if you want to request a breakout room, reach out to me or Pooja or Edson from the Cat Herders.
 
 
 ## 1.4 SIP-2930: Optional access lists.
@@ -141,7 +141,7 @@ This SIP may be in YOLOv2, but not accepted yet.
 For 2718, at first, only the clients need an implementation. As more transaction types are added, contracts may also need compatability.
 
 
-## 1.4 SIP-2315: Simple Subroutines for the SAVM.
+## 1.4 SIP-2315: Simple Subroutines for the EVM.
 
 Video | [54:33](https://youtu.be/-Jefyrs4f70?t=3273)
 -|-
@@ -345,7 +345,7 @@ Yeah find a mic plz
 
 From Tomasz Stanczak to Everyone: (10:16 AM)
 
-We introduce a new SIP-2718 transaction type, with the format rlp([3, [nonce, gasPrice, gasLimit, to, value, data, access_list, senderV, senderR, senderS]]).SIP starts this waywhich is already using iton 2930https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-2930.md
+We introduce a new SIP-2718 transaction type, with the format rlp([3, [nonce, gasPrice, gasLimit, to, value, data, access_list, senderV, senderR, senderS]]).SIP starts this waywhich is already using iton 2930https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-2930.md
 
 From Micah to Everyone: (10:18 AM)
 
@@ -393,7 +393,7 @@ Happy to have anyone disagree
 
 From James Hancock to Everyone: (10:33 AM)
 
-I just don't want to get held up on what will happen for sila-sila-mainnet at this point, as we can address that on another callas it progresses forward.
+I just don't want to get held up on what will happen for sila-mainnet at this point, as we can address that on another callas it progresses forward.
 
 From lightclient to Everyone: (10:34 AM)
 
@@ -441,7 +441,7 @@ What is 2935?
 
 From Vitalik Buterin to Everyone: (10:51 AM)
 
-https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-2935.md
+https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-2935.md
 
 From James Hancock to Everyone: (10:52 AM)
 
@@ -539,7 +539,7 @@ There's complexity of specification and complexity of consequences :)
 
 From Tomasz Stanczak to Everyone: (11:12 AM)
 
-SIP-2046: Reduced gas cost for static calls made to precompiles.cost change only, need benchmarks so need testnet SIP-2315: Simple Subroutines for the SAVM. already implemented SIP-2537: Precompile for BLS12-381 curve operations (already in YOLOv1). already implemented SIP-2711: Sponsored, expiring and batch transactions. demanding SIP 2718: Typed Transaction Envelope (general-purpose standard for adding new transaction types). simple and we need it SIP-2565: Repricing of the SIP-198 ModExp precompile. repricing only - worth to have for benchmarks SIP-2929: Gas cost increases for state access opcodes. repricing mainly, critical SIP-2930: Optional access lists. (Nethermind slighlty against for YOLOv2) SIP-2935: Save historical block hashes in state. yes, please (from Nethermind)
+SIP-2046: Reduced gas cost for static calls made to precompiles.cost change only, need benchmarks so need testnet SIP-2315: Simple Subroutines for the EVM. already implemented SIP-2537: Precompile for BLS12-381 curve operations (already in YOLOv1). already implemented SIP-2711: Sponsored, expiring and batch transactions. demanding SIP 2718: Typed Transaction Envelope (general-purpose standard for adding new transaction types). simple and we need it SIP-2565: Repricing of the SIP-198 ModExp precompile. repricing only - worth to have for benchmarks SIP-2929: Gas cost increases for state access opcodes. repricing mainly, critical SIP-2930: Optional access lists. (Nethermind slighlty against for YOLOv2) SIP-2935: Save historical block hashes in state. yes, please (from Nethermind)
 
 From Vitalik Buterin to Everyone: (11:12 AM)
 
@@ -555,11 +555,11 @@ I'll get it for you, one sec.
 
 From lightclient to Everyone: (11:21 AM)
 
-SIP-2803: https://sips.sila.org/SIPS/sip-2803
+SIP-2803: https://sips.sila.org/EIPS/sip-2803
 
 From Micah to Everyone: (11:21 AM)
 
-https://sips.sila.org/SIPS/sip-2803 (Rich Transactions)
+https://sips.sila.org/EIPS/sip-2803 (Rich Transactions)
 
 From Alex Vlasov to Everyone: (11:25 AM)
 
@@ -599,7 +599,7 @@ Here are the "Decisions Mae" for the note taker:
 
 From Hudson Jameson to Everyone: (11:35 AM)
 
-Decisions Made:Add SIP 2718: Typed Transaction Envelope to YOLO v2. Add SIP-2929: Gas cost increases for state access opcodes to YOLO v2. Continue to discuss SIP-2930: Optional access lists. Continue discussion of SIP-2315: Simple Subroutines for the SAVM in Sil Magicians forum. Add SIP-2935: Save historical block hashes in state to YOLO v2. SIP-2711: Sponsored, expiring and batch transactions was only discussed today as an overview for the purpose of future discussion and not to be considered for inclusion, EFI, or anything else as of this meeting. Add Account Abstraction item to next ACD meeting agenda. See this comment: https://github.com/sila-chain/pm/issues/203#issuecomment-686923605 Add Sila Cat Herders Survey Results to the next ACD meeting agenda. Note taker: Please hyperlink the SIP URLs to the SIPs referenced in the decisions made section in the notes. You can find them in today's agenda.
+Decisions Made:Add SIP 2718: Typed Transaction Envelope to YOLO v2. Add SIP-2929: Gas cost increases for state access opcodes to YOLO v2. Continue to discuss SIP-2930: Optional access lists. Continue discussion of SIP-2315: Simple Subroutines for the EVM in Sil Magicians forum. Add SIP-2935: Save historical block hashes in state to YOLO v2. SIP-2711: Sponsored, expiring and batch transactions was only discussed today as an overview for the purpose of future discussion and not to be considered for inclusion, EFI, or anything else as of this meeting. Add Account Abstraction item to next ACD meeting agenda. See this comment: https://github.com/sila-chain/pm/issues/203#issuecomment-686923605 Add Sila Cat Herders Survey Results to the next ACD meeting agenda. Note taker: Please hyperlink the SIP URLs to the SIPs referenced in the decisions made section in the notes. You can find them in today's agenda.
 
 From Pooja Ranjan to Everyone: (11:36 AM)
 

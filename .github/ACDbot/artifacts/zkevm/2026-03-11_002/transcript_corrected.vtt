@@ -802,11 +802,11 @@ Guillaume: It's a spec question, yes.
 
 201
 00:34:06.800 --> 00:34:16.180
-ignacio: Yeah, so this chain config is basically enough information for the, guest program on how to configure the SAVM.
+ignacio: Yeah, so this chain config is basically enough information for the, guest program on how to configure the EVM.
 
 202
 00:34:16.830 --> 00:34:26.870
-ignacio: You can argue that we can avoid this, and simply assume that it's, like, current sila-sila-mainnet configuration, or something like that.
+ignacio: You can argue that we can avoid this, and simply assume that it's, like, current sila-mainnet configuration, or something like that.
 
 203
 00:34:27.370 --> 00:34:34.840
@@ -818,7 +818,7 @@ ignacio: So, we think that the most flexible style is to simply provide the chai
 
 205
 00:34:49.489 --> 00:35:00.880
-ignacio: Multiple chain configurations, because it might be… it might be required for running tests with really weird setups, apart from, like, the main use case, which is running sila-sila-mainnet blocks.
+ignacio: Multiple chain configurations, because it might be… it might be required for running tests with really weird setups, apart from, like, the main use case, which is running sila-mainnet blocks.
 
 206
 00:35:03.090 --> 00:35:13.809
@@ -982,7 +982,7 @@ Marcin Bugaj: That preload inputs into memory.
 
 246
 00:39:56.460 --> 00:40:08.249
-Marcin Bugaj: Third is Cryptographic Acceleration C interface. It's a… it's a C header that exposes SAVM precompiled equivalent operations.
+Marcin Bugaj: Third is Cryptographic Acceleration C interface. It's a… it's a C header that exposes EVM precompiled equivalent operations.
 
 247
 00:40:08.470 --> 00:40:18.119

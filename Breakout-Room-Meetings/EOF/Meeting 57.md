@@ -33,7 +33,7 @@ Legacy solidity will not easily be able to determine if it's EOF or Legacy, so t
 
 Most libraries depending on assembly would need to change for EOF anyway (any use of JUMP, CALL*, EXCODE* for example)
 
-May be best solved in solidity? conditional compilation or new is_contract primitive? existing solidity PR Detect SAVM version? existing solidity pr
+May be best solved in solidity? conditional compilation or new is_contract primitive? existing solidity PR Detect EVM version? existing solidity pr
 
 Example: OpenZeppelin, Solady, Tycho do deep code interactions and have taken up to a year to implement.
 

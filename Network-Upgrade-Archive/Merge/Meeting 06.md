@@ -30,7 +30,7 @@
 # Intro
 **Mikhail Kalinin**
 * Let's just get started yeah welcome to the Merge Implementers' Call #6 today is going to be pretty straightforward I guess so we'll start from implementation updates as usual there is yeah there is update from my side i'm working on the transition process implementation attacker because the pr has been merged into the into this big repo so I feel like i'll finish this implementation like t the end of this week or early next week and we'll try to.
-* Yeah, the next challenge will be to set up the proof of work chain locally around the beacon chain, do all the steps that we did on the sila-sila-mainnet already, and finish it with the merge transition process, so probably I'll just you yeah yeah likely reuse the scripts that we have from after rayonism, which is great, and yeah we'll use the Gary PR, which already contains everything.
+* Yeah, the next challenge will be to set up the proof of work chain locally around the beacon chain, do all the steps that we did on the sila-mainnet already, and finish it with the merge transition process, so probably I'll just you yeah yeah likely reuse the scripts that we have from after rayonism, which is great, and yeah we'll use the Gary PR, which already contains everything.
 * The transition logic and in gaf so we'll see this is my update does anyone else have an implementation update yep I believe it makes sense everyone is working on the corresponding hard forks so okay cool any questions here.
 * Okay, let's go on to the research updates. We have a couple of things to highlight and possibly discuss, and we have Justin on the line I guess 
 
@@ -40,15 +40,15 @@
 * I can provide some context. I'm talking about PR [2472](sila/eth2.0-specs#2472). Justin is known for going through polishing and merging making sure that the specs conform in terms of naming conventions and structure and all that kind of stuff, so he's done that on the recent merge specs has been about a bunch of reviews I just did it's now passing ci and and has incorporated the feedback so I gave it a plus one this morning if anyone wants to take a look at it.
 
 **Mikhail Kalinin**
-* Yep cool yep so i'll just drop this the pr just in case so yeah there are some renamings and reordering of the fields in the execution payload this is one of the like not substantial but the biggest change I guess right so in some renaming some of the methods yep okay cool so then yeah yeah the next one is the randall pr so there is a pr which adds the randow to the execution payload as Yeah, as the difficulty is already present in the savm context and can be used by the difficulty of code to yeah, and this is the way the randall will be exposed in the savm for the applications we will support, or better said, will not break the existing applications that use difficulty as the source of randomness by this change, and potentially, like after the merge in the cleanup fork, we will probably annotate The counter-argument is that we don't want to change the savm, as we did in the initial merge iteration, but how big of a deal do you think it will be to directly and badly run down into the savm context?
-* and can be used by code difficulty to yeah and this is how the randall will be exposed in the savm for the applications we will support or better to say will not break the existing applications that use difficulty as the source of randomness by this change and potentially like after the merge in the cleanup fork we will probably and we will likely and we want to do it in the following way.
-* So there and there will be sent directly to the savm context and will not be embedded in the execution payload so and the reasonable question here is what if we do this like at the point of merge and it's the minimal version the counter argument to this is that we don't want to change the we don't want any changes in the savm like in this first merge iteration but anyway what do you think how significant it will be to directly and negatively run down into the savm context.
+* Yep cool yep so i'll just drop this the pr just in case so yeah there are some renamings and reordering of the fields in the execution payload this is one of the like not substantial but the biggest change I guess right so in some renaming some of the methods yep okay cool so then yeah yeah the next one is the randall pr so there is a pr which adds the randow to the execution payload as Yeah, as the difficulty is already present in the evm context and can be used by the difficulty of code to yeah, and this is the way the randall will be exposed in the evm for the applications we will support, or better said, will not break the existing applications that use difficulty as the source of randomness by this change, and potentially, like after the merge in the cleanup fork, we will probably annotate The counter-argument is that we don't want to change the evm, as we did in the initial merge iteration, but how big of a deal do you think it will be to directly and badly run down into the evm context?
+* and can be used by code difficulty to yeah and this is how the randall will be exposed in the evm for the applications we will support or better to say will not break the existing applications that use difficulty as the source of randomness by this change and potentially like after the merge in the cleanup fork we will probably and we will likely and we want to do it in the following way.
+* So there and there will be sent directly to the evm context and will not be embedded in the execution payload so and the reasonable question here is what if we do this like at the point of merge and it's the minimal version the counter argument to this is that we don't want to change the we don't want any changes in the evm like in this first merge iteration but anyway what do you think how significant it will be to directly and negatively run down into the evm context.
 
 **Danny**
 * I mean, my point is that we have to modify difficulty since it requires the new context, and so defining it as a constant or taking it as the value off of that rpc uh has probably small complexity difference, so we might as well do it at all.
 
 **Mikhail Kalinin**
-* At this point, the question Yes, that is the question, so is it a huge concern that you have to transmit it directly to the savm without any intermediate steps?
+* At this point, the question Yes, that is the question, so is it a huge concern that you have to transmit it directly to the evm without any intermediate steps?
 
 **Danny**
 * Yeah, the execution layer gets context and directives, so I don't think it's a major concern, but I'm not in charge of the program on that side.
@@ -75,7 +75,7 @@
 * Why is this a workaround? I'm confused. Also, why is this not the final version?
 
 **Mikhail Kalinin**
-* No, it's not the end point, so this is only to avoid having to deal with the savm in the first place. This is more of a workaround than a permanent solution.
+* No, it's not the end point, so this is only to avoid having to deal with the evm in the first place. This is more of a workaround than a permanent solution.
 
 **Rai**
 * Why is this a workaround? I'm perplexed. Also, why is this not the final version?
@@ -87,20 +87,20 @@
 * I meant to use random in my query, thus the final thought in my head was randall in the place of difficulty in the payload.
 
 **Micah Zoltu**
-* Is there any reason why we would wish to disclose the randow in the savm via a mechanism other than that opcode?
+* Is there any reason why we would wish to disclose the randow in the evm via a mechanism other than that opcode?
 
 **Mikhail Kalinin**
 * does it make sense?
 
 **Micah Zoltu**
-*  Yeah, is there any reason why we would ever have to return to this? For example, if we set I forget what opcode difficulty is but that opcode now just returns render value, are we done forever and never have to return to this because the savm now has a random number generator at the end?
+*  Yeah, is there any reason why we would ever have to return to this? For example, if we set I forget what opcode difficulty is but that opcode now just returns render value, are we done forever and never have to return to this because the evm now has a random number generator at the end?
 
 **Danny**
 * Yeah, if the value was hardened, like, with a pdf or something, it would be substituted for that fresh new heart and value, but.
 
 **Mikhail Kalinin**
 * Yes, it's 256 bits, but it's not cut like the fuller and the amex.
-* Yeah, we're just talking about how the random makes this boot into the edm is revealed by the savm the source of it is is it going to be part of the execution payload or is it going to be um like a side value but it's used by the savm um without being placed into into.
+* Yeah, we're just talking about how the random makes this boot into the edm is revealed by the evm the source of it is is it going to be part of the execution payload or is it going to be um like a side value but it's used by the evm um without being placed into into.
 
 **Danny**
 *  I believe it makes sense to include it in the payload, and I don't see any problems with doing so even as a final destination.

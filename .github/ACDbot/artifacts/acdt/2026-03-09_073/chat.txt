@@ -3,8 +3,8 @@
 00:03:49	felipe:	gm
 00:05:16	danceratopz:	https://github.com/sila-chain/pm/issues/1956
 00:06:24	Parithosh Jayanthi:	https://github.com/sila-chain/execution-apis/pull/764
-00:06:50	Giulio:	https://Sila Research/t/binary-ssz-transport-for-the-engine-api-an-initial-benchmark-on-a-live-network-with-kurtosis/24324
-00:08:28	Stefan Starflinger:	Reacted to "https://Sila Research..." with 👍
+00:06:50	Giulio:	https://ethresear.ch/t/binary-ssz-transport-for-the-engine-api-an-initial-benchmark-on-a-live-network-with-kurtosis/24324
+00:08:28	Stefan Starflinger:	Reacted to "https://ethresear.ch..." with 👍
 00:09:25	Łukasz Rozmej:	not basically done -> in Nethermind it needs to be redone from scratch properly.
 00:10:20	Łukasz Rozmej:	Have we experimented with also using compression between EL<->CL?
 00:10:30	FLCL:	compression makes it slower
@@ -174,7 +174,7 @@ I think this is fine, we fetch duties at the start of the epoch and ptc duty is 
 Yeah I agree, I think its worth already breaking/finding out what’s broken in existing clients
 00:50:39	Justin Traglia:	Reacted to "Yeah I agree, I thin..." with 👍
 00:50:45	Toni Wahrstätter:	snap/2:
-https://github.com/nerolation/SIPs/blob/toni/snap-2/SIPS/sip-9999.md
+https://github.com/nerolation/SIPs/blob/toni/snap-2/EIPS/sip-9999.md
 00:51:03	jochem-brouwer:	Does this remove the same msgs from sil/71?
 00:52:27	jochem-brouwer:	Antwoord verzenden naar "Does this remove t..."
 
@@ -191,8 +191,8 @@ Yes, because we need bloatnet for the stageful repricings tests
 *stateful
 00:57:39	Toni Wahrstätter:	Replying to "So the idea is to te..."
 
-The pure exec optimizations (no state) can already be tested on devnet-2. For state related things we need to use a sila-sila-mainnet-state fork or bloatnet
-00:58:14	Ansgar Dietrichs:	I heard 5 Gigagas on sila-sila-mainnet? brb notifying stakers
+The pure exec optimizations (no state) can already be tested on devnet-2. For state related things we need to use a sila-mainnet-state fork or bloatnet
+00:58:14	Ansgar Dietrichs:	I heard 5 Gigagas on sila-mainnet? brb notifying stakers
 00:58:21	jochem-brouwer:	Heeft gereageerd op "I heard 5 Gigagas ..." met 😂
 00:58:23	Parithosh Jayanthi:	Reacted to "I heard 5 Gigagas on..." with 😂
 00:58:23	Ameziane Hamlat:	Reacted to "Yes, because we need..." with 👍
@@ -202,7 +202,7 @@ The pure exec optimizations (no state) can already be tested on devnet-2. For st
 00:59:01	Mario Vega:	Reacted to "I heard 5 Gigagas on..." with 😂
 00:59:05	Ameziane Hamlat:	Replying to "So the idea is to te..."
 
-So we want to do the tests on one snapshot instead of having a snapshot of sila-sila-mainnet and another one of the bloat network
+So we want to do the tests on one snapshot instead of having a snapshot of sila-mainnet and another one of the bloat network
 00:59:56	Ameziane Hamlat:	Replying to "So the idea is to te..."
 
 I’m saying this because I don’t see the link between BAL and Bloat network

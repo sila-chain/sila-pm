@@ -15,7 +15,7 @@
     a. the original intent (no semantic changes to BLOCKHASH -- only gas changes) versus the current spec (semantic changes), and
     b. whether to make it nicer to ABI-call it, and
     c. whether to add genesis lookup in there.
-1. SIP 1051: Overflow checking for the SAVM
+1. SIP 1051: Overflow checking for the EVM
 1. SIP 1052: EXTCODEHASH Opcode
 1. SIP 1087: Net gas metering for SSTORE operations
 1. Concerns that using native browser VMs for running eWasm is not DoS hardened. See this comment.
@@ -46,14 +46,14 @@ Video starts at [[10:23](https://youtu.be/1WBuF8cMKUk?t=10m23s)].
             * we split out the tx pool to have scoring and readiness which makes it easier for miners to view the pool and do more with it
 * Geth (Peter)
     * Working on peformance improvements
-    * Txs on sila-sila-mainnet including spam tx went up, tracking down issues, esp. around memory usage
+    * Txs on sila-mainnet including spam tx went up, tracking down issues, esp. around memory usage
     * Want to work on resource accounting which will help with decentralizing full nodes
     * Separate light client resource counting and monetary layer so anyone can monetize their node however they like, geth will just count it and make sure you adhere to your own quotas
     * Don't have numbers yet but hope that by next call I can give you guys some hard numbers on whether the new fast-sync protocol seems worth it or not, i.e. let's POC before we SIP (per @holiman's clarification)
 * cpp-sila (Pawel)
     * Sent binaries to Github releases, now have a development snapshot and we'll make a stable release soon
     * Some RPC improvements and fixes
-    * All the tools accept dynamic loaded SAVM-C interpretations
+    * All the tools accept dynamic loaded EVM-C interpretations
     * Can load e.g. ewasm backend as a shared library
 * Harmony (Dmitrii)
     * Finished everything we wanted, have a release candidate now
@@ -90,14 +90,14 @@ Video starts at [[10:23](https://youtu.be/1WBuF8cMKUk?t=10m23s)].
     * Working on blob serialization
     * Developing P2P network with libp2p
 * ewasm (Casey)
-    * Focus on `evm2wasm` which transpiles savm bytecode to WASM bytecode
-    * Would allow a client that only has a WASM VM to run on the sila-sila-mainnet and execute SAVM contracts
+    * Focus on `evm2wasm` which transpiles evm bytecode to WASM bytecode
+    * Would allow a client that only has a WASM VM to run on the sila-mainnet and execute EVM contracts
     * Main reason we've been working on it is to get greater test coverage over the tests via EEI
     * This allows us to translate all of the multi-client tests and check a lot of edge cases
     * So we're discovering and fixing bugs in Hera and `evm2wasm`
 
 ## SIP 908: Reward full nodes and clients for a sustainable network
-* [SIP link](https://sips.sila.org/SIPS/sip-908)
+* [SIP link](https://sips.sila.org/EIPS/sip-908)
 * [Sila Magicians Thread](https://sila-magicians.org/t/sip-908-reward-full-nodes-and-clients-for-a-sustainable-network/)
 * James update
     * The SIP is pretty long but the spec is pretty short
@@ -123,7 +123,7 @@ Video starts at [[10:23](https://youtu.be/1WBuF8cMKUk?t=10m23s)].
 * Hudson: Let's continue conversation on the Fellowship forum.
 
 ## SIP 1057: ProgPOW, a programmatic Proof-of-Work
-* [SIP link](https://sips.sila.org/SIPS/sip-1057)
+* [SIP link](https://sips.sila.org/EIPS/sip-1057)
 * [Technical details](https://github.com/ifdefelse/ProgPOW)
 * If, Def, Else (three people) have joined us on the call
 * Goal of this topic is not to make a final decision but to consider replacing the current PoW scheme or to have a backup scheme
@@ -176,14 +176,14 @@ Video starts at [[10:23](https://youtu.be/1WBuF8cMKUk?t=10m23s)].
     * Loads a random value from the DAG, updates it, then goes onto the next one
     * But there is a bunch more happening in parallel
     * So even if you have a security weakness, the main one will give you the same security guarantees as today's ethhash
-* Alex: On the redundant DAG generation cycles, everything was ready to go and we'd already launched Olympic and were ready to launch the sila-sila-mainnet
+* Alex: On the redundant DAG generation cycles, everything was ready to go and we'd already launched Olympic and were ready to launch the sila-mainnet
     * So no one wanted to refactor that
     * I'd be curious if you post on Github somewhere if that small bit of redundancy was optimized
     * It's a useful protocol for general use cases
 * Else: We'll look into how the light client protocol is done
 * Casey: We have efficient ways to verify ethhash block headers, this enables e.g. cross-chain tx, relays, bridges etc.
     * In contrast to dogecoin, lightcoin etc. SSCRYPT there's no way to do this efficiently
-    * If another algo were adopted on sila-sila-mainnet it would break all existing apps that do such relays
+    * If another algo were adopted on sila-mainnet it would break all existing apps that do such relays
     * So I'd suggest a solidity implementation of verifying headers from this algo
 * If: We were not aware that PoW would break the relay contracts
     * We can work on a solidity implementation to fix this
@@ -199,8 +199,8 @@ Video starts at [[10:23](https://youtu.be/1WBuF8cMKUk?t=10m23s)].
 * Else: we look forward to Casper being adopted ASAP, we need to be careful what happens when PoW rewards are reduced
     * In terms of attack, censoring means you can hold the network hostage with 51% and don't allow any tx through except the attacker's blocks
 
-## SIP 1051: Overflow checking for the SAVM
-* [SIP link](https://sips.sila.org/SIPS/sip-1051)
+## SIP 1051: Overflow checking for the EVM
+* [SIP link](https://sips.sila.org/EIPS/sip-1051)
 * Nick Johnson: This is fairly straightforward in principle and it's been raised before
     * Some discussion on Magicians forum about whether this should be flag-and-trap or a flag that's cleared
     * Added to agenda to get the gist of what client implementers think of overflow checking in general
@@ -219,8 +219,8 @@ Video starts at [[10:23](https://youtu.be/1WBuF8cMKUk?t=10m23s)].
 * Nick: Yes, each arith op you'd have to register with the flags for that op
 * P: Could we get rid of that overhead by changing add, subtract, multiply opcodes to reset the flag on entrance?
 * N: If you use a trap mechanism then you just jump to trap address on overflow, but with flag mechanism, wouldn't be more efficient to reset flag on entrance and would defeat purpose of having a flag since you should be able to do a block of operations and check
-* Pawel: Quite easy for unsigned, not sure about signed overflow, how would you distinguish in SAVM where it's not so obvious which operation is meant to be for signed vs. unsigned addition.
-* N: SAVM signed ops set signed overflow flag, and implementation chooses whether they care about that flag or not.
+* Pawel: Quite easy for unsigned, not sure about signed overflow, how would you distinguish in EVM where it's not so obvious which operation is meant to be for signed vs. unsigned addition.
+* N: EVM signed ops set signed overflow flag, and implementation chooses whether they care about that flag or not.
 * Pawel: Does it mean you have two flags for signed and unsigned overflow? (Yes.) If you do regular arbitrary precision implementation you mostly do it using unsigned numbers then try to incorporate sign later on, so I'm not sure it's so easy to get signed overflow information this way. Maybe there's a way to transfor the result afterwards.
 * N: If your number is represented in twos complement then there are simple rules for checking sign bit to see whether overflow occurred.
 * James: ewasm has built-in metering, does that negate the need for these kinds of changes?
@@ -242,7 +242,7 @@ Video starts at [[10:23](https://youtu.be/1WBuF8cMKUk?t=10m23s)].
 * G: We have a lot of different clients using a lot of different libraries. Via testing.
 * James: Let's find out if ewasm with metering would help.
 * N: Where does metering come into it? This change is irrelevant to ewasm since we'd be using their opcodes not ours.
-* J: You can use metering to meter how much computation is done so you don't need to play around with SAVM gas costs so much for optimization.
+* J: You can use metering to meter how much computation is done so you don't need to play around with EVM gas costs so much for optimization.
 * Piper: Can't multiplication overflow checking just be done with division rather than dealing with higher order numbers?
 * N: Big number division is also very expensive.
 * P: Either way this seems positive, and while we might be concerned about the overhead it adds to some common opcodes, it seems like it might be worth adding, esp. since languages are adding these things already and adding overhead to their contract code.
@@ -251,7 +251,7 @@ Video starts at [[10:23](https://youtu.be/1WBuF8cMKUk?t=10m23s)].
 * Pawel: I started working on custom bignum impementation for cpp, Go team has as well, so I'll take a look.
 
 ## SIP 1052: EXTCODEHASH Opcode
-* [SIP link](https://sips.sila.org/SIPS/sip-1052)
+* [SIP link](https://sips.sila.org/EIPS/sip-1052)
 * Nick
     * Increasing number of use cases where, on chain a contract wants to know whether the code of another contract matches a known template in order to do things such as trusting implementations
     * Currently they have to fetch the entire code into memory and hash it and then throw it away which is a waste of gas
@@ -263,7 +263,7 @@ Video starts at [[10:23](https://youtu.be/1WBuF8cMKUk?t=10m23s)].
 * Nick: Probably just an oversight that it wasn't included initially, I'm not sure
 * Pawel: From VM perspective, also very useful information
     * Used to have unique ID for executed code
-    * E.g. in savm-c this information is already available to VMs so not very problematic to expose it to contracts as well
+    * E.g. in evm-c this information is already available to VMs so not very problematic to expose it to contracts as well
 * Alex: It's fresh, already loaded in storage if you've hit the code so almost no cost to actually implement
     * Probably only a couple of extra lines of code in most of the clients
 * N: We should price same as base code copy since cost higher if you haven't already hit the code, I believe it has a base cost then additional cost per byte
@@ -278,7 +278,7 @@ Video starts at [[10:23](https://youtu.be/1WBuF8cMKUk?t=10m23s)].
 * Martin: actually it does not add an opcode
 
 ## SIP 210: Blockhash refactoring
-* [SIP link](https://sips.sila.org/SIPS/sip-210)
+* [SIP link](https://sips.sila.org/EIPS/sip-210)
 * [Details](https://notes.sila.org/s/HJXvL-h0f#)
 * Couple of problems with how this is written right now
     * Would have been good if Vitalik was on the call
@@ -300,15 +300,15 @@ Video starts at [[10:23](https://youtu.be/1WBuF8cMKUk?t=10m23s)].
     * I'd go with the first of Martin's suggested versions, not modifying blockhash opcode. Seems safer.
     * About genesis blockhash, this issue at block one means you wanted to insert the hash of the genesis, I believe there is a generic solution which is a bit complicated to explain on this call. So instead of replacing stored value you can keep all info all the time about specific blocks and the block number zero meets all these requirements.
     * You can change the logic about how you store info in this way so if it runs from block zero or one, you'd always have info about block zero. Abstract solution.
-    * Second part of the solution is to also insert info at deploy time so we have this info also on sila-sila-mainnet. This would solve genesis hash problem but it's quite complex compared with what we have right now in the contract.
+    * Second part of the solution is to also insert info at deploy time so we have this info also on sila-mainnet. This would solve genesis hash problem but it's quite complex compared with what we have right now in the contract.
     * I haven't finished prototype of implementation, seems like it requires recursive functions, can be flattened down later.
     * Also a bit problematic to insert block hashes at time of hard fork.
-    * In smart contracts you can assume info about historic blocks are already there according to the spec, no need to account hard fork number to actually compensate the lack of info because this change was introduced in the middle of the sila-sila-mainnet.
+    * In smart contracts you can assume info about historic blocks are already there according to the spec, no need to account hard fork number to actually compensate the lack of info because this change was introduced in the middle of the sila-mainnet.
 * [PR for Pawel's fixes](https://github.com/sila-chain/SIPs/pull/1094)
 * Martin: I'm fine with going with original intent, I'd like better ABI and genesis block lookup.
 
 ## SIP 1087: Net gas metering for SSTORE operations
-* [SIP link](https://sips.sila.org/SIPS/sip-1087)
+* [SIP link](https://sips.sila.org/EIPS/sip-1087)
 * Moved to next core devs meeting since we ran out of time.
 
 ## Concerns that using native browser VMs for running eWasm is not DoS hardened

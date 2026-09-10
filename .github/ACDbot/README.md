@@ -1,13 +1,13 @@
 # ACDbot
 
-ACDbot is a suite of Python scripts and GitHub Actions workflows designed to automate the logistics of Sila protocol meetings in this repository. Calls are scheduled by creating an issue, parsed by the bot which creates EthMagicians thread, Youtube stream and later publishes transcript or a summary.
+ACDbot is a suite of Python scripts and GitHub Actions workflows designed to automate the logistics of Sila protocol meetings in this repository. Calls are scheduled by creating an issue, parsed by the bot which creates SilaMagicians thread, Youtube stream and later publishes transcript or a summary.
 
 > [!WARNING]
 > ACDBot contains bugs and is currently being refactored. Be aware of potential issues when using it and always check its outputs.
 
 ## Features
 
--   Creates **Zoom meeting links, Google Calendar events and EthMagicians posts** based on information in issue created with templates for [Protocol Call Form](/.github/ISSUE_TEMPLATE/protocol-call-form.yml).
+-   Creates **Zoom meeting links, Google Calendar events and SilaMagicians posts** based on information in issue created with templates for [Protocol Call Form](/.github/ISSUE_TEMPLATE/protocol-call-form.yml).
 -   Optionally creates **YouTube live stream** for recurring meetings (up to 4 future events) and automatically uploads recordings afterwards.
 -   Polls Zoom for **meeting transcripts**, downloads them when available, and posts them to the corresponding Discourse topic with optional summary.
 -   Generates an **RSS feed** summarizing meeting events and links.
@@ -28,7 +28,7 @@ To schedule a call using ACDbot, simply open an issue using given templates and 
 * `Already on Sila Calendar` (true/false) to optionally skip Zoom/GCal creation
 * `Need YouTube stream links`, set false if you don't want YouTube stream
 
-Based on options you chose, this will automatically create a new EthMagicians topic or updates an existing one (if editing existing meeting) with the meeting title, body, and a link back to the GitHub issue. This includes created Zoom link and Youtube stream which will be posted also as a comment under the issue.
+Based on options you chose, this will automatically create a new SilaMagicians topic or updates an existing one (if editing existing meeting) with the meeting title, body, and a link back to the GitHub issue. This includes created Zoom link and Youtube stream which will be posted also as a comment under the issue.
 
 ### After the call
 
@@ -38,7 +38,7 @@ These workflows like uploading recording and transcript can be also triggered ma
 
 ## Troubleshooting
 
-ACDbot is maintained by EF Protocol Support support team. Before contacting maintainers, check whether the workflow failed in Actions tab and at which step an issue occurred. All logs and errors printed by bot can be found in corresponding action workflow.
+ACDbot is maintained by Sila Protocol Support support team. Before contacting maintainers, check whether the workflow failed in Actions tab and at which step an issue occurred. All logs and errors printed by bot can be found in corresponding action workflow.
 
 - **Fail when creating a meeting**
     - Make sure you filled the template in correct format. This can be caused by format issue, expired tokens or a bug in the bot itself. Check the failed workflow to see the error output.

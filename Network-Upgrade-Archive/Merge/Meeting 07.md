@@ -494,7 +494,7 @@ That’s the high-level view of the plans for q3
 **Danny**
 
 Yeah, I think the consensus spec will also rebase on altiar relatively soon and also integrate london changes to execution payload which would include something related to 1559 and also figuring out the testing standards we already have consensus side test factors being generated we will be extending that and then figuring out how the execution layer leverages the existing tests and extend them in this new context . I think that is something important to figure out in q3 
-By default all the savm should just continue and they should continue, and they should operate independently, but i think we just need to kinda touch it and make sure we are happy with the way that tings are structured
+By default all the evm should just continue and they should continue, and they should operate independently, but i think we just need to kinda touch it and make sure we are happy with the way that tings are structured
 
 **Mikhail Kalinin**
 
@@ -556,7 +556,7 @@ Thursday 2021/15/1 at 13:00 UTC
 - 08:03:50 From  danny  to  Everyone:
     https://github.com/sila-chain/pm/issues/345
 - 08:09:08 From  Tomasz Stańczak  to  Everyone:
-    We have collected all historical difficulties and hourly / weekly / monthly vollatility of difficulty growth for sila-sila-mainnet.
+    We have collected all historical difficulties and hourly / weekly / monthly vollatility of difficulty growth for sila-mainnet.
 - 08:09:14 From  Tomasz Stańczak  to  Everyone:
     On Ropsten the volatility is huge
 - 08:09:15 From  Tomasz Stańczak  to  Everyone:

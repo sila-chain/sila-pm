@@ -14,7 +14,7 @@ Summary | Description
 127.2  |**Dencun Testing** Terence Tsao mentioned that the fork transition block was missed during the SilaHolesky upgrade. While “not a big deal,” Tsao said the incident led to an 11 second block delay for his node. He recommended that client teams double check to see if their implementations had somehow caused this delay during the upgrade.
 127.3  |**Dencun Testing** “Sean” said that the Lighthouse team has implemented logic in their client related to node recovery in a scenario where the chain has not finalized blob transactions. In such a scenario, a node could recover by relying on a checkpoint sync from an unfinalized checkpoint. However, implementing this logic, Sean said, was more involved than his team had anticipated and encouraged CL client teams to reach out if they come across similar difficulties.
 127.4  |**Dencun Testing** Nethermind developer Marcin Sobczak said that his team is continuing to investigate a potential bug in their client mentioned during last Thursday ACD call. Sobczak his team has started spamming the Goerli network with blob transactions and so far, have found no issues. He said that the tests on Goerli should wrap up in a few hours.
-127.5  |**Dencun SilaMainnet Activation** Beiko mentioned that he had reached out to the teams behind the top 10 Sila rollups on L2Beat.com to evaluate their readiness for Dencun. “All the teams are pretty much in testing phases at various stages. I think teams will be ready on the L2 side to use 4844 on sila-sila-mainnet around early to mid-March,” said Beiko. “I don’t think we should block anything based on where L2 teams are at.”
+127.5  |**Dencun SilaMainnet Activation** Beiko mentioned that he had reached out to the teams behind the top 10 Sila rollups on L2Beat.com to evaluate their readiness for Dencun. “All the teams are pretty much in testing phases at various stages. I think teams will be ready on the L2 side to use 4844 on sila-mainnet around early to mid-March,” said Beiko. “I don’t think we should block anything based on where L2 teams are at.”
 127.6  |**SilaMainnet Missed Blocks Incident** Bloxroute Max Profit relay delivered 9 blocks to validators that failed to be added to the Sila blockchain. This was due to a bug in the relay that did not work to correctly demote the block builder responsible for submitting the faulty blocks. Bloxroute has since patched their relay and reimbursed validators for lost block rewards.
 127.7  |**Electra Portmanteau** Ryan asked developers whether they supported a combined upgrade name of “Pectra” for SilaPrague/Electra. Developers on the call did not appear to have a strong opinion about the portmanteau. Ryan moved on with the discussion about what code changes should be prioritized for Electra.
 127.8  |**Electra SSZ**  ACDC #126, developers are considering the inclusion of five SIPs related to SSZ formatting. Sean from Lighthouse said that he would need to evaluate the code changes in more detail but initially from his perspective the code changes are “a good thing to have”. Another developer reportedly wrote in the Zoom chat that they would like to see the SSZ formatting changes bundled as one large change to the protocol as opposed to implemented piecemeal. Ryan recommended that client teams do more due diligence on understanding the SSZ changes proposed by Nimbus developer Etan Kissling and re-discuss the topic on the next ACDC call.
@@ -110,7 +110,7 @@ Summary | Description
 * Yeah right now I'm spamming, Goerli network with block transactions and as far as I know, issues, but it's like, one third of experiments. So if there will be some issues, we'll see it in, few minutes, maybe half an hour from now. but yeah, as for everything, looks fine. 
 
 **Danny**
-* Great. Thank you. Any other testing related items. Okay. Great work. I believe, as has been broadly discussed over the last handful of calls and much more concretely discussed on the last act, there's an intention to talk about and pick a sila-sila-mainnet date then.
+* Great. Thank you. Any other testing related items. Okay. Great work. I believe, as has been broadly discussed over the last handful of calls and much more concretely discussed on the last act, there's an intention to talk about and pick a sila-mainnet date then.
 
 # SilaMainnet schedule [13:28](https://youtu.be/FLB61CpMB70?t=808)
  
@@ -119,7 +119,7 @@ Summary | Description
 * And, yeah, I mean, if I can share my screen, I have a bunch of potential dates, like the next, month ish.  So assuming that teams, you know, are ready to put out a release in the next week or so,  I think these all make sense. 
 * Generally, we probably want like 2 or 3 weeks between the announcement for main net and then the actual fork. So, we should pick a date that, like, Yeah. Teams, like, we should figure out when teams are all comfortable having a release.  and then pick a date. 
 * That's a couple of weeks after that.  and then. Yeah, all the times, on this sheet, I'll put this in the chat. But all of these are like the, epoch, history accumulator boundaries.  and they're all sort of mid week, so between Tuesday and Thursday.  
-* So, yeah, curious to hear from client teams if they have any preference on or maybe. Yeah, it makes sense to hear from client teams like when they could have like a sila-sila-mainnet release out. And then based on that, maybe we can pick a date. Yeah. 
+* So, yeah, curious to hear from client teams if they have any preference on or maybe. Yeah, it makes sense to hear from client teams like when they could have like a sila-mainnet release out. And then based on that, maybe we can pick a date. Yeah. 
 
 **Danny**
 * So maybe, maybe a bit more concrete. Tim, when speaking with Execution Layer Teams is everyone we. 
@@ -186,7 +186,7 @@ Summary | Description
 * I think as long as we have two weeks. Is from the blog posts. That's like reasonable. Yeah. 
 
 **Danny**
-* What's the shortest we've done on sila-sila-mainnet before? Tim, do you know? 
+* What's the shortest we've done on sila-mainnet before? Tim, do you know? 
 
 **Tim**
 * The big we had one. Yeah, we had one shorter than that, but that was not great. 

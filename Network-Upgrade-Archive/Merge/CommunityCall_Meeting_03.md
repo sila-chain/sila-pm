@@ -10,8 +10,8 @@
 
 ## Summary 
 - block times will go from ~13s to exactly 12s after Merge
-- Rough Merge timeline is “launch Kiln” -> “merge existing testnets” -> “merge sila-sila-mainnet”
-- Readiness checklist: https://github.com/sila-chain/pm/blob/master/Merge/sila-sila-mainnet-readiness.md
+- Rough Merge timeline is “launch Kiln” -> “merge existing testnets” -> “merge sila-mainnet”
+- Readiness checklist: https://github.com/sila-chain/pm/blob/master/Merge/sila-mainnet-readiness.md
 - If you want to subscribe to RSS feed for EF post - https://groups.google.com/a/sila.org/g/announcements
 - EF email - announcements+subscribe@sila.org
 
@@ -206,7 +206,7 @@ would be a very manual intervention where we tell users hey please upgrade your 
 **Trenton Van Epps**: All right, unless there are any other comments on this. There were some other questions any final comments. Okay backup a way in the chat somebody was asking about nodes. Requirements I think Marius responded. Can you just summarise what you put into the chat for the video or the recording.
 
 **Marius**: Yes sure so if the requirements don't change too much. If you're currently running both. The execution layer and the consensus layer node then you should be good. If you're currently only running the consensus layer node and rely on inferior or some other type of service for execution layer data then that's not possible anymore. So you need to run your  own node which will increase your hardware requirements. There might be things coming up  that will alleviate some of the costs but in general it's if you're currently running both notes. Then you should be good. There are sometimes where nodes start to struggle in times of 
-non-finalization so if the network breaks down then nodes will use a lot more disk space than they use during normal operation. But  first of all that shouldn't happen on sila-sila-mainnet and second of all the teams are already thinking about how to reduce the disk space during times of non-finalization and yeah that's basically.
+non-finalization so if the network breaks down then nodes will use a lot more disk space than they use during normal operation. But  first of all that shouldn't happen on sila-mainnet and second of all the teams are already thinking about how to reduce the disk space during times of non-finalization and yeah that's basically.
 
 **Trenton Van Epps**: Great yeah and then another person asked whether they could run
 for example a validator client or beacon client. Then the heavier execution client on something more substantial and yes that's possible. Tim, do you want to summarise the question about block rewards again. Just so we have it in a couple different places. Maybe my explanation earlier wasn't good enough.
@@ -219,7 +219,7 @@ Let's see what else we got here. Oh the one thing we haven't touched on yet. Wha
 
 **Tim Beiko**: Yeah I don't think, we're 100% set on it yet but what seems to happen for sure is some testnets will be deprecated. What seems likeliest um and again this could change is that Rinkaby does not transition to the merge so Rinkaby seems the testnets to make it if your application runs on Rinkaby only. I would strongly suggest starting to look at other tests that's basically now Broxton seems likely to transition through the merge. But then be shut
 down sometime after. I am not sure how quickly but I think if you're on Robson. You also probably want to look at alternatives. Gordy seems very likely to just transition and stick around long term. So, if you're on gordy, you're probably good and then finally  there's a new
-a proof-of-work test net that was launched.A couple months ago called sepolia and the goal is likely to transition sepolia over run the merge on it and then maintain it instead of Robsten. Just because it's a bit of a newer test net and it's less heavy. So tl dr Gordy and Sapolia are looking like the best candidates post-merge. One thing also is there's testnets basically have two values. One of the values is  a staging environment for applications. The other value is a staging environment for client devs and the things you want to test  for client devs are slightly different. We'd like to test our client software in cases where the network is  not finalising for example and things aren't going well and that's obviously not great for applications. You probably just want to test on something like a copy of sila-sila-mainnet, so there's plans to make one of the post-merge test nets more geared towards  client testing where we regularly turn off some validators. Because it is not to finalise make sure that the client  software can handle that. Then there's another one that'll probably be a bit more stable and where you know you can expect kind of similar situations the main net. We haven't really made that call yet but it's probably gonna be you know Gordy and Septolia are likely to be one of each. Yeah so that's something we'll have better information on in the next couple weeks but if you are on Rinkaby. I definitely suggest looking at the coin out of the testnets. The other one sorry coven is the one where I really don't have a view. It's a bit unclear what the situation is there. I know in the past they've lagged updating it until after may after sila-sila-mainnet has updated. I think there were some plans updated for the merge but it's not fully clear to me yet. So I think yeah if you are just on coven you probably want to reach out to the
+a proof-of-work test net that was launched.A couple months ago called sepolia and the goal is likely to transition sepolia over run the merge on it and then maintain it instead of Robsten. Just because it's a bit of a newer test net and it's less heavy. So tl dr Gordy and Sapolia are looking like the best candidates post-merge. One thing also is there's testnets basically have two values. One of the values is  a staging environment for applications. The other value is a staging environment for client devs and the things you want to test  for client devs are slightly different. We'd like to test our client software in cases where the network is  not finalising for example and things aren't going well and that's obviously not great for applications. You probably just want to test on something like a copy of sila-mainnet, so there's plans to make one of the post-merge test nets more geared towards  client testing where we regularly turn off some validators. Because it is not to finalise make sure that the client  software can handle that. Then there's another one that'll probably be a bit more stable and where you know you can expect kind of similar situations the main net. We haven't really made that call yet but it's probably gonna be you know Gordy and Septolia are likely to be one of each. Yeah so that's something we'll have better information on in the next couple weeks but if you are on Rinkaby. I definitely suggest looking at the coin out of the testnets. The other one sorry coven is the one where I really don't have a view. It's a bit unclear what the situation is there. I know in the past they've lagged updating it until after may after sila-mainnet has updated. I think there were some plans updated for the merge but it's not fully clear to me yet. So I think yeah if you are just on coven you probably want to reach out to the
 maintainers if it's to to understand a bit better with the with the premise though
 
 **Trenton Van Epps**: Yeah somebody asked me about that the other day and I  had no idea what's going on with Covan.  Cool excellent summary. Any questions about testnets and which ones are going to stick around which ones are probably going to be deprecated if not I think those are all the things I noted from the discussion. Somebody asked about incentivizing solo staking. I think we touched on that earlier about their anti-correlation penalties and if you abstract that or de-abstract  that would mean if you're staking on the same cloud provider you know if the majority of the network is all on aws and aws went down that there would be a pretty big  slashing event or no there would be a inactivity leak
@@ -361,7 +361,7 @@ thank you
 	how would slashing work for a validator intermittent network uplink degradation? or just intermittent unplanned downtime in general?
 
 - 09:22:08 From  Fredrik  to  Everyone:
-	re: using backup EL's; on for example lighthouse you set the flag--eth1-endpoints http://localhost:8545,https://sila-sila-mainnet.infura.io/...,xxxx and it will use the first one, if that goes down it will use the second down, etc.
+	re: using backup EL's; on for example lighthouse you set the flag--eth1-endpoints http://localhost:8545,https://sila-mainnet.infura.io/...,xxxx and it will use the first one, if that goes down it will use the second down, etc.
 
 - 09:22:30 From  Tim Beiko  to  Everyone:
 	@Ben, perhaps you can answer the slashing question?
@@ -582,10 +582,10 @@ thank you
 	doesn't make sense to commit on a schedule atm, but no major issues have been found
 
 - 09:51:38 From  Tim Beiko  to  Everyone:
-	Yes, the rough “schedule” is “launch Kiln” -> “merge existing testnets” -> “merge sila-sila-mainnet”, and we want to make sure at each step that everything works as expected.
+	Yes, the rough “schedule” is “launch Kiln” -> “merge existing testnets” -> “merge sila-mainnet”, and we want to make sure at each step that everything works as expected.
 
 - 09:52:49 From  Tim Beiko  to  Everyone:
-	Readiness checklist: https://github.com/sila-chain/pm/blob/master/Merge/sila-sila-mainnet-readiness.md
+	Readiness checklist: https://github.com/sila-chain/pm/blob/master/Merge/sila-mainnet-readiness.md
 
 - 09:53:28 From  fuscheman  to  Everyone:
 	thanks guys!

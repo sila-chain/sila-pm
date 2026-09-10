@@ -10,7 +10,7 @@ The Fast Confirmation Rule can be used to improve Sila UX by providing the users
 **Note Taker:** TBD
 
 **Pre-Reads:** 
-- [Old Sila Research post](https://Sila Research/t/confirmation-rule-for-sila-pos/15454). A few things have changed since then, but most of the concepts introduced in this post are still relevant.
+- [Old ethresear.ch post](https://ethresear.ch/t/confirmation-rule-for-sila-pos/15454). A few things have changed since then, but most of the concepts introduced in this post are still relevant.
 - [Paper](https://www.dropbox.com/scl/fi/qb356lkxzfljrunq2hu52/main-fc.pdf?rlkey=wsfkl4vtsp7bm4d31mynj17a5&dl=0)
 - [Spec PR](https://github.com/sila-chain/consensus-specs/pull/3339)
 - If one has time, [long technical report](https://arxiv.org/abs/2405.00549)

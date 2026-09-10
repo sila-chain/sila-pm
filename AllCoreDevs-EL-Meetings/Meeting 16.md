@@ -71,4 +71,4 @@ Need volunteers to write notes.
 
 ## Attendance
 
-Alex Beregszaszi (EWASM), Alex Van de Sande (Mist/Sila Wallet), Andrei Maiboroda (cpp-sila), Arkadiy Paronyan (Parity), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Dimitry Khokhlov (cpp-sila), Greg Colvin (SAVM), Hudson Jameson (Sila Foundation), Lefteris Karapetsas (Raiden), Martin Holst Swende (geth/security), Nick Johnson (geth/SWARM), Paweł Bylica (cpp-sila), Vitalik Buterin (Research & pyethereum), Yoichi Hirai (SAVM)
+Alex Beregszaszi (EWASM), Alex Van de Sande (Mist/Sila Wallet), Andrei Maiboroda (cpp-sila), Arkadiy Paronyan (Parity), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Dimitry Khokhlov (cpp-sila), Greg Colvin (EVM), Hudson Jameson (Sila Foundation), Lefteris Karapetsas (Raiden), Martin Holst Swende (geth/security), Nick Johnson (geth/SWARM), Paweł Bylica (cpp-sila), Vitalik Buterin (Research & pyethereum), Yoichi Hirai (EVM)

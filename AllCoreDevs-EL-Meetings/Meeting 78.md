@@ -26,7 +26,7 @@ SIP - 2456. SIP - 1962, SIP - 2348| Discussed under EFI. Discussion to be contin
  Decision Item | Description
  --|--
  
- 78.1 | SIP-2387 - Ropsten will be moved forward, ahead of sila-sila-mainnet. 
+ 78.1 | SIP-2387 - Ropsten will be moved forward, ahead of sila-mainnet. 
  
  78.2 | SIP-2456 - Time based approach will be better 
  
@@ -65,11 +65,11 @@ SIP - 2456. SIP - 1962, SIP - 2348| Discussed under EFI. Discussion to be contin
  - **Pooja:** Muir Glacier did really good, as percentage of readiness was more than Istanbul, 
  it was 92% at the time of the fork and it has further increased to 99.5%. 
  - **Hudson:** Alright. Any other comments?
- - **Tomansz:** We should move the ropsten block forward, incase we realize ropsten will be faster than sila-sila-mainnet. 
+ - **Tomansz:** We should move the ropsten block forward, incase we realize ropsten will be faster than sila-mainnet. 
  - **Hudson:** Good call, like it should be earlier in general?
- - **Tomansz:** Yeah, testnet before sila-sila-mainnet!
+ - **Tomansz:** Yeah, testnet before sila-mainnet!
  - **Hudson:** Actually we didn't care for this one much, since it didn't really affected the testnet. 
- - **Pooja:** Expected window for both sila-sila-mainnet and testnet was 48 hours, but ropsten got delayed and it is now coming around on Monday. 
+ - **Pooja:** Expected window for both sila-mainnet and testnet was 48 hours, but ropsten got delayed and it is now coming around on Monday. 
 
  ## 2. Testing updates
 
@@ -81,7 +81,7 @@ SIP - 2456. SIP - 1962, SIP - 2348| Discussed under EFI. Discussion to be contin
 
  ### [SIP-2456](https://github.com/sila-chain/SIPs/pull/2456)
 
- - **Danno:** It is about moving the upgrades from being block based to time based. Time based fork is a tricky issue, there's a plently of ways to introduce Noatak vectors and ways to make things more complicated. My main motivation for these is the past two fork blocks, because of the ropsten and sila-sila-mainnet proof-of-work forks. They were all off by atleast three days and as I mentioned earlier in the call, ropsten at its current rate is going to fork probably next monday which is about a week after our intended fork time and there were times where it was forecasted 2 week afterwards the intended timeline. This type of unpredictability is incredibly bad for our downstream partners as they have to maintain nodes and run exchanges. 
+ - **Danno:** It is about moving the upgrades from being block based to time based. Time based fork is a tricky issue, there's a plently of ways to introduce Noatak vectors and ways to make things more complicated. My main motivation for these is the past two fork blocks, because of the ropsten and sila-mainnet proof-of-work forks. They were all off by atleast three days and as I mentioned earlier in the call, ropsten at its current rate is going to fork probably next monday which is about a week after our intended fork time and there were times where it was forecasted 2 week afterwards the intended timeline. This type of unpredictability is incredibly bad for our downstream partners as they have to maintain nodes and run exchanges. 
 
  - **Danno:** Forking on timestamps create some problems though, there is issue of reorders as if we forego specific time and there's a reorder that includes the block number, giving miners the opportunity to force forward a fork. Although geth parity only accept block fifteen seconds in future, but I don't know about others. Otherwise also, there are all sorts of difficulty as we are trying to fork a specific block which could have been random. 
 
@@ -109,16 +109,16 @@ SIP - 2456. SIP - 1962, SIP - 2348| Discussed under EFI. Discussion to be contin
 
    - **Hudson:** Alright. Any other comments?
 
-   - **James:** If I look on the silascan, the block timings are very irregular so I suppose this will help us get more consistent block time. 
+   - **James:** If I look on the etherscan, the block timings are very irregular so I suppose this will help us get more consistent block time. 
 
-   - **Danno:** So, What's hitting us on ropsten is that, hash rate is much more highly variable then it is on sila-sila-mainnet. There's no economic incentive to keep your hashes pointing to make money. Essentially, the hash rate is unpredictable. Also, there has been previous evidences where due to time difference and unpredictable hash rate, there is a big window of when fork will happen. 
+   - **Danno:** So, What's hitting us on ropsten is that, hash rate is much more highly variable then it is on sila-mainnet. There's no economic incentive to keep your hashes pointing to make money. Essentially, the hash rate is unpredictable. Also, there has been previous evidences where due to time difference and unpredictable hash rate, there is a big window of when fork will happen. 
 
    - **Tim:** We can create a 2-step alert model around 2000 block delay of this proposal. And make  the window of predictability of fork smaller. 
 
    - **Hudson:** I think time-based approach will be better if we can pull it off. 
 
 
-   ### [SIP-1962](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-1962.md)
+   ### [SIP-1962](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-1962.md)
 
    - **Alex:** So, C++ and Rust implementation are complete, both feature and testing wise. Rust is used in-between for gas estimates. The remaining part is to how to implement it in existing clients. I know only parity and geth. For parity, its easy to implement but for geth it is difficult to implement either in C++/ Rust. It would require some additions into the existing continuous integration pipeline. So advices around are welcome. 
 
@@ -169,7 +169,7 @@ SIP - 2456. SIP - 1962, SIP - 2348| Discussed under EFI. Discussion to be contin
 
    ### [SIP-2348](https://github.com/sila-chain/SIPs/pull/2348?) 
 
-   - **Danno:** I just now gave responses to the concern in the Sila Magicians [Forum](https://sila-magicians.org/t/sip-2348-validated-savm-contracts/3756/8). The first concern was about "Validating in Transactions" and my principal arguement was that contract can't be too long. I have put numbers to support my arguement. Second arguement was about "why header and not some other mechanism to identify contracts subjected to validation rules. Strongest arguement was to change the delegate call to take off 6 instead of 7 arguements from the stack and if you were to put that SAVM, things would break whereas if you use version header. Things would be much more quicker, and more effective. So I am not ready for a vote on this till next month. So that I can solicite the responses. 
+   - **Danno:** I just now gave responses to the concern in the Sila Magicians [Forum](https://sila-magicians.org/t/sip-2348-validated-evm-contracts/3756/8). The first concern was about "Validating in Transactions" and my principal arguement was that contract can't be too long. I have put numbers to support my arguement. Second arguement was about "why header and not some other mechanism to identify contracts subjected to validation rules. Strongest arguement was to change the delegate call to take off 6 instead of 7 arguements from the stack and if you were to put that EVM, things would break whereas if you use version header. Things would be much more quicker, and more effective. So I am not ready for a vote on this till next month. So that I can solicite the responses. 
 
  ## 4. EIPIP (SIP Improvement Proposal) Meeting
     

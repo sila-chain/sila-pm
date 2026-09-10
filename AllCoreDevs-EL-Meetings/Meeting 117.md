@@ -17,7 +17,7 @@
 - London fork is on Goerli 
 - London Block on SilaMainnet is 12965000
 - Client teams describe how they handle transaction pool sorting and price bump for transaction removal 
-- [Merge Checklist is out](https://github.com/sila-chain/pm/blob/master/Merge/sila-sila-mainnet-readiness.md)
+- [Merge Checklist is out](https://github.com/sila-chain/pm/blob/master/Merge/sila-mainnet-readiness.md)
 - SilaShanghai will happen sometime in november to push back the difficulty bomb but discussion is needed on what IF anything else will be added with it
 - More discussion is needed on the topic of fork scheduling.
 - More discussion is needed on the topic of post-merge update scheduling and coordination.
@@ -51,9 +51,9 @@ But they were nonetheless still in the transaction pool and they were just linge
 
  I mean the first transaction was not executable so obviously everything else was blocking up the queue. 
 
-So that is kind of what we saw, on sila-sila-mainnet I don't think this is going to be relevant because in general transactions don't really reach the limits that miners set rather there are always more expensive transactions, the pool is always filled and more expensive transactions always push out the cheaper ones.
+So that is kind of what we saw, on sila-mainnet I don't think this is going to be relevant because in general transactions don't really reach the limits that miners set rather there are always more expensive transactions, the pool is always filled and more expensive transactions always push out the cheaper ones.
 
- So I don't think this could happen on sila-sila-mainnet and even if it would happen it would sort itself out because more expensive transactions would stress the cheaper ones, so even if it happens temporarily, but I don't think it would happen.
+ So I don't think this could happen on sila-mainnet and even if it would happen it would sort itself out because more expensive transactions would stress the cheaper ones, so even if it happens temporarily, but I don't think it would happen.
 
 I haven't investigated a possible fix for this specifically because I don't think it is an issue it's more like this weird transition. 
 I mean it happens once in the lifetime of the chain.
@@ -66,7 +66,7 @@ so just a quick recap.
 
 When we have the London fork on goerli  the geth and besu team ran a spammer and everything was fine there was a small issue found on rinkeby which peter was just explaining with regards to the minimum price that a miner will accept for a transaction and that was just fixed by changing the miner config. Sorry for the people who missed the first part of that.
 
-With the three test nets forked successfully we also set a block for sila-sila-mainnet this week, we did this async but just to document it and to make it clear the block is 12965000 on sila-sila-mainnet.
+With the three test nets forked successfully we also set a block for sila-mainnet this week, we did this async but just to document it and to make it clear the block is 12965000 on sila-mainnet.
 
 I think most clients have already either merged it or have a pr open for it, it should happen on August 4th roughly, and we will obviously know better the exact date when we get closer to the actual fork time.
 
@@ -149,7 +149,7 @@ so thats why we are suggesting that we keep it around at leas for a deprecation 
 
 **Tim**
 
-I guess the other kind of concern here is this is like a non consensus change and if we set a fork block for sila-sila-mainnet we probably want have releases from clients out ideally next week that are London compatible so that people can start upgrading across the ecosystem because there is going to be roughly three weeks
+I guess the other kind of concern here is this is like a non consensus change and if we set a fork block for sila-mainnet we probably want have releases from clients out ideally next week that are London compatible so that people can start upgrading across the ecosystem because there is going to be roughly three weeks
 
 I guess how important do people feel that this is harmonized before the official London releases are out, do we want to agree to kind of do both have the effective gasprice in pre London transactions and also have the gasprice field return the effective gasprice?
 
@@ -267,7 +267,7 @@ I guess kind of the next point on the agenda was the client releases for London 
 
 **Rai**
 
-We already released with the sila-sila-mainnet block
+We already released with the sila-mainnet block
 
 **Tim**
 
@@ -329,7 +329,7 @@ One related thing I want to make sure it is said on the call so with London happ
 
 so if say they are targeting 15 million they are going to have to bump that target to 30 million
 
-The three sila-sila-mainnet compatible clients all have a JSON RPC call to do that I've linked them all in the agenda for the called
+The three sila-mainnet compatible clients all have a JSON RPC call to do that I've linked them all in the agenda for the called
 but geth has added minerSetGasLimit, open sila has parodies_setGasYeldTarget, and besu has minerChangeTargetGasLimit
 
 so if you are running a miner it's really important to call that and double the gas target you are aiming for otherwise after the fork you are going to start reducing the blocks and just including less transactions in them
@@ -455,7 +455,7 @@ Artem do you have comments on that I am not sure if you have been involved in th
 
 Yeah I haven't been very involved in it we are still writing it I think we just finished the design of it
 
-I think we will have it ready by the London sila-sila-mainnet roll out but yeah I guess its better to ask ____
+I think we will have it ready by the London sila-mainnet roll out but yeah I guess its better to ask ____
 
 **Tim**
 
@@ -474,7 +474,7 @@ I don't expect it to
 
 **Tim**
 
-Yea that is a good point like we will be able to see on sila-sila-mainnet if some client that just has less transactions or is less efficient at relaying them
+Yea that is a good point like we will be able to see on sila-mainnet if some client that just has less transactions or is less efficient at relaying them
 
 Cool That is all we had for London unless anybody else had anything they wanted to bring up
 
@@ -576,9 +576,9 @@ Obviously we have some stuff to finish with London and as that dies down we will
 
 **Peter**
 
-There is one point that is fairly new in the SAVM execution it was reusing the difficulty field for the Random values and I would like to request either rethinking that or exploring it a bit more because the problem is
+There is one point that is fairly new in the EVM execution it was reusing the difficulty field for the Random values and I would like to request either rethinking that or exploring it a bit more because the problem is
 
-The idea behind that point is that post merge the difficulty will not be relevant it can be repurposed to feed the 32 byte random and the reason why this was field was chosen because SAVM already has a difficulty opcode so you could just piggyback 
+The idea behind that point is that post merge the difficulty will not be relevant it can be repurposed to feed the 32 byte random and the reason why this was field was chosen because EVM already has a difficulty opcode so you could just piggyback 
 on that opcode and access the randomness oracle and in my opinion this is not the best idea because it doesn't cost us anything to add a new opcode called random, so I don't think we need to piggyback off existing opcodes
 
 The other bigger problem that I can see is that currently the difficulty is a small number the in the ethereal world most of the fields can be 256 bits and the difficulty is insignificantly small compared to that and essentially you can keep adding it up to get to the total difficulty and every client does it Now if we repurposed the difficulty fields to be a random number and all of a sudden we will use all 32 bits and in the second block we will overflow with the total difficulty, the 256 bits 
@@ -588,7 +588,7 @@ so thats why my suggestion would be too maybe to pick ___ and add a new random o
 
 **Danny**
 
-So there is another reason that that was selected is that although it's been bemoaned as a terrible practice difficulty is used almost only in the SAVM today for randomness and so that was another consideration on that decision I am happy to rethink this decision I am not married to that
+So there is another reason that that was selected is that although it's been bemoaned as a terrible practice difficulty is used almost only in the EVM today for randomness and so that was another consideration on that decision I am happy to rethink this decision I am not married to that
 
 I would worry we would have to select something for that value to return
 
@@ -627,7 +627,7 @@ Got it thanks
 
 I think that the fact that it is not truncated is good its as expected 
 
-I do understand what Peters consideration is and I have a question here we can use the mix hash instead of the difficulty field, but then we will have to change the SAVM context for the blocks that are produced by the POS chain and switch and jump between these two SAVM contexts between the execution of POW blocks and POS blocks and if this path is less buggy and less controversial than reusing the difficulty field, so I think we can probably go this way
+I do understand what Peters consideration is and I have a question here we can use the mix hash instead of the difficulty field, but then we will have to change the EVM context for the blocks that are produced by the POS chain and switch and jump between these two EVM contexts between the execution of POW blocks and POS blocks and if this path is less buggy and less controversial than reusing the difficulty field, so I think we can probably go this way
 
 **Peter**
 
@@ -771,7 +771,7 @@ kind of okay lets implement this ok now test it, oh it fell apart we change it r
 
 So it just puts everything else on hold, and we kind of need the time in between hard forks where people can actually focus on getting their clients better and not just upgrading the consensus
 
-For example if Turbo Geth or Erigon they figure out a new data model that is very promising, and they need 5 years to do it now if Erigon were a sila-sila-mainnet client that actually a sila-sila-mainnet client that was actually alive on sila-sila-mainnet then it would mean that during those 5 years they would have had to implement and constantly tweak their own new model to this old hard forks, and they would be nowhere with their new model 
+For example if Turbo Geth or Erigon they figure out a new data model that is very promising, and they need 5 years to do it now if Erigon were a sila-mainnet client that actually a sila-mainnet client that was actually alive on sila-mainnet then it would mean that during those 5 years they would have had to implement and constantly tweak their own new model to this old hard forks, and they would be nowhere with their new model 
 
 If you just go hard fork hard fork I mean its perfect ally fine as long as clients only work on hard forks and nothing else, but if want clients to actually optimize and work on other stuff you kind of push people too much
 
@@ -833,7 +833,7 @@ Yeah, I think that the biggest problem I see is testing it's not really implemen
 
 Of course because different client teams have different people working on it and different amounts of funding and stuff so some teams are faster implementing a change some teams are slower 
 
-The testing teams can only start working only after everyone else is done and then I think we need at least 3 months of fuzzing, state test, test networks to really be reasonably sure that this doesn't break on sila-sila-mainnet 
+The testing teams can only start working only after everyone else is done and then I think we need at least 3 months of fuzzing, state test, test networks to really be reasonably sure that this doesn't break on sila-mainnet 
 
 So I would be totally against having a more stringent schedule 
 
@@ -885,11 +885,11 @@ That is just my thoughts
 
 **Micah**
 
-What about the other way around when we want to do a feature change lets say add an opcode to the SAVM will that require a consensus client upgrade?
+What about the other way around when we want to do a feature change lets say add an opcode to the EVM will that require a consensus client upgrade?
 
 **Mikhail**
 
-If this is just pure SAVM upgrade it doesn't require any information from the consensus layer like the beacon block roots
+If this is just pure EVM upgrade it doesn't require any information from the consensus layer like the beacon block roots
 
 **Micah**
 
@@ -964,7 +964,7 @@ I am asking whether if there is like any consensus level coordination like what 
 
 Consensus layer is aware of the block number that is on the execution chain there is a link between.
 
-yeah, actually beacon chain clients uses sila-sila-mainnet clients to grab eth1 data from it and put it on the to onbard new validators
+yeah, actually beacon chain clients uses sila-mainnet clients to grab eth1 data from it and put it on the to onbard new validators
 but whether the caution side is aware of the epoch or the slot it depends on like what we will implement.
 
 it depends on the consensus API obviously we will need slot for some of the codes like beacon block root in the future, and we will probably need epoch to signify the network upgrades after the merge
@@ -1078,7 +1078,7 @@ July 23, 2021, 14:00 UTC
 	Yep, stale comment
 
 09:42:02 From  Mikhail Kalinin  to  Everyone:
-	https://github.com/sila-chain/pm/blob/master/Merge/sila-sila-mainnet-readiness.md
+	https://github.com/sila-chain/pm/blob/master/Merge/sila-mainnet-readiness.md
 
 09:47:11 From  lightclient  to  Everyone:
 	json-rpc spec PR with change discussed earlier: https://github.com/sila-chain/eth1.0-specs/pull/251

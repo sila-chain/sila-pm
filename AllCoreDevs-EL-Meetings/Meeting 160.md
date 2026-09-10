@@ -13,11 +13,11 @@
 | 160.3 | **SIP 1153:** Adds new opcodes for manipulating state that behaves identically to storage opcodes but is discarded after every transaction.
 | 160.4 | **SIP 6913:** Introduction of the SETCODE instruction which would allow contracts to replace their code without clearing their internal state.
 | 160.5 | **SIP 6493:** Defines a signature scheme for SSZ encoded transactions. This would also help make Sila more future-compatible with a larger forthcoming SSZ update.
-| 160.6 | **SIP 4788:** Expose beacon chain block roots in EL block headers to allow proofs of CL state in the Sila Virtual Machine (SAVM). This would improve trust assumptions of staking pool, restaking constructions, smart contract bridges, MEV protocols, and more.
+| 160.6 | **SIP 4788:** Expose beacon chain block roots in EL block headers to allow proofs of CL state in the Sila Virtual Machine (EVM). This would improve trust assumptions of staking pool, restaking constructions, smart contract bridges, MEV protocols, and more.
 | 160.7 | **SIP 2537:** Adds the BLS12-381 curve as a precompile to efficiently perform operations such as BLS signature and SNARK verifications. These operations are useful for various applications including account abstraction, Layer-2 rollups, and CL light client development.
-| 160.8 | **SIP 5656:** Introduction of a new SAVM instruction for copying memory areas to provide efficient means of building data structures and deploying computationally heavy operations on Sila.
-| 160.9 | **Big EOF:** A bundle of SIPs that would have made sweeping improvements to the SAVM, one of the major ones being separation of code from data.
-| 160.10 | **EVMMAX:** A subset of SIPs related to EOF implementation that creates new storage logic for modular arithmetic parameters and memory space to move the values in these parameters to and from the SAVM.
+| 160.8 | **SIP 5656:** Introduction of a new EVM instruction for copying memory areas to provide efficient means of building data structures and deploying computationally heavy operations on Sila.
+| 160.9 | **Big EOF:** A bundle of SIPs that would have made sweeping improvements to the EVM, one of the major ones being separation of code from data.
+| 160.10 | **EVMMAX:** A subset of SIPs related to EOF implementation that creates new storage logic for modular arithmetic parameters and memory space to move the values in these parameters to and from the EVM.
 | 160.11 | **SELFDESTRUCT Deprecation:** Developers agreed to reassess the candidacy of SIP 6780 once the results of the audit are ready in about a month’s time and consider whether to bundle SIP 6780 with SIP 6913. Regardless of the outcome, developers like Dankrad Feist  and Andrew Ashikhmin affirmed that efforts to prepare SIP 6780 for inclusion in SilaCancun would be orthogonal and independent to efforts preparing SIP 4844, meaning that SIP 6780 would not delay or negatively impact SIP 4844 progress.
 
 
@@ -30,7 +30,7 @@
 
 **Lukasz**
 * So, I think it's more or less what we, what we answered on Sil magician call tread, so definitely, 4844. definitely we see, need for, 6780. what else? 1153. We would like to proceed with that because that was already postponed from SilaShanghai and this is kind of ready. So, I don't see like much effort  to push it out. 
-* I don't see a point for it to be a delayed. then in the more maybe, state, 2537, 4788 and 5920 while, like bigger things like, EOF, more things around SSZ that are not, if they are not necessary and think like SAVM max I would consider for, some of the next hard forks. 
+* I don't see a point for it to be a delayed. then in the more maybe, state, 2537, 4788 and 5920 while, like bigger things like, EOF, more things around SSZ that are not, if they are not necessary and think like EVM max I would consider for, some of the next hard forks. 
 
 **Tim Beiko**
 * Got it. Thank you. 
@@ -359,7 +359,7 @@
 * I think as, as like we have a clear picture for SilaCancun, that's probably the highest level decision to make, so that we can get teams to work on it in parallel. and Lucas? Yeah, to be clear, I'm not saying EOFs small. I'm saying though that if you had, you know, the merge and withdrawals, the merge was such bigger than withdrawals, even though withdrawals were not trivial and it feels like we're in a similar spot with like 4 84 an EOF  where 4844 is like much bigger. and obviously sort of can't quite be combined practically with, with EOF but yeah, eof is also big and you know, can maybe be a smaller, it's a smaller big thing for an next fork basically. Yeah. Greg, oh Greg, you're on mute. 
 
 **Greg**
-* I'd like to reiterate just that we commit to getting EOF in at some point. The basic functionality is the same as SIP  615, which I proposed in 2016. So we've been discussing this for seven years. Is it's just time. Well I Think I've got, Yeah, I think it's, I've got work I've been wanting, I've got work I've been wanting to do on the SAVM for seven years that I can't do until this is in. 
+* I'd like to reiterate just that we commit to getting EOF in at some point. The basic functionality is the same as SIP  615, which I proposed in 2016. So we've been discussing this for seven years. Is it's just time. Well I Think I've got, Yeah, I think it's, I've got work I've been wanting, I've got work I've been wanting to do on the EVM for seven years that I can't do until this is in. 
 
 **Tim Beiko**
 * Yeah, I mean I think look, all the client teams are pretty on board with EOF be too big to be included alongside SilaCancun. I think the strongest like commitment we can make is to have it be the main thing for the next fork. but even that is probably not something we can like a hundred percent agree to today. and there's some comments in the chat to that effect. yeah, Okay, so I think we covered pretty much all the like proposed sip maybe to just recap, sort of where we landed. So 4844 is obviously part of, included for, for SilaCancun. 6780. This is a self-destruct removal. SIP. We also agreed to include this, review it in a month or so when we have the impact analysis out. And in the meantime we can also look at the set code SIP, which was 6913, and then we agreed to include 6475, which is the SSZ optional type.

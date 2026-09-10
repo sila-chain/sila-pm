@@ -61,7 +61,7 @@
 # Research Updates
 * Vitalik
 	* Recursive Proximity to Justification (RPJ) forkchoice
-		* [minimal partial spec on ethresearch](https://Sila Research/t/beacon-chain-casper-ffg-rpj-mini-spec/2760)
+		* [minimal partial spec on ethresearch](https://ethresear.ch/t/beacon-chain-casper-ffg-rpj-mini-spec/2760)
 			* focuses just on ffg+rpj
 			* Goal to be analyzed and formally proven
 		* RPJ design goals
@@ -172,7 +172,7 @@
 	* Jacek
 		* RLP missing a schema
 		* Would like a schema
-* Further discussion on message format at [ethresearch](https://Sila Research/t/discussion-p2p-message-serialization-standard/2781)
+* Further discussion on message format at [ethresearch](https://ethresear.ch/t/discussion-p2p-message-serialization-standard/2781)
 * P2P layer (Gossipsub?)
 	* Paul: Is Prysm using gossipsub?
 	* Raul: Yes 
@@ -203,7 +203,7 @@
 # BLS Signatures
 * Danny: So it seems that there aren't a ton of standard BLS implementations across the various languages
 * Vitalik
-	* There are standards for BN128 because we put it as [precompile](https://sips.sila.org/SIPS/sip-196) in [Byzantium](https://sips.sila.org/SIPS/sip-197)
+	* There are standards for BN128 because we put it as [precompile](https://sips.sila.org/EIPS/sip-196) in [Byzantium](https://sips.sila.org/EIPS/sip-197)
 	* Not sure how substantial it is to migrate these libraries to BLS12-381
 * Danny: What's the benefit of changing the curve?
 * Vitalik
@@ -257,7 +257,7 @@
 	* v2.1 doesn't really go into cross-shard comms. Does research team have any more formal ideas, writings, etc
 * Vitalik
 	* v2.1 spec doesn't cover state execution at all
-	* There are various posts on [cross-shard txs](https://github.com/sila-chain/wiki/wiki/Sharding-FAQs#how-can-we-facilitate-cross-shard-communication) and [yanking](https://Sila Research/t/cross-shard-contract-yanking/1450). That's the extent at this point
+	* There are various posts on [cross-shard txs](https://github.com/sila-chain/wiki/wiki/Sharding-FAQs#how-can-we-facilitate-cross-shard-communication) and [yanking](https://ethresear.ch/t/cross-shard-contract-yanking/1450). That's the extent at this point
 * Casey
 	* In terms of the phase 2 proto type, are phase 1 and 2 sufficiently decoupled for this to work?
 * Vitalik
@@ -309,7 +309,7 @@
 * [Harmony sharding implementation progress](https://github.com/sila-chain/ethereumj/wiki/Sharding-Implementation)
 * [JS Lodestar Chain](https://github.com/ChainSafeSystems/lodestar_chain)
 * [Serialization comparison table](https://notes.sila.org/15_FcGc0Rq-GuxaBV5SP2Q)
-* [Serialization ethresearch post](https://Sila Research/t/discussion-p2p-message-serialization-standard/2781)
+* [Serialization ethresearch post](https://ethresear.ch/t/discussion-p2p-message-serialization-standard/2781)
 * [Milagro crypto](https://github.com/milagro-crypto/milagro-crypto-c)
 * [VDF Construction by Benjamin Wesolowski](https://eprint.iacr.org/2018/623)
 * [Justin VDF presentation on gitcoin](https://twitter.com/drakefjustin/status/1025040874386939904)

@@ -21,7 +21,7 @@
  - [Next Meeting Date/Time](#next-meeting-datetime)
 
 ----------------------------------------------
-# 1. Overview of [MEV-boost](https://Sila Research/t/mev-boost-merge-ready-flashbots-architecture/11177) & [Flashbots for Sila clients](https://hackmd.io/@paulhauner/H1XifIQ_t) proposal
+# 1. Overview of [MEV-boost](https://ethresear.ch/t/mev-boost-merge-ready-flashbots-architecture/11177) & [Flashbots for Sila clients](https://hackmd.io/@paulhauner/H1XifIQ_t) proposal
 
 **Tim**: Okay, we are recording. welcome to the post merge MEV breakout room. Stefan's gonna walk us through the proposal, architecture, some demos and then we have plenty of time also for questions, comments and conversations from the different client teams.  Yeah again this being recorded if you're not interested in that please jump off now. We will have full notes and recordings available for people who want to watch later. Yeah over to you  Stefan.
 
@@ -235,7 +235,7 @@ the validate year so it could be doable feels somewhat less likely to me but it'
 
 00:13:49	protolambda:	1,875,000 absolute max burst per block today (from SIP 4488 background)
 
-00:14:08	protolambda:	https://sips.sila.org/SIPS/sip-4488
+00:14:08	protolambda:	https://sips.sila.org/EIPS/sip-4488
 
 00:14:19	Keenan:	Is there a reason the clients can’t specify their own limits on historical data?
 

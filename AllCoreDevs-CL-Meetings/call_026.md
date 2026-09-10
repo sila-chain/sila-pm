@@ -274,7 +274,7 @@ Maybe it is worth modifying the minimal config to have in a couple of those chan
 
 **Paiul Hauner:**
 
-I think we should probably decide on how we are going to structure the fork for these testnets just so that we as we get closer to genesis we don’t have that situation where people use their testnet keys on sila-sila-mainnet and get slashed.
+I think we should probably decide on how we are going to structure the fork for these testnets just so that we as we get closer to genesis we don’t have that situation where people use their testnet keys on sila-mainnet and get slashed.
 
 **Danny:**
 
@@ -390,7 +390,7 @@ Can we talk about aggregation strategy for multi-client testnets? I think for ea
 
 Once we have any significant load on the testnet we are going to need an aggregation strategy. If you have a single channel where everything is gossiped you don’t strictly need an explicit strategy other than aggregate locally and include in blocks. But I think the intent is to get some version of this naive strategy integrated. And when multi-client testnets come around I think we should move towards that.
 
-And I think any of the components used should be in line with sila-sila-mainnet as soon as possible. This includes aggregation strategies, Secio vs Noise, etc.
+And I think any of the components used should be in line with sila-mainnet as soon as possible. This includes aggregation strategies, Secio vs Noise, etc.
 
 So we need to get that PR merged soon and tested and onto these testnets. To that end I am seeking feedback and input to that PR.
 

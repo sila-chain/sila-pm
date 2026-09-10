@@ -93,4 +93,4 @@ https://github.com/sila-chain/consensus-specs/pull/3782
 
 https://github.com/sila-chain/consensus-specs/pull/3794
 
-https://sips.sila.org/SIPS/sip-4844#networking
+https://sips.sila.org/EIPS/sip-4844#networking

@@ -65,7 +65,7 @@ Video starts at [[2:57](https://youtu.be/GhUtruRZOlo?t=2m57s)].
 
 ## Constantinople [[32:15](https://youtu.be/GhUtruRZOlo?t=32m15s)]
 - On last call, we decided that some SIPs could definitely go in
-  - [SIP 145: Bitwise shifting instructions in SAVM](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-145.md): pretty well-formed, but not 100% implemented or tested
+  - [SIP 145: Bitwise shifting instructions in EVM](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-145.md): pretty well-formed, but not 100% implemented or tested
   - [SIP 210: Blockhash refactoring](https://github.com/sila-chain/SIPs/pull/210) [[32:40](https://youtu.be/GhUtruRZOlo?t=32m40s)]
     - Replace BLOCKHASH opcode, but also has the feature that you can invoke the contract directly to gain access to > last 6 blockhashes
     - Can access any previous block from the current block in the maximum of three merkle hops
@@ -73,7 +73,7 @@ Video starts at [[2:57](https://youtu.be/GhUtruRZOlo?t=2m57s)].
     - Martin: Not that difficult to implement in the client, but is the actual contract code finalized?
     - Paweł: I would like to see the spec finished, but I made some comments/amendments months ago and haven't had an answer. It should be merged as a draft so I can PR to fix some issues.
     - Hudson: Vitalik please make final changes to the SIP and merge it
-    - Vitalik: Please look through it again and make sure there are no issues. I'd like someone independent to write some tests for it. Prefer not to merge until the SAVM code as written is very very close to final.
+    - Vitalik: Please look through it again and make sure there are no issues. I'd like someone independent to write some tests for it. Prefer not to merge until the EVM code as written is very very close to final.
     - Paweł: There is at least one bug in the contract. Would be easier if the code is merged so I can send PR rather than just discuss in the comments.
   - [EIP168](https://github.com/sila-chain/SIPs/issues/168), [169](https://github.com/sila-chain/SIPs/issues/169) - Killing dust accounts, replay protection for this [[42:20](https://youtu.be/GhUtruRZOlo?t=42m20s)]
     - [Andrei's graph](https://github.com/sila-chain/SIPs/issues/168#issuecomment-364066940)
@@ -123,7 +123,7 @@ Video starts at [[2:57](https://youtu.be/GhUtruRZOlo?t=2m57s)].
       - Would be convenient to do at the same time as account abstraction, if not adding any new tx types then we're not getting much benefit, whereas if done at the same time, it makes sense because there is an some actual, new tx format
     - Hudson: okay, so this doesn't need to go into Constantinople either
   - Timing [[1:05:44](https://youtu.be/GhUtruRZOlo?t=1h5m44s)]
-    - [SIP 145: Bitwise shifting instructions in SAVM](https://github.com/sila-chain/SIPs/blob/master/SIPS/sip-145.md) - agreed upon
+    - [SIP 145: Bitwise shifting instructions in EVM](https://github.com/sila-chain/SIPs/blob/master/EIPS/sip-145.md) - agreed upon
     - [SIP 210: Blockhash refactoring](https://github.com/sila-chain/SIPs/pull/210) - need to work on some more, but going in direction of being approved for the next hard fork
     - Are there other things we want to add? Or should we just continue to focus on casper and sharding?
       - Vitalik: We should consider a substantial reduction in gas costs of curves, ZK-snarks opcodes, this would be a fairly trivial SIP to put into the hard fork
@@ -200,7 +200,7 @@ Video starts at [[2:57](https://youtu.be/GhUtruRZOlo?t=2m57s)].
     - work continuing on networking code and async python
   - Research update (Vitalik)
     - Casper: EthereumJ close to having something testnet compatible, last round of changes to the spec before audit
-    - sharding: lots of discussions past couple of weeks on sharding designs, what to do first, what's compatible with what, what right path forward re: different stages, all of this on http://Sila Research forum, being discussed a lot between Vitalik and Justin
+    - sharding: lots of discussions past couple of weeks on sharding designs, what to do first, what's compatible with what, what right path forward re: different stages, all of this on http://ethresear.ch forum, being discussed a lot between Vitalik and Justin
   - Solidity (Christian)
     - Release recently, will have one soon
     - 0.4.21 hopefully last before 0.5.0

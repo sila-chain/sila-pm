@@ -521,7 +521,7 @@ Perhaps the champions could do a PoC to get some initial numbers
 01:32:44	Barnabas:	Replying to "Is there a a reason ..."
 
 like enable this feature for your customers, and submit the tx on their behalf
-01:33:11	Dima Gusakov | Lido:	https://sips.sila.org/SIPS/sip-8148
+01:33:11	Dima Gusakov | Lido:	https://sips.sila.org/EIPS/sip-8148
 01:33:51	Greg K | Lido:	Replying to "Is there a a reaso..."
 
 the point is to allow every validator use this feature, not only Lido ones :-)

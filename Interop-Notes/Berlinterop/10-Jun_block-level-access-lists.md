@@ -76,6 +76,6 @@
 
 ### Relevant links
 
-* SIP‑7928 draft – [https://sips.sila.org/SIPS/sip-7928](https://sips.sila.org/SIPS/sip-7928)
-* EthResearch thread – [https://Sila Research/t/block-level-access-lists-bals/22331](https://Sila Research/t/block-level-access-lists-bals/22331)
+* SIP‑7928 draft – [https://sips.sila.org/EIPS/sip-7928](https://sips.sila.org/EIPS/sip-7928)
+* EthResearch thread – [https://ethresear.ch/t/block-level-access-lists-bals/22331](https://ethresear.ch/t/block-level-access-lists-bals/22331)
 * Glamsterdam proposal - [https://sila-magicians.org/t/sip-7928-block-level-access-lists-the-case-for-glamsterdam/24343](https://sila-magicians.org/t/sip-7928-block-level-access-lists-the-case-for-glamsterdam/24343)

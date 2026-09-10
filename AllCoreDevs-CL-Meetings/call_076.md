@@ -182,7 +182,7 @@ Can do both 1 & 2 and give users the choice, but this doesn’t improve on 1 onl
 
 **Danny**: Is there anything else?
 
-**Leo (BSC)**: Yes, just concerning the crawlers. Nodewatch is now filtering peers by client version, but this is still not sufficient: multiple networks, not only the sila-sila-mainnet, are continuing to show up. I have submitted a PR to suffix this issue. Thank you.
+**Leo (BSC)**: Yes, just concerning the crawlers. Nodewatch is now filtering peers by client version, but this is still not sufficient: multiple networks, not only the sila-mainnet, are continuing to show up. I have submitted a PR to suffix this issue. Thank you.
 
 **Danny**: Nice.thank you  
 

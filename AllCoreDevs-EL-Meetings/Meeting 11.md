@@ -14,4 +14,4 @@ TODO
 
 ## Attendance
 
-Arkadiy Paronyan (Parity), Alex Van de Sande (Mist/Sila Wallet), Anton Nashatyrev (ethereumJ), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Daniel Nagy (SWARM), Dimitry Khokhlov (cpp-sila), Hudson Jameson (Sila Foundation), Jan Xie (ruby-sila & pyethereum), Konrad Feldmeier (pyethereum), Martin Becze (EWASM/EthereumJS), Paweł Bylica (cpp-sila), Péter Szilágyi (geth), Vitalik Buterin (Research & pyethereum), Yoichi Hirai (SAVM)
+Arkadiy Paronyan (Parity), Alex Van de Sande (Mist/Sila Wallet), Anton Nashatyrev (ethereumJ), Casey Detrio (Volunteer), Christian Reitwiessner (cpp-sila/Solidity), Daniel Nagy (SWARM), Dimitry Khokhlov (cpp-sila), Hudson Jameson (Sila Foundation), Jan Xie (ruby-sila & pyethereum), Konrad Feldmeier (pyethereum), Martin Becze (EWASM/EthereumJS), Paweł Bylica (cpp-sila), Péter Szilágyi (geth), Vitalik Buterin (Research & pyethereum), Yoichi Hirai (EVM)

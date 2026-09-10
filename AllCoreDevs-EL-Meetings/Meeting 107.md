@@ -29,9 +29,9 @@
 
 * Opened the [proposal to remove SIP-2315](https://github.com/sila-chain/pm/issues/263) from Berlin 3 days ago.
 * Didn't open this due to any particular agenda, but does not think it is very useful.
-* Seems good on the surface but doesn't address what it claims to. Claims it will bring more efficient contracts to sila-sila-mainnet. Solidity shows the gain is minimal. There are things we could do instead. 2315 claims to improve static analysis. It doesn't change what we have today in a big way but increases complexity in code.
+* Seems good on the surface but doesn't address what it claims to. Claims it will bring more efficient contracts to sila-mainnet. Solidity shows the gain is minimal. There are things we could do instead. 2315 claims to improve static analysis. It doesn't change what we have today in a big way but increases complexity in code.
 * People who oppose removing it seem to be saying that due to not wanting to remove SIPs at the last moment.
-* We shouldn't be adding SIPs to sila-sila-mainnet that aren't of use.
+* We shouldn't be adding SIPs to sila-mainnet that aren't of use.
 
 **Hudson**
 
@@ -48,7 +48,7 @@
 
 **Tim Beiko**
 
-* Vyper team came out and said 2315 would be useful as a stepping stone to a complete overhaul of the SAVM.
+* Vyper team came out and said 2315 would be useful as a stepping stone to a complete overhaul of the EVM.
 * This is unlikely to happen, 2315 may not even be the right stepping stone.
 * 2315 may not be very valuable for Vyper in the end.
 
@@ -73,8 +73,8 @@
 * 2315 doesnt clearly state its goal - it can't be evaluated whether it achieves its goal.
 * Participated in modifying the SIP. Goal is to ease static analysis. We ended up disallowing flowing into it.
 * Current PoV is that we should allow flowing into it.
-* This isn't really negative for Solidity but it does add SAVM / debuggers / tools / analysis complexity.
-* This fundamentally changes the control flow of SAVM programs. Is very difficult to modify.
+* This isn't really negative for Solidity but it does add EVM / debuggers / tools / analysis complexity.
+* This fundamentally changes the control flow of EVM programs. Is very difficult to modify.
 
 **Danny**
 
@@ -260,8 +260,8 @@ Peter, James and Hudson all strongly against pushing everything back.
 **Danno**
 
 * Ropsten is going to fork no matter what due to zombie miners. Would be good to get more hash power on the new fork.
-* Strong preference not to touch the sila-sila-mainnet block number.
-* If we want to remove 2315 this late, we need to be prepared to go to extreme lengths to keep the schedule on track. Community impacts could be severe if we push back sila-sila-mainnet.
+* Strong preference not to touch the sila-mainnet block number.
+* If we want to remove 2315 this late, we need to be prepared to go to extreme lengths to keep the schedule on track. Community impacts could be severe if we push back sila-mainnet.
 
 **James**
 

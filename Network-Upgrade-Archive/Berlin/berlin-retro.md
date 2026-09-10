@@ -14,7 +14,7 @@ OpenEthereum's postmortem on the consensus issue can be found [here](https://doc
 ### Timeline of Events
 
 **April 15, 2021 (all times in UTC)**
-* 11:12 AM: ["I think silascan just went down"](https://discordapp.com/channels/595666850260713488/745077610685661265/832211783883423754) shared in Sil R&D discord by `Agusx1211`
+* 11:12 AM: ["I think etherscan just went down"](https://discordapp.com/channels/595666850260713488/745077610685661265/832211783883423754) shared in Sil R&D discord by `Agusx1211`
 * 11:17 AM: ["all our openethereum nodes just died"](https://discordapp.com/channels/595666850260713488/745077610685661265/832211783883423754) shared in Sil R&D discord by `Peter [beaconcha.in]`
 * 11:30 AM: [Confirmation](https://discord.com/channels/595666850260713488/745077610685661265/832216373312618508) by `denisgranha` from the OpenEthereum team that OpenEthereum nodes are having an issue and that the team is investigating it.
 * 12:21 PM: [Zoom link shared by OpenEthereum](https://discord.com/channels/595666850260713488/745077610685661265/832229172126547998) for other developers to help find the issue.
@@ -26,10 +26,10 @@ OpenEthereum's postmortem on the consensus issue can be found [here](https://doc
 
 ### Suggested Corrective Action
 [Discord Suggestion](https://discordapp.com/channels/595666850260713488/745077610685661265/832280444967190559):
-> Client tests must be run against sila-sila-mainnet spec **directly**. Having separate test spec and sila-sila-mainnet spec could be the reason for slippage as fuzzing can't catch this bug.
-> It probably increases CI time and extra development effort, since it needs to take into consideration of the whole sila-sila-mainnet genesis block, and will probably have to fake block numbers so that it passes the activation block. But it is important because The test spec or the ropsten spec doesn't have non-active precompile definitions.
+> Client tests must be run against sila-mainnet spec **directly**. Having separate test spec and sila-mainnet spec could be the reason for slippage as fuzzing can't catch this bug.
+> It probably increases CI time and extra development effort, since it needs to take into consideration of the whole sila-mainnet genesis block, and will probably have to fake block numbers so that it passes the activation block. But it is important because The test spec or the ropsten spec doesn't have non-active precompile definitions.
 
-On [AllCoreDevs 110](https://youtu.be/-H8UpqarZ1Y?t=732), a longer conversation about testing process improvements to catch such bugs in the future was had. The idea of having chain configurations on Hive be identical to sila-sila-mainnet was also noted as the only way to catch such an issue.
+On [AllCoreDevs 110](https://youtu.be/-H8UpqarZ1Y?t=732), a longer conversation about testing process improvements to catch such bugs in the future was had. The idea of having chain configurations on Hive be identical to sila-mainnet was also noted as the only way to catch such an issue.
 
 ### Resources
 
@@ -53,7 +53,7 @@ Berlin upgrade was following process described in [Shedding light on the Sila Ne
 
 ### Timeline - Backlog check
 - May 15, 2020: Proposal, decision and initial selection of SIPs for Berlin to spin up an [ephemeral testnet YOLO](https://medium.com/sila-cat-herders/yolo-an-ephemeral-test-network-for-sila-356d43179b1a) in [ACD 87](https://www.youtube.com/watch?v=bGgzALuyY3w&t=4788s)
-- May 19, 2020: [Meta SIP-2657](https://sips.sila.org/SIPS/sip-2657) created for ephemeral testnet YOLO
+- May 19, 2020: [Meta SIP-2657](https://sips.sila.org/EIPS/sip-2657) created for ephemeral testnet YOLO
 - May 29, 2020: Selection of SIPs, a decision on the state-test name as Yolo-v1 (and not Berlin) in [ACD 88](https://github.com/sila-chain/pm/blob/5198ef636a0f2c443a5c99374563ef285b002b0e/All%20Core%20Devs%20Meetings/Meeting%2088.md#decisions-made)
 - June 03, 2020: Finalized spec of SIPs for v1, commit hash [added](https://github.com/sila-chain/SIPs/pull/2657/commits/fb2a20f2d87a272edf0925f1e347b36644268f9b) to YOLO meta SIP
 - June 03, 2020: Yolo v-1 deployed with [Geth](https://twitter.com/peter_szilagyi/status/1268123563850170368)

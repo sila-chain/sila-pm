@@ -88,7 +88,7 @@ great thanks!
 same as before, 4th march
 00:32:03	Parithosh Jayanthi:	Reacted to "same as before, 4th ..." with 👍🏽
 00:33:05	Jen:	Reacted to "same as before, 4th ..." with 👍🏽
-00:33:06	Mario Vega:	https://sips.sila.org/SIPS/sip-7954
+00:33:06	Mario Vega:	https://sips.sila.org/EIPS/sip-7954
 00:33:43	Mario Vega:	https://github.com/sila-chain/execution-apis/pull/747
 00:33:54	Vukasin:	Reacted to "https://notes.ethe..." with 👍
 00:35:49	Barnabas:	I think first we should merge if the spec is good
@@ -172,7 +172,7 @@ LFG
 [Full message ca..." with 🔥
 00:51:25	Luca | Vero:	Reacted to "we have working inte..." with 🏋️
 00:51:56	Justin Traglia:	Reacted to "LFG" with 🔥
-00:53:03	Marius van der Wijden:	I agree, imo we should bloat more reliable, not faster. I don't care if it takes 2 months to get to 10x sila-sila-mainnet if its an automatic process
+00:53:03	Marius van der Wijden:	I agree, imo we should bloat more reliable, not faster. I don't care if it takes 2 months to get to 10x sila-mainnet if its an automatic process
 00:53:13	jochem-brouwer:	Reacted to "I agree, imo we sh..." with 👍
 00:53:34	Ameziane Hamlat:	Reacted to "I agree, imo we shou..." with 👍
 00:53:35	Parithosh Jayanthi:	Reacted to "I agree, imo we shou..." with 👍
