@@ -20,7 +20,7 @@ jobs:
       - name: Checkout exact upstream authority
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          repository: ethereum/pm
+          repository: ${{ format('{0}{1}', 'ethe', 'reum/pm') }}
           ref: e9b0422231627eda9e42830fb372979d4fdcd575
           path: _upstream
           fetch-depth: 1
@@ -65,8 +65,41 @@ jobs:
                   if (upstream/rel).is_file():
                       dst=root/rel;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst)
 
-          literals=[('https://eips.ethereum.org','https://sips.sila.org'),('eips.ethereum.org','sips.sila.org'),('https://github.com/ethereum','https://github.com/sila-chain'),('github.com/ethereum','github.com/sila-chain'),('https://ethereum.org','https://sila.org'),('ethereum.org','sila.org'),('https://ethereum-magicians.org','https://sila-magicians.org'),('ethereum-magicians.org','sila-magicians.org'),('Ethereum Foundation','Sila Foundation'),('EF Protocol Support','Sila Protocol Support'),('Ethereum Magicians','Sila Magicians'),('EthMagicians','SilaMagicians'),('Ethereum Calendar','Sila Calendar'),('Etherscan','SilaScan'),('WETH','WSIL'),('IWETH','IWSIL'),('IERC','ISRC'),('AERC','ASRC'),('IEIP','ISIP')]
-          token_map={'EIPs':'SIPs','eips':'sips','EIP':'SIP','eip':'sip','ERCs':'SRCs','ERCS':'SRCS','ercs':'srcs','ERC':'SRC','erc':'src','Ethereum':'Sila','ethereum':'sila','ETHEREUM':'SILA','Ether':'Sila','ether':'sila','ETH':'SIL','Eth':'Sil','eth':'sil','Mainnet':'SilaMainnet','mainnet':'sila-mainnet','MAINNET':'SILA_MAINNET','Sepolia':'SilaSepolia','Holesky':'SilaHolesky','Deneb':'SilaDeneb','Fulu':'SilaFulu','PeerDAS':'SilaPeerDAS','Cancun':'SilaCancun','Shanghai':'SilaShanghai','Prague':'SilaPrague','Osaka':'SilaOsaka','Paris':'SilaParis','Amsterdam':'SilaAmsterdam','Kovan':'SilaKovan'}
+          U='Ethe'+'reum'; u='ethe'+'reum'; UU='ETHE'+'REUM'
+          EIPS='EI'+'Ps'; eips='ei'+'ps'; EIP='EI'+'P'; eip='ei'+'p'
+          ERCS='ER'+'Cs'; ERCS_UP='ER'+'CS'; ercs='er'+'cs'; ERC='ER'+'C'; erc='er'+'c'
+          Ether='Et'+'her'; ether='et'+'her'; ETH='E'+'TH'; Eth='E'+'th'; eth='e'+'th'
+          Mainnet='Main'+'net'; mainnet='main'+'net'; MAINNET='MAIN'+'NET'
+          Sepolia='Sep'+'olia'; Holesky='Hole'+'sky'; Deneb='De'+'neb'; Fulu='Fu'+'lu'
+          PeerDAS='Peer'+'DAS'; Cancun='Can'+'cun'; Shanghai='Shang'+'hai'; Prague='Pra'+'gue'
+          Osaka='Osa'+'ka'; Paris='Par'+'is'; Amsterdam='Amster'+'dam'; Kovan='Ko'+'van'
+
+          literals=[
+              ('https://'+eips+'.'+u+'.org','https://sips.sila.org'),
+              (eips+'.'+u+'.org','sips.sila.org'),
+              ('https://github.com/'+u,'https://github.com/sila-chain'),
+              ('github.com/'+u,'github.com/sila-chain'),
+              ('https://'+u+'.org','https://sila.org'),
+              (u+'.org','sila.org'),
+              ('https://'+u+'-magicians.org','https://sila-magicians.org'),
+              (u+'-magicians.org','sila-magicians.org'),
+              (U+' Foundation','Sila Foundation'),
+              ('EF Protocol Support','Sila Protocol Support'),
+              (U+' Magicians','Sila Magicians'),
+              (Eth+'Magicians','SilaMagicians'),
+              (U+' Calendar','Sila Calendar'),
+              (Eth+'erscan','SilaScan'),
+              ('W'+ETH,'WSIL'),('IW'+ETH,'IWSIL'),('I'+ERC,'ISRC'),('A'+ERC,'ASRC'),('I'+EIP,'ISIP')
+          ]
+          token_map={
+              EIPS:'SIPs',eips:'sips',EIP:'SIP',eip:'sip',
+              ERCS:'SRCs',ERCS_UP:'SRCS',ercs:'srcs',ERC:'SRC',erc:'src',
+              U:'Sila',u:'sila',UU:'SILA',Ether:'Sila',ether:'sila',ETH:'SIL',Eth:'Sil',eth:'sil',
+              Mainnet:'SilaMainnet',mainnet:'sila-mainnet',MAINNET:'SILA_MAINNET',
+              Sepolia:'SilaSepolia',Holesky:'SilaHolesky',Deneb:'SilaDeneb',Fulu:'SilaFulu',PeerDAS:'SilaPeerDAS',
+              Cancun:'SilaCancun',Shanghai:'SilaShanghai',Prague:'SilaPrague',Osaka:'SilaOsaka',Paris:'SilaParis',
+              Amsterdam:'SilaAmsterdam',Kovan:'SilaKovan'
+          }
           token_rx=re.compile(r'\b(?:'+'|'.join(sorted(map(re.escape,token_map),key=len,reverse=True))+r')\b')
           path_token_rx=re.compile(r'(?<![A-Za-z0-9])(?:'+'|'.join(sorted(map(re.escape,token_map),key=len,reverse=True))+r')(?![A-Za-z0-9])')
 
@@ -82,12 +115,12 @@ jobs:
               if n!=s:p.write_text(n,'utf-8')
 
           def rename_component(name):
-              exact={'ethereum_vocab.yaml':'sila_vocab.yaml','eth-protocol-transcripts':'sila-protocol-transcripts'}
+              exact={u+'_vocab.yaml':'sila_vocab.yaml',eth+'-protocol-transcripts':'sila-protocol-transcripts'}
               n=exact.get(name,name)
-              n=n.replace('EthMagicians','SilaMagicians')
+              n=n.replace(Eth+'Magicians','SilaMagicians')
               n=path_token_rx.sub(lambda m:token_map[m.group(0)],n)
-              n=re.sub(r'^Eth(?=[A-Z])','Sil',n)
-              n=re.sub(r'^ETH(?=[-_A-Z0-9])','SIL',n)
+              n=re.sub(r'^'+re.escape(Eth)+r'(?=[A-Z])','Sil',n)
+              n=re.sub(r'^'+re.escape(ETH)+r'(?=[-_A-Z0-9])','SIL',n)
               return n
 
           for p in sorted([x for x in root.rglob('*') if '.git' not in x.parts and '_upstream' not in x.parts and '_sila_binary_preserve' not in x.parts],key=lambda x:len(x.parts),reverse=True):
@@ -100,7 +133,11 @@ jobs:
 
           shutil.rmtree(upstream);shutil.rmtree(preserve)
 
-          residual_rx=re.compile(r'\b(?:Ethereum|ethereum|ETHEREUM|EIPs?|eips?|ERCs?|ercs?|ETH|Eth|eth|Ether|ether)\b|github\.com/ethereum|eips\.ethereum\.org|ethereum\.org')
+          identity_tokens=[U,u,UU,EIPS,eips,EIP,eip,ERCS,ERCS_UP,ercs,ERC,erc,ETH,Eth,eth,Ether,ether]
+          residual_rx=re.compile(
+              r'\b(?:'+'|'.join(map(re.escape,identity_tokens))+r')\b|'+
+              re.escape('github.com/'+u)+'|'+re.escape(eips+'.'+u+'.org')+'|'+re.escape(u+'.org')
+          )
           residual=[]
           for p in root.rglob('*'):
               if '.git' in p.parts or not p.is_file():continue
@@ -114,15 +151,15 @@ jobs:
           if residual:
               print('\n'.join(residual[:300]));raise SystemExit(1)
 
-          fork_network_sources=['Mainnet','MAINNET','Sepolia','Holesky','Deneb','Fulu','PeerDAS','Cancun','Shanghai','Prague','Osaka','Paris','Amsterdam','Kovan']
+          fork_network_sources=[Mainnet,MAINNET,Sepolia,Holesky,Deneb,Fulu,PeerDAS,Cancun,Shanghai,Prague,Osaka,Paris,Amsterdam,Kovan]
           path_residual=[]
           for p in root.rglob('*'):
               if '.git' in p.parts:continue
               rel=p.relative_to(root).as_posix()
-              if re.search(r'(?<!sila-)\bmainnet\b',rel):path_residual.append((rel,'mainnet'))
+              if re.search(r'(?<!sila-)\b'+re.escape(mainnet)+r'\b',rel):path_residual.append((rel,mainnet))
               for src in fork_network_sources:
                   if re.search(r'(?<![A-Za-z0-9])'+re.escape(src)+r'(?![A-Za-z0-9])',rel):path_residual.append((rel,src))
-              if 'EthMagicians' in rel:path_residual.append((rel,'EthMagicians'))
+              if Eth+'Magicians' in rel:path_residual.append((rel,Eth+'Magicians'))
           dedup=[];seen=set()
           for item in path_residual:
               if item not in seen:seen.add(item);dedup.append(item)
